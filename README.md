@@ -4,7 +4,7 @@ This page catalogues releases from charm engineering teams. Its content automati
 every 15 minutes by querying the Github API for information about the Canonical Github org and the
 Juju Github org.
 
-The page is published at: https://jnsgruk.github.io/releases-hugo
+The page is published at: https://jnsgruk.github.io/releases
 
 ## Developing
 
@@ -12,13 +12,13 @@ Development is easiest using the supplied [Dockerfile](./Dockerfile).
 
 ```bash
 # Clone the repository
-git clone https://github.com/jnsgruk/releases-hugo
-cd releases-hugo
+git clone https://github.com/jnsgruk/releases
+cd releases
 
 hugo serve -D
 ```
 
-The site should now be available at http://0.0.0.0:1313/releases-hugo on your local machine.
+The site should now be available at http://0.0.0.0:1313/releases on your local machine.
 
 ## Updating Data
 
