@@ -8,13 +8,12 @@ The page is published at: https://jnsgruk.github.io/releases
 
 ## Developing
 
-Development is easiest using the supplied [Dockerfile](./Dockerfile).
-
 ```bash
 # Clone the repository
 git clone https://github.com/jnsgruk/releases
 cd releases
 
+# Build and serve the site using Hugo
 hugo serve -D
 ```
 
