@@ -1,0 +1,42 @@
+<tr id="{{ .repo.name }}">
+  <td class="repository">
+    <a href="{{ .repo.url }}" class="repo-name">{{ .repo.name }}</a>
+  </td>
+  {{- $team := .team -}}{{- $repo := .repo -}}
+  <td class="release">
+    {{- range $release := .repo.releases -}} 
+      {{- $modal_id := printf "%s-%d" $team.team (int $release.id) -}}
+      <p class="u-no-margin--bottom" aria-release-date="{{ $release.timestamp }}">
+        <small>
+          <a class="p-icon--show" aria-controls="{{ $modal_id }}" role="modal-open"></a>
+          <a href="{{ $release.url }}">{{ $release.version }}</a> on
+          <time datetime="{{- int $release.timestamp }}">
+            {{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}
+          </time>
+        </small>
+      </p>
+      {{- partial "modal" (dict "rel" $release "repo" $repo "team" $team "id" $modal_id) -}} 
+    {{- end -}}
+  </td>
+  <td class="u-align--right status" aria-new-commits="{{- .repo.new_commits }}">
+    {{- $commits := int .repo.new_commits -}} 
+    {{- if eq $commits 0 -}}
+      <div class="p-status-label--positive">Up to date</div>
+    {{- else if lt $commits 0 -}}
+      <div class="p-status-label">New commits</div>
+    {{- else }} 
+      {{- $label_suffix := "" -}}
+      {{- if and (ge $commits 15) (le $commits 50) -}} 
+        {{- $label_suffix = "--caution" -}} 
+      {{- else if (ge $commits 50) -}} 
+        {{- $label_suffix = "--negative" -}}
+      {{- end -}}
+    <div class="p-status-label{{ $label_suffix }}">
+      {{- $first := index (.repo.releases) 0 -}}
+      <a href="{{- $first.compare_url }}">
+        {{- $commits -}} commit{{- if gt $commits 1 -}}s{{- end -}}
+      </a>
+    </div>
+    {{- end }}
+  </td>
+</tr>

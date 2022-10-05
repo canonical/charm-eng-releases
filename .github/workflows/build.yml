@@ -1,0 +1,60 @@
+name: Build/Deploy
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: "*/15 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        fetch-depth: 0
+
+      - name: Fetch the releasegen binary
+        run: |
+          wget -qO releasegen.tar.gz https://github.com/jnsgruk/releasegen/releases/download/v0.1.3/releasegen_0.1.3_linux_x86_64.tar.gz
+          tar xvzf releasegen.tar.gz
+
+      - name: Regenerate the repository data
+        run: |
+          ./releasegen > _data/repos.json
+        env:
+          RELEASEGEN_TOKEN: ${{ secrets.API_TOKEN }}
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Run script and commit changes
+        run: |
+          set -euo pipefail
+          echo "Setting up git credentials..."
+          git remote set-url origin https://x-access-token:"$GITHUB_TOKEN"@github.com/"$GITHUB_REPOSITORY".git
+          git config --global user.email "actions@github.com"
+          git config --global user.name "actions"
+          echo "Git credentials configured."
+
+          git checkout $GITHUB_REF_NAME
+          git add _data/repos.json
+          git commit -m "Automatic update of data" && git push --set-upstream origin $GITHUB_REF_NAME || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

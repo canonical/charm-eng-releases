@@ -1,0 +1,15 @@
+<table class="releases">
+  <thead>
+    <tr>
+      <th aria-sort="" class="repository">Repository</th>
+      <th aria-sort="ascending" class="release">Latest Releases</th>
+      <th aria-sort="" class="u-align--right status">Commits Since</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- $team := .team -}}
+    {{- range $r := .team.repos -}} 
+      {{- partial "repo" (dict "team" $team "repo" $r ) -}}
+    {{- end -}}
+  </tbody>
+</table>
