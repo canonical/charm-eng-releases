@@ -15,7 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        fetch-depth: 0
+        with:
+          fetch-depth: 0
 
       - name: Fetch the releasegen binary
         run: |
@@ -24,7 +25,7 @@ jobs:
 
       - name: Regenerate the repository data
         run: |
-          ./releasegen > _data/repos.json
+          ./releasegen > data/repos.json
         env:
           RELEASEGEN_TOKEN: ${{ secrets.API_TOKEN }}
 
@@ -47,7 +48,7 @@ jobs:
           echo "Git credentials configured."
 
           git checkout $GITHUB_REF_NAME
-          git add _data/repos.json
+          git add data/repos.json
           git commit -m "Automatic update of data" && git push --set-upstream origin $GITHUB_REF_NAME || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
