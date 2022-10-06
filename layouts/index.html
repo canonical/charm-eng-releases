@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-  {{- partial "head.html" . -}} {{- partial "nav.html" . -}}
+  {{- partial "head.html" . -}}
+  {{- partial "nav.html" . -}}
   <body>
     <div class="l-site">
       <div class="grid p-strip">
@@ -9,20 +10,22 @@
             <h2>Charm Engineering Releases</h2>
             <p>
               This page catalogues releases from charm engineering teams. Its content automatically
-              generated every 15 minutes by querying the Github API for information about the
-              <a href="https://github.com/orgs/canonical">Canonical Github Org</a> and the
-              <a href="https://github.com/orgs/juju">Juju Github Org</a>.
+              generated every 15 minutes by querying the Github API and scraping Launchpad pages.
+              The data is generated using
+              <a href="https://github.com/jnsgruk/releasegen">releasegen</a>.
             </p>
             <p>
-              For a release to show here, it must be part of one of the specified Github Teams, and
-              have valid Github Releases. The last three releases are shown for each repository.
+              For a release to show here, it must be part of one of the specified Github Teams or
+              Launchpad project groups. Github projects must have at least one Github Release,
+              Launchpad projects are scraped for tags. The latest three releases are shown for each
+              repository.
             </p>
           </div>
         </div>
         <div class="row p-strip">
           <div class="p-tabs">
             <div class="p-tabs__list" role="tablist" aria-label="Charm teams">
-              {{- range $.Site.Data.repos -}}
+              {{- range .Site.Data.repos -}}
               <div class="p-tabs__item">
                 <button class="p-tabs__link" aria-controls="{{ .team }}-tab" id="{{ .team }}">
                   {{- .team -}}
@@ -30,7 +33,7 @@
               </div>
               {{- end -}}
             </div>
-            {{- range $team := $.Site.Data.repos -}}
+            {{- range $team := .Site.Data.repos -}}
             <div tabindex="0" id="{{ $team.team }}-tab" aria-labelledby="{{ $team.team }}">
               {{- partial "team-table" (dict "team" $team ) -}}
             </div>

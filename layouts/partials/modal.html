@@ -2,12 +2,12 @@
   <section class="p-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <header class="p-modal__header">
       <h2 class="p-modal__title" id="modal-title">
-        {{ .repo.name }} - {{ .rel.title }}
-        <a class="p-icon--external-link" href="{{ .rel.url }}"></a>
+        {{ .repo.name }} - {{ .release.title }}
+        <a class="p-icon--external-link" href="{{ .release.url }}"></a>
       </h2>
       <button class="p-modal__close" aria-controls="{{- .id -}}" role="modal-close">Close</button>
     </header>
-    <div>{{ safeHTML (replace .rel.body "h2" "h3") }}</div>
+    <div>{{ safeHTML (replace .release.body "h2" "h3") }}</div>
     <footer class="p-modal__footer">
       <button class="u-no-margin--bottom" aria-controls="{{ .id }}" role="modal-close">
         Cancel

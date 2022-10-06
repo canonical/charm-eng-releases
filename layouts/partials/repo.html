@@ -2,10 +2,9 @@
   <td class="repository">
     <a href="{{ .repo.url }}" class="repo-name">{{ .repo.name }}</a>
   </td>
-  {{- $team := .team -}}{{- $repo := .repo -}}
   <td class="release">
     {{- range $release := .repo.releases -}} 
-      {{- $modal_id := printf "%s-%d" $team.team (int $release.id) -}}
+      {{- $modal_id := printf "%s-%d" $.team.team (int $release.id) -}}
       <p class="u-no-margin--bottom" aria-release-date="{{ $release.timestamp }}">
         <small>
           <a class="p-icon--show" aria-controls="{{ $modal_id }}" role="modal-open"></a>
@@ -15,28 +14,22 @@
           </time>
         </small>
       </p>
-      {{- partial "modal" (dict "rel" $release "repo" $repo "team" $team "id" $modal_id) -}} 
+      {{- partial "modal" (dict "release" $release "repo" $.repo "team" $.team "id" $modal_id) -}} 
     {{- end -}}
   </td>
   <td class="u-align--right status" aria-new-commits="{{- .repo.new_commits }}">
-    {{- $commits := int .repo.new_commits -}} 
-    {{- if eq $commits 0 -}}
+    {{- $n := int .repo.new_commits -}} 
+    {{- if eq $n 0 -}}
       <div class="p-status-label--positive">Up to date</div>
-    {{- else if lt $commits 0 -}}
+    {{- else if lt $n 0 -}}
       <div class="p-status-label">New commits</div>
     {{- else }} 
-      {{- $label_suffix := "" -}}
-      {{- if and (ge $commits 15) (le $commits 50) -}} 
-        {{- $label_suffix = "--caution" -}} 
-      {{- else if (ge $commits 50) -}} 
-        {{- $label_suffix = "--negative" -}}
-      {{- end -}}
-    <div class="p-status-label{{ $label_suffix }}">
-      {{- $first := index (.repo.releases) 0 -}}
-      <a href="{{- $first.compare_url }}">
-        {{ $commits }} commit{{- if gt $commits 1 -}}s{{- end -}}
-      </a>
-    </div>
-    {{- end }}
+      <div class='p-status-label{{- (cond (and (ge $n 15) (le $n 50)) "--caution" (cond (ge $n 50) "--negative" "")) -}}'>
+        <a href="{{- (index (.repo.releases) 0).compare_url }}">
+          {{ $n }} commit{{ cond (gt $n 1) "s" "" }}
+        </a>
+      </div>
+    {{- end -}}
   </td>
 </tr>
+

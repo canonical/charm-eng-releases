@@ -7,9 +7,8 @@
     </tr>
   </thead>
   <tbody>
-    {{- $team := .team -}}
-    {{- range $r := .team.repos -}} 
-      {{- partial "repo" (dict "team" $team "repo" $r ) -}}
+    {{- range $repo := .team.repos -}} 
+      {{- partial "repo" (dict "team" $.team "repo" $repo ) -}}
     {{- end -}}
   </tbody>
 </table>
