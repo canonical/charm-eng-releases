@@ -3,6 +3,41 @@
       "team": "Juju",
       "repos": [
          {
+            "name": "terraform-provider-juju",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/juju/terraform-provider-juju",
+            "releases": [
+               {
+                  "id": 83406596,
+                  "version": "v0.4.2",
+                  "timestamp": 1668687327,
+                  "title": "v0.4.2",
+                  "body": "<ul>\n<li>Added support for Juju 2.9.37</li>\n<li>Fix issue <a href=\"https://github.com/juju/terraform-provider-juju/issues/96\">96</a></li>\n<li>Fix issue <a href=\"https://github.com/juju/terraform-provider-juju/issues/95\">95</a></li>\n</ul>\n",
+                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.4.2",
+                  "compare_url": "https://github.com/juju/terraform-provider-juju/compare/v0.4.2...main"
+               },
+               {
+                  "id": 75386372,
+                  "version": "v0.4.1",
+                  "timestamp": 1661455500,
+                  "title": "v0.4.1",
+                  "body": "<p>Instructions on using this pre-release can be found <a href=\"https://github.com/juju/terraform-provider-juju/wiki/Using-Early-Releases-of-the-Provider\">on the wiki</a>. This software represents a raw version of a provider and should not be used in production.</p>\n\n<p>NOTES:</p>\n\n<ul>\n<li>The provider now receives the values for the <code>CharmConfig</code> while reading an already deployed application&rsquo;s status.</li>\n</ul>\n",
+                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.4.1",
+                  "compare_url": "https://github.com/juju/terraform-provider-juju/compare/v0.4.1...main"
+               },
+               {
+                  "id": 74823882,
+                  "version": "v0.4.0",
+                  "timestamp": 1660907664,
+                  "title": "v0.4.0",
+                  "body": "<p>Instructions on using this pre-release can be found <a href=\"https://github.com/juju/terraform-provider-juju/wiki/Using-Early-Releases-of-the-Provider\">on the wiki</a>. This software represents a raw version of a provider and should not be used in production.</p>\n\n<p>FEATURES:</p>\n\n<ul>\n<li><strong>Application expose</strong> is now available.</li>\n</ul>\n\n<p>NOTES:</p>\n\n<ul>\n<li>Now the provider considers the current Juju status of <code>expose</code> and <code>config</code> for any application. When a plan is applied, this is compared with the current status returned by Juju and applied when required. For example, an exposed application can be manually unexposed using the Juju CLI. When applying the plan again, the provider will detect a mismatch and expose the application again.</li>\n<li>The application configuration returned by Juju can contain more elements than the plan may contain. For this reason, the provider will only consider those parameteres already specified in the plan. This means that if any configuration parameter is manually set using the Juju CLI and this parameter is not set in the plan, no changes will be applied by the provider.</li>\n</ul>\n",
+                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.4.0",
+                  "compare_url": "https://github.com/juju/terraform-provider-juju/compare/v0.4.0...main"
+               }
+            ]
+         },
+         {
             "name": "juju-restore",
             "default_branch": "master",
             "new_commits": 0,
@@ -287,41 +322,6 @@
                   "body": "",
                   "url": "https://github.com/juju/viddy/releases/tag/v0.0.0-beta3",
                   "compare_url": "https://github.com/juju/viddy/compare/v0.0.0-beta3...master"
-               }
-            ]
-         },
-         {
-            "name": "terraform-provider-juju",
-            "default_branch": "main",
-            "new_commits": 37,
-            "url": "https://github.com/juju/terraform-provider-juju",
-            "releases": [
-               {
-                  "id": 75386372,
-                  "version": "v0.4.1",
-                  "timestamp": 1661455500,
-                  "title": "v0.4.1",
-                  "body": "<p>Instructions on using this pre-release can be found <a href=\"https://github.com/juju/terraform-provider-juju/wiki/Using-Early-Releases-of-the-Provider\">on the wiki</a>. This software represents a raw version of a provider and should not be used in production.</p>\n\n<p>NOTES:</p>\n\n<ul>\n<li>The provider now receives the values for the <code>CharmConfig</code> while reading an already deployed application&rsquo;s status.</li>\n</ul>\n",
-                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.4.1",
-                  "compare_url": "https://github.com/juju/terraform-provider-juju/compare/v0.4.1...main"
-               },
-               {
-                  "id": 74823882,
-                  "version": "v0.4.0",
-                  "timestamp": 1660907664,
-                  "title": "v0.4.0",
-                  "body": "<p>Instructions on using this pre-release can be found <a href=\"https://github.com/juju/terraform-provider-juju/wiki/Using-Early-Releases-of-the-Provider\">on the wiki</a>. This software represents a raw version of a provider and should not be used in production.</p>\n\n<p>FEATURES:</p>\n\n<ul>\n<li><strong>Application expose</strong> is now available.</li>\n</ul>\n\n<p>NOTES:</p>\n\n<ul>\n<li>Now the provider considers the current Juju status of <code>expose</code> and <code>config</code> for any application. When a plan is applied, this is compared with the current status returned by Juju and applied when required. For example, an exposed application can be manually unexposed using the Juju CLI. When applying the plan again, the provider will detect a mismatch and expose the application again.</li>\n<li>The application configuration returned by Juju can contain more elements than the plan may contain. For this reason, the provider will only consider those parameteres already specified in the plan. This means that if any configuration parameter is manually set using the Juju CLI and this parameter is not set in the plan, no changes will be applied by the provider.</li>\n</ul>\n",
-                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.4.0",
-                  "compare_url": "https://github.com/juju/terraform-provider-juju/compare/v0.4.0...main"
-               },
-               {
-                  "id": 72249307,
-                  "version": "v0.3.1",
-                  "timestamp": 1658159092,
-                  "title": "v0.3.1",
-                  "body": "<p><em>Instructions on using this pre-release can be found <a href=\"https://github.com/juju/terraform-provider-juju/wiki/Using-Early-Releases-of-the-Provider\">on the wiki</a></em>. This software represents a raw version of a provider and should not be used in production.</p>\n\n<p>NOTES:</p>\n\n<ul>\n<li>provider: The provider has a dependency on Juju CLI configuration store. It expects configuration to be found in either <code>$XDG_DATA_HOME/juju</code> or <code>~/.local/share/juju</code>.</li>\n</ul>\n\n<p>BUG FIXES</p>\n\n<ul>\n<li>resource/juju_application: Avoid inconsistency with a Charm&rsquo;s self-reported name</li>\n<li>resource/juju_application: Fix error encountered when changing units whilst operating on a CAAS model</li>\n</ul>\n",
-                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.3.1",
-                  "compare_url": "https://github.com/juju/terraform-provider-juju/compare/v0.3.1...main"
                }
             ]
          },
@@ -1194,7 +1194,7 @@
          {
             "name": "cos-configuration-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/cos-configuration-k8s-operator",
             "releases": [
                {
@@ -3356,9 +3356,18 @@
          {
             "name": "nginx-ingress-integrator-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/nginx-ingress-integrator-operator",
             "releases": [
+               {
+                  "id": 83407082,
+                  "version": "rev47",
+                  "timestamp": 1668696144,
+                  "title": "Revision 47",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:02 UTC on 17 Nov 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add additional info to metadata by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/38\">#38</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev46...rev47\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev46&hellip;rev47</a></p>\n",
+                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev47",
+                  "compare_url": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev47...main"
+               },
                {
                   "id": 83372425,
                   "version": "rev46",
@@ -3376,15 +3385,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:18 UTC on 16 Nov 2022</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 16:28 UTC on 16 Nov 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Revert to focal as k8s charm series upgrades aren&rsquo;t well handled currently by <a href=\"http://github.com/mthaddon\">@mthaddon</a> in <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/36\">#36</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev44...rev45\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev44&hellip;rev45</a></p>\n",
                   "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev45",
                   "compare_url": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev45...main"
-               },
-               {
-                  "id": 83230463,
-                  "version": "rev44",
-                  "timestamp": 1668591427,
-                  "title": "Revision 44",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:58 UTC on 16 Nov 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update README to include project governance details by <a href=\"http://github.com/mthaddon\">@mthaddon</a> in <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/35\">#35</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev43...rev44\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev43&hellip;rev44</a></p>\n",
-                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev44",
-                  "compare_url": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev44...main"
                }
             ]
          },
