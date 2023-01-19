@@ -3,6 +3,41 @@
       "team": "Juju",
       "repos": [
          {
+            "name": "juju-restore",
+            "default_branch": "master",
+            "new_commits": 0,
+            "url": "https://github.com/juju/juju-restore",
+            "releases": [
+               {
+                  "id": 89503562,
+                  "version": "v0.13",
+                  "timestamp": 1674110817,
+                  "title": "juju-restore v0.13",
+                  "body": "<p>Add support for cloning secret backends to the <code>--copy-controller</code> option.\nSee #24 .</p>\n",
+                  "url": "https://github.com/juju/juju-restore/releases/tag/v0.13",
+                  "compare_url": "https://github.com/juju/juju-restore/compare/v0.13...master"
+               },
+               {
+                  "id": 83199470,
+                  "version": "v0.12",
+                  "timestamp": 1668575100,
+                  "title": "juju-restore v0.12",
+                  "body": "<p>Add a new <code>--copy-controller</code> option to initialise a new controller to look like a backed up controller.\nThis is useful when setting up a controller for a newer Juju version and copying to that new controller users, clouds, and config from an existing controller.\nSee #23.</p>\n",
+                  "url": "https://github.com/juju/juju-restore/releases/tag/v0.12",
+                  "compare_url": "https://github.com/juju/juju-restore/compare/v0.12...master"
+               },
+               {
+                  "id": 32527288,
+                  "version": "v0.11",
+                  "timestamp": 1602618079,
+                  "title": "juju-restore v0.11",
+                  "body": "<p>Use normal (non-raw) standard input for prompts; add <code>--yes</code> option. See <a href=\"https://github.com/juju/juju-restore/pull/19\">https://github.com/juju/juju-restore/pull/19</a>.</p>\n",
+                  "url": "https://github.com/juju/juju-restore/releases/tag/v0.11",
+                  "compare_url": "https://github.com/juju/juju-restore/compare/v0.11...master"
+               }
+            ]
+         },
+         {
             "name": "python-libjuju",
             "default_branch": "master",
             "new_commits": 264,
@@ -200,41 +235,6 @@
                   "body": "<p>Instructions on using this pre-release can be found <a href=\"https://github.com/juju/terraform-provider-juju/wiki/Using-Early-Releases-of-the-Provider\">on the wiki</a>. This software represents a raw version of a provider and should not be used in production.</p>\n\n<p>FEATURES:</p>\n\n<ul>\n<li><strong>Application expose</strong> is now available.</li>\n</ul>\n\n<p>NOTES:</p>\n\n<ul>\n<li>Now the provider considers the current Juju status of <code>expose</code> and <code>config</code> for any application. When a plan is applied, this is compared with the current status returned by Juju and applied when required. For example, an exposed application can be manually unexposed using the Juju CLI. When applying the plan again, the provider will detect a mismatch and expose the application again.</li>\n<li>The application configuration returned by Juju can contain more elements than the plan may contain. For this reason, the provider will only consider those parameteres already specified in the plan. This means that if any configuration parameter is manually set using the Juju CLI and this parameter is not set in the plan, no changes will be applied by the provider.</li>\n</ul>\n",
                   "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.4.0",
                   "compare_url": "https://github.com/juju/terraform-provider-juju/compare/v0.4.0...main"
-               }
-            ]
-         },
-         {
-            "name": "juju-restore",
-            "default_branch": "master",
-            "new_commits": 2,
-            "url": "https://github.com/juju/juju-restore",
-            "releases": [
-               {
-                  "id": 83199470,
-                  "version": "v0.12",
-                  "timestamp": 1668575100,
-                  "title": "juju-restore v0.12",
-                  "body": "<p>Add a new <code>--copy-controller</code> option to initialise a new controller to look like a backed up controller.\nThis is useful when setting up a controller for a newer Juju version and copying to that new controller users, clouds, and config from an existing controller.\nSee #23.</p>\n",
-                  "url": "https://github.com/juju/juju-restore/releases/tag/v0.12",
-                  "compare_url": "https://github.com/juju/juju-restore/compare/v0.12...master"
-               },
-               {
-                  "id": 32527288,
-                  "version": "v0.11",
-                  "timestamp": 1602618079,
-                  "title": "juju-restore v0.11",
-                  "body": "<p>Use normal (non-raw) standard input for prompts; add <code>--yes</code> option. See <a href=\"https://github.com/juju/juju-restore/pull/19\">https://github.com/juju/juju-restore/pull/19</a>.</p>\n",
-                  "url": "https://github.com/juju/juju-restore/releases/tag/v0.11",
-                  "compare_url": "https://github.com/juju/juju-restore/compare/v0.11...master"
-               },
-               {
-                  "id": 32429127,
-                  "version": "v0.10",
-                  "timestamp": 1602192433,
-                  "title": "juju-restore v0.10",
-                  "body": "<p>Fixes problems when controller is running Focal (due to paths being different when <code>mongorestore</code> is installed via a Snap). See <a href=\"https://github.com/juju/juju-restore/pull/18\">https://github.com/juju/juju-restore/pull/18</a></p>\n",
-                  "url": "https://github.com/juju/juju-restore/releases/tag/v0.10",
-                  "compare_url": "https://github.com/juju/juju-restore/compare/v0.10...master"
                }
             ]
          },
