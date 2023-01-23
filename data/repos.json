@@ -2963,9 +2963,18 @@
          {
             "name": "upload-charm-docs",
             "default_branch": "main",
-            "new_commits": 3,
+            "new_commits": 0,
             "url": "https://github.com/canonical/upload-charm-docs",
             "releases": [
+               {
+                  "id": 89861409,
+                  "version": "v0.2.2",
+                  "timestamp": 1674438483,
+                  "title": "v0.2.2 Run in Temporary Directory",
+                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Name clashes during migration for checkouts when a file or directory has the\nsame name as the branch being checked out</li>\n</ul>\n\n<h3>Changed</h3>\n\n<ul>\n<li>The action now operates in a temporary directory that is a copy of the\ndirectory the action was called on. Using a temporary directory ensures that\nany operations of the action, such as git operations, do not change the state\nof the files and directories any following steps receive.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.2.2",
+                  "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.2.2...main"
+               },
                {
                   "id": 89633096,
                   "version": "v0.2.1",
@@ -2983,15 +2992,6 @@
                   "body": "<h3>Added</h3>\n\n<ul>\n<li>Topics are now created unlisted on discourse</li>\n<li>Runs on a charm with existing documentation and without the <code>docs</code> folder now\nresults in a PR being created to migrate the docs to the repository</li>\n</ul>\n",
                   "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.2.0",
                   "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.2.0...main"
-               },
-               {
-                  "id": 85806114,
-                  "version": "v0.1.1",
-                  "timestamp": 1670851433,
-                  "title": "v0.1.1 - URL Handling Improvements",
-                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Allow redirects for topic retrieval which is useful if the slug is\nincorrectly or not defined</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.1.1",
-                  "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.1.1...main"
                }
             ]
          },
@@ -3164,7 +3164,7 @@
          {
             "name": "nginx-ingress-integrator-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 2,
             "url": "https://github.com/canonical/nginx-ingress-integrator-operator",
             "releases": [
                {
