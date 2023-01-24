@@ -2998,9 +2998,18 @@
          {
             "name": "upload-charm-docs",
             "default_branch": "main",
-            "new_commits": 2,
+            "new_commits": 0,
             "url": "https://github.com/canonical/upload-charm-docs",
             "releases": [
+               {
+                  "id": 90115434,
+                  "version": "v0.2.3",
+                  "timestamp": 1674603774,
+                  "title": "v0.2.3 Bug Fixes",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Check to ensure that a topic URL resolves on discourse after allowing for any\nredirects.</li>\n</ul>\n\n<h2>Changed</h2>\n\n<ul>\n<li>URL checks are now after allowing for any discourse redirects rather than\nbefore letting topic URLs pass that do not include the slug or do not include\nthe topic id as long as the URL after redirects is valid.</li>\n<li>The check for whether the current branch clashes with the branch being created\nhas been removed. This is no longer required because the migration branch is\nnow from the default branch and there is an existing check that looks for any\nclashes with existing branches.</li>\n<li>The action no longer goes back to detached head mode after completing git\noperations since the action now runs in a temporary directory meaning that no\nchanges persist beyond the action completing.</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Bug where the action required environment variables that aren&rsquo;t available on\nall supported triggers.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.2.3",
+                  "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.2.3...main"
+               },
                {
                   "id": 89861409,
                   "version": "v0.2.2",
@@ -3018,15 +3027,6 @@
                   "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Migration now correctly handles that the git checkout on GitHub actions runs\nin detached head mode, the migration failed before due to not being able to\ncreate a new branch from detached head mode</li>\n<li>Only files in the <code>docs</code> folder are now added to the migration PR</li>\n<li>The migration PR is now created with a branch from the default branch merging\nback into the default branch, previously the branch was from the branch the\naction was running on back into that branch</li>\n</ul>\n",
                   "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.2.1",
                   "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.2.1...main"
-               },
-               {
-                  "id": 88809336,
-                  "version": "v0.2.0",
-                  "timestamp": 1673525401,
-                  "title": "v0.2.0 Migration Automation",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Topics are now created unlisted on discourse</li>\n<li>Runs on a charm with existing documentation and without the <code>docs</code> folder now\nresults in a PR being created to migrate the docs to the repository</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.2.0",
-                  "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.2.0...main"
                }
             ]
          },
