@@ -1,11 +1,12 @@
-<tr id="{{ .repo.name }}">
+<tr id="{{ .repo.name }}" class="repository-row">
   <td class="repository">
-    <a href="{{ .repo.url }}" class="repo-name">{{ .repo.name }}</a>
+    <a href="{{ .repo.url }}">{{ .repo.name }}</a>
   </td>
   <td class="release">
-    {{- range $release := .repo.releases -}} 
-      {{- $modal_id := printf "%s-%d" $.team.team (int $release.id) -}}
-      <p class="u-no-margin--bottom" aria-release-date="{{ $release.timestamp }}">
+    {{- if not (not .repo.releases) -}}
+      {{- range $release := .repo.releases -}}
+        {{- $modal_id := printf "%s-%d" $.team.team (int $release.id) -}}
+        <p class="u-no-margin--bottom" aria-release-date="{{ $release.timestamp }}">
         <small>
           <a class="p-icon--show" aria-controls="{{ $modal_id }}" role="modal-open"></a>
           <a href="{{ $release.url }}">{{ $release.version }}</a> on
@@ -13,11 +14,35 @@
             {{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}
           </time>
         </small>
-      </p>
-      {{- partial "modal" (dict "release" $release "repo" $.repo "team" $.team "id" $modal_id) -}} 
+        </p>
+        {{- partial "modal" (dict "title" $release.title "url" $release.url "body" $release.body "repo" $.repo "team" $.team "id" $modal_id) -}}
+      {{- end -}}
+    {{- else if not (not .repo.commits) -}}
+      {{- range $commit := .repo.commits -}}
+        {{- $modal_id := printf "%s-%s" $.team.team $commit.sha -}}
+        <p class="u-no-margin--bottom" aria-release-date="{{ $commit.timestamp }}">
+        <small>
+          <a class="p-icon--show" aria-controls="{{ $modal_id }}" role="modal-open"></a>
+          <a href="{{ $commit.url }}">{{ substr $commit.sha 0 7 }}</a> on
+          <time datetime="{{- int $commit.timestamp }}">
+            {{- (time (int $commit.timestamp)).Format "Jan 2, 2006" -}}
+          </time>
+        </small>
+        </p>
+        {{- partial "modal" (dict "title" (substr $commit.sha 0 7) "url" $commit.url "body" $commit.message "repo" $.repo "team" $.team "id" $modal_id) -}} 
+      {{- end -}}
     {{- end -}}
   </td>
-  <td class="u-align--right status" aria-new-commits="{{- .repo.new_commits }}">
+  <td class="u-align--center ciactions" {{- if eq (len (where .team.repos ".ci_actions" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
+    {{- if not (not .repo.ci_actions) -}}
+      {{- range .repo.ci_actions -}}
+        <a href="{{- . -}}"><img src="{{- . -}}/badge.svg"></a>
+      {{- end -}}
+    {{- else -}}
+    <img src="https://img.shields.io/badge/CI%20Status-Unknown-lightgrey">
+    {{- end -}}
+  </td>
+  <td class="u-align--right status" aria-new-commits="{{- .repo.new_commits }}" style="max-width: 15%">
     {{- $n := int .repo.new_commits -}} 
     {{- if eq $n 0 -}}
       <div class="p-status-label--positive">Up to date</div>
@@ -30,6 +55,43 @@
         </a>
       </div>
     {{- end -}}
+  </td>
+  <td class="u-align--right showmore" style="max-width: 10%" {{- if eq (len (where .team.repos ".charm" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
+    <button class="p-button--base u-toggle is-dense is-inline charmhub-toggle" aria-controls="expanded-row-{{- .repo.name -}}" aria-expanded="false" data-shown-text="<i class='button-icon p-icon--chevron-up'></i>" data-hidden-text="<i class='button-icon p-icon--chevron-down'></i>" {{ cond (not (not .repo.charm)) "" "disabled" }}><i class="button-icon p-icon--chevron-down"></i></button>
+  </td>
+  <td id="expanded-row-{{- .repo.name -}}" class="p-table__expanding-panel" aria-hidden="true">
+    <div class="row">
+      <div class="col">
+        {{- if not (not .repo.charm) -}}
+        <table class="charmhub-table">
+          <thead>
+            <tr>
+              <th>CharmHub Track</th>
+              {{- range $channel := .repo.charm.channels -}}
+              <th>{{- $channel -}}</th>
+              {{- end -}}
+            </tr>
+          </thead>
+          <tbody>
+            {{- range $track := $.repo.charm.tracks -}}
+              <tr>
+                <td><b>{{- $track -}}</b></td>
+                {{- range $channel := $.repo.charm.channels -}}
+                  {{- $releasesForTrack := where $.repo.charm.releases "track" $track -}}
+                  {{- $release := index (where $releasesForTrack "channel" $channel) 0 -}}
+                  {{- if not (not $release) -}}
+                    <td><a href="{{- $.repo.charm.url -}}?channel={{- $track -}}/{{- $channel -}}">{{- $release.revision -}}</a><br><sup>{{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}</sup></td>
+                  {{- else -}}
+                    <td></td>
+                  {{- end -}}
+                {{- end -}}
+              </tr>
+            {{- end -}}
+          </tbody>
+        </table>
+        {{- end -}}
+      </div>
+    </div>
   </td>
 </tr>
 
