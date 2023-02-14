@@ -11,7 +11,7 @@ const accordions = document.querySelectorAll(".p-accordion")
 accordions.forEach(accordionContainer => {
   // Set up an event listener on the container so that panels can be added
   // and removed and events do not need to be managed separately.
-  accordionContainer.addEventListener("click", (event) => {
+  accordionContainer.addEventListener("click", event => {
     let target = event.target
 
     if (target) {
