@@ -1,10 +1,10 @@
-const getQueryParams = (key) => {
+const getQueryParams = key => {
   const usp = new URLSearchParams(window.location.search)
   return key ? usp.get(key) : usp
 }
 
 const setActiveTab = (tab, tabs) => {
-  tabs.forEach((tabElement) => {
+  tabs.forEach(tabElement => {
     const tabContent = document.getElementById(tabElement.getAttribute("aria-controls"))
 
     if (tabElement === tab) {
@@ -27,11 +27,11 @@ const setActiveTab = (tab, tabs) => {
 
 // Get the tab containers from the page
 const tabContainers = document.querySelectorAll('[role="tablist"]')
-tabContainers.forEach((tabContainer) => {
+tabContainers.forEach(tabContainer => {
   // Assign click / focus handlers for each of the tab buttons
   let tabs = tabContainer.querySelectorAll("[aria-controls]")
   tabs.forEach((tab, index) => {
-    tab.addEventListener("click", (e) => {
+    tab.addEventListener("click", e => {
       e.preventDefault()
       setActiveTab(tab, tabs)
     })
