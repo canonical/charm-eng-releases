@@ -57,4 +57,6 @@ document.querySelectorAll("table").forEach(table => {
   rows.forEach((r, i) => r.setAttribute("data-index", i))
   const headers = table.querySelectorAll("th[aria-sort]")
   headers.forEach(h => h.addEventListener("click", () => sortTable(h, table)))
+  // Default sort by Latest Releases
+  table.querySelectorAll("th.release[aria-sort]").forEach(rh => sortTable(rh, table))
 })
