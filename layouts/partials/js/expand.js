@@ -34,22 +34,21 @@ toggleAllButton.addEventListener(
   false
 )
 
-// Add control to only show charms in the table
-const toggleCharmsOnly = document.getElementById("toggle-charms-only")
-toggleCharmsOnly.addEventListener(
-  "change",
+// Add textbox to filter repositories
+const tableFilterTextbox = document.getElementById("table-filter-textbox")
+tableFilterTextbox.addEventListener(
+  "input",
   event => {
+    const text = event.target.value
     const repositoryRows = document.querySelectorAll(".repository-row")
-    const target = event.target
-    const isTargetActive = target.getAttribute("active") === "true"
-    // Adjust the text of the toggle button
-    toggleButton(target, !isTargetActive)
+
+    // Escape special regex symbols except '|' to specify ORs
+    const regexp = new RegExp(text.toLowerCase().replace(/[.*+?^${}()[\]\\]/g, "\\$&"))
 
     repositoryRows.forEach(r => {
-      isCharm = r.querySelector(".charmhub-table") !== null
-      if (!isCharm) {
-        r.style.display = r.style.display === "none" ? "" : "none"
-      }
+      const repoName = r.querySelector(".repository-link").textContent
+      const isSelected = regexp.test(repoName)
+      r.style.display = isSelected ? "" : "none"
     })
   },
   false
