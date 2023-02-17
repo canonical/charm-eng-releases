@@ -47,8 +47,7 @@ tableFilterTextbox.addEventListener(
 
     repositoryRows.forEach(r => {
       const repoName = r.querySelector(".repository-link").textContent
-      const isSelected = regexp.test(repoName)
-      r.style.display = isSelected ? "" : "none"
+      r.style.display = regexp.test(repoName) ? "" : "none"
     })
   },
   false
