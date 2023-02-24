@@ -17,11 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: "^1.19"
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -30,11 +25,13 @@ jobs:
 
       - name: Rebuild the site
         run: |
-          go install github.com/jnsgruk/releasegen@latest
-          releasegen > data/repos.json
+          wget -qO releasegen.tar.gz "https://github.com/jnsgruk/releasegen/releases/download/v${RELEASEGEN_VERSION}/releasegen_${RELEASEGEN_VERSION}_linux_x86_64.tar.gz"
+          tar xvzf releasegen.tar.gz
+          ./releasegen > data/repos.json
           hugo --minify
         env:
           RELEASEGEN_TOKEN: ${{ secrets.API_TOKEN }}
+          RELEASEGEN_VERSION: "0.1.5"
 
       - name: Commit changes to data file
         run: |
