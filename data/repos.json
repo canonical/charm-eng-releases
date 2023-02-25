@@ -4402,7 +4402,7 @@
          {
             "name": "magma-access-gateway-operator",
             "default_branch": "main",
-            "new_commits": 17,
+            "new_commits": 0,
             "url": "https://github.com/canonical/magma-access-gateway-operator",
             "releases": [
                {
@@ -5107,37 +5107,18 @@
             "charm": null
          },
          {
-            "name": "spark-rock",
-            "default_branch": "main",
+            "name": "zookeeper-rock",
+            "default_branch": "3.6/stable",
             "new_commits": 0,
-            "url": "https://github.com/canonical/spark-rock",
+            "url": "https://github.com/canonical/zookeeper-rock",
             "releases": null,
             "commits": [
                {
-                  "sha": "aa61711d572a0aad88b5dc1feae65733cca86504",
-                  "author": "Alex Lutay",
-                  "timestamp": 1674123499,
-                  "message": "Switch from whywaita/setup-lxd to canonical/setup-lxd (#3)\n\nRemove no longer necessary manual iptables manipulations.\r\nAlso fix layout for the consistency.\r\n\r\nFixes #2.",
-                  "url": "https://github.com/canonical/spark-rock/commit/aa61711d572a0aad88b5dc1feae65733cca86504"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "charmed-mongodb-snap",
-            "default_branch": "5.0/edge",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/charmed-mongodb-snap",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "0c6576e4d5e30a4da5c403d50624a14a932a055d",
-                  "author": "jarred wilson",
-                  "timestamp": 1677255158,
-                  "message": "Rework hooks to allow for easier integration with ROCK (#5)\n\n* Rework hooks to allow for easier integration with ROCK\r\n\r\n* Add exec to mongod wrapper script\r\n\r\n* Clean up configuration file generation and config",
-                  "url": "https://github.com/canonical/charmed-mongodb-snap/commit/0c6576e4d5e30a4da5c403d50624a14a932a055d"
+                  "sha": "1c209a5923e222998cd6a9b1d017eaca77240bd3",
+                  "author": "welpaolo",
+                  "timestamp": 1677145531,
+                  "message": "Creation of image from Snap (#11)\n\n* Update rockcraft to use snap\r\n\r\n* Update image with obs components",
+                  "url": "https://github.com/canonical/zookeeper-rock/commit/1c209a5923e222998cd6a9b1d017eaca77240bd3"
                }
             ],
             "is_archived": false,
@@ -5338,25 +5319,6 @@
             "charm": null
          },
          {
-            "name": "kafka-bundle",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/kafka-bundle",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "3964b984b50196bc9c3de032610582fa7b5c7bd5",
-                  "author": "jarred wilson",
-                  "timestamp": 1675875542,
-                  "message": "Remove K8s bundles and associated code (#38)\n\n* Remove K8s bundles and associated code\r\n\r\n* Remove vm references with tox and ci",
-                  "url": "https://github.com/canonical/kafka-bundle/commit/3964b984b50196bc9c3de032610582fa7b5c7bd5"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
             "name": "kafka-k8s-bundle",
             "default_branch": "main",
             "new_commits": 0,
@@ -5454,37 +5416,28 @@
             "charm": null
          },
          {
-            "name": "mysql-router-k8s-operator",
+            "name": "mongodb-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/mysql-router-k8s-operator",
+            "new_commits": 1,
+            "url": "https://github.com/canonical/mongodb-k8s-operator",
             "releases": [
                {
-                  "id": 93590294,
-                  "version": "rev14",
-                  "timestamp": 1677250562,
-                  "title": "Revision 14",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:</p>\n\n<ul>\n<li>mysql-router-image\nresource-revision: 1\nReleased to &lsquo;latest/edge&rsquo; at 15:19 UTC on 24 Feb 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Delete integration tests for the integration tox target by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/31\">#31</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-k8s-operator/compare/rev13...rev14\">https://github.com/canonical/mysql-router-k8s-operator/compare/rev13&hellip;rev14</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-router-k8s-operator/releases/tag/rev14",
-                  "compare_url": "https://github.com/canonical/mysql-router-k8s-operator/compare/rev14...main"
+                  "id": 92046435,
+                  "version": "rev18",
+                  "timestamp": 1674733231,
+                  "title": "Revision 18",
+                  "body": "<p>resources:\n    -  mongodb-image: dataplatformoci/mongodb:5.0\n       resource-revision: 4</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:29 UTC on 10 Feb 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependencies by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/100\">#100</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev17...rev18\">https://github.com/canonical/mongodb-k8s-operator/compare/rev17&hellip;rev18</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev18",
+                  "compare_url": "https://github.com/canonical/mongodb-k8s-operator/compare/rev18...main"
                },
                {
-                  "id": 93163320,
-                  "version": "rev13",
-                  "timestamp": 1676985467,
-                  "title": "Revision 13",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:</p>\n\n<ul>\n<li>mysql-router-image\nresource-revision: 1\nReleased to &lsquo;latest/edge&rsquo; at 13:52 UTC on 21 Feb 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix indentation in tox.ini by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/29\">#29</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-k8s-operator/compare/rev12...rev13\">https://github.com/canonical/mysql-router-k8s-operator/compare/rev12&hellip;rev13</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-router-k8s-operator/releases/tag/rev13",
-                  "compare_url": "https://github.com/canonical/mysql-router-k8s-operator/compare/rev13...main"
-               },
-               {
-                  "id": 93096931,
-                  "version": "rev12",
-                  "timestamp": 1676936314,
-                  "title": "Revision 12",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:</p>\n\n<ul>\n<li>mysql-router-image\nresource-revision: 1\nReleased to &lsquo;latest/edge&rsquo; at 23:59 UTC on 20 Feb 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add missing await statements in integration test by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/20\">#20</a></li>\n<li>Fix failing integration-database CI test by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/30\">#30</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-k8s-operator/compare/rev11...rev12\">https://github.com/canonical/mysql-router-k8s-operator/compare/rev11&hellip;rev12</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-router-k8s-operator/releases/tag/rev12",
-                  "compare_url": "https://github.com/canonical/mysql-router-k8s-operator/compare/rev12...main"
+                  "id": 90284866,
+                  "version": "rev17",
+                  "timestamp": 1674724095,
+                  "title": "Revision 17",
+                  "body": "<p>resources:\n    -  mongodb-image: dataplatformoci/mongodb:5.0\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:07 UTC on 26 Jan 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Install poetry as a tox dependency by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/66\">#66</a></li>\n<li>Tests TLS for K8s Charm by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/65\">#65</a></li>\n<li>rework dependency management by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/68\">#68</a></li>\n<li>HA tests - kill and freeze db process by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/67\">#67</a></li>\n<li>HA tests - scale up capablities, scale down capabilities, replication across members, replication member scaling and restart db process tests and CI housekeeping by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/71\">#71</a></li>\n<li>copy recs, config options, and overview by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/81\">#81</a></li>\n<li>Copying over deployment guide from MongoDB-k8s by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/83\">#83</a></li>\n<li>Adding network cut and unique cluster DBs tests by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/79\">#79</a></li>\n<li>Break up CI implementation and add workflow_dispatch by <a href=\"http://github.com/jardon\">@jardon</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/86\">#86</a></li>\n<li>Update dependencies by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/90\">#90</a></li>\n<li>update dependencies by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/94\">#94</a></li>\n<li>Add CI/CD pipeline to publish on charmhub.io by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/95\">#95</a></li>\n<li>Change OCI image to new ROCK by <a href=\"http://github.com/jardon\">@jardon</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/87\">#87</a></li>\n<li>update to jammy by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/98\">#98</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dragomirp\">@dragomirp</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/66\">#66</a></li>\n<li><a href=\"http://github.com/delgod\">@delgod</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/68\">#68</a></li>\n<li><a href=\"http://github.com/jardon\">@jardon</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/86\">#86</a></li>\n<li><a href=\"http://github.com/taurus-forever\">@taurus-forever</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/95\">#95</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/commits/rev17\">https://github.com/canonical/mongodb-k8s-operator/commits/rev17</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev17",
+                  "compare_url": "https://github.com/canonical/mongodb-k8s-operator/compare/rev17...main"
                }
             ],
             "commits": null,
@@ -5570,40 +5523,23 @@
             "charm": null
          },
          {
-            "name": "mysql-k8s-bundle",
+            "name": "charmed-kafka-snap",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/mysql-k8s-bundle",
+            "url": "https://github.com/canonical/charmed-kafka-snap",
             "releases": null,
             "commits": [
                {
-                  "sha": "1200201d89f8a50462fddc934e8f6c53ae059250",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1677082666,
-                  "message": "Add workflow name to sync_issue_to_jira.yaml (#25)",
-                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/1200201d89f8a50462fddc934e8f6c53ae059250"
+                  "sha": "75b81a0d7574e30bede72a2791e2abb4915509d4",
+                  "author": "marcoppenheimer",
+                  "timestamp": 1677230955,
+                  "message": "CI/CD: fix packages upgrade, remove unnecessary GH workflow, archive snapcraft logs (#16)\n\n* cicd: debug charmcraft publish logs\r\n\r\n* Fix charmcraft => snapcraft + bump upload-artifact v2=>v3\r\n\r\n* Remove GH CI on_pull_request.yaml as ci.yaml has on.pull_request\r\n\r\nOtherwise tests are being executed twice\r\n\r\n* Use DEBIAN_FRONTEND=noninteractive to upgrade base image\r\n\r\nOtherwise GH CI may fail:\r\n> sudo apt-get upgrade --yes\r\n...\r\n> dpkg: error processing package grub-efi-amd64-signed (--configure):\r\n> installed grub-efi-amd64-signed package post-installation script subprocess returned error exit status 32\r\n...\r\n> Errors were encountered while processing:\r\n>  grub-efi-amd64-signed\r\n> needrestart is being skipped since dpkg has failed\r\n> E: Sub-process /usr/bin/dpkg returned an error code (1)\r\n> Error: Process completed with exit code 100.\r\n\r\n* Hold grub-efi-amd64-signed grub-efi-amd64-bin on GH runner upgrade\r\n\r\nOtherwise it is failing as GH runner has no esp flag on efi partition:\r\n> Setting up grub-efi-amd64-signed (1.187.3~22.04.1+2.06-2ubuntu14.1) ...\r\n> mount: /var/lib/grub/esp: special device /dev/disk/by-id/scsi-14d534654202020200690df035523a242afc173af9e57f2a4-part15 does not exist.\r\n> dpkg: error processing package grub-efi-amd64-signed (--configure):\r\n>  installed grub-efi-amd64-signed package post-installation script subprocess returned error exit status 32\r\n\r\nCo-authored-by: Alex Lutay <1928266+taurus-forever@users.noreply.github.com>",
+                  "url": "https://github.com/canonical/charmed-kafka-snap/commit/75b81a0d7574e30bede72a2791e2abb4915509d4"
                }
             ],
             "is_archived": false,
             "ci_actions": null,
-            "charm": {
-               "name": "mysql-k8s-bundle",
-               "url": "https://charmhub.io/mysql-k8s-bundle",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 20,
-                     "timestamp": 1675889653
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "charm": null
          },
          {
             "name": "mysql-k8s-operator",
@@ -5703,28 +5639,37 @@
             "charm": null
          },
          {
-            "name": "mongodb-k8s-operator",
+            "name": "mysql-router-k8s-operator",
             "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/mongodb-k8s-operator",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/mysql-router-k8s-operator",
             "releases": [
                {
-                  "id": 92046435,
-                  "version": "rev18",
-                  "timestamp": 1674733231,
-                  "title": "Revision 18",
-                  "body": "<p>resources:\n    -  mongodb-image: dataplatformoci/mongodb:5.0\n       resource-revision: 4</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:29 UTC on 10 Feb 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependencies by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/100\">#100</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev17...rev18\">https://github.com/canonical/mongodb-k8s-operator/compare/rev17&hellip;rev18</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev18",
-                  "compare_url": "https://github.com/canonical/mongodb-k8s-operator/compare/rev18...main"
+                  "id": 93590294,
+                  "version": "rev14",
+                  "timestamp": 1677250562,
+                  "title": "Revision 14",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:</p>\n\n<ul>\n<li>mysql-router-image\nresource-revision: 1\nReleased to &lsquo;latest/edge&rsquo; at 15:19 UTC on 24 Feb 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Delete integration tests for the integration tox target by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/31\">#31</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-k8s-operator/compare/rev13...rev14\">https://github.com/canonical/mysql-router-k8s-operator/compare/rev13&hellip;rev14</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-router-k8s-operator/releases/tag/rev14",
+                  "compare_url": "https://github.com/canonical/mysql-router-k8s-operator/compare/rev14...main"
                },
                {
-                  "id": 90284866,
-                  "version": "rev17",
-                  "timestamp": 1674724095,
-                  "title": "Revision 17",
-                  "body": "<p>resources:\n    -  mongodb-image: dataplatformoci/mongodb:5.0\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:07 UTC on 26 Jan 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Install poetry as a tox dependency by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/66\">#66</a></li>\n<li>Tests TLS for K8s Charm by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/65\">#65</a></li>\n<li>rework dependency management by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/68\">#68</a></li>\n<li>HA tests - kill and freeze db process by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/67\">#67</a></li>\n<li>HA tests - scale up capablities, scale down capabilities, replication across members, replication member scaling and restart db process tests and CI housekeeping by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/71\">#71</a></li>\n<li>copy recs, config options, and overview by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/81\">#81</a></li>\n<li>Copying over deployment guide from MongoDB-k8s by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/83\">#83</a></li>\n<li>Adding network cut and unique cluster DBs tests by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/79\">#79</a></li>\n<li>Break up CI implementation and add workflow_dispatch by <a href=\"http://github.com/jardon\">@jardon</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/86\">#86</a></li>\n<li>Update dependencies by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/90\">#90</a></li>\n<li>update dependencies by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/94\">#94</a></li>\n<li>Add CI/CD pipeline to publish on charmhub.io by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/95\">#95</a></li>\n<li>Change OCI image to new ROCK by <a href=\"http://github.com/jardon\">@jardon</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/87\">#87</a></li>\n<li>update to jammy by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/98\">#98</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dragomirp\">@dragomirp</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/66\">#66</a></li>\n<li><a href=\"http://github.com/delgod\">@delgod</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/68\">#68</a></li>\n<li><a href=\"http://github.com/jardon\">@jardon</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/86\">#86</a></li>\n<li><a href=\"http://github.com/taurus-forever\">@taurus-forever</a> made their first contribution in <a href=\"https://github.com/canonical/mongodb-k8s-operator/pull/95\">#95</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/commits/rev17\">https://github.com/canonical/mongodb-k8s-operator/commits/rev17</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev17",
-                  "compare_url": "https://github.com/canonical/mongodb-k8s-operator/compare/rev17...main"
+                  "id": 93163320,
+                  "version": "rev13",
+                  "timestamp": 1676985467,
+                  "title": "Revision 13",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:</p>\n\n<ul>\n<li>mysql-router-image\nresource-revision: 1\nReleased to &lsquo;latest/edge&rsquo; at 13:52 UTC on 21 Feb 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix indentation in tox.ini by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/29\">#29</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-k8s-operator/compare/rev12...rev13\">https://github.com/canonical/mysql-router-k8s-operator/compare/rev12&hellip;rev13</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-router-k8s-operator/releases/tag/rev13",
+                  "compare_url": "https://github.com/canonical/mysql-router-k8s-operator/compare/rev13...main"
+               },
+               {
+                  "id": 93096931,
+                  "version": "rev12",
+                  "timestamp": 1676936314,
+                  "title": "Revision 12",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:</p>\n\n<ul>\n<li>mysql-router-image\nresource-revision: 1\nReleased to &lsquo;latest/edge&rsquo; at 23:59 UTC on 20 Feb 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add missing await statements in integration test by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/20\">#20</a></li>\n<li>Fix failing integration-database CI test by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/30\">#30</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-k8s-operator/compare/rev11...rev12\">https://github.com/canonical/mysql-router-k8s-operator/compare/rev11&hellip;rev12</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-router-k8s-operator/releases/tag/rev12",
+                  "compare_url": "https://github.com/canonical/mysql-router-k8s-operator/compare/rev12...main"
                }
             ],
             "commits": null,
@@ -5733,75 +5678,40 @@
             "charm": null
          },
          {
-            "name": "charmed-kafka-snap",
+            "name": "mysql-router-operator",
             "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/charmed-kafka-snap",
-            "releases": null,
-            "commits": [
+            "new_commits": 5,
+            "url": "https://github.com/canonical/mysql-router-operator",
+            "releases": [
                {
-                  "sha": "75b81a0d7574e30bede72a2791e2abb4915509d4",
-                  "author": "marcoppenheimer",
-                  "timestamp": 1677230955,
-                  "message": "CI/CD: fix packages upgrade, remove unnecessary GH workflow, archive snapcraft logs (#16)\n\n* cicd: debug charmcraft publish logs\r\n\r\n* Fix charmcraft => snapcraft + bump upload-artifact v2=>v3\r\n\r\n* Remove GH CI on_pull_request.yaml as ci.yaml has on.pull_request\r\n\r\nOtherwise tests are being executed twice\r\n\r\n* Use DEBIAN_FRONTEND=noninteractive to upgrade base image\r\n\r\nOtherwise GH CI may fail:\r\n> sudo apt-get upgrade --yes\r\n...\r\n> dpkg: error processing package grub-efi-amd64-signed (--configure):\r\n> installed grub-efi-amd64-signed package post-installation script subprocess returned error exit status 32\r\n...\r\n> Errors were encountered while processing:\r\n>  grub-efi-amd64-signed\r\n> needrestart is being skipped since dpkg has failed\r\n> E: Sub-process /usr/bin/dpkg returned an error code (1)\r\n> Error: Process completed with exit code 100.\r\n\r\n* Hold grub-efi-amd64-signed grub-efi-amd64-bin on GH runner upgrade\r\n\r\nOtherwise it is failing as GH runner has no esp flag on efi partition:\r\n> Setting up grub-efi-amd64-signed (1.187.3~22.04.1+2.06-2ubuntu14.1) ...\r\n> mount: /var/lib/grub/esp: special device /dev/disk/by-id/scsi-14d534654202020200690df035523a242afc173af9e57f2a4-part15 does not exist.\r\n> dpkg: error processing package grub-efi-amd64-signed (--configure):\r\n>  installed grub-efi-amd64-signed package post-installation script subprocess returned error exit status 32\r\n\r\nCo-authored-by: Alex Lutay <1928266+taurus-forever@users.noreply.github.com>",
-                  "url": "https://github.com/canonical/charmed-kafka-snap/commit/75b81a0d7574e30bede72a2791e2abb4915509d4"
+                  "id": 84173639,
+                  "version": "rev60",
+                  "timestamp": 1669373181,
+                  "title": "Revision 60",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;dpe/edge&rsquo; at 11:09 UTC on 25 Nov 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enable GR notifications by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mysql-router-operator/pull/13\">#13</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dragomirp\">@dragomirp</a> made their first contribution in <a href=\"https://github.com/canonical/mysql-router-operator/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-operator/compare/rev59...rev60\">https://github.com/canonical/mysql-router-operator/compare/rev59&hellip;rev60</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-router-operator/releases/tag/rev60",
+                  "compare_url": "https://github.com/canonical/mysql-router-operator/compare/rev60...main"
+               },
+               {
+                  "id": 83762440,
+                  "version": "rev59",
+                  "timestamp": 1668515205,
+                  "title": "Revision 59",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;dpe/edge&rsquo; at 15:05 UTC on 21 Nov 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Escape database identifiers with backticks by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-router-operator/pull/11\">#11</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-operator/compare/rev44...rev59\">https://github.com/canonical/mysql-router-operator/compare/rev44&hellip;rev59</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-router-operator/releases/tag/rev59",
+                  "compare_url": "https://github.com/canonical/mysql-router-operator/compare/rev59...main"
+               },
+               {
+                  "id": 79296459,
+                  "version": "rev44",
+                  "timestamp": 1665164517,
+                  "title": "Revision 44",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;dpe/edge&rsquo; at 18:07 UTC on 7 Oct 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add CI workflow dependency + import integration test CI workflows by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-router-operator/pull/10\">#10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-operator/compare/rev42...rev44\">https://github.com/canonical/mysql-router-operator/compare/rev42&hellip;rev44</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-router-operator/releases/tag/rev44",
+                  "compare_url": "https://github.com/canonical/mysql-router-operator/compare/rev44...main"
                }
             ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "postgresql-k8s-bundle",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/postgresql-k8s-bundle",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "d1c61fd19979ba6c2976bafb87d8b84ccd0e2104",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1676985902,
-                  "message": "Cache charmcraft pack container, skip unstable tests except on schedule (#28)",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/d1c61fd19979ba6c2976bafb87d8b84ccd0e2104"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": {
-               "name": "postgresql-k8s-bundle",
-               "url": "https://charmhub.io/postgresql-k8s-bundle",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 12,
-                     "timestamp": 1674813618
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
-         },
-         {
-            "name": "mysql-server-snap",
-            "default_branch": "8.0/stable",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/mysql-server-snap",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "32ec32bcbd36c03e0954969abda7836487bd9946",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1677082652,
-                  "message": "Add workflow name to sync_issue_to_jira.yaml (#4)",
-                  "url": "https://github.com/canonical/mysql-server-snap/commit/32ec32bcbd36c03e0954969abda7836487bd9946"
-               }
-            ],
+            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -5844,6 +5754,61 @@
             "is_archived": false,
             "ci_actions": null,
             "charm": null
+         },
+         {
+            "name": "charmed-mongodb-snap",
+            "default_branch": "5.0/edge",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/charmed-mongodb-snap",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "0c6576e4d5e30a4da5c403d50624a14a932a055d",
+                  "author": "jarred wilson",
+                  "timestamp": 1677255158,
+                  "message": "Rework hooks to allow for easier integration with ROCK (#5)\n\n* Rework hooks to allow for easier integration with ROCK\r\n\r\n* Add exec to mongod wrapper script\r\n\r\n* Clean up configuration file generation and config",
+                  "url": "https://github.com/canonical/charmed-mongodb-snap/commit/0c6576e4d5e30a4da5c403d50624a14a932a055d"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "mysql-k8s-bundle",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/mysql-k8s-bundle",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "1200201d89f8a50462fddc934e8f6c53ae059250",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1677082666,
+                  "message": "Add workflow name to sync_issue_to_jira.yaml (#25)",
+                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/1200201d89f8a50462fddc934e8f6c53ae059250"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": {
+               "name": "mysql-k8s-bundle",
+               "url": "https://charmhub.io/mysql-k8s-bundle",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 20,
+                     "timestamp": 1675889653
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            }
          },
          {
             "name": "opensearch-snap",
@@ -6001,23 +5966,40 @@
             "charm": null
          },
          {
-            "name": "charmed-kafka-rock",
+            "name": "postgresql-k8s-bundle",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/charmed-kafka-rock",
+            "url": "https://github.com/canonical/postgresql-k8s-bundle",
             "releases": null,
             "commits": [
                {
-                  "sha": "02a376807f7d37164af673b43afad61119164e7c",
-                  "author": "welpaolo",
-                  "timestamp": 1676627448,
-                  "message": "Remove integration test to publish charm (#2)\n\n* Remove integration test to publish image",
-                  "url": "https://github.com/canonical/charmed-kafka-rock/commit/02a376807f7d37164af673b43afad61119164e7c"
+                  "sha": "d1c61fd19979ba6c2976bafb87d8b84ccd0e2104",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1676985902,
+                  "message": "Cache charmcraft pack container, skip unstable tests except on schedule (#28)",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/d1c61fd19979ba6c2976bafb87d8b84ccd0e2104"
                }
             ],
             "is_archived": false,
             "ci_actions": null,
-            "charm": null
+            "charm": {
+               "name": "postgresql-k8s-bundle",
+               "url": "https://charmhub.io/postgresql-k8s-bundle",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 12,
+                     "timestamp": 1674813618
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            }
          },
          {
             "name": "postgresql-k8s-operator",
@@ -6293,40 +6275,20 @@
             "charm": null
          },
          {
-            "name": "mysql-router-operator",
+            "name": "spark-rock",
             "default_branch": "main",
-            "new_commits": 5,
-            "url": "https://github.com/canonical/mysql-router-operator",
-            "releases": [
+            "new_commits": 0,
+            "url": "https://github.com/canonical/spark-rock",
+            "releases": null,
+            "commits": [
                {
-                  "id": 84173639,
-                  "version": "rev60",
-                  "timestamp": 1669373181,
-                  "title": "Revision 60",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;dpe/edge&rsquo; at 11:09 UTC on 25 Nov 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enable GR notifications by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/mysql-router-operator/pull/13\">#13</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dragomirp\">@dragomirp</a> made their first contribution in <a href=\"https://github.com/canonical/mysql-router-operator/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-operator/compare/rev59...rev60\">https://github.com/canonical/mysql-router-operator/compare/rev59&hellip;rev60</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-router-operator/releases/tag/rev60",
-                  "compare_url": "https://github.com/canonical/mysql-router-operator/compare/rev60...main"
-               },
-               {
-                  "id": 83762440,
-                  "version": "rev59",
-                  "timestamp": 1668515205,
-                  "title": "Revision 59",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;dpe/edge&rsquo; at 15:05 UTC on 21 Nov 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Escape database identifiers with backticks by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-router-operator/pull/11\">#11</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-operator/compare/rev44...rev59\">https://github.com/canonical/mysql-router-operator/compare/rev44&hellip;rev59</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-router-operator/releases/tag/rev59",
-                  "compare_url": "https://github.com/canonical/mysql-router-operator/compare/rev59...main"
-               },
-               {
-                  "id": 79296459,
-                  "version": "rev44",
-                  "timestamp": 1665164517,
-                  "title": "Revision 44",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;dpe/edge&rsquo; at 18:07 UTC on 7 Oct 2022</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add CI workflow dependency + import integration test CI workflows by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-router-operator/pull/10\">#10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-router-operator/compare/rev42...rev44\">https://github.com/canonical/mysql-router-operator/compare/rev42&hellip;rev44</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-router-operator/releases/tag/rev44",
-                  "compare_url": "https://github.com/canonical/mysql-router-operator/compare/rev44...main"
+                  "sha": "aa61711d572a0aad88b5dc1feae65733cca86504",
+                  "author": "Alex Lutay",
+                  "timestamp": 1674123499,
+                  "message": "Switch from whywaita/setup-lxd to canonical/setup-lxd (#3)\n\nRemove no longer necessary manual iptables manipulations.\r\nAlso fix layout for the consistency.\r\n\r\nFixes #2.",
+                  "url": "https://github.com/canonical/spark-rock/commit/aa61711d572a0aad88b5dc1feae65733cca86504"
                }
             ],
-            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -6429,18 +6391,18 @@
             "charm": null
          },
          {
-            "name": "zookeeper-rock",
-            "default_branch": "3.6/stable",
+            "name": "mysql-server-snap",
+            "default_branch": "8.0/stable",
             "new_commits": 0,
-            "url": "https://github.com/canonical/zookeeper-rock",
+            "url": "https://github.com/canonical/mysql-server-snap",
             "releases": null,
             "commits": [
                {
-                  "sha": "1c209a5923e222998cd6a9b1d017eaca77240bd3",
-                  "author": "welpaolo",
-                  "timestamp": 1677145531,
-                  "message": "Creation of image from Snap (#11)\n\n* Update rockcraft to use snap\r\n\r\n* Update image with obs components",
-                  "url": "https://github.com/canonical/zookeeper-rock/commit/1c209a5923e222998cd6a9b1d017eaca77240bd3"
+                  "sha": "32ec32bcbd36c03e0954969abda7836487bd9946",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1677082652,
+                  "message": "Add workflow name to sync_issue_to_jira.yaml (#4)",
+                  "url": "https://github.com/canonical/mysql-server-snap/commit/32ec32bcbd36c03e0954969abda7836487bd9946"
                }
             ],
             "is_archived": false,
