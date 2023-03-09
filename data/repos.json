@@ -5366,6 +5366,15 @@
             "url": "https://github.com/canonical/data-platform-libs",
             "releases": [
                {
+                  "id": 95056859,
+                  "version": "rev18",
+                  "timestamp": 1678360979,
+                  "title": "Revision 18",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:45 UTC on 9 Mar 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix typo Kakfa -&gt; Kafka by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/data-platform-libs/pull/50\">#50</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-libs/compare/rev17...rev18\">https://github.com/canonical/data-platform-libs/compare/rev17&hellip;rev18</a></p>\n",
+                  "url": "https://github.com/canonical/data-platform-libs/releases/tag/rev18",
+                  "compare_url": "https://github.com/canonical/data-platform-libs/compare/rev18...main"
+               },
+               {
                   "id": 94843709,
                   "version": "rev17",
                   "timestamp": 1678227358,
@@ -5382,15 +5391,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:00 UTC on 3 Mar 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bump juju to 2.9.38, libjuju to 2.9.38.1 and remove flake8 pinning by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/data-platform-libs/pull/49\">#49</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-libs/compare/rev15...rev16\">https://github.com/canonical/data-platform-libs/compare/rev15&hellip;rev16</a></p>\n",
                   "url": "https://github.com/canonical/data-platform-libs/releases/tag/rev16",
                   "compare_url": "https://github.com/canonical/data-platform-libs/compare/rev16...main"
-               },
-               {
-                  "id": 92918455,
-                  "version": "rev15",
-                  "timestamp": 1676734457,
-                  "title": "Revision 15",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:06 UTC on 18 Feb 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[ISSUE-45] Update documentation and data_interface library dependency by <a href=\"http://github.com/deusebio\">@deusebio</a> in <a href=\"https://github.com/canonical/data-platform-libs/pull/46\">#46</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-libs/compare/rev14...rev15\">https://github.com/canonical/data-platform-libs/compare/rev14&hellip;rev15</a></p>\n",
-                  "url": "https://github.com/canonical/data-platform-libs/releases/tag/rev15",
-                  "compare_url": "https://github.com/canonical/data-platform-libs/compare/rev15...main"
                }
             ],
             "commits": null,
@@ -5677,11 +5677,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "5412c620082d3fde3f4e83f03f06c501489624a1",
+                  "sha": "6a85ef5518abeec7ef9b13dfb484795b8f49596a",
                   "author": "Alex Lutay",
-                  "timestamp": 1678296440,
-                  "message": "Switch to mysql-test-app and improve the test (#30)\n\n* Switch to mysql-test-app and improve the test\r\n\r\nDo not fail on 5 minutes timeout if mysql cluster is slow to start on GH.\r\n\r\n* fix lint\r\n\r\n* Disable caching as no more charm to build here\r\n\r\nAlso switch to Juju 2.9.38 as we are not scaling down app.\r\n\r\n* Remove caching leftovers and unnecessary pinning\r\n\r\n* specify channel for test app (edge only for now)\r\n\r\n* Bump Juju agent to the latest 2.9.42",
-                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/5412c620082d3fde3f4e83f03f06c501489624a1"
+                  "timestamp": 1678361505,
+                  "message": "Update reviewers list and add workflow_dispatch (#34)\n\n* Assign new PRs to the team and not hardcoded users list\r\n\r\nAlso update GH workflow name to make it shorter\r\non the badge => on https://releases.juju.is/\r\n\r\n* Add workflow_dispatch to trigger bundle update on request",
+                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/6a85ef5518abeec7ef9b13dfb484795b8f49596a"
                }
             ],
             "is_archived": false,
@@ -5693,8 +5693,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 26,
-                     "timestamp": 1678220346
+                     "revision": 27,
+                     "timestamp": 1678362499
                   }
                ],
                "channels": [
@@ -5785,7 +5785,7 @@
          {
             "name": "mysql-router-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/mysql-router-k8s-operator",
             "releases": [
                {
@@ -6119,11 +6119,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "7e175df959b371abb03e7da2eb629394da093189",
+                  "sha": "62cfef0aeca3224d2295c1d6a66e50cd48765ec9",
                   "author": "Alex Lutay",
-                  "timestamp": 1678112057,
-                  "message": "Fix check-libs, update libraries and reviewers, bump versions (#32)\n\n* Fix check-libs, list of reviwers, bump versions\r\n\r\nOtherwise GH CI/CD failing due to missing 'secrets: inherit':\r\n> charmcraft 2.2.0 from Canonical** installed\r\n> /snap/bin/charmcraft fetch-lib\r\n> No keyring found to store or retrieve credentials from.\r\n> Full execution log: '/home/runner/.local/state/charmcraft/log/charmcraft-20230302-123159.495395.log'\r\n\r\n* Update library pgbouncer_k8s.pgb\r\n\r\n* Bump ops, juju version and remove flake8 pinning\r\n\r\n* Update test app and dependencies to jammy + switch to new library\r\n\r\n* Update libs and deps\r\n\r\n(cherry picked from commit bfabc5114ad8c9a8606dbe3d3417fa8d44fec732)\r\n\r\n* Update application charm series in tests\r\n\r\n* Copy over postgresql-k8s test for blocking discourse\r\n\r\n* Clean pgb test application\r\n\r\n* Removed unnecessary resource (leftover from cherry-pick conflict resolution)\r\n\r\n---------\r\n\r\nCo-authored-by: Dragomir Penev <dragomir.penev@canonical.com>\r\nCo-authored-by: Marcelo Henrique Neppel <marcelo.neppel@canonical.com>",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/7e175df959b371abb03e7da2eb629394da093189"
+                  "timestamp": 1678361384,
+                  "message": "Update bundles (#34)",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/62cfef0aeca3224d2295c1d6a66e50cd48765ec9"
                }
             ],
             "is_archived": false,
@@ -6150,7 +6150,7 @@
          {
             "name": "postgresql-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
                {
@@ -6189,7 +6189,7 @@
          {
             "name": "postgresql-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/postgresql-operator",
             "releases": [
                {
