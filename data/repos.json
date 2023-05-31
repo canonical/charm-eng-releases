@@ -3230,11 +3230,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "31a382e8e317bc37df91eec2a2e5ed91e9530128",
-                  "author": "Andrew Scribner",
-                  "timestamp": 1682029750,
-                  "message": "feat: add KRH.delete, KRH.reconcile, and supporting helpers/tests (#51)\n\n* feat: add KRH.delete, KRH.reconcile, and supporting helpers/tests\r\n\r\nAdded here are features tracking, managing, and removing resources from previous executions.  This commit includes:\r\n* new inputs `labels` and `child_resource_types` for KRH, to help with managing resources deployed previously\r\n* KRH.get_deployed_resources(), which finds previously deployed resources in a cluster that are \"owned\" by this instantiation of KRH\r\n* KRH.delete(), which deletes previously deployed resources\r\n* KRH.reconcile(), which reconciles (deletes, modifies, and creates) previous resources to match the current desired state",
-                  "url": "https://github.com/canonical/charmed-kubeflow-chisme/commit/31a382e8e317bc37df91eec2a2e5ed91e9530128"
+                  "sha": "ff557d14a043f6dc997cef074b4db372f5124333",
+                  "author": "Daniela Plascencia",
+                  "timestamp": 1685547969,
+                  "message": "feat: version bump 0.0.8->0.0.9 (#55)",
+                  "url": "https://github.com/canonical/charmed-kubeflow-chisme/commit/ff557d14a043f6dc997cef074b4db372f5124333"
                }
             ],
             "is_archived": false,
@@ -4748,7 +4748,7 @@
          {
             "name": "kratos-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/kratos-operator",
             "releases": [
                {
@@ -6393,11 +6393,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "ab6930cb38935294fbf1a52dbc5db02705506386",
+                  "sha": "d2260ebefb0af5eed273134158fc353099416b03",
                   "author": "Dragomir Penev",
-                  "timestamp": 1684506809,
-                  "message": "[DPE-1648] Snap changes for pgbouncer charm (#10)\n\n* Create dirs for pgb\r\n\r\n* Add app for pgb charm service\r\n\r\n* Add config dir for pgb\r\n\r\n* Add network plugs",
-                  "url": "https://github.com/canonical/charmed-postgresql-snap/commit/ab6930cb38935294fbf1a52dbc5db02705506386"
+                  "timestamp": 1685547671,
+                  "message": "[DPE-1778] PGB COS integration (#12)\n\n* PGB COS integration WIP\r\n\r\n* Switch to community pgb exporter\r\n\r\n* Exec setprivs for pgbouncer",
+                  "url": "https://github.com/canonical/charmed-postgresql-snap/commit/d2260ebefb0af5eed273134158fc353099416b03"
                }
             ],
             "is_archived": false,
@@ -6909,9 +6909,18 @@
          {
             "name": "pgbouncer-k8s-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
+               {
+                  "id": 105556818,
+                  "version": "rev46",
+                  "timestamp": 1685542901,
+                  "title": "Revision 46",
+                  "body": "<p>Released to 1/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;pgbouncer-image&rsquo;, &lsquo;revision&rsquo;: 41}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update Python dependencies by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/pgbouncer-k8s-operator/pull/86\">#86</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-k8s-operator/compare/rev45...rev46\">https://github.com/canonical/pgbouncer-k8s-operator/compare/rev45&hellip;rev46</a></p>\n",
+                  "url": "https://github.com/canonical/pgbouncer-k8s-operator/releases/tag/rev46",
+                  "compare_url": "https://github.com/canonical/pgbouncer-k8s-operator/compare/rev46...main"
+               },
                {
                   "id": 104456859,
                   "version": "rev45",
@@ -6929,15 +6938,6 @@
                   "body": "<p>Released to 1/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;pgbouncer-image&rsquo;, &lsquo;revision&rsquo;: 39}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency coverage to v7.2.5 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/pgbouncer-k8s-operator/pull/83\">#83</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-k8s-operator/compare/rev43...rev44\">https://github.com/canonical/pgbouncer-k8s-operator/compare/rev43&hellip;rev44</a></p>\n",
                   "url": "https://github.com/canonical/pgbouncer-k8s-operator/releases/tag/rev44",
                   "compare_url": "https://github.com/canonical/pgbouncer-k8s-operator/compare/rev44...main"
-               },
-               {
-                  "id": 101252699,
-                  "version": "rev43",
-                  "timestamp": 1682673109,
-                  "title": "Revision 43",
-                  "body": "<p>Released to 1/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;pgbouncer-image&rsquo;, &lsquo;revision&rsquo;: 38}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update Python dependencies by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/pgbouncer-k8s-operator/pull/82\">#82</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-k8s-operator/compare/rev42...rev43\">https://github.com/canonical/pgbouncer-k8s-operator/compare/rev42&hellip;rev43</a></p>\n",
-                  "url": "https://github.com/canonical/pgbouncer-k8s-operator/releases/tag/rev43",
-                  "compare_url": "https://github.com/canonical/pgbouncer-k8s-operator/compare/rev43...main"
                }
             ],
             "commits": null,
