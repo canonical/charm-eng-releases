@@ -3,9 +3,13 @@
     <tr>
       <th aria-sort="" class="repository">Repository</th>
       <th aria-sort="" class="release">Latest Releases/Commit</th>
+      {{- if .team.repos -}}
       <th class="u-align--center ciactions" {{- if eq (len (where .team.repos ".ci_actions" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>Status</th>
+      {{- end -}}
       <th aria-sort="" class="u-align--right status" style="max-width: 15%">Commits Since</th>
+      {{- if .team.repos -}}
       <th class="u-align--right showmore" style="max-width: 10%" {{- if eq (len (where .team.repos ".charm" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}><i class="p-icon--information"></i>&emsp;&nbsp;&nbsp;</th>
+      {{- end -}}
       <th aria-hidden="true"><!-- cell for expandable rows --></th>
     </tr>
   </thead>
