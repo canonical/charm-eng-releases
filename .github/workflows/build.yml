@@ -22,7 +22,7 @@ jobs:
         with:
           hugo-version: "latest"
           extended: true
-      
+
       - name: Baseline API rate limit
         run: gh api rate_limit
         env:
@@ -37,7 +37,16 @@ jobs:
         env:
           RELEASEGEN_TOKEN: ${{ secrets.API_TOKEN }}
           RELEASEGEN_VERSION: "0.1.8"
-      
+
+      - name: Debug broken data.json
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: data-json
+          if-no-files-found: error
+          path: |
+            data/repos.json
+
       - name: Post-update API rate limit usage
         run: gh api rate_limit
         env:
