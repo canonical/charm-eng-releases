@@ -113,7 +113,9 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": null,
+            "ci_actions": [
+               "https://github.com/canonical/identity-platform-login-ui/actions/workflows/ci.yaml"
+            ],
             "charm": null
          },
          {
@@ -552,7 +554,7 @@
          {
             "name": "candid",
             "default_branch": "master",
-            "new_commits": 0,
+            "new_commits": 84,
             "url": "https://github.com/canonical/candid",
             "releases": [
                {
@@ -711,38 +713,34 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "trino-k8s-operator",
-            "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/trino-k8s-operator",
-            "releases": [
-               {
-                  "id": 115925627,
-                  "version": "rev3",
-                  "timestamp": 1691669731,
-                  "title": "Revision 3",
-                  "body": "<p>resources:\n    -  trino-image: trinodb/trino:418\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:08 UTC on 10 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-5072 add web-proxy as a config value by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/16\">#16</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev2...rev3\">https://github.com/canonical/trino-k8s-operator/compare/rev2&hellip;rev3</a></p>\n",
-                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev3",
-                  "compare_url": "https://github.com/canonical/trino-k8s-operator/compare/rev3...main"
-               },
-               {
-                  "id": 114798870,
-                  "version": "rev2",
-                  "timestamp": 1690552906,
-                  "title": "Revision 2",
-                  "body": "<p>resources:\n    -  trino-image: trinodb/trino:418\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:06 UTC on 2 Aug 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 11:11 UTC on 2 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-3985 Initial Trino charm skeleton by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/1\">#1</a></li>\n<li>CSS-4170 Add TLS relation and Ranger plugin by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/3\">#3</a></li>\n<li>CSS-4606 Make TLS a requirement for Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/6\">#6</a></li>\n<li>CSS-3986 Ingress relation for Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/5\">#5</a></li>\n<li>CSS-4682 Enable additional connectors to be integrated with Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/7\">#7</a></li>\n<li>CSS-3988 Introduce integration testing to Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/8\">#8</a></li>\n<li>CSS-4868 add basic unit tests by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/11\">#11</a></li>\n<li>CSS-3990 Improve documentation and add icon for charmhub by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/14\">#14</a></li>\n<li>CSS-3989 CI/CD workflow formatting, unit and integration tests by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/13\">#13</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> made their first contribution in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/commits/rev2\">https://github.com/canonical/trino-k8s-operator/commits/rev2</a></p>\n",
-                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev2",
-                  "compare_url": "https://github.com/canonical/trino-k8s-operator/compare/rev2...main"
-               }
+            "ci_actions": [
+               "https://github.com/canonical/temporal-worker-k8s-operator/actions/workflows/test_and_publish_charm.yaml"
             ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
+            "charm": {
+               "name": "temporal-worker-k8s",
+               "url": "https://charmhub.io/temporal-worker-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 5,
+                     "timestamp": 1692789971
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 6,
+                     "timestamp": 1692881592
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            }
          },
          {
             "name": "temporal-ui-k8s-operator",
@@ -780,8 +778,34 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": null,
-            "charm": null
+            "ci_actions": [
+               "https://github.com/canonical/temporal-ui-k8s-operator/actions/workflows/test_and_publish_charm.yaml"
+            ],
+            "charm": {
+               "name": "temporal-ui-k8s",
+               "url": "https://charmhub.io/temporal-ui-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 8,
+                     "timestamp": 1687786386
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 8,
+                     "timestamp": 1686764825
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            }
          },
          {
             "name": "temporal-k8s-operator",
@@ -819,8 +843,34 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": null,
-            "charm": null
+            "ci_actions": [
+               "https://github.com/canonical/temporal-k8s-operator/actions/workflows/test_and_publish_charm.yaml"
+            ],
+            "charm": {
+               "name": "temporal-k8s",
+               "url": "https://charmhub.io/temporal-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 9,
+                     "timestamp": 1687332002
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 9,
+                     "timestamp": 1685874146
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            }
          },
          {
             "name": "temporal-admin-k8s-operator",
@@ -854,6 +904,55 @@
                   "body": "<p>resources:\n    -  temporal-admin-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:23 UTC on 24 Mar 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-2295 Initial structure for the admin charm by <a href=\"http://github.com/frankban\">@frankban</a> in <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/1\">#1</a></li>\n<li>SS-2298 Initialize db schemas by <a href=\"http://github.com/frankban\">@frankban</a> in <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/2\">#2</a></li>\n<li>CSS-3214: Add tctl action and integration test by <a href=\"http://github.com/kelkawi-a\">@kelkawi-a</a> in <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/4\">#4</a></li>\n<li>CSS-3166: add ci/cd actions and modify integration test by <a href=\"http://github.com/kelkawi-a\">@kelkawi-a</a> in <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/5\">#5</a></li>\n<li>CSS-3425: Add CI/CD operator workflow by <a href=\"http://github.com/kelkawi-a\">@kelkawi-a</a> in <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/6\">#6</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/frankban\">@frankban</a> made their first contribution in <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/1\">#1</a></li>\n<li><a href=\"http://github.com/kelkawi-a\">@kelkawi-a</a> made their first contribution in <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/4\">#4</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/commits/rev2\">https://github.com/canonical/temporal-admin-k8s-operator/commits/rev2</a></p>\n",
                   "url": "https://github.com/canonical/temporal-admin-k8s-operator/releases/tag/rev2",
                   "compare_url": "https://github.com/canonical/temporal-admin-k8s-operator/compare/rev2...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "timescaledb-charm",
+            "default_branch": "master",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/timescaledb-charm",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "ea244f0c1ba3ad186ea27d28a75e2fe09bb510f7",
+                  "author": "Teodor",
+                  "timestamp": 1682420166,
+                  "message": "Merge pull request #5 from TeodorPt/toolkit\n\nAdd optional TimescaleDB Toolkit setup for the charm",
+                  "url": "https://github.com/canonical/timescaledb-charm/commit/ea244f0c1ba3ad186ea27d28a75e2fe09bb510f7"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "trino-k8s-operator",
+            "default_branch": "main",
+            "new_commits": 1,
+            "url": "https://github.com/canonical/trino-k8s-operator",
+            "releases": [
+               {
+                  "id": 115925627,
+                  "version": "rev3",
+                  "timestamp": 1691669731,
+                  "title": "Revision 3",
+                  "body": "<p>resources:\n    -  trino-image: trinodb/trino:418\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:08 UTC on 10 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-5072 add web-proxy as a config value by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/16\">#16</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev2...rev3\">https://github.com/canonical/trino-k8s-operator/compare/rev2&hellip;rev3</a></p>\n",
+                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev3",
+                  "compare_url": "https://github.com/canonical/trino-k8s-operator/compare/rev3...main"
+               },
+               {
+                  "id": 114798870,
+                  "version": "rev2",
+                  "timestamp": 1690552906,
+                  "title": "Revision 2",
+                  "body": "<p>resources:\n    -  trino-image: trinodb/trino:418\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:06 UTC on 2 Aug 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 11:11 UTC on 2 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-3985 Initial Trino charm skeleton by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/1\">#1</a></li>\n<li>CSS-4170 Add TLS relation and Ranger plugin by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/3\">#3</a></li>\n<li>CSS-4606 Make TLS a requirement for Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/6\">#6</a></li>\n<li>CSS-3986 Ingress relation for Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/5\">#5</a></li>\n<li>CSS-4682 Enable additional connectors to be integrated with Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/7\">#7</a></li>\n<li>CSS-3988 Introduce integration testing to Trino Charm by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/8\">#8</a></li>\n<li>CSS-4868 add basic unit tests by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/11\">#11</a></li>\n<li>CSS-3990 Improve documentation and add icon for charmhub by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/14\">#14</a></li>\n<li>CSS-3989 CI/CD workflow formatting, unit and integration tests by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/13\">#13</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> made their first contribution in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/commits/rev2\">https://github.com/canonical/trino-k8s-operator/commits/rev2</a></p>\n",
+                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev2",
+                  "compare_url": "https://github.com/canonical/trino-k8s-operator/compare/rev2...main"
                }
             ],
             "commits": null,
@@ -1063,7 +1162,7 @@
          {
             "name": "gunicorn-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/gunicorn-k8s-operator",
             "releases": [
                {
@@ -1334,7 +1433,7 @@
          {
             "name": "upload-charm-docs",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 7,
             "url": "https://github.com/canonical/upload-charm-docs",
             "releases": [
                {
@@ -1431,7 +1530,7 @@
          {
             "name": "setup-devstack-swift",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/setup-devstack-swift",
             "releases": [
                {
@@ -2171,6 +2270,140 @@
       "team": "BootStack",
       "repos": [
          {
+            "name": "layer-beats-base",
+            "default_branch": "master",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/layer-beats-base",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "8d9e3129d9ca828a52b0c63dce1b6a371945d03f",
+                  "author": "TQ X",
+                  "timestamp": 1669817832,
+                  "message": "Merge pull request #42 from VariableDeclared/lma-improvements/graylog-tls\n\nEnable extra parameters to be passed to the renderer",
+                  "url": "https://github.com/canonical/layer-beats-base/commit/8d9e3129d9ca828a52b0c63dce1b6a371945d03f"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "charm-software-inventory-exporter",
+            "default_branch": "main",
+            "new_commits": 1,
+            "url": "https://github.com/canonical/charm-software-inventory-exporter",
+            "releases": [
+               {
+                  "id": 102593841,
+                  "version": "rev14",
+                  "timestamp": 1683791961,
+                  "title": "Revision 14",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:17 UTC on 11 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Create issues_to_jira.yaml by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/8\">#8</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> made their first contribution in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/8\">#8</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-software-inventory-exporter/compare/rev13...rev14\">https://github.com/canonical/charm-software-inventory-exporter/compare/rev13&hellip;rev14</a></p>\n",
+                  "url": "https://github.com/canonical/charm-software-inventory-exporter/releases/tag/rev14",
+                  "compare_url": "https://github.com/canonical/charm-software-inventory-exporter/compare/rev14...main"
+               },
+               {
+                  "id": 102337513,
+                  "version": "rev13",
+                  "timestamp": 1683635303,
+                  "title": "Revision 13",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:49 UTC on 9 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>added functional tests for the charm. by <a href=\"http://github.com/gabrielcocenza\">@gabrielcocenza</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/6\">#6</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-software-inventory-exporter/compare/rev12...rev13\">https://github.com/canonical/charm-software-inventory-exporter/compare/rev12&hellip;rev13</a></p>\n",
+                  "url": "https://github.com/canonical/charm-software-inventory-exporter/releases/tag/rev13",
+                  "compare_url": "https://github.com/canonical/charm-software-inventory-exporter/compare/rev13...main"
+               },
+               {
+                  "id": 97847530,
+                  "version": "rev12",
+                  "timestamp": 1680525289,
+                  "title": "Revision 12",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:47 UTC on 3 Apr 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Charm implementation by <a href=\"http://github.com/mkalcok\">@mkalcok</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/4\">#4</a></li>\n<li>Update lib to properly report hostname by <a href=\"http://github.com/mkalcok\">@mkalcok</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/5\">#5</a></li>\n<li>Customization to Bootstack charm template by <a href=\"http://github.com/mkalcok\">@mkalcok</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/3\">#3</a></li>\n<li>added github action for charm release on charmhub. by <a href=\"http://github.com/gabrielcocenza\">@gabrielcocenza</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/7\">#7</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/mkalcok\">@mkalcok</a> made their first contribution in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/4\">#4</a></li>\n<li><a href=\"http://github.com/gabrielcocenza\">@gabrielcocenza</a> made their first contribution in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/7\">#7</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-software-inventory-exporter/commits/rev12\">https://github.com/canonical/charm-software-inventory-exporter/commits/rev12</a></p>\n",
+                  "url": "https://github.com/canonical/charm-software-inventory-exporter/releases/tag/rev12",
+                  "compare_url": "https://github.com/canonical/charm-software-inventory-exporter/compare/rev12...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "charm-nginx",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/charm-nginx",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "0a0ff3ae1b5ab11fcfc9dae6d4dfbb52bcd3c2c7",
+                  "author": "Ray Chan",
+                  "timestamp": 1683791519,
+                  "message": "Merge pull request #8 from canonical/chanchiwai-ray-patch-1\n\nCreate issues_to_jira.yaml",
+                  "url": "https://github.com/canonical/charm-nginx/commit/0a0ff3ae1b5ab11fcfc9dae6d4dfbb52bcd3c2c7"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "software-inventory-collector",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/software-inventory-collector",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "ae611b05c3b1a9e9a968a6a3a38bcc9d76e70bf8",
+                  "author": "Gabriel Cocenza",
+                  "timestamp": 1686232249,
+                  "message": "limit the architectures to build on (#5)\n\nif not limited, github plugin tries to build on all architectures.",
+                  "url": "https://github.com/canonical/software-inventory-collector/commit/ae611b05c3b1a9e9a968a6a3a38bcc9d76e70bf8"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "snap-prometheus-apt-exporter",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/snap-prometheus-apt-exporter",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "c631d7f134a87f9c768dfe5ae6882e3c98903d57",
+                  "author": "Sudeep Bhandari",
+                  "timestamp": 1671183933,
+                  "message": "Use layout for accessing /usr/ (#2)\n\n- Access only the files that are allowed\r\n- Add config option for specifying custom port",
+                  "url": "https://github.com/canonical/snap-prometheus-apt-exporter/commit/c631d7f134a87f9c768dfe5ae6882e3c98903d57"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "charm-prometheus-apt-exporter",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/charm-prometheus-apt-exporter",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "4d1015c0c4f32f3b06eac7dfa3468e7f5a808f9b",
+                  "author": "Sudeep Bhandari",
+                  "timestamp": 1671197820,
+                  "message": "Initial charm configuration (#1)\n\n* Initial charm configuration\r\n\r\n* Added basic integration tests\r\n\r\n* Apply bootstack charms spec\r\n\r\n* Added config option for port number\r\n\r\n* Open and close ports on config change\r\n\r\n* Added gitignore\r\n\r\n* Updated Readme",
+                  "url": "https://github.com/canonical/charm-prometheus-apt-exporter/commit/4d1015c0c4f32f3b06eac7dfa3468e7f5a808f9b"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
             "name": "hardware-observer-operator",
             "default_branch": "master",
             "new_commits": 0,
@@ -2205,6 +2438,25 @@
                }
             ],
             "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "prometheus-bind-exporter-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/prometheus-bind-exporter-operator",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "5418faa71162ac4527674c4a983df440ea673265",
+                  "author": "Ray Chan",
+                  "timestamp": 1683791721,
+                  "message": "Create issues_to_jira.yaml (#13)\n\n* Create issues_to_jira.yaml\r\n\r\nAdd workflow to create JIRA task from GitHub Issue.",
+                  "url": "https://github.com/canonical/prometheus-bind-exporter-operator/commit/5418faa71162ac4527674c4a983df440ea673265"
+               }
+            ],
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -2249,61 +2501,20 @@
             "charm": null
          },
          {
-            "name": "charm-apt-mirror",
-            "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/charm-apt-mirror",
-            "releases": [
-               {
-                  "id": 112045098,
-                  "version": "23.07",
-                  "timestamp": 1689219090,
-                  "title": "23.07 Release",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Create issues_to_jira.yaml by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/charm-apt-mirror/pull/21\">#21</a></li>\n<li>Actions/add source to synchronize by <a href=\"http://github.com/rgildein\">@rgildein</a> in <a href=\"https://github.com/canonical/charm-apt-mirror/pull/22\">#22</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/rgildein\">@rgildein</a> made their first contribution in <a href=\"https://github.com/canonical/charm-apt-mirror/pull/22\">#22</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/23.04...23.07\">https://github.com/canonical/charm-apt-mirror/compare/23.04&hellip;23.07</a></p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/23.07",
-                  "compare_url": "https://github.com/canonical/charm-apt-mirror/compare/23.07...main"
-               },
-               {
-                  "id": 98229974,
-                  "version": "23.04",
-                  "timestamp": 1680718103,
-                  "title": "23.04",
-                  "body": "<ul>\n<li>fix CI by pinning juju<3.1</li>\n<li>pin ops &lt; 2 to remain compatible with bionic</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/23.04",
-                  "compare_url": "https://github.com/canonical/charm-apt-mirror/compare/23.04...main"
-               },
-               {
-                  "id": 88447841,
-                  "version": "23.01",
-                  "timestamp": 1673358182,
-                  "title": "release 23.01",
-                  "body": "<ul>\n<li>Added functional test coverage.</li>\n<li>Fixed unit tests</li>\n<li>Added the ability to remove the auto-sync cron job.</li>\n<li>Fixed security issues in delete-snapshot action.</li>\n<li>Add features to clean up unneeded packages.</li>\n<li>Fixed potential bugs in mirror-list option</li>\n<li>Fixed incorrect the use of event.set_results()</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/23.01",
-                  "compare_url": "https://github.com/canonical/charm-apt-mirror/compare/23.01...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "prometheus-juju-backup-all-exporter",
-            "default_branch": "main",
+            "name": "prometheus-openstack-exporter",
+            "default_branch": "master",
             "new_commits": 0,
-            "url": "https://github.com/canonical/prometheus-juju-backup-all-exporter",
-            "releases": [
+            "url": "https://github.com/canonical/prometheus-openstack-exporter",
+            "releases": null,
+            "commits": [
                {
-                  "id": 111052720,
-                  "version": "v1.0.0",
-                  "timestamp": 1688527392,
-                  "title": "23.07 Release",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Merge skeleton into main branch by <a href=\"http://github.com/Pjack\">@Pjack</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li>Add metrics for charm-juju-backup-all by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/3\">#3</a></li>\n<li>Fix logical mistake in functional test conftest.py by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/6\">#6</a></li>\n<li>Apply updated bootstack snap template by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/8\">#8</a></li>\n<li>Refactoring by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/9\">#9</a></li>\n<li>Create issues_to_jira.yaml by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/11\">#11</a></li>\n<li>Update pull request and sonar workflow by <a href=\"http://github.com/agileshaw\">@agileshaw</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/Pjack\">@Pjack</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li><a href=\"http://github.com/agileshaw\">@agileshaw</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/1.0.0\">https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/1.0.0</a></p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Merge skeleton into main branch by <a href=\"http://github.com/Pjack\">@Pjack</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li>Add metrics for charm-juju-backup-all by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/3\">#3</a></li>\n<li>Fix logical mistake in functional test conftest.py by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/6\">#6</a></li>\n<li>Apply updated bootstack snap template by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/8\">#8</a></li>\n<li>Refactoring by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/9\">#9</a></li>\n<li>Create issues_to_jira.yaml by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/11\">#11</a></li>\n<li>Update pull request and sonar workflow by <a href=\"http://github.com/agileshaw\">@agileshaw</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/Pjack\">@Pjack</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li><a href=\"http://github.com/agileshaw\">@agileshaw</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/v1.0.0\">https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/v1.0.0</a></p>\n",
-                  "url": "https://github.com/canonical/prometheus-juju-backup-all-exporter/releases/tag/v1.0.0",
-                  "compare_url": "https://github.com/canonical/prometheus-juju-backup-all-exporter/compare/v1.0.0...main"
+                  "sha": "3090efefaa2bdafcc7b4955e5babab2781c4e19a",
+                  "author": "Ray Chan",
+                  "timestamp": 1683791890,
+                  "message": "Create issues_to_jira.yaml (#125)\n\n* Create issues_to_jira.yaml\r\n\r\nAdd workflow to create JIRA task from GitHub Issue.",
+                  "url": "https://github.com/canonical/prometheus-openstack-exporter/commit/3090efefaa2bdafcc7b4955e5babab2781c4e19a"
                }
             ],
-            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -2348,9 +2559,49 @@
             "charm": null
          },
          {
+            "name": "prometheus-hardware-exporter",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/prometheus-hardware-exporter",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "2bf88e3250a1b937e32c66a3ec68894f8d43c220",
+                  "author": "Ashley James",
+                  "timestamp": 1692785643,
+                  "message": "Add new redfish metrics (#36)\n\nAdds these new metrics from redfish.\r\n\r\n* redfish_processors: total number of processors\r\n* redfish_processor_info: processor info\r\n* redfish_storage_controllers: total number of storage controllers\r\n* redfish_storage_controller_info: storage controller info\r\n* redfish_network_adapters: total number of network adapters\r\n* redfish_chassis_info: chassis info\r\n* redfish_storage_drives: total number of drives\r\n* redfish_storage_drive_info: storage drive info\r\n* redfish_memory_dimms: total number of memory dimms\r\n* redfish_memory_dimm_info: memory dimm info\r\n* redfish_smart_storage_health: health of smart storage\r\n\r\nThese metrics are added to obtain either the count of a particular resource or for health,state etc. info from the <metric>_info metric.\r\n\r\nRedfishHelper is now implemented as a context manager. It opens up a new redfish session while entering and logs out at exit.\r\nRedfishHelper's discover method is now a staticmethod.",
+                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/2bf88e3250a1b937e32c66a3ec68894f8d43c220"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "prometheus-juju-backup-all-exporter",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/prometheus-juju-backup-all-exporter",
+            "releases": [
+               {
+                  "id": 111052720,
+                  "version": "v1.0.0",
+                  "timestamp": 1688527392,
+                  "title": "23.07 Release",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Merge skeleton into main branch by <a href=\"http://github.com/Pjack\">@Pjack</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li>Add metrics for charm-juju-backup-all by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/3\">#3</a></li>\n<li>Fix logical mistake in functional test conftest.py by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/6\">#6</a></li>\n<li>Apply updated bootstack snap template by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/8\">#8</a></li>\n<li>Refactoring by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/9\">#9</a></li>\n<li>Create issues_to_jira.yaml by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/11\">#11</a></li>\n<li>Update pull request and sonar workflow by <a href=\"http://github.com/agileshaw\">@agileshaw</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/Pjack\">@Pjack</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li><a href=\"http://github.com/agileshaw\">@agileshaw</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/1.0.0\">https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/1.0.0</a></p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Merge skeleton into main branch by <a href=\"http://github.com/Pjack\">@Pjack</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li>Add metrics for charm-juju-backup-all by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/3\">#3</a></li>\n<li>Fix logical mistake in functional test conftest.py by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/6\">#6</a></li>\n<li>Apply updated bootstack snap template by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/8\">#8</a></li>\n<li>Refactoring by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/9\">#9</a></li>\n<li>Create issues_to_jira.yaml by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/11\">#11</a></li>\n<li>Update pull request and sonar workflow by <a href=\"http://github.com/agileshaw\">@agileshaw</a> in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/Pjack\">@Pjack</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/2\">#2</a></li>\n<li><a href=\"http://github.com/agileshaw\">@agileshaw</a> made their first contribution in <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/pull/10\">#10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/v1.0.0\">https://github.com/canonical/prometheus-juju-backup-all-exporter/commits/v1.0.0</a></p>\n",
+                  "url": "https://github.com/canonical/prometheus-juju-backup-all-exporter/releases/tag/v1.0.0",
+                  "compare_url": "https://github.com/canonical/prometheus-juju-backup-all-exporter/compare/v1.0.0...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
             "name": "prometheus-juju-exporter",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/prometheus-juju-exporter",
             "releases": [
                {
@@ -2379,45 +2630,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Revert &ldquo;Update libjuju version to include its fix for exception handling&rdquo; by <a href=\"http://github.com/agileshaw\">@agileshaw</a> in <a href=\"https://github.com/canonical/prometheus-juju-exporter/pull/52\">#52</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-juju-exporter/compare/1.0.3...1.0.4\">https://github.com/canonical/prometheus-juju-exporter/compare/1.0.3&hellip;1.0.4</a></p>\n",
                   "url": "https://github.com/canonical/prometheus-juju-exporter/releases/tag/1.0.4",
                   "compare_url": "https://github.com/canonical/prometheus-juju-exporter/compare/1.0.4...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "charm-software-inventory-exporter",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/charm-software-inventory-exporter",
-            "releases": [
-               {
-                  "id": 102593841,
-                  "version": "rev14",
-                  "timestamp": 1683791961,
-                  "title": "Revision 14",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:17 UTC on 11 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Create issues_to_jira.yaml by <a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/8\">#8</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/chanchiwai-ray\">@chanchiwai-ray</a> made their first contribution in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/8\">#8</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-software-inventory-exporter/compare/rev13...rev14\">https://github.com/canonical/charm-software-inventory-exporter/compare/rev13&hellip;rev14</a></p>\n",
-                  "url": "https://github.com/canonical/charm-software-inventory-exporter/releases/tag/rev14",
-                  "compare_url": "https://github.com/canonical/charm-software-inventory-exporter/compare/rev14...main"
-               },
-               {
-                  "id": 102337513,
-                  "version": "rev13",
-                  "timestamp": 1683635303,
-                  "title": "Revision 13",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:49 UTC on 9 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>added functional tests for the charm. by <a href=\"http://github.com/gabrielcocenza\">@gabrielcocenza</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/6\">#6</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-software-inventory-exporter/compare/rev12...rev13\">https://github.com/canonical/charm-software-inventory-exporter/compare/rev12&hellip;rev13</a></p>\n",
-                  "url": "https://github.com/canonical/charm-software-inventory-exporter/releases/tag/rev13",
-                  "compare_url": "https://github.com/canonical/charm-software-inventory-exporter/compare/rev13...main"
-               },
-               {
-                  "id": 97847530,
-                  "version": "rev12",
-                  "timestamp": 1680525289,
-                  "title": "Revision 12",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:47 UTC on 3 Apr 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Charm implementation by <a href=\"http://github.com/mkalcok\">@mkalcok</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/4\">#4</a></li>\n<li>Update lib to properly report hostname by <a href=\"http://github.com/mkalcok\">@mkalcok</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/5\">#5</a></li>\n<li>Customization to Bootstack charm template by <a href=\"http://github.com/mkalcok\">@mkalcok</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/3\">#3</a></li>\n<li>added github action for charm release on charmhub. by <a href=\"http://github.com/gabrielcocenza\">@gabrielcocenza</a> in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/7\">#7</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/mkalcok\">@mkalcok</a> made their first contribution in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/4\">#4</a></li>\n<li><a href=\"http://github.com/gabrielcocenza\">@gabrielcocenza</a> made their first contribution in <a href=\"https://github.com/canonical/charm-software-inventory-exporter/pull/7\">#7</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-software-inventory-exporter/commits/rev12\">https://github.com/canonical/charm-software-inventory-exporter/commits/rev12</a></p>\n",
-                  "url": "https://github.com/canonical/charm-software-inventory-exporter/releases/tag/rev12",
-                  "compare_url": "https://github.com/canonical/charm-software-inventory-exporter/compare/rev12...main"
                }
             ],
             "commits": null,
@@ -2477,25 +2689,6 @@
             "charm": null
          },
          {
-            "name": "layer-beats-base",
-            "default_branch": "master",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/layer-beats-base",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "8d9e3129d9ca828a52b0c63dce1b6a371945d03f",
-                  "author": "TQ X",
-                  "timestamp": 1669817832,
-                  "message": "Merge pull request #42 from VariableDeclared/lma-improvements/graylog-tls\n\nEnable extra parameters to be passed to the renderer",
-                  "url": "https://github.com/canonical/layer-beats-base/commit/8d9e3129d9ca828a52b0c63dce1b6a371945d03f"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
             "name": "layer-filebeat",
             "default_branch": "master",
             "new_commits": 0,
@@ -2521,139 +2714,6 @@
                }
             ],
             "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "prometheus-bind-exporter-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/prometheus-bind-exporter-operator",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "5418faa71162ac4527674c4a983df440ea673265",
-                  "author": "Ray Chan",
-                  "timestamp": 1683791721,
-                  "message": "Create issues_to_jira.yaml (#13)\n\n* Create issues_to_jira.yaml\r\n\r\nAdd workflow to create JIRA task from GitHub Issue.",
-                  "url": "https://github.com/canonical/prometheus-bind-exporter-operator/commit/5418faa71162ac4527674c4a983df440ea673265"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "prometheus-hardware-exporter",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/prometheus-hardware-exporter",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "2bf88e3250a1b937e32c66a3ec68894f8d43c220",
-                  "author": "Ashley James",
-                  "timestamp": 1692785643,
-                  "message": "Add new redfish metrics (#36)\n\nAdds these new metrics from redfish.\r\n\r\n* redfish_processors: total number of processors\r\n* redfish_processor_info: processor info\r\n* redfish_storage_controllers: total number of storage controllers\r\n* redfish_storage_controller_info: storage controller info\r\n* redfish_network_adapters: total number of network adapters\r\n* redfish_chassis_info: chassis info\r\n* redfish_storage_drives: total number of drives\r\n* redfish_storage_drive_info: storage drive info\r\n* redfish_memory_dimms: total number of memory dimms\r\n* redfish_memory_dimm_info: memory dimm info\r\n* redfish_smart_storage_health: health of smart storage\r\n\r\nThese metrics are added to obtain either the count of a particular resource or for health,state etc. info from the <metric>_info metric.\r\n\r\nRedfishHelper is now implemented as a context manager. It opens up a new redfish session while entering and logs out at exit.\r\nRedfishHelper's discover method is now a staticmethod.",
-                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/2bf88e3250a1b937e32c66a3ec68894f8d43c220"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "charm-prometheus-apt-exporter",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/charm-prometheus-apt-exporter",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "4d1015c0c4f32f3b06eac7dfa3468e7f5a808f9b",
-                  "author": "Sudeep Bhandari",
-                  "timestamp": 1671197820,
-                  "message": "Initial charm configuration (#1)\n\n* Initial charm configuration\r\n\r\n* Added basic integration tests\r\n\r\n* Apply bootstack charms spec\r\n\r\n* Added config option for port number\r\n\r\n* Open and close ports on config change\r\n\r\n* Added gitignore\r\n\r\n* Updated Readme",
-                  "url": "https://github.com/canonical/charm-prometheus-apt-exporter/commit/4d1015c0c4f32f3b06eac7dfa3468e7f5a808f9b"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "charm-nginx",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/charm-nginx",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "0a0ff3ae1b5ab11fcfc9dae6d4dfbb52bcd3c2c7",
-                  "author": "Ray Chan",
-                  "timestamp": 1683791519,
-                  "message": "Merge pull request #8 from canonical/chanchiwai-ray-patch-1\n\nCreate issues_to_jira.yaml",
-                  "url": "https://github.com/canonical/charm-nginx/commit/0a0ff3ae1b5ab11fcfc9dae6d4dfbb52bcd3c2c7"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "prometheus-openstack-exporter",
-            "default_branch": "master",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/prometheus-openstack-exporter",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "3090efefaa2bdafcc7b4955e5babab2781c4e19a",
-                  "author": "Ray Chan",
-                  "timestamp": 1683791890,
-                  "message": "Create issues_to_jira.yaml (#125)\n\n* Create issues_to_jira.yaml\r\n\r\nAdd workflow to create JIRA task from GitHub Issue.",
-                  "url": "https://github.com/canonical/prometheus-openstack-exporter/commit/3090efefaa2bdafcc7b4955e5babab2781c4e19a"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "snap-prometheus-apt-exporter",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/snap-prometheus-apt-exporter",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "c631d7f134a87f9c768dfe5ae6882e3c98903d57",
-                  "author": "Sudeep Bhandari",
-                  "timestamp": 1671183933,
-                  "message": "Use layout for accessing /usr/ (#2)\n\n- Access only the files that are allowed\r\n- Add config option for specifying custom port",
-                  "url": "https://github.com/canonical/snap-prometheus-apt-exporter/commit/c631d7f134a87f9c768dfe5ae6882e3c98903d57"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "software-inventory-collector",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/software-inventory-collector",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "ae611b05c3b1a9e9a968a6a3a38bcc9d76e70bf8",
-                  "author": "Gabriel Cocenza",
-                  "timestamp": 1686232249,
-                  "message": "limit the architectures to build on (#5)\n\nif not limited, github plugin tries to build on all architectures.",
-                  "url": "https://github.com/canonical/software-inventory-collector/commit/ae611b05c3b1a9e9a968a6a3a38bcc9d76e70bf8"
-               }
-            ],
             "is_archived": false,
             "ci_actions": null,
             "charm": null
