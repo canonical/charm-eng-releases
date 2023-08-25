@@ -7,6 +7,45 @@
       "team": "Charm Tech",
       "repos": [
          {
+            "name": "operator",
+            "default_branch": "main",
+            "new_commits": 6,
+            "url": "https://github.com/canonical/operator",
+            "releases": [
+               {
+                  "id": 117415345,
+                  "version": "2.5.1",
+                  "timestamp": 1692164589,
+                  "title": "2.5.1: Fix str vs bytes issue with testing push()",
+                  "body": "<p>This is a patch fix on top of <a href=\"https://github.com/canonical/operator/releases/tag/2.5.0\">2.5.0</a> to fix #990: &ldquo;TypeError: write() argument must be str, not bytes&rdquo; in <code>Container.push</code> under <code>Harness</code>.</p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.5.1",
+                  "compare_url": "https://github.com/canonical/operator/compare/2.5.1...main"
+               },
+               {
+                  "id": 114572590,
+                  "version": "2.5.0",
+                  "timestamp": 1690840187,
+                  "title": "2.5.0: Harness.get_filesystem_root, Pebble service context, and more",
+                  "body": "<p>This release includes three significant additions:</p>\n\n<ol>\n<li><strong>Multi-status:</strong> An initial version of the much-discussed &ldquo;multi-status&rdquo; handling in the form of the new <code>collect_app_status</code> and <code>collect_unit_status</code> events. This is useful for letting the framework automatically evaluate application (or unit) status from various components of the charm. We&rsquo;ll be documenting this properly soon, but in the meantime, read the API reference docs on <a href=\"https://ops.readthedocs.io/en/latest/#ops.CollectStatusEvent\"><code>CollectStatusEvent</code></a>. PR #954.</li>\n<li><strong>Harness.get_filesystem_root:</strong> Overhauling the <code>Harness</code>&rsquo;s test filesystem from an in-memory filesystem to use a temp directory on the real filesystem; use <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.get_filesystem_root\"><code>Harness.get_filesystem_root</code></a> to get the temp filesystem directory for a specific container. This makes testing container filesystem operations significantly easier and allows tests to use the regular Python file APIs to interact with it. Thanks <a href=\"http://github.com/weiiwang01\">@weiiwang01</a> for his efforts on this in #960.</li>\n<li><strong>Service context:</strong> Added support for Pebble&rsquo;s new &ldquo;service context&rdquo; feature, to allow you to exec commands in the context of a specified service (where <em>context</em> means environment variables, working directory, and user/group). PR #957.</li>\n</ol>\n\n<p>Other notable changes:</p>\n\n<ul>\n<li>Add <a href=\"https://ops.readthedocs.io/en/latest/#ops.JujuVersion.supports_open_port_on_k8s\"><code>JujuVersion.supports_open_port_on_k8s</code></a> by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in PR #965</li>\n<li>Support reading <code>charmcraft.yaml</code> in the testing harness by <a href=\"http://github.com/syu-w\">@syu-w</a> in PR #977</li>\n</ul>\n\n<p>In addition, the following developers made their first contribution:</p>\n\n<ul>\n<li><a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/operator/pull/975\">#975</a> (Add kill-delay to pebble ServiceDict type)</li>\n<li><a href=\"http://github.com/sobolevn\">@sobolevn</a> in <a href=\"https://github.com/canonical/operator/pull/978\">#978</a> (Replace typing.AnyStr with Union[str, bytes])</li>\n<li><a href=\"http://github.com/syu-w\">@syu-w</a> in <a href=\"https://github.com/canonical/operator/pull/977\">#977</a> (Support reading charmcraft.yaml in testing harness)</li>\n</ul>\n\n<p>We also made several other minor improvements to type annotations and a few other tweaks. See the full changelog: <a href=\"https://github.com/canonical/operator/compare/2.4.1...2.5.0\">https://github.com/canonical/operator/compare/2.4.1&hellip;2.5.0</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.5.0",
+                  "compare_url": "https://github.com/canonical/operator/compare/2.5.0...main"
+               },
+               {
+                  "id": 110934110,
+                  "version": "2.4.1",
+                  "timestamp": 1688446307,
+                  "title": "2.4.1: Add type annotation for PebbleReadyEvent.workload",
+                  "body": "<p>This is a patch release: a minor but important type annotation forgotten in <a href=\"https://github.com/canonical/operator/releases/tag/2.4.0\">2.4.0</a>. Without it, charms that use type annotation on the pebble-ready events will fail type checking, because attributes of the <code>workload</code> won&rsquo;t be available as Pyright/MyPy doesn&rsquo;t know the type.</p>\n\n<p>Fix in <a href=\"https://github.com/canonical/operator/pull/962\">#962</a>.</p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.4.1",
+                  "compare_url": "https://github.com/canonical/operator/compare/2.4.1...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
             "name": "operator-libs-linux",
             "default_branch": "main",
             "new_commits": 0,
@@ -62,84 +101,6 @@
                   "body": "<p>resources:\n    -  catalogue-image: ghcr.io/canonical/catalogue-k8s-operator:latest\n       resource-revision: 22</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:09 UTC on 8 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add TLS support to Catalogue by <a href=\"http://github.com/Abuelodelanada\">@Abuelodelanada</a> in <a href=\"https://github.com/canonical/catalogue-k8s-operator/pull/27\">#27</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/Abuelodelanada\">@Abuelodelanada</a> made their first contribution in <a href=\"https://github.com/canonical/catalogue-k8s-operator/pull/27\">#27</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/catalogue-k8s-operator/compare/rev21...rev22\">https://github.com/canonical/catalogue-k8s-operator/compare/rev21&hellip;rev22</a></p>\n",
                   "url": "https://github.com/canonical/catalogue-k8s-operator/releases/tag/rev22",
                   "compare_url": "https://github.com/canonical/catalogue-k8s-operator/compare/rev22...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "prometheus-k8s-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/prometheus-k8s-operator",
-            "releases": [
-               {
-                  "id": 118412841,
-                  "version": "rev139",
-                  "timestamp": 1692789524,
-                  "title": "Revision 139",
-                  "body": "<p>resources:\n    -  prometheus-image: ghcr.io/canonical/prometheus:latest\n       resource-revision: 118</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:09 UTC on 23 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Cosl alerts by <a href=\"http://github.com/dstathis\">@dstathis</a> in <a href=\"https://github.com/canonical/prometheus-k8s-operator/pull/510\">#510</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-k8s-operator/compare/rev138...rev139\">https://github.com/canonical/prometheus-k8s-operator/compare/rev138&hellip;rev139</a></p>\n",
-                  "url": "https://github.com/canonical/prometheus-k8s-operator/releases/tag/rev139",
-                  "compare_url": "https://github.com/canonical/prometheus-k8s-operator/compare/rev139...main"
-               },
-               {
-                  "id": 117850621,
-                  "version": "rev138",
-                  "timestamp": 1692413680,
-                  "title": "Revision 138",
-                  "body": "<p>resources:\n    -  prometheus-image: ghcr.io/canonical/prometheus:latest\n       resource-revision: 117</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:04 UTC on 19 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Deprecate &ldquo;web_external_url&rdquo;; use strip_prefix by <a href=\"http://github.com/sed-i\">@sed-i</a> in <a href=\"https://github.com/canonical/prometheus-k8s-operator/pull/508\">#508</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-k8s-operator/compare/rev137...rev138\">https://github.com/canonical/prometheus-k8s-operator/compare/rev137&hellip;rev138</a></p>\n",
-                  "url": "https://github.com/canonical/prometheus-k8s-operator/releases/tag/rev138",
-                  "compare_url": "https://github.com/canonical/prometheus-k8s-operator/compare/rev138...main"
-               },
-               {
-                  "id": 116114036,
-                  "version": "rev137",
-                  "timestamp": 1691774350,
-                  "title": "Revision 137",
-                  "body": "<p>resources:\n    -  prometheus-image: ghcr.io/canonical/prometheus:latest\n       resource-revision: 116</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:49 UTC on 11 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix prometheus library for cos-proxy by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/prometheus-k8s-operator/pull/507\">#507</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-k8s-operator/compare/rev136...rev137\">https://github.com/canonical/prometheus-k8s-operator/compare/rev136&hellip;rev137</a></p>\n",
-                  "url": "https://github.com/canonical/prometheus-k8s-operator/releases/tag/rev137",
-                  "compare_url": "https://github.com/canonical/prometheus-k8s-operator/compare/rev137...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "grafana-k8s-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/grafana-k8s-operator",
-            "releases": [
-               {
-                  "id": 117976631,
-                  "version": "rev90",
-                  "timestamp": 1692608977,
-                  "title": "Revision 90",
-                  "body": "<p>resources:\n    -  litestream-image: docker.io/litestream/litestream:0.4.0-beta.2\n       resource-revision: 40\n    -  grafana-image: docker.io/ubuntu/grafana:9.2-22.04_beta\n       resource-revision: 60</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:01 UTC on 21 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Deprecate &ldquo;web_external_url&rdquo;; use strip_prefix by <a href=\"http://github.com/sed-i\">@sed-i</a> in <a href=\"https://github.com/canonical/grafana-k8s-operator/pull/246\">#246</a></li>\n<li>Fix lint issues in grafana dashboard library by <a href=\"http://github.com/hemanthnakkina\">@hemanthnakkina</a> in <a href=\"https://github.com/canonical/grafana-k8s-operator/pull/243\">#243</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-k8s-operator/compare/rev89...rev90\">https://github.com/canonical/grafana-k8s-operator/compare/rev89&hellip;rev90</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-k8s-operator/releases/tag/rev90",
-                  "compare_url": "https://github.com/canonical/grafana-k8s-operator/compare/rev90...main"
-               },
-               {
-                  "id": 116041441,
-                  "version": "rev89",
-                  "timestamp": 1691742100,
-                  "title": "Revision 89",
-                  "body": "<p>resources:\n    -  litestream-image: docker.io/litestream/litestream:0.4.0-beta.2\n       resource-revision: 39\n    -  grafana-image: docker.io/ubuntu/grafana:9.2-22.04_beta\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:22 UTC on 11 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Include dashboard url in get-admin-password action response by <a href=\"http://github.com/hemanthnakkina\">@hemanthnakkina</a> in <a href=\"https://github.com/canonical/grafana-k8s-operator/pull/238\">#238</a></li>\n<li>add proxy config from env variables by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/grafana-k8s-operator/pull/242\">#242</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/hemanthnakkina\">@hemanthnakkina</a> made their first contribution in <a href=\"https://github.com/canonical/grafana-k8s-operator/pull/238\">#238</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-k8s-operator/compare/rev88...rev89\">https://github.com/canonical/grafana-k8s-operator/compare/rev88&hellip;rev89</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-k8s-operator/releases/tag/rev89",
-                  "compare_url": "https://github.com/canonical/grafana-k8s-operator/compare/rev89...main"
-               },
-               {
-                  "id": 113921271,
-                  "version": "rev88",
-                  "timestamp": 1690492027,
-                  "title": "Revision 88",
-                  "body": "<p>resources:\n    -  litestream-image: docker.io/litestream/litestream:0.4.0-beta.2\n       resource-revision: 38\n    -  grafana-image: docker.io/ubuntu/grafana:9.2-22.04_beta\n       resource-revision: 58</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:13 UTC on 28 Jul 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>More robust admin password getter by <a href=\"http://github.com/sed-i\">@sed-i</a> in <a href=\"https://github.com/canonical/grafana-k8s-operator/pull/236\">#236</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-k8s-operator/compare/rev87...rev88\">https://github.com/canonical/grafana-k8s-operator/compare/rev87&hellip;rev88</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-k8s-operator/releases/tag/rev88",
-                  "compare_url": "https://github.com/canonical/grafana-k8s-operator/compare/rev88...main"
                }
             ],
             "commits": null,
@@ -257,45 +218,6 @@
                   "body": "<p>resources:\n    -  placeholder-image: busybox\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:57 UTC on 21 Jul 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>added public chain method by <a href=\"http://github.com/PietroPasotti\">@PietroPasotti</a> in <a href=\"https://github.com/canonical/observability-libs/pull/54\">#54</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/observability-libs/compare/rev16...rev17\">https://github.com/canonical/observability-libs/compare/rev16&hellip;rev17</a></p>\n",
                   "url": "https://github.com/canonical/observability-libs/releases/tag/rev17",
                   "compare_url": "https://github.com/canonical/observability-libs/compare/rev17...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "loki-k8s-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/loki-k8s-operator",
-            "releases": [
-               {
-                  "id": 116227887,
-                  "version": "promtail-v2.8.4",
-                  "timestamp": 1691799498,
-                  "title": "Promtail v2.8.4",
-                  "body": "<p>Dynamically- and statically-linked builds for Promtail, based on the <a href=\"https://github.com/grafana/loki/releases/tag/v2.8.4\">upstream &lsquo;v2.8.4&rsquo;</a> release of the <code>grafana/loki</code> project.</p>\n",
-                  "url": "https://github.com/canonical/loki-k8s-operator/releases/tag/promtail-v2.8.4",
-                  "compare_url": "https://github.com/canonical/loki-k8s-operator/compare/promtail-v2.8.4...main"
-               },
-               {
-                  "id": 113780450,
-                  "version": "rev96",
-                  "timestamp": 1690437020,
-                  "title": "Revision 96",
-                  "body": "<p>resources:\n    -  loki-image: ghcr.io/canonical/loki:2.7.4\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:27 UTC on 27 Jul 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update endpoint on cert changed by <a href=\"http://github.com/Abuelodelanada\">@Abuelodelanada</a> in <a href=\"https://github.com/canonical/loki-k8s-operator/pull/295\">#295</a></li>\n<li>src/loki_server.py removed by <a href=\"http://github.com/Abuelodelanada\">@Abuelodelanada</a> in <a href=\"https://github.com/canonical/loki-k8s-operator/pull/296\">#296</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/loki-k8s-operator/compare/rev95...rev96\">https://github.com/canonical/loki-k8s-operator/compare/rev95&hellip;rev96</a></p>\n",
-                  "url": "https://github.com/canonical/loki-k8s-operator/releases/tag/rev96",
-                  "compare_url": "https://github.com/canonical/loki-k8s-operator/compare/rev96...main"
-               },
-               {
-                  "id": 113890093,
-                  "version": "promtail-operator/v0.4.0",
-                  "timestamp": 1690488530,
-                  "title": "Promtail operator/v0.4.0",
-                  "body": "<p>Dynamically- and statically-linked builds for Promtail, based on the <a href=\"https://github.com/grafana/loki/releases/tag/operator/v0.4.0\">upstream &lsquo;operator/v0.4.0&rsquo;</a> release of the <code>grafana/loki</code> project.</p>\n",
-                  "url": "https://github.com/canonical/loki-k8s-operator/releases/tag/promtail-operator/v0.4.0",
-                  "compare_url": "https://github.com/canonical/loki-k8s-operator/compare/promtail-operator/v0.4.0...main"
                }
             ],
             "commits": null,
@@ -460,45 +382,6 @@
             "charm": null
          },
          {
-            "name": "charming-actions",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/charming-actions",
-            "releases": [
-               {
-                  "id": 114822494,
-                  "version": "2.4.0",
-                  "timestamp": 1690225383,
-                  "title": "v2.4.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update to node16 for deprecation warnings by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/charming-actions/pull/95\">#95</a></li>\n<li>Add pull image option by <a href=\"http://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/canonical/charming-actions/pull/102\">#102</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/lucabello\">@lucabello</a> made their first contribution in <a href=\"https://github.com/canonical/charming-actions/pull/95\">#95</a></li>\n<li><a href=\"http://github.com/kian99\">@kian99</a> made their first contribution in <a href=\"https://github.com/canonical/charming-actions/pull/102\">#102</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charming-actions/compare/2.3.0...2.4.0\">https://github.com/canonical/charming-actions/compare/2.3.0&hellip;2.4.0</a></p>\n",
-                  "url": "https://github.com/canonical/charming-actions/releases/tag/2.4.0",
-                  "compare_url": "https://github.com/canonical/charming-actions/compare/2.4.0...main"
-               },
-               {
-                  "id": 104134129,
-                  "version": "2.3.0",
-                  "timestamp": 1684941409,
-                  "title": "2.3.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update README.md by <a href=\"http://github.com/beliaev-maksim\">@beliaev-maksim</a> in <a href=\"https://github.com/canonical/charming-actions/pull/94\">#94</a></li>\n<li>Adds support for pre-built charms in the <code>upload-charm</code> action by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/charming-actions/pull/96\">#96</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/gruyaume\">@gruyaume</a> made their first contribution in <a href=\"https://github.com/canonical/charming-actions/pull/96\">#96</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charming-actions/compare/2.2.5...2.3.0\">https://github.com/canonical/charming-actions/compare/2.2.5&hellip;2.3.0</a></p>\n",
-                  "url": "https://github.com/canonical/charming-actions/releases/tag/2.3.0",
-                  "compare_url": "https://github.com/canonical/charming-actions/compare/2.3.0...main"
-               },
-               {
-                  "id": 97044398,
-                  "version": "2.2.5",
-                  "timestamp": 1679931112,
-                  "title": "2.2.5",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>remove clean up of channel signs, reverting #91 by <a href=\"http://github.com/beliaev-maksim\">@beliaev-maksim</a> in <a href=\"https://github.com/canonical/charming-actions/pull/93\">#93</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charming-actions/compare/2.2.4...2.2.5\">https://github.com/canonical/charming-actions/compare/2.2.4&hellip;2.2.5</a></p>\n",
-                  "url": "https://github.com/canonical/charming-actions/releases/tag/2.2.5",
-                  "compare_url": "https://github.com/canonical/charming-actions/compare/2.2.5...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
             "name": "prometheus-scrape-target-k8s-operator",
             "default_branch": "main",
             "new_commits": 0,
@@ -530,45 +413,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:35 UTC on 28 Apr 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>use ruff instead of flake8 by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/prometheus-scrape-target-k8s-operator/pull/28\">#28</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/prometheus-scrape-target-k8s-operator/compare/rev26...rev27\">https://github.com/canonical/prometheus-scrape-target-k8s-operator/compare/rev26&hellip;rev27</a></p>\n",
                   "url": "https://github.com/canonical/prometheus-scrape-target-k8s-operator/releases/tag/rev27",
                   "compare_url": "https://github.com/canonical/prometheus-scrape-target-k8s-operator/compare/rev27...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "grafana-cloud-integrator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/grafana-cloud-integrator",
-            "releases": [
-               {
-                  "id": 109037548,
-                  "version": "rev5",
-                  "timestamp": 1687149220,
-                  "title": "Revision 5",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 04:49 UTC on 19 Jun 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add endpoint properties to requirer by <a href=\"http://github.com/sed-i\">@sed-i</a> in <a href=\"https://github.com/canonical/grafana-cloud-integrator/pull/3\">#3</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/sed-i\">@sed-i</a> made their first contribution in <a href=\"https://github.com/canonical/grafana-cloud-integrator/pull/3\">#3</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-cloud-integrator/compare/rev4...rev5\">https://github.com/canonical/grafana-cloud-integrator/compare/rev4&hellip;rev5</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-cloud-integrator/releases/tag/rev5",
-                  "compare_url": "https://github.com/canonical/grafana-cloud-integrator/compare/rev5...main"
-               },
-               {
-                  "id": 107528479,
-                  "version": "rev4",
-                  "timestamp": 1686062331,
-                  "title": "Revision 4",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:54 UTC on 6 Jun 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>use pyright instead of mypy by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/grafana-cloud-integrator/pull/2\">#2</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-cloud-integrator/compare/rev3...rev4\">https://github.com/canonical/grafana-cloud-integrator/compare/rev3&hellip;rev4</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-cloud-integrator/releases/tag/rev4",
-                  "compare_url": "https://github.com/canonical/grafana-cloud-integrator/compare/rev4...main"
-               },
-               {
-                  "id": 101449826,
-                  "version": "rev3",
-                  "timestamp": 1682927673,
-                  "title": "Revision 3",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:11 UTC on 1 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>use ruff instead of flake8 by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/grafana-cloud-integrator/pull/1\">#1</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/lucabello\">@lucabello</a> made their first contribution in <a href=\"https://github.com/canonical/grafana-cloud-integrator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-cloud-integrator/compare/rev2...rev3\">https://github.com/canonical/grafana-cloud-integrator/compare/rev2&hellip;rev3</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-cloud-integrator/releases/tag/rev3",
-                  "compare_url": "https://github.com/canonical/grafana-cloud-integrator/compare/rev3...main"
                }
             ],
             "commits": null,
@@ -694,45 +538,6 @@
             "charm": null
          },
          {
-            "name": "grafana-agent-k8s-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/grafana-agent-k8s-operator",
-            "releases": [
-               {
-                  "id": 98453618,
-                  "version": "rev37",
-                  "timestamp": 1680801938,
-                  "title": "Revision 37",
-                  "body": "<p>resources:\n    -  agent-image: ghcr.io/canonical/grafana-agent:latest\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:24 UTC on 6 Apr 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a href=\"https://github.com/canonical/grafana-agent-k8s-operator/pull/166\">#166</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-agent-k8s-operator/compare/rev36...rev37\">https://github.com/canonical/grafana-agent-k8s-operator/compare/rev36&hellip;rev37</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-agent-k8s-operator/releases/tag/rev37",
-                  "compare_url": "https://github.com/canonical/grafana-agent-k8s-operator/compare/rev37...main"
-               },
-               {
-                  "id": 97397370,
-                  "version": "rev36",
-                  "timestamp": 1680124811,
-                  "title": "Revision 36",
-                  "body": "<p>resources:\n    -  agent-image: ghcr.io/canonical/grafana-agent:latest\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:04 UTC on 29 Mar 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a href=\"https://github.com/canonical/grafana-agent-k8s-operator/pull/161\">#161</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-agent-k8s-operator/compare/rev35...rev36\">https://github.com/canonical/grafana-agent-k8s-operator/compare/rev35&hellip;rev36</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-agent-k8s-operator/releases/tag/rev36",
-                  "compare_url": "https://github.com/canonical/grafana-agent-k8s-operator/compare/rev36...main"
-               },
-               {
-                  "id": 96909624,
-                  "version": "rev35",
-                  "timestamp": 1679763944,
-                  "title": "Revision 35",
-                  "body": "<p>resources:\n    -  agent-image: ghcr.io/canonical/grafana-agent:latest\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:51 UTC on 25 Mar 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a href=\"https://github.com/canonical/grafana-agent-k8s-operator/pull/157\">#157</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/grafana-agent-k8s-operator/compare/rev34...rev35\">https://github.com/canonical/grafana-agent-k8s-operator/compare/rev34&hellip;rev35</a></p>\n",
-                  "url": "https://github.com/canonical/grafana-agent-k8s-operator/releases/tag/rev35",
-                  "compare_url": "https://github.com/canonical/grafana-agent-k8s-operator/compare/rev35...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
             "name": "nrpe_exporter",
             "default_branch": "main",
             "new_commits": 0,
@@ -764,36 +569,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Move the defer lower by <a href=\"http://github.com/rbarry82\">@rbarry82</a> in <a href=\"https://github.com/canonical/nrpe_exporter/pull/30\">#30</a></li>\n<li>Bump github.com/prometheus/client_golang from 1.2.1 to 1.11.1 by <a href=\"http://github.com/dependabot\">@dependabot</a> in <a href=\"https://github.com/canonical/nrpe_exporter/pull/32\">#32</a></li>\n<li>Log the results of <em>all</em> commands by <a href=\"http://github.com/rbarry82\">@rbarry82</a> in <a href=\"https://github.com/canonical/nrpe_exporter/pull/31\">#31</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dependabot\">@dependabot</a> made their first contribution in <a href=\"https://github.com/canonical/nrpe_exporter/pull/32\">#32</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nrpe_exporter/compare/0.2.2...0.2.4\">https://github.com/canonical/nrpe_exporter/compare/0.2.2&hellip;0.2.4</a></p>\n",
                   "url": "https://github.com/canonical/nrpe_exporter/releases/tag/0.2.4",
                   "compare_url": "https://github.com/canonical/nrpe_exporter/compare/0.2.4...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "grafana-agent-snap",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/grafana-agent-snap",
-            "releases": [
-               {
-                  "id": 92613496,
-                  "version": "pre-release-1",
-                  "timestamp": 1676494927,
-                  "title": "pre-release-1",
-                  "body": "",
-                  "url": "https://github.com/canonical/grafana-agent-snap/releases/tag/pre-release-1",
-                  "compare_url": "https://github.com/canonical/grafana-agent-snap/compare/pre-release-1...main"
-               },
-               {
-                  "id": 91890286,
-                  "version": "pre-release-0",
-                  "timestamp": 1675950267,
-                  "title": "pre-release-0",
-                  "body": "",
-                  "url": "https://github.com/canonical/grafana-agent-snap/releases/tag/pre-release-0",
-                  "compare_url": "https://github.com/canonical/grafana-agent-snap/compare/pre-release-0...main"
                }
             ],
             "commits": null,
@@ -1062,9 +837,7 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/identity-platform-admin-ui/actions/workflows/ci.yaml"
-            ],
+            "ci_actions": null,
             "charm": null
          },
          {
@@ -1859,41 +1632,8 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/content-cache-k8s-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/content-cache-k8s-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "content-cache-k8s",
-               "url": "https://charmhub.io/content-cache-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 10,
-                     "timestamp": 1675792271
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 2,
-                     "timestamp": 1624236271
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 29,
-                     "timestamp": 1692954994
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": ".github",
@@ -1989,27 +1729,8 @@
                }
             ],
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "github-runner-operator",
-               "url": "https://charmhub.io/github-runner-operator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 5,
-                     "timestamp": 1627943262
-                  }
-               ],
-               "channels": [
-                  "beta"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": "gunicorn-k8s-operator",
@@ -2241,41 +1962,8 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/nginx-ingress-integrator-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/nginx-ingress-integrator-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "nginx-ingress-integrator",
-               "url": "https://charmhub.io/nginx-ingress-integrator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 80,
-                     "timestamp": 1691941071
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 81,
-                     "timestamp": 1692604189
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 44,
-                     "timestamp": 1668592734
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": "openldap-k8s-operator",
@@ -2488,35 +2176,8 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/discourse-k8s-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/discourse-k8s-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "discourse-k8s",
-               "url": "https://charmhub.io/discourse-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 21,
-                     "timestamp": 1681985524
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 33,
-                     "timestamp": 1692962943
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": "atlantis-operator",
@@ -2612,47 +2273,8 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "wordpress-k8s",
-               "url": "https://charmhub.io/wordpress-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 13,
-                     "timestamp": 1678088045
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 21,
-                     "timestamp": 1683210415
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 15,
-                     "timestamp": 1680170897
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 33,
-                     "timestamp": 1692690855
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": "synapse-operator",
@@ -3256,58 +2878,8 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/hardware-observer-operator/actions/workflows/release.yaml"
-            ],
-            "charm": {
-               "name": "hardware-observer",
-               "url": "https://charmhub.io/hardware-observer",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 6,
-                     "timestamp": 1691403582
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 6,
-                     "timestamp": 1691403582
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 6,
-                     "timestamp": 1691403582
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 8,
-                     "timestamp": 1692940940
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 8,
-                     "timestamp": 1692940940
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 8,
-                     "timestamp": 1692940940
-                  }
-               ],
-               "channels": [
-                  "candidate",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": "charm-prometheus-juju-exporter",
@@ -3351,7 +2923,7 @@
          {
             "name": "charm-apt-mirror",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/charm-apt-mirror",
             "releases": [
                {
@@ -3444,9 +3016,7 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/juju-verify/actions/workflows/releases.yml"
-            ],
+            "ci_actions": null,
             "charm": null
          },
          {
@@ -3491,7 +3061,7 @@
          {
             "name": "charm-software-inventory-exporter",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/charm-software-inventory-exporter",
             "releases": [
                {
@@ -3524,39 +3094,8 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/charm-software-inventory-exporter/actions/workflows/release.yaml"
-            ],
-            "charm": {
-               "name": "software-inventory-exporter",
-               "url": "https://charmhub.io/software-inventory-exporter",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 14,
-                     "timestamp": 1683793051
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 14,
-                     "timestamp": 1683793051
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 14,
-                     "timestamp": 1683793051
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": "charm-software-inventory-collector",
@@ -3585,33 +3124,8 @@
             ],
             "commits": null,
             "is_archived": false,
-            "ci_actions": [
-               "https://github.com/canonical/charm-software-inventory-collector/actions/workflows/release.yaml"
-            ],
-            "charm": {
-               "name": "software-inventory-collector",
-               "url": "https://charmhub.io/software-inventory-collector",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 4,
-                     "timestamp": 1683792484
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 4,
-                     "timestamp": 1683792484
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
+            "ci_actions": null,
+            "charm": null
          },
          {
             "name": "charm-simple-streams",
