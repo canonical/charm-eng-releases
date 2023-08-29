@@ -3329,11 +3329,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "579663c15d3f3c3126df2d186be107ee77bd9ad1",
+                  "sha": "4350ee21ba82a342bbbba2bb34e079e6183122a8",
                   "author": "i-chvets",
-                  "timestamp": 1693314938,
-                  "message": "feat: update bundle with branches (#684)\n\n* feat: update bundle with branches\r\n\r\nIn order for image retrieval scripts that are used in image scanning action (in this repository) to properly checkout source code for main branch an update was made bundle definition (see comments below).\r\n\r\nMore details in: https://github.com/canonical/bundle-kubeflow/issues/679\r\n\r\nSummary of changes:\r\n- Added branches to latest/edge/bundle.yaml. This is required to enable image retrieval scripts to properly checkout source code.\r\n- Updated MySQL K8S charm to point to 8.0/edge\r\n- Added branch to kfp-profile-controller\r\n- Added main branch to training operator",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/579663c15d3f3c3126df2d186be107ee77bd9ad1"
+                  "timestamp": 1693323627,
+                  "message": "feat: added latest to scan (#686)\n\n# Description\r\n\r\nUpdate to scan image workflow is needed to scan latest/edge bundle.\r\n\r\nMore details are in: https://github.com/canonical/bundle-kubeflow/issues/679\r\n\r\nSummary of changes:\r\n- Added latest to scan matrix.\r\n- Workflow is redesigned to improve handling of multipole releases and avoid running scans on not required bundles.",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/4350ee21ba82a342bbbba2bb34e079e6183122a8"
                }
             ],
             "is_archived": false,
@@ -4828,11 +4828,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "9d0cb9b4e8b6782b8511b38e8de844a7371ebade",
-                  "author": "Shu",
-                  "timestamp": 1692973993,
-                  "message": "Merge pull request #33 from canonical/IAM-417\n\nbump: upgrade kratos and hydra charms",
-                  "url": "https://github.com/canonical/iam-bundle/commit/9d0cb9b4e8b6782b8511b38e8de844a7371ebade"
+                  "sha": "3ee213afa58a85e4aa50bc1d7cfbfa1f95a05fb7",
+                  "author": "Bence Kovacs",
+                  "timestamp": 1693322404,
+                  "message": "Merge pull request #32 from canonical/IAM-444-Include-self-signed-certificates-operator\n\nReplaced tls-certificates-operator with self-signed-certificates-operator",
+                  "url": "https://github.com/canonical/iam-bundle/commit/3ee213afa58a85e4aa50bc1d7cfbfa1f95a05fb7"
                }
             ],
             "is_archived": false,
@@ -4995,11 +4995,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "a2823f20a16e042f571b2d54460ad071fb99474f",
-                  "author": "Nikos Sklikas",
-                  "timestamp": 1691060166,
-                  "message": "Bump kratos version to 1.0.0 (#12)",
-                  "url": "https://github.com/canonical/kratos-rock/commit/a2823f20a16e042f571b2d54460ad071fb99474f"
+                  "sha": "e54ef76de98c0621f88c31bdbc9b9ea454aa1303",
+                  "author": "Bence Kovacs",
+                  "timestamp": 1693322518,
+                  "message": "Added ca-certificates package to stage-packages (#13)",
+                  "url": "https://github.com/canonical/kratos-rock/commit/e54ef76de98c0621f88c31bdbc9b9ea454aa1303"
                }
             ],
             "is_archived": false,
@@ -5841,9 +5841,18 @@
          {
             "name": "certificate-transfer-interface",
             "default_branch": "main",
-            "new_commits": 2,
+            "new_commits": 0,
             "url": "https://github.com/canonical/certificate-transfer-interface",
             "releases": [
+               {
+                  "id": 119095736,
+                  "version": "rev9",
+                  "timestamp": 1693321733,
+                  "title": "Revision 9",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 15:13 UTC on 29 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Runs main workflow on pushes to prs by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/21\">#21</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/saltiyazan\">@saltiyazan</a> made their first contribution in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/21\">#21</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev8...rev9\">https://github.com/canonical/certificate-transfer-interface/compare/rev8&hellip;rev9</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev9",
+                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev9...main"
+               },
                {
                   "id": 119082518,
                   "version": "rev8",
@@ -5861,15 +5870,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 13:01 UTC on 29 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add custom relation broken event by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/18\">#18</a></li>\n<li>Arrangements in the unit tests by <a href=\"http://github.com/gatici\">@gatici</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/19\">#19</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/18\">#18</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev6...rev7\">https://github.com/canonical/certificate-transfer-interface/compare/rev6&hellip;rev7</a></p>\n",
                   "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev7",
                   "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev7...main"
-               },
-               {
-                  "id": 118538644,
-                  "version": "rev5",
-                  "timestamp": 1692876155,
-                  "title": "Revision 5",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 11:25 UTC on 24 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Arrangements in the unit tests by <a href=\"http://github.com/gatici\">@gatici</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/19\">#19</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev4...rev5\">https://github.com/canonical/certificate-transfer-interface/compare/rev4&hellip;rev5</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev5",
-                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev5...main"
                }
             ],
             "commits": null,
@@ -5942,11 +5942,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "3a341d09fbeb5133fafe11df14b52c84dbb62ee3",
-                  "author": "renovate[bot]",
-                  "timestamp": 1693313890,
-                  "message": "Update dependency prettier to v3.0.3 (#71)\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
-                  "url": "https://github.com/canonical/sdcore-gui/commit/3a341d09fbeb5133fafe11df14b52c84dbb62ee3"
+                  "sha": "d99983746b42f10bb5a82baeb21f6032fe0ef755",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1693323012,
+                  "message": "[Feat] Only renders page content if backend is available (#70)",
+                  "url": "https://github.com/canonical/sdcore-gui/commit/d99983746b42f10bb5a82baeb21f6032fe0ef755"
                }
             ],
             "is_archived": false,
