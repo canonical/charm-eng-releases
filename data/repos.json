@@ -1355,9 +1355,18 @@
          {
             "name": "operator",
             "default_branch": "main",
-            "new_commits": 10,
+            "new_commits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 119347021,
+                  "version": "2.6.0",
+                  "timestamp": 1693425319,
+                  "title": "2.6.0: Harness.handle_exec, Harness.add_relation improvements, and more",
+                  "body": "<p>This release has two significant improvements to <code>testing.Harness</code>:</p>\n\n<ul>\n<li>Add <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.handle_exec\"><code>Harness.handle_exec</code></a> to allow charm tests to simulate <a href=\"https://ops.readthedocs.io/en/latest/#ops.Container.exec\"><code>Container.exec</code></a> calls (Pebble one-shot commands) and provide expected output. Thanks <a href=\"http://github.com/weiiwang01\">@weiiwang01</a> for the design and implementation (<a href=\"a href=&quot;https://github.com/canonical/operator/pull/993&quot;&gt;#993&lt;/a\">PR 993</a>).</li>\n<li>Simplify adding relation units and relation data by adding <code>app_data</code> and <code>unit_data</code> parameters to <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.add_relation\"><code>Harness.add_relation</code></a>. Previously, charm tests would have to call <code>add_relation</code> followed by <code>add_relation_unit</code> and <code>update_relation_data</code> &ndash; now only a single <code>add_relation</code> call is required. Implemented in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/994&quot;&gt;#994&lt;/a\">PR 994</a>.</li>\n</ul>\n\n<p>In addition, several small improvements and fixes are included:</p>\n\n<ul>\n<li>feat(model): add <code>Secret.unique_identifier</code> (XID part); improve id/label docs in <a href=\"https://github.com/canonical/operator/pull/986\">#986</a></li>\n<li>fix(testing): ignore <code>push()</code> encoding if source is a binary file or stream in <a href=\"https://github.com/canonical/operator/pull/991\">#991</a></li>\n<li>fix(pebble): remove use of deprecated <code>cgi</code> module in Pebble code in <a href=\"https://github.com/canonical/operator/pull/996\">#996</a></li>\n<li>fix(model): ensure Secret.get_content returns a copy of the dict in <a href=\"https://github.com/canonical/operator/pull/1000\">#1000</a></li>\n<li>fix(model): make Secret.set_content invalidate local cache by in <a href=\"https://github.com/canonical/operator/pull/1001\">#1001</a></li>\n</ul>\n\n<p><a href=\"https://github.com/canonical/operator/compare/2.5.0...2.6.0\">See all changes from 2.5.0 to 2.6.0.</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.6.0",
+                  "compare_url": "https://github.com/canonical/operator/compare/2.6.0...main"
+               },
                {
                   "id": 117415345,
                   "version": "2.5.1",
@@ -1375,15 +1384,6 @@
                   "body": "<p>This release includes three significant additions:</p>\n\n<ol>\n<li><strong>Multi-status:</strong> An initial version of the much-discussed &ldquo;multi-status&rdquo; handling in the form of the new <code>collect_app_status</code> and <code>collect_unit_status</code> events. This is useful for letting the framework automatically evaluate application (or unit) status from various components of the charm. We&rsquo;ll be documenting this properly soon, but in the meantime, read the API reference docs on <a href=\"https://ops.readthedocs.io/en/latest/#ops.CollectStatusEvent\"><code>CollectStatusEvent</code></a>. PR #954.</li>\n<li><strong>Harness.get_filesystem_root:</strong> Overhauling the <code>Harness</code>&rsquo;s test filesystem from an in-memory filesystem to use a temp directory on the real filesystem; use <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.get_filesystem_root\"><code>Harness.get_filesystem_root</code></a> to get the temp filesystem directory for a specific container. This makes testing container filesystem operations significantly easier and allows tests to use the regular Python file APIs to interact with it. Thanks <a href=\"http://github.com/weiiwang01\">@weiiwang01</a> for his efforts on this in #960.</li>\n<li><strong>Service context:</strong> Added support for Pebble&rsquo;s new &ldquo;service context&rdquo; feature, to allow you to exec commands in the context of a specified service (where <em>context</em> means environment variables, working directory, and user/group). PR #957.</li>\n</ol>\n\n<p>Other notable changes:</p>\n\n<ul>\n<li>Add <a href=\"https://ops.readthedocs.io/en/latest/#ops.JujuVersion.supports_open_port_on_k8s\"><code>JujuVersion.supports_open_port_on_k8s</code></a> by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in PR #965</li>\n<li>Support reading <code>charmcraft.yaml</code> in the testing harness by <a href=\"http://github.com/syu-w\">@syu-w</a> in PR #977</li>\n</ul>\n\n<p>In addition, the following developers made their first contribution:</p>\n\n<ul>\n<li><a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/operator/pull/975\">#975</a> (Add kill-delay to pebble ServiceDict type)</li>\n<li><a href=\"http://github.com/sobolevn\">@sobolevn</a> in <a href=\"https://github.com/canonical/operator/pull/978\">#978</a> (Replace typing.AnyStr with Union[str, bytes])</li>\n<li><a href=\"http://github.com/syu-w\">@syu-w</a> in <a href=\"https://github.com/canonical/operator/pull/977\">#977</a> (Support reading charmcraft.yaml in testing harness)</li>\n</ul>\n\n<p>We also made several other minor improvements to type annotations and a few other tweaks. See the full changelog: <a href=\"https://github.com/canonical/operator/compare/2.4.1...2.5.0\">https://github.com/canonical/operator/compare/2.4.1&hellip;2.5.0</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.5.0",
                   "compare_url": "https://github.com/canonical/operator/compare/2.5.0...main"
-               },
-               {
-                  "id": 110934110,
-                  "version": "2.4.1",
-                  "timestamp": 1688446307,
-                  "title": "2.4.1: Add type annotation for PebbleReadyEvent.workload",
-                  "body": "<p>This is a patch release: a minor but important type annotation forgotten in <a href=\"https://github.com/canonical/operator/releases/tag/2.4.0\">2.4.0</a>. Without it, charms that use type annotation on the pebble-ready events will fail type checking, because attributes of the <code>workload</code> won&rsquo;t be available as Pyright/MyPy doesn&rsquo;t know the type.</p>\n\n<p>Fix in <a href=\"https://github.com/canonical/operator/pull/962\">#962</a>.</p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.4.1",
-                  "compare_url": "https://github.com/canonical/operator/compare/2.4.1...main"
                }
             ],
             "commits": null,
