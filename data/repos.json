@@ -3284,20 +3284,40 @@
             }
          },
          {
-            "name": "serialized-data-interface",
+            "name": "kubeflow-tensorboards-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/serialized-data-interface",
-            "releases": null,
-            "commits": [
+            "url": "https://github.com/canonical/kubeflow-tensorboards-operator",
+            "releases": [
                {
-                  "sha": "8ab9b715898db535c087b795bcefb6d17ea9e025",
-                  "author": "Daniela Plascencia",
-                  "timestamp": 1690297110,
-                  "message": "build: pin jsonschema to >4, <4.18 to avoid installing 4.18.x (#49)\n\n* build: pin jsonschema to >4, <4.18 to avoid installing 4.18.x\r\n\r\nBecause some dependencies of jsonschema now require the rust toolchain (see 1 and 2), building\r\ncharms that depend on SDI (and therefore pull jsonschema) fail when building because none\r\nof them have rustc available when pip installing the charm's python dependencies.\r\n\r\nReasoning:\r\njsonschema 4.18.x introduced a dependency on rdps-py which at the same time introduced\r\na dependency on maturin, a python package that requires the rustc toolchain to be\r\nbuilt and installed from source. jsonschema <4.18 does not have that dependency.\r\n\r\nLinks:\r\n[1]python-jsonschema/jsonschema#1117\r\n[2] python-jsonschema/jsonschema#1114\r\n\r\nPartially fixes: canonical/bundle-kubeflow#648\r\n\r\nCo-authored-by: Adam Dyess <adam.dyess@canonical.com>\r\nCo-authored-by: Andrew Scribner <ca.scribner+1@gmail.com>",
-                  "url": "https://github.com/canonical/serialized-data-interface/commit/8ab9b715898db535c087b795bcefb6d17ea9e025"
+                  "id": 119482136,
+                  "version": "tensorboards-web-app-rev230",
+                  "timestamp": 1693492937,
+                  "title": "Revision 230",
+                  "body": "<p>resources:\n    -  tensorboards-web-app-image: kubeflownotebookswg/tensorboards-web-app:v1.7.0\n       resource-revision: 41</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:05 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/pull/88\">#88</a></li>\n<li>feat: get images on main by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/pull/90\">#90</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev220...tensorboards-web-app-rev230\">https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev220&hellip;tensorboards-web-app-rev230</a></p>\n",
+                  "url": "https://github.com/canonical/kubeflow-tensorboards-operator/releases/tag/tensorboards-web-app-rev230",
+                  "compare_url": "https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboards-web-app-rev230...main"
+               },
+               {
+                  "id": 115126294,
+                  "version": "tensorboards-web-app-rev222",
+                  "timestamp": 1691156503,
+                  "title": "Revision 222",
+                  "body": "<p>resources:\n    -  tensorboards-web-app-image: kubeflownotebookswg/tensorboards-web-app:v1.7.0\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:39 UTC on 4 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/pull/80\">#80</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219...tensorboards-web-app-rev222\">https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219&hellip;tensorboards-web-app-rev222</a></p>\n",
+                  "url": "https://github.com/canonical/kubeflow-tensorboards-operator/releases/tag/tensorboards-web-app-rev222",
+                  "compare_url": "https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboards-web-app-rev222...main"
+               },
+               {
+                  "id": 115125921,
+                  "version": "tensorboard-controller-rev220",
+                  "timestamp": 1691156503,
+                  "title": "Revision 220",
+                  "body": "<p>resources:\n    -  tensorboard-controller-image: kubeflownotebookswg/tensorboard-controller:v1.7.0\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:37 UTC on 4 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/pull/80\">#80</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219...tensorboard-controller-rev220\">https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219&hellip;tensorboard-controller-rev220</a></p>\n",
+                  "url": "https://github.com/canonical/kubeflow-tensorboards-operator/releases/tag/tensorboard-controller-rev220",
+                  "compare_url": "https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev220...main"
                }
             ],
+            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -3341,18 +3361,18 @@
             "charm": null
          },
          {
-            "name": "seldonio-rocks",
+            "name": "serialized-data-interface",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/seldonio-rocks",
+            "url": "https://github.com/canonical/serialized-data-interface",
             "releases": null,
             "commits": [
                {
-                  "sha": "c7a28afc1344ea5afad2ec53e8076661a10f4f4c",
-                  "author": "i-chvets",
-                  "timestamp": 1690549211,
-                  "message": "Kf 2271 feat tensorflow serving rock (#32)\n\n* feat: initial commit\r\nhttps://github.com/canonical/seldon-core-operator/issues/133\r\n\r\nSummary of changes:\r\n- Initial rockcraft file and tox.ini\r\n- Added organize.\r\n- Finalized bazel build.\r\n- Install python3.8 via packages\r\n- Uncommented cleanup\r\n- Added tensorflow-serving rock to ci",
-                  "url": "https://github.com/canonical/seldonio-rocks/commit/c7a28afc1344ea5afad2ec53e8076661a10f4f4c"
+                  "sha": "8ab9b715898db535c087b795bcefb6d17ea9e025",
+                  "author": "Daniela Plascencia",
+                  "timestamp": 1690297110,
+                  "message": "build: pin jsonschema to >4, <4.18 to avoid installing 4.18.x (#49)\n\n* build: pin jsonschema to >4, <4.18 to avoid installing 4.18.x\r\n\r\nBecause some dependencies of jsonschema now require the rust toolchain (see 1 and 2), building\r\ncharms that depend on SDI (and therefore pull jsonschema) fail when building because none\r\nof them have rustc available when pip installing the charm's python dependencies.\r\n\r\nReasoning:\r\njsonschema 4.18.x introduced a dependency on rdps-py which at the same time introduced\r\na dependency on maturin, a python package that requires the rustc toolchain to be\r\nbuilt and installed from source. jsonschema <4.18 does not have that dependency.\r\n\r\nLinks:\r\n[1]python-jsonschema/jsonschema#1117\r\n[2] python-jsonschema/jsonschema#1114\r\n\r\nPartially fixes: canonical/bundle-kubeflow#648\r\n\r\nCo-authored-by: Adam Dyess <adam.dyess@canonical.com>\r\nCo-authored-by: Andrew Scribner <ca.scribner+1@gmail.com>",
+                  "url": "https://github.com/canonical/serialized-data-interface/commit/8ab9b715898db535c087b795bcefb6d17ea9e025"
                }
             ],
             "is_archived": false,
@@ -3418,18 +3438,18 @@
             "charm": null
          },
          {
-            "name": "resource-dispatcher-rock",
+            "name": "seldonio-rocks",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/resource-dispatcher-rock",
+            "url": "https://github.com/canonical/seldonio-rocks",
             "releases": null,
             "commits": [
                {
-                  "sha": "b47452afa8c2d1c4e1438ab6a6391e9f84a5daa5",
-                  "author": "Michal Hucko",
-                  "timestamp": 1684140463,
-                  "message": "KF-2263 resoruce dispatcher Rock (#1)\n\n* Rock refactor.\r\n* Add non root user. \r\n* Add docs.",
-                  "url": "https://github.com/canonical/resource-dispatcher-rock/commit/b47452afa8c2d1c4e1438ab6a6391e9f84a5daa5"
+                  "sha": "c7a28afc1344ea5afad2ec53e8076661a10f4f4c",
+                  "author": "i-chvets",
+                  "timestamp": 1690549211,
+                  "message": "Kf 2271 feat tensorflow serving rock (#32)\n\n* feat: initial commit\r\nhttps://github.com/canonical/seldon-core-operator/issues/133\r\n\r\nSummary of changes:\r\n- Initial rockcraft file and tox.ini\r\n- Added organize.\r\n- Finalized bazel build.\r\n- Install python3.8 via packages\r\n- Uncommented cleanup\r\n- Added tensorflow-serving rock to ci",
+                  "url": "https://github.com/canonical/seldonio-rocks/commit/c7a28afc1344ea5afad2ec53e8076661a10f4f4c"
                }
             ],
             "is_archived": false,
@@ -3731,9 +3751,18 @@
          {
             "name": "kubeflow-dashboard-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/kubeflow-dashboard-operator",
             "releases": [
+               {
+                  "id": 119480736,
+                  "version": "rev412",
+                  "timestamp": 1693492695,
+                  "title": "Revision 412",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/centraldashboard:v1.7.0\n       resource-revision: 636</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:54 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: get images on main by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/159\">#159</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/compare/rev404...rev412\">https://github.com/canonical/kubeflow-dashboard-operator/compare/rev404&hellip;rev412</a></p>\n",
+                  "url": "https://github.com/canonical/kubeflow-dashboard-operator/releases/tag/rev412",
+                  "compare_url": "https://github.com/canonical/kubeflow-dashboard-operator/compare/rev412...main"
+               },
                {
                   "id": 118277088,
                   "version": "rev404",
@@ -3751,15 +3780,6 @@
                   "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/centraldashboard:v1.7.0\n       resource-revision: 619</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:51 UTC on 16 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/157\">#157</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/compare/rev387...rev395\">https://github.com/canonical/kubeflow-dashboard-operator/compare/rev387&hellip;rev395</a></p>\n",
                   "url": "https://github.com/canonical/kubeflow-dashboard-operator/releases/tag/rev395",
                   "compare_url": "https://github.com/canonical/kubeflow-dashboard-operator/compare/rev395...main"
-               },
-               {
-                  "id": 115882676,
-                  "version": "rev387",
-                  "timestamp": 1691654352,
-                  "title": "Revision 387",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/centraldashboard:v1.7.0\n       resource-revision: 611</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:23 UTC on 10 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Drop stale directory ref from charmcraft.yaml by <a href=\"http://github.com/phoevos\">@phoevos</a> in <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/150\">#150</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/phoevos\">@phoevos</a> made their first contribution in <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/150\">#150</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/compare/rev386...rev387\">https://github.com/canonical/kubeflow-dashboard-operator/compare/rev386&hellip;rev387</a></p>\n",
-                  "url": "https://github.com/canonical/kubeflow-dashboard-operator/releases/tag/rev387",
-                  "compare_url": "https://github.com/canonical/kubeflow-dashboard-operator/compare/rev387...main"
                }
             ],
             "commits": null,
@@ -3845,23 +3865,125 @@
             "charm": null
          },
          {
-            "name": "resource-dispatcher-image",
+            "name": "seldon-core-operator",
             "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/resource-dispatcher-image",
-            "releases": null,
-            "commits": [
+            "new_commits": 25,
+            "url": "https://github.com/canonical/seldon-core-operator",
+            "releases": [
                {
-                  "sha": "d33b457ef63695aa2b904dde594016d133612000",
-                  "author": "Michal Hucko",
-                  "timestamp": 1688130020,
-                  "message": "git-xargs programmatic commit (#16)",
-                  "url": "https://github.com/canonical/resource-dispatcher-image/commit/d33b457ef63695aa2b904dde594016d133612000"
+                  "id": 119485596,
+                  "version": "rev520",
+                  "timestamp": 1693494662,
+                  "title": "Revision 520",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 625</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 17:26 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: ported integration tests fixes from main by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/202\">#202</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev457...rev520\">https://github.com/canonical/seldon-core-operator/compare/rev457&hellip;rev520</a></p>\n",
+                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev520",
+                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev520...main"
+               },
+               {
+                  "id": 115633929,
+                  "version": "rev497",
+                  "timestamp": 1691505995,
+                  "title": "Revision 497",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 603</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:24 UTC on 8 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: updated metadata with proper container image by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/178\">#178</a></li>\n<li>ci: increase storage in GH runners and run integration tests in different machines by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/187\">#187</a></li>\n<li>tests: remove SeldonDeployments even if the test case fails by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/188\">#188</a></li>\n<li>tests: increase number of retries and increase starting time for tenacity retries by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/190\">#190</a></li>\n<li>ci, build: update CI, libraries, python dependencies, and format by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/184\">#184</a></li>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/162\">#162</a></li>\n<li>Merge <code>dnplas-fix-ci</code> into <code>main</code> by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/191\">#191</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev437...rev497\">https://github.com/canonical/seldon-core-operator/compare/rev437&hellip;rev497</a></p>\n",
+                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev497",
+                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev497...main"
+               },
+               {
+                  "id": 113050554,
+                  "version": "rev457",
+                  "timestamp": 1689898063,
+                  "title": "Revision 457",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 563</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 01:11 UTC on 21 Jul 2023</p>\n\n<p>Released to &lsquo;1.15/stable&rsquo; at 13:38 UTC on 21 Jul 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Seldon core images update in track/1.15 - backport by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/174\">#174</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev455...rev457\">https://github.com/canonical/seldon-core-operator/compare/rev455&hellip;rev457</a></p>\n",
+                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev457",
+                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev457...main"
                }
             ],
+            "commits": null,
             "is_archived": false,
             "ci_actions": null,
-            "charm": null
+            "charm": {
+               "name": "seldon-core",
+               "url": "https://charmhub.io/seldon-core",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 52,
+                     "timestamp": 1643145388
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 294,
+                     "timestamp": 1682409386
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 517,
+                     "timestamp": 1693493573
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "stable",
+                     "revision": 457,
+                     "timestamp": 1689946694
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "beta",
+                     "revision": 298,
+                     "timestamp": 1680073793
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "edge",
+                     "revision": 520,
+                     "timestamp": 1693502789
+                  },
+                  {
+                     "track": "1.14",
+                     "channel": "stable",
+                     "revision": 92,
+                     "timestamp": 1662578119
+                  },
+                  {
+                     "track": "1.14",
+                     "channel": "beta",
+                     "revision": 92,
+                     "timestamp": 1663190485
+                  },
+                  {
+                     "track": "1.14",
+                     "channel": "edge",
+                     "revision": 92,
+                     "timestamp": 1662558815
+                  },
+                  {
+                     "track": "1.6",
+                     "channel": "stable",
+                     "revision": 58,
+                     "timestamp": 1656621977
+                  },
+                  {
+                     "track": "1.6",
+                     "channel": "edge",
+                     "revision": 58,
+                     "timestamp": 1656075503
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "1.15",
+                  "1.14",
+                  "1.6"
+               ]
+            }
          },
          {
             "name": "argo-workflows-rocks",
@@ -3885,9 +4007,18 @@
          {
             "name": "kubeflow-volumes-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/kubeflow-volumes-operator",
             "releases": [
+               {
+                  "id": 119480430,
+                  "version": "rev218",
+                  "timestamp": 1693492731,
+                  "title": "Revision 218",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/volumes-web-app:v1.7.0\n       resource-revision: 218</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:52 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: get images on main by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/kubeflow-volumes-operator/pull/108\">#108</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-volumes-operator/compare/rev213...rev218\">https://github.com/canonical/kubeflow-volumes-operator/compare/rev213&hellip;rev218</a></p>\n",
+                  "url": "https://github.com/canonical/kubeflow-volumes-operator/releases/tag/rev218",
+                  "compare_url": "https://github.com/canonical/kubeflow-volumes-operator/compare/rev218...main"
+               },
                {
                   "id": 118763419,
                   "version": "rev213",
@@ -3905,15 +4036,6 @@
                   "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/volumes-web-app:v1.7.0\n       resource-revision: 210</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:36 UTC on 16 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/kubeflow-volumes-operator/pull/105\">#105</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-volumes-operator/compare/rev205...rev210\">https://github.com/canonical/kubeflow-volumes-operator/compare/rev205&hellip;rev210</a></p>\n",
                   "url": "https://github.com/canonical/kubeflow-volumes-operator/releases/tag/rev210",
                   "compare_url": "https://github.com/canonical/kubeflow-volumes-operator/compare/rev210...main"
-               },
-               {
-                  "id": 115496773,
-                  "version": "rev205",
-                  "timestamp": 1691422948,
-                  "title": "Revision 205",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/volumes-web-app:v1.7.0\n       resource-revision: 205</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:04 UTC on 7 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Remove bcrypt from unittests by <a href=\"http://github.com/misohu\">@misohu</a> in <a href=\"https://github.com/canonical/kubeflow-volumes-operator/pull/100\">#100</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-volumes-operator/compare/rev201...rev205\">https://github.com/canonical/kubeflow-volumes-operator/compare/rev201&hellip;rev205</a></p>\n",
-                  "url": "https://github.com/canonical/kubeflow-volumes-operator/releases/tag/rev205",
-                  "compare_url": "https://github.com/canonical/kubeflow-volumes-operator/compare/rev205...main"
                }
             ],
             "commits": null,
@@ -3922,18 +4044,18 @@
             "charm": null
          },
          {
-            "name": "pipelines-rocks",
+            "name": "resource-dispatcher-rock",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/pipelines-rocks",
+            "url": "https://github.com/canonical/resource-dispatcher-rock",
             "releases": null,
             "commits": [
                {
-                  "sha": "15dd099a2dcd287969c0f0db70b023d6ab5758a9",
-                  "author": "Daniela Plascencia",
-                  "timestamp": 1690904664,
-                  "message": "fix, refactor: bump source-tag 2.0.0-alpha.7 -> 2.0.0 and adds context to the Rockcraft project (#31)\n\n* fix, chore: bump source-tag 2.0.0-alpha.7 -> 2.0.0 and adds context to the Rockcraft project\r\n\r\nBumping the version because 2.0.0-alpha.7 has an incompatibility issue between node 14\r\nand some dependencies like minio 7.1.1 and workbox-webpack-plugin. For more details,\r\nplease refer to kubeflow/pipelines/pull/9541.\r\nFixes: #20\r\n\r\nThis commit also refactors the Rockcraft project a little bit to be similar to\r\nthe Dockerfile in upstream and also to add more references to the file so it's\r\neasier to see what parts correspond to which ones in the upstream Dockerfile.",
-                  "url": "https://github.com/canonical/pipelines-rocks/commit/15dd099a2dcd287969c0f0db70b023d6ab5758a9"
+                  "sha": "b47452afa8c2d1c4e1438ab6a6391e9f84a5daa5",
+                  "author": "Michal Hucko",
+                  "timestamp": 1684140463,
+                  "message": "KF-2263 resoruce dispatcher Rock (#1)\n\n* Rock refactor.\r\n* Add non root user. \r\n* Add docs.",
+                  "url": "https://github.com/canonical/resource-dispatcher-rock/commit/b47452afa8c2d1c4e1438ab6a6391e9f84a5daa5"
                }
             ],
             "is_archived": false,
@@ -4077,18 +4199,18 @@
             "charm": null
          },
          {
-            "name": "pipelines-persistence-agent-rock",
+            "name": "resource-dispatcher-image",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/pipelines-persistence-agent-rock",
+            "url": "https://github.com/canonical/resource-dispatcher-image",
             "releases": null,
             "commits": [
                {
-                  "sha": "3c1608c0117995625b40c2930688cd8674b24d7e",
-                  "author": "Simon Aronsson",
-                  "timestamp": 1679491512,
-                  "message": "Initial commit",
-                  "url": "https://github.com/canonical/pipelines-persistence-agent-rock/commit/3c1608c0117995625b40c2930688cd8674b24d7e"
+                  "sha": "d33b457ef63695aa2b904dde594016d133612000",
+                  "author": "Michal Hucko",
+                  "timestamp": 1688130020,
+                  "message": "git-xargs programmatic commit (#16)",
+                  "url": "https://github.com/canonical/resource-dispatcher-image/commit/d33b457ef63695aa2b904dde594016d133612000"
                }
             ],
             "is_archived": false,
@@ -4174,6 +4296,83 @@
             "charm": null
          },
          {
+            "name": "oidc-gatekeeper-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/oidc-gatekeeper-operator",
+            "releases": [
+               {
+                  "id": 119480580,
+                  "version": "rev261",
+                  "timestamp": 1693492905,
+                  "title": "Revision 261",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/arrikto/kubeflow/oidc-authservice:e236439\n       resource-revision: 395</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:53 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: get images on main by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/106\">#106</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/compare/rev256...rev261\">https://github.com/canonical/oidc-gatekeeper-operator/compare/rev256&hellip;rev261</a></p>\n",
+                  "url": "https://github.com/canonical/oidc-gatekeeper-operator/releases/tag/rev261",
+                  "compare_url": "https://github.com/canonical/oidc-gatekeeper-operator/compare/rev261...main"
+               },
+               {
+                  "id": 117508937,
+                  "version": "rev256",
+                  "timestamp": 1692210547,
+                  "title": "Revision 256",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/arrikto/kubeflow/oidc-authservice:e236439\n       resource-revision: 390</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:54 UTC on 16 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/103\">#103</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/compare/rev244...rev256\">https://github.com/canonical/oidc-gatekeeper-operator/compare/rev244&hellip;rev256</a></p>\n",
+                  "url": "https://github.com/canonical/oidc-gatekeeper-operator/releases/tag/rev256",
+                  "compare_url": "https://github.com/canonical/oidc-gatekeeper-operator/compare/rev256...main"
+               },
+               {
+                  "id": 115771207,
+                  "version": "rev250",
+                  "timestamp": 1691589070,
+                  "title": "Revision 250",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/arrikto/kubeflow/oidc-authservice:e236439\n       resource-revision: 384</p>\n\n<p>Static resources:\n Released to &lsquo;ckf-1.7/edge&rsquo; at 14:12 UTC on 9 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: updated get images script without branch checkout for track/ckf-1.7 by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/94\">#94</a></li>\n<li>build: bump juju 2.9.44.0, sdi-&gt;0.7.0, pyyaml-&gt;6.0.1 by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/98\">#98</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/compare/rev170...rev250\">https://github.com/canonical/oidc-gatekeeper-operator/compare/rev170&hellip;rev250</a></p>\n",
+                  "url": "https://github.com/canonical/oidc-gatekeeper-operator/releases/tag/rev250",
+                  "compare_url": "https://github.com/canonical/oidc-gatekeeper-operator/compare/rev250...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "pipelines-persistence-agent-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/pipelines-persistence-agent-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "3c1608c0117995625b40c2930688cd8674b24d7e",
+                  "author": "Simon Aronsson",
+                  "timestamp": 1679491512,
+                  "message": "Initial commit",
+                  "url": "https://github.com/canonical/pipelines-persistence-agent-rock/commit/3c1608c0117995625b40c2930688cd8674b24d7e"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "pipelines-rocks",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/pipelines-rocks",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "15dd099a2dcd287969c0f0db70b023d6ab5758a9",
+                  "author": "Daniela Plascencia",
+                  "timestamp": 1690904664,
+                  "message": "fix, refactor: bump source-tag 2.0.0-alpha.7 -> 2.0.0 and adds context to the Rockcraft project (#31)\n\n* fix, chore: bump source-tag 2.0.0-alpha.7 -> 2.0.0 and adds context to the Rockcraft project\r\n\r\nBumping the version because 2.0.0-alpha.7 has an incompatibility issue between node 14\r\nand some dependencies like minio 7.1.1 and workbox-webpack-plugin. For more details,\r\nplease refer to kubeflow/pipelines/pull/9541.\r\nFixes: #20\r\n\r\nThis commit also refactors the Rockcraft project a little bit to be similar to\r\nthe Dockerfile in upstream and also to add more references to the file so it's\r\neasier to see what parts correspond to which ones in the upstream Dockerfile.",
+                  "url": "https://github.com/canonical/pipelines-rocks/commit/15dd099a2dcd287969c0f0db70b023d6ab5758a9"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
             "name": "metacontroller-operator",
             "default_branch": "main",
             "new_commits": 1,
@@ -4244,205 +4443,6 @@
                   "body": "<p>resources:\n    -  training-operator-image: kubeflow/training-operator:v1-66aa635\n       resource-revision: 262</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:12 UTC on 3 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/training-operator/pull/116\">#116</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/training-operator/compare/rev244...rev245\">https://github.com/canonical/training-operator/compare/rev244&hellip;rev245</a></p>\n",
                   "url": "https://github.com/canonical/training-operator/releases/tag/rev245",
                   "compare_url": "https://github.com/canonical/training-operator/compare/rev245...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "oidc-gatekeeper-operator",
-            "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/oidc-gatekeeper-operator",
-            "releases": [
-               {
-                  "id": 117508937,
-                  "version": "rev256",
-                  "timestamp": 1692210547,
-                  "title": "Revision 256",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/arrikto/kubeflow/oidc-authservice:e236439\n       resource-revision: 390</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:54 UTC on 16 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/103\">#103</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/compare/rev244...rev256\">https://github.com/canonical/oidc-gatekeeper-operator/compare/rev244&hellip;rev256</a></p>\n",
-                  "url": "https://github.com/canonical/oidc-gatekeeper-operator/releases/tag/rev256",
-                  "compare_url": "https://github.com/canonical/oidc-gatekeeper-operator/compare/rev256...main"
-               },
-               {
-                  "id": 115771207,
-                  "version": "rev250",
-                  "timestamp": 1691589070,
-                  "title": "Revision 250",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/arrikto/kubeflow/oidc-authservice:e236439\n       resource-revision: 384</p>\n\n<p>Static resources:\n Released to &lsquo;ckf-1.7/edge&rsquo; at 14:12 UTC on 9 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: updated get images script without branch checkout for track/ckf-1.7 by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/94\">#94</a></li>\n<li>build: bump juju 2.9.44.0, sdi-&gt;0.7.0, pyyaml-&gt;6.0.1 by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/98\">#98</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/compare/rev170...rev250\">https://github.com/canonical/oidc-gatekeeper-operator/compare/rev170&hellip;rev250</a></p>\n",
-                  "url": "https://github.com/canonical/oidc-gatekeeper-operator/releases/tag/rev250",
-                  "compare_url": "https://github.com/canonical/oidc-gatekeeper-operator/compare/rev250...main"
-               },
-               {
-                  "id": 115117312,
-                  "version": "rev244",
-                  "timestamp": 1691152155,
-                  "title": "Revision 244",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/arrikto/kubeflow/oidc-authservice:e236439\n       resource-revision: 378</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:42 UTC on 4 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/pull/91\">#91</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oidc-gatekeeper-operator/compare/rev242...rev244\">https://github.com/canonical/oidc-gatekeeper-operator/compare/rev242&hellip;rev244</a></p>\n",
-                  "url": "https://github.com/canonical/oidc-gatekeeper-operator/releases/tag/rev244",
-                  "compare_url": "https://github.com/canonical/oidc-gatekeeper-operator/compare/rev244...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "seldon-core-operator",
-            "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/seldon-core-operator",
-            "releases": [
-               {
-                  "id": 115633929,
-                  "version": "rev497",
-                  "timestamp": 1691505995,
-                  "title": "Revision 497",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 603</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:24 UTC on 8 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: updated metadata with proper container image by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/178\">#178</a></li>\n<li>ci: increase storage in GH runners and run integration tests in different machines by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/187\">#187</a></li>\n<li>tests: remove SeldonDeployments even if the test case fails by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/188\">#188</a></li>\n<li>tests: increase number of retries and increase starting time for tenacity retries by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/190\">#190</a></li>\n<li>ci, build: update CI, libraries, python dependencies, and format by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/184\">#184</a></li>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/162\">#162</a></li>\n<li>Merge <code>dnplas-fix-ci</code> into <code>main</code> by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/191\">#191</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev437...rev497\">https://github.com/canonical/seldon-core-operator/compare/rev437&hellip;rev497</a></p>\n",
-                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev497",
-                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev497...main"
-               },
-               {
-                  "id": 113050554,
-                  "version": "rev457",
-                  "timestamp": 1689898063,
-                  "title": "Revision 457",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 563</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 01:11 UTC on 21 Jul 2023</p>\n\n<p>Released to &lsquo;1.15/stable&rsquo; at 13:38 UTC on 21 Jul 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Seldon core images update in track/1.15 - backport by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/174\">#174</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev455...rev457\">https://github.com/canonical/seldon-core-operator/compare/rev455&hellip;rev457</a></p>\n",
-                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev457",
-                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev457...main"
-               },
-               {
-                  "id": 113010751,
-                  "version": "rev455",
-                  "timestamp": 1689875221,
-                  "title": "Revision 455",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/seldonio/seldon-core-operator:1.15.0\n       resource-revision: 561</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 18:20 UTC on 20 Jul 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix integration tests: pin juju temporarely due to bug  by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/182\">#182</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev426...rev455\">https://github.com/canonical/seldon-core-operator/compare/rev426&hellip;rev455</a></p>\n",
-                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev455",
-                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev455...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": {
-               "name": "seldon-core",
-               "url": "https://charmhub.io/seldon-core",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 52,
-                     "timestamp": 1643145388
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 294,
-                     "timestamp": 1682409386
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 517,
-                     "timestamp": 1693493573
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "stable",
-                     "revision": 457,
-                     "timestamp": 1689946694
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "beta",
-                     "revision": 298,
-                     "timestamp": 1680073793
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "edge",
-                     "revision": 457,
-                     "timestamp": 1689901897
-                  },
-                  {
-                     "track": "1.14",
-                     "channel": "stable",
-                     "revision": 92,
-                     "timestamp": 1662578119
-                  },
-                  {
-                     "track": "1.14",
-                     "channel": "beta",
-                     "revision": 92,
-                     "timestamp": 1663190485
-                  },
-                  {
-                     "track": "1.14",
-                     "channel": "edge",
-                     "revision": 92,
-                     "timestamp": 1662558815
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "stable",
-                     "revision": 58,
-                     "timestamp": 1656621977
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "edge",
-                     "revision": 58,
-                     "timestamp": 1656075503
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "1.15",
-                  "1.14",
-                  "1.6"
-               ]
-            }
-         },
-         {
-            "name": "kubeflow-tensorboards-operator",
-            "default_branch": "main",
-            "new_commits": 2,
-            "url": "https://github.com/canonical/kubeflow-tensorboards-operator",
-            "releases": [
-               {
-                  "id": 115126294,
-                  "version": "tensorboards-web-app-rev222",
-                  "timestamp": 1691156503,
-                  "title": "Revision 222",
-                  "body": "<p>resources:\n    -  tensorboards-web-app-image: kubeflownotebookswg/tensorboards-web-app:v1.7.0\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:39 UTC on 4 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/pull/80\">#80</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219...tensorboards-web-app-rev222\">https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219&hellip;tensorboards-web-app-rev222</a></p>\n",
-                  "url": "https://github.com/canonical/kubeflow-tensorboards-operator/releases/tag/tensorboards-web-app-rev222",
-                  "compare_url": "https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboards-web-app-rev222...main"
-               },
-               {
-                  "id": 115125921,
-                  "version": "tensorboard-controller-rev220",
-                  "timestamp": 1691156503,
-                  "title": "Revision 220",
-                  "body": "<p>resources:\n    -  tensorboard-controller-image: kubeflownotebookswg/tensorboard-controller:v1.7.0\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:37 UTC on 4 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/pull/80\">#80</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219...tensorboard-controller-rev220\">https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev219&hellip;tensorboard-controller-rev220</a></p>\n",
-                  "url": "https://github.com/canonical/kubeflow-tensorboards-operator/releases/tag/tensorboard-controller-rev220",
-                  "compare_url": "https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev220...main"
-               },
-               {
-                  "id": 114941777,
-                  "version": "tensorboards-web-app-rev221",
-                  "timestamp": 1691055928,
-                  "title": "Revision 221",
-                  "body": "<p>resources:\n    -  tensorboards-web-app-image: kubeflownotebookswg/tensorboards-web-app:v1.7.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:15 UTC on 3 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update tox.ini&rsquo;s update-requirements by <a href=\"http://github.com/ca-scribner\">@ca-scribner</a> in <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/pull/85\">#85</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev214...tensorboards-web-app-rev221\">https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboard-controller-rev214&hellip;tensorboards-web-app-rev221</a></p>\n",
-                  "url": "https://github.com/canonical/kubeflow-tensorboards-operator/releases/tag/tensorboards-web-app-rev221",
-                  "compare_url": "https://github.com/canonical/kubeflow-tensorboards-operator/compare/tensorboards-web-app-rev221...main"
                }
             ],
             "commits": null,
@@ -4743,7 +4743,7 @@
          {
             "name": "identity-platform-login-ui",
             "default_branch": "main",
-            "new_commits": 5,
+            "new_commits": 8,
             "url": "https://github.com/canonical/identity-platform-login-ui",
             "releases": [
                {
@@ -7030,7 +7030,7 @@
          {
             "name": "postgresql-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
                {
@@ -8028,7 +8028,7 @@
          {
             "name": "pgbouncer-k8s-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 2,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -8971,6 +8971,15 @@
             "new_commits": 1,
             "url": "https://github.com/canonical/trino-k8s-operator",
             "releases": [
+               {
+                  "id": 119480995,
+                  "version": "rev4",
+                  "timestamp": 1692725563,
+                  "title": "Revision 4",
+                  "body": "<p>resources:\n    -  trino-image: trinodb/trino:418\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:56 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-5188 Replace TLS relation with process-forwarded=true by <a href=\"http://github.com/AmberCharitos\">@AmberCharitos</a> in <a href=\"https://github.com/canonical/trino-k8s-operator/pull/17\">#17</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev3...rev4\">https://github.com/canonical/trino-k8s-operator/compare/rev3&hellip;rev4</a></p>\n",
+                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev4",
+                  "compare_url": "https://github.com/canonical/trino-k8s-operator/compare/rev4...main"
+               },
                {
                   "id": 115925627,
                   "version": "rev3",
@@ -10005,7 +10014,7 @@
          {
             "name": "synapse-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/synapse-operator",
             "releases": [
                {
