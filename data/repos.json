@@ -1399,11 +1399,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "fadf7acd87ec25795ef93eb9608af7edfdeabd80",
-                  "author": "Ray Chan",
-                  "timestamp": 1693344422,
-                  "message": "Allow `Snap.get` and `Snap.set` to respect the Python's built-in types (#109)",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/fadf7acd87ec25795ef93eb9608af7edfdeabd80"
+                  "sha": "20b8afd035e6f8a98390490d74676c150d746bcc",
+                  "author": "Robert Gildein",
+                  "timestamp": 1693520133,
+                  "message": "Add functional tests for grub lib (#104)\n\nSwitch to use update_config instead of save_config in Config.update\r\nfunction to ensure charm configs are updated and not overwritten.\r\nFix wiring lines in _save_config function.\r\nRaise ApplyError if grub-mkconfig command failed, since it is failing\r\nalso if there is wrong validation.\r\n\r\nSince the grub lib required to run integration tests on machine or VM,\r\nwe are switch to running integration tests directly on GitHub runner.\r\nIt was not possible to run it on VMs, since the GitHub runner do not\r\nsupports nested virtualization.",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/20b8afd035e6f8a98390490d74676c150d746bcc"
                }
             ],
             "is_archived": false,
@@ -1845,13 +1845,13 @@
                   "compare_url": "https://github.com/canonical/cos-proxy-operator/compare/rev45...main"
                },
                {
-                  "id": 116062129,
-                  "version": "rev44",
-                  "timestamp": 1691756363,
-                  "title": "Revision 44",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:31 UTC on 11 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix error on missing nrpe checks by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/cos-proxy-operator/pull/77\">#77</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/cos-proxy-operator/compare/rev43...rev44\">https://github.com/canonical/cos-proxy-operator/compare/rev43&hellip;rev44</a></p>\n",
-                  "url": "https://github.com/canonical/cos-proxy-operator/releases/tag/rev44",
-                  "compare_url": "https://github.com/canonical/cos-proxy-operator/compare/rev44...main"
+                  "id": 112823420,
+                  "version": "rev42",
+                  "timestamp": 1689775958,
+                  "title": "Revision 42",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:24 UTC on 19 Jul 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>scrape internal metrics and host metrics more sparingly by <a href=\"http://github.com/simskij\">@simskij</a> in <a href=\"https://github.com/canonical/cos-proxy-operator/pull/71\">#71</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/cos-proxy-operator/compare/rev41...rev42\">https://github.com/canonical/cos-proxy-operator/compare/rev41&hellip;rev42</a></p>\n",
+                  "url": "https://github.com/canonical/cos-proxy-operator/releases/tag/rev42",
+                  "compare_url": "https://github.com/canonical/cos-proxy-operator/compare/rev42...main"
                }
             ],
             "commits": null,
@@ -3472,15 +3472,6 @@
                   "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev327...main"
                },
                {
-                  "id": 115722160,
-                  "version": "rev321",
-                  "timestamp": 1691566688,
-                  "title": "Revision 321",
-                  "body": "<p>resources:\n    -  oci-image: dexidp/dex:v2.36.0\n       resource-revision: 415</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:13 UTC on 9 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>refactor: generate dex-auth configuration outside of update_layer() by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/dex-auth-operator/pull/157\">#157</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev320...rev321\">https://github.com/canonical/dex-auth-operator/compare/rev320&hellip;rev321</a></p>\n",
-                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev321",
-                  "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev321...main"
-               },
-               {
                   "id": 115638256,
                   "version": "rev320",
                   "timestamp": 1691507942,
@@ -3488,6 +3479,15 @@
                   "body": "<p>resources:\n    -  oci-image: dexidp/dex:v2.36.0\n       resource-revision: 414</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:56 UTC on 8 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: upgrade dex-auth from 2.31.2 to 2.36.0 by <a href=\"http://github.com/NohaIhab\">@NohaIhab</a> in <a href=\"https://github.com/canonical/dex-auth-operator/pull/150\">#150</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev307...rev320\">https://github.com/canonical/dex-auth-operator/compare/rev307&hellip;rev320</a></p>\n",
                   "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev320",
                   "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev320...main"
+               },
+               {
+                  "id": 115620088,
+                  "version": "rev316",
+                  "timestamp": 1691501363,
+                  "title": "Revision 316",
+                  "body": "<p>resources:\n    -  oci-image: dexidp/dex:v2.31.2\n       resource-revision: 410</p>\n\n<p>Static resources:\n Released to &lsquo;2.31/edge&rsquo; at 13:58 UTC on 8 Aug 2023</p>\n\n<p>Released to &lsquo;2.31/stable&rsquo; at 15:09 UTC on 8 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add <code>enablePasswordDB</code> charm configuration option to enable/disable static password login (#149) by <a href=\"http://github.com/DnPlas\">@DnPlas</a> in <a href=\"https://github.com/canonical/dex-auth-operator/pull/153\">#153</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev275...rev316\">https://github.com/canonical/dex-auth-operator/compare/rev275&hellip;rev316</a></p>\n",
+                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev316",
+                  "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev316...main"
                }
             ],
             "commits": null,
