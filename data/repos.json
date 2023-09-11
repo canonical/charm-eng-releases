@@ -10113,13 +10113,13 @@
                   "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.5.0...main"
                },
                {
-                  "id": 98617115,
-                  "version": "v0.3.0",
-                  "timestamp": 1680941560,
-                  "title": "v0.3.0: Community Contribution Conflict Check",
-                  "body": "<h3>Changed</h3>\n\n<ul>\n<li>The action now checks for conflicts with any edits directly on discourse and\nwill fail the content update if there are conflicts. The git merge algorithm\nis used to merge content where there are no conflicts with the new content in\ngit and the changed content on discourse. The <code>base_branch</code> input can be used\nto set the branch that contains the content for the base of the comparison for\nconflicts. It should be the branch targeted by pull requests and from which\nreleases are usually done. This input is optional and defaults to the default\nbranch of the repository.</li>\n<li>The <code>github_token</code> input has been changed to be required as it is now also\nrequired during reconciliation to retrieve the content that was last pushed\nfrom git to discousrse as a base for checking for content conflicts and\nmerging content.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.3.0",
-                  "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.3.0...main"
+                  "id": 99343115,
+                  "version": "v0.4.0",
+                  "timestamp": 1681365538,
+                  "title": "v0.4.0 Use Tag to Track Latest Content",
+                  "body": "<h3>Changed</h3>\n\n<ul>\n<li>The base for the content comparison is no longer based on using a branch.\nInstead, the action will look for a tag with a default value of\n<code>upload-charm-docs/base-content</code> which can be changed using the\n<code>base_tag_name</code> input. This ensures that the comparison can be made even if\nthe action is run on the default branch. The action will now fail if the\n<code>base_tag_name</code> is not found on the repository.</li>\n<li>On a successful run in reconciliation mode with dry run not enabled, the\naction will automatically add the <code>base_tag_name</code> tag to the commit on which\nit was run.</li>\n<li>The <code>base_branch</code> input has been deprecated and will be removed in a future\nrelease. It is no longer in use.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/upload-charm-docs/releases/tag/v0.4.0",
+                  "compare_url": "https://github.com/canonical/upload-charm-docs/compare/v0.4.0...main"
                }
             ],
             "commits": null,
