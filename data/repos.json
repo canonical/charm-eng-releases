@@ -105,7 +105,7 @@
          {
             "name": "viddy",
             "default_branch": "master",
-            "new_commits": 3,
+            "new_commits": 0,
             "url": "https://github.com/juju/viddy",
             "releases": [
                {
@@ -1399,11 +1399,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "20b8afd035e6f8a98390490d74676c150d746bcc",
-                  "author": "Robert Gildein",
-                  "timestamp": 1693520133,
-                  "message": "Add functional tests for grub lib (#104)\n\nSwitch to use update_config instead of save_config in Config.update\r\nfunction to ensure charm configs are updated and not overwritten.\r\nFix wiring lines in _save_config function.\r\nRaise ApplyError if grub-mkconfig command failed, since it is failing\r\nalso if there is wrong validation.\r\n\r\nSince the grub lib required to run integration tests on machine or VM,\r\nwe are switch to running integration tests directly on GitHub runner.\r\nIt was not possible to run it on VMs, since the GitHub runner do not\r\nsupports nested virtualization.",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/20b8afd035e6f8a98390490d74676c150d746bcc"
+                  "sha": "ad65cde307c1bab540d692bb57efc37cab3655e7",
+                  "author": "Angelos Kolaitis",
+                  "timestamp": 1694729474,
+                  "message": "Increase default SnapClient timeout to 30 seconds (#111)\n\n* Increase default SnapClient timeout to 30 seconds\r\n\r\nSnapClient has a default timeout of 5 seconds for all RPCs to\r\nthe snapd socket. If any operation takes more, an exception is\r\nraised to the caller.\r\n\r\nWe have seen this causing issues in slow CI environments, where\r\na simple config-changed hook will attempt to check if a snap is\r\ninstalled, timeout and move the unit to a blocked status (causing\r\nthe CI run to fail). This is augmented by the fact that typically\r\nSnapCache is used instead of SnapClient, which only uses the default\r\nvalue and does not provide a way to configure the timeout.\r\n\r\nSimply increasing the timeout is enough to tackle the flakes.\r\n\r\n* Bump LIBPATCH to 3",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/ad65cde307c1bab540d692bb57efc37cab3655e7"
                }
             ],
             "is_archived": false,
