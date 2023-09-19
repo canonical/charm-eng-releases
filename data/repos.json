@@ -3584,15 +3584,6 @@
                   "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev340...main"
                },
                {
-                  "id": 119605988,
-                  "version": "rev333",
-                  "timestamp": 1693572123,
-                  "title": "Revision 333",
-                  "body": "<p>resources:\n    -  oci-image: dexidp/dex:v2.36.0\n       resource-revision: 427</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:09 UTC on 1 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: get images on main by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/dex-auth-operator/pull/163\">#163</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev327...rev333\">https://github.com/canonical/dex-auth-operator/compare/rev327&hellip;rev333</a></p>\n",
-                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev333",
-                  "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev333...main"
-               },
-               {
                   "id": 117516072,
                   "version": "rev327",
                   "timestamp": 1692213680,
@@ -3600,6 +3591,15 @@
                   "body": "<p>resources:\n    -  oci-image: dexidp/dex:v2.36.0\n       resource-revision: 421</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:01 UTC on 16 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): refresh pip-compile outputs by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/dex-auth-operator/pull/160\">#160</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev321...rev327\">https://github.com/canonical/dex-auth-operator/compare/rev321&hellip;rev327</a></p>\n",
                   "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev327",
                   "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev327...main"
+               },
+               {
+                  "id": 115638256,
+                  "version": "rev320",
+                  "timestamp": 1691507942,
+                  "title": "Revision 320",
+                  "body": "<p>resources:\n    -  oci-image: dexidp/dex:v2.36.0\n       resource-revision: 414</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:56 UTC on 8 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: upgrade dex-auth from 2.31.2 to 2.36.0 by <a href=\"http://github.com/NohaIhab\">@NohaIhab</a> in <a href=\"https://github.com/canonical/dex-auth-operator/pull/150\">#150</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev307...rev320\">https://github.com/canonical/dex-auth-operator/compare/rev307&hellip;rev320</a></p>\n",
+                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev320",
+                  "compare_url": "https://github.com/canonical/dex-auth-operator/compare/rev320...main"
                }
             ],
             "commits": null,
@@ -4773,7 +4773,7 @@
          {
             "name": "identity-platform-login-ui-operator",
             "default_branch": "main",
-            "new_commits": 3,
+            "new_commits": 4,
             "url": "https://github.com/canonical/identity-platform-login-ui-operator",
             "releases": [
                {
@@ -7162,11 +7162,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "5c3ea1c668def72ef6766765c6a7026c177c5e59",
+                  "sha": "fc9512159e05a7c26b7b84c35f1b5ffea4f7e7ea",
                   "author": "Mia Altieri",
-                  "timestamp": 1694430365,
-                  "message": "run mongos as daemon (#34)",
-                  "url": "https://github.com/canonical/charmed-mongodb-snap/commit/5c3ea1c668def72ef6766765c6a7026c177c5e59"
+                  "timestamp": 1695110403,
+                  "message": "disable all startup services (#37)\n\nIt doesn't make sense for  any of the daemons in charmed-mongodb snap to start up automatically in the snap. They require specific configurations and an up and a running mongos instance. We can keep them enabled, but they will show an error state:\r\n```\r\nubuntu@ip-172-31-37-213:~$ sudo snap logs charmed-mongodb.pbm-agent\r\n2023-09-16T14:25:39Z systemd[1]: Started Service for snap application charmed-mongodb.pbm-agent.\r\n2023-09-16T14:25:39Z charmed-mongodb.pbm-agent[4119638]: 2023/09/16 14:25:39 Error: Parse command line parameters: required flag --mongodb-uri not provided\r\n2023-09-16T14:25:39Z systemd[1]: snap.charmed-mongodb.pbm-agent.service: Deactivated successfully.\r\n```",
+                  "url": "https://github.com/canonical/charmed-mongodb-snap/commit/fc9512159e05a7c26b7b84c35f1b5ffea4f7e7ea"
                }
             ],
             "is_archived": false,
