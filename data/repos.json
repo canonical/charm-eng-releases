@@ -3846,11 +3846,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "82162ee43d9653a0d67534700deca7f3af541f32",
-                  "author": "Michal Hucko",
-                  "timestamp": 1695281799,
-                  "message": "Add pvcviewer for charmhub credentials (#112)",
-                  "url": "https://github.com/canonical/kubeflow-ci/commit/82162ee43d9653a0d67534700deca7f3af541f32"
+                  "sha": "f9f60e63a73316796073132d32928d06cdd99257",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1695311091,
+                  "message": "Make logdump action output path configurable (#111)\n\nCurrently, the logdump action output path is hard-coded. Running this\r\naction twice in the same CI causes these actions to overwrite each\r\nothers logs.\r\n\r\nWith this commit, the path can now be configured by setting the\r\n`$LOGDUMP_OUTPUT_DIR` env variable in a workflow. If it is not set\r\nthe path will fall-back to `tmp_logs_$GITHUB_JOB` with $GITHUB_JOB being\r\nthe unique id of the current running job.\r\n\r\nCloses #95",
+                  "url": "https://github.com/canonical/kubeflow-ci/commit/f9f60e63a73316796073132d32928d06cdd99257"
                }
             ],
             "is_archived": false,
@@ -5756,7 +5756,7 @@
          {
             "name": "self-signed-certificates-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/self-signed-certificates-operator",
             "releases": [
                {
@@ -7902,22 +7902,31 @@
             "url": "https://github.com/canonical/central-uploader",
             "releases": [
                {
-                  "id": 121214328,
+                  "id": 122079106,
                   "version": "spark-3.4.1-ubuntu0",
-                  "timestamp": 1694723478,
+                  "timestamp": 1695311545,
                   "title": "Release spark-3.4.1-ubuntu0",
                   "body": "",
                   "url": "https://github.com/canonical/central-uploader/releases/tag/spark-3.4.1-ubuntu0",
                   "compare_url": "https://github.com/canonical/central-uploader/compare/spark-3.4.1-ubuntu0...main"
                },
                {
-                  "id": 121214346,
+                  "id": 122079156,
                   "version": "spark-3.4-latest",
-                  "timestamp": 1694723478,
+                  "timestamp": 1695311545,
                   "title": "Release spark-3.4-latest",
                   "body": "",
                   "url": "https://github.com/canonical/central-uploader/releases/tag/spark-3.4-latest",
                   "compare_url": "https://github.com/canonical/central-uploader/compare/spark-3.4-latest...main"
+               },
+               {
+                  "id": 122080567,
+                  "version": "opensearch-2.9.0-ubuntu0",
+                  "timestamp": 1695311545,
+                  "title": "Release opensearch-2.9.0-ubuntu0",
+                  "body": "",
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/opensearch-2.9.0-ubuntu0",
+                  "compare_url": "https://github.com/canonical/central-uploader/compare/opensearch-2.9.0-ubuntu0...main"
                }
             ],
             "commits": null,
@@ -8394,6 +8403,45 @@
             }
          },
          {
+            "name": "postgresql-k8s-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/postgresql-k8s-operator",
+            "releases": [
+               {
+                  "id": 122074783,
+                  "version": "rev141",
+                  "timestamp": 1695256465,
+                  "title": "Revision 141",
+                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 124}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2616 Basic profile support by <a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/254\">#254</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev139...rev141\">https://github.com/canonical/postgresql-k8s-operator/compare/rev139&hellip;rev141</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev141",
+                  "compare_url": "https://github.com/canonical/postgresql-k8s-operator/compare/rev141...main"
+               },
+               {
+                  "id": 121665865,
+                  "version": "rev139",
+                  "timestamp": 1695069012,
+                  "title": "Revision 139",
+                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 123}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update Python dependencies by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/252\">#252</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev138...rev139\">https://github.com/canonical/postgresql-k8s-operator/compare/rev138&hellip;rev139</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev139",
+                  "compare_url": "https://github.com/canonical/postgresql-k8s-operator/compare/rev139...main"
+               },
+               {
+                  "id": 121377015,
+                  "version": "rev138",
+                  "timestamp": 1694802103,
+                  "title": "Revision 138",
+                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 122}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency libjuju 2 to v2.9.44.1 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/245\">#245</a></li>\n<li>[DPE-1755] Log rotation by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/251\">#251</a></li>\n<li>[DPE-2588] COS tweaks by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/246\">#246</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev137...rev138\">https://github.com/canonical/postgresql-k8s-operator/compare/rev137&hellip;rev138</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev138",
+                  "compare_url": "https://github.com/canonical/postgresql-k8s-operator/compare/rev138...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
             "name": "postgresql-operator",
             "default_branch": "main",
             "new_commits": 0,
@@ -8425,66 +8473,6 @@
                   "body": "<p>Released to 14/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency libjuju 2 to v2.9.44.1 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/postgresql-operator/pull/224\">#224</a></li>\n<li>[DPE-2614] Split stanza create and stanza check by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/postgresql-operator/pull/227\">#227</a></li>\n<li>[DPE-1935][DPE-1754] Postgresql logs by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/postgresql-operator/pull/223\">#223</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-operator/compare/rev325...rev326\">https://github.com/canonical/postgresql-operator/compare/rev325&hellip;rev326</a></p>\n",
                   "url": "https://github.com/canonical/postgresql-operator/releases/tag/rev326",
                   "compare_url": "https://github.com/canonical/postgresql-operator/compare/rev326...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "postgresql-k8s-operator",
-            "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/postgresql-k8s-operator",
-            "releases": [
-               {
-                  "id": 121665865,
-                  "version": "rev139",
-                  "timestamp": 1695069012,
-                  "title": "Revision 139",
-                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 123}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update Python dependencies by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/252\">#252</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev138...rev139\">https://github.com/canonical/postgresql-k8s-operator/compare/rev138&hellip;rev139</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev139",
-                  "compare_url": "https://github.com/canonical/postgresql-k8s-operator/compare/rev139...main"
-               },
-               {
-                  "id": 121377015,
-                  "version": "rev138",
-                  "timestamp": 1694802103,
-                  "title": "Revision 138",
-                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 122}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency libjuju 2 to v2.9.44.1 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/245\">#245</a></li>\n<li>[DPE-1755] Log rotation by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/251\">#251</a></li>\n<li>[DPE-2588] COS tweaks by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/246\">#246</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev137...rev138\">https://github.com/canonical/postgresql-k8s-operator/compare/rev137&hellip;rev138</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev138",
-                  "compare_url": "https://github.com/canonical/postgresql-k8s-operator/compare/rev138...main"
-               },
-               {
-                  "id": 121279633,
-                  "version": "rev137",
-                  "timestamp": 1694726343,
-                  "title": "Revision 137",
-                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 121}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Temporarily disable indico tests on Juju 3 by <a href=\"http://github.com/dragomirp\">@dragomirp</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/250\">#250</a></li>\n<li>Update Python dependencies by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/postgresql-k8s-operator/pull/244\">#244</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev136...rev137\">https://github.com/canonical/postgresql-k8s-operator/compare/rev136&hellip;rev137</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev137",
-                  "compare_url": "https://github.com/canonical/postgresql-k8s-operator/compare/rev137...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "postgresql-patroni-container",
-            "default_branch": "main",
-            "new_commits": 5,
-            "url": "https://github.com/canonical/postgresql-patroni-container",
-            "releases": [
-               {
-                  "id": 64772469,
-                  "version": "v0.1.0",
-                  "timestamp": 1649958730,
-                  "title": "v0.1.0",
-                  "body": "",
-                  "url": "https://github.com/canonical/postgresql-patroni-container/releases/tag/v0.1.0",
-                  "compare_url": "https://github.com/canonical/postgresql-patroni-container/compare/v0.1.0...main"
                }
             ],
             "commits": null,
@@ -8563,6 +8551,27 @@
                   "body": "<p>resources:</p>\n\n<pre><code>-  cert-file: \n   resource-revision: 6\n-  ca-cert-file: \n   resource-revision: 4\n-  key-file: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:</p>\n\n<ul>\n<li>redis-image\nresource-revision: 3\nReleased to &lsquo;latest/edge&rsquo; at 10:05 UTC on 16 Jun 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bump action versions and simplify release.yaml by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/60\">#60</a></li>\n<li>Add missing parameter by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/62\">#62</a></li>\n<li>Move charmed-redis OCI from DockerHub to GitHub Container Registry by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/64\">#64</a></li>\n<li>Sync GitHub issues to Jira by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/65\">#65</a></li>\n<li>Update bug_report.md issue template by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/66\">#66</a></li>\n<li>[DPE-2097] Fix integration tests by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/68\">#68</a></li>\n<li>[DPE-2097] Trigger relation changed when pod get restarted by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/67\">#67</a></li>\n<li>[DPE-2132] Build and deploy on ubuntu 22 by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/71\">#71</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> made their first contribution in <a href=\"https://github.com/canonical/redis-k8s-operator/pull/65\">#65</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/redis-k8s-operator/compare/rev23...rev24\">https://github.com/canonical/redis-k8s-operator/compare/rev23&hellip;rev24</a></p>\n",
                   "url": "https://github.com/canonical/redis-k8s-operator/releases/tag/rev24",
                   "compare_url": "https://github.com/canonical/redis-k8s-operator/compare/rev24...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "postgresql-patroni-container",
+            "default_branch": "main",
+            "new_commits": 5,
+            "url": "https://github.com/canonical/postgresql-patroni-container",
+            "releases": [
+               {
+                  "id": 64772469,
+                  "version": "v0.1.0",
+                  "timestamp": 1649958730,
+                  "title": "v0.1.0",
+                  "body": "",
+                  "url": "https://github.com/canonical/postgresql-patroni-container/releases/tag/v0.1.0",
+                  "compare_url": "https://github.com/canonical/postgresql-patroni-container/compare/v0.1.0...main"
                }
             ],
             "commits": null,
@@ -9868,9 +9877,18 @@
          {
             "name": "jenkins-k8s-operator",
             "default_branch": "main",
-            "new_commits": 2,
+            "new_commits": 0,
             "url": "https://github.com/canonical/jenkins-k8s-operator",
             "releases": [
+               {
+                  "id": 122072555,
+                  "version": "rev17",
+                  "timestamp": 1695308609,
+                  "title": "Revision 17",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:26 UTC on 21 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: COS integration by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/31\">#31</a></li>\n<li>Adapt trivyignore to match existing vulnerabilities by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/34\">#34</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev16...rev17\">https://github.com/canonical/jenkins-k8s-operator/compare/rev16&hellip;rev17</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev17",
+                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev17...main"
+               },
                {
                   "id": 121843920,
                   "version": "rev16",
@@ -9888,15 +9906,6 @@
                   "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 14</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:30 UTC on 13 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: typo in PR template by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/28\">#28</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev14...rev15\">https://github.com/canonical/jenkins-k8s-operator/compare/rev14&hellip;rev15</a></p>\n",
                   "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev15",
                   "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev15...main"
-               },
-               {
-                  "id": 120884665,
-                  "version": "rev14",
-                  "timestamp": 1694566230,
-                  "title": "Revision 14",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 13</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:01 UTC on 13 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: &gt;1 app per relation by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/30\">#30</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev13...rev14\">https://github.com/canonical/jenkins-k8s-operator/compare/rev13&hellip;rev14</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev14",
-                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev14...main"
                }
             ],
             "commits": null,
