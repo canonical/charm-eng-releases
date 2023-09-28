@@ -1355,9 +1355,18 @@
          {
             "name": "operator",
             "default_branch": "main",
-            "new_commits": 12,
+            "new_commits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 123028231,
+                  "version": "2.7.0",
+                  "timestamp": 1695870332,
+                  "title": "2.7.0: Unit.set_ports(), and minor docs, CI, and test improvements",
+                  "body": "<p>This release includes one new feature, a new function <code>Unit.set_ports()</code> to declare which ports should be open. We recommend using this method rather than managing multiple <code>Unit.open_port()</code> and <code>Unit.close_port()</code> calls:</p>\n\n<ul>\n<li>feat: add Unit.set_ports() for declarative port opening <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1005&quot;&gt;#1005&lt;/a\">#1005</a></li>\n</ul>\n\n<p>We&rsquo;ve also made a few small improvements to the documentation:</p>\n\n<ul>\n<li>docs: reduce the amount of detail in the open/close port methods in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1006&quot;&gt;#1006&lt;/a\">#1006</a></li>\n<li>docs: remove &lsquo;you&rsquo; and &lsquo;your&rsquo; from docstrings in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1003&quot;&gt;#1003&lt;/a\">#1003</a></li>\n<li>docs: minor cleanup of the HACKING doc in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1016&quot;&gt;#1016&lt;/a\">#1016</a></li>\n</ul>\n\n<p>Finally, we&rsquo;ve also made a start <a href=\"https://github.com/canonical/operator/issues/1007\">expanding our type hinting to cover the test suite</a>, and made a couple of minor improvements/fixes to our CI:</p>\n\n<ul>\n<li>test: add type hints to the test_infra tests in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1008&quot;&gt;#1008&lt;/a\">#1008</a></li>\n<li>test: add type hints to test_log tests by in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1009&quot;&gt;#1009&lt;/a\">#1009</a></li>\n<li>test: fix type hinting on test_jujuversion tests in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1011&quot;&gt;#1011&lt;/a\">#1011</a></li>\n<li>test: fix type hint warnings in test_private tests in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1010&quot;&gt;#1010&lt;/a\">#1012</a></li>\n<li>test: add type hinting to test_lib by in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1012&quot;&gt;#1012&lt;/a\">#1012</a></li>\n<li>test: add type hinting to test_helpers in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1014&quot;&gt;#1014&lt;/a\">#1014</a></li>\n<li>ci: use Go 1.20 for real Pebble tests in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1004&quot;&gt;#1004&lt;/a\">#1004</a></li>\n<li>ci: re-enable integration tests with mysql-*operator by in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/1013&quot;&gt;#1013&lt;/a\">#1013</a></li>\n</ul>\n\n<p>(Thanks <a href=\"http://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> for your first contributions, and welcome to the team!)</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.6.0...2.7.0\">https://github.com/canonical/operator/compare/2.6.0&hellip;2.7.0</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.7.0",
+                  "compare_url": "https://github.com/canonical/operator/compare/2.7.0...main"
+               },
                {
                   "id": 119347021,
                   "version": "2.6.0",
@@ -1375,15 +1384,6 @@
                   "body": "<p>This is a patch fix on top of <a href=\"https://github.com/canonical/operator/releases/tag/2.5.0\">2.5.0</a> to fix #990: &ldquo;TypeError: write() argument must be str, not bytes&rdquo; in <code>Container.push</code> under <code>Harness</code>.</p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.5.1",
                   "compare_url": "https://github.com/canonical/operator/compare/2.5.1...main"
-               },
-               {
-                  "id": 114572590,
-                  "version": "2.5.0",
-                  "timestamp": 1690840187,
-                  "title": "2.5.0: Collect-status, Harness.get_filesystem_root, Pebble service context",
-                  "body": "<p>This release includes three significant additions:</p>\n\n<ol>\n<li><strong>Multi-status:</strong> An initial version of the much-discussed &ldquo;multi-status&rdquo; handling in the form of the new <code>collect_app_status</code> and <code>collect_unit_status</code> events. This is useful for letting the framework automatically evaluate application (or unit) status from various components of the charm. We&rsquo;ll be documenting this properly soon, but in the meantime, read the API reference docs on <a href=\"https://ops.readthedocs.io/en/latest/#ops.CollectStatusEvent\"><code>CollectStatusEvent</code></a>. PR #954.</li>\n<li><strong>Harness.get_filesystem_root:</strong> Overhauling the <code>Harness</code>&rsquo;s test filesystem from an in-memory filesystem to use a temp directory on the real filesystem; use <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.get_filesystem_root\"><code>Harness.get_filesystem_root</code></a> to get the temp filesystem directory for a specific container. This makes testing container filesystem operations significantly easier and allows tests to use the regular Python file APIs to interact with it. Thanks <a href=\"http://github.com/weiiwang01\">@weiiwang01</a> for his efforts on this in #960.</li>\n<li><strong>Service context:</strong> Added support for Pebble&rsquo;s new &ldquo;service context&rdquo; feature, to allow you to exec commands in the context of a specified service (where <em>context</em> means environment variables, working directory, and user/group). PR #957.</li>\n</ol>\n\n<p>Other notable changes:</p>\n\n<ul>\n<li>Add <a href=\"https://ops.readthedocs.io/en/latest/#ops.JujuVersion.supports_open_port_on_k8s\"><code>JujuVersion.supports_open_port_on_k8s</code></a> by <a href=\"http://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in PR #965</li>\n<li>Support reading <code>charmcraft.yaml</code> in the testing harness by <a href=\"http://github.com/syu-w\">@syu-w</a> in PR #977</li>\n</ul>\n\n<p>In addition, the following developers made their first contribution:</p>\n\n<ul>\n<li><a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/operator/pull/975\">#975</a> (Add kill-delay to pebble ServiceDict type)</li>\n<li><a href=\"http://github.com/sobolevn\">@sobolevn</a> in <a href=\"https://github.com/canonical/operator/pull/978\">#978</a> (Replace typing.AnyStr with Union[str, bytes])</li>\n<li><a href=\"http://github.com/syu-w\">@syu-w</a> in <a href=\"https://github.com/canonical/operator/pull/977\">#977</a> (Support reading charmcraft.yaml in testing harness)</li>\n</ul>\n\n<p>We also made several other minor improvements to type annotations and a few other tweaks. See the full changelog: <a href=\"https://github.com/canonical/operator/compare/2.4.1...2.5.0\">https://github.com/canonical/operator/compare/2.4.1&hellip;2.5.0</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.5.0",
-                  "compare_url": "https://github.com/canonical/operator/compare/2.5.0...main"
                }
             ],
             "commits": null,
@@ -5153,7 +5153,7 @@
          {
             "name": "identity-platform-login-ui",
             "default_branch": "main",
-            "new_commits": 27,
+            "new_commits": 29,
             "url": "https://github.com/canonical/identity-platform-login-ui",
             "releases": [
                {
