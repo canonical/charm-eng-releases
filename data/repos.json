@@ -532,7 +532,7 @@
          {
             "name": "juju",
             "default_branch": "3.3",
-            "new_commits": 48,
+            "new_commits": 52,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -2206,9 +2206,18 @@
          {
             "name": "traefik-k8s-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/traefik-k8s-operator",
             "releases": [
+               {
+                  "id": 123440802,
+                  "version": "rev157",
+                  "timestamp": 1696316665,
+                  "title": "Revision 157",
+                  "body": "<p>resources:\n    -  traefik-image: ghcr.io/canonical/traefik:2.10.4\n       resource-revision: 148</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:56 UTC on 3 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Include throwing pebble ready in the refresh events of Kubernetes service patch by <a href=\"http://github.com/nishant-dash\">@nishant-dash</a> in <a href=\"https://github.com/canonical/traefik-k8s-operator/pull/258\">#258</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/nishant-dash\">@nishant-dash</a> made their first contribution in <a href=\"https://github.com/canonical/traefik-k8s-operator/pull/258\">#258</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/traefik-k8s-operator/compare/rev156...rev157\">https://github.com/canonical/traefik-k8s-operator/compare/rev156&hellip;rev157</a></p>\n",
+                  "url": "https://github.com/canonical/traefik-k8s-operator/releases/tag/rev157",
+                  "compare_url": "https://github.com/canonical/traefik-k8s-operator/compare/rev157...main"
+               },
                {
                   "id": 123060651,
                   "version": "rev156",
@@ -2226,15 +2235,6 @@
                   "body": "<p>resources:\n    -  traefik-image: ghcr.io/canonical/traefik:2.10.4\n       resource-revision: 146</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:46 UTC on 26 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>minor refactoring of ingress v2 lib by <a href=\"http://github.com/PietroPasotti\">@PietroPasotti</a> in <a href=\"https://github.com/canonical/traefik-k8s-operator/pull/242\">#242</a></li>\n<li>use new refactored CI by <a href=\"http://github.com/lucabello\">@lucabello</a> in <a href=\"https://github.com/canonical/traefik-k8s-operator/pull/253\">#253</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/traefik-k8s-operator/compare/rev154...rev155\">https://github.com/canonical/traefik-k8s-operator/compare/rev154&hellip;rev155</a></p>\n",
                   "url": "https://github.com/canonical/traefik-k8s-operator/releases/tag/rev155",
                   "compare_url": "https://github.com/canonical/traefik-k8s-operator/compare/rev155...main"
-               },
-               {
-                  "id": 122594619,
-                  "version": "rev154",
-                  "timestamp": 1695724028,
-                  "title": "Revision 154",
-                  "body": "<p>resources:\n    -  traefik-image: ghcr.io/canonical/traefik:2.10.4\n       resource-revision: 145</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:19 UTC on 26 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Reduce the number of API calls to K8S by <a href=\"http://github.com/javacruft\">@javacruft</a> in <a href=\"https://github.com/canonical/traefik-k8s-operator/pull/197\">#197</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/javacruft\">@javacruft</a> made their first contribution in <a href=\"https://github.com/canonical/traefik-k8s-operator/pull/197\">#197</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/traefik-k8s-operator/compare/rev153...rev154\">https://github.com/canonical/traefik-k8s-operator/compare/rev153&hellip;rev154</a></p>\n",
-                  "url": "https://github.com/canonical/traefik-k8s-operator/releases/tag/rev154",
-                  "compare_url": "https://github.com/canonical/traefik-k8s-operator/compare/rev154...main"
                }
             ],
             "commits": null,
@@ -2268,8 +2268,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 156,
-                     "timestamp": 1695957334
+                     "revision": 157,
+                     "timestamp": 1696319805
                   },
                   {
                      "track": "1.0",
@@ -3438,11 +3438,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "30fbd9468958c2f4fa0a6a05cf73ef7cf06e9a67",
+                  "sha": "06d23acb80cefad04c6c82e60d56c5dc7b769fee",
                   "author": "Orfeas Kourkakis",
-                  "timestamp": 1696246938,
-                  "message": "airgap(latest/edge): Update bundle-airgap.yaml (#713)\n\nUpdate `bundle-airgap.yaml` file in `latest/edge` in order to add:\r\n- `opentelemetry-collector` config to knative-operator\r\n-  `executor-image` config to seldon-controller-manager\r\n- `cache-image` config to kfp-api\r\n\r\nFixes #710\r\nFixes #707\r\nFixes #711",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/30fbd9468958c2f4fa0a6a05cf73ef7cf06e9a67"
+                  "timestamp": 1696319230,
+                  "message": "latest/edge: Add pvcviewer-operator to bundle.yaml (#717)",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/06d23acb80cefad04c6c82e60d56c5dc7b769fee"
                }
             ],
             "is_archived": false,
@@ -8182,7 +8182,7 @@
          {
             "name": "opensearch-operator",
             "default_branch": "main",
-            "new_commits": 3,
+            "new_commits": 4,
             "url": "https://github.com/canonical/opensearch-operator",
             "releases": [
                {
@@ -10120,6 +10120,15 @@
             "url": "https://github.com/canonical/pollen-operator",
             "releases": [
                {
+                  "id": 123440161,
+                  "version": "rev14",
+                  "timestamp": 1696319285,
+                  "title": "Revision 14",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:51 UTC on 3 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v1.10.13 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/pollen-operator/pull/27\">#27</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev13...rev14\">https://github.com/canonical/pollen-operator/compare/rev13&hellip;rev14</a></p>\n",
+                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev14",
+                  "compare_url": "https://github.com/canonical/pollen-operator/compare/rev14...main"
+               },
+               {
                   "id": 121292717,
                   "version": "rev13",
                   "timestamp": 1694779627,
@@ -10136,15 +10145,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:49 UTC on 12 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add docs index, PR template and fix typo in contribute by <a href=\"http://github.com/gtrkiller\">@gtrkiller</a> in <a href=\"https://github.com/canonical/pollen-operator/pull/25\">#25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev11...rev12\">https://github.com/canonical/pollen-operator/compare/rev11&hellip;rev12</a></p>\n",
                   "url": "https://github.com/canonical/pollen-operator/releases/tag/rev12",
                   "compare_url": "https://github.com/canonical/pollen-operator/compare/rev12...main"
-               },
-               {
-                  "id": 119623129,
-                  "version": "rev11",
-                  "timestamp": 1693579348,
-                  "title": "Revision 11",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:20 UTC on 1 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add how-to contribute by <a href=\"http://github.com/gtrkiller\">@gtrkiller</a> in <a href=\"https://github.com/canonical/pollen-operator/pull/24\">#24</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev10...rev11\">https://github.com/canonical/pollen-operator/compare/rev10&hellip;rev11</a></p>\n",
-                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev11",
-                  "compare_url": "https://github.com/canonical/pollen-operator/compare/rev11...main"
                }
             ],
             "commits": null,
