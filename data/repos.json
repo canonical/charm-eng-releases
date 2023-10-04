@@ -3418,11 +3418,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "6e6513a94d9df2f93415fca979ad8e6c67840b27",
-                  "author": "Noha Ihab",
-                  "timestamp": 1696442472,
-                  "message": "fix: update 1.8/beta bundle definition (#721)\n\n* fix: update 1.8/beta bundle definition\r\n\r\n* feat: update kfp charms channel",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/6e6513a94d9df2f93415fca979ad8e6c67840b27"
+                  "sha": "0bf8585ee3fb9f60bf5c5958495e3af524bb8604",
+                  "author": "Kimonas Sotirchos",
+                  "timestamp": 1696446799,
+                  "message": "Update the release automation for 1.8 (#722)\n\n* Update workflow to NOT run tests when publishing\r\n\r\nSince currently the tests are broken we will disable running them in the\r\nworkflows. We will revert once we fix\r\nhttps://github.com/canonical/oidc-gatekeeper-operator/issues/112\r\n\r\n* Update scripts for including the 1.8 release\r\n\r\nUpdate the scripts for gathering paths and test files for the 1.8\r\nrelease.\r\n\r\n* Add test files for 1.8\r\n\r\nCopy over all files from 1.7 for 1.8. Although at the time of the commit\r\nwe will have disabled the tests, but we will introduce them nevertheless\r\nto be there in the future.\r\n\r\n* review: Put accepted tracks/risk as global var\r\n\r\n* Remove redundant istio-pilot config-event triggering",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/0bf8585ee3fb9f60bf5c5958495e3af524bb8604"
                }
             ],
             "is_archived": false,
@@ -5754,6 +5754,15 @@
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
                {
+                  "id": 123746328,
+                  "version": "rev33",
+                  "timestamp": 1696445227,
+                  "title": "Revision 33",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.14.3\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:19 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[feat] Uses CA certificate when initialising Vault client by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/57\">#57</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev32...rev33\">https://github.com/canonical/vault-k8s-operator/compare/rev32&hellip;rev33</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev33",
+                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev33...main"
+               },
+               {
                   "id": 123575069,
                   "version": "rev32",
                   "timestamp": 1696360598,
@@ -5770,15 +5779,6 @@
                   "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.14.3\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:56 UTC on 2 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[bugfix] Fixes retry join comparison in config file by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/49\">#49</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev30...rev31\">https://github.com/canonical/vault-k8s-operator/compare/rev30&hellip;rev31</a></p>\n",
                   "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev31",
                   "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev31...main"
-               },
-               {
-                  "id": 123128691,
-                  "version": "rev30",
-                  "timestamp": 1695993593,
-                  "title": "Revision 30",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.14.3\n       resource-revision: 43</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:54 UTC on 29 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[feat] Adds Metrics integration by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/48\">#48</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev29...rev30\">https://github.com/canonical/vault-k8s-operator/compare/rev29&hellip;rev30</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev30",
-                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev30...main"
                }
             ],
             "commits": null,
@@ -6439,6 +6439,15 @@
                   "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev42...main"
                },
                {
+                  "id": 122779719,
+                  "version": "rev41",
+                  "timestamp": 1695817779,
+                  "title": "Revision 41",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:12 UTC on 27 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enforce TLS Integration by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/39\">#39</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/39\">#39</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev40...rev41\">https://github.com/canonical/sdcore-nrf-operator/compare/rev40&hellip;rev41</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev41",
+                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev41...main"
+               },
+               {
                   "id": 122503540,
                   "version": "rev40",
                   "timestamp": 1695668222,
@@ -6446,15 +6455,6 @@
                   "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:35 UTC on 25 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add Charm metadata by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/38\">#38</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev38...rev40\">https://github.com/canonical/sdcore-nrf-operator/compare/rev38&hellip;rev40</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev40",
                   "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev40...main"
-               },
-               {
-                  "id": 122339751,
-                  "version": "rev39",
-                  "timestamp": 1695291989,
-                  "title": "Revision 39",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:12 UTC on 24 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update issue template by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/37\">#37</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/DanielArndt\">@DanielArndt</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/37\">#37</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev37...rev39\">https://github.com/canonical/sdcore-nrf-operator/compare/rev37&hellip;rev39</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev39",
-                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev39...main"
                }
             ],
             "commits": null,
