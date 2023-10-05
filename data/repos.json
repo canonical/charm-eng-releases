@@ -2014,7 +2014,7 @@
          {
             "name": "grafana-agent-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/grafana-agent-k8s-operator",
             "releases": [
                {
@@ -2541,16 +2541,16 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "04842ebf22621253dc2e1307afcac61cd15cc45a",
+                  "sha": "b36d5c7103fc07b5f10796839d1e3e3ee70a057a",
                   "author": "Simon Aronsson",
-                  "timestamp": 1696271707,
-                  "message": "remove mentions of k8s",
-                  "url": "https://github.com/canonical/grafana-agent-operator/commit/04842ebf22621253dc2e1307afcac61cd15cc45a"
+                  "timestamp": 1696524129,
+                  "message": "Merge pull request #8 from canonical/fix/inform-clouds-about-compression\n\nfix: properly inform cloud endpoints about the snappy compression",
+                  "url": "https://github.com/canonical/grafana-agent-operator/commit/b36d5c7103fc07b5f10796839d1e3e3ee70a057a"
                }
             ],
             "is_archived": false,
             "ci_actions": [
-               "https://github.com/canonical/grafana-agent-operator/actions/workflows/release-edge.yaml"
+               "https://github.com/canonical/grafana-agent-operator/actions/workflows/release.yaml"
             ],
             "charm": null
          },
@@ -4655,9 +4655,18 @@
          {
             "name": "seldon-core-operator",
             "default_branch": "main",
-            "new_commits": 1,
+            "new_commits": 0,
             "url": "https://github.com/canonical/seldon-core-operator",
             "releases": [
+               {
+                  "id": 123904172,
+                  "version": "rev567",
+                  "timestamp": 1696514072,
+                  "title": "Revision 567",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 672</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:59 UTC on 5 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>tests(integration): Apply seldondeployments in namespace <code>default</code> by <a href=\"http://github.com/orfeas-k\">@orfeas-k</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/220\">#220</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev556...rev567\">https://github.com/canonical/seldon-core-operator/compare/rev556&hellip;rev567</a></p>\n",
+                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev567",
+                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev567...main"
+               },
                {
                   "id": 123694308,
                   "version": "rev556",
@@ -4675,15 +4684,6 @@
                   "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 656</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:52 UTC on 29 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update tox.ini&rsquo;s update-requirements by <a href=\"http://github.com/orfeas-k\">@orfeas-k</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/215\">#215</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/orfeas-k\">@orfeas-k</a> made their first contribution in <a href=\"https://github.com/canonical/seldon-core-operator/pull/215\">#215</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev539...rev551\">https://github.com/canonical/seldon-core-operator/compare/rev539&hellip;rev551</a></p>\n",
                   "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev551",
                   "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev551...main"
-               },
-               {
-                  "id": 122725914,
-                  "version": "rev548",
-                  "timestamp": 1695794502,
-                  "title": "Revision 548",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/seldon-core-operator:v1.15.0_22.04_1\n       resource-revision: 653</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 06:43 UTC on 27 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: removed not supported static image by <a href=\"http://github.com/i-chvets\">@i-chvets</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/186\">#186</a></li>\n<li>Kf 4446 Backport airgap support by <a href=\"http://github.com/misohu\">@misohu</a> in <a href=\"https://github.com/canonical/seldon-core-operator/pull/213\">#213</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/seldon-core-operator/compare/rev520...rev548\">https://github.com/canonical/seldon-core-operator/compare/rev520&hellip;rev548</a></p>\n",
-                  "url": "https://github.com/canonical/seldon-core-operator/releases/tag/rev548",
-                  "compare_url": "https://github.com/canonical/seldon-core-operator/compare/rev548...main"
                }
             ],
             "commits": null,
@@ -4708,8 +4708,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 556,
-                     "timestamp": 1696428095
+                     "revision": 567,
+                     "timestamp": 1696525168
                   },
                   {
                      "track": "1.15",
