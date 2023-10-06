@@ -1355,7 +1355,7 @@
          {
             "name": "operator",
             "default_branch": "main",
-            "new_commits": 12,
+            "new_commits": 13,
             "url": "https://github.com/canonical/operator",
             "releases": [
                {
@@ -11531,11 +11531,11 @@
             "releases": null,
             "commits": [
                {
-                  "sha": "2bf88e3250a1b937e32c66a3ec68894f8d43c220",
+                  "sha": "3bd88aa4db0254e57c13315e88b013cef75e6704",
                   "author": "Ashley James",
-                  "timestamp": 1692785643,
-                  "message": "Add new redfish metrics (#36)\n\nAdds these new metrics from redfish.\r\n\r\n* redfish_processors: total number of processors\r\n* redfish_processor_info: processor info\r\n* redfish_storage_controllers: total number of storage controllers\r\n* redfish_storage_controller_info: storage controller info\r\n* redfish_network_adapters: total number of network adapters\r\n* redfish_chassis_info: chassis info\r\n* redfish_storage_drives: total number of drives\r\n* redfish_storage_drive_info: storage drive info\r\n* redfish_memory_dimms: total number of memory dimms\r\n* redfish_memory_dimm_info: memory dimm info\r\n* redfish_smart_storage_health: health of smart storage\r\n\r\nThese metrics are added to obtain either the count of a particular resource or for health,state etc. info from the <metric>_info metric.\r\n\r\nRedfishHelper is now implemented as a context manager. It opens up a new redfish session while entering and logs out at exit.\r\nRedfishHelper's discover method is now a staticmethod.",
-                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/2bf88e3250a1b937e32c66a3ec68894f8d43c220"
+                  "timestamp": 1696569054,
+                  "message": "refactor: Replace redfish discover method. (#38)\n\n* refactor: Replace redfish discover method.\r\n\r\nredfish.discover_ssdp method is replaced with a simple login call to the\r\nredfish service. If the RetriesExhaustedError exception is raised, we can\r\ninfer that the redfish service isn't present on the system.\r\n\r\nCaching functionality of redfish discover result is maintained.\r\n\r\nImports redfish_client method directly instead of importing entire\r\nredfish module.\r\n\r\nModifies unit tests for the new method.\r\n\r\nRelated: https://github.com/canonical/hardware-observer-operator/issues/61",
+                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/3bd88aa4db0254e57c13315e88b013cef75e6704"
                }
             ],
             "is_archived": false,
