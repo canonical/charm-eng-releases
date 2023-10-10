@@ -7285,57 +7285,61 @@
       "team": "Data Platform",
       "repos": [
          {
-            "name": "central-uploader",
+            "name": "mysql-k8s-bundle",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/central-uploader",
-            "releases": [
-               {
-                  "id": 124318224,
-                  "version": "kafka_2.13-3.5.1-ubuntu0",
-                  "timestamp": 1696857944,
-                  "title": "Release kafka_2.13-3.5.1-ubuntu0",
-                  "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/kafka_2.13-3.5.1-ubuntu0",
-                  "compare_url": "https://github.com/canonical/central-uploader/compare/kafka_2.13-3.5.1-ubuntu0...main"
-               },
-               {
-                  "id": 124318232,
-                  "version": "kafka-3-latest",
-                  "timestamp": 1696857944,
-                  "title": "Release kafka-3-latest",
-                  "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/kafka-3-latest",
-                  "compare_url": "https://github.com/canonical/central-uploader/compare/kafka-3-latest...main"
-               },
-               {
-                  "id": 123797546,
-                  "version": "spark-3.4.1-ubuntu1",
-                  "timestamp": 1696482845,
-                  "title": "Release spark-3.4.1-ubuntu1",
-                  "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/spark-3.4.1-ubuntu1",
-                  "compare_url": "https://github.com/canonical/central-uploader/compare/spark-3.4.1-ubuntu1...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "charm-rolling-ops",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/charm-rolling-ops",
+            "url": "https://github.com/canonical/mysql-k8s-bundle",
             "releases": null,
             "commits": [
                {
-                  "sha": "7745ceee696007003485b6912ce01aae87ab0bed",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1686158396,
-                  "message": "Update bug_report.md issue template (#4)\n\nPorted from https://github.com/canonical/mysql-router-k8s-operator/pull/91",
-                  "url": "https://github.com/canonical/charm-rolling-ops/commit/7745ceee696007003485b6912ce01aae87ab0bed"
+                  "sha": "eb7fe0c8d557a820fa6680b28f48fac5fbe899c4",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1689078910,
+                  "message": "Update bundle (#65)\n\nCo-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com>",
+                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/eb7fe0c8d557a820fa6680b28f48fac5fbe899c4"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": {
+               "name": "mysql-k8s-bundle",
+               "url": "https://charmhub.io/mysql-k8s-bundle",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 27,
+                     "timestamp": 1678362499
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "edge",
+                     "revision": 38,
+                     "timestamp": 1689081482
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "8.0"
+               ]
+            }
+         },
+         {
+            "name": "charmed-mysql-rock",
+            "default_branch": "8.0-22.04",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/charmed-mysql-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "aae0019a95e41794a54d508905f8f36bf2364dda",
+                  "author": "shayancanonical",
+                  "timestamp": 1695847924,
+                  "message": "Add logrotate to the list of packages installed (#34)",
+                  "url": "https://github.com/canonical/charmed-mysql-rock/commit/aae0019a95e41794a54d508905f8f36bf2364dda"
                }
             ],
             "is_archived": false,
@@ -7419,20 +7423,40 @@
             "charm": null
          },
          {
-            "name": "charmed-mysql-rock",
-            "default_branch": "8.0-22.04",
+            "name": "mysql-k8s-operator",
+            "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/charmed-mysql-rock",
-            "releases": null,
-            "commits": [
+            "url": "https://github.com/canonical/mysql-k8s-operator",
+            "releases": [
                {
-                  "sha": "aae0019a95e41794a54d508905f8f36bf2364dda",
-                  "author": "shayancanonical",
-                  "timestamp": 1695847924,
-                  "message": "Add logrotate to the list of packages installed (#34)",
-                  "url": "https://github.com/canonical/charmed-mysql-rock/commit/aae0019a95e41794a54d508905f8f36bf2364dda"
+                  "id": 124343293,
+                  "version": "rev106",
+                  "timestamp": 1696836549,
+                  "title": "Revision 106",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 102}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2684] Juju3 pipelines by <a href=\"http://github.com/juditnovak\">@juditnovak</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/313\">#313</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/juditnovak\">@juditnovak</a> made their first contribution in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/313\">#313</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev105...rev106\">https://github.com/canonical/mysql-k8s-operator/compare/rev105&hellip;rev106</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev106",
+                  "compare_url": "https://github.com/canonical/mysql-k8s-operator/compare/rev106...main"
+               },
+               {
+                  "id": 122652894,
+                  "version": "rev105",
+                  "timestamp": 1695739804,
+                  "title": "Revision 105",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 101}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2307 upgrade rollback test by <a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/307\">#307</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev102...rev105\">https://github.com/canonical/mysql-k8s-operator/compare/rev102&hellip;rev105</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev105",
+                  "compare_url": "https://github.com/canonical/mysql-k8s-operator/compare/rev105...main"
+               },
+               {
+                  "id": 120829328,
+                  "version": "rev102",
+                  "timestamp": 1694531837,
+                  "title": "Revision 102",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 100}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2426 Update upgrade dependencies for mysqld and charm to account for 8.0.34 by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/299\">#299</a></li>\n<li>dpe-2124 in lib config file render by <a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/303\">#303</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev100...rev102\">https://github.com/canonical/mysql-k8s-operator/compare/rev100&hellip;rev102</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev102",
+                  "compare_url": "https://github.com/canonical/mysql-k8s-operator/compare/rev102...main"
                }
             ],
+            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -7726,19 +7750,37 @@
             "charm": null
          },
          {
-            "name": "kafka-broker-rack-awareness-operator",
+            "name": "mysql-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator",
+            "url": "https://github.com/canonical/mysql-operator",
             "releases": [
                {
-                  "id": 109565365,
-                  "version": "rev5",
-                  "timestamp": 1687445669,
-                  "title": "Revision 5",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-1904] Add initial charm by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></li>\n<li>Fix status handling by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/2\">#2</a></li>\n<li>[DPE-2033] Add CI/CD pipeline by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/4\">#4</a></li>\n<li>Fix release track by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/6\">#6</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/zmraul\">@zmraul</a> made their first contribution in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5\">https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator/releases/tag/rev5",
-                  "compare_url": "https://github.com/canonical/kafka-broker-rack-awareness-operator/compare/rev5...main"
+                  "id": 124084286,
+                  "version": "rev197",
+                  "timestamp": 1696586659,
+                  "title": "Revision 197",
+                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-1796 Implement support for general/slowquery logs and logrotation of text logs by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/329\">#329</a></li>\n<li>Avoid any actions when a unit is offline and allow mysql GR to recover by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/334\">#334</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev196...rev197\">https://github.com/canonical/mysql-operator/compare/rev196&hellip;rev197</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev197",
+                  "compare_url": "https://github.com/canonical/mysql-operator/compare/rev197...main"
+               },
+               {
+                  "id": 120417493,
+                  "version": "rev196",
+                  "timestamp": 1694119253,
+                  "title": "Revision 196",
+                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2485 Resolve race condition when restarting after configure_instance by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/321\">#321</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev195...rev196\">https://github.com/canonical/mysql-operator/compare/rev195&hellip;rev196</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev196",
+                  "compare_url": "https://github.com/canonical/mysql-operator/compare/rev196...main"
+               },
+               {
+                  "id": 120283850,
+                  "version": "rev195",
+                  "timestamp": 1694089504,
+                  "title": "Revision 195",
+                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Delete unused apt charm lib by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/322\">#322</a></li>\n<li>DPE-2124 - refactor - in lib config file render by <a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/296\">#296</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev194...rev195\">https://github.com/canonical/mysql-operator/compare/rev194&hellip;rev195</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev195",
+                  "compare_url": "https://github.com/canonical/mysql-operator/compare/rev195...main"
                }
             ],
             "commits": null,
@@ -7863,6 +7905,45 @@
             "charm": null
          },
          {
+            "name": "mongodb-operator",
+            "default_branch": "6/edge",
+            "new_commits": 8,
+            "url": "https://github.com/canonical/mongodb-operator",
+            "releases": [
+               {
+                  "id": 121726534,
+                  "version": "rev127",
+                  "timestamp": 1695130318,
+                  "title": "Revision 127",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;5/edge&rsquo; at 15:29 UTC on 19 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2099] minimise user visible messages by <a href=\"http://github.com/delgod\">@delgod</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/220\">#220</a></li>\n<li>[upload-charm-docs] sync with Discourse by <a href=\"http://github.com/deusebio\">@deusebio</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/207\">#207</a></li>\n<li>[DPE-2415] sync libraries and update src as necessary by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/240\">#240</a></li>\n<li>[Follow Up PR] add backup unit tests  by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/243\">#243</a></li>\n<li>[DPE-2528] Migrate provider by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/244\">#244</a></li>\n<li>Update GH runners: use juju 3.1.5 for CI by <a href=\"http://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/245\">#245</a></li>\n<li>[DPE-2442] Add juju secrets support by <a href=\"http://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/242\">#242</a></li>\n<li>correct lib patch by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/248\">#248</a></li>\n<li>hold snap revision to prevent refresh by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/251\">#251</a></li>\n<li>Fix HA tests by <a href=\"http://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/250\">#250</a></li>\n<li>enable services to start on system start by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/252\">#252</a></li>\n<li>Correct Lib ID by <a href=\"http://github.com/MiaAltieri\">@MiaAltieri</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/253\">#253</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev126...rev127\">https://github.com/canonical/mongodb-operator/compare/rev126&hellip;rev127</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev127",
+                  "compare_url": "https://github.com/canonical/mongodb-operator/compare/rev127...6/edge"
+               },
+               {
+                  "id": 110360728,
+                  "version": "rev126",
+                  "timestamp": 1688037508,
+                  "title": "Revision 126",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;5/edge&rsquo; at 13:29 UTC on 29 Jun 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-1180 Update icon to the common for Data Platform charms by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/233\">#233</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev125...rev126\">https://github.com/canonical/mongodb-operator/compare/rev125&hellip;rev126</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev126",
+                  "compare_url": "https://github.com/canonical/mongodb-operator/compare/rev126...6/edge"
+               },
+               {
+                  "id": 109283598,
+                  "version": "rev125",
+                  "timestamp": 1687285711,
+                  "title": "Revision 125",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;5/edge&rsquo; at 20:00 UTC on 20 Jun 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2157]Rename users secret keys names to make them compatible with juju 3.1 by <a href=\"http://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/232\">#232</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev124...rev125\">https://github.com/canonical/mongodb-operator/compare/rev124&hellip;rev125</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev125",
+                  "compare_url": "https://github.com/canonical/mongodb-operator/compare/rev125...6/edge"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
             "name": "kafka-test-app",
             "default_branch": "main",
             "new_commits": 0,
@@ -7941,45 +8022,6 @@
             "charm": null
          },
          {
-            "name": "mongodb-operator",
-            "default_branch": "6/edge",
-            "new_commits": 20,
-            "url": "https://github.com/canonical/mongodb-operator",
-            "releases": [
-               {
-                  "id": 110360728,
-                  "version": "rev126",
-                  "timestamp": 1688037508,
-                  "title": "Revision 126",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;5/edge&rsquo; at 13:29 UTC on 29 Jun 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-1180 Update icon to the common for Data Platform charms by <a href=\"http://github.com/taurus-forever\">@taurus-forever</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/233\">#233</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev125...rev126\">https://github.com/canonical/mongodb-operator/compare/rev125&hellip;rev126</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev126",
-                  "compare_url": "https://github.com/canonical/mongodb-operator/compare/rev126...6/edge"
-               },
-               {
-                  "id": 109283598,
-                  "version": "rev125",
-                  "timestamp": 1687285711,
-                  "title": "Revision 125",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;5/edge&rsquo; at 20:00 UTC on 20 Jun 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2157]Rename users secret keys names to make them compatible with juju 3.1 by <a href=\"http://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/232\">#232</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev124...rev125\">https://github.com/canonical/mongodb-operator/compare/rev124&hellip;rev125</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev125",
-                  "compare_url": "https://github.com/canonical/mongodb-operator/compare/rev125...6/edge"
-               },
-               {
-                  "id": 108783957,
-                  "version": "rev124",
-                  "timestamp": 1686852934,
-                  "title": "Revision 124",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;5/edge&rsquo; at 19:42 UTC on 15 Jun 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2075] Refactoring: extract charm configuration by <a href=\"http://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a href=\"https://github.com/canonical/mongodb-operator/pull/231\">#231</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev123...rev124\">https://github.com/canonical/mongodb-operator/compare/rev123&hellip;rev124</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev124",
-                  "compare_url": "https://github.com/canonical/mongodb-operator/compare/rev124...6/edge"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
             "name": "mysql-bundle",
             "default_branch": "main",
             "new_commits": 0,
@@ -7999,80 +8041,37 @@
             "charm": null
          },
          {
-            "name": "mysql-k8s-bundle",
+            "name": "central-uploader",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/mysql-k8s-bundle",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "eb7fe0c8d557a820fa6680b28f48fac5fbe899c4",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1689078910,
-                  "message": "Update bundle (#65)\n\nCo-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com>",
-                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/eb7fe0c8d557a820fa6680b28f48fac5fbe899c4"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": {
-               "name": "mysql-k8s-bundle",
-               "url": "https://charmhub.io/mysql-k8s-bundle",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 27,
-                     "timestamp": 1678362499
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "edge",
-                     "revision": 38,
-                     "timestamp": 1689081482
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "8.0"
-               ]
-            }
-         },
-         {
-            "name": "mysql-k8s-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/mysql-k8s-operator",
+            "url": "https://github.com/canonical/central-uploader",
             "releases": [
                {
-                  "id": 124343293,
-                  "version": "rev106",
-                  "timestamp": 1696836549,
-                  "title": "Revision 106",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 102}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2684] Juju3 pipelines by <a href=\"http://github.com/juditnovak\">@juditnovak</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/313\">#313</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/juditnovak\">@juditnovak</a> made their first contribution in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/313\">#313</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev105...rev106\">https://github.com/canonical/mysql-k8s-operator/compare/rev105&hellip;rev106</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev106",
-                  "compare_url": "https://github.com/canonical/mysql-k8s-operator/compare/rev106...main"
+                  "id": 124318224,
+                  "version": "kafka_2.13-3.5.1-ubuntu0",
+                  "timestamp": 1696857944,
+                  "title": "Release kafka_2.13-3.5.1-ubuntu0",
+                  "body": "",
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/kafka_2.13-3.5.1-ubuntu0",
+                  "compare_url": "https://github.com/canonical/central-uploader/compare/kafka_2.13-3.5.1-ubuntu0...main"
                },
                {
-                  "id": 122652894,
-                  "version": "rev105",
-                  "timestamp": 1695739804,
-                  "title": "Revision 105",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 101}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2307 upgrade rollback test by <a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/307\">#307</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev102...rev105\">https://github.com/canonical/mysql-k8s-operator/compare/rev102&hellip;rev105</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev105",
-                  "compare_url": "https://github.com/canonical/mysql-k8s-operator/compare/rev105...main"
+                  "id": 124318232,
+                  "version": "kafka-3-latest",
+                  "timestamp": 1696857944,
+                  "title": "Release kafka-3-latest",
+                  "body": "",
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/kafka-3-latest",
+                  "compare_url": "https://github.com/canonical/central-uploader/compare/kafka-3-latest...main"
                },
                {
-                  "id": 120829328,
-                  "version": "rev102",
-                  "timestamp": 1694531837,
-                  "title": "Revision 102",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 100}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2426 Update upgrade dependencies for mysqld and charm to account for 8.0.34 by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/299\">#299</a></li>\n<li>dpe-2124 in lib config file render by <a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/mysql-k8s-operator/pull/303\">#303</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev100...rev102\">https://github.com/canonical/mysql-k8s-operator/compare/rev100&hellip;rev102</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev102",
-                  "compare_url": "https://github.com/canonical/mysql-k8s-operator/compare/rev102...main"
+                  "id": 123797546,
+                  "version": "spark-3.4.1-ubuntu1",
+                  "timestamp": 1696482845,
+                  "title": "Release spark-3.4.1-ubuntu1",
+                  "body": "",
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/spark-3.4.1-ubuntu1",
+                  "compare_url": "https://github.com/canonical/central-uploader/compare/spark-3.4.1-ubuntu1...main"
                }
             ],
             "commits": null,
@@ -8081,37 +8080,38 @@
             "charm": null
          },
          {
-            "name": "mysql-operator",
+            "name": "charm-rolling-ops",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/mysql-operator",
+            "url": "https://github.com/canonical/charm-rolling-ops",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "7745ceee696007003485b6912ce01aae87ab0bed",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1686158396,
+                  "message": "Update bug_report.md issue template (#4)\n\nPorted from https://github.com/canonical/mysql-router-k8s-operator/pull/91",
+                  "url": "https://github.com/canonical/charm-rolling-ops/commit/7745ceee696007003485b6912ce01aae87ab0bed"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "kafka-broker-rack-awareness-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator",
             "releases": [
                {
-                  "id": 124084286,
-                  "version": "rev197",
-                  "timestamp": 1696586659,
-                  "title": "Revision 197",
-                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-1796 Implement support for general/slowquery logs and logrotation of text logs by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/329\">#329</a></li>\n<li>Avoid any actions when a unit is offline and allow mysql GR to recover by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/334\">#334</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev196...rev197\">https://github.com/canonical/mysql-operator/compare/rev196&hellip;rev197</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev197",
-                  "compare_url": "https://github.com/canonical/mysql-operator/compare/rev197...main"
-               },
-               {
-                  "id": 120417493,
-                  "version": "rev196",
-                  "timestamp": 1694119253,
-                  "title": "Revision 196",
-                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2485 Resolve race condition when restarting after configure_instance by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/321\">#321</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev195...rev196\">https://github.com/canonical/mysql-operator/compare/rev195&hellip;rev196</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev196",
-                  "compare_url": "https://github.com/canonical/mysql-operator/compare/rev196...main"
-               },
-               {
-                  "id": 120283850,
-                  "version": "rev195",
-                  "timestamp": 1694089504,
-                  "title": "Revision 195",
-                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Delete unused apt charm lib by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/322\">#322</a></li>\n<li>DPE-2124 - refactor - in lib config file render by <a href=\"http://github.com/paulomach\">@paulomach</a> in <a href=\"https://github.com/canonical/mysql-operator/pull/296\">#296</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev194...rev195\">https://github.com/canonical/mysql-operator/compare/rev194&hellip;rev195</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev195",
-                  "compare_url": "https://github.com/canonical/mysql-operator/compare/rev195...main"
+                  "id": 109565365,
+                  "version": "rev5",
+                  "timestamp": 1687445669,
+                  "title": "Revision 5",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-1904] Add initial charm by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></li>\n<li>Fix status handling by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/2\">#2</a></li>\n<li>[DPE-2033] Add CI/CD pipeline by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/4\">#4</a></li>\n<li>Fix release track by <a href=\"http://github.com/zmraul\">@zmraul</a> in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/6\">#6</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/zmraul\">@zmraul</a> made their first contribution in <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5\">https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator/releases/tag/rev5",
+                  "compare_url": "https://github.com/canonical/kafka-broker-rack-awareness-operator/compare/rev5...main"
                }
             ],
             "commits": null,
