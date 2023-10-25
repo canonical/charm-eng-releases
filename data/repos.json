@@ -1355,9 +1355,18 @@
          {
             "name": "operator",
             "default_branch": "main",
-            "new_commits": 24,
+            "new_commits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 126518911,
+                  "version": "2.8.0",
+                  "timestamp": 1697777500,
+                  "title": "2.8.0: Unit.reboot, RelationMeta.optional, and type-checked tests",
+                  "body": "<p>This release includes a few small improvements: a new function <code>Unit.reboot()</code> (for machine charms only), the &ldquo;optional&rdquo; attribute of relations in metadata.yaml is now available in the <code>RelationMeta</code> object, and if the Pebble socket is missing (for example, if the container has just rebooted) we provide a clearer exception:</p>\n\n<ul>\n<li>feat: add <code>Unit.reboot</code> for machine charms in #1041</li>\n<li>feat: add <code>RelationMeta.optional</code> in #1038</li>\n<li>feat: provide a clearer exception when the Pebble socket is missing in #1049</li>\n</ul>\n\n<p>We fixed a couple of small issues:</p>\n\n<ul>\n<li>fix: <code>push_path</code> and <code>pull_path</code> include empty directories in #1024</li>\n<li>fix: reset collected statuses in <code>Harness.evaluate_status</code> in #1048</li>\n</ul>\n\n<p>We&rsquo;ve also made a few small improvements to the documentation:</p>\n\n<ul>\n<li>docs: note that status changes are immediate in #1029</li>\n<li>docs: add note to <code>ActionEvent.set_results</code> about maximum size in #1047</li>\n<li>docs: document more of the exceptions that may be raised in #1044</li>\n<li>docs: make <code>pebble.Client.remove_path</code> and <code>Container.remove_path</code> docs consistent in #1031</li>\n<li>docs: update the PyPI development status to production/stable in #1020</li>\n</ul>\n\n<p>Finally, we wrapped up our work on #1007, so the test suite is now fully type checked, did a couple of other minor type hinting improvements, and broke out the &lsquo;real&rsquo; Pebble tests into a separate file for more clarity (you can still just run <code>tox -e pebble</code>):</p>\n\n<ul>\n<li>test: add type hints to test_testing in #1017</li>\n<li>test: add type hints to test_model in #1015</li>\n<li>test: add type hints to test_charm in #1022</li>\n<li>test: add type hints to test_storage in #1023</li>\n<li>test: add type hints to test_framework in #1025</li>\n<li>test: add type hints to test_main in #1028</li>\n<li>test: add type hints to pebble-related tests in #1030</li>\n<li>test: separate the real pebble tests into a separate module in #1018</li>\n<li>chore: remove as much &lsquo;if typing.TYPE_CHECKING:&rsquo; as possible in #1034</li>\n<li>feat: narrow the type for &lsquo;app&rsquo; and &lsquo;unit&rsquo; in relation events by in #1032</li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.7.0...2.8.0\">https://github.com/canonical/operator/compare/2.7.0&hellip;2.8.0</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.8.0",
+                  "compare_url": "https://github.com/canonical/operator/compare/2.8.0...main"
+               },
                {
                   "id": 123028231,
                   "version": "2.7.0",
@@ -1375,15 +1384,6 @@
                   "body": "<p>This release has two significant improvements to <code>testing.Harness</code>:</p>\n\n<ul>\n<li>Add <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.handle_exec\"><code>Harness.handle_exec</code></a> to allow charm tests to simulate <a href=\"https://ops.readthedocs.io/en/latest/#ops.Container.exec\"><code>Container.exec</code></a> calls (Pebble one-shot commands) and provide expected output. Thanks <a href=\"http://github.com/weiiwang01\">@weiiwang01</a> for the design and implementation (<a href=\"a href=&quot;https://github.com/canonical/operator/pull/993&quot;&gt;#993&lt;/a\">PR 993</a>).</li>\n<li>Simplify adding relation units and relation data by adding <code>app_data</code> and <code>unit_data</code> parameters to <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.add_relation\"><code>Harness.add_relation</code></a>. Previously, charm tests would have to call <code>add_relation</code> followed by <code>add_relation_unit</code> and <code>update_relation_data</code> &ndash; now only a single <code>add_relation</code> call is required. Implemented in <a href=\"a href=&quot;https://github.com/canonical/operator/pull/994&quot;&gt;#994&lt;/a\">PR 994</a>.</li>\n</ul>\n\n<p>In addition, several small improvements and fixes are included:</p>\n\n<ul>\n<li>feat(model): add <code>Secret.unique_identifier</code> (XID part); improve id/label docs in <a href=\"https://github.com/canonical/operator/pull/986\">#986</a></li>\n<li>fix(testing): ignore <code>push()</code> encoding if source is a binary file or stream in <a href=\"https://github.com/canonical/operator/pull/991\">#991</a></li>\n<li>fix(pebble): remove use of deprecated <code>cgi</code> module in Pebble code in <a href=\"https://github.com/canonical/operator/pull/996\">#996</a></li>\n<li>fix(model): ensure Secret.get_content returns a copy of the dict in <a href=\"https://github.com/canonical/operator/pull/1000\">#1000</a></li>\n<li>fix(model): make Secret.set_content invalidate local cache by in <a href=\"https://github.com/canonical/operator/pull/1001\">#1001</a></li>\n</ul>\n\n<p><a href=\"https://github.com/canonical/operator/compare/2.5.0...2.6.0\">See all changes from 2.5.0 to 2.6.0.</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.6.0",
                   "compare_url": "https://github.com/canonical/operator/compare/2.6.0...main"
-               },
-               {
-                  "id": 117415345,
-                  "version": "2.5.1",
-                  "timestamp": 1692164589,
-                  "title": "2.5.1: Fix str vs bytes issue with testing push()",
-                  "body": "<p>This is a patch fix on top of <a href=\"https://github.com/canonical/operator/releases/tag/2.5.0\">2.5.0</a> to fix #990: &ldquo;TypeError: write() argument must be str, not bytes&rdquo; in <code>Container.push</code> under <code>Harness</code>.</p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.5.1",
-                  "compare_url": "https://github.com/canonical/operator/compare/2.5.1...main"
                }
             ],
             "commits": null,
@@ -5517,37 +5517,76 @@
             "charm": null
          },
          {
-            "name": "sdcore-udm-operator",
+            "name": "magma-access-gateway-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-udm-operator",
+            "url": "https://github.com/canonical/magma-access-gateway-operator",
             "releases": [
                {
-                  "id": 126141505,
-                  "version": "rev26",
-                  "timestamp": 1697803665,
-                  "title": "Revision 26",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.3\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:34 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udm-operator/pull/25\">#25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-operator/compare/rev24...rev26\">https://github.com/canonical/sdcore-udm-operator/compare/rev24&hellip;rev26</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-operator/releases/tag/rev26",
-                  "compare_url": "https://github.com/canonical/sdcore-udm-operator/compare/rev26...main"
+                  "id": 101593500,
+                  "version": "rev43",
+                  "timestamp": 1683037449,
+                  "title": "Revision 43",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:42 UTC on 2 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixing bug with operator not being able to recover from BlockedStatus… by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/magma-access-gateway-operator/pull/50\">#50</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/magma-access-gateway-operator/compare/rev41...rev43\">https://github.com/canonical/magma-access-gateway-operator/compare/rev41&hellip;rev43</a></p>\n",
+                  "url": "https://github.com/canonical/magma-access-gateway-operator/releases/tag/rev43",
+                  "compare_url": "https://github.com/canonical/magma-access-gateway-operator/compare/rev43...main"
                },
                {
-                  "id": 125991824,
-                  "version": "rev25",
-                  "timestamp": 1697803665,
-                  "title": "Revision 25",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.3\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:47 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udm-operator/pull/25\">#25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-operator/compare/rev24...rev25\">https://github.com/canonical/sdcore-udm-operator/compare/rev24&hellip;rev25</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-operator/releases/tag/rev25",
-                  "compare_url": "https://github.com/canonical/sdcore-udm-operator/compare/rev25...main"
+                  "id": 101588824,
+                  "version": "rev42",
+                  "timestamp": 1683035631,
+                  "title": "Revision 42",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 14:24 UTC on 2 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixing bug with operator not being able to recover from BlockedStatus… by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/magma-access-gateway-operator/pull/49\">#49</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/magma-access-gateway-operator/compare/rev39...rev42\">https://github.com/canonical/magma-access-gateway-operator/compare/rev39&hellip;rev42</a></p>\n",
+                  "url": "https://github.com/canonical/magma-access-gateway-operator/releases/tag/rev42",
+                  "compare_url": "https://github.com/canonical/magma-access-gateway-operator/compare/rev42...main"
                },
                {
-                  "id": 125973138,
-                  "version": "rev24",
-                  "timestamp": 1697798819,
-                  "title": "Revision 24",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.3\n       resource-revision: 24</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:41 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udm-operator/pull/24\">#24</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-operator/compare/rev23...rev24\">https://github.com/canonical/sdcore-udm-operator/compare/rev23&hellip;rev24</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-operator/releases/tag/rev24",
-                  "compare_url": "https://github.com/canonical/sdcore-udm-operator/compare/rev24...main"
+                  "id": 100632999,
+                  "version": "rev41",
+                  "timestamp": 1682328662,
+                  "title": "Revision 41",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:49 UTC on 24 Apr 2023</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/magma-access-gateway-operator/compare/rev38...rev41\">https://github.com/canonical/magma-access-gateway-operator/compare/rev38&hellip;rev41</a></p>\n",
+                  "url": "https://github.com/canonical/magma-access-gateway-operator/releases/tag/rev41",
+                  "compare_url": "https://github.com/canonical/magma-access-gateway-operator/compare/rev41...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "acme-client-base",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/acme-client-base",
+            "releases": [
+               {
+                  "id": 122135553,
+                  "version": "rev8",
+                  "timestamp": 1695341384,
+                  "title": "Revision 8",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 00:52 UTC on 22 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update bug report template by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/acme-client-base/pull/15\">#15</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/DanielArndt\">@DanielArndt</a> made their first contribution in <a href=\"https://github.com/canonical/acme-client-base/pull/15\">#15</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/acme-client-base/compare/rev7...rev8\">https://github.com/canonical/acme-client-base/compare/rev7&hellip;rev8</a></p>\n",
+                  "url": "https://github.com/canonical/acme-client-base/releases/tag/rev8",
+                  "compare_url": "https://github.com/canonical/acme-client-base/compare/rev8...main"
+               },
+               {
+                  "id": 120108710,
+                  "version": "rev7",
+                  "timestamp": 1694000744,
+                  "title": "Revision 7",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:21 UTC on 6 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Adds issues workflow and CODEOWNERS file by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/acme-client-base/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/acme-client-base/compare/rev6...rev7\">https://github.com/canonical/acme-client-base/compare/rev6&hellip;rev7</a></p>\n",
+                  "url": "https://github.com/canonical/acme-client-base/releases/tag/rev7",
+                  "compare_url": "https://github.com/canonical/acme-client-base/compare/rev7...main"
+               },
+               {
+                  "id": 103487078,
+                  "version": "rev6",
+                  "timestamp": 1684423734,
+                  "title": "Revision 6",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 16:37 UTC on 18 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Call children for valid configurations on_certificate_request by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/acme-client-base/pull/12\">#12</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/acme-client-base/compare/rev5...rev6\">https://github.com/canonical/acme-client-base/compare/rev5&hellip;rev6</a></p>\n",
+                  "url": "https://github.com/canonical/acme-client-base/releases/tag/rev6",
+                  "compare_url": "https://github.com/canonical/acme-client-base/compare/rev6...main"
                }
             ],
             "commits": null,
@@ -5575,25 +5614,6 @@
             "charm": null
          },
          {
-            "name": "vault-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/vault-operator",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "07f0e6ef4a040f58505ef44fafc2f2de482f8824",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1696424038,
-                  "message": "[feat] Scaffolding for the charm (#2)\n\nCo-authored-by: Ghislain Bourgeois <ghislain.bourgeois@gmail.com>",
-                  "url": "https://github.com/canonical/vault-operator/commit/07f0e6ef4a040f58505ef44fafc2f2de482f8824"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
             "name": "charmed-5g",
             "default_branch": "main",
             "new_commits": 0,
@@ -5613,18 +5633,18 @@
             "charm": null
          },
          {
-            "name": "charmed-magma",
+            "name": "200-ok",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/charmed-magma",
+            "url": "https://github.com/canonical/200-ok",
             "releases": null,
             "commits": [
                {
-                  "sha": "0d328ddd87ca0cb0185494a7b1d518ce6dc37dbf",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1691665625,
-                  "message": "Adding .readthedocs.yaml (#58)",
-                  "url": "https://github.com/canonical/charmed-magma/commit/0d328ddd87ca0cb0185494a7b1d518ce6dc37dbf"
+                  "sha": "db09487dede2f93843f56dfa1db46fd53f463ba3",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1663007256,
+                  "message": "Merge pull request #3 from canonical/gruyaume-patch-2\n\nUpdate issue templates",
+                  "url": "https://github.com/canonical/200-ok/commit/db09487dede2f93843f56dfa1db46fd53f463ba3"
                }
             ],
             "is_archived": false,
@@ -5651,37 +5671,37 @@
             "charm": null
          },
          {
-            "name": "vault-k8s-operator",
+            "name": "charmed-magma-orchestrator",
             "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/vault-k8s-operator",
+            "new_commits": 81,
+            "url": "https://github.com/canonical/charmed-magma-orchestrator",
             "releases": [
                {
-                  "id": 126457058,
-                  "version": "rev42",
-                  "timestamp": 1698156213,
-                  "title": "Revision 42",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.0\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:46 UTC on 24 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Enables audit device upon init by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/61\">#61</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev41...rev42\">https://github.com/canonical/vault-k8s-operator/compare/rev41&hellip;rev42</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev42",
-                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev42...main"
+                  "id": 105310450,
+                  "version": "magma-orc8r-tenants-operator-rev32",
+                  "timestamp": 1685426910,
+                  "title": "Revision 32",
+                  "body": "<p>resources:\n    -  magma-orc8r-tenants-image: ghcr.io/canonical/magma-orc8r-controller:1.8.0\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 06:45 UTC on 30 May 2023</p>\n\n<p>Released to &lsquo;1.8/beta&rsquo; at 11:56 UTC on 30 May 2023\nReleased to &lsquo;1.8/candidate&rsquo; at 12:02 UTC on 30 May 2023\nReleased to &lsquo;1.8/stable&rsquo; at 12:04 UTC on 30 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixes the bundle upload action by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/262\">#262</a></li>\n<li>Dummy change in the bundle to trigger CI by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/264\">#264</a></li>\n<li>Removing unnecessary ignore by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/265\">#265</a></li>\n<li>Pin external charms to complete channel names by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/267\">#267</a></li>\n<li>Fixing static analysis by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/271\">#271</a></li>\n<li>Triggering build on the bundle by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/272\">#272</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62...magma-orc8r-tenants-operator-rev32\">https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62&hellip;magma-orc8r-tenants-operator-rev32</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-magma-orchestrator/releases/tag/magma-orc8r-tenants-operator-rev32",
+                  "compare_url": "https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-tenants-operator-rev32...main"
                },
                {
-                  "id": 126073862,
-                  "version": "rev41",
-                  "timestamp": 1697831898,
-                  "title": "Revision 41",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.0\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:19 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Adds semantic PR name validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/65\">#65</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev40...rev41\">https://github.com/canonical/vault-k8s-operator/compare/rev40&hellip;rev41</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev41",
-                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev41...main"
+                  "id": 105310295,
+                  "version": "magma-orc8r-subscriberdb-operator-rev34",
+                  "timestamp": 1685426910,
+                  "title": "Revision 34",
+                  "body": "<p>resources:\n    -  magma-orc8r-subscriberdb-image: ghcr.io/canonical/magma-lte-controller:1.8.0\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 06:42 UTC on 30 May 2023</p>\n\n<p>Released to &lsquo;1.8/beta&rsquo; at 11:55 UTC on 30 May 2023\nReleased to &lsquo;1.8/candidate&rsquo; at 12:02 UTC on 30 May 2023\nReleased to &lsquo;1.8/stable&rsquo; at 12:04 UTC on 30 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixes the bundle upload action by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/262\">#262</a></li>\n<li>Dummy change in the bundle to trigger CI by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/264\">#264</a></li>\n<li>Removing unnecessary ignore by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/265\">#265</a></li>\n<li>Pin external charms to complete channel names by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/267\">#267</a></li>\n<li>Fixing static analysis by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/271\">#271</a></li>\n<li>Triggering build on the bundle by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/272\">#272</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62...magma-orc8r-subscriberdb-operator-rev34\">https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62&hellip;magma-orc8r-subscriberdb-operator-rev34</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-magma-orchestrator/releases/tag/magma-orc8r-subscriberdb-operator-rev34",
+                  "compare_url": "https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-subscriberdb-operator-rev34...main"
                },
                {
-                  "id": 125858371,
-                  "version": "rev40",
-                  "timestamp": 1697736201,
-                  "title": "Revision 40",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.0\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:50 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/64\">#64</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev39...rev40\">https://github.com/canonical/vault-k8s-operator/compare/rev39&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev40",
-                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev40...main"
+                  "id": 105310476,
+                  "version": "magma-orc8r-subscriberdb-cache-operator-rev34",
+                  "timestamp": 1685426910,
+                  "title": "Revision 34",
+                  "body": "<p>resources:\n    -  magma-orc8r-subscriberdb-cache-image: ghcr.io/canonical/magma-lte-controller:1.8.0\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 06:45 UTC on 30 May 2023</p>\n\n<p>Released to &lsquo;1.8/beta&rsquo; at 11:56 UTC on 30 May 2023\nReleased to &lsquo;1.8/candidate&rsquo; at 12:03 UTC on 30 May 2023\nReleased to &lsquo;1.8/stable&rsquo; at 12:04 UTC on 30 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixes the bundle upload action by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/262\">#262</a></li>\n<li>Dummy change in the bundle to trigger CI by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/264\">#264</a></li>\n<li>Removing unnecessary ignore by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/265\">#265</a></li>\n<li>Pin external charms to complete channel names by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/267\">#267</a></li>\n<li>Fixing static analysis by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/271\">#271</a></li>\n<li>Triggering build on the bundle by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/272\">#272</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62...magma-orc8r-subscriberdb-cache-operator-rev34\">https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62&hellip;magma-orc8r-subscriberdb-cache-operator-rev34</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-magma-orchestrator/releases/tag/magma-orc8r-subscriberdb-cache-operator-rev34",
+                  "compare_url": "https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-subscriberdb-cache-operator-rev34...main"
                }
             ],
             "commits": null,
@@ -5690,59 +5710,41 @@
             "charm": null
          },
          {
-            "name": "ubuntu-router-rock",
+            "name": "httpreq-acme-operator",
+            "default_branch": "main",
+            "new_commits": 17,
+            "url": "https://github.com/canonical/httpreq-acme-operator",
+            "releases": [
+               {
+                  "id": 101734682,
+                  "version": "rev3",
+                  "timestamp": 1683038526,
+                  "title": "Revision 3",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.9.1\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:38 UTC on 3 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Initial implementation by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/httpreq-acme-operator/pull/1\">#1</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> made their first contribution in <a href=\"https://github.com/canonical/httpreq-acme-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httpreq-acme-operator/commits/rev3\">https://github.com/canonical/httpreq-acme-operator/commits/rev3</a></p>\n",
+                  "url": "https://github.com/canonical/httpreq-acme-operator/releases/tag/rev3",
+                  "compare_url": "https://github.com/canonical/httpreq-acme-operator/compare/rev3...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "vault-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/ubuntu-router-rock",
+            "url": "https://github.com/canonical/vault-operator",
             "releases": null,
             "commits": [
                {
-                  "sha": "83dcbe3d394a5b46649a7b7cfcc91950edf6d34a",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1694524698,
-                  "message": "Merge pull request #5 from canonical/renovate/docker-login-action-3.x\n\nUpdate docker/login-action action to v3",
-                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/83dcbe3d394a5b46649a7b7cfcc91950edf6d34a"
+                  "sha": "07f0e6ef4a040f58505ef44fafc2f2de482f8824",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1696424038,
+                  "message": "[feat] Scaffolding for the charm (#2)\n\nCo-authored-by: Ghislain Bourgeois <ghislain.bourgeois@gmail.com>",
+                  "url": "https://github.com/canonical/vault-operator/commit/07f0e6ef4a040f58505ef44fafc2f2de482f8824"
                }
             ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "tls-certificates-requirer-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/tls-certificates-requirer-operator",
-            "releases": [
-               {
-                  "id": 126341689,
-                  "version": "rev13",
-                  "timestamp": 1698099360,
-                  "title": "Revision 13",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:11 UTC on 24 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Adds semantic PR title validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev12...rev13\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev12&hellip;rev13</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev13",
-                  "compare_url": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev13...main"
-               },
-               {
-                  "id": 124460442,
-                  "version": "rev12",
-                  "timestamp": 1696954463,
-                  "title": "Revision 12",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:45 UTC on 10 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Certificate creation request needs to wait for CSR generation by <a href=\"http://github.com/gatici\">@gatici</a> in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/14\">#14</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/gatici\">@gatici</a> made their first contribution in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/14\">#14</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev11...rev12\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev11&hellip;rev12</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev12",
-                  "compare_url": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev12...main"
-               },
-               {
-                  "id": 123724448,
-                  "version": "rev11",
-                  "timestamp": 1696435096,
-                  "title": "Revision 11",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:55 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Updates the charm metadata by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/18\">#18</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev10...rev11\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev10&hellip;rev11</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev11",
-                  "compare_url": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev11...main"
-               }
-            ],
-            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -5767,37 +5769,37 @@
             "charm": null
          },
          {
-            "name": "tls-certificates-interface",
+            "name": "kubernetes-charm-libraries",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/tls-certificates-interface",
+            "url": "https://github.com/canonical/kubernetes-charm-libraries",
             "releases": [
                {
-                  "id": 126339909,
-                  "version": "rev49",
-                  "timestamp": 1698098956,
-                  "title": "Revision 49",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 23:32 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Deprecates v0 of the lib by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-interface/pull/82\">#82</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev48...rev49\">https://github.com/canonical/tls-certificates-interface/compare/rev48&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev49",
-                  "compare_url": "https://github.com/canonical/tls-certificates-interface/compare/rev49...main"
+                  "id": 125267507,
+                  "version": "rev16",
+                  "timestamp": 1697465842,
+                  "title": "Revision 16",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:29 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add hugepages support by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/14\">#14</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/14\">#14</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubernetes-charm-libraries/compare/rev15...rev16\">https://github.com/canonical/kubernetes-charm-libraries/compare/rev15&hellip;rev16</a></p>\n",
+                  "url": "https://github.com/canonical/kubernetes-charm-libraries/releases/tag/rev16",
+                  "compare_url": "https://github.com/canonical/kubernetes-charm-libraries/compare/rev16...main"
                },
                {
-                  "id": 126331898,
-                  "version": "rev48",
-                  "timestamp": 1698091416,
-                  "title": "Revision 48",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 21:45 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>bugfix: Validates modulus in csr/cert comparison instead of subject by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-interface/pull/81\">#81</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev47...rev48\">https://github.com/canonical/tls-certificates-interface/compare/rev47&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev48",
-                  "compare_url": "https://github.com/canonical/tls-certificates-interface/compare/rev48...main"
+                  "id": 123798140,
+                  "version": "rev15",
+                  "timestamp": 1696483775,
+                  "title": "Revision 15",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:33 UTC on 5 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Adds issues workflow by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/19\">#19</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/saltiyazan\">@saltiyazan</a> made their first contribution in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/19\">#19</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubernetes-charm-libraries/compare/rev14...rev15\">https://github.com/canonical/kubernetes-charm-libraries/compare/rev14&hellip;rev15</a></p>\n",
+                  "url": "https://github.com/canonical/kubernetes-charm-libraries/releases/tag/rev15",
+                  "compare_url": "https://github.com/canonical/kubernetes-charm-libraries/compare/rev15...main"
                },
                {
-                  "id": 126327074,
-                  "version": "rev47",
-                  "timestamp": 1698088793,
-                  "title": "Revision 47",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 20:56 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Uses semantic PR title validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-interface/pull/80\">#80</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev46...rev47\">https://github.com/canonical/tls-certificates-interface/compare/rev46&hellip;rev47</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev47",
-                  "compare_url": "https://github.com/canonical/tls-certificates-interface/compare/rev47...main"
+                  "id": 123133341,
+                  "version": "rev14",
+                  "timestamp": 1695997132,
+                  "title": "Revision 14",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:24 UTC on 29 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Trigger pod restart when NAD config changed by <a href=\"http://github.com/gatici\">@gatici</a> in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubernetes-charm-libraries/compare/rev13...rev14\">https://github.com/canonical/kubernetes-charm-libraries/compare/rev13&hellip;rev14</a></p>\n",
+                  "url": "https://github.com/canonical/kubernetes-charm-libraries/releases/tag/rev14",
+                  "compare_url": "https://github.com/canonical/kubernetes-charm-libraries/compare/rev14...main"
                }
             ],
             "commits": null,
@@ -5844,20 +5846,40 @@
             "charm": null
          },
          {
-            "name": "srsran-snap",
+            "name": "vault-k8s-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/srsran-snap",
-            "releases": null,
-            "commits": [
+            "url": "https://github.com/canonical/vault-k8s-operator",
+            "releases": [
                {
-                  "sha": "6d97557b685e31185ed4cae2a2c6d0dd312789e0",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1683726052,
-                  "message": "Merge pull request #14 from canonical/remove-system-files-plug\n\nRemove unneeded system-files plug",
-                  "url": "https://github.com/canonical/srsran-snap/commit/6d97557b685e31185ed4cae2a2c6d0dd312789e0"
+                  "id": 126457058,
+                  "version": "rev42",
+                  "timestamp": 1698156213,
+                  "title": "Revision 42",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.0\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:46 UTC on 24 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Enables audit device upon init by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/61\">#61</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev41...rev42\">https://github.com/canonical/vault-k8s-operator/compare/rev41&hellip;rev42</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev42",
+                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev42...main"
+               },
+               {
+                  "id": 126073862,
+                  "version": "rev41",
+                  "timestamp": 1697831898,
+                  "title": "Revision 41",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.0\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:19 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Adds semantic PR name validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/65\">#65</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev40...rev41\">https://github.com/canonical/vault-k8s-operator/compare/rev40&hellip;rev41</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev41",
+                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev41...main"
+               },
+               {
+                  "id": 125858371,
+                  "version": "rev40",
+                  "timestamp": 1697736201,
+                  "title": "Revision 40",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.0\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:50 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/vault-k8s-operator/pull/64\">#64</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev39...rev40\">https://github.com/canonical/vault-k8s-operator/compare/rev39&hellip;rev40</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev40",
+                  "compare_url": "https://github.com/canonical/vault-k8s-operator/compare/rev40...main"
                }
             ],
+            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -5978,59 +6000,59 @@
             "charm": null
          },
          {
-            "name": "self-signed-certificates-operator",
+            "name": "ubuntu-router-rock",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/self-signed-certificates-operator",
-            "releases": [
+            "url": "https://github.com/canonical/ubuntu-router-rock",
+            "releases": null,
+            "commits": [
                {
-                  "id": 126232688,
-                  "version": "rev42",
-                  "timestamp": 1698061632,
-                  "title": "Revision 42",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:45 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Adds semantic PR title validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/self-signed-certificates-operator/pull/39\">#39</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev40...rev42\">https://github.com/canonical/self-signed-certificates-operator/compare/rev40&hellip;rev42</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev42",
-                  "compare_url": "https://github.com/canonical/self-signed-certificates-operator/compare/rev42...main"
-               },
-               {
-                  "id": 126132097,
-                  "version": "rev41",
-                  "timestamp": 1697715989,
-                  "title": "Revision 41",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:25 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/self-signed-certificates-operator/pull/37\">#37</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev35...rev41\">https://github.com/canonical/self-signed-certificates-operator/compare/rev35&hellip;rev41</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev41",
-                  "compare_url": "https://github.com/canonical/self-signed-certificates-operator/compare/rev41...main"
-               },
-               {
-                  "id": 125794335,
-                  "version": "rev40",
-                  "timestamp": 1697715989,
-                  "title": "Revision 40",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:51 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/self-signed-certificates-operator/pull/37\">#37</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev35...rev40\">https://github.com/canonical/self-signed-certificates-operator/compare/rev35&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev40",
-                  "compare_url": "https://github.com/canonical/self-signed-certificates-operator/compare/rev40...main"
+                  "sha": "83dcbe3d394a5b46649a7b7cfcc91950edf6d34a",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1694524698,
+                  "message": "Merge pull request #5 from canonical/renovate/docker-login-action-3.x\n\nUpdate docker/login-action action to v3",
+                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/83dcbe3d394a5b46649a7b7cfcc91950edf6d34a"
                }
             ],
-            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
          },
          {
-            "name": "sdcore-webui-rock",
+            "name": "tls-certificates-requirer-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-webui-rock",
-            "releases": null,
-            "commits": [
+            "url": "https://github.com/canonical/tls-certificates-requirer-operator",
+            "releases": [
                {
-                  "sha": "44ac7d284f5f6086baf2af7d519ac3fdd92d31c8",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1697811280,
-                  "message": "Chore: Use upstream project with GET operations (#12)",
-                  "url": "https://github.com/canonical/sdcore-webui-rock/commit/44ac7d284f5f6086baf2af7d519ac3fdd92d31c8"
+                  "id": 126341689,
+                  "version": "rev13",
+                  "timestamp": 1698099360,
+                  "title": "Revision 13",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:11 UTC on 24 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Adds semantic PR title validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev12...rev13\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev12&hellip;rev13</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev13",
+                  "compare_url": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev13...main"
+               },
+               {
+                  "id": 124460442,
+                  "version": "rev12",
+                  "timestamp": 1696954463,
+                  "title": "Revision 12",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:45 UTC on 10 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Certificate creation request needs to wait for CSR generation by <a href=\"http://github.com/gatici\">@gatici</a> in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/14\">#14</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/gatici\">@gatici</a> made their first contribution in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/14\">#14</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev11...rev12\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev11&hellip;rev12</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev12",
+                  "compare_url": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev12...main"
+               },
+               {
+                  "id": 123724448,
+                  "version": "rev11",
+                  "timestamp": 1696435096,
+                  "title": "Revision 11",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:55 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Updates the charm metadata by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/18\">#18</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev10...rev11\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev10&hellip;rev11</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev11",
+                  "compare_url": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev11...main"
                }
             ],
+            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -6075,20 +6097,40 @@
             "charm": null
          },
          {
-            "name": "sdcore-upf-pfcpiface-rock",
+            "name": "tls-certificates-interface",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock",
-            "releases": null,
-            "commits": [
+            "url": "https://github.com/canonical/tls-certificates-interface",
+            "releases": [
                {
-                  "sha": "b3f49b70bc3c855b1e465aebe86be97da06641f5",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1695281608,
-                  "message": "Enable auto-merging Renovate PRs (#7)\n\n* Enable auto-merging Renovate PRs\r\n\r\n* Checking if adding @ before app/renovate-approve removes PR warning\r\n\r\n* Reverting last change\r\n\r\n* Update CODEOWNERS",
-                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/b3f49b70bc3c855b1e465aebe86be97da06641f5"
+                  "id": 126339909,
+                  "version": "rev49",
+                  "timestamp": 1698098956,
+                  "title": "Revision 49",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 23:32 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Deprecates v0 of the lib by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-interface/pull/82\">#82</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev48...rev49\">https://github.com/canonical/tls-certificates-interface/compare/rev48&hellip;rev49</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev49",
+                  "compare_url": "https://github.com/canonical/tls-certificates-interface/compare/rev49...main"
+               },
+               {
+                  "id": 126331898,
+                  "version": "rev48",
+                  "timestamp": 1698091416,
+                  "title": "Revision 48",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 21:45 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>bugfix: Validates modulus in csr/cert comparison instead of subject by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-interface/pull/81\">#81</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev47...rev48\">https://github.com/canonical/tls-certificates-interface/compare/rev47&hellip;rev48</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev48",
+                  "compare_url": "https://github.com/canonical/tls-certificates-interface/compare/rev48...main"
+               },
+               {
+                  "id": 126327074,
+                  "version": "rev47",
+                  "timestamp": 1698088793,
+                  "title": "Revision 47",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 20:56 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Uses semantic PR title validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/tls-certificates-interface/pull/80\">#80</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev46...rev47\">https://github.com/canonical/tls-certificates-interface/compare/rev46&hellip;rev47</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev47",
+                  "compare_url": "https://github.com/canonical/tls-certificates-interface/compare/rev47...main"
                }
             ],
+            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -6113,18 +6155,18 @@
             "charm": null
          },
          {
-            "name": "sdcore-upf-bess-rock",
+            "name": "sdcore-github-workflows",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-upf-bess-rock",
+            "url": "https://github.com/canonical/sdcore-github-workflows",
             "releases": null,
             "commits": [
                {
-                  "sha": "0ce3ab1644f500c3e36b1dd355bd1029e541d21b",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1697812900,
-                  "message": "Chore: Use upstream project for UPF configurations (#10)",
-                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/0ce3ab1644f500c3e36b1dd355bd1029e541d21b"
+                  "sha": "176bd88111a31e74a6a326d15d6c019076a37ed4",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1695292181,
+                  "message": "Update issue template (#17)",
+                  "url": "https://github.com/canonical/sdcore-github-workflows/commit/176bd88111a31e74a6a326d15d6c019076a37ed4"
                }
             ],
             "is_archived": false,
@@ -6132,18 +6174,18 @@
             "charm": null
          },
          {
-            "name": "sdcore-udr-rock",
+            "name": "srsran-snap",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-udr-rock",
+            "url": "https://github.com/canonical/srsran-snap",
             "releases": null,
             "commits": [
                {
-                  "sha": "3794febbce577b4e16d2d77ba99dcbc323a31bec",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1695281442,
-                  "message": "Enable auto-merging Renovate PRs (#8)\n\n* Enable auto-merging Renovate PRs\r\n\r\n* Update CODEOWNERS",
-                  "url": "https://github.com/canonical/sdcore-udr-rock/commit/3794febbce577b4e16d2d77ba99dcbc323a31bec"
+                  "sha": "6d97557b685e31185ed4cae2a2c6d0dd312789e0",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1683726052,
+                  "message": "Merge pull request #14 from canonical/remove-system-files-plug\n\nRemove unneeded system-files plug",
+                  "url": "https://github.com/canonical/srsran-snap/commit/6d97557b685e31185ed4cae2a2c6d0dd312789e0"
                }
             ],
             "is_archived": false,
@@ -6182,624 +6224,6 @@
                   "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.14.2\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:30 UTC on 21 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/checkout action to v4 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/route53-acme-operator/pull/21\">#21</a></li>\n<li>Update canonical/charming-actions action to v2.4.0 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/route53-acme-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/renovate\">@renovate</a> made their first contribution in <a href=\"https://github.com/canonical/route53-acme-operator/pull/21\">#21</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-acme-operator/compare/rev20...rev21\">https://github.com/canonical/route53-acme-operator/compare/rev20&hellip;rev21</a></p>\n",
                   "url": "https://github.com/canonical/route53-acme-operator/releases/tag/rev21",
                   "compare_url": "https://github.com/canonical/route53-acme-operator/compare/rev21...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-udm-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-udm-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "58219c68629430cd84fd2dad84ad58dcead8b85d",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1695281434,
-                  "message": "Enable auto-merging Renovate PRs (#8)",
-                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/58219c68629430cd84fd2dad84ad58dcead8b85d"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-amf-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-amf-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "de06b6acce2598117de6a678519350d33c4161ac",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1698099340,
-                  "message": "chore: Adds semantic PR title validation (#11)",
-                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/de06b6acce2598117de6a678519350d33c4161ac"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-github-workflows",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-github-workflows",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "176bd88111a31e74a6a326d15d6c019076a37ed4",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695292181,
-                  "message": "Update issue template (#17)",
-                  "url": "https://github.com/canonical/sdcore-github-workflows/commit/176bd88111a31e74a6a326d15d6c019076a37ed4"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-ausf-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-ausf-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "dd7b8c6a890a8b840bfc26015d1f4b1f782a4e02",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1698099349,
-                  "message": "chore: Adds semantic PR title validation (#11)",
-                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/dd7b8c6a890a8b840bfc26015d1f4b1f782a4e02"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-nms",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-nms",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "e13354ed076b41ed25a505166b86237a03449e8b",
-                  "author": "renovate[bot]",
-                  "timestamp": 1698181697,
-                  "message": "fix(deps): update dependency tailwindcss to v3.3.4 (#164)\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
-                  "url": "https://github.com/canonical/sdcore-nms/commit/e13354ed076b41ed25a505166b86237a03449e8b"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "certificate-transfer-interface",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/certificate-transfer-interface",
-            "releases": [
-               {
-                  "id": 125991928,
-                  "version": "rev16",
-                  "timestamp": 1697808998,
-                  "title": "Revision 16",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 13:48 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/28\">#28</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev15...rev16\">https://github.com/canonical/certificate-transfer-interface/compare/rev15&hellip;rev16</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev16",
-                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev16...main"
-               },
-               {
-                  "id": 125981237,
-                  "version": "rev15",
-                  "timestamp": 1697803720,
-                  "title": "Revision 15",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:45 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Uses narrower ignore statement by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/29\">#29</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev14...rev15\">https://github.com/canonical/certificate-transfer-interface/compare/rev14&hellip;rev15</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev15",
-                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev15...main"
-               },
-               {
-                  "id": 122365890,
-                  "version": "rev14",
-                  "timestamp": 1695602370,
-                  "title": "Revision 14",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 00:41 UTC on 25 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/checkout digest to 8ade135 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/27\">#27</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev13...rev14\">https://github.com/canonical/certificate-transfer-interface/compare/rev13&hellip;rev14</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev14",
-                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev14...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-tests",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-tests",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "6aea47d23b37028970d79b70fbf2609016f263bc",
-                  "author": "renovate[bot]",
-                  "timestamp": 1698174162,
-                  "message": "Update dependency aws-sdk to v2.1480.0",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/6aea47d23b37028970d79b70fbf2609016f263bc"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-smf-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-smf-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "36e22260e3a233443e87b6854d87480fb94a386a",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695376306,
-                  "message": "Update issue template (#9)",
-                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/36e22260e3a233443e87b6854d87480fb94a386a"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-gnbsim-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-gnbsim-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "4fb02ac4a2026a08f413384f9fdf0f68249c3faa",
-                  "author": "saltiyazan",
-                  "timestamp": 1695623267,
-                  "message": "Uses the issues workflow to sync issues from github to JIRA (#8)",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/4fb02ac4a2026a08f413384f9fdf0f68249c3faa"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "200-ok",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/200-ok",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "db09487dede2f93843f56dfa1db46fd53f463ba3",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1663007256,
-                  "message": "Merge pull request #3 from canonical/gruyaume-patch-2\n\nUpdate issue templates",
-                  "url": "https://github.com/canonical/200-ok/commit/db09487dede2f93843f56dfa1db46fd53f463ba3"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-nms-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-nms-operator",
-            "releases": [
-               {
-                  "id": 126141056,
-                  "version": "rev15",
-                  "timestamp": 1697808902,
-                  "title": "Revision 15",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.1\n       resource-revision: 14</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:11 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-operator/compare/rev13...rev15\">https://github.com/canonical/sdcore-nms-operator/compare/rev13&hellip;rev15</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-operator/releases/tag/rev15",
-                  "compare_url": "https://github.com/canonical/sdcore-nms-operator/compare/rev15...main"
-               },
-               {
-                  "id": 126004401,
-                  "version": "rev14",
-                  "timestamp": 1697808902,
-                  "title": "Revision 14",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.1\n       resource-revision: 13</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:47 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-operator/compare/rev13...rev14\">https://github.com/canonical/sdcore-nms-operator/compare/rev13&hellip;rev14</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-operator/releases/tag/rev14",
-                  "compare_url": "https://github.com/canonical/sdcore-nms-operator/compare/rev14...main"
-               },
-               {
-                  "id": 125937285,
-                  "version": "rev13",
-                  "timestamp": 1697791026,
-                  "title": "Revision 13",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.1\n       resource-revision: 12</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:39 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Implement requirer side of the fiveg_gnb_identity relation by <a href=\"http://github.com/patriciareinoso\">@patriciareinoso</a> in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/19\">#19</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/patriciareinoso\">@patriciareinoso</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/19\">#19</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-operator/compare/rev10...rev13\">https://github.com/canonical/sdcore-nms-operator/compare/rev10&hellip;rev13</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-operator/releases/tag/rev13",
-                  "compare_url": "https://github.com/canonical/sdcore-nms-operator/compare/rev13...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-pcf-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-pcf-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "557dafc62571b5ee132919de750dd1e6c28c07a3",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695325193,
-                  "message": "Update issue template (#9)",
-                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/557dafc62571b5ee132919de750dd1e6c28c07a3"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-nrf-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-nrf-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "f0eb798e56d9a06234e3f6edce383d06ee24b4a8",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695325211,
-                  "message": "Update issue template (#9)",
-                  "url": "https://github.com/canonical/sdcore-nrf-rock/commit/f0eb798e56d9a06234e3f6edce383d06ee24b4a8"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-nssf-rock",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-nssf-rock",
-            "releases": null,
-            "commits": [
-               {
-                  "sha": "8c72f76cc917db8929b17ecfff8722e7e8d526aa",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695325202,
-                  "message": "Update issue template (#9)",
-                  "url": "https://github.com/canonical/sdcore-nssf-rock/commit/8c72f76cc917db8929b17ecfff8722e7e8d526aa"
-               }
-            ],
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "kubernetes-charm-libraries",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/kubernetes-charm-libraries",
-            "releases": [
-               {
-                  "id": 125267507,
-                  "version": "rev16",
-                  "timestamp": 1697465842,
-                  "title": "Revision 16",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:29 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add hugepages support by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/14\">#14</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/14\">#14</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubernetes-charm-libraries/compare/rev15...rev16\">https://github.com/canonical/kubernetes-charm-libraries/compare/rev15&hellip;rev16</a></p>\n",
-                  "url": "https://github.com/canonical/kubernetes-charm-libraries/releases/tag/rev16",
-                  "compare_url": "https://github.com/canonical/kubernetes-charm-libraries/compare/rev16...main"
-               },
-               {
-                  "id": 123798140,
-                  "version": "rev15",
-                  "timestamp": 1696483775,
-                  "title": "Revision 15",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:33 UTC on 5 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Adds issues workflow by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/19\">#19</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/saltiyazan\">@saltiyazan</a> made their first contribution in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/19\">#19</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubernetes-charm-libraries/compare/rev14...rev15\">https://github.com/canonical/kubernetes-charm-libraries/compare/rev14&hellip;rev15</a></p>\n",
-                  "url": "https://github.com/canonical/kubernetes-charm-libraries/releases/tag/rev15",
-                  "compare_url": "https://github.com/canonical/kubernetes-charm-libraries/compare/rev15...main"
-               },
-               {
-                  "id": 123133341,
-                  "version": "rev14",
-                  "timestamp": 1695997132,
-                  "title": "Revision 14",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:24 UTC on 29 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Trigger pod restart when NAD config changed by <a href=\"http://github.com/gatici\">@gatici</a> in <a href=\"https://github.com/canonical/kubernetes-charm-libraries/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubernetes-charm-libraries/compare/rev13...rev14\">https://github.com/canonical/kubernetes-charm-libraries/compare/rev13&hellip;rev14</a></p>\n",
-                  "url": "https://github.com/canonical/kubernetes-charm-libraries/releases/tag/rev14",
-                  "compare_url": "https://github.com/canonical/kubernetes-charm-libraries/compare/rev14...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-nssf-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-nssf-operator",
-            "releases": [
-               {
-                  "id": 126141469,
-                  "version": "rev28",
-                  "timestamp": 1697666819,
-                  "title": "Revision 28",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:32 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-operator/compare/rev26...rev28\">https://github.com/canonical/sdcore-nssf-operator/compare/rev26&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-operator/releases/tag/rev28",
-                  "compare_url": "https://github.com/canonical/sdcore-nssf-operator/compare/rev28...main"
-               },
-               {
-                  "id": 125786119,
-                  "version": "rev27",
-                  "timestamp": 1697666819,
-                  "title": "Revision 27",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.3\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:57 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-operator/compare/rev26...rev27\">https://github.com/canonical/sdcore-nssf-operator/compare/rev26&hellip;rev27</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-operator/releases/tag/rev27",
-                  "compare_url": "https://github.com/canonical/sdcore-nssf-operator/compare/rev27...main"
-               },
-               {
-                  "id": 125680207,
-                  "version": "rev26",
-                  "timestamp": 1697653543,
-                  "title": "Revision 26",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.3\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:45 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/27\">#27</a></li>\n<li>Fix lint issues by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/28\">#28</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-operator/compare/rev25...rev26\">https://github.com/canonical/sdcore-nssf-operator/compare/rev25&hellip;rev26</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-operator/releases/tag/rev26",
-                  "compare_url": "https://github.com/canonical/sdcore-nssf-operator/compare/rev26...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-nrf-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-nrf-operator",
-            "releases": [
-               {
-                  "id": 126141125,
-                  "version": "rev49",
-                  "timestamp": 1697618648,
-                  "title": "Revision 49",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 40</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:14 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix integration test &ndash; wait for all 3 units to settle by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/44\">#44</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev47...rev49\">https://github.com/canonical/sdcore-nrf-operator/compare/rev47&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev49",
-                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev49...main"
-               },
-               {
-                  "id": 125577511,
-                  "version": "rev48",
-                  "timestamp": 1697618648,
-                  "title": "Revision 48",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:49 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix integration test &ndash; wait for all 3 units to settle by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/44\">#44</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev47...rev48\">https://github.com/canonical/sdcore-nrf-operator/compare/rev47&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev48",
-                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev48...main"
-               },
-               {
-                  "id": 125320388,
-                  "version": "rev47",
-                  "timestamp": 1697480177,
-                  "title": "Revision 47",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 38</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:59 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/43\">#43</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev46...rev47\">https://github.com/canonical/sdcore-nrf-operator/compare/rev46&hellip;rev47</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev47",
-                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev47...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-upf-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-upf-operator",
-            "releases": [
-               {
-                  "id": 126141765,
-                  "version": "rev50",
-                  "timestamp": 1697699610,
-                  "title": "Revision 50",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.3\n       resource-revision: 50\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.3\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:45 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/46\">#46</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-operator/compare/rev48...rev50\">https://github.com/canonical/sdcore-upf-operator/compare/rev48&hellip;rev50</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-operator/releases/tag/rev50",
-                  "compare_url": "https://github.com/canonical/sdcore-upf-operator/compare/rev50...main"
-               },
-               {
-                  "id": 125748113,
-                  "version": "rev49",
-                  "timestamp": 1697699610,
-                  "title": "Revision 49",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.3\n       resource-revision: 49\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.3\n       resource-revision: 48</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:45 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/46\">#46</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-operator/compare/rev48...rev49\">https://github.com/canonical/sdcore-upf-operator/compare/rev48&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-operator/releases/tag/rev49",
-                  "compare_url": "https://github.com/canonical/sdcore-upf-operator/compare/rev49...main"
-               },
-               {
-                  "id": 125493592,
-                  "version": "rev48",
-                  "timestamp": 1697565972,
-                  "title": "Revision 48",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.3\n       resource-revision: 48\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.3\n       resource-revision: 47</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:24 UTC on 17 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Integrate HugePages library in UPF and add configuration option by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/45\">#45</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/45\">#45</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-operator/compare/rev45...rev48\">https://github.com/canonical/sdcore-upf-operator/compare/rev45&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-operator/releases/tag/rev48",
-                  "compare_url": "https://github.com/canonical/sdcore-upf-operator/compare/rev48...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-smf-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-smf-operator",
-            "releases": [
-               {
-                  "id": 126142058,
-                  "version": "rev28",
-                  "timestamp": 1697803659,
-                  "title": "Revision 28",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.3\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:01 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-smf-operator/pull/24\">#24</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-operator/compare/rev26...rev28\">https://github.com/canonical/sdcore-smf-operator/compare/rev26&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-operator/releases/tag/rev28",
-                  "compare_url": "https://github.com/canonical/sdcore-smf-operator/compare/rev28...main"
-               },
-               {
-                  "id": 125991846,
-                  "version": "rev27",
-                  "timestamp": 1697803659,
-                  "title": "Revision 27",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:47 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-smf-operator/pull/24\">#24</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-operator/compare/rev26...rev27\">https://github.com/canonical/sdcore-smf-operator/compare/rev26&hellip;rev27</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-operator/releases/tag/rev27",
-                  "compare_url": "https://github.com/canonical/sdcore-smf-operator/compare/rev27...main"
-               },
-               {
-                  "id": 125973502,
-                  "version": "rev26",
-                  "timestamp": 1697798798,
-                  "title": "Revision 26",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.3\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:44 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-smf-operator/pull/23\">#23</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-operator/compare/rev25...rev26\">https://github.com/canonical/sdcore-smf-operator/compare/rev25&hellip;rev26</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-operator/releases/tag/rev26",
-                  "compare_url": "https://github.com/canonical/sdcore-smf-operator/compare/rev26...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-gnbsim-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-gnbsim-operator",
-            "releases": [
-               {
-                  "id": 126140721,
-                  "version": "rev33",
-                  "timestamp": 1697699606,
-                  "title": "Revision 33",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.3\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:52 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31...rev33\">https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31&hellip;rev33</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-operator/releases/tag/rev33",
-                  "compare_url": "https://github.com/canonical/sdcore-gnbsim-operator/compare/rev33...main"
-               },
-               {
-                  "id": 125748348,
-                  "version": "rev32",
-                  "timestamp": 1697699606,
-                  "title": "Revision 32",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.3\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:47 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31...rev32\">https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31&hellip;rev32</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-operator/releases/tag/rev32",
-                  "compare_url": "https://github.com/canonical/sdcore-gnbsim-operator/compare/rev32...main"
-               },
-               {
-                  "id": 125271548,
-                  "version": "rev31",
-                  "timestamp": 1697468333,
-                  "title": "Revision 31",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.3\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:05 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>TELCO-779: Fixes macvlan support by <a href=\"http://github.com/markbeierl\">@markbeierl</a> in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/35\">#35</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/markbeierl\">@markbeierl</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/35\">#35</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/compare/rev28...rev31\">https://github.com/canonical/sdcore-gnbsim-operator/compare/rev28&hellip;rev31</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-operator/releases/tag/rev31",
-                  "compare_url": "https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-webui-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-webui-operator",
-            "releases": [
-               {
-                  "id": 125746642,
-                  "version": "rev18",
-                  "timestamp": 1697699597,
-                  "title": "Revision 18",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.3\n       resource-revision: 19</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:33 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/17\">#17</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/17\">#17</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-operator/compare/rev17...rev18\">https://github.com/canonical/sdcore-webui-operator/compare/rev17&hellip;rev18</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-operator/releases/tag/rev18",
-                  "compare_url": "https://github.com/canonical/sdcore-webui-operator/compare/rev18...main"
-               },
-               {
-                  "id": 125635623,
-                  "version": "rev17",
-                  "timestamp": 1697639660,
-                  "title": "Revision 17",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.3\n       resource-revision: 18</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:12 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix integration test &ndash; wait for all 3 units to settle by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/16\">#16</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-operator/compare/rev16...rev17\">https://github.com/canonical/sdcore-webui-operator/compare/rev16&hellip;rev17</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-operator/releases/tag/rev17",
-                  "compare_url": "https://github.com/canonical/sdcore-webui-operator/compare/rev17...main"
-               },
-               {
-                  "id": 125330614,
-                  "version": "rev16",
-                  "timestamp": 1697491589,
-                  "title": "Revision 16",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.3\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:55 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/15\">#15</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-operator/compare/rev15...rev16\">https://github.com/canonical/sdcore-webui-operator/compare/rev15&hellip;rev16</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-operator/releases/tag/rev16",
-                  "compare_url": "https://github.com/canonical/sdcore-webui-operator/compare/rev16...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "sdcore-ausf-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-ausf-operator",
-            "releases": [
-               {
-                  "id": 126140685,
-                  "version": "rev30",
-                  "timestamp": 1697589532,
-                  "title": "Revision 30",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.3\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:50 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-ausf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-operator/compare/rev28...rev30\">https://github.com/canonical/sdcore-ausf-operator/compare/rev28&hellip;rev30</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-operator/releases/tag/rev30",
-                  "compare_url": "https://github.com/canonical/sdcore-ausf-operator/compare/rev30...main"
-               },
-               {
-                  "id": 125520555,
-                  "version": "rev29",
-                  "timestamp": 1697589532,
-                  "title": "Revision 29",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.3\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:06 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-ausf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-operator/compare/rev28...rev29\">https://github.com/canonical/sdcore-ausf-operator/compare/rev28&hellip;rev29</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-operator/releases/tag/rev29",
-                  "compare_url": "https://github.com/canonical/sdcore-ausf-operator/compare/rev29...main"
-               },
-               {
-                  "id": 125402163,
-                  "version": "rev28",
-                  "timestamp": 1697538702,
-                  "title": "Revision 28",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:35 UTC on 17 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-ausf-operator/pull/25\">#25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-operator/compare/rev27...rev28\">https://github.com/canonical/sdcore-ausf-operator/compare/rev27&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-operator/releases/tag/rev28",
-                  "compare_url": "https://github.com/canonical/sdcore-ausf-operator/compare/rev28...main"
                }
             ],
             "commits": null,
@@ -6847,37 +6271,56 @@
             "charm": null
          },
          {
-            "name": "sdcore-udr-operator",
+            "name": "sdcore-amf-rock",
             "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/sdcore-udr-operator",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-amf-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "de06b6acce2598117de6a678519350d33c4161ac",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1698099340,
+                  "message": "chore: Adds semantic PR title validation (#11)",
+                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/de06b6acce2598117de6a678519350d33c4161ac"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-ausf-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-ausf-operator",
             "releases": [
                {
-                  "id": 125330630,
-                  "version": "rev21",
-                  "timestamp": 1697491633,
-                  "title": "Revision 21",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.3\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:56 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Updates the charm metadata by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/21\">#21</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/DanielArndt\">@DanielArndt</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/21\">#21</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-operator/compare/rev19...rev21\">https://github.com/canonical/sdcore-udr-operator/compare/rev19&hellip;rev21</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-operator/releases/tag/rev21",
-                  "compare_url": "https://github.com/canonical/sdcore-udr-operator/compare/rev21...main"
+                  "id": 126140685,
+                  "version": "rev30",
+                  "timestamp": 1697589532,
+                  "title": "Revision 30",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.3\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:50 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-ausf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-operator/compare/rev28...rev30\">https://github.com/canonical/sdcore-ausf-operator/compare/rev28&hellip;rev30</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-operator/releases/tag/rev30",
+                  "compare_url": "https://github.com/canonical/sdcore-ausf-operator/compare/rev30...main"
                },
                {
-                  "id": 125120500,
-                  "version": "rev20",
-                  "timestamp": 1696595672,
-                  "title": "Revision 20",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.3\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:53 UTC on 15 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enforce TLS Integration by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-operator/compare/rev18...rev20\">https://github.com/canonical/sdcore-udr-operator/compare/rev18&hellip;rev20</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-operator/releases/tag/rev20",
-                  "compare_url": "https://github.com/canonical/sdcore-udr-operator/compare/rev20...main"
+                  "id": 125520555,
+                  "version": "rev29",
+                  "timestamp": 1697589532,
+                  "title": "Revision 29",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.3\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:06 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-ausf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-operator/compare/rev28...rev29\">https://github.com/canonical/sdcore-ausf-operator/compare/rev28&hellip;rev29</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-operator/releases/tag/rev29",
+                  "compare_url": "https://github.com/canonical/sdcore-ausf-operator/compare/rev29...main"
                },
                {
-                  "id": 124062780,
-                  "version": "rev19",
-                  "timestamp": 1696595672,
-                  "title": "Revision 19",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.3\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:57 UTC on 6 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enforce TLS Integration by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-operator/compare/rev18...rev19\">https://github.com/canonical/sdcore-udr-operator/compare/rev18&hellip;rev19</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-operator/releases/tag/rev19",
-                  "compare_url": "https://github.com/canonical/sdcore-udr-operator/compare/rev19...main"
+                  "id": 125402163,
+                  "version": "rev28",
+                  "timestamp": 1697538702,
+                  "title": "Revision 28",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:35 UTC on 17 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-ausf-operator/pull/25\">#25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-operator/compare/rev27...rev28\">https://github.com/canonical/sdcore-ausf-operator/compare/rev27&hellip;rev28</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-operator/releases/tag/rev28",
+                  "compare_url": "https://github.com/canonical/sdcore-ausf-operator/compare/rev28...main"
                }
             ],
             "commits": null,
@@ -6886,40 +6329,349 @@
             "charm": null
          },
          {
-            "name": "sdcore-router-operator",
+            "name": "sdcore-ausf-rock",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/sdcore-router-operator",
+            "url": "https://github.com/canonical/sdcore-ausf-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "dd7b8c6a890a8b840bfc26015d1f4b1f782a4e02",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1698099349,
+                  "message": "chore: Adds semantic PR title validation (#11)",
+                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/dd7b8c6a890a8b840bfc26015d1f4b1f782a4e02"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "charmed-magma",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/charmed-magma",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "0d328ddd87ca0cb0185494a7b1d518ce6dc37dbf",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1691665625,
+                  "message": "Adding .readthedocs.yaml (#58)",
+                  "url": "https://github.com/canonical/charmed-magma/commit/0d328ddd87ca0cb0185494a7b1d518ce6dc37dbf"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "certificate-transfer-interface",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/certificate-transfer-interface",
             "releases": [
                {
-                  "id": 126134194,
-                  "version": "rev25",
-                  "timestamp": 1697699602,
-                  "title": "Revision 25",
-                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:07 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-router-operator/pull/16\">#16</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-router-operator/pull/16\">#16</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-operator/compare/rev22...rev25\">https://github.com/canonical/sdcore-router-operator/compare/rev22&hellip;rev25</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-router-operator/releases/tag/rev25",
-                  "compare_url": "https://github.com/canonical/sdcore-router-operator/compare/rev25...main"
+                  "id": 125991928,
+                  "version": "rev16",
+                  "timestamp": 1697808998,
+                  "title": "Revision 16",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 13:48 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/28\">#28</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev15...rev16\">https://github.com/canonical/certificate-transfer-interface/compare/rev15&hellip;rev16</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev16",
+                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev16...main"
                },
                {
-                  "id": 125745913,
-                  "version": "rev24",
-                  "timestamp": 1697699602,
-                  "title": "Revision 24",
-                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 24</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:27 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-router-operator/pull/16\">#16</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-router-operator/pull/16\">#16</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-operator/compare/rev22...rev24\">https://github.com/canonical/sdcore-router-operator/compare/rev22&hellip;rev24</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-router-operator/releases/tag/rev24",
-                  "compare_url": "https://github.com/canonical/sdcore-router-operator/compare/rev24...main"
+                  "id": 125981237,
+                  "version": "rev15",
+                  "timestamp": 1697803720,
+                  "title": "Revision 15",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:45 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Uses narrower ignore statement by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/29\">#29</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev14...rev15\">https://github.com/canonical/certificate-transfer-interface/compare/rev14&hellip;rev15</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev15",
+                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev15...main"
                },
                {
-                  "id": 125110679,
-                  "version": "rev23",
-                  "timestamp": 1697014973,
-                  "title": "Revision 23",
-                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 23</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:22 UTC on 15 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>TELCO-729: MTU support by <a href=\"http://github.com/markbeierl\">@markbeierl</a> in <a href=\"https://github.com/canonical/sdcore-router-operator/pull/11\">#11</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/markbeierl\">@markbeierl</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-router-operator/pull/11\">#11</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-operator/compare/rev20...rev23\">https://github.com/canonical/sdcore-router-operator/compare/rev20&hellip;rev23</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-router-operator/releases/tag/rev23",
-                  "compare_url": "https://github.com/canonical/sdcore-router-operator/compare/rev23...main"
+                  "id": 122365890,
+                  "version": "rev14",
+                  "timestamp": 1695602370,
+                  "title": "Revision 14",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 00:41 UTC on 25 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/checkout digest to 8ade135 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/certificate-transfer-interface/pull/27\">#27</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev13...rev14\">https://github.com/canonical/certificate-transfer-interface/compare/rev13&hellip;rev14</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev14",
+                  "compare_url": "https://github.com/canonical/certificate-transfer-interface/compare/rev14...main"
                }
             ],
             "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "self-signed-certificates-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/self-signed-certificates-operator",
+            "releases": [
+               {
+                  "id": 126232688,
+                  "version": "rev42",
+                  "timestamp": 1698061632,
+                  "title": "Revision 42",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:45 UTC on 23 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Adds semantic PR title validation by <a href=\"http://github.com/gruyaume\">@gruyaume</a> in <a href=\"https://github.com/canonical/self-signed-certificates-operator/pull/39\">#39</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev40...rev42\">https://github.com/canonical/self-signed-certificates-operator/compare/rev40&hellip;rev42</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev42",
+                  "compare_url": "https://github.com/canonical/self-signed-certificates-operator/compare/rev42...main"
+               },
+               {
+                  "id": 126132097,
+                  "version": "rev41",
+                  "timestamp": 1697715989,
+                  "title": "Revision 41",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:25 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/self-signed-certificates-operator/pull/37\">#37</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev35...rev41\">https://github.com/canonical/self-signed-certificates-operator/compare/rev35&hellip;rev41</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev41",
+                  "compare_url": "https://github.com/canonical/self-signed-certificates-operator/compare/rev41...main"
+               },
+               {
+                  "id": 125794335,
+                  "version": "rev40",
+                  "timestamp": 1697715989,
+                  "title": "Revision 40",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:51 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/checkout digest to b4ffde6 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/self-signed-certificates-operator/pull/37\">#37</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev35...rev40\">https://github.com/canonical/self-signed-certificates-operator/compare/rev35&hellip;rev40</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev40",
+                  "compare_url": "https://github.com/canonical/self-signed-certificates-operator/compare/rev40...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-gnbsim-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-gnbsim-operator",
+            "releases": [
+               {
+                  "id": 126140721,
+                  "version": "rev33",
+                  "timestamp": 1697699606,
+                  "title": "Revision 33",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.3\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:52 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31...rev33\">https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31&hellip;rev33</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-operator/releases/tag/rev33",
+                  "compare_url": "https://github.com/canonical/sdcore-gnbsim-operator/compare/rev33...main"
+               },
+               {
+                  "id": 125748348,
+                  "version": "rev32",
+                  "timestamp": 1697699606,
+                  "title": "Revision 32",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.3\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:47 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/36\">#36</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31...rev32\">https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31&hellip;rev32</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-operator/releases/tag/rev32",
+                  "compare_url": "https://github.com/canonical/sdcore-gnbsim-operator/compare/rev32...main"
+               },
+               {
+                  "id": 125271548,
+                  "version": "rev31",
+                  "timestamp": 1697468333,
+                  "title": "Revision 31",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.3\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:05 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>TELCO-779: Fixes macvlan support by <a href=\"http://github.com/markbeierl\">@markbeierl</a> in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/35\">#35</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/markbeierl\">@markbeierl</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/pull/35\">#35</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-operator/compare/rev28...rev31\">https://github.com/canonical/sdcore-gnbsim-operator/compare/rev28&hellip;rev31</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-operator/releases/tag/rev31",
+                  "compare_url": "https://github.com/canonical/sdcore-gnbsim-operator/compare/rev31...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-gnbsim-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-gnbsim-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "4fb02ac4a2026a08f413384f9fdf0f68249c3faa",
+                  "author": "saltiyazan",
+                  "timestamp": 1695623267,
+                  "message": "Uses the issues workflow to sync issues from github to JIRA (#8)",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/4fb02ac4a2026a08f413384f9fdf0f68249c3faa"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-nms",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-nms",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "e13354ed076b41ed25a505166b86237a03449e8b",
+                  "author": "renovate[bot]",
+                  "timestamp": 1698181697,
+                  "message": "fix(deps): update dependency tailwindcss to v3.3.4 (#164)\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
+                  "url": "https://github.com/canonical/sdcore-nms/commit/e13354ed076b41ed25a505166b86237a03449e8b"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-nms-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-nms-operator",
+            "releases": [
+               {
+                  "id": 126141056,
+                  "version": "rev15",
+                  "timestamp": 1697808902,
+                  "title": "Revision 15",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.1\n       resource-revision: 14</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:11 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-operator/compare/rev13...rev15\">https://github.com/canonical/sdcore-nms-operator/compare/rev13&hellip;rev15</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-operator/releases/tag/rev15",
+                  "compare_url": "https://github.com/canonical/sdcore-nms-operator/compare/rev15...main"
+               },
+               {
+                  "id": 126004401,
+                  "version": "rev14",
+                  "timestamp": 1697808902,
+                  "title": "Revision 14",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.1\n       resource-revision: 13</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:47 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-operator/compare/rev13...rev14\">https://github.com/canonical/sdcore-nms-operator/compare/rev13&hellip;rev14</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-operator/releases/tag/rev14",
+                  "compare_url": "https://github.com/canonical/sdcore-nms-operator/compare/rev14...main"
+               },
+               {
+                  "id": 125937285,
+                  "version": "rev13",
+                  "timestamp": 1697791026,
+                  "title": "Revision 13",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.1\n       resource-revision: 12</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:39 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Implement requirer side of the fiveg_gnb_identity relation by <a href=\"http://github.com/patriciareinoso\">@patriciareinoso</a> in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/19\">#19</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/patriciareinoso\">@patriciareinoso</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-nms-operator/pull/19\">#19</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-operator/compare/rev10...rev13\">https://github.com/canonical/sdcore-nms-operator/compare/rev10&hellip;rev13</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-operator/releases/tag/rev13",
+                  "compare_url": "https://github.com/canonical/sdcore-nms-operator/compare/rev13...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-nrf-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-nrf-operator",
+            "releases": [
+               {
+                  "id": 126141125,
+                  "version": "rev49",
+                  "timestamp": 1697618648,
+                  "title": "Revision 49",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 40</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:14 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix integration test &ndash; wait for all 3 units to settle by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/44\">#44</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev47...rev49\">https://github.com/canonical/sdcore-nrf-operator/compare/rev47&hellip;rev49</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev49",
+                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev49...main"
+               },
+               {
+                  "id": 125577511,
+                  "version": "rev48",
+                  "timestamp": 1697618648,
+                  "title": "Revision 48",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:49 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix integration test &ndash; wait for all 3 units to settle by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/44\">#44</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev47...rev48\">https://github.com/canonical/sdcore-nrf-operator/compare/rev47&hellip;rev48</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev48",
+                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev48...main"
+               },
+               {
+                  "id": 125320388,
+                  "version": "rev47",
+                  "timestamp": 1697480177,
+                  "title": "Revision 47",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.3\n       resource-revision: 38</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:59 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-nrf-operator/pull/43\">#43</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-operator/compare/rev46...rev47\">https://github.com/canonical/sdcore-nrf-operator/compare/rev46&hellip;rev47</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-operator/releases/tag/rev47",
+                  "compare_url": "https://github.com/canonical/sdcore-nrf-operator/compare/rev47...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-nrf-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-nrf-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "f0eb798e56d9a06234e3f6edce383d06ee24b4a8",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1695325211,
+                  "message": "Update issue template (#9)",
+                  "url": "https://github.com/canonical/sdcore-nrf-rock/commit/f0eb798e56d9a06234e3f6edce383d06ee24b4a8"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-nssf-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-nssf-operator",
+            "releases": [
+               {
+                  "id": 126141469,
+                  "version": "rev28",
+                  "timestamp": 1697666819,
+                  "title": "Revision 28",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:32 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-operator/compare/rev26...rev28\">https://github.com/canonical/sdcore-nssf-operator/compare/rev26&hellip;rev28</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-operator/releases/tag/rev28",
+                  "compare_url": "https://github.com/canonical/sdcore-nssf-operator/compare/rev28...main"
+               },
+               {
+                  "id": 125786119,
+                  "version": "rev27",
+                  "timestamp": 1697666819,
+                  "title": "Revision 27",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.3\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:57 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/26\">#26</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-operator/compare/rev26...rev27\">https://github.com/canonical/sdcore-nssf-operator/compare/rev26&hellip;rev27</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-operator/releases/tag/rev27",
+                  "compare_url": "https://github.com/canonical/sdcore-nssf-operator/compare/rev27...main"
+               },
+               {
+                  "id": 125680207,
+                  "version": "rev26",
+                  "timestamp": 1697653543,
+                  "title": "Revision 26",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.3\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:45 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/27\">#27</a></li>\n<li>Fix lint issues by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-nssf-operator/pull/28\">#28</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-operator/compare/rev25...rev26\">https://github.com/canonical/sdcore-nssf-operator/compare/rev25&hellip;rev26</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-operator/releases/tag/rev26",
+                  "compare_url": "https://github.com/canonical/sdcore-nssf-operator/compare/rev26...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-nssf-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-nssf-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "8c72f76cc917db8929b17ecfff8722e7e8d526aa",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1695325202,
+                  "message": "Update issue template (#9)",
+                  "url": "https://github.com/canonical/sdcore-nssf-rock/commit/8c72f76cc917db8929b17ecfff8722e7e8d526aa"
+               }
+            ],
             "is_archived": false,
             "ci_actions": null,
             "charm": null
@@ -6964,139 +6716,348 @@
             "charm": null
          },
          {
-            "name": "acme-client-base",
+            "name": "sdcore-pcf-rock",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/acme-client-base",
-            "releases": [
+            "url": "https://github.com/canonical/sdcore-pcf-rock",
+            "releases": null,
+            "commits": [
                {
-                  "id": 122135553,
-                  "version": "rev8",
-                  "timestamp": 1695341384,
-                  "title": "Revision 8",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 00:52 UTC on 22 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update bug report template by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/acme-client-base/pull/15\">#15</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/DanielArndt\">@DanielArndt</a> made their first contribution in <a href=\"https://github.com/canonical/acme-client-base/pull/15\">#15</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/acme-client-base/compare/rev7...rev8\">https://github.com/canonical/acme-client-base/compare/rev7&hellip;rev8</a></p>\n",
-                  "url": "https://github.com/canonical/acme-client-base/releases/tag/rev8",
-                  "compare_url": "https://github.com/canonical/acme-client-base/compare/rev8...main"
-               },
-               {
-                  "id": 120108710,
-                  "version": "rev7",
-                  "timestamp": 1694000744,
-                  "title": "Revision 7",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:21 UTC on 6 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Adds issues workflow and CODEOWNERS file by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/acme-client-base/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/acme-client-base/compare/rev6...rev7\">https://github.com/canonical/acme-client-base/compare/rev6&hellip;rev7</a></p>\n",
-                  "url": "https://github.com/canonical/acme-client-base/releases/tag/rev7",
-                  "compare_url": "https://github.com/canonical/acme-client-base/compare/rev7...main"
-               },
-               {
-                  "id": 103487078,
-                  "version": "rev6",
-                  "timestamp": 1684423734,
-                  "title": "Revision 6",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 16:37 UTC on 18 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Call children for valid configurations on_certificate_request by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/acme-client-base/pull/12\">#12</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/acme-client-base/compare/rev5...rev6\">https://github.com/canonical/acme-client-base/compare/rev5&hellip;rev6</a></p>\n",
-                  "url": "https://github.com/canonical/acme-client-base/releases/tag/rev6",
-                  "compare_url": "https://github.com/canonical/acme-client-base/compare/rev6...main"
+                  "sha": "557dafc62571b5ee132919de750dd1e6c28c07a3",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1695325193,
+                  "message": "Update issue template (#9)",
+                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/557dafc62571b5ee132919de750dd1e6c28c07a3"
                }
             ],
-            "commits": null,
             "is_archived": false,
             "ci_actions": null,
             "charm": null
          },
          {
-            "name": "charmed-magma-orchestrator",
-            "default_branch": "main",
-            "new_commits": 81,
-            "url": "https://github.com/canonical/charmed-magma-orchestrator",
-            "releases": [
-               {
-                  "id": 105310450,
-                  "version": "magma-orc8r-tenants-operator-rev32",
-                  "timestamp": 1685426910,
-                  "title": "Revision 32",
-                  "body": "<p>resources:\n    -  magma-orc8r-tenants-image: ghcr.io/canonical/magma-orc8r-controller:1.8.0\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 06:45 UTC on 30 May 2023</p>\n\n<p>Released to &lsquo;1.8/beta&rsquo; at 11:56 UTC on 30 May 2023\nReleased to &lsquo;1.8/candidate&rsquo; at 12:02 UTC on 30 May 2023\nReleased to &lsquo;1.8/stable&rsquo; at 12:04 UTC on 30 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixes the bundle upload action by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/262\">#262</a></li>\n<li>Dummy change in the bundle to trigger CI by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/264\">#264</a></li>\n<li>Removing unnecessary ignore by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/265\">#265</a></li>\n<li>Pin external charms to complete channel names by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/267\">#267</a></li>\n<li>Fixing static analysis by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/271\">#271</a></li>\n<li>Triggering build on the bundle by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/272\">#272</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62...magma-orc8r-tenants-operator-rev32\">https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62&hellip;magma-orc8r-tenants-operator-rev32</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-magma-orchestrator/releases/tag/magma-orc8r-tenants-operator-rev32",
-                  "compare_url": "https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-tenants-operator-rev32...main"
-               },
-               {
-                  "id": 105310295,
-                  "version": "magma-orc8r-subscriberdb-operator-rev34",
-                  "timestamp": 1685426910,
-                  "title": "Revision 34",
-                  "body": "<p>resources:\n    -  magma-orc8r-subscriberdb-image: ghcr.io/canonical/magma-lte-controller:1.8.0\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 06:42 UTC on 30 May 2023</p>\n\n<p>Released to &lsquo;1.8/beta&rsquo; at 11:55 UTC on 30 May 2023\nReleased to &lsquo;1.8/candidate&rsquo; at 12:02 UTC on 30 May 2023\nReleased to &lsquo;1.8/stable&rsquo; at 12:04 UTC on 30 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixes the bundle upload action by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/262\">#262</a></li>\n<li>Dummy change in the bundle to trigger CI by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/264\">#264</a></li>\n<li>Removing unnecessary ignore by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/265\">#265</a></li>\n<li>Pin external charms to complete channel names by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/267\">#267</a></li>\n<li>Fixing static analysis by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/271\">#271</a></li>\n<li>Triggering build on the bundle by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/272\">#272</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62...magma-orc8r-subscriberdb-operator-rev34\">https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62&hellip;magma-orc8r-subscriberdb-operator-rev34</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-magma-orchestrator/releases/tag/magma-orc8r-subscriberdb-operator-rev34",
-                  "compare_url": "https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-subscriberdb-operator-rev34...main"
-               },
-               {
-                  "id": 105310476,
-                  "version": "magma-orc8r-subscriberdb-cache-operator-rev34",
-                  "timestamp": 1685426910,
-                  "title": "Revision 34",
-                  "body": "<p>resources:\n    -  magma-orc8r-subscriberdb-cache-image: ghcr.io/canonical/magma-lte-controller:1.8.0\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 06:45 UTC on 30 May 2023</p>\n\n<p>Released to &lsquo;1.8/beta&rsquo; at 11:56 UTC on 30 May 2023\nReleased to &lsquo;1.8/candidate&rsquo; at 12:03 UTC on 30 May 2023\nReleased to &lsquo;1.8/stable&rsquo; at 12:04 UTC on 30 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixes the bundle upload action by <a href=\"http://github.com/saltiyazan\">@saltiyazan</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/262\">#262</a></li>\n<li>Dummy change in the bundle to trigger CI by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/264\">#264</a></li>\n<li>Removing unnecessary ignore by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/265\">#265</a></li>\n<li>Pin external charms to complete channel names by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/267\">#267</a></li>\n<li>Fixing static analysis by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/271\">#271</a></li>\n<li>Triggering build on the bundle by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/charmed-magma-orchestrator/pull/272\">#272</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62...magma-orc8r-subscriberdb-cache-operator-rev34\">https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-certifier-operator-rev62&hellip;magma-orc8r-subscriberdb-cache-operator-rev34</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-magma-orchestrator/releases/tag/magma-orc8r-subscriberdb-cache-operator-rev34",
-                  "compare_url": "https://github.com/canonical/charmed-magma-orchestrator/compare/magma-orc8r-subscriberdb-cache-operator-rev34...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "httpreq-acme-operator",
-            "default_branch": "main",
-            "new_commits": 17,
-            "url": "https://github.com/canonical/httpreq-acme-operator",
-            "releases": [
-               {
-                  "id": 101734682,
-                  "version": "rev3",
-                  "timestamp": 1683038526,
-                  "title": "Revision 3",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.9.1\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:38 UTC on 3 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Initial implementation by <a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a href=\"https://github.com/canonical/httpreq-acme-operator/pull/1\">#1</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/ghislainbourgeois\">@ghislainbourgeois</a> made their first contribution in <a href=\"https://github.com/canonical/httpreq-acme-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httpreq-acme-operator/commits/rev3\">https://github.com/canonical/httpreq-acme-operator/commits/rev3</a></p>\n",
-                  "url": "https://github.com/canonical/httpreq-acme-operator/releases/tag/rev3",
-                  "compare_url": "https://github.com/canonical/httpreq-acme-operator/compare/rev3...main"
-               }
-            ],
-            "commits": null,
-            "is_archived": false,
-            "ci_actions": null,
-            "charm": null
-         },
-         {
-            "name": "magma-access-gateway-operator",
+            "name": "sdcore-smf-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/magma-access-gateway-operator",
+            "url": "https://github.com/canonical/sdcore-smf-operator",
             "releases": [
                {
-                  "id": 101593500,
-                  "version": "rev43",
-                  "timestamp": 1683037449,
-                  "title": "Revision 43",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:42 UTC on 2 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixing bug with operator not being able to recover from BlockedStatus… by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/magma-access-gateway-operator/pull/50\">#50</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/magma-access-gateway-operator/compare/rev41...rev43\">https://github.com/canonical/magma-access-gateway-operator/compare/rev41&hellip;rev43</a></p>\n",
-                  "url": "https://github.com/canonical/magma-access-gateway-operator/releases/tag/rev43",
-                  "compare_url": "https://github.com/canonical/magma-access-gateway-operator/compare/rev43...main"
+                  "id": 126142058,
+                  "version": "rev28",
+                  "timestamp": 1697803659,
+                  "title": "Revision 28",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.3\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:01 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-smf-operator/pull/24\">#24</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-operator/compare/rev26...rev28\">https://github.com/canonical/sdcore-smf-operator/compare/rev26&hellip;rev28</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-operator/releases/tag/rev28",
+                  "compare_url": "https://github.com/canonical/sdcore-smf-operator/compare/rev28...main"
                },
                {
-                  "id": 101588824,
-                  "version": "rev42",
-                  "timestamp": 1683035631,
-                  "title": "Revision 42",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 14:24 UTC on 2 May 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fixing bug with operator not being able to recover from BlockedStatus… by <a href=\"http://github.com/Gmerold\">@Gmerold</a> in <a href=\"https://github.com/canonical/magma-access-gateway-operator/pull/49\">#49</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/magma-access-gateway-operator/compare/rev39...rev42\">https://github.com/canonical/magma-access-gateway-operator/compare/rev39&hellip;rev42</a></p>\n",
-                  "url": "https://github.com/canonical/magma-access-gateway-operator/releases/tag/rev42",
-                  "compare_url": "https://github.com/canonical/magma-access-gateway-operator/compare/rev42...main"
+                  "id": 125991846,
+                  "version": "rev27",
+                  "timestamp": 1697803659,
+                  "title": "Revision 27",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:47 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-smf-operator/pull/24\">#24</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-operator/compare/rev26...rev27\">https://github.com/canonical/sdcore-smf-operator/compare/rev26&hellip;rev27</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-operator/releases/tag/rev27",
+                  "compare_url": "https://github.com/canonical/sdcore-smf-operator/compare/rev27...main"
                },
                {
-                  "id": 100632999,
-                  "version": "rev41",
-                  "timestamp": 1682328662,
-                  "title": "Revision 41",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:49 UTC on 24 Apr 2023</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/magma-access-gateway-operator/compare/rev38...rev41\">https://github.com/canonical/magma-access-gateway-operator/compare/rev38&hellip;rev41</a></p>\n",
-                  "url": "https://github.com/canonical/magma-access-gateway-operator/releases/tag/rev41",
-                  "compare_url": "https://github.com/canonical/magma-access-gateway-operator/compare/rev41...main"
+                  "id": 125973502,
+                  "version": "rev26",
+                  "timestamp": 1697798798,
+                  "title": "Revision 26",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.3\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:44 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-smf-operator/pull/23\">#23</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-operator/compare/rev25...rev26\">https://github.com/canonical/sdcore-smf-operator/compare/rev25&hellip;rev26</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-operator/releases/tag/rev26",
+                  "compare_url": "https://github.com/canonical/sdcore-smf-operator/compare/rev26...main"
                }
             ],
             "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-smf-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-smf-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "36e22260e3a233443e87b6854d87480fb94a386a",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1695376306,
+                  "message": "Update issue template (#9)",
+                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/36e22260e3a233443e87b6854d87480fb94a386a"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-tests",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-tests",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "6aea47d23b37028970d79b70fbf2609016f263bc",
+                  "author": "renovate[bot]",
+                  "timestamp": 1698174162,
+                  "message": "Update dependency aws-sdk to v2.1480.0",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/6aea47d23b37028970d79b70fbf2609016f263bc"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-udm-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-udm-operator",
+            "releases": [
+               {
+                  "id": 126141505,
+                  "version": "rev26",
+                  "timestamp": 1697803665,
+                  "title": "Revision 26",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.3\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:34 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udm-operator/pull/25\">#25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-operator/compare/rev24...rev26\">https://github.com/canonical/sdcore-udm-operator/compare/rev24&hellip;rev26</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-operator/releases/tag/rev26",
+                  "compare_url": "https://github.com/canonical/sdcore-udm-operator/compare/rev26...main"
+               },
+               {
+                  "id": 125991824,
+                  "version": "rev25",
+                  "timestamp": 1697803665,
+                  "title": "Revision 25",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.3\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:47 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udm-operator/pull/25\">#25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-operator/compare/rev24...rev25\">https://github.com/canonical/sdcore-udm-operator/compare/rev24&hellip;rev25</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-operator/releases/tag/rev25",
+                  "compare_url": "https://github.com/canonical/sdcore-udm-operator/compare/rev25...main"
+               },
+               {
+                  "id": 125973138,
+                  "version": "rev24",
+                  "timestamp": 1697798819,
+                  "title": "Revision 24",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.3\n       resource-revision: 24</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:41 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use <code>integrate()</code> instead of <code>add_relation()</code> by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udm-operator/pull/24\">#24</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-operator/compare/rev23...rev24\">https://github.com/canonical/sdcore-udm-operator/compare/rev23&hellip;rev24</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-operator/releases/tag/rev24",
+                  "compare_url": "https://github.com/canonical/sdcore-udm-operator/compare/rev24...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-udm-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-udm-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "58219c68629430cd84fd2dad84ad58dcead8b85d",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1695281434,
+                  "message": "Enable auto-merging Renovate PRs (#8)",
+                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/58219c68629430cd84fd2dad84ad58dcead8b85d"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-udr-operator",
+            "default_branch": "main",
+            "new_commits": 1,
+            "url": "https://github.com/canonical/sdcore-udr-operator",
+            "releases": [
+               {
+                  "id": 125330630,
+                  "version": "rev21",
+                  "timestamp": 1697491633,
+                  "title": "Revision 21",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.3\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:56 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Updates the charm metadata by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/21\">#21</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/DanielArndt\">@DanielArndt</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/21\">#21</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-operator/compare/rev19...rev21\">https://github.com/canonical/sdcore-udr-operator/compare/rev19&hellip;rev21</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-operator/releases/tag/rev21",
+                  "compare_url": "https://github.com/canonical/sdcore-udr-operator/compare/rev21...main"
+               },
+               {
+                  "id": 125120500,
+                  "version": "rev20",
+                  "timestamp": 1696595672,
+                  "title": "Revision 20",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.3\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:53 UTC on 15 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enforce TLS Integration by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-operator/compare/rev18...rev20\">https://github.com/canonical/sdcore-udr-operator/compare/rev18&hellip;rev20</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-operator/releases/tag/rev20",
+                  "compare_url": "https://github.com/canonical/sdcore-udr-operator/compare/rev20...main"
+               },
+               {
+                  "id": 124062780,
+                  "version": "rev19",
+                  "timestamp": 1696595672,
+                  "title": "Revision 19",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.3\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:57 UTC on 6 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enforce TLS Integration by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-udr-operator/pull/20\">#20</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-operator/compare/rev18...rev19\">https://github.com/canonical/sdcore-udr-operator/compare/rev18&hellip;rev19</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-operator/releases/tag/rev19",
+                  "compare_url": "https://github.com/canonical/sdcore-udr-operator/compare/rev19...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-udr-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-udr-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "3794febbce577b4e16d2d77ba99dcbc323a31bec",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1695281442,
+                  "message": "Enable auto-merging Renovate PRs (#8)\n\n* Enable auto-merging Renovate PRs\r\n\r\n* Update CODEOWNERS",
+                  "url": "https://github.com/canonical/sdcore-udr-rock/commit/3794febbce577b4e16d2d77ba99dcbc323a31bec"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-upf-bess-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-upf-bess-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "0ce3ab1644f500c3e36b1dd355bd1029e541d21b",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1697812900,
+                  "message": "Chore: Use upstream project for UPF configurations (#10)",
+                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/0ce3ab1644f500c3e36b1dd355bd1029e541d21b"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-upf-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-upf-operator",
+            "releases": [
+               {
+                  "id": 126141765,
+                  "version": "rev50",
+                  "timestamp": 1697699610,
+                  "title": "Revision 50",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.3\n       resource-revision: 50\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.3\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:45 UTC on 22 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/46\">#46</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-operator/compare/rev48...rev50\">https://github.com/canonical/sdcore-upf-operator/compare/rev48&hellip;rev50</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-operator/releases/tag/rev50",
+                  "compare_url": "https://github.com/canonical/sdcore-upf-operator/compare/rev50...main"
+               },
+               {
+                  "id": 125748113,
+                  "version": "rev49",
+                  "timestamp": 1697699610,
+                  "title": "Revision 49",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.3\n       resource-revision: 49\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.3\n       resource-revision: 48</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:45 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/46\">#46</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-operator/compare/rev48...rev49\">https://github.com/canonical/sdcore-upf-operator/compare/rev48&hellip;rev49</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-operator/releases/tag/rev49",
+                  "compare_url": "https://github.com/canonical/sdcore-upf-operator/compare/rev49...main"
+               },
+               {
+                  "id": 125493592,
+                  "version": "rev48",
+                  "timestamp": 1697565972,
+                  "title": "Revision 48",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.3\n       resource-revision: 48\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.3\n       resource-revision: 47</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:24 UTC on 17 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Integrate HugePages library in UPF and add configuration option by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/45\">#45</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-upf-operator/pull/45\">#45</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-operator/compare/rev45...rev48\">https://github.com/canonical/sdcore-upf-operator/compare/rev45&hellip;rev48</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-operator/releases/tag/rev48",
+                  "compare_url": "https://github.com/canonical/sdcore-upf-operator/compare/rev48...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-upf-pfcpiface-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "b3f49b70bc3c855b1e465aebe86be97da06641f5",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1695281608,
+                  "message": "Enable auto-merging Renovate PRs (#7)\n\n* Enable auto-merging Renovate PRs\r\n\r\n* Checking if adding @ before app/renovate-approve removes PR warning\r\n\r\n* Reverting last change\r\n\r\n* Update CODEOWNERS",
+                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/b3f49b70bc3c855b1e465aebe86be97da06641f5"
+               }
+            ],
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-webui-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-webui-operator",
+            "releases": [
+               {
+                  "id": 125746642,
+                  "version": "rev18",
+                  "timestamp": 1697699597,
+                  "title": "Revision 18",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.3\n       resource-revision: 19</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:33 UTC on 19 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve Contributing documentation by <a href=\"http://github.com/dariofaccin\">@dariofaccin</a> in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/17\">#17</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/17\">#17</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-operator/compare/rev17...rev18\">https://github.com/canonical/sdcore-webui-operator/compare/rev17&hellip;rev18</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-operator/releases/tag/rev18",
+                  "compare_url": "https://github.com/canonical/sdcore-webui-operator/compare/rev18...main"
+               },
+               {
+                  "id": 125635623,
+                  "version": "rev17",
+                  "timestamp": 1697639660,
+                  "title": "Revision 17",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.3\n       resource-revision: 18</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:12 UTC on 18 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix integration test &ndash; wait for all 3 units to settle by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/16\">#16</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-operator/compare/rev16...rev17\">https://github.com/canonical/sdcore-webui-operator/compare/rev16&hellip;rev17</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-operator/releases/tag/rev17",
+                  "compare_url": "https://github.com/canonical/sdcore-webui-operator/compare/rev17...main"
+               },
+               {
+                  "id": 125330614,
+                  "version": "rev16",
+                  "timestamp": 1697491589,
+                  "title": "Revision 16",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.3\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:55 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Set units to blocked status when scaling beyond 1 by <a href=\"http://github.com/DanielArndt\">@DanielArndt</a> in <a href=\"https://github.com/canonical/sdcore-webui-operator/pull/15\">#15</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-operator/compare/rev15...rev16\">https://github.com/canonical/sdcore-webui-operator/compare/rev15&hellip;rev16</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-operator/releases/tag/rev16",
+                  "compare_url": "https://github.com/canonical/sdcore-webui-operator/compare/rev16...main"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null
+         },
+         {
+            "name": "sdcore-webui-rock",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/sdcore-webui-rock",
+            "releases": null,
+            "commits": [
+               {
+                  "sha": "44ac7d284f5f6086baf2af7d519ac3fdd92d31c8",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1697811280,
+                  "message": "Chore: Use upstream project with GET operations (#12)",
+                  "url": "https://github.com/canonical/sdcore-webui-rock/commit/44ac7d284f5f6086baf2af7d519ac3fdd92d31c8"
+               }
+            ],
             "is_archived": false,
             "ci_actions": null,
             "charm": null
