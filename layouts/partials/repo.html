@@ -56,81 +56,17 @@
       </div>
     {{- end -}}
   </td>
-  <!-- Charmhub.io Expander Button and Table -->
-  <td class="u-align--right showmore" style="max-width: 10%" {{- if eq (len (where .team.repos ".charm" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
-    <button class="p-button--base u-toggle is-dense is-inline charmhub-toggle" aria-controls="expanded-row-{{- .repo.name -}}" aria-expanded="false" data-shown-text="<i class='button-icon p-icon--chevron-up'></i>" data-hidden-text="<i class='button-icon p-icon--chevron-down'></i>" {{ cond (not (not .repo.charm)) "" "disabled" }}><i class="button-icon p-icon--chevron-down"></i></button>
-  </td>
-  <td id="expanded-row-{{- .repo.name -}}" class="p-table__expanding-panel" aria-hidden="true">
-    <div class="row">
-      <div class="col">
-        {{- if not (not .repo.charm) -}}
-        <table class="charmhub-table">
-          <thead>
-            <tr>
-              <th>Charmhub Track</th>
-              {{- range $channel := .repo.charm.channels -}}
-              <th>{{- $channel -}}</th>
-              {{- end -}}
-            </tr>
-          </thead>
-          <tbody>
-            {{- range $track := $.repo.charm.tracks -}}
-              <tr>
-                <td><b>{{- $track -}}</b></td>
-                {{- range $channel := $.repo.charm.channels -}}
-                  {{- $releasesForTrack := where $.repo.charm.releases "track" $track -}}
-                  {{- $release := index (where $releasesForTrack "channel" $channel) 0 -}}
-                  {{- if not (not $release) -}}
-                    <td><a href="{{- $.repo.charm.url -}}?channel={{- $track -}}/{{- $channel -}}">{{- $release.revision -}}</a><br><sup>{{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}</sup></td>
-                  {{- else -}}
-                    <td></td>
-                  {{- end -}}
-                {{- end -}}
-              </tr>
-            {{- end -}}
-          </tbody>
-        </table>
-        {{- end -}}
-      </div>
-    </div>
-  </td>
-  <!-- Snapcraft.io Expander Button and Table -->
-  <td class="u-align--right showmore" style="max-width: 10%" {{- if eq (len (where .team.repos ".snap" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
-    <button class="p-button--base u-toggle is-dense is-inline snapcraft-toggle" aria-controls="expanded-row-{{- .repo.name -}}" aria-expanded="false" data-shown-text="<i class='button-icon p-icon--chevron-up'></i>" data-hidden-text="<i class='button-icon p-icon--chevron-down'></i>" {{ cond (not (not .repo.snap)) "" "disabled" }}><i class="button-icon p-icon--chevron-down"></i></button>
-  </td>
-  <td id="expanded-row-{{- .repo.name -}}" class="p-table__expanding-panel" aria-hidden="true">
-    <div class="row">
-      <div class="col">
-        {{- if not (not .repo.snap) -}}
-        <table class="snapcraft-table">
-          <thead>
-            <tr>
-              <th>Snapcraft Track</th>
-              {{- range $channel := .repo.snap.channels -}}
-              <th>{{- $channel -}}</th>
-              {{- end -}}
-            </tr>
-          </thead>
-          <tbody>
-            {{- range $track := $.repo.snap.tracks -}}
-              <tr>
-                <td><b>{{- $track -}}</b></td>
-                {{- range $channel := $.repo.snap.channels -}}
-                  {{- $releasesForTrack := where $.repo.snap.releases "track" $track -}}
-                  {{- $release := index (where $releasesForTrack "channel" $channel) 0 -}}
-                  {{- if not (not $release) -}}
-                    <td><a href="{{- $.repo.snap.url -}}?channel={{- $track -}}/{{- $channel -}}">{{- $release.revision -}}</a><br><sup>{{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}</sup></td>
-                  {{- else -}}
-                    <td></td>
-                  {{- end -}}
-                {{- end -}}
-              </tr>
-            {{- end -}}
-          </tbody>
-        </table>
-        {{- end -}}
-      </div>
-    </div>
-  </td>
+  {{- if .repo.charm -}}
+    <!-- Charmhub.io Expander Button and Table -->
+    {{- partial "artifact-detail" (dict "store" "Charmhub" "repo" .repo.name "artifact" .repo.charm) -}}
+  {{- else if .repo.snap -}}
+    <!-- Snapcraft.io Expander Button and Table -->
+    {{- partial "artifact-detail" (dict "store" "Snapcraft" "repo" .repo.name "artifact" .repo.snap) -}}
+  {{- else -}}
+    <!-- There was no snap/charm badge found, so just display the disabled down arrow to keep the column spacing correct. -->
+    <td class="u-align--right showmore" style="max-width: 10%">
+      <button class="p-button--base u-toggle is-dense is-inline" disabled><i class="button-icon p-icon--chevron-down"></i></button>
+    </td>
+  {{- end -}}
 </tr>
 

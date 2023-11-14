@@ -1,0 +1,45 @@
+<td class="u-align--right showmore" style="max-width: 10%">
+  <button
+    class="p-button--base u-toggle is-dense is-inline {{ .store }}-toggle"
+    aria-controls="expanded-row-{{- .repo -}}"
+    aria-expanded="false"
+    data-shown-text="<i class='button-icon p-icon--chevron-up'></i>"
+    data-hidden-text="<i class='button-icon p-icon--chevron-down'></i>"
+  >
+    <i class="button-icon p-icon--chevron-down"></i>
+  </button>
+</td>
+<td id="expanded-row-{{- .repo -}}" class="p-table__expanding-panel" aria-hidden="true">
+  <div class="row">
+    <div class="col">
+      <table class="charmhub-table">
+        <thead>
+          <tr>
+            <th>{{ .store }} Track</th>
+            {{- range $channel := .artifact.channels -}}
+            <th>{{- $channel -}}</th>
+            {{- end -}}
+          </tr>
+        </thead>
+        <tbody>
+          {{- range $track := $.artifact.tracks -}}
+          <tr>
+            <td><b>{{- $track -}}</b></td>
+            {{- range $channel := $.artifact.channels -}} {{- $releasesForTrack := where
+            $.artifact.releases "track" $track -}} {{- $release := index (where $releasesForTrack
+            "channel" $channel) 0 -}} {{- if not (not $release) -}}
+            <td>
+              <a href="{{- $.artifact.url -}}?channel={{- $track -}}/{{- $channel -}}"
+                >{{- $release.revision -}}</a
+              ><br /><sup>{{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}</sup>
+            </td>
+            {{- else -}}
+            <td></td>
+            {{- end -}} {{- end -}}
+          </tr>
+          {{- end -}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</td>
