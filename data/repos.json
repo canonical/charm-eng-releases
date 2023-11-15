@@ -1472,6 +1472,46 @@
             "ci_actions": null,
             "charm": null,
             "snap": null
+         },
+         {
+            "name": "pebble",
+            "default_branch": "master",
+            "new_commits": 3,
+            "url": "https://github.com/canonical/pebble",
+            "releases": [
+               {
+                  "id": 127138820,
+                  "version": "v1.5.0",
+                  "timestamp": 1698653531,
+                  "title": "v1.5.0: Pebble Notices core, API, client; Requester interface and ErrorResponse",
+                  "body": "<h2>New features</h2>\n\n<ul>\n<li>Add Pebble notices <a href=\"a href=&quot;https://github.com/canonical/pebble/pull/295), [API](https://github.com/canonical/pebble/pull/296), and [Go client](https://github.com/canonical/pebble/pull/297&quot;&gt;#297&lt;/a\">core state handling</a></li>\n<li><a href=\"a href=&quot;https://github.com/canonical/pebble/pull/303&quot;&gt;#303&lt;/a\">Add ErrorResponse</a> to allow external error creation</li>\n<li><a href=\"a href=&quot;https://github.com/canonical/pebble/pull/310&quot;&gt;#310&lt;/a\">Expose Requester interface</a> to allow derived projects to use the Pebble-instantiated client and extend the available commands</li>\n</ul>\n\n<h2>Other minor changes</h2>\n\n<ul>\n<li>fix(daemon): add-notice API shouldn&rsquo;t error if no data is provided in <a href=\"https://github.com/canonical/pebble/pull/321\">#321</a></li>\n<li>fix(state): set <code>noticeCond</code> correctly in <code>ReadState</code> in <a href=\"https://github.com/canonical/pebble/pull/320\">#320</a></li>\n<li>fix(snap): make snapcraft.yaml compatible with remote-builds in <a href=\"https://github.com/canonical/pebble/pull/322\">#322</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/dependabot\">@dependabot</a> made their first contribution in <a href=\"https://github.com/canonical/pebble/pull/313\">#313</a></li>\n<li><a href=\"http://github.com/olivercalder\">@olivercalder</a> made their first contribution in <a href=\"https://github.com/canonical/pebble/pull/320\">#320</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.4.0...v1.5.0\">https://github.com/canonical/pebble/compare/v1.4.0&hellip;v1.5.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.5.0",
+                  "compare_url": "https://github.com/canonical/pebble/compare/v1.5.0...master"
+               },
+               {
+                  "id": 123037844,
+                  "version": "v1.4.0",
+                  "timestamp": 1695934265,
+                  "title": "v1.4.0: health subcommand, Loki log forwarding client",
+                  "body": "<p>This release includes two new features:</p>\n\n<ul>\n<li>The new <code>pebble health</code> subcommand, implemented by <a href=\"http://github.com/rebornplusplus\">@rebornplusplus</a> in #299.</li>\n<li>Log forwarding to Loki, implemented by <a href=\"http://github.com/barrettj12\">@barrettj12</a> in #267.</li>\n</ul>\n\n<p>In addition, we improved the error message from <code>exec</code> when the <code>$HOME</code> directory doesn&rsquo;t exist, and other minor changes.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.3.0...v1.4.0\">https://github.com/canonical/pebble/compare/v1.3.0&hellip;v1.4.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.4.0",
+                  "compare_url": "https://github.com/canonical/pebble/compare/v1.4.0...master"
+               },
+               {
+                  "id": 119750685,
+                  "version": "v1.3.0",
+                  "timestamp": 1693783542,
+                  "title": "v1.3.0: Service context, exec fixes, WaitDelay fix, and more",
+                  "body": "<p>This is Pebble version <code>v1.3.0</code>. It includes several notable features and fixes since v1.2.0, as well as many CI and testing improvements, and a significant refactoring of the Pebble internals.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<p>Notable user-facing features and fixes:</p>\n\n<ul>\n<li>fix: pebble exec and &ldquo;exec&rdquo; health checks inherit environment from daemon by <a href=\"http://github.com/rebornplusplus\">@rebornplusplus</a> in <a href=\"https://github.com/canonical/pebble/pull/234\">#234</a></li>\n<li>fix: allow non-root user to specify current user/group when running commands by <a href=\"http://github.com/benhoyt\">@benhoyt</a> in <a href=\"https://github.com/canonical/pebble/pull/239\">#239</a></li>\n<li>feat: add support for services to configure working directory by <a href=\"http://github.com/benhoyt\">@benhoyt</a> in <a href=\"https://github.com/canonical/pebble/pull/245\">#245</a></li>\n<li>feat: add &ldquo;service context&rdquo; support for exec and health checks by <a href=\"http://github.com/benhoyt\">@benhoyt</a> in <a href=\"https://github.com/canonical/pebble/pull/246\">#246</a></li>\n<li>fix: do not inherit HOME and USER env vars from pebble daemon environment by <a href=\"http://github.com/shayancanonical\">@shayancanonical</a> in <a href=\"https://github.com/canonical/pebble/pull/262\">#262</a></li>\n<li>fix(servstate): use WaitDelay to avoid Command.Wait blocking on stdin/out/err by <a href=\"http://github.com/benhoyt\">@benhoyt</a> in <a href=\"https://github.com/canonical/pebble/pull/275\">#275</a></li>\n<li>feat(logstate): log forwarding implementation II by <a href=\"http://github.com/barrettj12\">@barrettj12</a> in <a href=\"https://github.com/canonical/pebble/pull/256\">#256</a></li>\n</ul>\n\n<p>Refactoring and CI improvements:</p>\n\n<ul>\n<li>refactor: Pebble internals into an exportable package by <a href=\"http://github.com/anpep\">@anpep</a> in <a href=\"https://github.com/canonical/pebble/pull/226\">#226</a></li>\n<li>ci: allow Pebble to be packaged as a snap by <a href=\"http://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a href=\"https://github.com/canonical/pebble/pull/179\">#179</a></li>\n<li>ci: promote snap to candidate on every release by <a href=\"http://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a href=\"https://github.com/canonical/pebble/pull/255\">#255</a></li>\n<li>cli: public commands API by <a href=\"http://github.com/anpep\">@anpep</a> in <a href=\"https://github.com/canonical/pebble/pull/232\">#232</a></li>\n<li>build: update Go version to 1.20 by <a href=\"http://github.com/barrettj12\">@barrettj12</a> in <a href=\"https://github.com/canonical/pebble/pull/171\">#171</a></li>\n<li>ci: build Pebble snap with Go 1.20 by <a href=\"http://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a href=\"https://github.com/canonical/pebble/pull/271\">#271</a></li>\n<li>feat(daemon): allowing adding external http handlers by <a href=\"http://github.com/paul-rodriguez\">@paul-rodriguez</a> in <a href=\"https://github.com/canonical/pebble/pull/265\">#265</a></li>\n<li>feat(overlord): allow adding external managers by <a href=\"http://github.com/paul-rodriguez\">@paul-rodriguez</a> in <a href=\"https://github.com/canonical/pebble/pull/273\">#273</a></li>\n<li>feat(cli): enable extended client access by <a href=\"http://github.com/anpep\">@anpep</a> in <a href=\"https://github.com/canonical/pebble/pull/285\">#285</a></li>\n<li>feat(daemon): daemon access for API extensions by <a href=\"http://github.com/flotter\">@flotter</a> in <a href=\"https://github.com/canonical/pebble/pull/293\">#293</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/sparkiegeek\">@sparkiegeek</a> made their first contribution in <a href=\"https://github.com/canonical/pebble/pull/227\">#227</a></li>\n<li><a href=\"http://github.com/cjdcordeiro\">@cjdcordeiro</a> made their first contribution in <a href=\"https://github.com/canonical/pebble/pull/179\">#179</a></li>\n<li><a href=\"http://github.com/paul-rodriguez\">@paul-rodriguez</a> made their first contribution in <a href=\"https://github.com/canonical/pebble/pull/265\">#265</a></li>\n<li><a href=\"http://github.com/shayancanonical\">@shayancanonical</a> made their first contribution in <a href=\"https://github.com/canonical/pebble/pull/262\">#262</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.2.0...v1.3.0\">https://github.com/canonical/pebble/compare/v1.2.0&hellip;v1.3.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.3.0",
+                  "compare_url": "https://github.com/canonical/pebble/compare/v1.3.0...master"
+               }
+            ],
+            "commits": null,
+            "is_archived": false,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
          }
       ]
    },
@@ -6293,7 +6333,7 @@
          {
             "name": "vault-k8s-operator",
             "default_branch": "main",
-            "new_commits": 0,
+            "new_commits": 1,
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
                {
@@ -9205,7 +9245,7 @@
          {
             "name": "postgresql-test-app",
             "default_branch": "main",
-            "new_commits": 2,
+            "new_commits": 3,
             "url": "https://github.com/canonical/postgresql-test-app",
             "releases": [
                {
@@ -11047,6 +11087,15 @@
             "url": "https://github.com/canonical/jenkins-k8s-operator",
             "releases": [
                {
+                  "id": 129524849,
+                  "version": "rev32",
+                  "timestamp": 1700045425,
+                  "title": "Revision 32",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:58 UTC on 15 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: rename fixtures for clarity by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/61\">#61</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev31...rev32\">https://github.com/canonical/jenkins-k8s-operator/compare/rev31&hellip;rev32</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev32",
+                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev32...main"
+               },
+               {
                   "id": 129514631,
                   "version": "rev31",
                   "timestamp": 1700041586,
@@ -11063,15 +11112,6 @@
                   "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:34 UTC on 14 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Ingress v2 support by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/58\">#58</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev29...rev30\">https://github.com/canonical/jenkins-k8s-operator/compare/rev29&hellip;rev30</a></p>\n",
                   "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev30",
                   "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev30...main"
-               },
-               {
-                  "id": 129013671,
-                  "version": "rev29",
-                  "timestamp": 1699695094,
-                  "title": "Revision 29",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:39 UTC on 11 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>test: rebuild plugin by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/53\">#53</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev28...rev29\">https://github.com/canonical/jenkins-k8s-operator/compare/rev28&hellip;rev29</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev29",
-                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev29...main"
                }
             ],
             "commits": null,
