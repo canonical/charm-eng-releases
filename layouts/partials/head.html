@@ -8,13 +8,55 @@
   <meta name="description" content="{{ .Site.Params.description }}" />
   <meta property="og:description" content="{{ .Site.Params.description }}" />
   <meta itemprop="description" content="{{ .Site.Params.description }}" />
-  <meta property="og:image" content="https://assets.ubuntu.com/v1/eeb4c506-Canonical-Juju-logo-2022.svg">
-  <meta property="og:image:width" content="1660">
-  <meta property="og:image:height" content="1000">
-  <meta property="og:image:alt" content="Canonical Juju banner">
+  <meta property="og:image:width" content="1660" />
+  <meta property="og:image:height" content="1000" />
+  <meta property="og:image:alt" content="Canonical Juju banner" />
   <link href="https://juju.is/static/favicon.png" rel="shortcut icon" />
-  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-4.5.0.min.css" />
+  <meta
+    property="og:image"
+    content="https://assets.ubuntu.com/v1/eeb4c506-Canonical-Juju-logo-2022.svg"
+  />
+  <link
+    rel="stylesheet"
+    href="https://assets.ubuntu.com/v1/vanilla-framework-version-4.5.0.min.css"
+  />
   <style>
-    {{- partial "css/overrides.css" . | safeCSS -}}
+    .p-status-label > a,
+    .p-status-label--positive > a,
+    .p-status-label--caution > a,
+    .p-status-label--negative > a {
+      color: white;
+    }
+
+    .release a,
+    .release a:visited {
+      font-weight: 400;
+      color: #222;
+    }
+
+    a.repo-name {
+      color: #222;
+      font-weight: 400;
+    }
+
+    a.repo-icon {
+      color: #222;
+    }
+
+    [role="modal-open"] {
+      margin-right: 5px;
+    }
+
+    .inline-svg {
+      display: inline-block;
+      height: 1.15rem;
+      width: 1.15rem;
+      top: 0.15rem;
+      position: relative;
+    }
+
+    i.button-icon {
+      pointer-events: none;
+    }
   </style>
 </head>
