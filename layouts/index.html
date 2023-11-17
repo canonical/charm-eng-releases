@@ -1,84 +1,114 @@
 <!DOCTYPE html>
 <html lang="en-gb">
   {{- partial "head.html" . -}}
-  {{- partial "nav.html" . -}}
-  <body>
-    <div class="l-site">
-      <div class="grid p-strip">
-        <div class="row">
-          <div class="col-8">
-            <h2>Charm Engineering Releases</h2>
+  <body class="l-site">
+    {{- partial "nav.html" . -}}
+    <div class="grid p-strip">
+      <div class="row">
+        <div class="col-8">
+          <h2>Charm Engineering Releases</h2>
+        </div>
+        <div class="col-4 u-vertically-center u-align--right" style="grid-auto-flow: column">
+          <div class="p-search-and-filter">
+            <div
+              class="p-search-and-filter__search-container"
+              aria-expanded="false"
+              data-active="true"
+              data-empty="true"
+            >
+              <input
+                autocomplete="off"
+                class="p-search-and-filter__input"
+                id="table-filter-textbox"
+                placeholder="Filter repositories"
+                type="search"
+                value=""
+              />
+            </div>
           </div>
-          <div class="col-4 u-vertically-center u-align--right" style="grid-auto-flow: column">
-            <div class="p-search-and-filter">
-              <div class="p-search-and-filter__search-container" aria-expanded="false" data-active="true" data-empty="true">
-                  <input autocomplete="off" class="p-search-and-filter__input" id="table-filter-textbox" placeholder="Filter repositories" type="search" value="">
+          <span>&emsp;</span>
+          <label class="p-switch">
+            <input type="checkbox" class="p-switch__input" role="switch" id="toggle-all-rows" />
+            <span class="p-switch__slider"></span>
+            <span class="p-switch__label">Expand all rows</span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="u-no-max-width">
+            This page catalogues releases from charm engineering teams. Its content automatically
+            generated every 15 minutes by querying the Github API and scraping Launchpad pages. The
+            data is generated using
+            <a href="https://github.com/jnsgruk/releasegen">releasegen</a>.
+          </p>
+          <aside class="p-accordion">
+            <ul class="p-accordion__list">
+              <li class="p-accordion__group">
+                <div role="heading" aria-level="3" class="p-accordion__heading">
+                  <button
+                    type="button"
+                    class="p-accordion__tab"
+                    id="accordion-help-tab"
+                    aria-controls="accordion-help"
+                    aria-expanded="false"
+                  >
+                    Need help getting your repository included here?
+                  </button>
                 </div>
-            </div>
-            <span>&emsp;</span>
-            <label class="p-switch">
-              <input type="checkbox" class="p-switch__input" role="switch" id="toggle-all-rows"/>
-              <span class="p-switch__slider"></span>
-              <span class="p-switch__label">Expand all rows</span>
-            </label>
-          </div> 
+                <section
+                  class="p-accordion__panel"
+                  id="accordion-help"
+                  aria-hidden="true"
+                  aria-labelledby="accordion-help-tab"
+                >
+                  <p class="u-no-max-width">
+                    For a release to show here, it must be part of one of the specified Github
+                    Teams or Launchpad project groups. Github projects must not be Archived,
+                    Launchpad projects are scraped for tags. The latest three releases are shown
+                    for each repository.
+                  </p>
+                  <p p class="u-no-max-width">
+                    For GitHub badges to be shown for your repository, add them in the README;
+                    similarly, to display the extra CharmHub release information in the expanding
+                    table rows, add the CharmHub badge (
+                    <code>![](https://charmhub.io/*charm-name*/badge.svg)</code> ) to your charm's
+                    README.
+                  </p>
+                </section>
+              </li>
+            </ul>
+          </aside>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <p class="u-no-max-width">
-              This page catalogues releases from charm engineering teams. Its content automatically
-              generated every 15 minutes by querying the Github API and scraping Launchpad pages.
-              The data is generated using
-              <a href="https://github.com/jnsgruk/releasegen">releasegen</a>.
-            </p>
-            <aside class="p-accordion">
-              <ul class="p-accordion__list">
-                <li class="p-accordion__group">
-                  <div role="heading" aria-level="3" class="p-accordion__heading">
-                    <button type="button" class="p-accordion__tab" id="accordion-help-tab" aria-controls="accordion-help" aria-expanded="false">Need help getting your repository included here?</button>
-                  </div>
-                  <section class="p-accordion__panel" id="accordion-help" aria-hidden="true" aria-labelledby="accordion-help-tab">
-                    <p class="u-no-max-width"> For a release to show here, it must be part of one of the specified Github Teams or
-                    Launchpad project groups. Github projects must not be Archived, Launchpad projects are scraped for tags. The latest
-                    three releases are shown for each repository.</p>
-                    <p p class="u-no-max-width">For GitHub badges to be shown for your repository, add them in the README; similarly,
-                    to display the extra CharmHub release information in the expanding table rows, add the CharmHub badge
-                    ( <code>![](https://charmhub.io/*charm-name*/badge.svg)</code> ) to your charm's README.</p>
-                  </section>
-                </li>
-              </ul>
-            </aside>
-          </div>
-        </div>
-        <div class="row p-strip is-shallow">
-          <div class="p-tabs">
-            <div class="p-tabs__list" role="tablist" aria-label="Charm teams">
-              {{- range .Site.Data.repos -}}
-              <div class="p-tabs__item">
-                <button class="p-tabs__link" aria-controls="{{ .team }}-tab" id="{{ .team }}">
-                  {{- .team -}}
-                </button>
-              </div>
-              {{- end -}}
-            </div>
-            {{- range $team := .Site.Data.repos -}}
-            <div tabindex="0" id="{{ $team.team }}-tab" aria-labelledby="{{ $team.team }}">
-              {{- partial "team-table" (dict "team" $team ) -}}
+      </div>
+      <div class="row p-strip is-shallow">
+        <div class="p-tabs">
+          <div class="p-tabs__list" role="tablist" aria-label="Charm teams">
+            {{- range .Site.Data.repos -}}
+            <div class="p-tabs__item">
+              <button class="p-tabs__link" aria-controls="{{ .team }}-tab" id="{{ .team }}">
+                {{- .team -}}
+              </button>
             </div>
             {{- end -}}
           </div>
+          {{- range $team := .Site.Data.repos -}}
+          <div tabindex="0" id="{{ $team.team }}-tab" aria-labelledby="{{ $team.team }}">
+            {{- partial "team-table" (dict "team" $team ) -}}
+          </div>
+          {{- end -}}
         </div>
       </div>
     </div>
+    {{- partial "footer.html" . -}}
+    <script>
+      (() => {
+        {{- partial "js/tabs.js" . | safeJS -}}
+        {{- partial "js/modal.js" .  | safeJS -}}
+        {{- partial "js/sortable.js" . | safeJS -}}
+        {{- partial "js/expand.js" . | safeJS -}}
+        {{- partial "js/accordion.js" . | safeJS -}}
+      })();
+    </script>
   </body>
-  {{- partial "footer.html" . -}}
-  <script>
-    (() => {
-      {{- partial "js/tabs.js" . | safeJS -}}
-      {{- partial "js/modal.js" .  | safeJS -}}
-      {{- partial "js/sortable.js" . | safeJS -}}
-      {{- partial "js/expand.js" . | safeJS -}}
-      {{- partial "js/accordion.js" . | safeJS -}}
-    })();
-  </script>
 </html>
