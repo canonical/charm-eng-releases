@@ -20,7 +20,7 @@ const toggleAllButton = document.getElementById("toggle-all-rows")
 toggleAllButton.addEventListener(
   "change",
   event => {
-    const expandButtons = document.querySelectorAll(".charmhub-toggle")
+    const expandButtons = document.querySelectorAll(".store-toggle")
     const target = event.target
     const isTargetActive = target.getAttribute("active") === "true"
     toggleButton(target, !isTargetActive)
