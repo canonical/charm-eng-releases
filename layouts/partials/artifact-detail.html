@@ -29,7 +29,9 @@
             $.artifact.releases "track" $track -}} {{- $release := index (where $releasesForTrack
             "channel" $channel) 0 -}} {{- if not (not $release) -}}
             <td>
-              <a href="{{- $.artifact.url -}}?channel={{- $track -}}/{{- $channel -}}"
+              <a
+                target="_blank"
+                href="{{- $.artifact.url -}}?channel={{- $track -}}/{{- $channel -}}"
                 >{{- $release.revision -}}</a
               ><br /><sup>{{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}</sup>
             </td>
