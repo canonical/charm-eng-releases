@@ -3917,20 +3917,20 @@
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 13,
-                     "timestamp": 1689755077
+                     "revision": 16,
+                     "timestamp": 1700214572
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 13,
-                     "timestamp": 1689755077
+                     "revision": 16,
+                     "timestamp": 1700214571
                   },
                   {
                      "track": "latest",
                      "channel": "beta",
-                     "revision": 13,
-                     "timestamp": 1689755077
+                     "revision": 16,
+                     "timestamp": 1700214570
                   },
                   {
                      "track": "latest",
@@ -10858,18 +10858,18 @@
       "team": "IS",
       "repos": [
          {
-            "name": "is-charms-template-repo",
+            "name": "repo-policy-compliance",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/is-charms-template-repo",
+            "url": "https://github.com/canonical/repo-policy-compliance",
             "releases": null,
             "commits": [
                {
-                  "sha": "04defd738d2c260ba720ea704045065efca155e3",
-                  "author": "arturo-seijas",
-                  "timestamp": 1697703131,
-                  "message": "Merge pull request #6 from canonical/fix-release-pipeline\n\nFix release pipeline",
-                  "url": "https://github.com/canonical/is-charms-template-repo/commit/04defd738d2c260ba720ea704045065efca155e3"
+                  "sha": "f34a8280e9b03c136cbcfcbde2993867bd48438e",
+                  "author": "David Andersson",
+                  "timestamp": 1698166927,
+                  "message": "change commits to be fetched within a month (#768)\n\n* change commits to be fetched within a month\r\n\r\n* Update version",
+                  "url": "https://github.com/canonical/repo-policy-compliance/commit/f34a8280e9b03c136cbcfcbde2993867bd48438e"
                }
             ],
             "ci_actions": null,
@@ -10877,20 +10877,40 @@
             "snap": null
          },
          {
-            "name": "spring-boot-sample-apps",
+            "name": "discourse-gatekeeper",
             "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/spring-boot-sample-apps",
-            "releases": null,
-            "commits": [
+            "new_commits": 4,
+            "url": "https://github.com/canonical/discourse-gatekeeper",
+            "releases": [
                {
-                  "sha": "e5fa282a301d68a204e79b133430a152822c51f6",
-                  "author": "Schiano Grégory",
-                  "timestamp": 1676478059,
-                  "message": "Bugfix/fix liquibase master xml (#15)\n\n* Fix issue due to copyright on top of master.xml\r\n\r\n* Multiple fixes:\r\n* XML declaration not on top for initial schema\r\n* Bug in liquibase that doesn't have primary key for its tables\r\n* Fix a bug on the default data loaded\r\n\r\n* Fix based on comments",
-                  "url": "https://github.com/canonical/spring-boot-sample-apps/commit/e5fa282a301d68a204e79b133430a152822c51f6"
+                  "id": 124217285,
+                  "version": "v0.7.0",
+                  "timestamp": 1696835711,
+                  "title": "v0.7.0",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
+                  "compare_url": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
+               },
+               {
+                  "id": 111735326,
+                  "version": "v0.6.0",
+                  "timestamp": 1689050150,
+                  "title": "v0.6.0 - Protecting Community Contributions",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Raising PRs with community contributions on discourse</li>\n<li>Signing commits if required by a repository</li>\n</ul>\n\n<h3>Changed</h3>\n\n<ul>\n<li>Conflict detection logic no longer uses git to merge for page conflicts.\nInstead any differences between discourse and the feature branch on a specific\npage lead to a failed run.</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Improved logging of conflicts</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.6.0",
+                  "compare_url": "https://github.com/canonical/discourse-gatekeeper/compare/v0.6.0...main"
+               },
+               {
+                  "id": 99707758,
+                  "version": "v0.5.0",
+                  "timestamp": 1681718677,
+                  "title": "v0.5.0 Remove base_branch Input",
+                  "body": "<h3>Changed</h3>\n\n<ul>\n<li>Removed <code>base_branch</code> input.</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Add support for handling tags that are directly linked to a commit which\nresulted in a failure before.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.5.0",
+                  "compare_url": "https://github.com/canonical/discourse-gatekeeper/compare/v0.5.0...main"
                }
             ],
+            "commits": null,
             "ci_actions": null,
             "charm": null,
             "snap": null
@@ -11025,22 +11045,75 @@
             "snap": null
          },
          {
-            "name": ".github",
+            "name": "saml-integrator-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/.github",
-            "releases": null,
-            "commits": [
+            "url": "https://github.com/canonical/saml-integrator-operator",
+            "releases": [
                {
-                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1668098113,
-                  "message": "fix(starter): Rename JSON metadata files (#4)\n\nThe JSON metadata files require an `.properties.json` extension,\r\nso this commit renames the .json files to .properties.json.\r\n\r\nIn addition, I've moved the icons from a dedicated icons/ folder\r\nin the workflow-templates/ folder, as they need to be present here\r\naccording to the doc at https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization",
-                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
+                  "id": 126560833,
+                  "version": "rev30",
+                  "timestamp": 1698222436,
+                  "title": "Revision 30",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:41 UTC on 25 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[upload-charm-docs] Migrate charm docs by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/55\">#55</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/saml-integrator-operator/compare/rev29...rev30\">https://github.com/canonical/saml-integrator-operator/compare/rev29&hellip;rev30</a></p>\n",
+                  "url": "https://github.com/canonical/saml-integrator-operator/releases/tag/rev30",
+                  "compare_url": "https://github.com/canonical/saml-integrator-operator/compare/rev30...main"
+               },
+               {
+                  "id": 126554929,
+                  "version": "rev29",
+                  "timestamp": 1698219930,
+                  "title": "Revision 29",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:00 UTC on 25 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency pydantic to v1.10.13 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/43\">#43</a></li>\n<li>Fix typos and minor doc updates by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/46\">#46</a></li>\n<li>[upload-charm-docs] Migrate charm docs by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/47\">#47</a></li>\n<li>chore(deps): update dependency ops to v2.7.0 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/48\">#48</a></li>\n<li>ci(digest): Add digest pinning by <a href=\"http://github.com/merkata\">@merkata</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/50\">#50</a></li>\n<li>Add project and community section in docs by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/51\">#51</a></li>\n<li>chore(deps): update dependency ops to v2.8.0 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/54\">#54</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/github-actions\">@github-actions</a> made their first contribution in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/47\">#47</a></li>\n<li><a href=\"http://github.com/merkata\">@merkata</a> made their first contribution in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/50\">#50</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/saml-integrator-operator/compare/rev28...rev29\">https://github.com/canonical/saml-integrator-operator/compare/rev28&hellip;rev29</a></p>\n",
+                  "url": "https://github.com/canonical/saml-integrator-operator/releases/tag/rev29",
+                  "compare_url": "https://github.com/canonical/saml-integrator-operator/compare/rev29...main"
+               },
+               {
+                  "id": 119964910,
+                  "version": "rev28",
+                  "timestamp": 1693918884,
+                  "title": "Revision 28",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:08 UTC on 5 Sep 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 10:47 UTC on 12 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add PR template by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/42\">#42</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/saml-integrator-operator/compare/rev27...rev28\">https://github.com/canonical/saml-integrator-operator/compare/rev27&hellip;rev28</a></p>\n",
+                  "url": "https://github.com/canonical/saml-integrator-operator/releases/tag/rev28",
+                  "compare_url": "https://github.com/canonical/saml-integrator-operator/compare/rev28...main"
                }
             ],
-            "ci_actions": null,
-            "charm": null,
+            "commits": null,
+            "ci_actions": [
+               "https://github.com/canonical/saml-integrator-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/saml-integrator-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "saml-integrator",
+               "url": "https://snapcraft.io/saml-integrator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 28,
+                     "timestamp": 1694515637
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 6,
+                     "timestamp": 1690882078
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 30,
+                     "timestamp": 1698223312
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
@@ -11187,42 +11260,81 @@
             "snap": null
          },
          {
-            "name": "github-actions-exporter-operator",
+            "name": "wordpress-k8s-operator",
             "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/github-actions-exporter-operator",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/wordpress-k8s-operator",
             "releases": [
                {
-                  "id": 123725761,
-                  "version": "rev6",
-                  "timestamp": 1696431232,
-                  "title": "Revision 6",
-                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:04 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.7.0 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/14\">#14</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev5...rev6\">https://github.com/canonical/github-actions-exporter-operator/compare/rev5&hellip;rev6</a></p>\n",
-                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev6",
-                  "compare_url": "https://github.com/canonical/github-actions-exporter-operator/compare/rev6...main"
+                  "id": 129893358,
+                  "version": "rev64",
+                  "timestamp": 1700206795,
+                  "title": "Revision 64",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:51 UTC on 17 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2994] No more relational databag usage by <a href=\"http://github.com/juditnovak\">@juditnovak</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/166\">#166</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/juditnovak\">@juditnovak</a> made their first contribution in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/166\">#166</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev63...rev64\">https://github.com/canonical/wordpress-k8s-operator/compare/rev63&hellip;rev64</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev64",
+                  "compare_url": "https://github.com/canonical/wordpress-k8s-operator/compare/rev64...main"
                },
                {
-                  "id": 123680039,
-                  "version": "rev5",
-                  "timestamp": 1696421214,
-                  "title": "Revision 5",
-                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:19 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v1.10.13 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev4...rev5\">https://github.com/canonical/github-actions-exporter-operator/compare/rev4&hellip;rev5</a></p>\n",
-                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev5",
-                  "compare_url": "https://github.com/canonical/github-actions-exporter-operator/compare/rev5...main"
+                  "id": 127640823,
+                  "version": "rev63",
+                  "timestamp": 1698908334,
+                  "title": "Revision 63",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 58</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:13 UTC on 2 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(cves): Remove ignored CVEs by <a href=\"http://github.com/merkata\">@merkata</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/159\">#159</a></li>\n<li>Eliminate mysql-interface variables by <a href=\"http://github.com/gtrkiller\">@gtrkiller</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/157\">#157</a></li>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/162\">#162</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev62...rev63\">https://github.com/canonical/wordpress-k8s-operator/compare/rev62&hellip;rev63</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev63",
+                  "compare_url": "https://github.com/canonical/wordpress-k8s-operator/compare/rev63...main"
                },
                {
-                  "id": 122033473,
-                  "version": "rev4",
-                  "timestamp": 1695297507,
-                  "title": "Revision 4",
-                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 5</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:17 UTC on 21 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix prometheus_scrape integration by adding prometheus_alert_rules by <a href=\"http://github.com/amandahla\">@amandahla</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/8\">#8</a></li>\n<li>Configure Renovate by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/1\">#1</a></li>\n<li>chore(deps): update dependency jsonschema to v4.19.1 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/12\">#12</a></li>\n<li>Fix maintainers in metadata by <a href=\"http://github.com/amandahla\">@amandahla</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/9\">#9</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/renovate\">@renovate</a> made their first contribution in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev2...rev4\">https://github.com/canonical/github-actions-exporter-operator/compare/rev2&hellip;rev4</a></p>\n",
-                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev4",
-                  "compare_url": "https://github.com/canonical/github-actions-exporter-operator/compare/rev4...main"
+                  "id": 127321597,
+                  "version": "rev62",
+                  "timestamp": 1698743871,
+                  "title": "Revision 62",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:39 UTC on 31 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/158\">#158</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev61...rev62\">https://github.com/canonical/wordpress-k8s-operator/compare/rev61&hellip;rev62</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev62",
+                  "compare_url": "https://github.com/canonical/wordpress-k8s-operator/compare/rev62...main"
                }
             ],
             "commits": null,
-            "ci_actions": null,
-            "charm": null,
+            "ci_actions": [
+               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "wordpress-k8s",
+               "url": "https://snapcraft.io/wordpress-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 13,
+                     "timestamp": 1678088045
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 50,
+                     "timestamp": 1697440207
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 15,
+                     "timestamp": 1680170897
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 64,
+                     "timestamp": 1700207486
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
@@ -11350,71 +11462,65 @@
             "snap": null
          },
          {
-            "name": "wordpress-k8s-operator",
+            "name": "indico-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/wordpress-k8s-operator",
+            "url": "https://github.com/canonical/indico-operator",
             "releases": [
                {
-                  "id": 129893358,
-                  "version": "rev64",
-                  "timestamp": 1700206795,
-                  "title": "Revision 64",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:51 UTC on 17 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2994] No more relational databag usage by <a href=\"http://github.com/juditnovak\">@juditnovak</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/166\">#166</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/juditnovak\">@juditnovak</a> made their first contribution in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/166\">#166</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev63...rev64\">https://github.com/canonical/wordpress-k8s-operator/compare/rev63&hellip;rev64</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev64",
-                  "compare_url": "https://github.com/canonical/wordpress-k8s-operator/compare/rev64...main"
+                  "id": 128879556,
+                  "version": "rev160",
+                  "timestamp": 1699606779,
+                  "title": "Revision 160",
+                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 197\n    -  indico-image: undefined\n       resource-revision: 152</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:28 UTC on 10 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/indico-operator/pull/341\">#341</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev159...rev160\">https://github.com/canonical/indico-operator/compare/rev159&hellip;rev160</a></p>\n",
+                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev160",
+                  "compare_url": "https://github.com/canonical/indico-operator/compare/rev160...main"
                },
                {
-                  "id": 127640823,
-                  "version": "rev63",
-                  "timestamp": 1698908334,
-                  "title": "Revision 63",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 58</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:13 UTC on 2 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(cves): Remove ignored CVEs by <a href=\"http://github.com/merkata\">@merkata</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/159\">#159</a></li>\n<li>Eliminate mysql-interface variables by <a href=\"http://github.com/gtrkiller\">@gtrkiller</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/157\">#157</a></li>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/162\">#162</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev62...rev63\">https://github.com/canonical/wordpress-k8s-operator/compare/rev62&hellip;rev63</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev63",
-                  "compare_url": "https://github.com/canonical/wordpress-k8s-operator/compare/rev63...main"
+                  "id": 128681783,
+                  "version": "rev159",
+                  "timestamp": 1699522109,
+                  "title": "Revision 159",
+                  "body": "<p>resources:\n    -  indico-image: undefined\n       resource-revision: 151\n    -  indico-nginx-image: undefined\n       resource-revision: 196</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:56 UTC on 9 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Retrieve SMTP config from SMTP integrator by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/indico-operator/pull/338\">#338</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev158...rev159\">https://github.com/canonical/indico-operator/compare/rev158&hellip;rev159</a></p>\n",
+                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev159",
+                  "compare_url": "https://github.com/canonical/indico-operator/compare/rev159...main"
                },
                {
-                  "id": 127321597,
-                  "version": "rev62",
-                  "timestamp": 1698743871,
-                  "title": "Revision 62",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:39 UTC on 31 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/wordpress-k8s-operator/pull/158\">#158</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev61...rev62\">https://github.com/canonical/wordpress-k8s-operator/compare/rev61&hellip;rev62</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev62",
-                  "compare_url": "https://github.com/canonical/wordpress-k8s-operator/compare/rev62...main"
+                  "id": 127665343,
+                  "version": "rev158",
+                  "timestamp": 1698916600,
+                  "title": "Revision 158",
+                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 195\n    -  indico-image: undefined\n       resource-revision: 150</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:24 UTC on 2 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/indico-operator/pull/340\">#340</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev157...rev158\">https://github.com/canonical/indico-operator/compare/rev157&hellip;rev158</a></p>\n",
+                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev158",
+                  "compare_url": "https://github.com/canonical/indico-operator/compare/rev158...main"
                }
             ],
             "commits": null,
             "ci_actions": [
-               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/promote_charm.yaml"
+               "https://github.com/canonical/indico-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/indico-operator/actions/workflows/promote_charm.yaml"
             ],
             "charm": {
-               "name": "wordpress-k8s",
-               "url": "https://snapcraft.io/wordpress-k8s",
+               "name": "indico",
+               "url": "https://snapcraft.io/indico",
                "releases": [
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 13,
-                     "timestamp": 1678088045
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 50,
-                     "timestamp": 1697440207
+                     "revision": 156,
+                     "timestamp": 1698251856
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 15,
-                     "timestamp": 1680170897
+                     "revision": 160,
+                     "timestamp": 1699608488
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 64,
-                     "timestamp": 1700207486
+                     "revision": 99,
+                     "timestamp": 1668766500
                   }
                ],
                "channels": [
@@ -11428,79 +11534,39 @@
             "snap": null
          },
          {
-            "name": "any-charm",
+            "name": "is-charms-contributing-guide",
             "default_branch": "main",
-            "new_commits": 2,
-            "url": "https://github.com/canonical/any-charm",
-            "releases": [
+            "new_commits": 0,
+            "url": "https://github.com/canonical/is-charms-contributing-guide",
+            "releases": null,
+            "commits": [
                {
-                  "id": 125357898,
-                  "version": "rev12",
-                  "timestamp": 1697523231,
-                  "title": "Revision 12",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/beta&rsquo; at 06:35 UTC on 17 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Reset src files when resetting the src-overwrite by <a href=\"http://github.com/weiiwang01\">@weiiwang01</a> in <a href=\"https://github.com/canonical/any-charm/pull/7\">#7</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/weiiwang01\">@weiiwang01</a> made their first contribution in <a href=\"https://github.com/canonical/any-charm/pull/7\">#7</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/any-charm/compare/rev11...rev12\">https://github.com/canonical/any-charm/compare/rev11&hellip;rev12</a></p>\n",
-                  "url": "https://github.com/canonical/any-charm/releases/tag/rev12",
-                  "compare_url": "https://github.com/canonical/any-charm/compare/rev12...main"
-               },
-               {
-                  "id": 125269759,
-                  "version": "rev11",
-                  "timestamp": 1697462143,
-                  "title": "Revision 11",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/beta&rsquo; at 16:49 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add smtp relations by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/any-charm/pull/2\">#2</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a href=\"https://github.com/canonical/any-charm/pull/2\">#2</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/any-charm/compare/rev10...rev11\">https://github.com/canonical/any-charm/compare/rev10&hellip;rev11</a></p>\n",
-                  "url": "https://github.com/canonical/any-charm/releases/tag/rev11",
-                  "compare_url": "https://github.com/canonical/any-charm/compare/rev11...main"
-               },
-               {
-                  "id": 124223376,
-                  "version": "rev9",
-                  "timestamp": 1696837163,
-                  "title": "Revision 9",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/beta&rsquo; at 08:00 UTC on 9 Oct 2023</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/any-charm/commits/rev9\">https://github.com/canonical/any-charm/commits/rev9</a></p>\n",
-                  "url": "https://github.com/canonical/any-charm/releases/tag/rev9",
-                  "compare_url": "https://github.com/canonical/any-charm/compare/rev9...main"
+                  "sha": "af46d588dd4e835cea94b3a94b80b4e4191d83d0",
+                  "author": "renovate[bot]",
+                  "timestamp": 1693876413,
+                  "message": "chore(deps): update actions/checkout action to v4 (#71)\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
+                  "url": "https://github.com/canonical/is-charms-contributing-guide/commit/af46d588dd4e835cea94b3a94b80b4e4191d83d0"
                }
             ],
-            "commits": null,
             "ci_actions": null,
             "charm": null,
             "snap": null
          },
          {
-            "name": "discourse-gatekeeper",
+            "name": "is-charms-template-repo",
             "default_branch": "main",
-            "new_commits": 4,
-            "url": "https://github.com/canonical/discourse-gatekeeper",
-            "releases": [
+            "new_commits": 0,
+            "url": "https://github.com/canonical/is-charms-template-repo",
+            "releases": null,
+            "commits": [
                {
-                  "id": 124217285,
-                  "version": "v0.7.0",
-                  "timestamp": 1696835711,
-                  "title": "v0.7.0",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
-                  "compare_url": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
-               },
-               {
-                  "id": 111735326,
-                  "version": "v0.6.0",
-                  "timestamp": 1689050150,
-                  "title": "v0.6.0 - Protecting Community Contributions",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Raising PRs with community contributions on discourse</li>\n<li>Signing commits if required by a repository</li>\n</ul>\n\n<h3>Changed</h3>\n\n<ul>\n<li>Conflict detection logic no longer uses git to merge for page conflicts.\nInstead any differences between discourse and the feature branch on a specific\npage lead to a failed run.</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Improved logging of conflicts</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.6.0",
-                  "compare_url": "https://github.com/canonical/discourse-gatekeeper/compare/v0.6.0...main"
-               },
-               {
-                  "id": 99707758,
-                  "version": "v0.5.0",
-                  "timestamp": 1681718677,
-                  "title": "v0.5.0 Remove base_branch Input",
-                  "body": "<h3>Changed</h3>\n\n<ul>\n<li>Removed <code>base_branch</code> input.</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Add support for handling tags that are directly linked to a commit which\nresulted in a failure before.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.5.0",
-                  "compare_url": "https://github.com/canonical/discourse-gatekeeper/compare/v0.5.0...main"
+                  "sha": "04defd738d2c260ba720ea704045065efca155e3",
+                  "author": "arturo-seijas",
+                  "timestamp": 1697703131,
+                  "message": "Merge pull request #6 from canonical/fix-release-pipeline\n\nFix release pipeline",
+                  "url": "https://github.com/canonical/is-charms-template-repo/commit/04defd738d2c260ba720ea704045065efca155e3"
                }
             ],
-            "commits": null,
             "ci_actions": null,
             "charm": null,
             "snap": null
@@ -11565,40 +11631,20 @@
             "snap": null
          },
          {
-            "name": "jenkins-k8s-operator",
+            "name": ".github",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/jenkins-k8s-operator",
-            "releases": [
+            "url": "https://github.com/canonical/.github",
+            "releases": null,
+            "commits": [
                {
-                  "id": 129895744,
-                  "version": "rev37",
-                  "timestamp": 1700208286,
-                  "title": "Revision 37",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:16 UTC on 17 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>test: oic-auth plugin test by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/55\">#55</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev36...rev37\">https://github.com/canonical/jenkins-k8s-operator/compare/rev36&hellip;rev37</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev37",
-                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev37...main"
-               },
-               {
-                  "id": 129780787,
-                  "version": "rev36",
-                  "timestamp": 1700150191,
-                  "title": "Revision 36",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:17 UTC on 16 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>mount storage for jenkins_home by <a href=\"http://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/56\">#56</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/Thanhphan1147\">@Thanhphan1147</a> made their first contribution in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/56\">#56</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev35...rev36\">https://github.com/canonical/jenkins-k8s-operator/compare/rev35&hellip;rev36</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev36",
-                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev36...main"
-               },
-               {
-                  "id": 129761865,
-                  "version": "rev35",
-                  "timestamp": 1700144649,
-                  "title": "Revision 35",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:01 UTC on 16 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: limit num units deployment to 1 by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/50\">#50</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev34...rev35\">https://github.com/canonical/jenkins-k8s-operator/compare/rev34&hellip;rev35</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev35",
-                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev35...main"
+                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
+                  "author": "Mariyan Dimitrov",
+                  "timestamp": 1668098113,
+                  "message": "fix(starter): Rename JSON metadata files (#4)\n\nThe JSON metadata files require an `.properties.json` extension,\r\nso this commit renames the .json files to .properties.json.\r\n\r\nIn addition, I've moved the icons from a dedicated icons/ folder\r\nin the workflow-templates/ folder, as they need to be present here\r\naccording to the doc at https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization",
+                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
                }
             ],
-            "commits": null,
             "ci_actions": null,
             "charm": null,
             "snap": null
@@ -11779,84 +11825,137 @@
             "snap": null
          },
          {
-            "name": "repo-policy-compliance",
+            "name": "jenkins-k8s-operator",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/repo-policy-compliance",
-            "releases": null,
-            "commits": [
+            "url": "https://github.com/canonical/jenkins-k8s-operator",
+            "releases": [
                {
-                  "sha": "f34a8280e9b03c136cbcfcbde2993867bd48438e",
-                  "author": "David Andersson",
-                  "timestamp": 1698166927,
-                  "message": "change commits to be fetched within a month (#768)\n\n* change commits to be fetched within a month\r\n\r\n* Update version",
-                  "url": "https://github.com/canonical/repo-policy-compliance/commit/f34a8280e9b03c136cbcfcbde2993867bd48438e"
+                  "id": 129895744,
+                  "version": "rev37",
+                  "timestamp": 1700208286,
+                  "title": "Revision 37",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:16 UTC on 17 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>test: oic-auth plugin test by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/55\">#55</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev36...rev37\">https://github.com/canonical/jenkins-k8s-operator/compare/rev36&hellip;rev37</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev37",
+                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev37...main"
+               },
+               {
+                  "id": 129780787,
+                  "version": "rev36",
+                  "timestamp": 1700150191,
+                  "title": "Revision 36",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:17 UTC on 16 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>mount storage for jenkins_home by <a href=\"http://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/56\">#56</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/Thanhphan1147\">@Thanhphan1147</a> made their first contribution in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/56\">#56</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev35...rev36\">https://github.com/canonical/jenkins-k8s-operator/compare/rev35&hellip;rev36</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev36",
+                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev36...main"
+               },
+               {
+                  "id": 129761865,
+                  "version": "rev35",
+                  "timestamp": 1700144649,
+                  "title": "Revision 35",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:01 UTC on 16 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: limit num units deployment to 1 by <a href=\"http://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/canonical/jenkins-k8s-operator/pull/50\">#50</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev34...rev35\">https://github.com/canonical/jenkins-k8s-operator/compare/rev34&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev35",
+                  "compare_url": "https://github.com/canonical/jenkins-k8s-operator/compare/rev35...main"
                }
             ],
+            "commits": null,
             "ci_actions": null,
             "charm": null,
             "snap": null
          },
          {
-            "name": "saml-integrator-operator",
+            "name": "any-charm",
             "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/saml-integrator-operator",
+            "new_commits": 2,
+            "url": "https://github.com/canonical/any-charm",
             "releases": [
                {
-                  "id": 126560833,
-                  "version": "rev30",
-                  "timestamp": 1698222436,
-                  "title": "Revision 30",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:41 UTC on 25 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[upload-charm-docs] Migrate charm docs by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/55\">#55</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/saml-integrator-operator/compare/rev29...rev30\">https://github.com/canonical/saml-integrator-operator/compare/rev29&hellip;rev30</a></p>\n",
-                  "url": "https://github.com/canonical/saml-integrator-operator/releases/tag/rev30",
-                  "compare_url": "https://github.com/canonical/saml-integrator-operator/compare/rev30...main"
+                  "id": 125357898,
+                  "version": "rev12",
+                  "timestamp": 1697523231,
+                  "title": "Revision 12",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/beta&rsquo; at 06:35 UTC on 17 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Reset src files when resetting the src-overwrite by <a href=\"http://github.com/weiiwang01\">@weiiwang01</a> in <a href=\"https://github.com/canonical/any-charm/pull/7\">#7</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/weiiwang01\">@weiiwang01</a> made their first contribution in <a href=\"https://github.com/canonical/any-charm/pull/7\">#7</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/any-charm/compare/rev11...rev12\">https://github.com/canonical/any-charm/compare/rev11&hellip;rev12</a></p>\n",
+                  "url": "https://github.com/canonical/any-charm/releases/tag/rev12",
+                  "compare_url": "https://github.com/canonical/any-charm/compare/rev12...main"
                },
                {
-                  "id": 126554929,
-                  "version": "rev29",
-                  "timestamp": 1698219930,
-                  "title": "Revision 29",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:00 UTC on 25 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency pydantic to v1.10.13 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/43\">#43</a></li>\n<li>Fix typos and minor doc updates by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/46\">#46</a></li>\n<li>[upload-charm-docs] Migrate charm docs by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/47\">#47</a></li>\n<li>chore(deps): update dependency ops to v2.7.0 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/48\">#48</a></li>\n<li>ci(digest): Add digest pinning by <a href=\"http://github.com/merkata\">@merkata</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/50\">#50</a></li>\n<li>Add project and community section in docs by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/51\">#51</a></li>\n<li>chore(deps): update dependency ops to v2.8.0 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/54\">#54</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/github-actions\">@github-actions</a> made their first contribution in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/47\">#47</a></li>\n<li><a href=\"http://github.com/merkata\">@merkata</a> made their first contribution in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/50\">#50</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/saml-integrator-operator/compare/rev28...rev29\">https://github.com/canonical/saml-integrator-operator/compare/rev28&hellip;rev29</a></p>\n",
-                  "url": "https://github.com/canonical/saml-integrator-operator/releases/tag/rev29",
-                  "compare_url": "https://github.com/canonical/saml-integrator-operator/compare/rev29...main"
+                  "id": 125269759,
+                  "version": "rev11",
+                  "timestamp": 1697462143,
+                  "title": "Revision 11",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/beta&rsquo; at 16:49 UTC on 16 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add smtp relations by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/any-charm/pull/2\">#2</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a href=\"https://github.com/canonical/any-charm/pull/2\">#2</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/any-charm/compare/rev10...rev11\">https://github.com/canonical/any-charm/compare/rev10&hellip;rev11</a></p>\n",
+                  "url": "https://github.com/canonical/any-charm/releases/tag/rev11",
+                  "compare_url": "https://github.com/canonical/any-charm/compare/rev11...main"
                },
                {
-                  "id": 119964910,
-                  "version": "rev28",
-                  "timestamp": 1693918884,
-                  "title": "Revision 28",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:08 UTC on 5 Sep 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 10:47 UTC on 12 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add PR template by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/saml-integrator-operator/pull/42\">#42</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/saml-integrator-operator/compare/rev27...rev28\">https://github.com/canonical/saml-integrator-operator/compare/rev27&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/saml-integrator-operator/releases/tag/rev28",
-                  "compare_url": "https://github.com/canonical/saml-integrator-operator/compare/rev28...main"
+                  "id": 124223376,
+                  "version": "rev9",
+                  "timestamp": 1696837163,
+                  "title": "Revision 9",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/beta&rsquo; at 08:00 UTC on 9 Oct 2023</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/any-charm/commits/rev9\">https://github.com/canonical/any-charm/commits/rev9</a></p>\n",
+                  "url": "https://github.com/canonical/any-charm/releases/tag/rev9",
+                  "compare_url": "https://github.com/canonical/any-charm/compare/rev9...main"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "synapse-operator",
+            "default_branch": "main",
+            "new_commits": 0,
+            "url": "https://github.com/canonical/synapse-operator",
+            "releases": [
+               {
+                  "id": 128878537,
+                  "version": "rev47",
+                  "timestamp": 1699606688,
+                  "title": "Revision 47",
+                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 35\n    -  synapse-image: undefined\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:22 UTC on 10 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/synapse-operator/pull/105\">#105</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev46...rev47\">https://github.com/canonical/synapse-operator/compare/rev46&hellip;rev47</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev47",
+                  "compare_url": "https://github.com/canonical/synapse-operator/compare/rev47...main"
+               },
+               {
+                  "id": 127878104,
+                  "version": "rev46",
+                  "timestamp": 1699017930,
+                  "title": "Revision 46",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 41\n    -  synapse-nginx-image: undefined\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:01 UTC on 3 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add anonymize user action by <a href=\"http://github.com/gtrkiller\">@gtrkiller</a> in <a href=\"https://github.com/canonical/synapse-operator/pull/91\">#91</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/gtrkiller\">@gtrkiller</a> made their first contribution in <a href=\"https://github.com/canonical/synapse-operator/pull/91\">#91</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev45...rev46\">https://github.com/canonical/synapse-operator/compare/rev45&hellip;rev46</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev46",
+                  "compare_url": "https://github.com/canonical/synapse-operator/compare/rev46...main"
+               },
+               {
+                  "id": 127632967,
+                  "version": "rev45",
+                  "timestamp": 1698900771,
+                  "title": "Revision 45",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 40\n    -  synapse-nginx-image: undefined\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:18 UTC on 2 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/synapse-operator/pull/95\">#95</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev44...rev45\">https://github.com/canonical/synapse-operator/compare/rev44&hellip;rev45</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev45",
+                  "compare_url": "https://github.com/canonical/synapse-operator/compare/rev45...main"
                }
             ],
             "commits": null,
             "ci_actions": [
-               "https://github.com/canonical/saml-integrator-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/saml-integrator-operator/actions/workflows/promote_charm.yaml"
+               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
             ],
             "charm": {
-               "name": "saml-integrator",
-               "url": "https://snapcraft.io/saml-integrator",
+               "name": "synapse",
+               "url": "https://snapcraft.io/synapse",
                "releases": [
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 28,
-                     "timestamp": 1694515637
+                     "revision": 2,
+                     "timestamp": 1688045666
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 6,
-                     "timestamp": 1690882078
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 30,
-                     "timestamp": 1698223312
+                     "revision": 47,
+                     "timestamp": 1699608170
                   }
                ],
                "channels": [
@@ -11867,27 +11966,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "setup-devstack-swift",
-            "default_branch": "main",
-            "new_commits": 1,
-            "url": "https://github.com/canonical/setup-devstack-swift",
-            "releases": [
-               {
-                  "id": 92712836,
-                  "version": "v1",
-                  "timestamp": 1676512814,
-                  "title": "v1",
-                  "body": "<p>Release v1 of the setup-devstack-swift action.</p>\n",
-                  "url": "https://github.com/canonical/setup-devstack-swift/releases/tag/v1",
-                  "compare_url": "https://github.com/canonical/setup-devstack-swift/compare/v1...main"
-               }
-            ],
-            "commits": null,
-            "ci_actions": null,
-            "charm": null,
             "snap": null
          },
          {
@@ -11976,18 +12054,18 @@
             "snap": null
          },
          {
-            "name": "is-charms-contributing-guide",
+            "name": "spring-boot-sample-apps",
             "default_branch": "main",
             "new_commits": 0,
-            "url": "https://github.com/canonical/is-charms-contributing-guide",
+            "url": "https://github.com/canonical/spring-boot-sample-apps",
             "releases": null,
             "commits": [
                {
-                  "sha": "af46d588dd4e835cea94b3a94b80b4e4191d83d0",
-                  "author": "renovate[bot]",
-                  "timestamp": 1693876413,
-                  "message": "chore(deps): update actions/checkout action to v4 (#71)\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
-                  "url": "https://github.com/canonical/is-charms-contributing-guide/commit/af46d588dd4e835cea94b3a94b80b4e4191d83d0"
+                  "sha": "e5fa282a301d68a204e79b133430a152822c51f6",
+                  "author": "Schiano Grégory",
+                  "timestamp": 1676478059,
+                  "message": "Bugfix/fix liquibase master xml (#15)\n\n* Fix issue due to copyright on top of master.xml\r\n\r\n* Multiple fixes:\r\n* XML declaration not on top for initial schema\r\n* Bug in liquibase that doesn't have primary key for its tables\r\n* Fix a bug on the default data loaded\r\n\r\n* Fix based on comments",
+                  "url": "https://github.com/canonical/spring-boot-sample-apps/commit/e5fa282a301d68a204e79b133430a152822c51f6"
                }
             ],
             "ci_actions": null,
@@ -11995,141 +12073,624 @@
             "snap": null
          },
          {
-            "name": "synapse-operator",
-            "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/synapse-operator",
+            "name": "stunnel-charm",
+            "default_branch": "master",
+            "new_commits": 2,
+            "url": "https://git.launchpad.net/stunnel-charm",
             "releases": [
                {
-                  "id": 128878537,
-                  "version": "rev47",
-                  "timestamp": 1699606688,
-                  "title": "Revision 47",
-                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 35\n    -  synapse-image: undefined\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:22 UTC on 10 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/synapse-operator/pull/105\">#105</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev46...rev47\">https://github.com/canonical/synapse-operator/compare/rev46&hellip;rev47</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev47",
-                  "compare_url": "https://github.com/canonical/synapse-operator/compare/rev47...main"
-               },
-               {
-                  "id": 127878104,
-                  "version": "rev46",
-                  "timestamp": 1699017930,
-                  "title": "Revision 46",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 41\n    -  synapse-nginx-image: undefined\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:01 UTC on 3 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add anonymize user action by <a href=\"http://github.com/gtrkiller\">@gtrkiller</a> in <a href=\"https://github.com/canonical/synapse-operator/pull/91\">#91</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/gtrkiller\">@gtrkiller</a> made their first contribution in <a href=\"https://github.com/canonical/synapse-operator/pull/91\">#91</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev45...rev46\">https://github.com/canonical/synapse-operator/compare/rev45&hellip;rev46</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev46",
-                  "compare_url": "https://github.com/canonical/synapse-operator/compare/rev46...main"
-               },
-               {
-                  "id": 127632967,
-                  "version": "rev45",
-                  "timestamp": 1698900771,
-                  "title": "Revision 45",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 40\n    -  synapse-nginx-image: undefined\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:18 UTC on 2 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/synapse-operator/pull/95\">#95</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev44...rev45\">https://github.com/canonical/synapse-operator/compare/rev44&hellip;rev45</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev45",
-                  "compare_url": "https://github.com/canonical/synapse-operator/compare/rev45...main"
+                  "id": 1665645551,
+                  "version": "rev1",
+                  "timestamp": 1665645551,
+                  "title": "rev1",
+                  "body": "",
+                  "url": "https://git.launchpad.net/stunnel-charm/tag/?h=rev1",
+                  "compare_url": "https://git.launchpad.net/stunnel-charm/diff/?id=6fbfb1d7ea7d73640b20aeb875d2d45b4148c04d&id2=master"
                }
             ],
             "commits": null,
-            "ci_actions": [
-               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "synapse",
-               "url": "https://snapcraft.io/synapse",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 2,
-                     "timestamp": 1688045666
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 47,
-                     "timestamp": 1699608170
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
+            "ci_actions": null,
+            "charm": null,
             "snap": null
          },
          {
-            "name": "indico-operator",
+            "name": "setup-devstack-swift",
             "default_branch": "main",
-            "new_commits": 0,
-            "url": "https://github.com/canonical/indico-operator",
+            "new_commits": 1,
+            "url": "https://github.com/canonical/setup-devstack-swift",
             "releases": [
                {
-                  "id": 128879556,
-                  "version": "rev160",
-                  "timestamp": 1699606779,
-                  "title": "Revision 160",
-                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 197\n    -  indico-image: undefined\n       resource-revision: 152</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:28 UTC on 10 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/indico-operator/pull/341\">#341</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev159...rev160\">https://github.com/canonical/indico-operator/compare/rev159&hellip;rev160</a></p>\n",
-                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev160",
-                  "compare_url": "https://github.com/canonical/indico-operator/compare/rev160...main"
-               },
-               {
-                  "id": 128681783,
-                  "version": "rev159",
-                  "timestamp": 1699522109,
-                  "title": "Revision 159",
-                  "body": "<p>resources:\n    -  indico-image: undefined\n       resource-revision: 151\n    -  indico-nginx-image: undefined\n       resource-revision: 196</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:56 UTC on 9 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Retrieve SMTP config from SMTP integrator by <a href=\"http://github.com/arturo-seijas\">@arturo-seijas</a> in <a href=\"https://github.com/canonical/indico-operator/pull/338\">#338</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev158...rev159\">https://github.com/canonical/indico-operator/compare/rev158&hellip;rev159</a></p>\n",
-                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev159",
-                  "compare_url": "https://github.com/canonical/indico-operator/compare/rev159...main"
-               },
-               {
-                  "id": 127665343,
-                  "version": "rev158",
-                  "timestamp": 1698916600,
-                  "title": "Revision 158",
-                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 195\n    -  indico-image: undefined\n       resource-revision: 150</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:24 UTC on 2 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a href=\"http://github.com/github-actions\">@github-actions</a> in <a href=\"https://github.com/canonical/indico-operator/pull/340\">#340</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev157...rev158\">https://github.com/canonical/indico-operator/compare/rev157&hellip;rev158</a></p>\n",
-                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev158",
-                  "compare_url": "https://github.com/canonical/indico-operator/compare/rev158...main"
+                  "id": 92712836,
+                  "version": "v1",
+                  "timestamp": 1676512814,
+                  "title": "v1",
+                  "body": "<p>Release v1 of the setup-devstack-swift action.</p>\n",
+                  "url": "https://github.com/canonical/setup-devstack-swift/releases/tag/v1",
+                  "compare_url": "https://github.com/canonical/setup-devstack-swift/compare/v1...main"
                }
             ],
             "commits": null,
-            "ci_actions": [
-               "https://github.com/canonical/indico-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/indico-operator/actions/workflows/promote_charm.yaml"
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "autocert-charm",
+            "default_branch": "master",
+            "new_commits": 15,
+            "url": "https://git.launchpad.net/autocert-charm",
+            "releases": [
+               {
+                  "id": 1666143335,
+                  "version": "rev79",
+                  "timestamp": 1666143335,
+                  "title": "rev79",
+                  "body": "",
+                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev79",
+                  "compare_url": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
+               },
+               {
+                  "id": 1666143335,
+                  "version": "rev80",
+                  "timestamp": 1666143335,
+                  "title": "rev80",
+                  "body": "",
+                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev80",
+                  "compare_url": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
+               },
+               {
+                  "id": 1666143335,
+                  "version": "rev81",
+                  "timestamp": 1666143335,
+                  "title": "rev81",
+                  "body": "",
+                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev81",
+                  "compare_url": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
+               }
             ],
-            "charm": {
-               "name": "indico",
-               "url": "https://snapcraft.io/indico",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 156,
-                     "timestamp": 1698251856
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 160,
-                     "timestamp": 1699608488
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 99,
-                     "timestamp": 1668766500
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "github-actions-exporter-operator",
+            "default_branch": "main",
+            "new_commits": 1,
+            "url": "https://github.com/canonical/github-actions-exporter-operator",
+            "releases": [
+               {
+                  "id": 123725761,
+                  "version": "rev6",
+                  "timestamp": 1696431232,
+                  "title": "Revision 6",
+                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:04 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.7.0 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/14\">#14</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev5...rev6\">https://github.com/canonical/github-actions-exporter-operator/compare/rev5&hellip;rev6</a></p>\n",
+                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev6",
+                  "compare_url": "https://github.com/canonical/github-actions-exporter-operator/compare/rev6...main"
+               },
+               {
+                  "id": 123680039,
+                  "version": "rev5",
+                  "timestamp": 1696421214,
+                  "title": "Revision 5",
+                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:19 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v1.10.13 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/13\">#13</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev4...rev5\">https://github.com/canonical/github-actions-exporter-operator/compare/rev4&hellip;rev5</a></p>\n",
+                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev5",
+                  "compare_url": "https://github.com/canonical/github-actions-exporter-operator/compare/rev5...main"
+               },
+               {
+                  "id": 122033473,
+                  "version": "rev4",
+                  "timestamp": 1695297507,
+                  "title": "Revision 4",
+                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 5</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:17 UTC on 21 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix prometheus_scrape integration by adding prometheus_alert_rules by <a href=\"http://github.com/amandahla\">@amandahla</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/8\">#8</a></li>\n<li>Configure Renovate by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/1\">#1</a></li>\n<li>chore(deps): update dependency jsonschema to v4.19.1 by <a href=\"http://github.com/renovate\">@renovate</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/12\">#12</a></li>\n<li>Fix maintainers in metadata by <a href=\"http://github.com/amandahla\">@amandahla</a> in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/9\">#9</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a href=\"http://github.com/renovate\">@renovate</a> made their first contribution in <a href=\"https://github.com/canonical/github-actions-exporter-operator/pull/1\">#1</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev2...rev4\">https://github.com/canonical/github-actions-exporter-operator/compare/rev2&hellip;rev4</a></p>\n",
+                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev4",
+                  "compare_url": "https://github.com/canonical/github-actions-exporter-operator/compare/rev4...main"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "content-cache-charm",
+            "default_branch": "master",
+            "new_commits": 50,
+            "url": "https://git.launchpad.net/content-cache-charm",
+            "releases": [
+               {
+                  "id": 1665611471,
+                  "version": "rev94",
+                  "timestamp": 1665611471,
+                  "title": "rev94",
+                  "body": "",
+                  "url": "https://git.launchpad.net/content-cache-charm/tag/?h=rev94",
+                  "compare_url": "https://git.launchpad.net/content-cache-charm/diff/?id=fb97c1af297bf84ebbc1f824c1a67a605bd9babe&id2=master"
+               },
+               {
+                  "id": 1662100341,
+                  "version": "rev93",
+                  "timestamp": 1662100341,
+                  "title": "rev93",
+                  "body": "",
+                  "url": "https://git.launchpad.net/content-cache-charm/tag/?h=rev93",
+                  "compare_url": "https://git.launchpad.net/content-cache-charm/diff/?id=fda52e52fc24ab863e4b2967a020c274fc489e81&id2=master"
+               },
+               {
+                  "id": 1661832299,
+                  "version": "rev92",
+                  "timestamp": 1661832299,
+                  "title": "rev92",
+                  "body": "",
+                  "url": "https://git.launchpad.net/content-cache-charm/tag/?h=rev92",
+                  "compare_url": "https://git.launchpad.net/content-cache-charm/diff/?id=b35631ad0dcccb6787827dd0beb8071ac1b7d418&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "smtp-relay-charm",
+            "default_branch": "master",
+            "new_commits": 8,
+            "url": "https://git.launchpad.net/smtp-relay-charm",
+            "releases": [
+               {
+                  "id": 1665609954,
+                  "version": "rev7",
+                  "timestamp": 1665609954,
+                  "title": "rev7",
+                  "body": "",
+                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev7",
+                  "compare_url": "https://git.launchpad.net/smtp-relay-charm/diff/?id=634b08502fee446ddce8da6d35e80e32be58cb80&id2=master"
+               },
+               {
+                  "id": 1665533235,
+                  "version": "rev6",
+                  "timestamp": 1665533235,
+                  "title": "rev6",
+                  "body": "",
+                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev6",
+                  "compare_url": "https://git.launchpad.net/smtp-relay-charm/diff/?id=49f39ebcc5c9446de655a55c85a790cbf6b73110&id2=master"
+               },
+               {
+                  "id": 1662000660,
+                  "version": "rev5",
+                  "timestamp": 1662000660,
+                  "title": "rev5",
+                  "body": "",
+                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev5",
+                  "compare_url": "https://git.launchpad.net/smtp-relay-charm/diff/?id=4cc60e3f11cb7cca6adbb15a05aa92b5ee1698b8&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "smtp-dkim-signing-charm",
+            "default_branch": "master",
+            "new_commits": 2,
+            "url": "https://git.launchpad.net/smtp-dkim-signing-charm",
+            "releases": [
+               {
+                  "id": 1665609391,
+                  "version": "rev3",
+                  "timestamp": 1665609391,
+                  "title": "rev3",
+                  "body": "",
+                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev3",
+                  "compare_url": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=756dd7be811f6cda7cea0e9cc2b7e365dd452b3a&id2=master"
+               },
+               {
+                  "id": 1665529709,
+                  "version": "rev2",
+                  "timestamp": 1665529709,
+                  "title": "rev2",
+                  "body": "",
+                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev2",
+                  "compare_url": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=772e48fc1a99c67171bd98b0fc11abb867d602ac&id2=master"
+               },
+               {
+                  "id": 1661755189,
+                  "version": "rev1",
+                  "timestamp": 1661755189,
+                  "title": "rev1",
+                  "body": "",
+                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev1",
+                  "compare_url": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=f3187b0a79b8101fe683882414717895e9aa0012&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "juju-introspection-proxy-charm",
+            "default_branch": "master",
+            "new_commits": 0,
+            "url": "https://git.launchpad.net/juju-introspection-proxy-charm",
+            "releases": [
+               {
+                  "id": 1665149994,
+                  "version": "rev2",
+                  "timestamp": 1665149994,
+                  "title": "rev2",
+                  "body": "",
+                  "url": "https://git.launchpad.net/juju-introspection-proxy-charm/tag/?h=rev2",
+                  "compare_url": "https://git.launchpad.net/juju-introspection-proxy-charm/diff/?id=200a836f7656d60efb664a8a8096df1c251381c4&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "ubuntu-repository-cache",
+            "default_branch": "master",
+            "new_commits": 50,
+            "url": "https://git.launchpad.net/ubuntu-repository-cache",
+            "releases": [
+               {
+                  "id": 1664328393,
+                  "version": "rev59",
+                  "timestamp": 1664328393,
+                  "title": "rev59",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ubuntu-repository-cache/tag/?h=rev59",
+                  "compare_url": "https://git.launchpad.net/ubuntu-repository-cache/diff/?id=ebb84e3d9c052ba0b1d3eba5e0082b588ea0291c&id2=master"
+               },
+               {
+                  "id": 1664324289,
+                  "version": "rev58",
+                  "timestamp": 1664324289,
+                  "title": "rev58",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ubuntu-repository-cache/tag/?h=rev58",
+                  "compare_url": "https://git.launchpad.net/ubuntu-repository-cache/diff/?id=79dd3248bb5ea9556361eabb8018357d45361f8b&id2=master"
+               },
+               {
+                  "id": 1664154920,
+                  "version": "rev57",
+                  "timestamp": 1664154920,
+                  "title": "rev57",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ubuntu-repository-cache/tag/?h=rev57",
+                  "compare_url": "https://git.launchpad.net/ubuntu-repository-cache/diff/?id=b411991e3fb4c9dbff9a2cb2ec075218f46d11af&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "mailman3-web-charm",
+            "default_branch": "master",
+            "new_commits": 6,
+            "url": "https://git.launchpad.net/mailman3-web-charm",
+            "releases": [
+               {
+                  "id": 1661837463,
+                  "version": "rev2",
+                  "timestamp": 1661837463,
+                  "title": "rev2",
+                  "body": "",
+                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev2",
+                  "compare_url": "https://git.launchpad.net/mailman3-web-charm/diff/?id=765506056f23708471349fad0c553363e4438aeb&id2=master"
+               },
+               {
+                  "id": 1631627191,
+                  "version": "rev1",
+                  "timestamp": 1631627191,
+                  "title": "rev1",
+                  "body": "",
+                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev1",
+                  "compare_url": "https://git.launchpad.net/mailman3-web-charm/diff/?id=3f5ac5471ba7295afabfcf5335690c7d80add166&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "apt-stresstest-charm",
+            "default_branch": "master",
+            "new_commits": 2,
+            "url": "https://git.launchpad.net/apt-stresstest-charm",
+            "releases": [
+               {
+                  "id": 1661822528,
+                  "version": "rev13",
+                  "timestamp": 1661822528,
+                  "title": "rev13",
+                  "body": "",
+                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev13",
+                  "compare_url": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=39c0903719263deedf2a06362f33a3a27c482040&id2=master"
+               },
+               {
+                  "id": 1614650162,
+                  "version": "rev12",
+                  "timestamp": 1614650162,
+                  "title": "rev12",
+                  "body": "",
+                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev12",
+                  "compare_url": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=5def53390850f0ee67464a64b34fbafde1d90e82&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "ntp-charm",
+            "default_branch": "master",
+            "new_commits": 4,
+            "url": "https://git.launchpad.net/ntp-charm",
+            "releases": [
+               {
+                  "id": 1661753169,
+                  "version": "rev50",
+                  "timestamp": 1661753169,
+                  "title": "rev50",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev50",
+                  "compare_url": "https://git.launchpad.net/ntp-charm/diff/?id=669ff5972f115c782095dbfc2872f4f39ee92209&id2=master"
+               },
+               {
+                  "id": 1660612253,
+                  "version": "rev49",
+                  "timestamp": 1660612253,
+                  "title": "rev49",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev49",
+                  "compare_url": "https://git.launchpad.net/ntp-charm/diff/?id=84ee0663302ec12a592adc7e105d6b17d65b8cf3&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "container-log-archive-charm",
+            "default_branch": "master",
+            "new_commits": 3,
+            "url": "https://git.launchpad.net/container-log-archive-charm",
+            "releases": [
+               {
+                  "id": 1659664959,
+                  "version": "rev21",
+                  "timestamp": 1659664959,
+                  "title": "rev21",
+                  "body": "",
+                  "url": "https://git.launchpad.net/container-log-archive-charm/tag/?h=rev21",
+                  "compare_url": "https://git.launchpad.net/container-log-archive-charm/diff/?id=2d92d8f1da496b1085799174fa3b89fa0cb5ee5e&id2=master"
+               },
+               {
+                  "id": 1658809170,
+                  "version": "rev20",
+                  "timestamp": 1658809170,
+                  "title": "rev20",
+                  "body": "",
+                  "url": "https://git.launchpad.net/container-log-archive-charm/tag/?h=rev20",
+                  "compare_url": "https://git.launchpad.net/container-log-archive-charm/diff/?id=c04ecaed35f07d8239f277dda402aca62b165ab0&id2=master"
+               },
+               {
+                  "id": 1642114498,
+                  "version": "rev16",
+                  "timestamp": 1642114498,
+                  "title": "rev16",
+                  "body": "",
+                  "url": "https://git.launchpad.net/container-log-archive-charm/tag/?h=rev16",
+                  "compare_url": "https://git.launchpad.net/container-log-archive-charm/diff/?id=66075535e5cde0e9b6b47eea6b9bd01392aaea89&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "ubuntu-mirror-charm",
+            "default_branch": "master",
+            "new_commits": 50,
+            "url": "https://git.launchpad.net/ubuntu-mirror-charm",
+            "releases": [
+               {
+                  "id": 1659597733,
+                  "version": "rev17",
+                  "timestamp": 1659597733,
+                  "title": "rev17",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev17",
+                  "compare_url": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=1c93562e9ab5a033fafe7a43fde4feca75acc122&id2=master"
+               },
+               {
+                  "id": 1636424958,
+                  "version": "rev10",
+                  "timestamp": 1636424958,
+                  "title": "rev10",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev10",
+                  "compare_url": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=f32f68414d12ccf92341c00762a5bf03243468bd&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "postgresql-charm",
+            "default_branch": "master",
+            "new_commits": 26,
+            "url": "https://git.launchpad.net/postgresql-charm",
+            "releases": [
+               {
+                  "id": 1655891323,
+                  "version": "rev241",
+                  "timestamp": 1655891323,
+                  "title": "rev241",
+                  "body": "",
+                  "url": "https://git.launchpad.net/postgresql-charm/tag/?h=rev241",
+                  "compare_url": "https://git.launchpad.net/postgresql-charm/diff/?id=f4424fed30c56ca52a65b749b7a29ab4303d3c49&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charm-k8s-postgresql",
+            "default_branch": "master",
+            "new_commits": 12,
+            "url": "https://git.launchpad.net/charm-k8s-postgresql",
+            "releases": [
+               {
+                  "id": 1655125120,
+                  "version": "rev4",
+                  "timestamp": 1655125120,
+                  "title": "rev4",
+                  "body": "",
+                  "url": "https://git.launchpad.net/charm-k8s-postgresql/tag/?h=rev4",
+                  "compare_url": "https://git.launchpad.net/charm-k8s-postgresql/diff/?id=3ad6cfb1cad71f05854b4378cb6ca08722ca986a&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "openvpn-server-charm",
+            "default_branch": "master",
+            "new_commits": 0,
+            "url": "https://git.launchpad.net/openvpn-server-charm",
+            "releases": [
+               {
+                  "id": 1653883439,
+                  "version": "rev2",
+                  "timestamp": 1653883439,
+                  "title": "rev2",
+                  "body": "",
+                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev2",
+                  "compare_url": "https://git.launchpad.net/openvpn-server-charm/diff/?id=815c065cf9845673880fc12238c69075bb26d4af&id2=master"
+               },
+               {
+                  "id": 1575653072,
+                  "version": "rev1",
+                  "timestamp": 1575653072,
+                  "title": "rev1",
+                  "body": "",
+                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev1",
+                  "compare_url": "https://git.launchpad.net/openvpn-server-charm/diff/?id=172ff9f7f03a0dca96c633912081204ca911d30e&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "bind-resolver-charm",
+            "default_branch": "master",
+            "new_commits": 0,
+            "url": "https://git.launchpad.net/bind-resolver-charm",
+            "releases": [
+               {
+                  "id": 1653866749,
+                  "version": "rev2",
+                  "timestamp": 1653866749,
+                  "title": "rev2",
+                  "body": "",
+                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev2",
+                  "compare_url": "https://git.launchpad.net/bind-resolver-charm/diff/?id=fff742df583089e6371afc733751e587bc1774fb&id2=master"
+               },
+               {
+                  "id": 1575653154,
+                  "version": "rev1",
+                  "timestamp": 1575653154,
+                  "title": "rev1",
+                  "body": "",
+                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev1",
+                  "compare_url": "https://git.launchpad.net/bind-resolver-charm/diff/?id=01e09d8b419b558724d7c2a22db54ce28dfa9612&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "internal-proxy-charm",
+            "default_branch": "master",
+            "new_commits": 2,
+            "url": "https://git.launchpad.net/internal-proxy-charm",
+            "releases": [
+               {
+                  "id": 1653437944,
+                  "version": "rev1",
+                  "timestamp": 1653437944,
+                  "title": "rev1",
+                  "body": "",
+                  "url": "https://git.launchpad.net/internal-proxy-charm/tag/?h=rev1",
+                  "compare_url": "https://git.launchpad.net/internal-proxy-charm/diff/?id=94f0040d8f2ef2186f70cbaf806ddb855492532b&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "ubuntu-syncproxy-charm",
+            "default_branch": "master",
+            "new_commits": 4,
+            "url": "https://git.launchpad.net/ubuntu-syncproxy-charm",
+            "releases": [
+               {
+                  "id": 1652411083,
+                  "version": "rev1",
+                  "timestamp": 1652411083,
+                  "title": "rev1",
+                  "body": "",
+                  "url": "https://git.launchpad.net/ubuntu-syncproxy-charm/tag/?h=rev1",
+                  "compare_url": "https://git.launchpad.net/ubuntu-syncproxy-charm/diff/?id=bbc1848fdad83c73707433f8f0e82df3d4d2d006&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "mailman3-core-charm",
+            "default_branch": "master",
+            "new_commits": 5,
+            "url": "https://git.launchpad.net/mailman3-core-charm",
+            "releases": [
+               {
+                  "id": 1647477010,
+                  "version": "rev4",
+                  "timestamp": 1647477010,
+                  "title": "rev4",
+                  "body": "",
+                  "url": "https://git.launchpad.net/mailman3-core-charm/tag/?h=rev4",
+                  "compare_url": "https://git.launchpad.net/mailman3-core-charm/diff/?id=36f3623ef8edda6f6b547e4c6c425382a0ad5e6b&id2=master"
+               }
+            ],
+            "commits": null,
+            "ci_actions": null,
+            "charm": null,
             "snap": null
          }
       ]
