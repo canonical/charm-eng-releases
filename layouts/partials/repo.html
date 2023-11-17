@@ -9,13 +9,15 @@
         <p class="u-no-margin--bottom" aria-release-date="{{ $release.timestamp }}">
         <small>
           <a class="p-icon--show" aria-controls="{{ $modal_id }}" role="modal-open"></a>
-          <a href="{{ $release.url }}">{{ $release.version }}</a> on
+          <a href="{{ $release.url }}">{{ $release.version }}</a>
           <time datetime="{{- int $release.timestamp }}">
-            {{- (time (int $release.timestamp)).Format "Jan 2, 2006" -}}
+            <span class="u-hide--small">
+              on {{ (time (int $release.timestamp)).Format "Jan 2, 2006" }}
+            </span>
           </time>
         </small>
         </p>
-        {{- partial "modal" (dict "title" $release.title "url" $release.url "body" $release.body "repo" $.repo "team" $.team "id" $modal_id) -}}
+        {{- partial "modal" (dict "title" $release.title "url" $release.url "body" $release.body "timestamp" $release.timestamp "repo" $.repo "team" $.team "id" $modal_id) -}}
       {{- end -}}
     {{- else if not (not .repo.commits) -}}
       {{- range $commit := .repo.commits -}}
@@ -23,17 +25,19 @@
         <p class="u-no-margin--bottom" aria-release-date="{{ $commit.timestamp }}">
         <small>
           <a class="p-icon--show" aria-controls="{{ $modal_id }}" role="modal-open"></a>
-          <a href="{{ $commit.url }}">{{ substr $commit.sha 0 7 }}</a> on
+          <a href="{{ $commit.url }}">{{ substr $commit.sha 0 7 }}</a>
           <time datetime="{{- int $commit.timestamp }}">
-            {{- (time (int $commit.timestamp)).Format "Jan 2, 2006" -}}
+            <span class="u-hide--small">
+              on {{ (time (int $commit.timestamp)).Format "Jan 2, 2006" }}
+            </span>
           </time>
         </small>
         </p>
-        {{- partial "modal" (dict "title" (substr $commit.sha 0 7) "url" $commit.url "body" $commit.message "repo" $.repo "team" $.team "id" $modal_id) -}} 
+        {{- partial "modal" (dict "title" (substr $commit.sha 0 7) "url" $commit.url "body" $commit.message "timestamp" $commit.timestamp "repo" $.repo "team" $.team "id" $modal_id) -}} 
       {{- end -}}
     {{- end -}}
   </td>
-  <td class="u-align--center ciactions" {{- if eq (len (where .team.repos ".ci_actions" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
+  <td class="u-align--center ciactions u-hide--small" {{- if eq (len (where .team.repos ".ci_actions" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
     {{- if not (not .repo.ci_actions) -}}
       {{- range .repo.ci_actions -}}
         <a href="{{- . -}}"><img src="{{- . -}}/badge.svg"></a><br />
@@ -42,7 +46,7 @@
     <img src="https://img.shields.io/badge/CI%20Status-Unknown-lightgrey"><br />
     {{- end -}}
   </td>
-  <td class="u-align--right status" aria-new-commits="{{- .repo.new_commits }}" style="max-width: 15%">
+  <td class="u-align--right status u-hide--small" aria-new-commits="{{- .repo.new_commits }}" style="max-width: 15%">
     {{- $n := int .repo.new_commits -}} 
     {{- if eq $n 0 -}}
       <div class="p-status-label--positive">Up to date</div>
@@ -64,7 +68,7 @@
     {{- partial "artifact-detail" (dict "store" "Snapcraft" "repo" .repo.name "artifact" .repo.snap) -}}
   {{- else -}}
     <!-- There was no snap/charm badge found, so just display the disabled down arrow to keep the column spacing correct. -->
-    <td class="u-align--right showmore" style="max-width: 10%">
+    <td class="u-align--right showmore" style="max-width: 5rem">
       <button class="p-button--base u-toggle is-dense is-inline" disabled><i class="button-icon p-icon--chevron-down"></i></button>
     </td>
   {{- end -}}

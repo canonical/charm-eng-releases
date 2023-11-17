@@ -1,12 +1,19 @@
 <div class="p-modal" id="{{ .id }}" style="display: none">
   <section class="p-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <header class="p-modal__header">
-      <h2 class="p-modal__title" id="modal-title">
-        {{ .repo.name }} - {{ .title }}
-        <a class="p-icon--external-link" href="{{ .url }}"></a>
-      </h2>
+      <h2 class="p-modal__title" id="modal-title">{{ .repo.name }}</h2>
       <button class="p-modal__close" aria-controls="{{- .id -}}" role="modal-close">Close</button>
     </header>
+    <table style="max-width: 20rem">
+      <tr>
+        <td><strong>Release/Commit:</strong></td>
+        <td>{{ .title }} <a class="p-icon--external-link" href="{{ .url }}"></a></td>
+      </tr>
+      <tr>
+        <td><strong>Date</strong></td>
+        <td>{{ (time (int .timestamp)).Format "Jan 2, 2006" }}</td>
+      </tr>
+    </table>
     <div>{{ safeHTML (replace .body "h2" "h3") }}</div>
     <footer class="p-modal__footer">
       <button class="u-no-margin--bottom" aria-controls="{{ .id }}" role="modal-close">
