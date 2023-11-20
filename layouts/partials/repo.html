@@ -37,24 +37,24 @@
       {{- end -}}
     {{- end -}}
   </td>
-  <td class="u-align--center ciactions u-hide--small" {{- if eq (len (where .team.repos ".ci_actions" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
-    {{- if not (not .repo.ci_actions) -}}
-      {{- range .repo.ci_actions -}}
+  <td class="u-align--center ciactions u-hide--small" {{- if eq (len (where .team.repos ".ciActions" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
+    {{- if not (not .repo.ciActions) -}}
+      {{- range .repo.ciActions -}}
         <a target="_blank" href="{{- . -}}"><img src="{{- . -}}/badge.svg"></a><br />
       {{- end -}}
     {{- else -}}
     <img src="https://img.shields.io/badge/CI%20Status-Unknown-lightgrey"><br />
     {{- end -}}
   </td>
-  <td class="u-align--right status u-hide--small" aria-new-commits="{{- .repo.new_commits }}" style="max-width: 15%">
-    {{- $n := int .repo.new_commits -}} 
+  <td class="u-align--right status u-hide--small" aria-new-commits="{{- .repo.newCommits }}" style="max-width: 15%">
+    {{- $n := int .repo.newCommits -}} 
     {{- if eq $n 0 -}}
       <div class="p-status-label--positive">Up to date</div>
     {{- else if lt $n 0 -}}
       <div class="p-status-label">New commits</div>
     {{- else }} 
       <div class='p-status-label{{- (cond (and (ge $n 15) (le $n 50)) "--caution" (cond (ge $n 50) "--negative" "")) -}}'>
-        <a target="_blank" href="{{- (index (.repo.releases) 0).compare_url }}">
+        <a target="_blank" href="{{- (index (.repo.releases) 0).compareUrl }}">
           {{ $n }} commit{{ cond (gt $n 1) "s" "" }}
         </a>
       </div>
