@@ -27,11 +27,6 @@ jobs:
           hugo-version: "latest"
           extended: true
 
-      - name: Baseline API rate limit
-        run: gh api rate_limit
-        env:
-          GH_TOKEN: ${{ secrets.API_TOKEN }}
-
       - name: Rebuild the site
         run: |
           wget -qO releasegen.tar.gz "https://github.com/jnsgruk/releasegen/releases/download/v${RELEASEGEN_VERSION}/releasegen_${RELEASEGEN_VERSION}_linux_x86_64.tar.gz"
@@ -41,20 +36,6 @@ jobs:
         env:
           RELEASEGEN_TOKEN: ${{ secrets.API_TOKEN }}
           RELEASEGEN_VERSION: "0.3.0"
-
-      - name: Debug broken data.json
-        if: ${{ failure() }}
-        uses: actions/upload-artifact@v3
-        with:
-          name: data-json
-          if-no-files-found: error
-          path: |
-            data/repos.json
-
-      - name: Post-update API rate limit usage
-        run: gh api rate_limit
-        env:
-          GH_TOKEN: ${{ secrets.API_TOKEN }}
 
       - name: Commit changes to data file
         run: |
