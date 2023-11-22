@@ -1,4 +1,14 @@
 <tr id="{{ .repo.name }}" class="repository-row">
+  <td class="u-align--center u-hide--small forge">
+      {{- $iconClass := "" -}}
+      {{- if strings.Contains .repo.url "github.com" -}}
+        {{ $iconClass = "repo-icon-gh" }}
+      {{- else if strings.Contains .repo.url "launchpad.net" -}}
+        {{ $iconClass = "repo-icon-lp" }}
+      {{- end -}}
+      <div class="repo-icon {{ $iconClass }}">
+    </div>
+  </td>
   <td class="repository">
     <a class="repository-link" target="_blank" href="{{ .repo.url }}">{{ .repo.name }}</a>
   </td>
