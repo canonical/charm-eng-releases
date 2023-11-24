@@ -2362,7 +2362,7 @@
          },
          {
             "name": "catalogue-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/catalogue-k8s-operator",
             "releases": [
                {
@@ -7481,6 +7481,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "8b1ac02baa1615dd0fefa5e0d4616d8ff495555c",
+                  "author": "Berkay Tekin Öz",
+                  "timestamp": 1700827285,
+                  "message": "<p>Change golang version used in Dockerfile (<a target=\"_blank\" href=\"https://github.com/canonical/hostpath-provisioner/pull/12\">#12</a>)</p>\n\n<ul>\n<li><p>Change golang version used in Dockerfile</p></li>\n\n<li><p>Rolling back kubernetes dependency version and bumping sig-storage-lib version</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/hostpath-provisioner/commit/8b1ac02baa1615dd0fefa5e0d4616d8ff495555c"
+               },
+               {
                   "sha": "d2fca3077de1306963cf30600b2d901b46ba87dc",
                   "author": "Berkay Tekin Öz",
                   "timestamp": 1700820985,
@@ -7493,13 +7500,6 @@
                   "timestamp": 1668143289,
                   "message": "<p>increase resource limits for provisioner pod to 64Mi (<a target=\"_blank\" href=\"https://github.com/canonical/hostpath-provisioner/pull/8\">#8</a>)</p>\n",
                   "url": "https://github.com/canonical/hostpath-provisioner/commit/3d9b03ba91d9310ff5fed8b55de4a7441f863249"
-               },
-               {
-                  "sha": "fddaf587082b0c8d999c96d0d9ac6e889dd558c9",
-                  "author": "Angelos Kolaitis",
-                  "timestamp": 1664959573,
-                  "message": "<p>Fix permissions and cleanup of PVCs with custom pvDir (<a target=\"_blank\" href=\"https://github.com/canonical/hostpath-provisioner/pull/7\">#7</a>)</p>\n",
-                  "url": "https://github.com/canonical/hostpath-provisioner/commit/fddaf587082b0c8d999c96d0d9ac6e889dd558c9"
                }
             ],
             "ciActions": [],
@@ -7883,26 +7883,26 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 6270,
-                     "timestamp": 1700691845
+                     "revision": 6276,
+                     "timestamp": 1700826723
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 6273,
-                     "timestamp": 1700694865
+                     "revision": 6277,
+                     "timestamp": 1700827133
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 6271,
-                     "timestamp": 1700692308
+                     "revision": 6278,
+                     "timestamp": 1700827275
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 6272,
-                     "timestamp": 1700692727
+                     "revision": 6279,
+                     "timestamp": 1700827755
                   },
                   {
                      "track": "dqlite",
@@ -9323,6 +9323,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "b0f50d5af42424c6f8df20c5ea2eba81f781553c",
+                  "author": "Konstantinos Tsakalozos",
+                  "timestamp": 1700825306,
+                  "message": "<p>Do not test in our CI addons we test on GH (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-community-addons/pull/211\">#211</a>)</p>\n",
+                  "url": "https://github.com/canonical/microk8s-community-addons/commit/b0f50d5af42424c6f8df20c5ea2eba81f781553c"
+               },
+               {
                   "sha": "1c69db975d66593766227e7e365b353fb5890409",
                   "author": "Konstantinos Tsakalozos",
                   "timestamp": 1700730499,
@@ -9335,13 +9342,6 @@
                   "timestamp": 1699872597,
                   "message": "<p>Upgrade linkerd v2.14.3 (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-community-addons/pull/208\">#208</a>)</p>\n\n<ul>\n<li>update keda version</li>\n</ul>\n\n<p>update command to apply</p>\n\n<ul>\n<li><p>update addons version yaml</p></li>\n\n<li><p>upgrade linkerd to v 2.14.3</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/microk8s-community-addons/commit/8b2d415b150bf998c126a383ed495162ca06eb09"
-               },
-               {
-                  "sha": "ea5ada65882c9b531680aa641db01e00cf409a29",
-                  "author": "Angelos Kolaitis",
-                  "timestamp": 1699011754,
-                  "message": "<p>Skip sosivio tests on low spec machines (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-community-addons/pull/205\">#205</a>)</p>\n",
-                  "url": "https://github.com/canonical/microk8s-community-addons/commit/ea5ada65882c9b531680aa641db01e00cf409a29"
                }
             ],
             "ciActions": [],
@@ -11019,9 +11019,18 @@
       "repos": [
          {
             "name": "vault-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
+               {
+                  "id": 131346443,
+                  "version": "rev51",
+                  "timestamp": 1700823857,
+                  "title": "Revision 51",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.2\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:35 UTC on 24 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Use fqdn instead of IP address to connect to vault by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/81\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/81\">#81</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev50...rev51\">https://github.com/canonical/vault-k8s-operator/compare/rev50&hellip;rev51</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev51",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev51...main"
+               },
                {
                   "id": 130656204,
                   "version": "rev50",
@@ -11039,15 +11048,6 @@
                   "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.2\n       resource-revision: 61</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:24 UTC on 17 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: Adds Charmhub badge by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/74\">#74</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev48...rev49\">https://github.com/canonical/vault-k8s-operator/compare/rev48&hellip;rev49</a></p>\n",
                   "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev49",
                   "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev49...main"
-               },
-               {
-                  "id": 129868641,
-                  "version": "rev48",
-                  "timestamp": 1700179758,
-                  "title": "Revision 48",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.2\n       resource-revision: 60</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:46 UTC on 17 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Moves ownership to TLS team by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/75\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/75\">#75</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev47...rev48\">https://github.com/canonical/vault-k8s-operator/compare/rev47&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev48",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev48...main"
                }
             ],
             "commits": null,
@@ -11065,8 +11065,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 50,
-                     "timestamp": 1700571129
+                     "revision": 51,
+                     "timestamp": 1700825739
                   }
                ],
                "channels": [
@@ -13202,7 +13202,7 @@
          },
          {
             "name": "pgbouncer-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -15029,6 +15029,15 @@
             "url": "https://github.com/canonical/wordpress-k8s-operator",
             "releases": [
                {
+                  "id": 131345412,
+                  "version": "rev68",
+                  "timestamp": 1700824464,
+                  "title": "Revision 68",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:27 UTC on 24 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix default theme and plugin list inconsistency by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/172\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/172\">#172</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev67...rev68\">https://github.com/canonical/wordpress-k8s-operator/compare/rev67&hellip;rev68</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev68",
+                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev68...main"
+               },
+               {
                   "id": 130954376,
                   "version": "rev67",
                   "timestamp": 1700642395,
@@ -15045,15 +15054,6 @@
                   "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 61</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:21 UTC on 21 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/167\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/167\">#167</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev65...rev66\">https://github.com/canonical/wordpress-k8s-operator/compare/rev65&hellip;rev66</a></p>\n",
                   "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev66",
                   "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev66...main"
-               },
-               {
-                  "id": 129932122,
-                  "version": "rev65",
-                  "timestamp": 1700222135,
-                  "title": "Revision 65",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 60</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:07 UTC on 17 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update wordpress version in rock to 6.4.1 by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/156\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/156\">#156</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev64...rev65\">https://github.com/canonical/wordpress-k8s-operator/compare/rev64&hellip;rev65</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev65",
-                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev65...main"
                }
             ],
             "commits": null,
@@ -15086,8 +15086,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 67,
-                     "timestamp": 1700643162
+                     "revision": 68,
+                     "timestamp": 1700825233
                   }
                ],
                "channels": [
