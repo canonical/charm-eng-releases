@@ -2572,6 +2572,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "63c09cf14942ea2b4275a645a2297725a1a6bddc",
+                  "author": "Ibrahim Awwad",
+                  "timestamp": 1701350935,
+                  "message": "<p>A more detailed list of clients (<a target=\"_blank\" href=\"https://github.com/canonical/cos-alerter/pull/63\">#63</a>)</p>\n\n<ul>\n<li><p>A more detailed list of clients</p></li>\n\n<li><p>fix for CodeQL cross-site scripting warning</p></li>\n\n<li><p>Hashing keys and refactoring config structure</p></li>\n\n<li><p>Duplicate Clientid validation</p></li>\n\n<li><p>bump version &amp; adjust validate hash</p></li>\n\n<li><p>refactor _validate_hashes</p></li>\n\n<li><p>adding authentication to changelog</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/cos-alerter/commit/63c09cf14942ea2b4275a645a2297725a1a6bddc"
+               },
+               {
                   "sha": "6a0d5721cfe4bd849c87ce59b2bf560956253233",
                   "author": "Luca Bello",
                   "timestamp": 1699965966,
@@ -2584,13 +2591,6 @@
                   "timestamp": 1698760146,
                   "message": "<p>allow user to set listen address and port (<a target=\"_blank\" href=\"https://github.com/canonical/cos-alerter/pull/55\">#55</a>)</p>\n\n<ul>\n<li><p>allow user to set listen address and port</p></li>\n\n<li><p>bump rock version</p></li>\n\n<li><p>changelog entry</p></li>\n\n<li><p>update codeowners</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/cos-alerter/commit/e058422d9d45a8873eea2c9624dbc01e4c2190a5"
-               },
-               {
-                  "sha": "a26342b73b7649dc7ef604fdbb8980d6d2956aa1",
-                  "author": "Simon Aronsson",
-                  "timestamp": 1693224925,
-                  "message": "<p>add snapcraft recipe (<a target=\"_blank\" href=\"https://github.com/canonical/cos-alerter/pull/52\">#52</a>)</p>\n\n<ul>\n<li><p>add snapcraft recipe</p></li>\n\n<li><p>add snap ci workflows</p></li>\n\n<li><p>Update CHANGELOG.md</p></li>\n\n<li><p>Update snapcraft.yaml</p></li>\n\n<li><p>remove setup.py</p></li>\n\n<li><p>should stay as unreleased until the actual package is bumped</p></li>\n\n<li><p>no need to bump as cos-alerter did not change</p></li>\n\n<li><p>put back setup.py</p></li>\n\n<li><p>use packages instead of package-dir</p></li>\n\n<li><p>ignore snaps</p></li>\n\n<li><p>comment explaining setup.py</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Dylan Stephano-Shachter <a href=\"mailto:dylan.stephano-shachter@canonical.com\">dylan.stephano-shachter@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/cos-alerter/commit/a26342b73b7649dc7ef604fdbb8980d6d2956aa1"
                }
             ],
             "ciActions": [
@@ -12640,41 +12640,83 @@
             "snap": null
          },
          {
-            "name": "mysql-operator",
+            "name": "mysql-k8s-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/mysql-operator",
+            "url": "https://github.com/canonical/mysql-k8s-operator",
             "releases": [
                {
-                  "id": 131940142,
-                  "version": "rev202",
-                  "timestamp": 1701262934,
-                  "title": "Revision 202",
-                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\">#353</a></a></li>\n<li>[DPE-2886] Use labels for internal secrets by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/348\">#348</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\">#353</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev201...rev202\">https://github.com/canonical/mysql-operator/compare/rev201&hellip;rev202</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev202",
-                  "compareUrl": "https://github.com/canonical/mysql-operator/compare/rev202...main"
+                  "id": 132098626,
+                  "version": "rev111",
+                  "timestamp": 1701341977,
+                  "title": "Revision 111",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 103}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2981  discourse gatekeeper by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/336\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/336\">#336</a></a></li>\n<li>add badges by <a target=\"_blank\" href=\"https://github.com/delgod\">@delgod</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/338\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/338\">#338</a></a></li>\n<li>Fix bug that resulted in wrong output displayed from list-backups action by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/340\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/340\">#340</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/309\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/309\">#309</a></a></li>\n<li>[DPE-2885] Secret labels by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/333\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/333\">#333</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev110...rev111\">https://github.com/canonical/mysql-k8s-operator/compare/rev110&hellip;rev111</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev111",
+                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev111...main"
                },
                {
-                  "id": 131789757,
-                  "version": "rev201",
-                  "timestamp": 1701181380,
-                  "title": "Revision 201",
-                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use reusable integration test workflow by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/354\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/354\">#354</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev200...rev201\">https://github.com/canonical/mysql-operator/compare/rev200&hellip;rev201</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev201",
-                  "compareUrl": "https://github.com/canonical/mysql-operator/compare/rev201...main"
+                  "id": 126323575,
+                  "version": "rev110",
+                  "timestamp": 1698062106,
+                  "title": "Revision 110",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 106}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2661 single unit upgrade fixes by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/324\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/324\">#324</a></a></li>\n<li>DPE-2774 ensure cluster metadata node addresses consistency by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/328\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/328\">#328</a></a></li>\n<li>DPE-2653 profile limit option by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/318\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/318\">#318</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev109...rev110\">https://github.com/canonical/mysql-k8s-operator/compare/rev109&hellip;rev110</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev110",
+                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev110...main"
                },
                {
-                  "id": 131733756,
-                  "version": "rev200",
-                  "timestamp": 1701173944,
-                  "title": "Revision 200",
-                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2805 discourse gatekeeper by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/345\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/345\">#345</a></a></li>\n<li>Fix parallel backup tests by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/355\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/355\">#355</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev199...rev200\">https://github.com/canonical/mysql-operator/compare/rev199&hellip;rev200</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev200",
-                  "compareUrl": "https://github.com/canonical/mysql-operator/compare/rev200...main"
+                  "id": 125393604,
+                  "version": "rev109",
+                  "timestamp": 1697459017,
+                  "title": "Revision 109",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 105}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2737] Fix unittest tox defaults to run Juju3 tests by default by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/320\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/320\">#320</a></a></li>\n<li>Prevent starting logrotate dispatcher or flush mysql logs until unit initialized by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/323\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/323\">#323</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev108...rev109\">https://github.com/canonical/mysql-k8s-operator/compare/rev108&hellip;rev109</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev109",
+                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev109...main"
                }
             ],
             "commits": null,
-            "ciActions": [],
-            "charm": null,
+            "ciActions": [
+               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/release.yaml",
+               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/ci.yaml",
+               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/sync_docs.yaml"
+            ],
+            "charm": {
+               "name": "mysql-k8s",
+               "url": "https://charmhub.io/mysql-k8s",
+               "releases": [
+                  {
+                     "track": "8.0",
+                     "channel": "stable",
+                     "revision": 99,
+                     "timestamp": 1695033818
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "candidate",
+                     "revision": 99,
+                     "timestamp": 1694762781
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "beta",
+                     "revision": 110,
+                     "timestamp": 1698853444
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "edge",
+                     "revision": 111,
+                     "timestamp": 1701351245
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "8.0"
+               ]
+            },
             "snap": null
          },
          {
@@ -12874,83 +12916,41 @@
             "snap": null
          },
          {
-            "name": "mysql-k8s-operator",
-            "newCommits": 5,
-            "url": "https://github.com/canonical/mysql-k8s-operator",
+            "name": "mysql-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/mysql-operator",
             "releases": [
                {
-                  "id": 126323575,
-                  "version": "rev110",
-                  "timestamp": 1698062106,
-                  "title": "Revision 110",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 106}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2661 single unit upgrade fixes by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/324\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/324\">#324</a></a></li>\n<li>DPE-2774 ensure cluster metadata node addresses consistency by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/328\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/328\">#328</a></a></li>\n<li>DPE-2653 profile limit option by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/318\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/318\">#318</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev109...rev110\">https://github.com/canonical/mysql-k8s-operator/compare/rev109&hellip;rev110</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev110",
-                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev110...main"
+                  "id": 131940142,
+                  "version": "rev202",
+                  "timestamp": 1701262934,
+                  "title": "Revision 202",
+                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\">#353</a></a></li>\n<li>[DPE-2886] Use labels for internal secrets by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/348\">#348</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/353\">#353</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev201...rev202\">https://github.com/canonical/mysql-operator/compare/rev201&hellip;rev202</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev202",
+                  "compareUrl": "https://github.com/canonical/mysql-operator/compare/rev202...main"
                },
                {
-                  "id": 125393604,
-                  "version": "rev109",
-                  "timestamp": 1697459017,
-                  "title": "Revision 109",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 105}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2737] Fix unittest tox defaults to run Juju3 tests by default by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/320\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/320\">#320</a></a></li>\n<li>Prevent starting logrotate dispatcher or flush mysql logs until unit initialized by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/323\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/323\">#323</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev108...rev109\">https://github.com/canonical/mysql-k8s-operator/compare/rev108&hellip;rev109</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev109",
-                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev109...main"
+                  "id": 131789757,
+                  "version": "rev201",
+                  "timestamp": 1701181380,
+                  "title": "Revision 201",
+                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use reusable integration test workflow by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/354\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/354\">#354</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev200...rev201\">https://github.com/canonical/mysql-operator/compare/rev200&hellip;rev201</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev201",
+                  "compareUrl": "https://github.com/canonical/mysql-operator/compare/rev201...main"
                },
                {
-                  "id": 124989079,
-                  "version": "rev108",
-                  "timestamp": 1697200861,
-                  "title": "Revision 108",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 104}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2205] data-platform-libs v19 external secrets by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/314\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/314\">#314</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev107...rev108\">https://github.com/canonical/mysql-k8s-operator/compare/rev107&hellip;rev108</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev108",
-                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev108...main"
+                  "id": 131733756,
+                  "version": "rev200",
+                  "timestamp": 1701173944,
+                  "title": "Revision 200",
+                  "body": "<p>Released to 8.0/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-2805 discourse gatekeeper by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/345\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/345\">#345</a></a></li>\n<li>Fix parallel backup tests by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/355\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/355\">#355</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-operator/compare/rev199...rev200\">https://github.com/canonical/mysql-operator/compare/rev199&hellip;rev200</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-operator/releases/tag/rev200",
+                  "compareUrl": "https://github.com/canonical/mysql-operator/compare/rev200...main"
                }
             ],
             "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/release.yaml",
-               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/ci.yaml",
-               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/sync_docs.yaml"
-            ],
-            "charm": {
-               "name": "mysql-k8s",
-               "url": "https://charmhub.io/mysql-k8s",
-               "releases": [
-                  {
-                     "track": "8.0",
-                     "channel": "stable",
-                     "revision": 99,
-                     "timestamp": 1695033818
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "candidate",
-                     "revision": 99,
-                     "timestamp": 1694762781
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "beta",
-                     "revision": 110,
-                     "timestamp": 1698853444
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "edge",
-                     "revision": 110,
-                     "timestamp": 1698092628
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "8.0"
-               ]
-            },
+            "ciActions": [],
+            "charm": null,
             "snap": null
          },
          {
@@ -13444,6 +13444,68 @@
             "snap": null
          },
          {
+            "name": "postgresql-test-app",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/postgresql-test-app",
+            "releases": [
+               {
+                  "id": 132091793,
+                  "version": "rev25",
+                  "timestamp": 1701347823,
+                  "title": "Revision 25",
+                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Conditionally request roles via the legacy interface by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/40\">#40</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev24...rev25\">https://github.com/canonical/postgresql-test-app/compare/rev24&hellip;rev25</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev25",
+                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev25...main"
+               },
+               {
+                  "id": 132060858,
+                  "version": "rev24",
+                  "timestamp": 1701339894,
+                  "title": "Revision 24",
+                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[charm] Update dependency ops to ^2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/38\">#38</a></a></li>\n<li>Lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/39\">#39</a></a></li>\n<li>Update data-platform-workflows to v6.3.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/36\">#36</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev23...rev24\">https://github.com/canonical/postgresql-test-app/compare/rev23&hellip;rev24</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev24",
+                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev24...main"
+               },
+               {
+                  "id": 131532221,
+                  "version": "rev23",
+                  "timestamp": 1701082820,
+                  "title": "Revision 23",
+                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update data-platform-workflows to v6.3.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/34\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/34\">#34</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev22...rev23\">https://github.com/canonical/postgresql-test-app/compare/rev22&hellip;rev23</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev23",
+                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev23...main"
+               }
+            ],
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "postgresql-test-app",
+               "url": "https://charmhub.io/postgresql-test-app",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 10,
+                     "timestamp": 1697020328
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 25,
+                     "timestamp": 1701349081
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "postgresql-k8s-operator",
             "newCommits": 1,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
@@ -13520,88 +13582,6 @@
             "snap": null
          },
          {
-            "name": "postgresql-patroni-container",
-            "newCommits": 5,
-            "url": "https://github.com/canonical/postgresql-patroni-container",
-            "releases": [
-               {
-                  "id": 64772469,
-                  "version": "v0.1.0",
-                  "timestamp": 1649958730,
-                  "title": "v0.1.0",
-                  "body": "",
-                  "url": "https://github.com/canonical/postgresql-patroni-container/releases/tag/v0.1.0",
-                  "compareUrl": "https://github.com/canonical/postgresql-patroni-container/compare/v0.1.0...main"
-               }
-            ],
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "postgresql-test-app",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/postgresql-test-app",
-            "releases": [
-               {
-                  "id": 132091793,
-                  "version": "rev25",
-                  "timestamp": 1701347823,
-                  "title": "Revision 25",
-                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Conditionally request roles via the legacy interface by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/40\">#40</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev24...rev25\">https://github.com/canonical/postgresql-test-app/compare/rev24&hellip;rev25</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev25",
-                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev25...main"
-               },
-               {
-                  "id": 132060858,
-                  "version": "rev24",
-                  "timestamp": 1701339894,
-                  "title": "Revision 24",
-                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[charm] Update dependency ops to ^2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/38\">#38</a></a></li>\n<li>Lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/39\">#39</a></a></li>\n<li>Update data-platform-workflows to v6.3.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/36\">#36</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev23...rev24\">https://github.com/canonical/postgresql-test-app/compare/rev23&hellip;rev24</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev24",
-                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev24...main"
-               },
-               {
-                  "id": 131532221,
-                  "version": "rev23",
-                  "timestamp": 1701082820,
-                  "title": "Revision 23",
-                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update data-platform-workflows to v6.3.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/34\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/34\">#34</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev22...rev23\">https://github.com/canonical/postgresql-test-app/compare/rev22&hellip;rev23</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev23",
-                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev23...main"
-               }
-            ],
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "postgresql-test-app",
-               "url": "https://charmhub.io/postgresql-test-app",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 10,
-                     "timestamp": 1697020328
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 25,
-                     "timestamp": 1701349081
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "redis-k8s-operator",
             "newCommits": 2,
             "url": "https://github.com/canonical/redis-k8s-operator",
@@ -13632,6 +13612,26 @@
                   "body": "<p>resources:</p>\n\n<pre><code>-  cert-file: \n   resource-revision: 6\n-  ca-cert-file: \n   resource-revision: 4\n-  key-file: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:</p>\n\n<ul>\n<li>redis-image\nresource-revision: 3\nReleased to &lsquo;latest/edge&rsquo; at 10:05 UTC on 16 Jun 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bump action versions and simplify release.yaml by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/60\">#60</a></a></li>\n<li>Add missing parameter by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/62\">#62</a></a></li>\n<li>Move charmed-redis OCI from DockerHub to GitHub Container Registry by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/64\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/64\">#64</a></a></li>\n<li>Sync GitHub issues to Jira by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\">#65</a></a></li>\n<li>Update bug_report.md issue template by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/66\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/66\">#66</a></a></li>\n<li>[DPE-2097] Fix integration tests by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/68\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/68\">#68</a></a></li>\n<li>[DPE-2097] Trigger relation changed when pod get restarted by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/67\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/67\">#67</a></a></li>\n<li>[DPE-2132] Build and deploy on ubuntu 22 by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/71\">#71</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\">#65</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/redis-k8s-operator/compare/rev23...rev24\">https://github.com/canonical/redis-k8s-operator/compare/rev23&hellip;rev24</a></p>\n",
                   "url": "https://github.com/canonical/redis-k8s-operator/releases/tag/rev24",
                   "compareUrl": "https://github.com/canonical/redis-k8s-operator/compare/rev24...main"
+               }
+            ],
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "postgresql-patroni-container",
+            "newCommits": 5,
+            "url": "https://github.com/canonical/postgresql-patroni-container",
+            "releases": [
+               {
+                  "id": 64772469,
+                  "version": "v0.1.0",
+                  "timestamp": 1649958730,
+                  "title": "v0.1.0",
+                  "body": "",
+                  "url": "https://github.com/canonical/postgresql-patroni-container/releases/tag/v0.1.0",
+                  "compareUrl": "https://github.com/canonical/postgresql-patroni-container/compare/v0.1.0...main"
                }
             ],
             "commits": null,
@@ -14593,10 +14593,76 @@
       "team": "IS",
       "repos": [
          {
+            "name": "github-runner-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/github-runner-operator",
+            "releases": [
+               {
+                  "id": 132099985,
+                  "version": "rev72",
+                  "timestamp": 1701351501,
+                  "title": "Revision 72",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:42 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Support all other GitHub events by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/154\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/154\">#154</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev71...rev72\">https://github.com/canonical/github-runner-operator/compare/rev71&hellip;rev72</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev72",
+                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev72...main"
+               },
+               {
+                  "id": 132049521,
+                  "version": "rev71",
+                  "timestamp": 1701336143,
+                  "title": "Revision 71",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:26 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Change aproxy listen port to 54969 by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/155\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/155\">#155</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev70...rev71\">https://github.com/canonical/github-runner-operator/compare/rev70&hellip;rev71</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev71",
+                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev71...main"
+               },
+               {
+                  "id": 132038572,
+                  "version": "rev70",
+                  "timestamp": 1701330593,
+                  "title": "Revision 70",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:54 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix repo-policy-compliance in integration test by <a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/156\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/156\">#156</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev69...rev70\">https://github.com/canonical/github-runner-operator/compare/rev69&hellip;rev70</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev70",
+                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev70...main"
+               }
+            ],
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "github-runner-operator",
+               "url": "https://charmhub.io/github-runner-operator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 5,
+                     "timestamp": 1627943262
+                  }
+               ],
+               "channels": [
+                  "beta"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "content-cache-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/content-cache-k8s-operator",
             "releases": [
+               {
+                  "id": 132099525,
+                  "version": "rev37",
+                  "timestamp": 1701351229,
+                  "title": "Revision 37",
+                  "body": "<p>resources:\n    -  nginx-prometheus-exporter-image: nginx/nginx-prometheus-exporter:0.11.0\n       resource-revision: 1\n    -  content-cache-image: undefined\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:39 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[upload-charm-docs] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev36...rev37\">https://github.com/canonical/content-cache-k8s-operator/compare/rev36&hellip;rev37</a></p>\n",
+                  "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev37",
+                  "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev37...main"
+               },
                {
                   "id": 132084602,
                   "version": "rev36",
@@ -14614,15 +14680,6 @@
                   "body": "<p>resources:\n    -  nginx-prometheus-exporter-image: nginx/nginx-prometheus-exporter:0.11.0\n       resource-revision: 1\n    -  content-cache-image: undefined\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:41 UTC on 28 Nov 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 12:47 UTC on 28 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm documentation to mention required external access by <a target=\"_blank\" href=\"https://github.com/mthaddon\">@mthaddon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/59\">#59</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/mthaddon\">@mthaddon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev34...rev35\">https://github.com/canonical/content-cache-k8s-operator/compare/rev34&hellip;rev35</a></p>\n",
                   "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev35",
                   "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev35...main"
-               },
-               {
-                  "id": 125920099,
-                  "version": "rev34",
-                  "timestamp": 1697785501,
-                  "title": "Revision 34",
-                  "body": "<p>resources:\n    -  nginx-prometheus-exporter-image: nginx/nginx-prometheus-exporter:0.11.0\n       resource-revision: 1\n    -  content-cache-image: undefined\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:18 UTC on 20 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(digest): Add digest pinning by <a target=\"_blank\" href=\"https://github.com/merkata\">@merkata</a> in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/58\">#58</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/merkata\">@merkata</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/58\">#58</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev33...rev34\">https://github.com/canonical/content-cache-k8s-operator/compare/rev33&hellip;rev34</a></p>\n",
-                  "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev34",
-                  "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev34...main"
                }
             ],
             "commits": null,
@@ -14649,8 +14706,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 36,
-                     "timestamp": 1701348372
+                     "revision": 37,
+                     "timestamp": 1701351577
                   }
                ],
                "channels": [
@@ -14733,63 +14790,6 @@
                "channels": [
                   "stable",
                   "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "github-runner-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/github-runner-operator",
-            "releases": [
-               {
-                  "id": 132049521,
-                  "version": "rev71",
-                  "timestamp": 1701336143,
-                  "title": "Revision 71",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:26 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Change aproxy listen port to 54969 by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/155\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/155\">#155</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev70...rev71\">https://github.com/canonical/github-runner-operator/compare/rev70&hellip;rev71</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev71",
-                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev71...main"
-               },
-               {
-                  "id": 132038572,
-                  "version": "rev70",
-                  "timestamp": 1701330593,
-                  "title": "Revision 70",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:54 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix repo-policy-compliance in integration test by <a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/156\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/156\">#156</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev69...rev70\">https://github.com/canonical/github-runner-operator/compare/rev69&hellip;rev70</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev70",
-                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev70...main"
-               },
-               {
-                  "id": 131500791,
-                  "version": "rev69",
-                  "timestamp": 1701065436,
-                  "title": "Revision 69",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:15 UTC on 27 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>COS: Add a gauge for active runners by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/153\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/153\">#153</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev68...rev69\">https://github.com/canonical/github-runner-operator/compare/rev68&hellip;rev69</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev69",
-                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev69...main"
-               }
-            ],
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "github-runner-operator",
-               "url": "https://charmhub.io/github-runner-operator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 5,
-                     "timestamp": 1627943262
-                  }
-               ],
-               "channels": [
-                  "beta"
                ],
                "tracks": [
                   "latest"
@@ -15757,7 +15757,7 @@
          },
          {
             "name": "discourse-gatekeeper",
-            "newCommits": 5,
+            "newCommits": 6,
             "url": "https://github.com/canonical/discourse-gatekeeper",
             "releases": [
                {
