@@ -13349,6 +13349,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "6073d8bf69de53e1900a0cfe1210a98868375b29",
+                  "author": "Judit Novak",
+                  "timestamp": 1701681953,
+                  "message": "<p>[DPE-3106] Prometheus Exporter added to snap (<a target=\"_blank\" href=\"https://github.com/canonical/opensearch-snap/pull/45\">#45</a>)</p>\n\n<ul>\n<li><p>Prometheus Exporter added to snap</p></li>\n\n<li><p>Testing the presence of Prometheus Exporter</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/opensearch-snap/commit/6073d8bf69de53e1900a0cfe1210a98868375b29"
+               },
+               {
                   "sha": "a03222c6daa754448c674c479c8134a4967ccf72",
                   "author": "Mehdi Bendriss",
                   "timestamp": 1697621183,
@@ -13361,13 +13368,6 @@
                   "timestamp": 1695819234,
                   "message": "<p>[DPE-1464] Sync folder layout with OpenSearch DEB package</p>\n\n<p>Changes the folder structure to a format similar to DEB package, with:\n* <span class=\"math inline\">\\({SNAP_DATA}/etc/opensearch: folder structure for configuration files\n* \\)</span>{SNAP_DATA}/usr/share/opensearch: folder for the binaries: scripts, java packages, plugins, modules, etc\n* <span class=\"math inline\">\\({SNAP_COMMON}/var/lib/opensearch: folder to hold the actual user data\n* \\)</span>{SNAP_COMMON}/var/log/opensearch: logging folder</p>\n\n<p>At installation, updates the default opensearch.yml to use the new folder structure by default.</p>\n\n<p>Implements <a href=\"https://warthogs.atlassian.net/browse/DPE-2350\">DPE-2350</a> and extends the testing workflow to cover the following scenarios:\n* Installation / removal of the backup plugin\n* Add / remove keys from keystore\n* Upgrade test</p>\n",
                   "url": "https://github.com/canonical/opensearch-snap/commit/f8353c5caa90a93666a613e7eb64b728eaa1f30a"
-               },
-               {
-                  "sha": "e9964ef7b8c41df8bdd193bc126b3ff3a2a21065",
-                  "author": "Mehdi Bendriss",
-                  "timestamp": 1694169059,
-                  "message": "<p>[DPE-2121] Added support for performance analyzer (<a target=\"_blank\" href=\"https://github.com/canonical/opensearch-snap/pull/25\">#25</a>)</p>\n\n<ul>\n<li><p>Added support for performance analyzer</p></li>\n\n<li><p>Added support for performance analyzer</p></li>\n\n<li><p>Changed path of perf analyzer</p></li>\n\n<li><p>add shared_mem perf analyzer</p></li>\n\n<li><p>Added perf-analyzer support</p></li>\n\n<li><p>Added perf-analyzer support</p></li>\n\n<li><p>Fixed contributor readme</p></li>\n\n<li><p>Added logs for snapd version</p></li>\n\n<li><p>refreshing snapd</p></li>\n\n<li><p>Update snapd on test</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/opensearch-snap/commit/e9964ef7b8c41df8bdd193bc126b3ff3a2a21065"
                }
             ],
             "ciActions": [],
@@ -13740,9 +13740,18 @@
          },
          {
             "name": "redis-k8s-operator",
-            "newCommits": 3,
+            "newCommits": 0,
             "url": "https://github.com/canonical/redis-k8s-operator",
             "releases": [
+               {
+                  "id": 132482707,
+                  "version": "rev27",
+                  "timestamp": 1701362309,
+                  "title": "Revision 27",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  key-file: \n   resource-revision: 1\n-  cert-file: \n   resource-revision: 6\n-  ca-cert-file: \n   resource-revision: 4\n</code></pre>\n\n<p>Static resources:</p>\n\n<ul>\n<li>redis-image\nresource-revision: 3\nReleased to &lsquo;latest/edge&rsquo; at 10:58 UTC on 4 Dec 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update discourse-k8s integration tests to match new implementation by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/76\">#76</a></a></li>\n<li>Support aliasing the redis relation by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/75\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/75\">#75</a></a></li>\n<li>Update lib documentation to include how to access relation data by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/redis-k8s-operator/compare/rev26...rev27\">https://github.com/canonical/redis-k8s-operator/compare/rev26&hellip;rev27</a></p>\n",
+                  "url": "https://github.com/canonical/redis-k8s-operator/releases/tag/rev27",
+                  "compareUrl": "https://github.com/canonical/redis-k8s-operator/compare/rev27...main"
+               },
                {
                   "id": 110462055,
                   "version": "rev26",
@@ -13760,15 +13769,6 @@
                   "body": "<p>resources:</p>\n\n<pre><code>-  key-file: \n   resource-revision: 1\n-  cert-file: \n   resource-revision: 6\n-  ca-cert-file: \n   resource-revision: 4\n</code></pre>\n\n<p>Static resources:</p>\n\n<ul>\n<li>redis-image\nresource-revision: 3\nReleased to &lsquo;latest/edge&rsquo; at 11:55 UTC on 29 Jun 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-1180 Update icon to the common for Data Platform charms by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/72\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/72\">#72</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/redis-k8s-operator/compare/rev24...rev25\">https://github.com/canonical/redis-k8s-operator/compare/rev24&hellip;rev25</a></p>\n",
                   "url": "https://github.com/canonical/redis-k8s-operator/releases/tag/rev25",
                   "compareUrl": "https://github.com/canonical/redis-k8s-operator/compare/rev25...main"
-               },
-               {
-                  "id": 108850403,
-                  "version": "rev24",
-                  "timestamp": 1686900712,
-                  "title": "Revision 24",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  cert-file: \n   resource-revision: 6\n-  ca-cert-file: \n   resource-revision: 4\n-  key-file: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:</p>\n\n<ul>\n<li>redis-image\nresource-revision: 3\nReleased to &lsquo;latest/edge&rsquo; at 10:05 UTC on 16 Jun 2023</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bump action versions and simplify release.yaml by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/60\">#60</a></a></li>\n<li>Add missing parameter by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/62\">#62</a></a></li>\n<li>Move charmed-redis OCI from DockerHub to GitHub Container Registry by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/64\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/64\">#64</a></a></li>\n<li>Sync GitHub issues to Jira by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\">#65</a></a></li>\n<li>Update bug_report.md issue template by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/66\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/66\">#66</a></a></li>\n<li>[DPE-2097] Fix integration tests by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/68\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/68\">#68</a></a></li>\n<li>[DPE-2097] Trigger relation changed when pod get restarted by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/67\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/67\">#67</a></a></li>\n<li>[DPE-2132] Build and deploy on ubuntu 22 by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/71\">#71</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/redis-k8s-operator/pull/65\">#65</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/redis-k8s-operator/compare/rev23...rev24\">https://github.com/canonical/redis-k8s-operator/compare/rev23&hellip;rev24</a></p>\n",
-                  "url": "https://github.com/canonical/redis-k8s-operator/releases/tag/rev24",
-                  "compareUrl": "https://github.com/canonical/redis-k8s-operator/compare/rev24...main"
                }
             ],
             "commits": null,
