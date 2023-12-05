@@ -6006,6 +6006,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "608f6798d0b23acd8c0411c9d9e8faa554311b3f",
+                  "author": "Kimonas Sotirchos",
+                  "timestamp": 1701781627,
+                  "message": "<p>Add badges to the repo (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/760\">#760</a>)</p>\n\n<p>This will ensure that we comply with the expectations in\n<a href=\"https://releases.juju.is/?team=MLOps\">https://releases.juju.is/?team=MLOps</a></p>\n",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/608f6798d0b23acd8c0411c9d9e8faa554311b3f"
+               },
+               {
                   "sha": "eadae1229245a4f55199cb69e55d9b36d8f2d2bd",
                   "author": "Kimonas Sotirchos",
                   "timestamp": 1701076431,
@@ -6018,17 +6025,122 @@
                   "timestamp": 1700833500,
                   "message": "<p>scripts: Update latest/edge to run 1.8 tests (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/757\">#757</a>)</p>\n\n<p>Update scripts to return test path for 1.8 (./tests-bundle/1.8/) when the\nrelease is latest/edge.</p>\n",
                   "url": "https://github.com/canonical/bundle-kubeflow/commit/386787d9bce0051787054da387a94b3c8b4b3464"
-               },
-               {
-                  "sha": "232b616fa27043efc7aa16363002abcac82c6c5c",
-                  "author": "Kimonas Sotirchos",
-                  "timestamp": 1700751144,
-                  "message": "<p>Update image scanning to include 1.8 (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/754\">#754</a>)</p>\n\n<p>Extend the GH Action that scans all images to also run on 1.8.</p>\n",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/232b616fa27043efc7aa16363002abcac82c6c5c"
                }
             ],
-            "ciActions": [],
-            "charm": null,
+            "ciActions": [
+               "https://github.com/canonical/bundle-kubeflow/actions/workflows/release-bundle-to-charmhub.yaml",
+               "https://github.com/canonical/bundle-kubeflow/actions/workflows/scan-images.yaml",
+               "https://github.com/canonical/bundle-kubeflow/actions/workflows/deploy-eks.yaml"
+            ],
+            "charm": {
+               "name": "kubeflow",
+               "url": "https://charmhub.io/kubeflow",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 414,
+                     "timestamp": 1701444700
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 294,
+                     "timestamp": 1643038444
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 404,
+                     "timestamp": 1696935041
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 410,
+                     "timestamp": 1700558117
+                  },
+                  {
+                     "track": "1.8",
+                     "channel": "stable",
+                     "revision": 414,
+                     "timestamp": 1700659148
+                  },
+                  {
+                     "track": "1.8",
+                     "channel": "beta",
+                     "revision": 411,
+                     "timestamp": 1700646944
+                  },
+                  {
+                     "track": "1.8",
+                     "channel": "edge",
+                     "revision": 413,
+                     "timestamp": 1700659140
+                  },
+                  {
+                     "track": "1.7",
+                     "channel": "stable",
+                     "revision": 409,
+                     "timestamp": 1698406991
+                  },
+                  {
+                     "track": "1.7",
+                     "channel": "beta",
+                     "revision": 408,
+                     "timestamp": 1698406959
+                  },
+                  {
+                     "track": "1.7",
+                     "channel": "edge",
+                     "revision": 407,
+                     "timestamp": 1698406949
+                  },
+                  {
+                     "track": "1.6",
+                     "channel": "stable",
+                     "revision": 329,
+                     "timestamp": 1662585927
+                  },
+                  {
+                     "track": "1.6",
+                     "channel": "beta",
+                     "revision": 326,
+                     "timestamp": 1661259096
+                  },
+                  {
+                     "track": "1.6",
+                     "channel": "edge",
+                     "revision": 328,
+                     "timestamp": 1662565286
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "stable",
+                     "revision": 321,
+                     "timestamp": 1656610442
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "edge",
+                     "revision": 320,
+                     "timestamp": 1656610309
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "1.8",
+                  "1.7",
+                  "1.6",
+                  "1.4"
+               ]
+            },
             "snap": null
          },
          {
@@ -8075,26 +8187,26 @@
                   {
                      "track": "1.28",
                      "channel": "edge",
-                     "revision": 6298,
-                     "timestamp": 1701518953
+                     "revision": 6310,
+                     "timestamp": 1701778460
                   },
                   {
                      "track": "1.28",
                      "channel": "edge",
-                     "revision": 6301,
-                     "timestamp": 1701520063
+                     "revision": 6323,
+                     "timestamp": 1701779772
                   },
                   {
                      "track": "1.28",
                      "channel": "edge",
-                     "revision": 6299,
-                     "timestamp": 1701519367
+                     "revision": 6324,
+                     "timestamp": 1701779902
                   },
                   {
                      "track": "1.28",
                      "channel": "edge",
-                     "revision": 6300,
-                     "timestamp": 1701519455
+                     "revision": 6326,
+                     "timestamp": 1701780084
                   },
                   {
                      "track": "latest",
@@ -8249,26 +8361,26 @@
                   {
                      "track": "1.28-strict",
                      "channel": "edge",
-                     "revision": 6226,
-                     "timestamp": 1700079277
+                     "revision": 6309,
+                     "timestamp": 1701778377
                   },
                   {
                      "track": "1.28-strict",
                      "channel": "edge",
-                     "revision": 6231,
-                     "timestamp": 1700079917
+                     "revision": 6317,
+                     "timestamp": 1701779195
                   },
                   {
                      "track": "1.28-strict",
                      "channel": "edge",
-                     "revision": 6230,
-                     "timestamp": 1700079837
+                     "revision": 6318,
+                     "timestamp": 1701779275
                   },
                   {
                      "track": "1.28-strict",
                      "channel": "edge",
-                     "revision": 6233,
-                     "timestamp": 1700080089
+                     "revision": 6322,
+                     "timestamp": 1701779669
                   },
                   {
                      "track": "1.27-strict",
@@ -8315,20 +8427,20 @@
                   {
                      "track": "1.27-strict",
                      "channel": "edge",
-                     "revision": 6247,
-                     "timestamp": 1700084574
+                     "revision": 6328,
+                     "timestamp": 1701780265
                   },
                   {
                      "track": "1.27-strict",
                      "channel": "edge",
-                     "revision": 6242,
-                     "timestamp": 1700083659
+                     "revision": 6316,
+                     "timestamp": 1701779095
                   },
                   {
                      "track": "1.27-strict",
                      "channel": "edge",
-                     "revision": 6248,
-                     "timestamp": 1700084723
+                     "revision": 6320,
+                     "timestamp": 1701779485
                   },
                   {
                      "track": "1.27",
@@ -8375,20 +8487,20 @@
                   {
                      "track": "1.27",
                      "channel": "edge",
-                     "revision": 6251,
-                     "timestamp": 1700086212
+                     "revision": 6321,
+                     "timestamp": 1701779558
                   },
                   {
                      "track": "1.27",
                      "channel": "edge",
-                     "revision": 6243,
-                     "timestamp": 1700083741
+                     "revision": 6319,
+                     "timestamp": 1701779408
                   },
                   {
                      "track": "1.27",
                      "channel": "edge",
-                     "revision": 6249,
-                     "timestamp": 1700084804
+                     "revision": 6325,
+                     "timestamp": 1701779983
                   },
                   {
                      "track": "1.26-strict",
@@ -8435,20 +8547,20 @@
                   {
                      "track": "1.26-strict",
                      "channel": "edge",
-                     "revision": 6246,
-                     "timestamp": 1700084325
+                     "revision": 6311,
+                     "timestamp": 1701778541
                   },
                   {
                      "track": "1.26-strict",
                      "channel": "edge",
-                     "revision": 6240,
-                     "timestamp": 1700083492
+                     "revision": 6312,
+                     "timestamp": 1701778751
                   },
                   {
                      "track": "1.26-strict",
                      "channel": "edge",
-                     "revision": 6244,
-                     "timestamp": 1700083871
+                     "revision": 6315,
+                     "timestamp": 1701779024
                   },
                   {
                      "track": "1.26",
@@ -8495,20 +8607,20 @@
                   {
                      "track": "1.26",
                      "channel": "edge",
-                     "revision": 6250,
-                     "timestamp": 1700085719
+                     "revision": 6327,
+                     "timestamp": 1701780165
                   },
                   {
                      "track": "1.26",
                      "channel": "edge",
-                     "revision": 6241,
-                     "timestamp": 1700083577
+                     "revision": 6313,
+                     "timestamp": 1701778836
                   },
                   {
                      "track": "1.26",
                      "channel": "edge",
-                     "revision": 6245,
-                     "timestamp": 1700083953
+                     "revision": 6314,
+                     "timestamp": 1701778921
                   },
                   {
                      "track": "1.25-strict",
@@ -9790,6 +9902,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "ef4a5429f176a69a2cead83b4f1041c39279ef67",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779690,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-rock/commit/ef4a5429f176a69a2cead83b4f1041c39279ef67"
+               },
+               {
                   "sha": "e20ca675e3f4cd930435e10b410ad546344b07be",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1698765730,
@@ -9802,13 +9921,6 @@
                   "timestamp": 1698233049,
                   "message": "<p>chore: Adds semantic PR title validation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-rock/pull/10\">#10</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-nssf-rock/commit/7407db3d9e635dfa4285af1a564645aacf47d717"
-               },
-               {
-                  "sha": "8c72f76cc917db8929b17ecfff8722e7e8d526aa",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695325202,
-                  "message": "<p>Update issue template (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-rock/pull/9\">#9</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-rock/commit/8c72f76cc917db8929b17ecfff8722e7e8d526aa"
                }
             ],
             "ciActions": [],
@@ -9854,6 +9966,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "2305f8e020961f9ed43e9952778c9d3b6634af48",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779712,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-rock/commit/2305f8e020961f9ed43e9952778c9d3b6634af48"
+               },
+               {
                   "sha": "847d3aeee5f48973036a64d01429692bfd394f66",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1698765717,
@@ -9866,13 +9985,6 @@
                   "timestamp": 1698233200,
                   "message": "<p>chore: Adds semantic PR title validation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-rock/pull/10\">#10</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-nrf-rock/commit/d4b65250dc85a8c23b870ed2b2ee9ce249647037"
-               },
-               {
-                  "sha": "f0eb798e56d9a06234e3f6edce383d06ee24b4a8",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695325211,
-                  "message": "<p>Update issue template (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-rock/pull/9\">#9</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-rock/commit/f0eb798e56d9a06234e3f6edce383d06ee24b4a8"
                }
             ],
             "ciActions": [],
@@ -10083,6 +10195,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "d51c273fdbccf05c871a42cc79a80ab6ad365111",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779733,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/13\">#13</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/d51c273fdbccf05c871a42cc79a80ab6ad365111"
+               },
+               {
                   "sha": "0b4625fe365beeb03cdf5d5b5d909e4ea4c95a28",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1698765705,
@@ -10095,13 +10214,6 @@
                   "timestamp": 1698099349,
                   "message": "<p>chore: Adds semantic PR title validation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/11\">#11</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-ausf-rock/commit/dd7b8c6a890a8b840bfc26015d1f4b1f782a4e02"
-               },
-               {
-                  "sha": "c70d19bfe1123f73a433103f1faa1a0fc1d0c41f",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695325302,
-                  "message": "<p>Update bug report template (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/10\">#10</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/c70d19bfe1123f73a433103f1faa1a0fc1d0c41f"
                }
             ],
             "ciActions": [],
@@ -10315,25 +10427,25 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "5132dbaaf427d736e43a0b219bdab39f25013e8a",
+                  "author": "renovate[bot]",
+                  "timestamp": 1701780497,
+                  "message": "<p>fix(deps): update dependency <a target=\"_blank\" href=\"https://github.com/mui\">@mui</a>/material to v5.14.20 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/221\">#221</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms/commit/5132dbaaf427d736e43a0b219bdab39f25013e8a"
+               },
+               {
+                  "sha": "f97e30a738cc4f466e0c0aa41d90f2d4d7fbfe93",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779657,
+                  "message": "<p>feat: Bumps node to v20 in rock (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/220\">#220</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms/commit/f97e30a738cc4f466e0c0aa41d90f2d4d7fbfe93"
+               },
+               {
                   "sha": "7484f35927c520bf4e451751a1b4069d1e5aaa17",
                   "author": "renovate[bot]",
                   "timestamp": 1701723557,
                   "message": "<p>fix(deps): update dependency <a target=\"_blank\" href=\"https://github.com/types\">@types</a>/react to v18.2.42 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/219\">#219</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms/commit/7484f35927c520bf4e451751a1b4069d1e5aaa17"
-               },
-               {
-                  "sha": "6093bdde2b8c12ca085cdbe85a900f946f13b017",
-                  "author": "renovate[bot]",
-                  "timestamp": 1701722633,
-                  "message": "<p>fix(deps): update dependency tailwindcss to v3.3.6 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/218\">#218</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms/commit/6093bdde2b8c12ca085cdbe85a900f946f13b017"
-               },
-               {
-                  "sha": "dc3539cda335df1b98bc2f43f12a3241c1ede3d3",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1701720046,
-                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/217\">#217</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms/commit/dc3539cda335df1b98bc2f43f12a3241c1ede3d3"
                }
             ],
             "ciActions": [],
@@ -10614,6 +10726,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "68d9b72053ae122b3db1808704a03a3ae0fcaa09",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779679,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/68d9b72053ae122b3db1808704a03a3ae0fcaa09"
+               },
+               {
                   "sha": "e9c424116b5d90a8c9c24bb56e3897c2d8323fe1",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1698816569,
@@ -10626,13 +10745,6 @@
                   "timestamp": 1698233184,
                   "message": "<p>chore: Adds semantic PR title validation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/10\">#10</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-pcf-rock/commit/d0b4158893dcc83ecc6a4a0f479459af2ff1a498"
-               },
-               {
-                  "sha": "557dafc62571b5ee132919de750dd1e6c28c07a3",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695325193,
-                  "message": "<p>Update issue template (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/9\">#9</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/557dafc62571b5ee132919de750dd1e6c28c07a3"
                }
             ],
             "ciActions": [],
@@ -10756,6 +10868,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "889eaae002c565242f680e73fb35c9dd1c7e45aa",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779618,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/889eaae002c565242f680e73fb35c9dd1c7e45aa"
+               },
+               {
                   "sha": "e3ffb9a68d8e1241ba4b812b8e9ad0af5a21fe28",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1698816592,
@@ -10768,13 +10887,6 @@
                   "timestamp": 1698233112,
                   "message": "<p>chore: Adds semantic PR title validation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/10\">#10</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-smf-rock/commit/99d2e1c50710d46e8b8f7dd460e1d932d5541e9b"
-               },
-               {
-                  "sha": "36e22260e3a233443e87b6854d87480fb94a386a",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1695376306,
-                  "message": "<p>Update issue template (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/9\">#9</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/36e22260e3a233443e87b6854d87480fb94a386a"
                }
             ],
             "ciActions": [],
@@ -10969,6 +11081,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "f5342f2bfd052d386646dc500e989a18cb7c6779",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779606,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-rock/pull/11\">#11</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-rock/commit/f5342f2bfd052d386646dc500e989a18cb7c6779"
+               },
+               {
                   "sha": "9181b9bccda3bdc2810d0e4fa16078792b8520c5",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1698816620,
@@ -10981,13 +11100,6 @@
                   "timestamp": 1698233130,
                   "message": "<p>chore: Adds semantic PR title validation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-rock/pull/9\">#9</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-udr-rock/commit/481da9e18a1a82765e68a5f9b57da3c0fe9eb211"
-               },
-               {
-                  "sha": "3794febbce577b4e16d2d77ba99dcbc323a31bec",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1695281442,
-                  "message": "<p>Enable auto-merging Renovate PRs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-rock/pull/8\">#8</a>)</p>\n\n<ul>\n<li><p>Enable auto-merging Renovate PRs</p></li>\n\n<li><p>Update CODEOWNERS</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-rock/commit/3794febbce577b4e16d2d77ba99dcbc323a31bec"
                }
             ],
             "ciActions": [],
@@ -11001,6 +11113,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "fc76982135d44f50ccf996981570a6a6ea96f27d",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779588,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/fc76982135d44f50ccf996981570a6a6ea96f27d"
+               },
+               {
                   "sha": "c34e2460009cef8496bce4837f25c9a87cc6e427",
                   "author": "Guillaume Belanger",
                   "timestamp": 1698233124,
@@ -11013,13 +11132,6 @@
                   "timestamp": 1697812900,
                   "message": "<p>Chore: Use upstream project for UPF configurations (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/10\">#10</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/0ce3ab1644f500c3e36b1dd355bd1029e541d21b"
-               },
-               {
-                  "sha": "1f68b248a8a62d7aed404764b8d86ed17f923303",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1695282954,
-                  "message": "<p>Enable auto-merging Renovate PRs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/9\">#9</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/1f68b248a8a62d7aed404764b8d86ed17f923303"
                }
             ],
             "ciActions": [],
@@ -11088,6 +11200,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "1a9b68745b594e2e9c139f0668b478e1077f1335",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1701779567,
+                  "message": "<p>chore: Uses new rockcraft.yaml syntax for base (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/9\">#9</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/1a9b68745b594e2e9c139f0668b478e1077f1335"
+               },
+               {
                   "sha": "fa8b6b26304898246ea72190622391e81ec7f245",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1698816642,
@@ -11100,13 +11219,6 @@
                   "timestamp": 1695281608,
                   "message": "<p>Enable auto-merging Renovate PRs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/7\">#7</a>)</p>\n\n<ul>\n<li><p>Enable auto-merging Renovate PRs</p></li>\n\n<li><p>Checking if adding @ before app/renovate-approve removes PR warning</p></li>\n\n<li><p>Reverting last change</p></li>\n\n<li><p>Update CODEOWNERS</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/b3f49b70bc3c855b1e465aebe86be97da06641f5"
-               },
-               {
-                  "sha": "02261a569d5114181e8a53afff83c505243361b7",
-                  "author": "saltiyazan",
-                  "timestamp": 1693902122,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/6\">#6</a> from canonical/dev-uses-issues-workflow</p>\n\n<p>Adds issues workflow</p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/02261a569d5114181e8a53afff83c505243361b7"
                }
             ],
             "ciActions": [],
@@ -11928,7 +12040,7 @@
          },
          {
             "name": "manual-tls-certificates-operator",
-            "newCommits": 3,
+            "newCommits": 4,
             "url": "https://github.com/canonical/manual-tls-certificates-operator",
             "releases": [
                {
