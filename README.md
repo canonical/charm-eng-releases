@@ -40,7 +40,7 @@ it somewhere safe.
 sudo snap install go --classic
 
 # Get the latest releasegen binary
-go install github.com/jnsgruk/releasegen@latest
+go install github.com/jnsgruk/releasegen/cmd/releasegen@latest
 
 # Set your Github API token as an environment variable
 export RELEASEGEN_TOKEN=ghp_aBcDeFgHiJkLmNoPqRsTuVwXyZ
