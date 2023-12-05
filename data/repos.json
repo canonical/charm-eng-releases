@@ -649,26 +649,26 @@
                   {
                      "track": "3.1",
                      "channel": "edge",
-                     "revision": 25720,
-                     "timestamp": 1701743688
+                     "revision": 25731,
+                     "timestamp": 1701787224
                   },
                   {
                      "track": "3.1",
                      "channel": "edge",
-                     "revision": 25721,
-                     "timestamp": 1701743754
+                     "revision": 25732,
+                     "timestamp": 1701787307
                   },
                   {
                      "track": "3.1",
                      "channel": "edge",
-                     "revision": 25722,
-                     "timestamp": 1701743826
+                     "revision": 25733,
+                     "timestamp": 1701787383
                   },
                   {
                      "track": "3.1",
                      "channel": "edge",
-                     "revision": 25723,
-                     "timestamp": 1701743907
+                     "revision": 25734,
+                     "timestamp": 1701787484
                   },
                   {
                      "track": "latest",
@@ -697,26 +697,26 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 25720,
-                     "timestamp": 1701743692
+                     "revision": 25731,
+                     "timestamp": 1701787228
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 25721,
-                     "timestamp": 1701743757
+                     "revision": 25732,
+                     "timestamp": 1701787311
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 25722,
-                     "timestamp": 1701743829
+                     "revision": 25733,
+                     "timestamp": 1701787394
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 25723,
-                     "timestamp": 1701743910
+                     "revision": 25734,
+                     "timestamp": 1701787488
                   },
                   {
                      "track": "4.0",
@@ -5876,7 +5876,7 @@
          },
          {
             "name": "charmed-kubeflow-workflows",
-            "newCommits": 8,
+            "newCommits": 9,
             "url": "https://github.com/canonical/charmed-kubeflow-workflows",
             "releases": [
                {
@@ -6575,6 +6575,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "788924a8cbec9b9b4b9ee9dbd442b6ea048f0386",
+                  "author": "Orfeas Kourkakis",
+                  "timestamp": 1701786532,
+                  "message": "<p>feat(ci): Introduce automation for building, pushing and testing ROCKs (<a target=\"_blank\" href=\"https://github.com/canonical/seldonio-rocks/pull/64\">#64</a>)</p>\n\n<ul>\n<li>ci: Introduce workflows in order to:\n\n<ul>\n<li>Build and publish ROCK on dispatch.</li>\n<li>Build, scan and run sanity and integration tests on PR for each ROCK that\nwas modified by it.</li>\n</ul></li>\n<li>tests: Add <code>sanity</code> tox environment that replicates the <code>unit</code> one without the\n<code>copy-rock-to-docker</code> and <code>rockcraft pack</code> part. This way, those steps\nare decoupled and tests can be triggered from integrate.yaml workflow.</li>\n<li>files: Add <code>.gitignore</code></li>\n</ul>\n\n<p>Closes <a target=\"_blank\" href=\"https://github.com/canonical/seldonio-rocks/pull/58\">#58</a></p>\n",
+                  "url": "https://github.com/canonical/seldonio-rocks/commit/788924a8cbec9b9b4b9ee9dbd442b6ea048f0386"
+               },
+               {
                   "sha": "679cafe4b146e01d54b3af9cee6dab6f2f2be70a",
                   "author": "Kimonas Sotirchos",
                   "timestamp": 1699980494,
@@ -6587,13 +6594,6 @@
                   "timestamp": 1695718495,
                   "message": "<p>sklearnserver: Update ROCK (<a target=\"_blank\" href=\"https://github.com/canonical/seldonio-rocks/pull/48\">#48</a>)</p>\n\n<p>Update rockcraft.yaml file:</p>\n\n<ul>\n<li>Add sufficient comments about implementation</li>\n<li>Pin seldon_core dependency in order to use seldon-core-microservice\nof the same version as the server built.</li>\n<li>Rearrange lines to improve readability</li>\n<li>Use working-dir instead of cd</li>\n<li>Update integration tests command and unit tests deps</li>\n</ul>\n\n<p>Closes <a target=\"_blank\" href=\"https://github.com/canonical/seldonio-rocks/pull/44\">#44</a>, <a target=\"_blank\" href=\"https://github.com/canonical/seldonio-rocks/pull/47\">#47</a></p>\n",
                   "url": "https://github.com/canonical/seldonio-rocks/commit/f3f8fe867db6270dcb17bb93ee9a0c6642783b4a"
-               },
-               {
-                  "sha": "e13188e1c800a6e8fe9ff9b9df0dbe017afca308",
-                  "author": "i-chvets",
-                  "timestamp": 1694439196,
-                  "message": "<p>Kf 4247 feat mlserver rock (<a target=\"_blank\" href=\"https://github.com/canonical/seldonio-rocks/pull/40\">#40</a>)</p>\n\n<ul>\n<li>feat: mlserver initial rock\n<a href=\"https://github.com/canonical/seldonio-rocks/issues/38\">https://github.com/canonical/seldonio-rocks/issues/38</a></li>\n</ul>\n\n<p>Summary of changes:\n- Initial ROCK with all runtimes.\n- Updated version of source code to match upstream.\n- Modified wheel installation section.\n- Moved Conda scripts processing in proper place.\n- Reverted to 20.04\n- Added unit test for rock\n- Removed tar package because it is in the base\n- Removed gzip</p>\n",
-                  "url": "https://github.com/canonical/seldonio-rocks/commit/e13188e1c800a6e8fe9ff9b9df0dbe017afca308"
                }
             ],
             "ciActions": [],
@@ -15218,6 +15218,186 @@
       "team": "IS",
       "repos": [
          {
+            "name": "wordpress-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/wordpress-k8s-operator",
+            "releases": [
+               {
+                  "id": 132693334,
+                  "version": "rev73",
+                  "timestamp": 1701788380,
+                  "title": "Revision 73",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 68</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:32 UTC on 5 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Mandate host and port in database information by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/174\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/174\">#174</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev72...rev73\">https://github.com/canonical/wordpress-k8s-operator/compare/rev72&hellip;rev73</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev73",
+                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev73...main"
+               },
+               {
+                  "id": 132267596,
+                  "version": "rev72",
+                  "timestamp": 1701428708,
+                  "title": "Revision 72",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 67</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:14 UTC on 1 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>store and write proxy config to wp-config.php by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\">#171</a></a></li>\n<li>Add a new average request duration panel to the Grafana dashboard by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/178\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/178\">#178</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev70...rev72\">https://github.com/canonical/wordpress-k8s-operator/compare/rev70&hellip;rev72</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev72",
+                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev72...main"
+               },
+               {
+                  "id": 132060133,
+                  "version": "rev71",
+                  "timestamp": 1701339783,
+                  "title": "Revision 71",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 66</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:36 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>store and write proxy config to wp-config.php by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\">#171</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev70...rev71\">https://github.com/canonical/wordpress-k8s-operator/compare/rev70&hellip;rev71</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev71",
+                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev71...main"
+               }
+            ],
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "wordpress-k8s",
+               "url": "https://charmhub.io/wordpress-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 13,
+                     "timestamp": 1678088045
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 50,
+                     "timestamp": 1697440207
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 15,
+                     "timestamp": 1680170897
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 73,
+                     "timestamp": 1701790324
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "github-actions-exporter-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/github-actions-exporter-operator",
+            "releases": [
+               {
+                  "id": 132691909,
+                  "version": "rev9",
+                  "timestamp": 1701788022,
+                  "title": "Revision 9",
+                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:25 UTC on 5 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev8...rev9\">https://github.com/canonical/github-actions-exporter-operator/compare/rev8&hellip;rev9</a></p>\n",
+                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev9",
+                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev9...main"
+               },
+               {
+                  "id": 132338627,
+                  "version": "rev8",
+                  "timestamp": 1701460235,
+                  "title": "Revision 8",
+                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 9</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:54 UTC on 1 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency jsonschema to v4.20.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/17\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/17\">#17</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev7...rev8\">https://github.com/canonical/github-actions-exporter-operator/compare/rev7&hellip;rev8</a></p>\n",
+                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev8",
+                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev8...main"
+               },
+               {
+                  "id": 132326728,
+                  "version": "rev7",
+                  "timestamp": 1701454941,
+                  "title": "Revision 7",
+                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 8</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:27 UTC on 1 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(digest): Add digest pinning by <a target=\"_blank\" href=\"https://github.com/merkata\">@merkata</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\">#15</a></a></li>\n<li>Disable chaos by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/merkata\">@merkata</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\">#15</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev6...rev7\">https://github.com/canonical/github-actions-exporter-operator/compare/rev6&hellip;rev7</a></p>\n",
+                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev7",
+                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev7...main"
+               }
+            ],
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "synapse-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/synapse-operator",
+            "releases": [
+               {
+                  "id": 132683919,
+                  "version": "rev54",
+                  "timestamp": 1701786237,
+                  "title": "Revision 54",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 50\n    -  synapse-nginx-image: undefined\n       resource-revision: 43</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:44 UTC on 5 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update ubuntu:22.04 docker digest to 8eab65d by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/117\">#117</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev53...rev54\">https://github.com/canonical/synapse-operator/compare/rev53&hellip;rev54</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev54",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev54...main"
+               },
+               {
+                  "id": 132295226,
+                  "version": "rev53",
+                  "timestamp": 1701440752,
+                  "title": "Revision 53",
+                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 42\n    -  synapse-image: undefined\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:39 UTC on 1 Dec 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 12:12 UTC on 4 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\">#114</a></a></li>\n<li>Add allow_public_rooms_over_federation configuration by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/112\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/112\">#112</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev51...rev53\">https://github.com/canonical/synapse-operator/compare/rev51&hellip;rev53</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev53",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev53...main"
+               },
+               {
+                  "id": 132117419,
+                  "version": "rev52",
+                  "timestamp": 1701354059,
+                  "title": "Revision 52",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 48\n    -  synapse-nginx-image: undefined\n       resource-revision: 41</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:39 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\">#114</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev51...rev52\">https://github.com/canonical/synapse-operator/compare/rev51&hellip;rev52</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev52",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev52...main"
+               }
+            ],
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "synapse",
+               "url": "https://charmhub.io/synapse",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 53,
+                     "timestamp": 1701691949
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 54,
+                     "timestamp": 1701787487
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "jenkins-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/jenkins-k8s-operator",
@@ -15376,186 +15556,6 @@
                ],
                "channels": [
                   "beta"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "github-actions-exporter-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/github-actions-exporter-operator",
-            "releases": [
-               {
-                  "id": 132338627,
-                  "version": "rev8",
-                  "timestamp": 1701460235,
-                  "title": "Revision 8",
-                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 9</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:54 UTC on 1 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency jsonschema to v4.20.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/17\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/17\">#17</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev7...rev8\">https://github.com/canonical/github-actions-exporter-operator/compare/rev7&hellip;rev8</a></p>\n",
-                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev8",
-                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev8...main"
-               },
-               {
-                  "id": 132326728,
-                  "version": "rev7",
-                  "timestamp": 1701454941,
-                  "title": "Revision 7",
-                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 8</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:27 UTC on 1 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(digest): Add digest pinning by <a target=\"_blank\" href=\"https://github.com/merkata\">@merkata</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\">#15</a></a></li>\n<li>Disable chaos by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/merkata\">@merkata</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/15\">#15</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev6...rev7\">https://github.com/canonical/github-actions-exporter-operator/compare/rev6&hellip;rev7</a></p>\n",
-                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev7",
-                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev7...main"
-               },
-               {
-                  "id": 123725761,
-                  "version": "rev6",
-                  "timestamp": 1696431232,
-                  "title": "Revision 6",
-                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:04 UTC on 4 Oct 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.7.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/14\">#14</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev5...rev6\">https://github.com/canonical/github-actions-exporter-operator/compare/rev5&hellip;rev6</a></p>\n",
-                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev6",
-                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev6...main"
-               }
-            ],
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "synapse-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/synapse-operator",
-            "releases": [
-               {
-                  "id": 132295226,
-                  "version": "rev53",
-                  "timestamp": 1701440752,
-                  "title": "Revision 53",
-                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 42\n    -  synapse-image: undefined\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:39 UTC on 1 Dec 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 12:12 UTC on 4 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\">#114</a></a></li>\n<li>Add allow_public_rooms_over_federation configuration by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/112\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/112\">#112</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev51...rev53\">https://github.com/canonical/synapse-operator/compare/rev51&hellip;rev53</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev53",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev53...main"
-               },
-               {
-                  "id": 132117419,
-                  "version": "rev52",
-                  "timestamp": 1701354059,
-                  "title": "Revision 52",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 48\n    -  synapse-nginx-image: undefined\n       resource-revision: 41</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:39 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/114\">#114</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev51...rev52\">https://github.com/canonical/synapse-operator/compare/rev51&hellip;rev52</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev52",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev52...main"
-               },
-               {
-                  "id": 131808586,
-                  "version": "rev51",
-                  "timestamp": 1701204222,
-                  "title": "Revision 51",
-                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 40\n    -  synapse-image: undefined\n       resource-revision: 47</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:04 UTC on 28 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Upgrade Synapse (already published) by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/111\">#111</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev50...rev51\">https://github.com/canonical/synapse-operator/compare/rev50&hellip;rev51</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev51",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev51...main"
-               }
-            ],
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "synapse",
-               "url": "https://charmhub.io/synapse",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 53,
-                     "timestamp": 1701691949
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 53,
-                     "timestamp": 1701441573
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "wordpress-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/wordpress-k8s-operator",
-            "releases": [
-               {
-                  "id": 132267596,
-                  "version": "rev72",
-                  "timestamp": 1701428708,
-                  "title": "Revision 72",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 67</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:14 UTC on 1 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>store and write proxy config to wp-config.php by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\">#171</a></a></li>\n<li>Add a new average request duration panel to the Grafana dashboard by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/178\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/178\">#178</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev70...rev72\">https://github.com/canonical/wordpress-k8s-operator/compare/rev70&hellip;rev72</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev72",
-                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev72...main"
-               },
-               {
-                  "id": 132060133,
-                  "version": "rev71",
-                  "timestamp": 1701339783,
-                  "title": "Revision 71",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 66</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:36 UTC on 30 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>store and write proxy config to wp-config.php by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\">#171</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev70...rev71\">https://github.com/canonical/wordpress-k8s-operator/compare/rev70&hellip;rev71</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev71",
-                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev71...main"
-               },
-               {
-                  "id": 131593258,
-                  "version": "rev70",
-                  "timestamp": 1701103324,
-                  "title": "Revision 70",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 65</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:55 UTC on 27 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix spacing of apache2 vhost config file by <a target=\"_blank\" href=\"https://github.com/mthaddon\">@mthaddon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/170\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/170\">#170</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev69...rev70\">https://github.com/canonical/wordpress-k8s-operator/compare/rev69&hellip;rev70</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev70",
-                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev70...main"
-               }
-            ],
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/wordpress-k8s-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "wordpress-k8s",
-               "url": "https://charmhub.io/wordpress-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 13,
-                     "timestamp": 1678088045
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 50,
-                     "timestamp": 1697440207
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 15,
-                     "timestamp": 1680170897
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 72,
-                     "timestamp": 1701429275
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
                ],
                "tracks": [
                   "latest"
@@ -17940,6 +17940,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "60d9ffb90f705b6ec5c1b8d049709881df45eb22",
+                  "author": "Ashley James",
+                  "timestamp": 1701789307,
+                  "message": "<p>refactor: Fix failed metric names. (<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/54\">#54</a>)</p>\n\n<p>Previously, the failed metric had &ldquo;collector&rdquo; twice in its name.\nEg: &ldquo;ipmidcmicollector_collector_failed&rdquo;</p>\n\n<p>This change aims to remove the duplication through the use of <code>str.replace</code>.</p>\n\n<p>Previous example becomes &ldquo;ipmidcmi_collector_failed&rdquo;</p>\n\n<p>Also,\n* Modify unit tests to reflect this change\n* Add new test case for collector class that doesn&rsquo;t end in  &ldquo;collector&rdquo;\n* Remove test numbers in <code>test_collector.py</code></p>\n",
+                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/60d9ffb90f705b6ec5c1b8d049709881df45eb22"
+               },
+               {
                   "sha": "47b97194e1b446ba05669dd4a42470aa2cb96235",
                   "author": "james_lin",
                   "timestamp": 1701268138,
@@ -17952,13 +17959,6 @@
                   "timestamp": 1700821573,
                   "message": "<p>feat: Add metrics ipmi_dcmi_power_consumption_rate (<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/45\">#45</a>)</p>\n\n<ul>\n<li>feat: Add metrics ipmi_dcmi_power_consumption_rate</li>\n</ul>\n\n<p>Add new ipmi-dcmi metrics\nRate = power consumption / maximum power consumption</p>\n\n<ul>\n<li><p>fix: Replace lshw with dmidecode</p></li>\n\n<li><p>feat: Add cache for dmidecode get_power_capacities</p></li>\n</ul>\n\n<p>Change wording and add cache for dmidecode get_power_capacities</p>\n\n<ul>\n<li><p>test: Add unit tests</p></li>\n\n<li><p>test: Make test cases more comprehensive</p></li>\n\n<li><p>docs: Update doc-string</p></li>\n\n<li><p>docs: Update the command for max power capacity formula</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/586cc8f1d745cde9a22e437ad635dec88f71c6c6"
-               },
-               {
-                  "sha": "03a17a716f6c87153d4dadaeab25fb019dfee6dd",
-                  "author": "Ashley James",
-                  "timestamp": 1700730635,
-                  "message": "<p>fix(redfish): Make redfish storage name in URI dynamic. (<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/49\">#49</a>)</p>\n\n<ul>\n<li>fix(redfish): Make redfish storage name in URI dynamic.</li>\n</ul>\n\n<p>The redfish storage name in the URI was initially hardcoded to &ldquo;Storage&rdquo;.\nOn some servers which did not conform to the schema specification, this\nname was provided differently, eg: Storages.</p>\n\n<p>This change aims to find the storage uri name dynamically while fetching\nthe storage controller and storage drive data.</p>\n\n<p>Also:\n* Add new unit test + fix old ones.\n* Remove unit test number prefixes.\n* Remove unnecessary assertions from unit tests.</p>\n\n<p>Fixes canonical/hardware-observer-operator<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/91\">#91</a>, canonical/hardware-observer-operator<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/108\">#108</a></p>\n",
-                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/03a17a716f6c87153d4dadaeab25fb019dfee6dd"
                }
             ],
             "ciActions": [],
