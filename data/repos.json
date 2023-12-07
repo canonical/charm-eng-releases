@@ -1895,13 +1895,13 @@
                   "compareUrl": "https://github.com/canonical/operator/compare/2.8.0...main"
                },
                {
-                  "id": 123028231,
-                  "version": "2.7.0",
-                  "timestamp": 1695870332,
-                  "title": "2.7.0: Unit.set_ports(), and minor docs, CI, and test improvements",
-                  "body": "<p>This release includes one new feature, a new function <code>Unit.set_ports()</code> to declare which ports should be open. We recommend using this method rather than managing multiple <code>Unit.open_port()</code> and <code>Unit.close_port()</code> calls:</p>\n\n<ul>\n<li>feat: add Unit.set_ports() for declarative port opening <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1005&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1005&quot;&gt;#1005&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1005\">#1005</a></a></li>\n</ul>\n\n<p>We&rsquo;ve also made a few small improvements to the documentation:</p>\n\n<ul>\n<li>docs: reduce the amount of detail in the open/close port methods in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1006&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1006&quot;&gt;#1006&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1006\">#1006</a></a></li>\n<li>docs: remove &lsquo;you&rsquo; and &lsquo;your&rsquo; from docstrings in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1003&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1003&quot;&gt;#1003&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1003\">#1003</a></a></li>\n<li>docs: minor cleanup of the HACKING doc in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1016&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1016&quot;&gt;#1016&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1016\">#1016</a></a></li>\n</ul>\n\n<p>Finally, we&rsquo;ve also made a start <a href=\"https://github.com/canonical/operator/issues/1007\">expanding our type hinting to cover the test suite</a>, and made a couple of minor improvements/fixes to our CI:</p>\n\n<ul>\n<li>test: add type hints to the test_infra tests in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1008&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1008&quot;&gt;#1008&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1008\">#1008</a></a></li>\n<li>test: add type hints to test_log tests by in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1009&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1009&quot;&gt;#1009&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1009\">#1009</a></a></li>\n<li>test: fix type hinting on test_jujuversion tests in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1011&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1011&quot;&gt;#1011&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1011\">#1011</a></a></li>\n<li>test: fix type hint warnings in test_private tests in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1010&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1010&quot;&gt;#1010&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1012\">#1012</a></a></li>\n<li>test: add type hinting to test_lib by in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1012&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1012&quot;&gt;#1012&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1012\">#1012</a></a></li>\n<li>test: add type hinting to test_helpers in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1014&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1014&quot;&gt;#1014&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1014\">#1014</a></a></li>\n<li>ci: use Go 1.20 for real Pebble tests in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1004&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1004&quot;&gt;#1004&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1004\">#1004</a></a></li>\n<li>ci: re-enable integration tests with mysql-*operator by in <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1013&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1013&quot;&gt;#1013&lt;/a&gt;&lt;/a\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1013\">#1013</a></a></li>\n</ul>\n\n<p>(Thanks <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> for your first contributions, and welcome to the team!)</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.6.0...2.7.0\">https://github.com/canonical/operator/compare/2.6.0&hellip;2.7.0</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.7.0",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.7.0...main"
+                  "id": 117415345,
+                  "version": "2.5.1",
+                  "timestamp": 1692164589,
+                  "title": "2.5.1: Fix str vs bytes issue with testing push()",
+                  "body": "<p>This is a patch fix on top of <a href=\"https://github.com/canonical/operator/releases/tag/2.5.0\">2.5.0</a> to fix <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/990\">#990</a>: &ldquo;TypeError: write() argument must be str, not bytes&rdquo; in <code>Container.push</code> under <code>Harness</code>.</p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.5.1",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.5.1...main"
                }
             ],
             "commits": null,
@@ -3833,25 +3833,25 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "0e503f9c37494e1eaeb3e1e7709b57ba20c77714",
+                  "author": "Luca Bello",
+                  "timestamp": 1701946231,
+                  "message": "<p>fix typo in rock-update workflow (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/133\">#133</a>)</p>\n\n<ul>\n<li><p>fix rock-update to use major-minor go version</p></li>\n\n<li><p>fix typo</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/observability/commit/0e503f9c37494e1eaeb3e1e7709b57ba20c77714"
+               },
+               {
+                  "sha": "992db43f60932b5adafdd503731af7a44bd24698",
+                  "author": "Luca Bello",
+                  "timestamp": 1701944216,
+                  "message": "<p>fix rock-update to use major-minor go version (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/132\">#132</a>)</p>\n",
+                  "url": "https://github.com/canonical/observability/commit/992db43f60932b5adafdd503731af7a44bd24698"
+               },
+               {
                   "sha": "4bb7af48664a7fcd0fc19d10b1c9371d867b15a7",
                   "author": "Luca Bello",
                   "timestamp": 1701783257,
                   "message": "<p>Fix workflow name in charm-release.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/131\">#131</a>)</p>\n",
                   "url": "https://github.com/canonical/observability/commit/4bb7af48664a7fcd0fc19d10b1c9371d867b15a7"
-               },
-               {
-                  "sha": "deda4ebaa602f5a86ea1f36bc57ab23b2721ce97",
-                  "author": "Simon Aronsson",
-                  "timestamp": 1701768478,
-                  "message": "<p>Rename _local_issue_sync to _local-issue-sync.yaml</p>\n",
-                  "url": "https://github.com/canonical/observability/commit/deda4ebaa602f5a86ea1f36bc57ab23b2721ce97"
-               },
-               {
-                  "sha": "4d54a3847302002800cdc9f71d24f7fece4163ab",
-                  "author": "Luca Bello",
-                  "timestamp": 1701764938,
-                  "message": "<p>hard reset the OCI Factory fork in CI (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/127\">#127</a>)</p>\n",
-                  "url": "https://github.com/canonical/observability/commit/4d54a3847302002800cdc9f71d24f7fece4163ab"
                }
             ],
             "ciActions": [],
@@ -4597,7 +4597,7 @@
          },
          {
             "name": "charming-actions",
-            "newCommits": 13,
+            "newCommits": 14,
             "url": "https://github.com/canonical/charming-actions",
             "releases": [
                {
