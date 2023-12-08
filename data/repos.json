@@ -865,26 +865,26 @@
                   {
                      "track": "3.3",
                      "channel": "edge",
-                     "revision": 25695,
-                     "timestamp": 1701405299
+                     "revision": 25759,
+                     "timestamp": 1701996386
                   },
                   {
                      "track": "3.3",
                      "channel": "edge",
-                     "revision": 25696,
-                     "timestamp": 1701405381
+                     "revision": 25760,
+                     "timestamp": 1701996473
                   },
                   {
                      "track": "3.3",
                      "channel": "edge",
-                     "revision": 25697,
-                     "timestamp": 1701405466
+                     "revision": 25761,
+                     "timestamp": 1701996554
                   },
                   {
                      "track": "3.3",
                      "channel": "edge",
-                     "revision": 25698,
-                     "timestamp": 1701405543
+                     "revision": 25762,
+                     "timestamp": 1701996634
                   },
                   {
                      "track": "3.2",
@@ -8208,15 +8208,6 @@
                   "compareUrl": "https://github.com/canonical/microk8s/compare/installer-v2.3.4...master"
                },
                {
-                  "id": 117436734,
-                  "version": "v1.28",
-                  "timestamp": 1692173922,
-                  "title": "MicroK8s v1.28 released!",
-                  "body": "<h2>Featured in this release</h2>\n\n<h3>Dual stack support and CIDR configuration made easy</h3>\n\n<p>In the past, community members provided instructions on how to configure dual-stack in MicroK8s clusters. From this release onwards, dual-stack along with the respective CIDR configuration can be easily setup with launch configurations even at install time.</p>\n\n<p>You can read more on dual stack over at:\n- <a href=\"https://microk8s.io/docs/explain-dual-stack\">https://microk8s.io/docs/explain-dual-stack</a>\n- <a href=\"https://microk8s.io/docs/how-to-dual-stack\">https://microk8s.io/docs/how-to-dual-stack</a></p>\n\n<h3>Improve security and CIS compliance</h3>\n\n<p>Full CIS compliance can be achieved with a single call: <code>microk8s enable cis-hardening</code>. For auditors and those interested in what each CIS recommendation is about we have assembled a detailed list of each recommendation and how we comply with it. Some of the CIS hardening suggestions have been adopted as default setup options in MicroK8s, for example the authentication of users is now done via x509 certificates instead of tokens.</p>\n\n<p>For the work on this feature you can read:\n- <a href=\"https://microk8s.io/docs/cis-compliance\">https://microk8s.io/docs/cis-compliance</a>\n- <a href=\"https://microk8s.io/docs/how-to-cis-harden\">https://microk8s.io/docs/how-to-cis-harden</a></p>\n\n<h3>Ceph and MicroK8s</h3>\n\n<p>Try this <code>microk8s enable rook-ceph</code> to get the <a href=\"https://rook.io/\">Rook Ceph</a> operator on your cluster. We found that pairing <a href=\"https://canonical-microceph.readthedocs-hosted.com/en/latest/\">MicroCeph</a>, the low ops Ceph distribution, with MicroK8s produces a great setup in terms of feature richenss, stability and effectiveness. In our docs we have a <a href=\"https://microk8s.io/docs/how-to-ceph\">guide</a> showing how to testdirve this combination on a single node cluster.</p>\n\n<p>Read more at:\n- <a href=\"https://microk8s.io/docs/how-to-ceph\">https://microk8s.io/docs/how-to-ceph</a>\n- <a href=\"https://canonical-microceph.readthedocs-hosted.com/en/latest/\">https://canonical-microceph.readthedocs-hosted.com/en/latest/</a>\n- <a href=\"https://rook.io/\">https://rook.io/</a></p>\n\n<h3>New partner joining our addons ecosystem</h3>\n\n<p>Two addons joined our ecosystems:</p>\n\n<ul>\n<li><p><a href=\"https://kubearmor.io/\">KubeArmor</a> is a cloud-native runtime security enforcement system that restricts the behavior (such as process execution, file access, and networking operations) of pods, containers, and nodes at the system level.</p></li>\n\n<li><p><a href=\"https://microcks.io/\">MICROCKS</a> is a CNCF project designed to simplify and streamline API mocking and testing, with support for many different types of API and integrations for GitHub, Gitlab, Jenkins and more.</p></li>\n</ul>\n\n<h2>Detail list of updates since last release</h2>\n\n<h3>Kubernetes core services</h3>\n\n<ul>\n<li><p>Kubernetes v1.28</p></li>\n\n<li><p>Calico CNI updated to v3.25.1</p>\n\n<h3>Usability Improvements</h3></li>\n\n<li><p><code>microk8s status</code> will return an error code in case the cluster is not yet ready.</p></li>\n\n<li><p><code>microk8s join</code> no longer fails if nodes cannot resolve each other’s hostnames. This limitation has been lifted by updating the default arguments of kube-apiserver.</p></li>\n\n<li><p>fixes iptables rule with custom CIDR, thanks <a href=\"https://github.com/Dunge\">@Dunge</a></p></li>\n\n<li><p>Certificate based authentication replaces token auth</p></li>\n\n<li><p>kubelet certificate authority set to the cluster CA by default</p></li>\n\n<li><p>RBAC rules for kubelet webhook auth-mode loaded by default</p></li>\n\n<li><p>EventRateLimit is enabled by default</p></li>\n\n<li><p>Kubelet now does not serialize image pulls by default, which should result in faster image pulls (thanks <a href=\"https://github.com/gboutry\">@ghboutry</a>)</p></li>\n\n<li><p>Attempt to increase inotify and async IO limits if found too low</p>\n\n<h3>Addon updates</h3></li>\n\n<li><p>New addon: kubearmor, thanks to <a href=\"https://github.com/nyrahul\">@nyrahul</a> and <a href=\"https://github.com/webdevgopi\">@webdevgopi</a></p></li>\n\n<li><p>New addon: microcks, thank you <a href=\"https://github.com/yada\">@yada</a></p></li>\n\n<li><p>Update ArgoCD to v2.7.2 and add support for ARM64, thank you <a href=\"https://github.com/alirezaghey\">@alirezaghey</a></p></li>\n\n<li><p>Coredns updated to v1.10.1</p></li>\n\n<li><p>cilium updated to 1.13.4 now supporting multi-node clusters</p></li>\n\n<li><p>gopapdle updated to v4.2.9, added support for ARM64, renamed to goppadle from goppadle-lite, thank you <a href=\"https://github.com/Gayathri-Bluemeric\">@Gayathri-Bluemeric</a></p></li>\n\n<li><p>Metrics server updated to v0.6.3</p></li>\n\n<li><p>Ingress updated to v1.8.0</p></li>\n\n<li><p>linkerd updated to v2.13.5, thank you <a href=\"https://github.com/balchua\">@balchua</a></p></li>\n\n<li><p>keda updated to v2.11.1, thank you <a href=\"https://github.com/balchua\">@balchua</a></p></li>\n\n<li><p>kata addon expects to find a runtime and does not use the kata-runtime snap anymore</p></li>\n\n<li><p>trivy addon updated tov 0.15.1</p></li>\n\n<li><p>Metallb updated to v0.13.10, thank you <a href=\"https://github.com/jadams\">@jadams</a></p></li>\n\n<li><p>Istio updated to v1.18.2, thank you <a href=\"https://github.com/aalonsolopez\">@aalonsolopez</a></p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/microk8s/releases/tag/v1.28",
-                  "compareUrl": "https://github.com/canonical/microk8s/compare/v1.28...master"
-               },
-               {
                   "id": 109589819,
                   "version": "installer-v2.3.3",
                   "timestamp": 1687455828,
@@ -8224,6 +8215,15 @@
                   "body": "",
                   "url": "https://github.com/canonical/microk8s/releases/tag/installer-v2.3.3",
                   "compareUrl": "https://github.com/canonical/microk8s/compare/installer-v2.3.3...master"
+               },
+               {
+                  "id": 99112521,
+                  "version": "v1.27",
+                  "timestamp": 1681242254,
+                  "title": "MicroK8s v1.27 released!",
+                  "body": "<h2>Featured in this release</h2>\n\n<h4>cloudinit-like launch configurations</h4>\n\n<p>Users can now provide a <a href=\"https://microk8s.io/docs/explain-launch-config\">yaml manifest describing how MicroK8s should be setup</a>. Manifests may specify things like:\n- which addons to be enabled,\n- what cluster the node should join,\n- what image and addon repositories should be used,\n- what arguments should be used in bringing up the K8s services</p>\n\n<p>MicroK8s<a href=\"https://microk8s.io/docs/add-launch-config\"> consumes configuration manifests</a> found in /root/snap/microk8s/common/ or passed as snap configuration argument via <code>snap set microk8s config=”$(cat microk8s-config.yaml)”</code> as well as through a content interface.</p>\n\n<h4>Datastore  -  dqlite improvements</h4>\n\n<p>Optimizations in the queries that hit the datastore. This yields a sizable benefit in both latency and CPU utilization. Work on this area is still on-going so expect more improvements in the near future.</p>\n\n<h4>New partner and community addons</h4>\n\n<p>The following addons are new in the 1.27 release under the community repo:\n* <a href=\"https://discuss.kubernetes.io/t/addon-shifu/23327\">Shifu</a> is a Kubernetes native, production-grade, protocol &amp; vendor agnostic IoT development framework. The partnership with Shifu takes IoT and Edge devices with MicroK8s to the next level.\n* <a href=\"https://microk8s.io/docs/addon-easyhaproxy\">EasyHAProxy</a> automatically configures HA proxy as ingress based on the labels defined in deployed containers. An advantage of HA proxy is that it provides TCP endpoints and it works in tandem with the next addon.\n* <a href=\"https://discuss.kubernetes.io/t/addon-parking/23186\">Parking</a> deploys a static webserver to park a domain this involves setting up all necessary ingress, service and pods.</p>\n\n<h2>Detail list of updates since last release</h2>\n\n<ul>\n<li>Kubernetes core services\n\n<ul>\n<li>Kubernetes v1.27</li>\n<li>Containerd upgraded to v1.6.15</li>\n<li>Rebase to snap core20 compatible with Ubuntu 20.04</li>\n<li>dqlite updated to v1.14.0, with experimental disk-mode operation and performance improvements</li>\n<li>CoreDNS updated to v1.10.0</li>\n<li>Calico CNI updated to v3.25.0</li>\n<li>DNS service enabled by default on new installations</li>\n<li>CNI tools upgraded to 1.2.0, thanks <a href=\"https://github.com/KhooHaoYit\">@KhooHaoYit</a></li>\n<li>Flannel upgraded to 0.21.2, adding support for IPv6 NAT, thanks <a href=\"https://github.com/KhooHaoYit\">@KhooHaoYit</a></li>\n</ul></li>\n<li>Usability Improvements\n\n<ul>\n<li>configure your MicroK8s installation through <a href=\"https://discuss.kubernetes.io/t/launch-configurations/23360\">cloudinit-like launch configurations</a></li>\n<li>addons repo updates require sudo</li>\n<li>enable/disable multiple addons in one command will display a depreciation warning</li>\n<li>cert-manager addon will wait for the operator to be functional, thank you <a href=\"https://github.com/balchua\">@balchua</a></li>\n<li>fixes in refresh-certs command to handle presented certificates <a href=\"https://github.com/dud225\">@dud225</a></li>\n<li>inspection script to check for uppercase letters in hostname</li>\n<li>installing on lxc without the proper profile will fail</li>\n<li>fix microk8s reset command that would sometimes leave behind a few resources, thank you <a href=\"https://github.com/m4rc3l-h3\">@m4rc3l-h3</a></li>\n<li><code>microk8s ctr</code> now needs elevated permissions, thank you <a href=\"https://github.com/balchua\">@balchua</a></li>\n<li>improved server certificate handling. Thank you <a href=\"https://github.com/bitmeal\">@bitmeal</a></li>\n</ul></li>\n<li>Addon updates\n\n<ul>\n<li>new partner addon <a href=\"https://shifu.dev/\">shifu</a>, try is with <code>microk8s enable shifu</code>, thank you <a href=\"https://github.com/saiyan86\">@saiyan86</a>, <a href=\"https://github.com/tomqin93\">@tomqin93</a></li>\n<li>new community addon EasyHAProxy, try it with <code>microk8s enable easyhaproxy</code>, thank you <a href=\"https://github.com/byjg\">@byjg</a></li>\n<li>new community addon Parking, try it with <code>microk8s enable parking</code>, thank you <a href=\"https://github.com/byjg\">@byjg</a></li>\n<li>Observability addon pinned to version v45.5.0</li>\n<li>Mayastor updated to version v2.0.0</li>\n<li>NVIDIA gpu operator updated to v22.9.1</li>\n<li>Ingress updated to v1.5.1, thank you <a href=\"https://github.com/howto-kubernetes-info\">@howto-kubernetes-info</a></li>\n<li>Traefik updated to v20.8.0</li>\n<li>knative updated to v1.8.2</li>\n<li>cilium updated to v1.11.12, thank you <a href=\"https://github.com/Thesykan\">@Thesykan</a></li>\n</ul></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/microk8s/releases/tag/v1.27",
+                  "compareUrl": "https://github.com/canonical/microk8s/compare/v1.27...master"
                }
             ],
             "commits": null,
@@ -14167,18 +14167,9 @@
          },
          {
             "name": "spark-history-server-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 3,
             "url": "https://github.com/canonical/spark-history-server-k8s-operator",
             "releases": [
-               {
-                  "id": 132000879,
-                  "version": "rev16",
-                  "timestamp": 1701295995,
-                  "title": "Revision 16",
-                  "body": "<p>Released to 3.4/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;spark-history-server-image&rsquo;, &lsquo;revision&rsquo;: 9}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2471] Upgrade to Juju 3 by <a target=\"_blank\" href=\"https://github.com/welpaolo\">@welpaolo</a> in <a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/23\">#23</a></a></li>\n<li>[DPE-2821] Charm General Code Refatoring by <a target=\"_blank\" href=\"https://github.com/deusebio\">@deusebio</a> in <a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/26\">#26</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/welpaolo\">@welpaolo</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/23\">#23</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/spark-history-server-k8s-operator/compare/rev15...rev16\">https://github.com/canonical/spark-history-server-k8s-operator/compare/rev15&hellip;rev16</a></p>\n",
-                  "url": "https://github.com/canonical/spark-history-server-k8s-operator/releases/tag/rev16",
-                  "compareUrl": "https://github.com/canonical/spark-history-server-k8s-operator/compare/rev16...main"
-               },
                {
                   "id": 125022404,
                   "version": "rev15",
@@ -14196,6 +14187,15 @@
                   "body": "<p>Released to 3.4/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;spark-history-server-image&rsquo;, &lsquo;revision&rsquo;: 8}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2742] Spark History server workload run as non-root by <a target=\"_blank\" href=\"https://github.com/deusebio\">@deusebio</a> in <a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/19\"><a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/19\">#19</a></a></li>\n<li>[MISC] Bump DataPlatform github workflow version by <a target=\"_blank\" href=\"https://github.com/deusebio\">@deusebio</a> in <a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/20\">#20</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/spark-history-server-k8s-operator/compare/rev9...rev14\">https://github.com/canonical/spark-history-server-k8s-operator/compare/rev9&hellip;rev14</a></p>\n",
                   "url": "https://github.com/canonical/spark-history-server-k8s-operator/releases/tag/rev14",
                   "compareUrl": "https://github.com/canonical/spark-history-server-k8s-operator/compare/rev14...main"
+               },
+               {
+                  "id": 115148624,
+                  "version": "rev9",
+                  "timestamp": 1691171272,
+                  "title": "Revision 9",
+                  "body": "<p>Released to 3.4/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;spark-history-server-image&rsquo;, &lsquo;revision&rsquo;: 7}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Updating charm libs by <a target=\"_blank\" href=\"https://github.com/deusebio\">@deusebio</a> in <a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/spark-history-server-k8s-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/spark-history-server-k8s-operator/compare/rev8...rev9\">https://github.com/canonical/spark-history-server-k8s-operator/compare/rev8&hellip;rev9</a></p>\n",
+                  "url": "https://github.com/canonical/spark-history-server-k8s-operator/releases/tag/rev9",
+                  "compareUrl": "https://github.com/canonical/spark-history-server-k8s-operator/compare/rev9...main"
                }
             ],
             "commits": null,
