@@ -3919,25 +3919,25 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "d8cd154861943426aeac026dc41f118b39f35a79",
+                  "author": "Mateusz Kulewicz",
+                  "timestamp": 1702547804,
+                  "message": "<p>Dump nodes info for failing integration tests (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/137\">#137</a>)</p>\n",
+                  "url": "https://github.com/canonical/observability/commit/d8cd154861943426aeac026dc41f118b39f35a79"
+               },
+               {
+                  "sha": "23bbbf6b709a3d4902eef8cd5aba90776c8794de",
+                  "author": "Jon Seager",
+                  "timestamp": 1702547767,
+                  "message": "<p>Update manifest.yml (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/138\">#138</a>)</p>\n",
+                  "url": "https://github.com/canonical/observability/commit/23bbbf6b709a3d4902eef8cd5aba90776c8794de"
+               },
+               {
                   "sha": "f4186f80d57237b14b92da7e1d130e9035925baf",
                   "author": "Luca Bello",
                   "timestamp": 1702391739,
                   "message": "<p>Use juju 3.4 in charm integration tests (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/136\">#136</a>)</p>\n\n<ul>\n<li>Use juju 3.4 in charm integration tests</li>\n</ul>\n\n<p>The juju 3.1 snap channel was suddenly removed, and that broke all of our CI pipeline for charms.</p>\n\n<p>Possible choices are <code>3.2</code>, <code>3.3</code>, <code>3.4</code>, <code>4.0</code>; I&rsquo;m picking the same major and latest minor, but chime in if you think a different one is better.</p>\n\n<ul>\n<li><p>typo fix</p></li>\n\n<li><p>move to 3.3</p></li>\n\n<li><p>move to 3.4</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/observability/commit/f4186f80d57237b14b92da7e1d130e9035925baf"
-               },
-               {
-                  "sha": "e30083a50f063b88efb58564091dbf54da46c548",
-                  "author": "Simon Aronsson",
-                  "timestamp": 1702293371,
-                  "message": "<p>Revert &ldquo;feat: added one additional ip range to metallb (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/134\">#134</a>)&rdquo; (<a target=\"_blank\" href=\"https://github.com/canonical/observability/pull/135\">#135</a>)</p>\n\n<p>This reverts commit ec142ceb480c89f9920de9e874cf84e098b457aa.</p>\n",
-                  "url": "https://github.com/canonical/observability/commit/e30083a50f063b88efb58564091dbf54da46c548"
-               },
-               {
-                  "sha": "b1ed545a41cb9abb8220eea29cec0172cfab9e9a",
-                  "author": "Simon Aronsson",
-                  "timestamp": 1702292639,
-                  "message": "<p>Update charm-pull-request.yaml</p>\n",
-                  "url": "https://github.com/canonical/observability/commit/b1ed545a41cb9abb8220eea29cec0172cfab9e9a"
                }
             ],
             "ciActions": [],
@@ -8330,9 +8330,18 @@
          },
          {
             "name": "microk8s",
-            "newCommits": 18,
+            "newCommits": 0,
             "url": "https://github.com/canonical/microk8s",
             "releases": [
+               {
+                  "id": 133910306,
+                  "version": "v1.29",
+                  "timestamp": 1702504042,
+                  "title": "MicroK8s v1.29 released!",
+                  "body": "<h2>Featured in this release</h2>\n\n<h3>&ldquo;Quality of life&rdquo; improvements</h3>\n\n<p>A lot of effort has gone into the datastore, DQlite. In this release we introduced the following improvements:</p>\n\n<ul>\n<li>DQlite node role reassignment in case of failure domain availability changes</li>\n<li>Optional admission control to ensure performance</li>\n<li>Handling the out-of-disk-space cases</li>\n<li>Performance improvements related to static linking of DQlite and SQL query preparation</li>\n</ul>\n\n<h3>New addons by our partners and community members</h3>\n\n<ul>\n<li>Falco: the cloud-native security tool that employs custom rules on kernel events to provide real-time alerts</li>\n<li>CloudNative PG Operator: Leveraging cloud native Postgres, EDB Postgres for Kubernetes adds speed, efficiency and protection for your infrastructure modernization</li>\n<li>ngrok: Ingress Controller instantly adds connectivity, load balancing, authentication, and observability to your services</li>\n</ul>\n\n<h2>Detail list of updates since last release</h2>\n\n<h3>Kubernetes core services</h3>\n\n<ul>\n<li><p>Kubernetes 1.29</p>\n\n<h3>Usability Improvements</h3></li>\n\n<li><p>Improved messaging in joining nodes</p></li>\n\n<li><p>Fix the default IP shown in ‘microk8s add-node’ output when using FRR (thanks <a href=\"https://github.com/nihr43\">@nihr23</a>)</p></li>\n\n<li><p>Improve connectivity check in installers, thank you <a href=\"https://github.com/smithyuk\">@smithyuk</a></p></li>\n\n<li><p>Handle out of low disk capacity on dqlite nodes</p></li>\n\n<li><p>Admission control to protect from dqlite performance degradation</p></li>\n\n<li><p>Failure domain control plain datastore rebalance</p></li>\n\n<li><p>Memory argument warning in installer, thank you <a href=\"https://github.com/eddiesimeon\">@eddiesimeon</a></p>\n\n<h3>Addon updates</h3></li>\n\n<li><p>New addon: nvidia, allows for enabling the gpu and network operators</p></li>\n\n<li><p>New addon: Falco v3.7.1, thank you <a href=\"https://github.com/jasonumiker\">@jasonumiker</a></p></li>\n\n<li><p>New addon: CloudNativePG, thank you <a href=\"https://github.com/sxd\">@sxd</a></p></li>\n\n<li><p>New addon: ngrok, thank you <a href=\"https://github.com/russorat\">@russorat</a></p></li>\n\n<li><p>Added default-class option to hostpath-storage, thank you <a href=\"https://github.com/overtfuture\">@overtfuture</a></p></li>\n\n<li><p>Upgraded sosivio to v1.7.1, thank you <a href=\"https://github.com/DanArlowski\">@DanArlowski</a></p></li>\n\n<li><p>Upgrade linkerd to v2.14.3, thank you <a href=\"https://github.com/balchua\">@balchua</a></p></li>\n\n<li><p>Upgraded KWasm operator to version v0.3.0, thank you <a href=\"https://github.com/0xE282B0\">@0xE282B0</a></p></li>\n\n<li><p>Upgrade keda to v2.12.0, thank you <a href=\"https://github.com/balchua\">@balchua</a></p></li>\n\n<li><p>Upgraded hostpath-storage to v1.5.0</p></li>\n\n<li><p>Upgraded MICROCKS to v1.8.0, thank you <a href=\"https://github.com/yada\">@yada</a></p></li>\n\n<li><p>hostpath-storage option not to be set as the default storage class, courtesy of <a href=\"https://github.com/overtfuture\">@overtfuture</a></p></li>\n\n<li><p>Removed ondat addon from the community repository</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/microk8s/releases/tag/v1.29",
+                  "compareUrl": "https://github.com/canonical/microk8s/compare/v1.29...master"
+               },
                {
                   "id": 126252686,
                   "version": "installer-v2.3.4",
@@ -8350,15 +8359,6 @@
                   "body": "<h2>Featured in this release</h2>\n\n<h3>Dual stack support and CIDR configuration made easy</h3>\n\n<p>In the past, community members provided instructions on how to configure dual-stack in MicroK8s clusters. From this release onwards, dual-stack along with the respective CIDR configuration can be easily setup with launch configurations even at install time.</p>\n\n<p>You can read more on dual stack over at:\n- <a href=\"https://microk8s.io/docs/explain-dual-stack\">https://microk8s.io/docs/explain-dual-stack</a>\n- <a href=\"https://microk8s.io/docs/how-to-dual-stack\">https://microk8s.io/docs/how-to-dual-stack</a></p>\n\n<h3>Improve security and CIS compliance</h3>\n\n<p>Full CIS compliance can be achieved with a single call: <code>microk8s enable cis-hardening</code>. For auditors and those interested in what each CIS recommendation is about we have assembled a detailed list of each recommendation and how we comply with it. Some of the CIS hardening suggestions have been adopted as default setup options in MicroK8s, for example the authentication of users is now done via x509 certificates instead of tokens.</p>\n\n<p>For the work on this feature you can read:\n- <a href=\"https://microk8s.io/docs/cis-compliance\">https://microk8s.io/docs/cis-compliance</a>\n- <a href=\"https://microk8s.io/docs/how-to-cis-harden\">https://microk8s.io/docs/how-to-cis-harden</a></p>\n\n<h3>Ceph and MicroK8s</h3>\n\n<p>Try this <code>microk8s enable rook-ceph</code> to get the <a href=\"https://rook.io/\">Rook Ceph</a> operator on your cluster. We found that pairing <a href=\"https://canonical-microceph.readthedocs-hosted.com/en/latest/\">MicroCeph</a>, the low ops Ceph distribution, with MicroK8s produces a great setup in terms of feature richenss, stability and effectiveness. In our docs we have a <a href=\"https://microk8s.io/docs/how-to-ceph\">guide</a> showing how to testdirve this combination on a single node cluster.</p>\n\n<p>Read more at:\n- <a href=\"https://microk8s.io/docs/how-to-ceph\">https://microk8s.io/docs/how-to-ceph</a>\n- <a href=\"https://canonical-microceph.readthedocs-hosted.com/en/latest/\">https://canonical-microceph.readthedocs-hosted.com/en/latest/</a>\n- <a href=\"https://rook.io/\">https://rook.io/</a></p>\n\n<h3>New partner joining our addons ecosystem</h3>\n\n<p>Two addons joined our ecosystems:</p>\n\n<ul>\n<li><p><a href=\"https://kubearmor.io/\">KubeArmor</a> is a cloud-native runtime security enforcement system that restricts the behavior (such as process execution, file access, and networking operations) of pods, containers, and nodes at the system level.</p></li>\n\n<li><p><a href=\"https://microcks.io/\">MICROCKS</a> is a CNCF project designed to simplify and streamline API mocking and testing, with support for many different types of API and integrations for GitHub, Gitlab, Jenkins and more.</p></li>\n</ul>\n\n<h2>Detail list of updates since last release</h2>\n\n<h3>Kubernetes core services</h3>\n\n<ul>\n<li><p>Kubernetes v1.28</p></li>\n\n<li><p>Calico CNI updated to v3.25.1</p>\n\n<h3>Usability Improvements</h3></li>\n\n<li><p><code>microk8s status</code> will return an error code in case the cluster is not yet ready.</p></li>\n\n<li><p><code>microk8s join</code> no longer fails if nodes cannot resolve each other’s hostnames. This limitation has been lifted by updating the default arguments of kube-apiserver.</p></li>\n\n<li><p>fixes iptables rule with custom CIDR, thanks <a href=\"https://github.com/Dunge\">@Dunge</a></p></li>\n\n<li><p>Certificate based authentication replaces token auth</p></li>\n\n<li><p>kubelet certificate authority set to the cluster CA by default</p></li>\n\n<li><p>RBAC rules for kubelet webhook auth-mode loaded by default</p></li>\n\n<li><p>EventRateLimit is enabled by default</p></li>\n\n<li><p>Kubelet now does not serialize image pulls by default, which should result in faster image pulls (thanks <a href=\"https://github.com/gboutry\">@ghboutry</a>)</p></li>\n\n<li><p>Attempt to increase inotify and async IO limits if found too low</p>\n\n<h3>Addon updates</h3></li>\n\n<li><p>New addon: kubearmor, thanks to <a href=\"https://github.com/nyrahul\">@nyrahul</a> and <a href=\"https://github.com/webdevgopi\">@webdevgopi</a></p></li>\n\n<li><p>New addon: microcks, thank you <a href=\"https://github.com/yada\">@yada</a></p></li>\n\n<li><p>Update ArgoCD to v2.7.2 and add support for ARM64, thank you <a href=\"https://github.com/alirezaghey\">@alirezaghey</a></p></li>\n\n<li><p>Coredns updated to v1.10.1</p></li>\n\n<li><p>cilium updated to 1.13.4 now supporting multi-node clusters</p></li>\n\n<li><p>gopapdle updated to v4.2.9, added support for ARM64, renamed to goppadle from goppadle-lite, thank you <a href=\"https://github.com/Gayathri-Bluemeric\">@Gayathri-Bluemeric</a></p></li>\n\n<li><p>Metrics server updated to v0.6.3</p></li>\n\n<li><p>Ingress updated to v1.8.0</p></li>\n\n<li><p>linkerd updated to v2.13.5, thank you <a href=\"https://github.com/balchua\">@balchua</a></p></li>\n\n<li><p>keda updated to v2.11.1, thank you <a href=\"https://github.com/balchua\">@balchua</a></p></li>\n\n<li><p>kata addon expects to find a runtime and does not use the kata-runtime snap anymore</p></li>\n\n<li><p>trivy addon updated tov 0.15.1</p></li>\n\n<li><p>Metallb updated to v0.13.10, thank you <a href=\"https://github.com/jadams\">@jadams</a></p></li>\n\n<li><p>Istio updated to v1.18.2, thank you <a href=\"https://github.com/aalonsolopez\">@aalonsolopez</a></p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/microk8s/releases/tag/v1.28",
                   "compareUrl": "https://github.com/canonical/microk8s/compare/v1.28...master"
-               },
-               {
-                  "id": 109589819,
-                  "version": "installer-v2.3.3",
-                  "timestamp": 1687455828,
-                  "title": "installer-v2.3.3",
-                  "body": "",
-                  "url": "https://github.com/canonical/microk8s/releases/tag/installer-v2.3.3",
-                  "compareUrl": "https://github.com/canonical/microk8s/compare/installer-v2.3.3...master"
                }
             ],
             "commits": null,
@@ -8498,6 +8498,18 @@
                   },
                   {
                      "track": "1.29-strict",
+                     "channel": "stable",
+                     "revision": 6370,
+                     "timestamp": 1702546253
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "stable",
+                     "revision": 6373,
+                     "timestamp": 1702545736
+                  },
+                  {
+                     "track": "1.29-strict",
                      "channel": "candidate",
                      "revision": 6370,
                      "timestamp": 1702544604
@@ -8543,6 +8555,18 @@
                      "channel": "edge",
                      "revision": 6371,
                      "timestamp": 1702542762
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "stable",
+                     "revision": 6364,
+                     "timestamp": 1702545187
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "stable",
+                     "revision": 6357,
+                     "timestamp": 1702545151
                   },
                   {
                      "track": "1.29",
@@ -13540,18 +13564,9 @@
          },
          {
             "name": "mysql-test-app",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mysql-test-app",
             "releases": [
-               {
-                  "id": 130648633,
-                  "version": "rev28",
-                  "timestamp": 1700567730,
-                  "title": "Revision 28",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3021] data_platform_libs/data_interfaces v24 by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev27...rev28\">https://github.com/canonical/mysql-test-app/compare/rev27&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev28",
-                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev28...main"
-               },
                {
                   "id": 127308984,
                   "version": "rev27",
@@ -13569,6 +13584,15 @@
                   "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2699] v18 of data_platform_libs/data_interfaces.py (Relation Secrets introduced by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/14\">#14</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/14\">#14</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev25...rev26\">https://github.com/canonical/mysql-test-app/compare/rev25&hellip;rev26</a></p>\n",
                   "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev26",
                   "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev26...main"
+               },
+               {
+                  "id": 119631769,
+                  "version": "rev25",
+                  "timestamp": 1693586772,
+                  "title": "Revision 25",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-1697: Add gloss: charm metadata/contribution updated, add docs by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/13\">#13</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev24...rev25\">https://github.com/canonical/mysql-test-app/compare/rev24&hellip;rev25</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev25",
+                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev25...main"
                }
             ],
             "commits": null,
@@ -16275,6 +16299,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "30af999f82e6b7d5330eccfcdd258988db423088",
+                  "author": "Christopher Bartz",
+                  "timestamp": 1702547138,
+                  "message": "<p>Upload charm artifact only if charm is present (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/230\">#230</a>)</p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/30af999f82e6b7d5330eccfcdd258988db423088"
+               },
+               {
                   "sha": "a9d214a91e8fe6447d6ba06d72021080a8aa87ac",
                   "author": "Christopher Bartz",
                   "timestamp": 1702459234,
@@ -16287,13 +16318,6 @@
                   "timestamp": 1702439832,
                   "message": "<p>Add parameter to auto-update libs per working-directory (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/228\">#228</a>)</p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/81228b56c95a8f46915e21aed8621fa9c65613fe"
-               },
-               {
-                  "sha": "e1462e900aad3fe0fbcc70c2e72beb7f4e725810",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1702377913,
-                  "message": "<p>chore(github): Remove hotfix for perms (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/227\">#227</a>)</p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/e1462e900aad3fe0fbcc70c2e72beb7f4e725810"
                }
             ],
             "ciActions": [],
