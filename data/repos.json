@@ -1919,6 +1919,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "405948a6c243e52d194a744509855a17bfa8930a",
+                  "author": "Mitch Burton",
+                  "timestamp": 1702584686,
+                  "message": "<p>apt.py: use subprocess.run with check=True instead of check_call when capturing stdout and stderr (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/114\">#114</a>)</p>\n\n<ul>\n<li><p>apt.py: use subprocess.run with check=True instead of check_call when\ncapturing stdout and stderr</p></li>\n\n<li><p>bump LIBPATCH</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/405948a6c243e52d194a744509855a17bfa8930a"
+               },
+               {
                   "sha": "20880b1dfba4f8e38a8026bb06ea9d3d30f6a081",
                   "author": "Tony Meyer",
                   "timestamp": 1700098439,
@@ -1931,13 +1938,6 @@
                   "timestamp": 1694729474,
                   "message": "<p>Increase default SnapClient timeout to 30 seconds (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/111\">#111</a>)</p>\n\n<ul>\n<li>Increase default SnapClient timeout to 30 seconds</li>\n</ul>\n\n<p>SnapClient has a default timeout of 5 seconds for all RPCs to\nthe snapd socket. If any operation takes more, an exception is\nraised to the caller.</p>\n\n<p>We have seen this causing issues in slow CI environments, where\na simple config-changed hook will attempt to check if a snap is\ninstalled, timeout and move the unit to a blocked status (causing\nthe CI run to fail). This is augmented by the fact that typically\nSnapCache is used instead of SnapClient, which only uses the default\nvalue and does not provide a way to configure the timeout.</p>\n\n<p>Simply increasing the timeout is enough to tackle the flakes.</p>\n\n<ul>\n<li>Bump LIBPATCH to 3</li>\n</ul>\n",
                   "url": "https://github.com/canonical/operator-libs-linux/commit/ad65cde307c1bab540d692bb57efc37cab3655e7"
-               },
-               {
-                  "sha": "20b8afd035e6f8a98390490d74676c150d746bcc",
-                  "author": "Robert Gildein",
-                  "timestamp": 1693520133,
-                  "message": "<p>Add functional tests for grub lib (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/104\">#104</a>)</p>\n\n<p>Switch to use update_config instead of save_config in Config.update\nfunction to ensure charm configs are updated and not overwritten.\nFix wiring lines in _save_config function.\nRaise ApplyError if grub-mkconfig command failed, since it is failing\nalso if there is wrong validation.</p>\n\n<p>Since the grub lib required to run integration tests on machine or VM,\nwe are switch to running integration tests directly on GitHub runner.\nIt was not possible to run it on VMs, since the GitHub runner do not\nsupports nested virtualization.</p>\n",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/20b8afd035e6f8a98390490d74676c150d746bcc"
                }
             ],
             "ciActions": [
@@ -2054,32 +2054,32 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 380,
-                     "timestamp": 1701372535
+                     "revision": 386,
+                     "timestamp": 1702585126
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 379,
-                     "timestamp": 1701372533
+                     "revision": 384,
+                     "timestamp": 1702585121
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 381,
-                     "timestamp": 1701372537
+                     "revision": 387,
+                     "timestamp": 1702585128
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 383,
-                     "timestamp": 1701372552
+                     "revision": 385,
+                     "timestamp": 1702585124
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 382,
-                     "timestamp": 1701372549
+                     "revision": 388,
+                     "timestamp": 1702585132
                   }
                ],
                "channels": [
@@ -10911,7 +10911,7 @@
                      "track": "latest",
                      "channel": "edge",
                      "revision": 5,
-                     "timestamp": 1702488287
+                     "timestamp": 1702587281
                   }
                ],
                "channels": [
@@ -10930,6 +10930,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "f131ad9e994453e8103d0944c887eb27ae7462b8",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1702586817,
+                  "message": "<p>fix: Pull upstream change to ignore UDR URI cache (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/13\">#13</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/f131ad9e994453e8103d0944c887eb27ae7462b8"
+               },
+               {
                   "sha": "68d9b72053ae122b3db1808704a03a3ae0fcaa09",
                   "author": "Guillaume Belanger",
                   "timestamp": 1701779679,
@@ -10942,13 +10949,6 @@
                   "timestamp": 1698816569,
                   "message": "<p>feat: Add arm64 support (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/11\">#11</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-pcf-rock/commit/e9c424116b5d90a8c9c24bb56e3897c2d8323fe1"
-               },
-               {
-                  "sha": "d0b4158893dcc83ecc6a4a0f479459af2ff1a498",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1698233184,
-                  "message": "<p>chore: Adds semantic PR title validation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/10\">#10</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/d0b4158893dcc83ecc6a4a0f479459af2ff1a498"
                }
             ],
             "ciActions": [],
@@ -12586,6 +12586,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "453141264c615097eb6928090295d2b545d515b3",
+                  "author": "deusebio",
+                  "timestamp": 1702586922,
+                  "message": "<p>[DPE-3110] Release 3.4.2-ubuntu1 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-spark-rock/pull/63\">#63</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-spark-rock/commit/453141264c615097eb6928090295d2b545d515b3"
+               },
+               {
                   "sha": "8e14c1e1694753e1e41d77ca032440243de00f6f",
                   "author": "deusebio",
                   "timestamp": 1702390621,
@@ -12598,13 +12605,6 @@
                   "timestamp": 1701444571,
                   "message": "<p>Update schedule of the trivy scanning. (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-spark-rock/pull/60\">#60</a>)</p>\n",
                   "url": "https://github.com/canonical/charmed-spark-rock/commit/73ba1cf8012bb8422bf3c1c36920d84a82d2fa1e"
-               },
-               {
-                  "sha": "b4fa943f0ef3f80d60ada0726b977d3c53dd3e65",
-                  "author": "deusebio",
-                  "timestamp": 1701379563,
-                  "message": "<p>[DPE-3012] Add Volcano-integration binaries (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-spark-rock/pull/58\">#58</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-spark-rock/commit/b4fa943f0ef3f80d60ada0726b977d3c53dd3e65"
                }
             ],
             "ciActions": [
