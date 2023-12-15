@@ -6361,6 +6361,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "fc0b0b82ad7802166899a563f6bf02e763ca6a94",
+                  "author": "Andrew Scribner",
+                  "timestamp": 1702643360,
+                  "message": "<p>add tests to OIDC authservice rock (<a target=\"_blank\" href=\"https://github.com/canonical/oidc-authservice-rock/pull/14\">#14</a>)</p>\n\n<ul>\n<li><p>add oidc-authservice rock tests</p></li>\n\n<li><p>edit dummy rock tests to implement sanity checks</p></li>\n</ul>\n\n<p>edits the original copy/pasted tox.ini and test_rock.py files to suit this repo.</p>\n\n<p>tox.ini was refactored because it either did not work before, or I didn&rsquo;t fully understand what it should be doing.\ntox.ini&rsquo;s integration environment has been replaced with a passing stub so it does not cause CI failure.</p>\n\n<ul>\n<li>update per review suggestion</li>\n</ul>\n\n<p>Co-authored-by: Orfeas Kourkakis <a href=\"mailto:orfeas.kourkakis@canonical.com\">orfeas.kourkakis@canonical.com</a></p>\n\n<ul>\n<li>update per review suggestion</li>\n</ul>\n\n<p>Co-authored-by: Orfeas Kourkakis <a href=\"mailto:orfeas.kourkakis@canonical.com\">orfeas.kourkakis@canonical.com</a></p>\n\n<ul>\n<li><p>Apply suggestions from code review</p></li>\n\n<li><p>fix: rename var to be less verbose</p></li>\n\n<li><p>fix: pin chisme to main</p></li>\n\n<li><p>feat: add gitignore</p></li>\n\n<li><p>fix: gitignore</p></li>\n\n<li><p>fix: microk8s and juju channel compatible with ckf 1.7</p></li>\n\n<li><p>fix: remove pycache file</p></li>\n\n<li><p>ci: modify on pull request and add on push workflow</p></li>\n\n<li><p>fix: update build and publish workflow</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Orfeas Kourkakis <a href=\"mailto:orfeas.kourkakis@canonical.com\">orfeas.kourkakis@canonical.com</a>\nCo-authored-by: NohaIhab <a href=\"mailto:noha.ihab@canonical.com\">noha.ihab@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/oidc-authservice-rock/commit/fc0b0b82ad7802166899a563f6bf02e763ca6a94"
+               },
+               {
                   "sha": "21476c9db3c34cfe84c118f0c0c6f18d5482a52d",
                   "author": "Kimonas Sotirchos",
                   "timestamp": 1702456658,
@@ -6373,13 +6380,6 @@
                   "timestamp": 1701977101,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oidc-authservice-rock/pull/12\">#12</a> from canonical/update-rock-version-nomenclature</p>\n\n<p>update oidc-authservice rock version nomenclature</p>\n",
                   "url": "https://github.com/canonical/oidc-authservice-rock/commit/80093b8e284729fb8becebd3d86913996a43da9e"
-               },
-               {
-                  "sha": "ac662d581d91058d1747b1528d46b5657bdd93d2",
-                  "author": "Andrew Scribner",
-                  "timestamp": 1701891922,
-                  "message": "<p>update oidc-authservice rock version nomenclature</p>\n",
-                  "url": "https://github.com/canonical/oidc-authservice-rock/commit/ac662d581d91058d1747b1528d46b5657bdd93d2"
                }
             ],
             "ciActions": [],
@@ -11191,9 +11191,18 @@
          },
          {
             "name": "sdcore-udr-k8s-operator",
-            "newCommits": 35,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
+               {
+                  "id": 134084525,
+                  "version": "rev5",
+                  "timestamp": 1702641522,
+                  "title": "Revision 5",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.3\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:19 UTC on 15 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Updates for consistency with other SD-Core charms by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/7\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/7\">#7</a></a></li>\n<li>Updates GH workflows to use common definitions from sdcore-github-workflows repo by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/8\">#8</a></a></li>\n<li>[Bug fix] Unit goes to waiting state when IP address is not available by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/9\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/9\">#9</a></a></li>\n<li>[Chore] Uses most recent version of NRF lib by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/10\">#10</a></a></li>\n<li>Uses UDR ROCK instead of upstream image by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/11\">#11</a></a></li>\n<li>[Feat] Implements TLS interface by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/12\">#12</a></a></li>\n<li>(Fix) Adding rust compiler to fix pydantic compilation by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/14\">#14</a></a></li>\n<li>Runs the CI on a schedule by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/13\">#13</a></a></li>\n<li>Adds renovate rule to scan tox.ini by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/15\">#15</a></a></li>\n<li>(TELCO-574) Block charm when NRF goes down by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/16\">#16</a></a></li>\n<li>Adds issues workflow by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/18\">#18</a></a></li>\n<li>Enable auto-merging Renovate PRs by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/19\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/19\">#19</a></a></li>\n<li>Enforce TLS Integration by <a target=\"_blank\" href=\"https://github.com/dariofaccin\">@dariofaccin</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/20\">#20</a></a></li>\n<li>Updates the charm metadata by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/21\">#21</a></a></li>\n<li>Improve Contributing documentation by <a target=\"_blank\" href=\"https://github.com/dariofaccin\">@dariofaccin</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/22\">#22</a></a></li>\n<li>chore: Bumps lib versions by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/24\">#24</a></a></li>\n<li>chore: Adds semantic PR title validation by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/23\">#23</a></a></li>\n<li>fix: Checks if certificate is already requested by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/26\">#26</a></a></li>\n<li>fix: go into blocked status when database relation is removed by <a target=\"_blank\" href=\"https://github.com/dariofaccin\">@dariofaccin</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/28\">#28</a></a></li>\n<li>docs: Adds Charmhub badge by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/29\">#29</a></a></li>\n<li>chore: Use ops add_storage to reduce amount of mocking by <a target=\"_blank\" href=\"https://github.com/dariofaccin\">@dariofaccin</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/31\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/31\">#31</a></a></li>\n<li>chore: Use ops add_storage to reduce amount of mocking by <a target=\"_blank\" href=\"https://github.com/dariofaccin\">@dariofaccin</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/32\">#32</a></a></li>\n<li>chore: Replacing KubernetesServicePatch with ops.set_ports by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/33\">#33</a></a></li>\n<li>chore: Removing &ndash;trust flag by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/34\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/34\">#34</a></a></li>\n<li>fix: Handling CalledProcessError when getting the POD IP by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/36\">#36</a></a></li>\n<li>chore: Rename SD-Core charms by adding -k8s as a suffix by <a target=\"_blank\" href=\"https://github.com/gatici\">@gatici</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/35\">#35</a></a></li>\n<li>chore: Dummy PR to publish charm after changing name by <a target=\"_blank\" href=\"https://github.com/gatici\">@gatici</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/38\">#38</a></a></li>\n<li>chore(deps): update dependency macaroonbakery to v1.3.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/39\">#39</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/11\">#11</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/dariofaccin\">@dariofaccin</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/20\">#20</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/21\">#21</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/gatici\">@gatici</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/35\">#35</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev4...rev5\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev4&hellip;rev5</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev5",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev5...main"
+               },
                {
                   "id": 133534713,
                   "version": "rev4",
@@ -11213,8 +11222,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 4,
-                     "timestamp": 1702475713
+                     "revision": 5,
+                     "timestamp": 1702642756
                   }
                ],
                "channels": [
@@ -11512,6 +11521,15 @@
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
                {
+                  "id": 134087988,
+                  "version": "rev67",
+                  "timestamp": 1702642618,
+                  "title": "Revision 67",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.4\n       resource-revision: 65</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:48 UTC on 15 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/upload-artifact action to v4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/112\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/112\">#112</a></a></li>\n<li>chore(deps): update actions/download-artifact action to v4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/111\">#111</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev66...rev67\">https://github.com/canonical/vault-k8s-operator/compare/rev66&hellip;rev67</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev67",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev67...main"
+               },
+               {
                   "id": 133940305,
                   "version": "rev66",
                   "timestamp": 1702558246,
@@ -11528,15 +11546,6 @@
                   "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.4\n       resource-revision: 65</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:37 UTC on 13 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency macaroonbakery to v1.3.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/109\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/109\">#109</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev64...rev65\">https://github.com/canonical/vault-k8s-operator/compare/rev64&hellip;rev65</a></p>\n",
                   "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev65",
                   "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev65...main"
-               },
-               {
-                  "id": 133796368,
-                  "version": "rev64",
-                  "timestamp": 1702491304,
-                  "title": "Revision 64",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.4\n       resource-revision: 65</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:47 UTC on 13 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update github/codeql-action action to v3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/110\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/110\">#110</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev63...rev64\">https://github.com/canonical/vault-k8s-operator/compare/rev63&hellip;rev64</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev64",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev64...main"
                }
             ],
             "commits": null,
@@ -11554,8 +11563,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 66,
-                     "timestamp": 1702560159
+                     "revision": 67,
+                     "timestamp": 1702644514
                   }
                ],
                "channels": [
@@ -12015,7 +12024,7 @@
          },
          {
             "name": "manual-tls-certificates-operator",
-            "newCommits": 11,
+            "newCommits": 12,
             "url": "https://github.com/canonical/manual-tls-certificates-operator",
             "releases": [
                {
