@@ -8231,6 +8231,13 @@
             "releases": null,
             "commits": [
                {
+                  "sha": "5fa1115316a6c14025a31e0577e3767e8a4cd36f",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1704449777,
+                  "message": "<p>Move k8s init behind REST API (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/45\">#45</a>)</p>\n\n<p>To bootstrap and configure the k8s cluster without the CLI (e.g. from\nthe Charm) we need to be able to initialize the cluster via REST API.</p>\n\n<p>This commit moves the init steps for bootstrapping the cluster to the\n<code>POST /cluster</code> endpoint and adds setup steps for joining nodes to the\n<code>POST /cluster/{node}</code> endpoint.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/5fa1115316a6c14025a31e0577e3767e8a4cd36f"
+               },
+               {
                   "sha": "6419e7b74269f95c6ed1cba37e391680cba1db5b",
                   "author": "Konstantinos Tsakalozos",
                   "timestamp": 1704446802,
@@ -8243,13 +8250,6 @@
                   "timestamp": 1704392154,
                   "message": "<p>Allow insecure HTTPS connection for musl-headers (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/46\">#46</a>)</p>\n\n<p>midipix.org forgot to renew the SSL certificates. This broke the\nk8s-dqlite build as it fetches the <code>sys/queue.h</code> header from there.</p>\n\n<p>This commit sets the &ldquo;allow-insecure&rdquo; flag for the relevant curl call.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/3e2d7e1a6fe6d726cb4540cf1d9437f9690ed335"
-               },
-               {
-                  "sha": "081b757f87fd2902f039558347e31bf92c65cb67",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1704359747,
-                  "message": "<p>Add k8s-dqlite clustering support (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/32\">#32</a>)</p>\n\n<p>This commit integrates the clustering of k8s-dqlite into the REST-API.\nFor that, the k8s-dqlite certificate will be written into k8sd when\ninitializing k8s. When a new node joins the cluster it will first join\nk8sd and then use the certificate and key from the database to join the\nk8s-dqlite cluster.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/081b757f87fd2902f039558347e31bf92c65cb67"
                }
             ],
             "ciActions": [
@@ -14427,6 +14427,15 @@
             "url": "https://github.com/canonical/postgresql-test-app",
             "releases": [
                {
+                  "id": 135944758,
+                  "version": "rev32",
+                  "timestamp": 1704449435,
+                  "title": "Revision 32",
+                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev31...rev32\">https://github.com/canonical/postgresql-test-app/compare/rev31&hellip;rev32</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev32",
+                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev32...main"
+               },
+               {
                   "id": 135942231,
                   "version": "rev31",
                   "timestamp": 1704447981,
@@ -14443,15 +14452,6 @@
                   "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev29...rev30\">https://github.com/canonical/postgresql-test-app/compare/rev29&hellip;rev30</a></p>\n",
                   "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev30",
                   "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev30...main"
-               },
-               {
-                  "id": 135232592,
-                  "version": "rev29",
-                  "timestamp": 1703728168,
-                  "title": "Revision 29",
-                  "body": "<p>Released to edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[python ci] Update Python CI dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/46\">#46</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-test-app/compare/rev28...rev29\">https://github.com/canonical/postgresql-test-app/compare/rev28&hellip;rev29</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev29",
-                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/rev29...main"
                }
             ],
             "commits": null,
@@ -14469,8 +14469,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 31,
-                     "timestamp": 1704449031
+                     "revision": 32,
+                     "timestamp": 1704450347
                   }
                ],
                "channels": [
@@ -17222,6 +17222,15 @@
             "url": "https://github.com/canonical/wordpress-k8s-operator",
             "releases": [
                {
+                  "id": 135944198,
+                  "version": "rev75",
+                  "timestamp": 1704449511,
+                  "title": "Revision 75",
+                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 70</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:20 UTC on 5 Jan 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.9.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/175\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/175\">#175</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev74...rev75\">https://github.com/canonical/wordpress-k8s-operator/compare/rev74&hellip;rev75</a></p>\n",
+                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev75",
+                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev75...main"
+               },
+               {
                   "id": 135935166,
                   "version": "rev74",
                   "timestamp": 1704444289,
@@ -17238,15 +17247,6 @@
                   "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 68</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:32 UTC on 5 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Mandate host and port in database information by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/174\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/174\">#174</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev72...rev73\">https://github.com/canonical/wordpress-k8s-operator/compare/rev72&hellip;rev73</a></p>\n",
                   "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev73",
                   "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev73...main"
-               },
-               {
-                  "id": 132267596,
-                  "version": "rev72",
-                  "timestamp": 1701428708,
-                  "title": "Revision 72",
-                  "body": "<p>resources:\n    -  apache-prometheus-exporter-image: bitnami/apache-exporter:0.13.3\n       resource-revision: 1\n    -  wordpress-image: undefined\n       resource-revision: 67</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:14 UTC on 1 Dec 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>store and write proxy config to wp-config.php by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/171\">#171</a></a></li>\n<li>Add a new average request duration panel to the Grafana dashboard by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/178\"><a target=\"_blank\" href=\"https://github.com/canonical/wordpress-k8s-operator/pull/178\">#178</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wordpress-k8s-operator/compare/rev70...rev72\">https://github.com/canonical/wordpress-k8s-operator/compare/rev70&hellip;rev72</a></p>\n",
-                  "url": "https://github.com/canonical/wordpress-k8s-operator/releases/tag/rev72",
-                  "compareUrl": "https://github.com/canonical/wordpress-k8s-operator/compare/rev72...main"
                }
             ],
             "commits": null,
@@ -17279,8 +17279,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 74,
-                     "timestamp": 1704445109
+                     "revision": 75,
+                     "timestamp": 1704450054
                   }
                ],
                "channels": [
