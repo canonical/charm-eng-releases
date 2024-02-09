@@ -29,6 +29,22 @@
         </p>
         {{- partial "modal" (dict "title" $release.title "url" $release.url "body" $release.body "timestamp" $release.timestamp "repo" $.repo "team" $.team "id" $modal_id) -}}
       {{- end -}}
+    {{- else if not (not .repo.tags) -}}
+      {{- range $tag := .repo.tags -}}
+        {{- $modal_id := printf "%s-%s" $.team.team $tag.sha -}}
+        <p class="u-no-margin--bottom" aria-release-date="{{ $tag.timestamp }}">
+        <small>
+          <a class="p-icon--show" aria-controls="{{ $modal_id }}" role="modal-open"></a>
+          <a target="_blank" href="{{ $tag.url }}">{{ $tag.name }}</a>
+          <time datetime="{{- int $tag.timestamp }}">
+            <span class="u-hide--small">
+              on {{ (time (int $tag.timestamp)).Format "Jan 2, 2006" }}
+            </span>
+          </time>
+        </small>
+        </p>
+        {{- partial "modal" (dict "title" $tag.name "url" $tag.url "body" $tag.body "timestamp" $tag.timestamp "repo" $.repo "team" $.team "id" $modal_id) -}} 
+      {{- end -}}
     {{- else if not (not .repo.commits) -}}
       {{- range $commit := .repo.commits -}}
         {{- $modal_id := printf "%s-%s" $.team.team $commit.sha -}}
