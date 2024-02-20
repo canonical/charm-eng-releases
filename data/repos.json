@@ -2103,9 +2103,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 47,
+            "newCommits": 14,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 142688662,
+                  "version": "v1.7.1",
+                  "timestamp": 1708395192,
+                  "title": "v1.7.1: deadlock fix",
+                  "body": "<p>This patch release includes a fix for the &ldquo;Pebble is unresponsive&rdquo; deadlock issue described in <a href=\"https://github.com/canonical/pebble/issues/314\">https://github.com/canonical/pebble/issues/314</a>.</p>\n\n<p>Commits compared to v1.7.0: <a href=\"https://github.com/canonical/pebble/compare/v1.7.0...v1.7.1\">https://github.com/canonical/pebble/compare/v1.7.0&hellip;v1.7.1</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.7.1",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.7.1...master"
+               },
                {
                   "id": 142682226,
                   "version": "v1.4.1",
@@ -2123,15 +2132,6 @@
                   "body": "<p>This release includes a fix for the &ldquo;Pebble is unresponsive&rdquo; deadlock issue described in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/314\">#314</a>, in addition to cross-porting various features from snapd, most notably the overlord/state changes in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/344\">#344</a>. Full list of changes below:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(snap): cope with concurrent builds by <a target=\"_blank\" href=\"https://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/341\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/341\">#341</a></a></li>\n<li>tests(daemon): improve test coverage of notices API by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/346\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/346\">#346</a></a></li>\n<li>chore(state): cross-port latest changes from snapd&rsquo;s overlord/state by <a target=\"_blank\" href=\"https://github.com/dmitry-lyfar\">@dmitry-lyfar</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/344\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/344\">#344</a></a></li>\n<li>fix(cmdstate): use imperative language and uppercase for task summary by <a target=\"_blank\" href=\"https://github.com/medvied\">@medvied</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\">#348</a></a></li>\n<li>chore(deps): Bump critical dependencies. by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/353\">#353</a></a></li>\n<li>daemon: make ucrednetGet() return *ucrednet by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/357\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/357\">#357</a></a></li>\n<li>fix(servstate): reduce scope of holding ServiceManager.planLock by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/355\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/355\">#355</a></a></li>\n<li>fix(servstate): don&rsquo;t hold both servicesLock and state lock at once by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/359\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/359\">#359</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/medvied\">@medvied</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\">#348</a></a></li>\n</ul>\n\n<p><strong>Full list of commits</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.7.0...v1.8.0\">https://github.com/canonical/pebble/compare/v1.7.0&hellip;v1.8.0</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.8.0",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.8.0...master"
-               },
-               {
-                  "id": 134024058,
-                  "version": "v1.7.0",
-                  "timestamp": 1702597419,
-                  "title": "v1.7.0: user-specific notices",
-                  "body": "<h2>Notable new features</h2>\n\n<ul>\n<li>feat(state,daemon,client): add user-specific notices by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/323\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/323\">#323</a></a></li>\n<li>docs: update readme notices section for per-user notices by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/340\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/340\">#340</a></a></li>\n</ul>\n\n<h2>Other minor changes</h2>\n\n<ul>\n<li>fix(snap): ensure snaps are from current run by <a target=\"_blank\" href=\"https://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/338\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/338\">#338</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.6.0...v1.7.0\">https://github.com/canonical/pebble/compare/v1.6.0&hellip;v1.7.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.7.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.7.0...master"
                }
             ],
             "tags": null,
@@ -2209,32 +2209,32 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 480,
-                     "timestamp": 1708325233
+                     "revision": 488,
+                     "timestamp": 1708396730
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 481,
-                     "timestamp": 1708325236
+                     "revision": 484,
+                     "timestamp": 1708396712
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 482,
-                     "timestamp": 1708325240
+                     "revision": 487,
+                     "timestamp": 1708396719
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 479,
-                     "timestamp": 1708325228
+                     "revision": 485,
+                     "timestamp": 1708396714
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 483,
-                     "timestamp": 1708325247
+                     "revision": 486,
+                     "timestamp": 1708396717
                   }
                ],
                "channels": [
@@ -16929,9 +16929,18 @@
          },
          {
             "name": "postgresql-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
+               {
+                  "id": 142699715,
+                  "version": "rev202",
+                  "timestamp": 1708377222,
+                  "title": "Revision 202",
+                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 150}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3551] Fix large objects ownership by <a target=\"_blank\" href=\"https://github.com/marceloneppel\">@marceloneppel</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-operator/pull/390\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-operator/pull/390\">#390</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev201...rev202\">https://github.com/canonical/postgresql-k8s-operator/compare/rev201&hellip;rev202</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev202",
+                  "compareUrl": "https://github.com/canonical/postgresql-k8s-operator/compare/rev202...main"
+               },
                {
                   "id": 142486046,
                   "version": "rev201",
@@ -16949,15 +16958,6 @@
                   "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 150}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3099] Block on legacy roles request by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-operator/pull/391\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-operator/pull/391\">#391</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev198...rev199\">https://github.com/canonical/postgresql-k8s-operator/compare/rev198&hellip;rev199</a></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev199",
                   "compareUrl": "https://github.com/canonical/postgresql-k8s-operator/compare/rev199...main"
-               },
-               {
-                  "id": 141082766,
-                  "version": "rev198",
-                  "timestamp": 1707480941,
-                  "title": "Revision 198",
-                  "body": "<p>Released to 14/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;postgresql-image&rsquo;, &lsquo;revision&rsquo;: 150}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3349] Handle S3 relation in primary non-leader unit by <a target=\"_blank\" href=\"https://github.com/marceloneppel\">@marceloneppel</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-operator/pull/375\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-operator/pull/375\">#375</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-k8s-operator/compare/rev197...rev198\">https://github.com/canonical/postgresql-k8s-operator/compare/rev197&hellip;rev198</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-operator/releases/tag/rev198",
-                  "compareUrl": "https://github.com/canonical/postgresql-k8s-operator/compare/rev198...main"
                }
             ],
             "tags": null,
@@ -18102,13 +18102,13 @@
                   "compareUrl": "https://github.com/canonical/temporal-ui-k8s-operator/compare/rev12...main"
                },
                {
-                  "id": 136447356,
-                  "version": "rev11",
-                  "timestamp": 1704875134,
-                  "title": "Revision 11",
-                  "body": "<p>resources:\n    -  temporal-ui-image: undefined\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:39 UTC on 10 Jan 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Pin license copyright year by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-ui-k8s-operator/pull/9\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-ui-k8s-operator/pull/9\">#9</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-ui-k8s-operator/compare/rev10...rev11\">https://github.com/canonical/temporal-ui-k8s-operator/compare/rev10&hellip;rev11</a></p>\n",
-                  "url": "https://github.com/canonical/temporal-ui-k8s-operator/releases/tag/rev11",
-                  "compareUrl": "https://github.com/canonical/temporal-ui-k8s-operator/compare/rev11...main"
+                  "id": 129531518,
+                  "version": "rev10",
+                  "timestamp": 1700047387,
+                  "title": "Revision 10",
+                  "body": "<p>resources:\n    -  temporal-ui-image: undefined\n       resource-revision: 7</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:44 UTC on 15 Nov 2023</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 13:05 UTC on 15 Nov 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-3634: Upgrade resource to v2.21.3 by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-ui-k8s-operator/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-ui-k8s-operator/pull/8\">#8</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-ui-k8s-operator/compare/rev9...rev10\">https://github.com/canonical/temporal-ui-k8s-operator/compare/rev9&hellip;rev10</a></p>\n",
+                  "url": "https://github.com/canonical/temporal-ui-k8s-operator/releases/tag/rev10",
+                  "compareUrl": "https://github.com/canonical/temporal-ui-k8s-operator/compare/rev10...main"
                }
             ],
             "tags": null,
