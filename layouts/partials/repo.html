@@ -66,10 +66,10 @@
   <td class="u-align--center ciactions u-hide--small" {{- if eq (len (where .team.repos ".ciActions" nil)) (len .team.repos) -}}aria-hidden="true"{{- end -}}>
     {{- if not (not .repo.ciActions) -}}
       {{- range .repo.ciActions -}}
-        <a target="_blank" href="{{- . -}}"><img src="{{- . -}}/badge.svg"></a><br />
+        <a target="_blank" href="{{- . -}}"><img loading="lazy" src="{{- . -}}/badge.svg"></a><br />
       {{- end -}}
     {{- else -}}
-    <img src="https://img.shields.io/badge/CI%20Status-Unknown-lightgrey"><br />
+    <img loading="lazy" src="https://img.shields.io/badge/CI%20Status-Unknown-lightgrey"><br />
     {{- end -}}
   </td>
   <td class="u-align--right status u-hide--small" aria-new-commits="{{- .repo.newCommits }}" style="max-width: 15%">
