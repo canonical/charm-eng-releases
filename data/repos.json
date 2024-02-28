@@ -2127,9 +2127,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 19,
+            "newCommits": 20,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 143921747,
+                  "version": "v1.7.2",
+                  "timestamp": 1709092257,
+                  "title": "v1.7.2: rename notices \"select\" to \"users\", avoid acquiring state lock in /v1/health",
+                  "body": "<p>This patch release adds the following changes since v1.7.1:</p>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\">#368</a></a>: replace &ldquo;select=all&rdquo; with &ldquo;users=all&rdquo;. Strictly speaking this is a breaking change, however, it was a design mistake and we want to fix it as soon as possible. It&rsquo;s almost certainly that no one is using this feature yet.</li>\n<li><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\">#369</a></a>: avoid acquiring state lock in health check endpoint. This fixes (or is one aspect of the fix for) the issue described in <a href=\"https://bugs.launchpad.net/juju/+bug/2052517\">https://bugs.launchpad.net/juju/+bug/2052517</a>, so that the <code>GET /v1/health</code> endpoint returns much quicker even when under load.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.7.2",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.7.2...master"
+               },
                {
                   "id": 142688662,
                   "version": "v1.7.1",
@@ -2147,15 +2156,6 @@
                   "body": "<p>This patch release includes a fix for the &ldquo;Pebble is unresponsive&rdquo; deadlock issue described in <a href=\"https://github.com/canonical/pebble/issues/314\">https://github.com/canonical/pebble/issues/314</a>.</p>\n\n<p><strong>Commits compared to v1.4.0:</strong> <a href=\"https://github.com/canonical/pebble/compare/v1.4.0...v1.4.1\">https://github.com/canonical/pebble/compare/v1.4.0&hellip;v1.4.1</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.4.1",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.4.1...master"
-               },
-               {
-                  "id": 142080334,
-                  "version": "v1.8.0",
-                  "timestamp": 1707962640,
-                  "title": "v1.8.0: deadlock fix, port various items from snapd",
-                  "body": "<p>This release includes a fix for the &ldquo;Pebble is unresponsive&rdquo; deadlock issue described in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/314\">#314</a>, in addition to cross-porting various features from snapd, most notably the overlord/state changes in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/344\">#344</a>. Full list of changes below:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(snap): cope with concurrent builds by <a target=\"_blank\" href=\"https://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/341\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/341\">#341</a></a></li>\n<li>tests(daemon): improve test coverage of notices API by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/346\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/346\">#346</a></a></li>\n<li>chore(state): cross-port latest changes from snapd&rsquo;s overlord/state by <a target=\"_blank\" href=\"https://github.com/dmitry-lyfar\">@dmitry-lyfar</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/344\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/344\">#344</a></a></li>\n<li>fix(cmdstate): use imperative language and uppercase for task summary by <a target=\"_blank\" href=\"https://github.com/medvied\">@medvied</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\">#348</a></a></li>\n<li>chore(deps): Bump critical dependencies. by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/353\">#353</a></a></li>\n<li>daemon: make ucrednetGet() return *ucrednet by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/357\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/357\">#357</a></a></li>\n<li>fix(servstate): reduce scope of holding ServiceManager.planLock by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/355\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/355\">#355</a></a></li>\n<li>fix(servstate): don&rsquo;t hold both servicesLock and state lock at once by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/359\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/359\">#359</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/medvied\">@medvied</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/348\">#348</a></a></li>\n</ul>\n\n<p><strong>Full list of commits</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.7.0...v1.8.0\">https://github.com/canonical/pebble/compare/v1.7.0&hellip;v1.8.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.8.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.8.0...master"
                }
             ],
             "tags": null,
@@ -2233,32 +2233,32 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 510,
-                     "timestamp": 1708894994
+                     "revision": 514,
+                     "timestamp": 1709091814
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 509,
-                     "timestamp": 1708894992
+                     "revision": 515,
+                     "timestamp": 1709091820
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 512,
-                     "timestamp": 1708894998
+                     "revision": 516,
+                     "timestamp": 1709091825
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 511,
-                     "timestamp": 1708894996
+                     "revision": 517,
+                     "timestamp": 1709091829
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 513,
-                     "timestamp": 1708895000
+                     "revision": 518,
+                     "timestamp": 1709091835
                   }
                ],
                "channels": [
