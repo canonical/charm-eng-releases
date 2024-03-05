@@ -1858,7 +1858,7 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 56,
+            "newCommits": 58,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
                {
@@ -3760,7 +3760,7 @@
          },
          {
             "name": "mimir-coordinator-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mimir-coordinator-k8s-operator",
             "releases": [
                {
@@ -9111,6 +9111,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "004a1afbecf1738d1d3b882fd7be9bcb23935328",
+                  "author": "Kevin W Monroe",
+                  "timestamp": 1709647760,
+                  "message": "<p>Configurable service CIDR (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/189\">#189</a>)</p>\n\n<ul>\n<li><p>initial work for customizable service CIDR</p></li>\n\n<li><p>add service cidr to interactive bootstrap; add first ip4 service ip to sans; test service cidrs</p></li>\n\n<li><p>handle ip6 service cidrs in addition to ip4</p></li>\n\n<li><p>Update src/k8s/pkg/utils/cidr.go</p></li>\n</ul>\n\n<p>Co-authored-by: Angelos Kolaitis <a href=\"mailto:angelos.kolaitis@canonical.com\">angelos.kolaitis@canonical.com</a></p>\n\n<ul>\n<li><p>rework invalid tests into subtests</p></li>\n\n<li><p>Update src/k8s/pkg/k8sd/types/cluster_config_test.go</p></li>\n</ul>\n\n<p>Co-authored-by: Angelos Kolaitis <a href=\"mailto:angelos.kolaitis@canonical.com\">angelos.kolaitis@canonical.com</a></p>\n\n<ul>\n<li>lets tell some stories</li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Angelos Kolaitis <a href=\"mailto:angelos.kolaitis@canonical.com\">angelos.kolaitis@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/004a1afbecf1738d1d3b882fd7be9bcb23935328"
+               },
+               {
                   "sha": "43966cbe2809806535572b453a4cc423a45cbcc3",
                   "author": "Louise K. Schmidtgen",
                   "timestamp": 1709636309,
@@ -9123,13 +9130,6 @@
                   "timestamp": 1709636014,
                   "message": "<p>Bootstrap init from yaml (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/183\">#183</a>)</p>\n\n<ul>\n<li><p>add bottstrap yaml</p></li>\n\n<li><p>add testing</p></li>\n\n<li><p>naming</p></li>\n\n<li><p>improve test</p></li>\n\n<li><p>update error msg</p></li>\n\n<li><p>improve test</p></li>\n\n<li><p>config flag</p></li>\n\n<li><p>improve wording</p></li>\n\n<li><p>fix logic</p></li>\n\n<li><p>table driven test</p></li>\n\n<li><p>add cmd unit tests to makefile</p></li>\n\n<li><p>use vals pkg</p></li>\n\n<li><p>undo go unit</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/63f619c34a40aab083ff9f39e27848baae170146"
-               },
-               {
-                  "sha": "e46dddffb13c6027249baa5d9e640c0f8148a025",
-                  "author": "Louise K. Schmidtgen",
-                  "timestamp": 1709635961,
-                  "message": "<p>Get or create join tocken on get-join-token (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/202\">#202</a>)</p>\n\n<ul>\n<li><p>get or create join tocken</p></li>\n\n<li><p>improve grab token function</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/e46dddffb13c6027249baa5d9e640c0f8148a025"
                }
             ],
             "ciActions": [
@@ -13097,6 +13097,160 @@
       "team": "TLS",
       "repos": [
          {
+            "name": "namecheap-lego-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/namecheap-lego-k8s-operator",
+            "releases": [
+               {
+                  "id": 144884685,
+                  "version": "rev48",
+                  "timestamp": 1709649755,
+                  "title": "Revision 48",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 11</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:58 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add log forwarding support by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev47...rev48\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev47&hellip;rev48</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev48",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev48...main"
+               },
+               {
+                  "id": 144716671,
+                  "version": "rev47",
+                  "timestamp": 1709582478,
+                  "title": "Revision 47",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:15 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/76\">#76</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev46...rev47\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev46&hellip;rev47</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev47",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev47...main"
+               },
+               {
+                  "id": 144655445,
+                  "version": "rev46",
+                  "timestamp": 1709562029,
+                  "title": "Revision 46",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:34 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/73\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/73\">#73</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev45...rev46\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev45&hellip;rev46</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev46",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev46...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "namecheap-lego-k8s",
+               "url": "https://charmhub.io/namecheap-lego-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 6,
+                     "timestamp": 1704924309
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 6,
+                     "timestamp": 1704924241
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 6,
+                     "timestamp": 1704924191
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 48,
+                     "timestamp": 1709650714
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "httprequest-lego-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/httprequest-lego-k8s-operator",
+            "releases": [
+               {
+                  "id": 144873318,
+                  "version": "rev51",
+                  "timestamp": 1709646690,
+                  "title": "Revision 51",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 11</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:09 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add log forwarding support by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/79\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/79\">#79</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev50...rev51\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev50&hellip;rev51</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev51",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev51...main"
+               },
+               {
+                  "id": 144717238,
+                  "version": "rev50",
+                  "timestamp": 1709582629,
+                  "title": "Revision 50",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:19 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev49...rev50\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev49&hellip;rev50</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev50",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev50...main"
+               },
+               {
+                  "id": 144655793,
+                  "version": "rev49",
+                  "timestamp": 1709562040,
+                  "title": "Revision 49",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:36 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/75\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/75\">#75</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev48...rev49\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev48&hellip;rev49</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev49",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev49...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "httprequest-lego-k8s",
+               "url": "https://charmhub.io/httprequest-lego-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 40,
+                     "timestamp": 1709041308
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 40,
+                     "timestamp": 1709041252
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 40,
+                     "timestamp": 1709041195
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 51,
+                     "timestamp": 1709647784
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "route53-lego-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/route53-lego-k8s-operator",
@@ -13165,6 +13319,323 @@
                   "stable",
                   "candidate",
                   "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "lego-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/lego-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "7bfc896624964d590412d475784c03780d403e49",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1709240274,
+                  "message": "<p>chore: use dependabot for dependency management (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/35\">#35</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/7bfc896624964d590412d475784c03780d403e49"
+               },
+               {
+                  "sha": "3d6aeb420d3c9232780a4d6ec40dbe5454ef2c23",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1709239869,
+                  "message": "<p>chore: bump lego to v4.15.0 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/36\">#36</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/3d6aeb420d3c9232780a4d6ec40dbe5454ef2c23"
+               },
+               {
+                  "sha": "17947186491b1c54621262dda28f58c16a880f9e",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1705522239,
+                  "message": "<p>chore: Bumps artefact actions to v4 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/34\">#34</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/17947186491b1c54621262dda28f58c16a880f9e"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "manual-tls-certificates-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/manual-tls-certificates-operator",
+            "releases": [
+               {
+                  "id": 144872055,
+                  "version": "rev76",
+                  "timestamp": 1709646672,
+                  "title": "Revision 76",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:03 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump tls lib to v3.5 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/176\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/176\">#176</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev75...rev76\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev75&hellip;rev76</a></p>\n",
+                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev76",
+                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev76...main"
+               },
+               {
+                  "id": 144716549,
+                  "version": "rev75",
+                  "timestamp": 1709582543,
+                  "title": "Revision 75",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:14 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/175\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/175\">#175</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev74...rev75\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev74&hellip;rev75</a></p>\n",
+                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev75",
+                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev75...main"
+               },
+               {
+                  "id": 144631444,
+                  "version": "rev74",
+                  "timestamp": 1709554798,
+                  "title": "Revision 74",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:32 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/173\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/173\">#173</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev73...rev74\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev73&hellip;rev74</a></p>\n",
+                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev74",
+                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev74...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "manual-tls-certificates",
+               "url": "https://charmhub.io/manual-tls-certificates",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 17,
+                     "timestamp": 1704918595
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 17,
+                     "timestamp": 1704918500
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 17,
+                     "timestamp": 1704918455
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 76,
+                     "timestamp": 1709647412
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 37,
+                     "timestamp": 1706200502
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "lego-base-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/lego-base-k8s-operator",
+            "releases": [
+               {
+                  "id": 144854269,
+                  "version": "rev48",
+                  "timestamp": 1709640841,
+                  "title": "Revision 48",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:26 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add log forwarding support by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/62\">#62</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev47...rev48\">https://github.com/canonical/lego-base-k8s-operator/compare/rev47&hellip;rev48</a></p>\n",
+                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev48",
+                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev48...main"
+               },
+               {
+                  "id": 144716401,
+                  "version": "rev47",
+                  "timestamp": 1709582489,
+                  "title": "Revision 47",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:13 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/68\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/68\">#68</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev46...rev47\">https://github.com/canonical/lego-base-k8s-operator/compare/rev46&hellip;rev47</a></p>\n",
+                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev47",
+                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev47...main"
+               },
+               {
+                  "id": 144588688,
+                  "version": "rev46",
+                  "timestamp": 1709536830,
+                  "title": "Revision 46",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:33 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.10.0 to 2.11.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/65\">#65</a></a></li>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/66\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/66\">#66</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev45...rev46\">https://github.com/canonical/lego-base-k8s-operator/compare/rev45&hellip;rev46</a></p>\n",
+                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev46",
+                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev46...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "lego-base-k8s",
+               "url": "https://charmhub.io/lego-base-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 48,
+                     "timestamp": 1709641581
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 48,
+                     "timestamp": 1709641581
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "self-signed-certificates-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/self-signed-certificates-operator",
+            "releases": [
+               {
+                  "id": 144774642,
+                  "version": "rev107",
+                  "timestamp": 1709601362,
+                  "title": "Revision 107",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:27 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/102\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/102\">#102</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev106...rev107\">https://github.com/canonical/self-signed-certificates-operator/compare/rev106&hellip;rev107</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev107",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev107...main"
+               },
+               {
+                  "id": 144690260,
+                  "version": "rev106",
+                  "timestamp": 1709572416,
+                  "title": "Revision 106",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:24 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/101\">#101</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev105...rev106\">https://github.com/canonical/self-signed-certificates-operator/compare/rev105&hellip;rev106</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev106",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev106...main"
+               },
+               {
+                  "id": 144639070,
+                  "version": "rev105",
+                  "timestamp": 1709557629,
+                  "title": "Revision 105",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:18 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/100\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/100\">#100</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev103...rev105\">https://github.com/canonical/self-signed-certificates-operator/compare/rev103&hellip;rev105</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev105",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev105...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "self-signed-certificates",
+               "url": "https://charmhub.io/self-signed-certificates",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 72,
+                     "timestamp": 1706730123
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 72,
+                     "timestamp": 1706729863
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 72,
+                     "timestamp": 1706726833
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 107,
+                     "timestamp": 1709602056
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 61,
+                     "timestamp": 1706201485
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "certificate-transfer-interface",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/certificate-transfer-interface",
+            "releases": [
+               {
+                  "id": 144715714,
+                  "version": "rev28",
+                  "timestamp": 1709582568,
+                  "title": "Revision 28",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:08 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/41\">#41</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev27...rev28\">https://github.com/canonical/certificate-transfer-interface/compare/rev27&hellip;rev28</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev28",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev28...main"
+               },
+               {
+                  "id": 144635043,
+                  "version": "rev27",
+                  "timestamp": 1709556584,
+                  "title": "Revision 27",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:55 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.10.0 to 2.11.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/37\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/37\">#37</a></a></li>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/38\">#38</a></a></li>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/40\">#40</a></a></li>\n<li>chore: use build-packages in charm by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/39\">#39</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev24...rev27\">https://github.com/canonical/certificate-transfer-interface/compare/rev24&hellip;rev27</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev27",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev27...main"
+               },
+               {
+                  "id": 141515685,
+                  "version": "rev26",
+                  "timestamp": 1706792087,
+                  "title": "Revision 26",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:05 UTC on 11 Feb 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.9.0 to 2.10.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\">#35</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\">#35</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev23...rev26\">https://github.com/canonical/certificate-transfer-interface/compare/rev23&hellip;rev26</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev26",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev26...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "certificate-transfer-interface",
+               "url": "https://charmhub.io/certificate-transfer-interface",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 28,
+                     "timestamp": 1709582927
+                  }
+               ],
+               "channels": [
                   "edge"
                ],
                "tracks": [
@@ -14092,477 +14563,6 @@
             }
          },
          {
-            "name": "lego-base-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/lego-base-k8s-operator",
-            "releases": [
-               {
-                  "id": 144854269,
-                  "version": "rev48",
-                  "timestamp": 1709640841,
-                  "title": "Revision 48",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:26 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add log forwarding support by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/62\">#62</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev47...rev48\">https://github.com/canonical/lego-base-k8s-operator/compare/rev47&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev48",
-                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev48...main"
-               },
-               {
-                  "id": 144716401,
-                  "version": "rev47",
-                  "timestamp": 1709582489,
-                  "title": "Revision 47",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:13 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/68\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/68\">#68</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev46...rev47\">https://github.com/canonical/lego-base-k8s-operator/compare/rev46&hellip;rev47</a></p>\n",
-                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev47",
-                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev47...main"
-               },
-               {
-                  "id": 144588688,
-                  "version": "rev46",
-                  "timestamp": 1709536830,
-                  "title": "Revision 46",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:33 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.10.0 to 2.11.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/65\">#65</a></a></li>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/66\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/66\">#66</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev45...rev46\">https://github.com/canonical/lego-base-k8s-operator/compare/rev45&hellip;rev46</a></p>\n",
-                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev46",
-                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev46...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "lego-base-k8s",
-               "url": "https://charmhub.io/lego-base-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 48,
-                     "timestamp": 1709641581
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 48,
-                     "timestamp": 1709641581
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "lego-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/lego-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "7bfc896624964d590412d475784c03780d403e49",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1709240274,
-                  "message": "<p>chore: use dependabot for dependency management (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/35\">#35</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/7bfc896624964d590412d475784c03780d403e49"
-               },
-               {
-                  "sha": "3d6aeb420d3c9232780a4d6ec40dbe5454ef2c23",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1709239869,
-                  "message": "<p>chore: bump lego to v4.15.0 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/36\">#36</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/3d6aeb420d3c9232780a4d6ec40dbe5454ef2c23"
-               },
-               {
-                  "sha": "17947186491b1c54621262dda28f58c16a880f9e",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1705522239,
-                  "message": "<p>chore: Bumps artefact actions to v4 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/34\">#34</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/17947186491b1c54621262dda28f58c16a880f9e"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "manual-tls-certificates-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/manual-tls-certificates-operator",
-            "releases": [
-               {
-                  "id": 144872055,
-                  "version": "rev76",
-                  "timestamp": 1709646672,
-                  "title": "Revision 76",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:03 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump tls lib to v3.5 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/176\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/176\">#176</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev75...rev76\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev75&hellip;rev76</a></p>\n",
-                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev76",
-                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev76...main"
-               },
-               {
-                  "id": 144716549,
-                  "version": "rev75",
-                  "timestamp": 1709582543,
-                  "title": "Revision 75",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:14 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/175\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/175\">#175</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev74...rev75\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev74&hellip;rev75</a></p>\n",
-                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev75",
-                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev75...main"
-               },
-               {
-                  "id": 144631444,
-                  "version": "rev74",
-                  "timestamp": 1709554798,
-                  "title": "Revision 74",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:32 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/173\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/173\">#173</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev73...rev74\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev73&hellip;rev74</a></p>\n",
-                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev74",
-                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev74...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "manual-tls-certificates",
-               "url": "https://charmhub.io/manual-tls-certificates",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 17,
-                     "timestamp": 1704918595
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 17,
-                     "timestamp": 1704918500
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 17,
-                     "timestamp": 1704918455
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 76,
-                     "timestamp": 1709647412
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 37,
-                     "timestamp": 1706200502
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "namecheap-lego-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/namecheap-lego-k8s-operator",
-            "releases": [
-               {
-                  "id": 144716671,
-                  "version": "rev47",
-                  "timestamp": 1709582478,
-                  "title": "Revision 47",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:15 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/76\">#76</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev46...rev47\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev46&hellip;rev47</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev47",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev47...main"
-               },
-               {
-                  "id": 144655445,
-                  "version": "rev46",
-                  "timestamp": 1709562029,
-                  "title": "Revision 46",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:34 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/73\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/73\">#73</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev45...rev46\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev45&hellip;rev46</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev46",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev46...main"
-               },
-               {
-                  "id": 144632373,
-                  "version": "rev45",
-                  "timestamp": 1709554965,
-                  "title": "Revision 45",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:37 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 69.1.0.20240229 to 69.1.0.20240301 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/74\">#74</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev44...rev45\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev44&hellip;rev45</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev45",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev45...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "namecheap-lego-k8s",
-               "url": "https://charmhub.io/namecheap-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 6,
-                     "timestamp": 1704924309
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 6,
-                     "timestamp": 1704924241
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 6,
-                     "timestamp": 1704924191
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 47,
-                     "timestamp": 1709583322
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "httprequest-lego-k8s-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/httprequest-lego-k8s-operator",
-            "releases": [
-               {
-                  "id": 144717238,
-                  "version": "rev50",
-                  "timestamp": 1709582629,
-                  "title": "Revision 50",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:19 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev49...rev50\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev49&hellip;rev50</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev50",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev50...main"
-               },
-               {
-                  "id": 144655793,
-                  "version": "rev49",
-                  "timestamp": 1709562040,
-                  "title": "Revision 49",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:36 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/75\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/75\">#75</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev48...rev49\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev48&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev49",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev49...main"
-               },
-               {
-                  "id": 144498136,
-                  "version": "rev48",
-                  "timestamp": 1709384604,
-                  "title": "Revision 48",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.15.0\n       resource-revision: 10</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:17 UTC on 2 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev47...rev48\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev47&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev48",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev48...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "httprequest-lego-k8s",
-               "url": "https://charmhub.io/httprequest-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 40,
-                     "timestamp": 1709041308
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 40,
-                     "timestamp": 1709041252
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 40,
-                     "timestamp": 1709041195
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 51,
-                     "timestamp": 1709647784
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "self-signed-certificates-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/self-signed-certificates-operator",
-            "releases": [
-               {
-                  "id": 144774642,
-                  "version": "rev107",
-                  "timestamp": 1709601362,
-                  "title": "Revision 107",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:27 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/102\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/102\">#102</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev106...rev107\">https://github.com/canonical/self-signed-certificates-operator/compare/rev106&hellip;rev107</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev107",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev107...main"
-               },
-               {
-                  "id": 144690260,
-                  "version": "rev106",
-                  "timestamp": 1709572416,
-                  "title": "Revision 106",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:24 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/101\">#101</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev105...rev106\">https://github.com/canonical/self-signed-certificates-operator/compare/rev105&hellip;rev106</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev106",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev106...main"
-               },
-               {
-                  "id": 144639070,
-                  "version": "rev105",
-                  "timestamp": 1709557629,
-                  "title": "Revision 105",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:18 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/100\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/100\">#100</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev103...rev105\">https://github.com/canonical/self-signed-certificates-operator/compare/rev103&hellip;rev105</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev105",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev105...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "self-signed-certificates",
-               "url": "https://charmhub.io/self-signed-certificates",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 72,
-                     "timestamp": 1706730123
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 72,
-                     "timestamp": 1706729863
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 72,
-                     "timestamp": 1706726833
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 107,
-                     "timestamp": 1709602056
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 61,
-                     "timestamp": 1706201485
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "certificate-transfer-interface",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/certificate-transfer-interface",
-            "releases": [
-               {
-                  "id": 144715714,
-                  "version": "rev28",
-                  "timestamp": 1709582568,
-                  "title": "Revision 28",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:08 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/41\">#41</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev27...rev28\">https://github.com/canonical/certificate-transfer-interface/compare/rev27&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev28",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev28...main"
-               },
-               {
-                  "id": 144635043,
-                  "version": "rev27",
-                  "timestamp": 1709556584,
-                  "title": "Revision 27",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:55 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.10.0 to 2.11.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/37\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/37\">#37</a></a></li>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/38\">#38</a></a></li>\n<li>chore: bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/40\">#40</a></a></li>\n<li>chore: use build-packages in charm by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/39\">#39</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev24...rev27\">https://github.com/canonical/certificate-transfer-interface/compare/rev24&hellip;rev27</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev27",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev27...main"
-               },
-               {
-                  "id": 141515685,
-                  "version": "rev26",
-                  "timestamp": 1706792087,
-                  "title": "Revision 26",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:05 UTC on 11 Feb 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.9.0 to 2.10.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\">#35</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/35\">#35</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev23...rev26\">https://github.com/canonical/certificate-transfer-interface/compare/rev23&hellip;rev26</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev26",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev26...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "certificate-transfer-interface",
-               "url": "https://charmhub.io/certificate-transfer-interface",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 28,
-                     "timestamp": 1709582927
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "tls-certificates-interface",
             "newCommits": 0,
             "url": "https://github.com/canonical/tls-certificates-interface",
@@ -14613,118 +14613,6 @@
                      "channel": "edge",
                      "revision": 81,
                      "timestamp": 1709640649
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "tls-certificates-requirer-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/tls-certificates-requirer-operator",
-            "releases": [
-               {
-                  "id": 144716598,
-                  "version": "rev56",
-                  "timestamp": 1709582535,
-                  "title": "Revision 56",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:14 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/70\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/70\">#70</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev55...rev56\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev55&hellip;rev56</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev56",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev56...main"
-               },
-               {
-                  "id": 144631103,
-                  "version": "rev55",
-                  "timestamp": 1709554610,
-                  "title": "Revision 55",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:29 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/69\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/69\">#69</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev54...rev55\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev54&hellip;rev55</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev55",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev55...main"
-               },
-               {
-                  "id": 144295340,
-                  "version": "rev54",
-                  "timestamp": 1709253787,
-                  "title": "Revision 54",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:58 UTC on 1 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/68\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/68\">#68</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev53...rev54\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev53&hellip;rev54</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev54",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev54...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "tls-certificates-requirer",
-               "url": "https://charmhub.io/tls-certificates-requirer",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 56,
-                     "timestamp": 1709583288
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "tls-constraints-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/tls-constraints-operator",
-            "releases": [
-               {
-                  "id": 144716563,
-                  "version": "rev27",
-                  "timestamp": 1709582622,
-                  "title": "Revision 27",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:14 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev26...rev27\">https://github.com/canonical/tls-constraints-operator/compare/rev26&hellip;rev27</a></p>\n",
-                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev27",
-                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev27...main"
-               },
-               {
-                  "id": 144670652,
-                  "version": "rev26",
-                  "timestamp": 1709565703,
-                  "title": "Revision 26",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:32 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\">#31</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\">#31</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev25...rev26\">https://github.com/canonical/tls-constraints-operator/compare/rev25&hellip;rev26</a></p>\n",
-                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev26",
-                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev26...main"
-               },
-               {
-                  "id": 144388761,
-                  "version": "rev25",
-                  "timestamp": 1709304251,
-                  "title": "Revision 25",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:37 UTC on 1 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump types-setuptools from 69.1.0.20240229 to 69.1.0.20240301 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev24...rev25\">https://github.com/canonical/tls-constraints-operator/compare/rev24&hellip;rev25</a></p>\n",
-                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev25",
-                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev25...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "tls-constraints",
-               "url": "https://charmhub.io/tls-constraints",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 27,
-                     "timestamp": 1709583272
                   }
                ],
                "channels": [
@@ -14801,6 +14689,118 @@
                "tracks": [
                   "latest",
                   "1.15"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "tls-constraints-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/tls-constraints-operator",
+            "releases": [
+               {
+                  "id": 144716563,
+                  "version": "rev27",
+                  "timestamp": 1709582622,
+                  "title": "Revision 27",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:14 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev26...rev27\">https://github.com/canonical/tls-constraints-operator/compare/rev26&hellip;rev27</a></p>\n",
+                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev27",
+                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev27...main"
+               },
+               {
+                  "id": 144670652,
+                  "version": "rev26",
+                  "timestamp": 1709565703,
+                  "title": "Revision 26",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:32 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use ruff for linting by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\">#31</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/31\">#31</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev25...rev26\">https://github.com/canonical/tls-constraints-operator/compare/rev25&hellip;rev26</a></p>\n",
+                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev26",
+                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev26...main"
+               },
+               {
+                  "id": 144388761,
+                  "version": "rev25",
+                  "timestamp": 1709304251,
+                  "title": "Revision 25",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:37 UTC on 1 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump types-setuptools from 69.1.0.20240229 to 69.1.0.20240301 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev24...rev25\">https://github.com/canonical/tls-constraints-operator/compare/rev24&hellip;rev25</a></p>\n",
+                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev25",
+                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev25...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "tls-constraints",
+               "url": "https://charmhub.io/tls-constraints",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 27,
+                     "timestamp": 1709583272
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "tls-certificates-requirer-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/tls-certificates-requirer-operator",
+            "releases": [
+               {
+                  "id": 144716598,
+                  "version": "rev56",
+                  "timestamp": 1709582535,
+                  "title": "Revision 56",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:14 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove black formatter by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/70\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/70\">#70</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev55...rev56\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev55&hellip;rev56</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev56",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev56...main"
+               },
+               {
+                  "id": 144631103,
+                  "version": "rev55",
+                  "timestamp": 1709554610,
+                  "title": "Revision 55",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:29 UTC on 4 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump pytest from 8.0.2 to 8.1.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/69\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/69\">#69</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev54...rev55\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev54&hellip;rev55</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev55",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev55...main"
+               },
+               {
+                  "id": 144295340,
+                  "version": "rev54",
+                  "timestamp": 1709253787,
+                  "title": "Revision 54",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:58 UTC on 1 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/68\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/68\">#68</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev53...rev54\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev53&hellip;rev54</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev54",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev54...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "tls-certificates-requirer",
+               "url": "https://charmhub.io/tls-certificates-requirer",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 56,
+                     "timestamp": 1709583288
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
                ]
             },
             "snap": null
@@ -16083,7 +16083,7 @@
          },
          {
             "name": "postgresql-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
                {
