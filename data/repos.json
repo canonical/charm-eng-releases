@@ -3010,7 +3010,7 @@
          },
          {
             "name": "alertmanager-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/alertmanager-k8s-operator",
             "releases": [
                {
@@ -3731,6 +3731,15 @@
             "url": "https://github.com/canonical/mimir-coordinator-k8s-operator",
             "releases": [
                {
+                  "id": 146068134,
+                  "version": "rev6",
+                  "timestamp": 1710254565,
+                  "title": "Revision 6",
+                  "body": "<p>resources:\n    -  nginx-image: ubuntu/nginx:1.18-22.04_beta\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:02 UTC on 12 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/pull/40\">#40</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev5...rev6\">https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev5&hellip;rev6</a></p>\n",
+                  "url": "https://github.com/canonical/mimir-coordinator-k8s-operator/releases/tag/rev6",
+                  "compareUrl": "https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev6...main"
+               },
+               {
                   "id": 145287374,
                   "version": "rev5",
                   "timestamp": 1709823829,
@@ -3747,15 +3756,6 @@
                   "body": "<p>resources:\n    -  nginx-image: ubuntu/nginx:1.18-22.04_beta\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:21 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>add remote write by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/pull/39\">#39</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev3...rev4\">https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev3&hellip;rev4</a></p>\n",
                   "url": "https://github.com/canonical/mimir-coordinator-k8s-operator/releases/tag/rev4",
                   "compareUrl": "https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev4...main"
-               },
-               {
-                  "id": 144872642,
-                  "version": "rev3",
-                  "timestamp": 1709646430,
-                  "title": "Revision 3",
-                  "body": "<p>resources:\n    -  nginx-image: ubuntu/nginx:1.18-22.04_beta\n       resource-revision: 2</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:06 UTC on 5 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>remove lib and move functionality to src/mimir_coordinator.py by <a target=\"_blank\" href=\"https://github.com/Abuelodelanada\">@Abuelodelanada</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/pull/38\">#38</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev2...rev3\">https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev2&hellip;rev3</a></p>\n",
-                  "url": "https://github.com/canonical/mimir-coordinator-k8s-operator/releases/tag/rev3",
-                  "compareUrl": "https://github.com/canonical/mimir-coordinator-k8s-operator/compare/rev3...main"
                }
             ],
             "tags": null,
@@ -8941,7 +8941,7 @@
          },
          {
             "name": "k8s-dqlite",
-            "newCommits": 2,
+            "newCommits": 4,
             "url": "https://github.com/canonical/k8s-dqlite",
             "releases": [
                {
@@ -9051,6 +9051,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8d48d7528b7290742b1897975a211f5b4121b3bc",
+                  "author": "eaudetcobello",
+                  "timestamp": 1710255244,
+                  "message": "<p>Add unit tests for k8sd/setup/kube_scheduler (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/211\">#211</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/8d48d7528b7290742b1897975a211f5b4121b3bc"
+               },
+               {
                   "sha": "b833adfe471dd273eca925ba59c10c4adf1df5ef",
                   "author": "Angelos Kolaitis",
                   "timestamp": 1710248409,
@@ -9063,13 +9070,6 @@
                   "timestamp": 1710242087,
                   "message": "<p>Add unit tests for k8sd/setup/kubelet and k8s_dqlite (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/201\">#201</a>)</p>\n\n<ul>\n<li><p>Add kubelet control plane setup tests and check the arguments file\ncontains exactly the expected number of arguments</p></li>\n\n<li><p>Add kubelet worker setup tests</p></li>\n\n<li><p>Refactor to follow gomega idioms</p></li>\n\n<li><p>Add unit tests for k8sd/setup/k8s_dqlite (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/216\">#216</a>)</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/52982707a2efaa6ff4842c94460c891a1e327875"
-               },
-               {
-                  "sha": "73f493048525c52c199a9f386adf3db4b3cfb664",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1710241802,
-                  "message": "<p>Fix <code>k8s bootstrap</code> interactive mode (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/228\">#228</a>)</p>\n\n<p>The options checker was too exact and also took the newline into\naccount. The options validation therefore never passed.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/73f493048525c52c199a9f386adf3db4b3cfb664"
                }
             ],
             "ciActions": [
@@ -14922,6 +14922,78 @@
       "team": "Data",
       "repos": [
          {
+            "name": "data-integrator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/data-integrator",
+            "releases": [
+               {
+                  "id": 146062362,
+                  "version": "rev21",
+                  "timestamp": 1710252199,
+                  "title": "Revision 21",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:45 UTC on 12 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3572] Reenable OpenSearch tests by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/45\">#45</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-integrator/compare/rev20...rev21\">https://github.com/canonical/data-integrator/compare/rev20&hellip;rev21</a></p>\n",
+                  "url": "https://github.com/canonical/data-integrator/releases/tag/rev21",
+                  "compareUrl": "https://github.com/canonical/data-integrator/compare/rev21...main"
+               },
+               {
+                  "id": 145020253,
+                  "version": "rev20",
+                  "timestamp": 1709716795,
+                  "title": "Revision 20",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:42 UTC on 6 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Added status badges to README.md by <a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\">#43</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-integrator/compare/rev19...rev20\">https://github.com/canonical/data-integrator/compare/rev19&hellip;rev20</a></p>\n",
+                  "url": "https://github.com/canonical/data-integrator/releases/tag/rev20",
+                  "compareUrl": "https://github.com/canonical/data-integrator/compare/rev20...main"
+               },
+               {
+                  "id": 142947203,
+                  "version": "rev19",
+                  "timestamp": 1708512544,
+                  "title": "Revision 19",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:11 UTC on 21 Feb 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Reenable Pgbouncer VM tests by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-integrator/compare/rev18...rev19\">https://github.com/canonical/data-integrator/compare/rev18&hellip;rev19</a></p>\n",
+                  "url": "https://github.com/canonical/data-integrator/releases/tag/rev19",
+                  "compareUrl": "https://github.com/canonical/data-integrator/compare/rev19...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/data-integrator/actions/workflows/release.yaml",
+               "https://github.com/canonical/data-integrator/actions/workflows/ci.yaml"
+            ],
+            "charm": {
+               "name": "data-integrator",
+               "url": "https://charmhub.io/data-integrator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 19,
+                     "timestamp": 1709112602
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 21,
+                     "timestamp": 1710254758
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 17,
+                     "timestamp": 1708101394
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "data-platform-workflows",
             "newCommits": 0,
             "url": "https://github.com/canonical/data-platform-workflows",
@@ -15938,78 +16010,6 @@
                ],
                "tracks": [
                   "8.0"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "data-integrator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/data-integrator",
-            "releases": [
-               {
-                  "id": 145020253,
-                  "version": "rev20",
-                  "timestamp": 1709716795,
-                  "title": "Revision 20",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:42 UTC on 6 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Added status badges to README.md by <a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\">#43</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-integrator/compare/rev19...rev20\">https://github.com/canonical/data-integrator/compare/rev19&hellip;rev20</a></p>\n",
-                  "url": "https://github.com/canonical/data-integrator/releases/tag/rev20",
-                  "compareUrl": "https://github.com/canonical/data-integrator/compare/rev20...main"
-               },
-               {
-                  "id": 142947203,
-                  "version": "rev19",
-                  "timestamp": 1708512544,
-                  "title": "Revision 19",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:11 UTC on 21 Feb 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Reenable Pgbouncer VM tests by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-integrator/compare/rev18...rev19\">https://github.com/canonical/data-integrator/compare/rev18&hellip;rev19</a></p>\n",
-                  "url": "https://github.com/canonical/data-integrator/releases/tag/rev19",
-                  "compareUrl": "https://github.com/canonical/data-integrator/compare/rev19...main"
-               },
-               {
-                  "id": 142614431,
-                  "version": "rev18",
-                  "timestamp": 1708332731,
-                  "title": "Revision 18",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:21 UTC on 19 Feb 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>add suborindate charm integration for mongos router by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/data-integrator/pull/41\">#41</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-integrator/compare/rev16...rev18\">https://github.com/canonical/data-integrator/compare/rev16&hellip;rev18</a></p>\n",
-                  "url": "https://github.com/canonical/data-integrator/releases/tag/rev18",
-                  "compareUrl": "https://github.com/canonical/data-integrator/compare/rev18...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/data-integrator/actions/workflows/release.yaml",
-               "https://github.com/canonical/data-integrator/actions/workflows/ci.yaml"
-            ],
-            "charm": {
-               "name": "data-integrator",
-               "url": "https://charmhub.io/data-integrator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 19,
-                     "timestamp": 1709112602
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 20,
-                     "timestamp": 1709718125
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 17,
-                     "timestamp": 1708101394
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
                ]
             },
             "snap": null
@@ -20402,6 +20402,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "0d4358242d0d0df23cfd16ec4bb3fe714bfdcabb",
+                  "author": "Christopher Bartz",
+                  "timestamp": 1710255805,
+                  "message": "<p>Add initial flask app (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/2\">#2</a>)</p>\n\n<ul>\n<li><p>Fake app</p></li>\n\n<li><p>Receive webhook and log to file</p></li>\n\n<li><p>Move app location and generate src-docs</p></li>\n\n<li><p>Remove unnecessary workflows</p></li>\n\n<li><p>Add self-hosted runners</p></li>\n\n<li><p>Improve docstring</p></li>\n\n<li><p>Remove charm</p></li>\n\n<li><p>Adapt readme</p></li>\n\n<li><p>Use separate log file per process</p></li>\n\n<li><p>Lint</p></li>\n\n<li><p>Cleanup</p></li>\n\n<li><p>Use default bind</p></li>\n\n<li><p>Add integration test</p></li>\n\n<li><p>Fix integration test</p></li>\n\n<li><p>Use multiprocessing in integration test</p></li>\n\n<li><p>small refactor in app module</p></li>\n\n<li><p>add test for request validation</p></li>\n\n<li><p>lint</p></li>\n\n<li><p>Recheckin charm wf&rsquo;s</p></li>\n\n<li><p>Add gunicorn dependency</p></li>\n\n<li><p>Add section about the development server</p></li>\n\n<li><p>Small enhancement for integration test</p></li>\n\n<li><p>Make filename more unique</p></li>\n\n<li><p>Use logger to log webhooks</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/github-runner-webhook-router/commit/0d4358242d0d0df23cfd16ec4bb3fe714bfdcabb"
+               },
+               {
                   "sha": "dd5ff871c753866bde39f24b603628ac15261db4",
                   "author": "IS DevOps Bot",
                   "timestamp": 1709817708,
@@ -20962,7 +20969,7 @@
          },
          {
             "name": "netbox",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/netbox",
             "releases": null,
             "tags": [
@@ -22092,6 +22099,14 @@
             "releases": null,
             "tags": [
                {
+                  "name": "rev2",
+                  "sha": "815c065cf9845673880fc12238c69075bb26d4af",
+                  "body": "",
+                  "timestamp": 1653883439,
+                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev2",
+                  "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=815c065cf9845673880fc12238c69075bb26d4af&id2=master"
+               },
+               {
                   "name": "rev1",
                   "sha": "172ff9f7f03a0dca96c633912081204ca911d30e",
                   "body": "",
@@ -22230,6 +22245,14 @@
                   "timestamp": 1659597733,
                   "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev17",
                   "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=1c93562e9ab5a033fafe7a43fde4feca75acc122&id2=master"
+               },
+               {
+                  "name": "rev10",
+                  "sha": "f32f68414d12ccf92341c00762a5bf03243468bd",
+                  "body": "",
+                  "timestamp": 1636424958,
+                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev10",
+                  "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=f32f68414d12ccf92341c00762a5bf03243468bd&id2=master"
                }
             ],
             "commits": null,
