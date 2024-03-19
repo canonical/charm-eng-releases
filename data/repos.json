@@ -23942,6 +23942,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "fa47095c33381b9f4820556afeae275d66e45b8e",
+                  "author": "TQ X",
+                  "timestamp": 1710888014,
+                  "message": "<p>Rework and preserve comments in snapcraft.yaml during dependency updates (<a target=\"_blank\" href=\"https://github.com/canonical/snap-tempest/pull/122\">#122</a>)</p>\n\n<p>The comments regarding confluent-kafka will be overwritting by\ntools/update_snapcraft.py when refreshing dependency versions\nbecause pyYAML doesn&rsquo;t support comments. Use ruamel.yaml instead\nwith its round trip mode to solve the problem.</p>\n\n<p>Also replacing the previous comment (since it&rsquo;s also in\nrequirements-manual.txt) with a new one that informs user that\nsome dependencies are automatically generated. This also gives user\na hint about where to check when they are unsure why a package like\nconfluent-kafka is added as a dependency.</p>\n",
+                  "url": "https://github.com/canonical/snap-tempest/commit/fa47095c33381b9f4820556afeae275d66e45b8e"
+               },
+               {
                   "sha": "675fb075e90e7c7439d5cabf28199ab3c62a3cb7",
                   "author": "Samuel Allan",
                   "timestamp": 1709822396,
@@ -23954,13 +23961,6 @@
                   "timestamp": 1707878223,
                   "message": "<p>Use the auto-generated token.</p>\n\n<p>Instead of manually managing personal access tokens as repo secrets, use\nthe auto-generated one. See\n<a href=\"https://docs.github.com/en/actions/security-guides/automatic-token-authentication\">https://docs.github.com/en/actions/security-guides/automatic-token-authentication</a></p>\n",
                   "url": "https://github.com/canonical/snap-tempest/commit/eae5f36fb54e499828c9a3b9c05235a84d15a2ff"
-               },
-               {
-                  "sha": "7b9d512043b5cdc80df1058b74cefcac12590cc5",
-                  "author": "Andrea Ieri",
-                  "timestamp": 1707427737,
-                  "message": "<p>Determine the latest compatible version via RSS feeds.</p>\n\n<p>The tempest and tempest plugin metadata files in the releases[0] repository are\nnot updated continuously and therefore do not reflect the actual latest\ncompatible version for a given OpenStack release (see also the Tempest\nnad Plugins compatible version policy[1]).\nThis commit switches to using the individual projects&rsquo; RSS feeds as\nsource of truth as to which version should be picked; specifically, the\n&ldquo;{release}-last&rdquo; tag if available, and the latest version tag otherwise.</p>\n\n<p>[0] <a href=\"https://opendev.org/openstack/releases.git\">https://opendev.org/openstack/releases.git</a>\n[1] <a href=\"https://docs.openstack.org/tempest/latest/tempest_and_plugins_compatible_version_policy.html\">https://docs.openstack.org/tempest/latest/tempest_and_plugins_compatible_version_policy.html</a></p>\n\n<p>Closes: <a target=\"_blank\" href=\"https://github.com/canonical/snap-tempest/pull/79\">#79</a></p>\n",
-                  "url": "https://github.com/canonical/snap-tempest/commit/7b9d512043b5cdc80df1058b74cefcac12590cc5"
                }
             ],
             "ciActions": [],
