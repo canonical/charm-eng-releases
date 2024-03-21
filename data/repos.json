@@ -591,7 +591,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 5400,
+            "newCommits": 5402,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -23693,6 +23693,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "a614456ef04e4d431f6b48e8b574caa7e560f9f6",
+                  "author": "Samuel Allan",
+                  "timestamp": 1711001339,
+                  "message": "<p>Merge all static analysis into tox lint env and only run lint and unit by default with tox. (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/20\">#20</a>)</p>\n\n<p>This makes the testing workflow a bit simpler:</p>\n\n<p><code>tox</code> now runs all the quick tests only;\nformatting shouldn&rsquo;t be included,\nbecause that changing code and testing code probably should be separate.</p>\n\n<p>Merge mypy type checking into the lint environment,\nbecause that is also another type of static analysis,\nand is quick and can all be run together.\nThis makes <code>tox -e lint</code> runs all the static analysis tools\n(no project code is run).</p>\n",
+                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/a614456ef04e4d431f6b48e8b574caa7e560f9f6"
+               },
+               {
                   "sha": "ec4593639e41d2749efb7bfb90ebd0041c689eea",
                   "author": "Ray Chan",
                   "timestamp": 1710995025,
@@ -23705,13 +23712,6 @@
                   "timestamp": 1710994900,
                   "message": "<p>Relate to keystone to get credentials for exporter (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/4\">#4</a>)</p>\n\n<p>Save these credentials to the clouds.yaml file,\nso they can be used by openstack-exporter.</p>\n",
                   "url": "https://github.com/canonical/openstack-exporter-operator/commit/9cc63c61079560da5f44432a60e5cbf90f09c819"
-               },
-               {
-                  "sha": "9163b08b7c94bd073d8c84ac0d57d085d499eda2",
-                  "author": "Ray Chan",
-                  "timestamp": 1710972998,
-                  "message": "<p>Remove preserving snap state logic in <code>SnapService.configure</code>. (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/13\">#13</a>)</p>\n\n<p>This PR basically remove the unnecessary logic in the SnapService.configure because snap service now will not restart when it&rsquo;s configured.</p>\n",
-                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/9163b08b7c94bd073d8c84ac0d57d085d499eda2"
                }
             ],
             "ciActions": [],
