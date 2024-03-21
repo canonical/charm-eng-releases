@@ -2005,7 +2005,7 @@
          },
          {
             "name": "pebble",
-            "newCommits": 33,
+            "newCommits": 34,
             "url": "https://github.com/canonical/pebble",
             "releases": [
                {
@@ -2111,32 +2111,32 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 572,
-                     "timestamp": 1710875995
+                     "revision": 578,
+                     "timestamp": 1711003541
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 570,
-                     "timestamp": 1710875981
+                     "revision": 575,
+                     "timestamp": 1711003533
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 569,
-                     "timestamp": 1710875978
+                     "revision": 577,
+                     "timestamp": 1711003537
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 571,
-                     "timestamp": 1710875993
+                     "revision": 574,
+                     "timestamp": 1711003529
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 573,
-                     "timestamp": 1710875998
+                     "revision": 576,
+                     "timestamp": 1711003535
                   }
                ],
                "channels": [
@@ -11700,7 +11700,7 @@
          },
          {
             "name": "sdcore-nssf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-nssf-k8s-operator",
             "releases": [
                {
@@ -23693,25 +23693,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "426610953d5c483652e87e8375688ad4b39d5691",
+                  "author": "Ray Chan",
+                  "timestamp": 1711004527,
+                  "message": "<p>Support <code>SnapService</code> to manage all services within the same snap. (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/14\">#14</a>)</p>\n",
+                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/426610953d5c483652e87e8375688ad4b39d5691"
+               },
+               {
+                  "sha": "d773d39cc4a4ddc79ab3a66987c9ddcf06e00e4a",
+                  "author": "Samuel Allan",
+                  "timestamp": 1711001588,
+                  "message": "<p>Add integration with Grafana Agent (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/11\">#11</a>)</p>\n\n<ul>\n<li><p>Add integration with Grafana Agent</p></li>\n\n<li><p>pull in the cos_agent interface library</p></li>\n\n<li><p>add script to sync the charm libs</p></li>\n\n<li><p>configure the relation with path and port for openstack-exporter metrics</p></li>\n\n<li><p>Block if grafana agent is not related</p></li>\n</ul>\n\n<p>we don&rsquo;t need anything serving metrics if nothing is listening</p>\n\n<ul>\n<li>Update charm config on grafana agent relation changes</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/d773d39cc4a4ddc79ab3a66987c9ddcf06e00e4a"
+               },
+               {
                   "sha": "a614456ef04e4d431f6b48e8b574caa7e560f9f6",
                   "author": "Samuel Allan",
                   "timestamp": 1711001339,
                   "message": "<p>Merge all static analysis into tox lint env and only run lint and unit by default with tox. (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/20\">#20</a>)</p>\n\n<p>This makes the testing workflow a bit simpler:</p>\n\n<p><code>tox</code> now runs all the quick tests only;\nformatting shouldn&rsquo;t be included,\nbecause that changing code and testing code probably should be separate.</p>\n\n<p>Merge mypy type checking into the lint environment,\nbecause that is also another type of static analysis,\nand is quick and can all be run together.\nThis makes <code>tox -e lint</code> runs all the static analysis tools\n(no project code is run).</p>\n",
                   "url": "https://github.com/canonical/openstack-exporter-operator/commit/a614456ef04e4d431f6b48e8b574caa7e560f9f6"
-               },
-               {
-                  "sha": "ec4593639e41d2749efb7bfb90ebd0041c689eea",
-                  "author": "Ray Chan",
-                  "timestamp": 1710995025,
-                  "message": "<p>Remove ignore rule E501 from <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/openstack-exporter-operator/pull/18&quot;&gt;#18&lt;/a\">tool.ruff.lint</a></p>\n\n<p>This ignore rule conflicts with ruff formatter (originally it was\nplanned to use <code>black</code> formatter so the rule existed, but we did not use\nit), making the ruff formatter will still format the code even if the\nruff linter passes.</p>\n",
-                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/ec4593639e41d2749efb7bfb90ebd0041c689eea"
-               },
-               {
-                  "sha": "9cc63c61079560da5f44432a60e5cbf90f09c819",
-                  "author": "Samuel Allan",
-                  "timestamp": 1710994900,
-                  "message": "<p>Relate to keystone to get credentials for exporter (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/4\">#4</a>)</p>\n\n<p>Save these credentials to the clouds.yaml file,\nso they can be used by openstack-exporter.</p>\n",
-                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/9cc63c61079560da5f44432a60e5cbf90f09c819"
                }
             ],
             "ciActions": [],
