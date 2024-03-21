@@ -2005,9 +2005,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 35,
+            "newCommits": 15,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 147821625,
+                  "version": "v1.9.1",
+                  "timestamp": 1711059651,
+                  "title": "v1.9.1: make PEBBLE_COPY_ONCE not fail on missing dir",
+                  "body": "<p>Adds <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/392\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/392\">#392</a></a>, which makes the <code>PEBBLE_COPY_ONCE</code> feature not fail if the source directory is missing.</p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.9.1",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.9.1...master"
+               },
                {
                   "id": 144963221,
                   "version": "v1.7.3",
@@ -2025,15 +2034,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(daemon): remove untrusted socket by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/361\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/361\">#361</a></a></li>\n<li>fix(daemon): Export error responders from daemon.response by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/360\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/360\">#360</a></a></li>\n<li>feat(wait): export cli.Wait function by <a target=\"_blank\" href=\"https://github.com/paul-rodriguez\">@paul-rodriguez</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/362\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/362\">#362</a></a></li>\n<li>doc(state): say why we&rsquo;re not implementing warnings as notices yet by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/365\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/365\">#365</a></a></li>\n<li>chore(daemon): port AccessChecker interface from snapd by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/358\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/358\">#358</a></a></li>\n<li>fix: validate whole plan, rather than topmost two layers by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\">#363</a></a></li>\n<li>feat(daemon): Add support for <code>PEBBLE_COPY_ONCE</code>. by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/352\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/352\">#352</a></a></li>\n<li>fix(notices): replace &ldquo;select=all&rdquo; with &ldquo;users=all&rdquo; by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\">#368</a></a></li>\n<li>fix(daemon): avoid acquiring state lock in health check endpoint by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\">#369</a></a></li>\n<li>Update version to v1.9.0 for release; flesh out release instructions by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/370\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/370\">#370</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\">#363</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.8.0...v1.9.0\">https://github.com/canonical/pebble/compare/v1.8.0&hellip;v1.9.0</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.9.0",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.9.0...master"
-               },
-               {
-                  "id": 143921747,
-                  "version": "v1.7.2",
-                  "timestamp": 1709092257,
-                  "title": "v1.7.2: rename notices \"select\" to \"users\", avoid acquiring state lock in /v1/health",
-                  "body": "<p>This patch release adds the following changes since v1.7.1:</p>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\">#368</a></a>: replace &ldquo;select=all&rdquo; with &ldquo;users=all&rdquo;. Strictly speaking this is a breaking change, however, it was a design mistake and we want to fix it as soon as possible. It&rsquo;s almost certainly that no one is using this feature yet.</li>\n<li><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\">#369</a></a>: avoid acquiring state lock in health check endpoint. This fixes (or is one aspect of the fix for) the issue described in <a href=\"https://bugs.launchpad.net/juju/+bug/2052517\">https://bugs.launchpad.net/juju/+bug/2052517</a>, so that the <code>GET /v1/health</code> endpoint returns much quicker even when under load.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.7.2",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.7.2...master"
                }
             ],
             "tags": null,
@@ -20252,6 +20252,15 @@
             "url": "https://github.com/canonical/discourse-k8s-operator",
             "releases": [
                {
+                  "id": 147824671,
+                  "version": "rev105",
+                  "timestamp": 1711059470,
+                  "title": "Revision 105",
+                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 97</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:03 UTC on 21 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/207\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/207\">#207</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev104...rev105\">https://github.com/canonical/discourse-k8s-operator/compare/rev104&hellip;rev105</a></p>\n",
+                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev105",
+                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev105...main"
+               },
+               {
                   "id": 147381358,
                   "version": "rev104",
                   "timestamp": 1710919875,
@@ -20268,15 +20277,6 @@
                   "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 95</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:10 UTC on 18 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/204\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/204\">#204</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev102...rev103\">https://github.com/canonical/discourse-k8s-operator/compare/rev102&hellip;rev103</a></p>\n",
                   "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev103",
                   "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev103...main"
-               },
-               {
-                  "id": 146105108,
-                  "version": "rev102",
-                  "timestamp": 1710264406,
-                  "title": "Revision 102",
-                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 94</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:15 UTC on 12 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add SAML integration by <a target=\"_blank\" href=\"https://github.com/gtrkiller\">@gtrkiller</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/199\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/199\">#199</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev101...rev102\">https://github.com/canonical/discourse-k8s-operator/compare/rev101&hellip;rev102</a></p>\n",
-                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev102",
-                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev102...main"
                }
             ],
             "tags": null,
@@ -20298,8 +20298,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 104,
-                     "timestamp": 1710922069
+                     "revision": 105,
+                     "timestamp": 1711062220
                   }
                ],
                "channels": [
