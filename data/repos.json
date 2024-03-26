@@ -5509,6 +5509,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "ea72e71297587687c69b9e402dcd013dd8e912a7",
+                  "author": "Andrew Scribner",
+                  "timestamp": 1711443120,
+                  "message": "<p>update katib-integration.ipynb to use a new katib experiment (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/66\">#66</a>)</p>\n\n<p>katib-integration.ipynb is based on <a href=\"https://github.com/kubeflow/katib/blob/master/examples/v1beta1/sdk/cmaes-and-resume-policies.ipynb\">this example</a>, which has been updated upstream because the docker image it depends on is no longer available.  The present commit updates the notebook to track the upstream example&rsquo;s new version.</p>\n",
+                  "url": "https://github.com/canonical/charmed-kubeflow-uats/commit/ea72e71297587687c69b9e402dcd013dd8e912a7"
+               },
+               {
                   "sha": "ee0fa08931b11f40e97dbe3e340c413cf466a084",
                   "author": "renovate[bot]",
                   "timestamp": 1707387703,
@@ -5521,13 +5528,6 @@
                   "timestamp": 1707387656,
                   "message": "<p>Add badges to the repo (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/59\">#59</a>)</p>\n\n<p>This will ensure that we comply with the expectations in\n<a href=\"https://releases.juju.is/?team=MLOps\">https://releases.juju.is/?team=MLOps</a></p>\n",
                   "url": "https://github.com/canonical/charmed-kubeflow-uats/commit/349c6fa255d160521f7225e8619b98b82593b762"
-               },
-               {
-                  "sha": "f79dd59b70d1bdfe63599a8d16e082ff37809811",
-                  "author": "renovate[bot]",
-                  "timestamp": 1707387585,
-                  "message": "<p>chore(deps): update dependency ubuntu to v22 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/32\">#32</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/charmed-kubeflow-uats/commit/f79dd59b70d1bdfe63599a8d16e082ff37809811"
                }
             ],
             "ciActions": [
@@ -5961,9 +5961,27 @@
          },
          {
             "name": "kserve-operators",
-            "newCommits": 0,
+            "newCommits": 13,
             "url": "https://github.com/canonical/kserve-operators",
             "releases": [
+               {
+                  "id": 148426264,
+                  "version": "kserve-controller-rev523",
+                  "timestamp": 1711441213,
+                  "title": "Revision 523",
+                  "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 440\n    -  kserve-controller-image: charmedkubeflow/kserve-controller:0.11.2-89c03a0\n       resource-revision: 442</p>\n\n<p>Static resources:\n Released to &lsquo;0.11/edge&rsquo; at 08:49 UTC on 26 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: use agent rock v0.11.2 (<a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/226\">#226</a>) by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/228\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/228\">#228</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev522...kserve-controller-rev523\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev522&hellip;kserve-controller-rev523</a></p>\n",
+                  "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev523",
+                  "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev523...main"
+               },
+               {
+                  "id": 148426183,
+                  "version": "kserve-controller-rev522",
+                  "timestamp": 1711441177,
+                  "title": "Revision 522",
+                  "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 440\n    -  kserve-controller-image: charmedkubeflow/kserve-controller:0.11.2-89c03a0\n       resource-revision: 442</p>\n\n<p>Static resources:\n Released to &lsquo;0.11/edge&rsquo; at 08:49 UTC on 26 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>tests: pin charm dependencies to stable channels that correspond to CKF 1.8 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/224\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/224\">#224</a></a></li>\n<li>Cherry pick ROCKs to the track/0.11 by <a target=\"_blank\" href=\"https://github.com/kimwnasptd\">@kimwnasptd</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/223\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/223\">#223</a></a></li>\n<li>feat: use controller rock v0.11.2 (<a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/225\">#225</a>) by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/227\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/227\">#227</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev519...kserve-controller-rev522\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev519&hellip;kserve-controller-rev522</a></p>\n",
+                  "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev522",
+                  "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev522...main"
+               },
                {
                   "id": 147506616,
                   "version": "kserve-controller-rev519",
@@ -5972,24 +5990,6 @@
                   "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 440\n    -  kserve-controller-image: charmedkubeflow/kserve-controller:0.11.2-89c03a0\n       resource-revision: 442</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:42 UTC on 20 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Integrate rock for controller v0.11.2 by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/225\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/225\">#225</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev518...kserve-controller-rev519\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev518&hellip;kserve-controller-rev519</a></p>\n",
                   "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev519",
                   "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev519...main"
-               },
-               {
-                  "id": 147506233,
-                  "version": "kserve-controller-rev518",
-                  "timestamp": 1710947366,
-                  "title": "Revision 518",
-                  "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 440\n    -  kserve-controller-image: kserve/kserve-controller:v0.11.1\n       resource-revision: 442</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:41 UTC on 20 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: use an all-catch main event handler by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/197\">#197</a></a></li>\n<li>Update GH files for issue templates and Jira automation by <a target=\"_blank\" href=\"https://github.com/kimwnasptd\">@kimwnasptd</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/196\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/196\">#196</a></a></li>\n<li>feat: use manifests charm lib for relation handling by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/203\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/203\">#203</a></a></li>\n<li>ci: set automatically-retry-hooks to false by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/204\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/204\">#204</a></a></li>\n<li>Add badges to repo by <a target=\"_blank\" href=\"https://github.com/kimwnasptd\">@kimwnasptd</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/199\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/199\">#199</a></a></li>\n<li>KF 5328 integrate paddleserver rock by <a target=\"_blank\" href=\"https://github.com/ca-scribner\">@ca-scribner</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/219\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/219\">#219</a></a></li>\n<li>integrate storage-initializer rock by <a target=\"_blank\" href=\"https://github.com/ca-scribner\">@ca-scribner</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/217\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/217\">#217</a></a></li>\n<li>integrate sklearnserver rock, update tests to match by <a target=\"_blank\" href=\"https://github.com/ca-scribner\">@ca-scribner</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/209\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/209\">#209</a></a></li>\n<li>integrate pmmlserver rock for 0.11.2 by <a target=\"_blank\" href=\"https://github.com/ca-scribner\">@ca-scribner</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/218\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/218\">#218</a></a></li>\n<li>Integrate rock for lgbserver v0.11.2 by <a target=\"_blank\" href=\"https://github.com/ca-scribner\">@ca-scribner</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/221\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/221\">#221</a></a></li>\n<li>Integrate rock for xgbserver v0.11.2 by <a target=\"_blank\" href=\"https://github.com/ca-scribner\">@ca-scribner</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/222\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/222\">#222</a></a></li>\n<li>Integrate rock for agent v0.11.2 by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/226\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/226\">#226</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev513...kserve-controller-rev518\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev513&hellip;kserve-controller-rev518</a></p>\n",
-                  "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev518",
-                  "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev518...main"
-               },
-               {
-                  "id": 145464034,
-                  "version": "kserve-controller-rev513",
-                  "timestamp": 1709899263,
-                  "title": "Revision 513",
-                  "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 440\n    -  kserve-controller-image: kserve/kserve-controller:v0.11.1\n       resource-revision: 441</p>\n\n<p>Static resources:\n Released to &lsquo;0.11/edge&rsquo; at 12:29 UTC on 8 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Cherry pick ROCKs to the track/0.11 by <a target=\"_blank\" href=\"https://github.com/kimwnasptd\">@kimwnasptd</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/223\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/223\">#223</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev512...kserve-controller-rev513\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev512&hellip;kserve-controller-rev513</a></p>\n",
-                  "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev513",
-                  "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev513...main"
                }
             ],
             "tags": null,
@@ -15003,6 +15003,15 @@
             "url": "https://github.com/canonical/mongos-operator",
             "releases": [
                {
+                  "id": 148423206,
+                  "version": "rev8",
+                  "timestamp": 1711440131,
+                  "title": "Revision 8",
+                  "body": "<p>Released to 6/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3753] tls mongos by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/25\"><a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/25\">#25</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongos-operator/compare/rev7...rev8\">https://github.com/canonical/mongos-operator/compare/rev7&hellip;rev8</a></p>\n",
+                  "url": "https://github.com/canonical/mongos-operator/releases/tag/rev8",
+                  "compareUrl": "https://github.com/canonical/mongos-operator/compare/rev8...main"
+               },
+               {
                   "id": 148232607,
                   "version": "rev7",
                   "timestamp": 1711375999,
@@ -15019,15 +15028,6 @@
                   "body": "<p>Released to 6/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Added badges to README.md by <a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/20\">#20</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/20\">#20</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongos-operator/compare/rev5...rev6\">https://github.com/canonical/mongos-operator/compare/rev5&hellip;rev6</a></p>\n",
                   "url": "https://github.com/canonical/mongos-operator/releases/tag/rev6",
                   "compareUrl": "https://github.com/canonical/mongos-operator/compare/rev6...main"
-               },
-               {
-                  "id": 143354944,
-                  "version": "rev5",
-                  "timestamp": 1708694703,
-                  "title": "Revision 5",
-                  "body": "<p>Released to 6/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3293] mongos charm supports external connections via data-integrator charm by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/19\"><a target=\"_blank\" href=\"https://github.com/canonical/mongos-operator/pull/19\">#19</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongos-operator/compare/rev4...rev5\">https://github.com/canonical/mongos-operator/compare/rev4&hellip;rev5</a></p>\n",
-                  "url": "https://github.com/canonical/mongos-operator/releases/tag/rev5",
-                  "compareUrl": "https://github.com/canonical/mongos-operator/compare/rev5...main"
                }
             ],
             "tags": null,
@@ -21578,6 +21578,15 @@
             "url": "https://github.com/canonical/synapse-operator",
             "releases": [
                {
+                  "id": 148426251,
+                  "version": "rev170",
+                  "timestamp": 1711442149,
+                  "title": "Revision 170",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 164\n    -  synapse-nginx-image: undefined\n       resource-revision: 158</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:49 UTC on 26 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.34.70 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/263\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/263\">#263</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev169...rev170\">https://github.com/canonical/synapse-operator/compare/rev169&hellip;rev170</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev170",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev170...main"
+               },
+               {
                   "id": 148213286,
                   "version": "rev169",
                   "timestamp": 1711370475,
@@ -21594,15 +21603,6 @@
                   "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 156\n    -  synapse-image: undefined\n       resource-revision: 162</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:55 UTC on 22 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.34.68 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/260\">#260</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev167...rev168\">https://github.com/canonical/synapse-operator/compare/rev167&hellip;rev168</a></p>\n",
                   "url": "https://github.com/canonical/synapse-operator/releases/tag/rev168",
                   "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev168...main"
-               },
-               {
-                  "id": 147854244,
-                  "version": "rev167",
-                  "timestamp": 1711089214,
-                  "title": "Revision 167",
-                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 155\n    -  synapse-image: undefined\n       resource-revision: 161</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:51 UTC on 22 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update docs. CharmHub chat link to Matrix and other minor issues. by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/259\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/259\">#259</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev166...rev167\">https://github.com/canonical/synapse-operator/compare/rev166&hellip;rev167</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev167",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev167...main"
                }
             ],
             "tags": null,
@@ -21624,8 +21624,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 169,
-                     "timestamp": 1711371330
+                     "revision": 170,
+                     "timestamp": 1711442995
                   }
                ],
                "channels": [
