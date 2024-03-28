@@ -2005,9 +2005,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 24,
+            "newCommits": 0,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 148782081,
+                  "version": "v1.10.0",
+                  "timestamp": 1711589021,
+                  "title": "v1.10.0: change-update",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release has one new feature (addition of the <code>change-update</code> notice type), as well as a host of bug fixes, minor doc improvements, and a significant refactoring of plan management.</p>\n\n<h3>Features</h3>\n\n<ul>\n<li>feat(state): record change-update notices on change status updates by <a target=\"_blank\" href=\"https://github.com/ZeyadYasser\">@ZeyadYasser</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\">#379</a></a></li>\n</ul>\n\n<h3>Bug fixes</h3>\n\n<ul>\n<li>fix: start process subreaper at top level to avoid shutdown hangs by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/380\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/380\">#380</a></a></li>\n<li>fix: allow for the JSON overhead when reading log lines by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/384\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/384\">#384</a></a></li>\n<li>fix(client): make retry loop stop immediately when context is cancelled by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/386\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/386\">#386</a></a></li>\n<li>enter: start default services before executing subcommand  by <a target=\"_blank\" href=\"https://github.com/rebornplusplus\">@rebornplusplus</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/257\">#257</a></a></li>\n<li>fix(run): don&rsquo;t overwrite err on reaper.Stop() by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/390\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/390\">#390</a></a></li>\n<li>fix(cli): PEBBLE_COPY_ONCE on missing dir. by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/392\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/392\">#392</a></a></li>\n<li>fix(client): use host from BaseURL for websockets by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/393\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/393\">#393</a></a></li>\n<li>fix(daemon): deduplicate user-provided notice types by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/399\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/399\">#399</a></a></li>\n<li>fix(cli): pass PebbleDir and SocketPath through RunOptions/ParserOptions/CmdOptions by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/388\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/388\">#388</a></a></li>\n<li>fix(help): DefaultDir to personality, allow overriding header and footer by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/397\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/397\">#397</a></a></li>\n<li>fix(taskrunner): consistent, nicer formatting for task failed log by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/391\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/391\">#391</a></a></li>\n<li>fix(daemon): improve health state lock test, remove LockCount by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/373\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/373\">#373</a></a></li>\n</ul>\n\n<h3>Refactoring</h3>\n\n<ul>\n<li>chore: remove deprecated functions now that we&rsquo;re on Go 1.16+ by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/375\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/375\">#375</a></a></li>\n<li>refactor: remove maybeShellcheck from FakeCommand by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/381\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/381\">#381</a></a></li>\n<li>feat(planstate): create a dedicated plan manager by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/387\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/387\">#387</a></a></li>\n<li>feat(cli): add RunOptions to cli.Run, remove global variable by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/383\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/383\">#383</a></a></li>\n</ul>\n\n<h3>Docs</h3>\n\n<ul>\n<li>docs: add comments to clarify that WaitNotices releases the state lock by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/378\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/378\">#378</a></a></li>\n<li>docs: explicitly note that on-failure is not considered when starting or stopping a service by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/382\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/382\">#382</a></a></li>\n<li>feat(cli): new Info category for help, version by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/400\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/400\">#400</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/ZeyadYasser\">@ZeyadYasser</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\">#379</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.9.0...v1.10.0\">https://github.com/canonical/pebble/compare/v1.9.0&hellip;v1.10.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.10.0",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.10.0...master"
+               },
                {
                   "id": 147821625,
                   "version": "v1.9.1",
@@ -2025,15 +2034,6 @@
                   "body": "<p>This is a patch release pulling in the following fix to <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/363&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/363&quot;&gt;#363&lt;/a&gt;&lt;/a\">validate the whole plan, rather than just the topmost two layers</a>.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.7.2...v1.7.3\">https://github.com/canonical/pebble/compare/v1.7.2&hellip;v1.7.3</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.7.3",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.7.3...master"
-               },
-               {
-                  "id": 143931899,
-                  "version": "v1.9.0",
-                  "timestamp": 1709093981,
-                  "title": "v1.9.0: notices \"select\" to \"users\", health check state lock fix, validation fixes, and more",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(daemon): remove untrusted socket by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/361\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/361\">#361</a></a></li>\n<li>fix(daemon): Export error responders from daemon.response by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/360\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/360\">#360</a></a></li>\n<li>feat(wait): export cli.Wait function by <a target=\"_blank\" href=\"https://github.com/paul-rodriguez\">@paul-rodriguez</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/362\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/362\">#362</a></a></li>\n<li>doc(state): say why we&rsquo;re not implementing warnings as notices yet by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/365\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/365\">#365</a></a></li>\n<li>chore(daemon): port AccessChecker interface from snapd by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/358\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/358\">#358</a></a></li>\n<li>fix: validate whole plan, rather than topmost two layers by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\">#363</a></a></li>\n<li>feat(daemon): Add support for <code>PEBBLE_COPY_ONCE</code>. by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/352\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/352\">#352</a></a></li>\n<li>fix(notices): replace &ldquo;select=all&rdquo; with &ldquo;users=all&rdquo; by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/368\">#368</a></a></li>\n<li>fix(daemon): avoid acquiring state lock in health check endpoint by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/369\">#369</a></a></li>\n<li>Update version to v1.9.0 for release; flesh out release instructions by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/370\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/370\">#370</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/363\">#363</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.8.0...v1.9.0\">https://github.com/canonical/pebble/compare/v1.8.0&hellip;v1.9.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.9.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.9.0...master"
                }
             ],
             "tags": null,
@@ -2081,62 +2081,62 @@
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 528,
-                     "timestamp": 1709095038
+                     "revision": 629,
+                     "timestamp": 1711590196
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 526,
-                     "timestamp": 1709095043
+                     "revision": 631,
+                     "timestamp": 1711590199
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 525,
-                     "timestamp": 1709095032
+                     "revision": 633,
+                     "timestamp": 1711590197
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 524,
-                     "timestamp": 1709095035
+                     "revision": 632,
+                     "timestamp": 1711590199
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 527,
-                     "timestamp": 1709095033
+                     "revision": 630,
+                     "timestamp": 1711590195
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 621,
-                     "timestamp": 1711589223
+                     "revision": 629,
+                     "timestamp": 1711590150
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 620,
-                     "timestamp": 1711589217
+                     "revision": 631,
+                     "timestamp": 1711590160
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 619,
-                     "timestamp": 1711589213
+                     "revision": 633,
+                     "timestamp": 1711590165
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 623,
-                     "timestamp": 1711589228
+                     "revision": 632,
+                     "timestamp": 1711590162
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 622,
-                     "timestamp": 1711589226
+                     "revision": 630,
+                     "timestamp": 1711590153
                   }
                ],
                "channels": [
@@ -11815,7 +11815,7 @@
          },
          {
             "name": "sdcore-upf-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/sdcore-upf-operator",
             "releases": [
                {
@@ -13397,7 +13397,7 @@
          },
          {
             "name": "certificate-transfer-interface",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/certificate-transfer-interface",
             "releases": [
                {
@@ -21623,7 +21623,7 @@
          },
          {
             "name": "synapse-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/synapse-operator",
             "releases": [
                {
@@ -23753,6 +23753,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "b00b2003a6c4d77e7f9a48208f8ea6bde31fffd7",
+                  "author": "Ray Chan",
+                  "timestamp": 1711591433,
+                  "message": "<p>Add workflow for releasing charm to <code>latest/edge</code> channel (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/27\">#27</a>)</p>\n\n<ul>\n<li><p>Refactor workflows to smaller workflows.</p></li>\n\n<li><p>Add workflow for releasing charm to latest/edge channel when push to <code>main</code>.</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/b00b2003a6c4d77e7f9a48208f8ea6bde31fffd7"
+               },
+               {
                   "sha": "4954945332823a401483efb99858ed935fa90764",
                   "author": "Ray Chan",
                   "timestamp": 1711518582,
@@ -23765,13 +23772,6 @@
                   "timestamp": 1711400692,
                   "message": "<p>Add callback for credentials relation broken (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/23\">#23</a>)</p>\n\n<p>And refactor to merge duplicate code.\nSeveral events only need to call the configure method,\nso the event handlers can be removed/merged.</p>\n\n<p>Fixes: <a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/21\">#21</a></p>\n",
                   "url": "https://github.com/canonical/openstack-exporter-operator/commit/71985dea6790043b4e533bb7964eb7e776734369"
-               },
-               {
-                  "sha": "3c8fbdcdc90ebbb4c05b3ff8aa7c05f07e31c85a",
-                  "author": "Ray Chan",
-                  "timestamp": 1711100665,
-                  "message": "<p>Add check updates workflow (<a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/22\">#22</a>)</p>\n\n<ul>\n<li><p>Add workflow to check updates for ./src/grafana_dashboards/*</p></li>\n\n<li><p>Copy openstack-exporter.json from sunbeam-charms.</p></li>\n\n<li><p>Add Makefile to the charm, and managed the charm operations with <code>make</code>.</p></li>\n\n<li><p>Add Makefile</p></li>\n\n<li><p>Fix small issue with the scripts/update-charm-libs.sh</p></li>\n\n<li><p>Add scripts/check-dashboard-updates.sh to check for dashboard updates</p></li>\n\n<li><p>Update CONTRIBUTING.md</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/openstack-exporter-operator/commit/3c8fbdcdc90ebbb4c05b3ff8aa7c05f07e31c85a"
                }
             ],
             "ciActions": [],
