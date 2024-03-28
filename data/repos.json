@@ -6592,6 +6592,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "23e444823ad1b2735e5b713703dabf2b0745d569",
+                  "author": "Noha Ihab",
+                  "timestamp": 1711629156,
+                  "message": "<p>feat: add on pull request and on push workflows (<a target=\"_blank\" href=\"https://github.com/canonical/metacontroller-rock/pull/9\">#9</a>)</p>\n\n<ul>\n<li>feat: add on pull request and on push workflows</li>\n<li>fix: move rockcraft project to subdirectory</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/metacontroller-rock/commit/23e444823ad1b2735e5b713703dabf2b0745d569"
+               },
+               {
                   "sha": "ef1c27ecd999aaccadc114793971334bcb4ca04c",
                   "author": "Kimonas Sotirchos",
                   "timestamp": 1702313053,
@@ -6604,13 +6611,6 @@
                   "timestamp": 1699979857,
                   "message": "<p>git-xargs programmatic commit (<a target=\"_blank\" href=\"https://github.com/canonical/metacontroller-rock/pull/3\">#3</a>)</p>\n",
                   "url": "https://github.com/canonical/metacontroller-rock/commit/862b614a056a96de7212191eaefcfc683206c8b9"
-               },
-               {
-                  "sha": "ad61a07d7af0abf4b4d3ec72a5ca164b2ef27a5e",
-                  "author": "i-chvets",
-                  "timestamp": 1696339801,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/metacontroller-rock/pull/1\">#1</a> from canonical/kf-4450-feat-metacontroller-rock</p>\n\n<h1>Description</h1>\n\n<p><code>metacontroller</code> container image should be converted to ROCK.\nThis PR contains initial ROCK implementation based on best practices.</p>\n\n<h1>Summary of changes:</h1>\n\n<ul>\n<li>Initial ROCK based on the same version of source code as upstream container.</li>\n</ul>\n\n<h1>Scan results:</h1>\n\n<p>ROCK image <code>metacontroller:2.0.4_22.04_1</code>\nCRITICAL: 0 HIGH: 14 MED: 6 LOW: 0</p>\n\n<p>As compared to upstream image <code>metacontroller:2.0.4</code>\nCRITICAL: 3 HIGH: 41 MED: 11 LOW: 0</p>\n\n<h1>Testing</h1>\n\n<p>Manual testing was performed. See the log below.</p>\n\n<p><details><summary>Manual test log</summary></p>\n\n<pre><code>$ docker run charmedkubeflow/metacontroller:2.0.4_22.04_1 exec pebble start metacontroller\n2023-09-26T15:48:59.689Z [pebble] Started daemon.\n2023-09-26T15:48:59.710Z [pebble] POST /v1/exec 20.143166ms 202\n2023-09-26T15:48:59.727Z [pebble] GET /v1/tasks/1/websocket/control 16.942361ms 200\n2023-09-26T15:48:59.727Z [pebble] GET /v1/tasks/1/websocket/stdio 62.045µs 200\n2023-09-26T15:48:59.727Z [pebble] GET /v1/tasks/1/websocket/stderr 85.937µs 200\n2023-09-26T15:48:59.768Z [pebble] POST /v1/services 27.166079ms 202\n2023-09-26T15:48:59.768Z [pebble] Service &quot;metacontroller&quot; starting: metacontroller\n2023-09-26T15:48:59.779Z [metacontroller] {&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1695743339.779103,&quot;msg&quot;:&quot;Discovery cache flush interval&quot;,&quot;discovery_interval&quot;:30}\n2023-09-26T15:48:59.779Z [metacontroller] {&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1695743339.7791352,&quot;msg&quot;:&quot;API server object cache flush interval&quot;,&quot;cache_flush_interval&quot;:1800}\n2023-09-26T15:48:59.779Z [metacontroller] {&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1695743339.7791398,&quot;msg&quot;:&quot;Metrics http server address&quot;,&quot;port&quot;:&quot;:9999&quot;}\n2023-09-26T15:48:59.779Z [metacontroller] {&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1695743339.7791443,&quot;msg&quot;:&quot;Metacontroller build information&quot;,&quot;version&quot;:&quot;dev&quot;}\n2023-09-26T15:48:59.779Z [metacontroller] {&quot;level&quot;:&quot;error&quot;,&quot;ts&quot;:1695743339.7792091,&quot;msg&quot;:&quot;Terminating&quot;,&quot;error&quot;:&quot;invalid configuration: no configuration has been provided, try setting KUBERNETES_MASTER environment variable&quot;,&quot;errorCauses&quot;:[{&quot;error&quot;:&quot;no configuration has been provided, try setting KUBERNETES_MASTER environment variable&quot;}],&quot;stacktrace&quot;:&quot;runtime.main\\n\\t/snap/go/9362/src/runtime/proc.go:225&quot;}\nerror: cannot perform the following tasks:\n- Start service &quot;metacontroller&quot; (cannot start service: exited quickly with code 1)\n2023-09-26T15:48:59.905Z [pebble] GET /v1/changes/1/wait 176.788211ms 200\n</code></pre>\n\n<p></details></p>\n",
-                  "url": "https://github.com/canonical/metacontroller-rock/commit/ad61a07d7af0abf4b4d3ec72a5ca164b2ef27a5e"
                }
             ],
             "ciActions": [],
@@ -13128,10 +13128,81 @@
       "team": "TLS",
       "repos": [
          {
+            "name": "tls-certificates-interface",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/tls-certificates-interface",
+            "releases": [
+               {
+                  "id": 148861092,
+                  "version": "rev92",
+                  "timestamp": 1711630092,
+                  "title": "Revision 92",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:51 UTC on 28 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.355 to 1.1.356 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/155\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/155\">#155</a></a></li>\n<li>docs: require cryptography &gt;= 42.0.0 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/154\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/154\">#154</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev91...rev92\">https://github.com/canonical/tls-certificates-interface/compare/rev91&hellip;rev92</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev92",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev92...main"
+               },
+               {
+                  "id": 148693457,
+                  "version": "rev91",
+                  "timestamp": 1711550972,
+                  "title": "Revision 91",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 14:52 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: log warning instead of crashing when using with wrong juju version by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\">#152</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev90...rev91\">https://github.com/canonical/tls-certificates-interface/compare/rev90&hellip;rev91</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev91",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev91...main"
+               },
+               {
+                  "id": 148677193,
+                  "version": "rev90",
+                  "timestamp": 1711546571,
+                  "title": "Revision 90",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 13:40 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Adds on pull_request event as a trigger of the CI by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/153\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/153\">#153</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev89...rev90\">https://github.com/canonical/tls-certificates-interface/compare/rev89&hellip;rev90</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev90",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev90...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "tls-certificates-interface",
+               "url": "https://charmhub.io/tls-certificates-interface",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 19,
+                     "timestamp": 1676042530
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 92,
+                     "timestamp": 1711630311
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "vault-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
+               {
+                  "id": 148864849,
+                  "version": "rev190",
+                  "timestamp": 1711628695,
+                  "title": "Revision 190",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 78</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 13:11 UTC on 28 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build: Static check all the code by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/265\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/265\">#265</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev189...rev190\">https://github.com/canonical/vault-k8s-operator/compare/rev189&hellip;rev190</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev190",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev190...main"
+               },
                {
                   "id": 148839626,
                   "version": "rev189",
@@ -13149,15 +13220,6 @@
                   "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 78</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 18:41 UTC on 26 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>test: Remove unnecessary pytest marks by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/264\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/264\">#264</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev187...rev188\">https://github.com/canonical/vault-k8s-operator/compare/rev187&hellip;rev188</a></p>\n",
                   "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev188",
                   "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev188...main"
-               },
-               {
-                  "id": 148483951,
-                  "version": "rev187",
-                  "timestamp": 1711460673,
-                  "title": "Revision 187",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 78</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 14:14 UTC on 26 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use update status event to sync kv requests by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/261\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/261\">#261</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev186...rev187\">https://github.com/canonical/vault-k8s-operator/compare/rev186&hellip;rev187</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev187",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev187...main"
                }
             ],
             "tags": null,
@@ -13182,8 +13244,8 @@
                   {
                      "track": "1.15",
                      "channel": "edge",
-                     "revision": 189,
-                     "timestamp": 1711621587
+                     "revision": 190,
+                     "timestamp": 1711631478
                   }
                ],
                "channels": [
@@ -13576,39 +13638,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "lego-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/lego-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "f5516feb1cd07d94149a522d452df3b89013145f",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1710388459,
-                  "message": "<p>chore: bump docker/login-action from 3.0.0 to 3.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/39\">#39</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/f5516feb1cd07d94149a522d452df3b89013145f"
-               },
-               {
-                  "sha": "91a8ce22d2008ded9851ee042eb28002870f7d4c",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1710334919,
-                  "message": "<p>chore: bump lego to v4.16.1 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/38\">#38</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/91a8ce22d2008ded9851ee042eb28002870f7d4c"
-               },
-               {
-                  "sha": "0b45c8f46d76963da9682efa0934b32482f5eeff",
-                  "author": "saltiyazan",
-                  "timestamp": 1710289008,
-                  "message": "<p>feat: Automates dependabot PR review and merge (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/37\">#37</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/0b45c8f46d76963da9682efa0934b32482f5eeff"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
             "snap": null
          },
          {
@@ -14735,6 +14764,39 @@
             }
          },
          {
+            "name": "lego-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/lego-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "f5516feb1cd07d94149a522d452df3b89013145f",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1710388459,
+                  "message": "<p>chore: bump docker/login-action from 3.0.0 to 3.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/39\">#39</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/f5516feb1cd07d94149a522d452df3b89013145f"
+               },
+               {
+                  "sha": "91a8ce22d2008ded9851ee042eb28002870f7d4c",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1710334919,
+                  "message": "<p>chore: bump lego to v4.16.1 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/38\">#38</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/91a8ce22d2008ded9851ee042eb28002870f7d4c"
+               },
+               {
+                  "sha": "0b45c8f46d76963da9682efa0934b32482f5eeff",
+                  "author": "saltiyazan",
+                  "timestamp": 1710289008,
+                  "message": "<p>feat: Automates dependabot PR review and merge (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/37\">#37</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/0b45c8f46d76963da9682efa0934b32482f5eeff"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "tls-certificates-requirer-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/tls-certificates-requirer-operator",
@@ -14803,68 +14865,6 @@
                   "stable",
                   "candidate",
                   "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "tls-certificates-interface",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/tls-certificates-interface",
-            "releases": [
-               {
-                  "id": 148693457,
-                  "version": "rev91",
-                  "timestamp": 1711550972,
-                  "title": "Revision 91",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 14:52 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: log warning instead of crashing when using with wrong juju version by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\">#152</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev90...rev91\">https://github.com/canonical/tls-certificates-interface/compare/rev90&hellip;rev91</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev91",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev91...main"
-               },
-               {
-                  "id": 148677193,
-                  "version": "rev90",
-                  "timestamp": 1711546571,
-                  "title": "Revision 90",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 13:40 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Adds on pull_request event as a trigger of the CI by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/153\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/153\">#153</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev89...rev90\">https://github.com/canonical/tls-certificates-interface/compare/rev89&hellip;rev90</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev90",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev90...main"
-               },
-               {
-                  "id": 148653892,
-                  "version": "rev89",
-                  "timestamp": 1711538477,
-                  "title": "Revision 89",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 11:24 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.354 to 1.1.355 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/145\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/145\">#145</a></a></li>\n<li>chore: bump ruff from 0.3.3 to 0.3.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/146\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/146\">#146</a></a></li>\n<li>chore: add issue template by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/149\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/149\">#149</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev88...rev89\">https://github.com/canonical/tls-certificates-interface/compare/rev88&hellip;rev89</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev89",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev89...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "tls-certificates-interface",
-               "url": "https://charmhub.io/tls-certificates-interface",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 19,
-                     "timestamp": 1676042530
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 91,
-                     "timestamp": 1711551177
-                  }
-               ],
-               "channels": [
                   "edge"
                ],
                "tracks": [
@@ -18383,7 +18383,7 @@
          },
          {
             "name": "postgresql-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/postgresql-operator",
             "releases": [
                {
@@ -20416,6 +20416,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "47e4d544df1e37fc614bf46e45f93d1a8adcd6ae",
+                  "author": "Louise K. Schmidtgen",
+                  "timestamp": 1711629690,
+                  "message": "<p>add timeout to integration_test (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/271\">#271</a>)</p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/47e4d544df1e37fc614bf46e45f93d1a8adcd6ae"
+               },
+               {
                   "sha": "d2faea0fa0c89476a38a4ae2a245b44966035323",
                   "author": "Louise K. Schmidtgen",
                   "timestamp": 1711525799,
@@ -20428,13 +20435,6 @@
                   "timestamp": 1711452635,
                   "message": "<p>Remove deprecated workflow (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/269\">#269</a>)</p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/b8569e800a6c6d148d7b648d127d782dbedf555f"
-               },
-               {
-                  "sha": "dff8b04cc4a60117608bffbfef465f2472e7e5d6",
-                  "author": "renovate[bot]",
-                  "timestamp": 1710769996,
-                  "message": "<p>chore(deps): update docker/login-action action to v3.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/264\">#264</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/dff8b04cc4a60117608bffbfef465f2472e7e5d6"
                }
             ],
             "ciActions": [],
