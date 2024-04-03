@@ -2030,35 +2030,35 @@
          },
          {
             "name": "pebble",
-            "newCommits": 153,
+            "newCommits": 48,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 149508292,
+                  "version": "v1.7.4",
+                  "timestamp": 1712116540,
+                  "title": "v1.7.4: require admin access for file pull API",
+                  "body": "<p>This locks down the files &ldquo;pull&rdquo; API to require admin. Even though it&rsquo;s a read (GET), this meant any user could potentially read sensitive files.</p>\n\n<p>Changelog since v1.7.3: <a href=\"https://github.com/canonical/pebble/compare/v1.7.3...v1.7.4\">https://github.com/canonical/pebble/compare/v1.7.3&hellip;v1.7.4</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.7.4",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.7.4...master"
+               },
+               {
+                  "id": 149506696,
+                  "version": "v1.4.2",
+                  "timestamp": 1712115589,
+                  "title": "v1.4.2: require admin access for file pull API",
+                  "body": "<p>This locks down the files &ldquo;pull&rdquo; API to require admin. Even though it&rsquo;s a read (GET), this meant any user could potentially read sensitive files.</p>\n\n<p>Changelog since v1.4.1: <a href=\"https://github.com/canonical/pebble/compare/v1.4.1...v1.4.2\">https://github.com/canonical/pebble/compare/v1.4.1&hellip;v1.4.2</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.4.2",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.4.2...master"
+               },
                {
                   "id": 149502636,
                   "version": "v1.1.1",
                   "timestamp": 1712103220,
                   "title": "v1.1.1: require admin access for file pull API",
-                  "body": "<p>This locks down the files &ldquo;pull&rdquo; API to require admin. Even though it&rsquo;s a read (GET), this meant any user could potentially read sensitive files.</p>\n\n<p>Note that this version number is prior to any other tagged release of Pebble (the first tagged release was v1.2.0).</p>\n\n<p><a href=\"https://github.com/canonical/pebble/compare/5842ea68c9c7...benhoyt:pebble:1.1-maintenance?expand=1\">Changes from 5842ea68c9c7 (the version currently used by Juju 2.9).</a></p>\n",
+                  "body": "<p>This locks down the files &ldquo;pull&rdquo; API to require admin. Even though it&rsquo;s a read (GET), this meant any user could potentially read sensitive files.</p>\n\n<p>Note that this version number is prior to any other tagged release of Pebble (the first tagged release was v1.2.0).</p>\n\n<p>This addresses CVE-2024-3250.</p>\n\n<p><a href=\"https://github.com/canonical/pebble/compare/5842ea68c9c7...benhoyt:pebble:1.1-maintenance?expand=1\">Changes from 5842ea68c9c7 (the version currently used by Juju 2.9).</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.1.1",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.1.1...master"
-               },
-               {
-                  "id": 148793499,
-                  "version": "v1.10.1",
-                  "timestamp": 1711600505,
-                  "title": "v1.10.1: add missing client.ChangeUpdateNotice constant",
-                  "body": "<p>This is a patch release that just adds the missing <code>client.ChangeUpdateNotice</code> constant.</p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.10.1",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.10.1...master"
-               },
-               {
-                  "id": 148782081,
-                  "version": "v1.10.0",
-                  "timestamp": 1711589021,
-                  "title": "v1.10.0: change-update",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release has one new feature (addition of the <code>change-update</code> notice type), as well as a host of bug fixes, minor doc improvements, and a significant refactoring of plan management.</p>\n\n<h3>Features</h3>\n\n<ul>\n<li>feat(state): record change-update notices on change status updates by <a target=\"_blank\" href=\"https://github.com/ZeyadYasser\">@ZeyadYasser</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\">#379</a></a></li>\n</ul>\n\n<h3>Bug fixes</h3>\n\n<ul>\n<li>fix: start process subreaper at top level to avoid shutdown hangs by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/380\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/380\">#380</a></a></li>\n<li>fix: allow for the JSON overhead when reading log lines by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/384\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/384\">#384</a></a></li>\n<li>fix(client): make retry loop stop immediately when context is cancelled by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/386\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/386\">#386</a></a></li>\n<li>enter: start default services before executing subcommand  by <a target=\"_blank\" href=\"https://github.com/rebornplusplus\">@rebornplusplus</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/257\">#257</a></a></li>\n<li>fix(run): don&rsquo;t overwrite err on reaper.Stop() by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/390\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/390\">#390</a></a></li>\n<li>fix(cli): PEBBLE_COPY_ONCE on missing dir. by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/392\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/392\">#392</a></a></li>\n<li>fix(client): use host from BaseURL for websockets by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/393\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/393\">#393</a></a></li>\n<li>fix(daemon): deduplicate user-provided notice types by <a target=\"_blank\" href=\"https://github.com/olivercalder\">@olivercalder</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/399\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/399\">#399</a></a></li>\n<li>fix(cli): pass PebbleDir and SocketPath through RunOptions/ParserOptions/CmdOptions by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/388\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/388\">#388</a></a></li>\n<li>fix(help): DefaultDir to personality, allow overriding header and footer by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/397\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/397\">#397</a></a></li>\n<li>fix(taskrunner): consistent, nicer formatting for task failed log by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/391\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/391\">#391</a></a></li>\n<li>fix(daemon): improve health state lock test, remove LockCount by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/373\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/373\">#373</a></a></li>\n</ul>\n\n<h3>Refactoring</h3>\n\n<ul>\n<li>chore: remove deprecated functions now that we&rsquo;re on Go 1.16+ by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/375\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/375\">#375</a></a></li>\n<li>refactor: remove maybeShellcheck from FakeCommand by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/381\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/381\">#381</a></a></li>\n<li>feat(planstate): create a dedicated plan manager by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/387\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/387\">#387</a></a></li>\n<li>feat(cli): add RunOptions to cli.Run, remove global variable by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/383\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/383\">#383</a></a></li>\n</ul>\n\n<h3>Docs</h3>\n\n<ul>\n<li>docs: add comments to clarify that WaitNotices releases the state lock by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/378\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/378\">#378</a></a></li>\n<li>docs: explicitly note that on-failure is not considered when starting or stopping a service by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/382\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/382\">#382</a></a></li>\n<li>feat(cli): new Info category for help, version by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/400\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/400\">#400</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/ZeyadYasser\">@ZeyadYasser</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/379\">#379</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.9.0...v1.10.0\">https://github.com/canonical/pebble/compare/v1.9.0&hellip;v1.10.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.10.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.10.0...master"
                }
             ],
             "tags": null,
@@ -23252,6 +23252,15 @@
             "url": "https://github.com/canonical/hardware-observer-operator",
             "releases": [
                {
+                  "id": 149508968,
+                  "version": "rev59",
+                  "timestamp": 1712116557,
+                  "title": "Revision 59",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 04:11 UTC on 3 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update license info by <a target=\"_blank\" href=\"https://github.com/sudeephb\">@sudeephb</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/212\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/212\">#212</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev58...rev59\">https://github.com/canonical/hardware-observer-operator/compare/rev58&hellip;rev59</a></p>\n",
+                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev59",
+                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev59...master"
+               },
+               {
                   "id": 149209641,
                   "version": "rev58",
                   "timestamp": 1711963002,
@@ -23268,15 +23277,6 @@
                   "body": "<p>resources:</p>\n\n<pre><code>-  sas2ircu-bin: \n   resource-revision: 1\n-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:37 UTC on 29 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Retry alerts to be fired for longer duration by <a target=\"_blank\" href=\"https://github.com/sudeephb\">@sudeephb</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/211\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/211\">#211</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev56...rev57\">https://github.com/canonical/hardware-observer-operator/compare/rev56&hellip;rev57</a></p>\n",
                   "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev57",
                   "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev57...master"
-               },
-               {
-                  "id": 148650471,
-                  "version": "rev56",
-                  "timestamp": 1711533691,
-                  "title": "Revision 56",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  sas3ircu-bin: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:04 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Update collect-timeout during config change event by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/206\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/206\">#206</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev55...rev56\">https://github.com/canonical/hardware-observer-operator/compare/rev55&hellip;rev56</a></p>\n",
-                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev56",
-                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev56...master"
                }
             ],
             "tags": null,
@@ -23333,14 +23333,14 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 58,
-                     "timestamp": 1711963933
+                     "revision": 59,
+                     "timestamp": 1712117484
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 58,
-                     "timestamp": 1711963933
+                     "revision": 59,
+                     "timestamp": 1712117484
                   }
                ],
                "channels": [
