@@ -2030,9 +2030,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 48,
+            "newCommits": 3,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 149509617,
+                  "version": "v1.10.2",
+                  "timestamp": 1712117649,
+                  "title": "v1.10.2: require admin access for POSTs and file pull API",
+                  "body": "<p>This addresses the following security issues:</p>\n\n<ul>\n<li>Lock down all POSTs/writes to require admin.</li>\n<li>Lock down the files &ldquo;pull&rdquo; API to require admin.</li>\n<li>Lock down the task-websocket endpoint to admin.</li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.10.1...v1.10.2\">https://github.com/canonical/pebble/compare/v1.10.1&hellip;v1.10.2</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.10.2",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.10.2...master"
+               },
                {
                   "id": 149508292,
                   "version": "v1.7.4",
@@ -2050,15 +2059,6 @@
                   "body": "<p>This locks down the files &ldquo;pull&rdquo; API to require admin. Even though it&rsquo;s a read (GET), this meant any user could potentially read sensitive files.</p>\n\n<p>Changelog since v1.4.1: <a href=\"https://github.com/canonical/pebble/compare/v1.4.1...v1.4.2\">https://github.com/canonical/pebble/compare/v1.4.1&hellip;v1.4.2</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.4.2",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.4.2...master"
-               },
-               {
-                  "id": 149502636,
-                  "version": "v1.1.1",
-                  "timestamp": 1712103220,
-                  "title": "v1.1.1: require admin access for file pull API",
-                  "body": "<p>This locks down the files &ldquo;pull&rdquo; API to require admin. Even though it&rsquo;s a read (GET), this meant any user could potentially read sensitive files.</p>\n\n<p>Note that this version number is prior to any other tagged release of Pebble (the first tagged release was v1.2.0).</p>\n\n<p>This addresses CVE-2024-3250.</p>\n\n<p><a href=\"https://github.com/canonical/pebble/compare/5842ea68c9c7...benhoyt:pebble:1.1-maintenance?expand=1\">Changes from 5842ea68c9c7 (the version currently used by Juju 2.9).</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.1.1",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.1.1...master"
                }
             ],
             "tags": null,
@@ -20753,6 +20753,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "acd59c2bfd504c5c8a02356e2ff2caecac95177b",
+                  "author": "Christopher Bartz",
+                  "timestamp": 1712121111,
+                  "message": "<p>Add &ldquo;x64&rdquo; and &ldquo;jammy&rdquo; to self-hosted labels (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/275\">#275</a>)</p>\n\n<ul>\n<li><p>Specify x64 and jammy in self-hosted labels</p></li>\n\n<li><p>Add x64 and jammy to bot_pr_approval</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: David Andersson <a href=\"mailto:51036209+jdkandersson@users.noreply.github.com\">51036209+jdkandersson@users.noreply.github.com</a></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/acd59c2bfd504c5c8a02356e2ff2caecac95177b"
+               },
+               {
                   "sha": "36708988e53aba1f166dbfebecdba69b3f89a3e3",
                   "author": "renovate[bot]",
                   "timestamp": 1712073509,
@@ -20765,13 +20772,6 @@
                   "timestamp": 1712058569,
                   "message": "<p>Allow to specify channel for {charm,rock}craft installation (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/273\">#273</a>)</p>\n\n<ul>\n<li><p>Add support for *craft-channel</p></li>\n\n<li><p>Fix install rockcraft step</p></li>\n\n<li><p>Add tmate</p></li>\n\n<li><p>Update README.md</p></li>\n\n<li><p>Revert &ldquo;Add tmate&rdquo;</p></li>\n</ul>\n\n<p>This reverts commit a2d76fb3b1f635af70fdfdb223e960a37586e6dd.</p>\n\n<ul>\n<li><p>Reorder</p></li>\n\n<li><p>Reformat README</p></li>\n\n<li><p>Mention mutual exclusion of repo and channel inputs</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/e0e9923c3505bbce31863ba9db547459b8734448"
-               },
-               {
-                  "sha": "f7176190fedfc64a66e3ab19442561275d8471a3",
-                  "author": "Adam Dyess",
-                  "timestamp": 1711966873,
-                  "message": "<p>Promote charms from various working-directories and optional doc-working-directory (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/272\">#272</a>)</p>\n\n<ul>\n<li><p>Promote charms from various working-directories and optional doc-working-directory</p></li>\n\n<li><p>Update README</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: arturo-seijas <a href=\"mailto:102022572+arturo-seijas@users.noreply.github.com\">102022572+arturo-seijas@users.noreply.github.com</a></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/f7176190fedfc64a66e3ab19442561275d8471a3"
                }
             ],
             "ciActions": [],
