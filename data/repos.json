@@ -8538,7 +8538,7 @@
          },
          {
             "name": "canonical-identity-platform-docs",
-            "newCommits": 73,
+            "newCommits": 77,
             "url": "https://github.com/canonical/canonical-identity-platform-docs",
             "releases": null,
             "tags": [
@@ -9361,6 +9361,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "b715a333687eea24151680de91e72d79baa2c6cc",
+                  "author": "Angelos Kolaitis",
+                  "timestamp": 1713367979,
+                  "message": "<p>re-create k8s client in case of failure (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/346\">#346</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/b715a333687eea24151680de91e72d79baa2c6cc"
+               },
+               {
                   "sha": "ab2ff4f0cc0ba75534252ee450062a2150756b3e",
                   "author": "eaudetcobello",
                   "timestamp": 1713365621,
@@ -9373,13 +9380,6 @@
                   "timestamp": 1713365553,
                   "message": "<p>Ku 642/docs restructure attempt 2 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/345\">#345</a>)</p>\n\n<ul>\n<li>Add restructured docs</li>\n<li>resolve conflicts</li>\n<li>remove old docs</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/7eff7df50ef43f63180e16a1d1c8f6b7bde0bfef"
-               },
-               {
-                  "sha": "710370c46fe3757c3dc2c8f1de77b07563df23a1",
-                  "author": "Angelos Kolaitis",
-                  "timestamp": 1713355458,
-                  "message": "<p>Adjust systemd service definitions (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/341\">#341</a>)</p>\n\n<ul>\n<li><p>define service start order</p></li>\n\n<li><p>adjust strict patch</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/710370c46fe3757c3dc2c8f1de77b07563df23a1"
                }
             ],
             "ciActions": [
@@ -12450,9 +12450,18 @@
          },
          {
             "name": "sdcore-udm-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-udm-k8s-operator",
             "releases": [
+               {
+                  "id": 151591593,
+                  "version": "rev91",
+                  "timestamp": 1713368291,
+                  "title": "Revision 91",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 23</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-github-actions-peter-evans-create-pull-request-6-0-4&rsquo; at 15:58 UTC on 17 Apr 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev90...rev91\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev90&hellip;rev91</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev91",
+                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev91...main"
+               },
                {
                   "id": 151170474,
                   "version": "rev90",
@@ -12470,15 +12479,6 @@
                   "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 23</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/TELCO-1114-use-ruff&rsquo; at 12:33 UTC on 15 Apr 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev88...rev89\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev88&hellip;rev89</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev89",
                   "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev89...main"
-               },
-               {
-                  "id": 151167355,
-                  "version": "rev88",
-                  "timestamp": 1713183219,
-                  "title": "Revision 88",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 23</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/&rsquo; at 12:32 UTC on 15 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use release version of sdcore github workflows by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/113\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/113\">#113</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev86...rev88\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev86&hellip;rev88</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev88",
-                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev88...main"
                }
             ],
             "tags": null,
@@ -13537,6 +13537,114 @@
       "team": "TLS",
       "repos": [
          {
+            "name": "vault-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/vault-k8s-operator",
+            "releases": [
+               {
+                  "id": 151587761,
+                  "version": "rev202",
+                  "timestamp": 1713366313,
+                  "title": "Revision 202",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 15:36 UTC on 17 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump boto3 from 1.34.84 to 1.34.85 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/310\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/310\">#310</a></a></li>\n<li>fix: Check for CA file availability instead of storage itself by <a target=\"_blank\" href=\"https://github.com/Kayra1\">@Kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/312\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/312\">#312</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev201...rev202\">https://github.com/canonical/vault-k8s-operator/compare/rev201&hellip;rev202</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev202",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev202...main"
+               },
+               {
+                  "id": 151380869,
+                  "version": "rev201",
+                  "timestamp": 1713275364,
+                  "title": "Revision 201",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 14:21 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: check if vault is sealed before removing raft node by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/308\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/308\">#308</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev200...rev201\">https://github.com/canonical/vault-k8s-operator/compare/rev200&hellip;rev201</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev201",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev201...main"
+               },
+               {
+                  "id": 151362210,
+                  "version": "rev200",
+                  "timestamp": 1713270319,
+                  "title": "Revision 200",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 12:56 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Catch connection errors when logging in to vault by <a target=\"_blank\" href=\"https://github.com/Kayra1\">@Kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/309\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/309\">#309</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev199...rev200\">https://github.com/canonical/vault-k8s-operator/compare/rev199&hellip;rev200</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev200",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev200...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "vault-k8s",
+               "url": "https://charmhub.io/vault-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 9,
+                     "timestamp": 1674813528
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 89,
+                     "timestamp": 1706692944
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "edge",
+                     "revision": 202,
+                     "timestamp": 1713368193
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "1.15"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "vault-operator",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/vault-operator",
+            "releases": [
+               {
+                  "id": 151585726,
+                  "version": "rev272",
+                  "timestamp": 1713366077,
+                  "title": "Revision 272",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 15:25 UTC on 17 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump boto3-stubs[s3] from 1.34.84 to 1.34.85 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/137\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/137\">#137</a></a></li>\n<li>chore: Bump boto3 from 1.34.84 to 1.34.85 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/138\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/138\">#138</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/136\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/136\">#136</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev271...rev272\">https://github.com/canonical/vault-operator/compare/rev271&hellip;rev272</a></p>\n",
+                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev272",
+                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev272...main"
+               },
+               {
+                  "id": 151381704,
+                  "version": "rev271",
+                  "timestamp": 1713276014,
+                  "title": "Revision 271",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 14:25 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump boto3-stubs[s3] from 1.34.83 to 1.34.84 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/134\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/134\">#134</a></a></li>\n<li>chore: Bump boto3 from 1.34.83 to 1.34.84 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/133\">#133</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/132\">#132</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev270...rev271\">https://github.com/canonical/vault-operator/compare/rev270&hellip;rev271</a></p>\n",
+                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev271",
+                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev271...main"
+               },
+               {
+                  "id": 151070844,
+                  "version": "rev270",
+                  "timestamp": 1713102582,
+                  "title": "Revision 270",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 14:14 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump boto3-stubs[s3] from 1.34.81 to 1.34.82 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/122\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/122\">#122</a></a></li>\n<li>chore: Bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/123\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/123\">#123</a></a></li>\n<li>chore: Bump boto3 from 1.34.81 to 1.34.83 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/126\">#126</a></a></li>\n<li>chore: Bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/127\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/127\">#127</a></a></li>\n<li>chore: Bump boto3-stubs[s3] from 1.34.82 to 1.34.83 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/128\">#128</a></a></li>\n<li>chore: Bump ruff from 0.3.5 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/130\">#130</a></a></li>\n<li>chore: Bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/131\">#131</a></a></li>\n<li>feat: add <code>restore-backup</code> action by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/114\">#114</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev269...rev270\">https://github.com/canonical/vault-operator/compare/rev269&hellip;rev270</a></p>\n",
+                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev270",
+                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev270...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "tls-constraints-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/tls-constraints-operator",
@@ -13584,573 +13692,6 @@
                   }
                ],
                "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "httprequest-lego-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/httprequest-lego-k8s-operator",
-            "releases": [
-               {
-                  "id": 151396824,
-                  "version": "rev71",
-                  "timestamp": 1713280843,
-                  "title": "Revision 71",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:38 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: increase default timeout for http requests by <a target=\"_blank\" href=\"https://github.com/mthaddon\">@mthaddon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\">#124</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/mthaddon\">@mthaddon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\">#124</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev70...rev71\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev70&hellip;rev71</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev71",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev71...main"
-               },
-               {
-                  "id": 151066892,
-                  "version": "rev70",
-                  "timestamp": 1713097049,
-                  "title": "Revision 70",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:31 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/118\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/118\">#118</a></a></li>\n<li>chore: Bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/119\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/119\">#119</a></a></li>\n<li>chore: Bump ruff from 0.3.6 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/120\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/120\">#120</a></a></li>\n<li>chore: Bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/121\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/121\">#121</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/122\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/122\">#122</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev69...rev70\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev69&hellip;rev70</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev70",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev70...main"
-               },
-               {
-                  "id": 150817226,
-                  "version": "rev69",
-                  "timestamp": 1712863087,
-                  "title": "Revision 69",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:34 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/111\">#111</a></a></li>\n<li>chore: Bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/113\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/113\">#113</a></a></li>\n<li>chore: Bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/114\">#114</a></a></li>\n<li>chore: Bump cosl from 0.0.10 to 0.0.11 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/115\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/115\">#115</a></a></li>\n<li>fix: tell type checkers that the config options are strings by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\">#116</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/117\">#117</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\">#116</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev68...rev69\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev68&hellip;rev69</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev69",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev69...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "httprequest-lego-k8s",
-               "url": "https://charmhub.io/httprequest-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 40,
-                     "timestamp": 1709041308
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 40,
-                     "timestamp": 1709041252
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 40,
-                     "timestamp": 1709041195
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 71,
-                     "timestamp": 1713281920
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "vault-operator",
-            "newCommits": 3,
-            "url": "https://github.com/canonical/vault-operator",
-            "releases": [
-               {
-                  "id": 151381704,
-                  "version": "rev271",
-                  "timestamp": 1713276014,
-                  "title": "Revision 271",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 14:25 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump boto3-stubs[s3] from 1.34.83 to 1.34.84 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/134\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/134\">#134</a></a></li>\n<li>chore: Bump boto3 from 1.34.83 to 1.34.84 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/133\">#133</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/132\">#132</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev270...rev271\">https://github.com/canonical/vault-operator/compare/rev270&hellip;rev271</a></p>\n",
-                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev271",
-                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev271...main"
-               },
-               {
-                  "id": 151070844,
-                  "version": "rev270",
-                  "timestamp": 1713102582,
-                  "title": "Revision 270",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 14:14 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump boto3-stubs[s3] from 1.34.81 to 1.34.82 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/122\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/122\">#122</a></a></li>\n<li>chore: Bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/123\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/123\">#123</a></a></li>\n<li>chore: Bump boto3 from 1.34.81 to 1.34.83 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/126\">#126</a></a></li>\n<li>chore: Bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/127\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/127\">#127</a></a></li>\n<li>chore: Bump boto3-stubs[s3] from 1.34.82 to 1.34.83 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/128\">#128</a></a></li>\n<li>chore: Bump ruff from 0.3.5 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/130\">#130</a></a></li>\n<li>chore: Bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/131\">#131</a></a></li>\n<li>feat: add <code>restore-backup</code> action by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/114\">#114</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev269...rev270\">https://github.com/canonical/vault-operator/compare/rev269&hellip;rev270</a></p>\n",
-                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev270",
-                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev270...main"
-               },
-               {
-                  "id": 150817966,
-                  "version": "rev269",
-                  "timestamp": 1712862952,
-                  "title": "Revision 269",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 19:40 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump boto3 from 1.34.78 to 1.34.79 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/116\">#116</a></a></li>\n<li>chore: Bump boto3-stubs[s3] from 1.34.78 to 1.34.79 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/115\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/115\">#115</a></a></li>\n<li>chore: Bump boto3 from 1.34.79 to 1.34.80 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/118\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/118\">#118</a></a></li>\n<li>chore: Bump boto3-stubs[s3] from 1.34.79 to 1.34.80 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/117\">#117</a></a></li>\n<li>chore: Bump cosl from 0.0.10 to 0.0.11 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/120\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/120\">#120</a></a></li>\n<li>chore: Bump boto3-stubs[s3] from 1.34.80 to 1.34.81 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/121\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/121\">#121</a></a></li>\n<li>chore: Bump boto3 from 1.34.80 to 1.34.81 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/119\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/119\">#119</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/125\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/125\">#125</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev267...rev269\">https://github.com/canonical/vault-operator/compare/rev267&hellip;rev269</a></p>\n",
-                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev269",
-                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev269...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "vault-k8s-operator",
-            "newCommits": 2,
-            "url": "https://github.com/canonical/vault-k8s-operator",
-            "releases": [
-               {
-                  "id": 151380869,
-                  "version": "rev201",
-                  "timestamp": 1713275364,
-                  "title": "Revision 201",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 14:21 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: check if vault is sealed before removing raft node by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/308\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/308\">#308</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev200...rev201\">https://github.com/canonical/vault-k8s-operator/compare/rev200&hellip;rev201</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev201",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev201...main"
-               },
-               {
-                  "id": 151362210,
-                  "version": "rev200",
-                  "timestamp": 1713270319,
-                  "title": "Revision 200",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 12:56 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Catch connection errors when logging in to vault by <a target=\"_blank\" href=\"https://github.com/Kayra1\">@Kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/309\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/309\">#309</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev199...rev200\">https://github.com/canonical/vault-k8s-operator/compare/rev199&hellip;rev200</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev200",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev200...main"
-               },
-               {
-                  "id": 151349143,
-                  "version": "rev199",
-                  "timestamp": 1713266214,
-                  "title": "Revision 199",
-                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.15.6\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;1.15/edge&rsquo; at 11:48 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump boto3 from 1.34.83 to 1.34.84 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/305\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/305\">#305</a></a></li>\n<li>fix: check if relation is active before syncing kv by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/306\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/306\">#306</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev198...rev199\">https://github.com/canonical/vault-k8s-operator/compare/rev198&hellip;rev199</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev199",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev199...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "vault-k8s",
-               "url": "https://charmhub.io/vault-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 9,
-                     "timestamp": 1674813528
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1706692944
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "edge",
-                     "revision": 201,
-                     "timestamp": 1713277282
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "1.15"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "route53-lego-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/route53-lego-k8s-operator",
-            "releases": [
-               {
-                  "id": 151066977,
-                  "version": "rev72",
-                  "timestamp": 1713097250,
-                  "title": "Revision 72",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 18</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:34 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 in the pip_dependencies group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/122\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/122\">#122</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/123\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/123\">#123</a></a></li>\n<li>chore: bump ruff from 0.3.6 to 0.3.7 in the pip_dependencies group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/124\">#124</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/125\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/125\">#125</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev71...rev72\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev71&hellip;rev72</a></p>\n",
-                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev72",
-                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev72...main"
-               },
-               {
-                  "id": 150817077,
-                  "version": "rev71",
-                  "timestamp": 1712863037,
-                  "title": "Revision 71",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 18</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:33 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 1 update by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/118\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/118\">#118</a></a></li>\n<li>chore: bump the pip_dependencies group with 1 update by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/119\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/119\">#119</a></a></li>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/120\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/120\">#120</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/121\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/121\">#121</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev70...rev71\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev70&hellip;rev71</a></p>\n",
-                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev71",
-                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev71...main"
-               },
-               {
-                  "id": 149100206,
-                  "version": "rev70",
-                  "timestamp": 1711812529,
-                  "title": "Revision 70",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:42 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 1 update by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/117\">#117</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/116\">#116</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev69...rev70\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev69&hellip;rev70</a></p>\n",
-                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev70",
-                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev70...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "route53-lego-k8s",
-               "url": "https://charmhub.io/route53-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 7,
-                     "timestamp": 1704924164
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 7,
-                     "timestamp": 1704924092
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 7,
-                     "timestamp": 1704923940
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 72,
-                     "timestamp": 1713098054
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "lego-base-k8s-operator",
-            "newCommits": 2,
-            "url": "https://github.com/canonical/lego-base-k8s-operator",
-            "releases": [
-               {
-                  "id": 151066920,
-                  "version": "rev68",
-                  "timestamp": 1713097201,
-                  "title": "Revision 68",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:31 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/103\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/103\">#103</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/104\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/104\">#104</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev67...rev68\">https://github.com/canonical/lego-base-k8s-operator/compare/rev67&hellip;rev68</a></p>\n",
-                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev68",
-                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev68...main"
-               },
-               {
-                  "id": 150816312,
-                  "version": "rev67",
-                  "timestamp": 1712862940,
-                  "title": "Revision 67",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:28 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/98\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/98\">#98</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/99\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/99\">#99</a></a></li>\n<li>chore: bump cosl from 0.0.10 to 0.0.11 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/100\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/100\">#100</a></a></li>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/101\">#101</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/102\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/102\">#102</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev66...rev67\">https://github.com/canonical/lego-base-k8s-operator/compare/rev66&hellip;rev67</a></p>\n",
-                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev67",
-                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev67...main"
-               },
-               {
-                  "id": 149100310,
-                  "version": "rev66",
-                  "timestamp": 1711812816,
-                  "title": "Revision 66",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:46 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/97\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/97\">#97</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev65...rev66\">https://github.com/canonical/lego-base-k8s-operator/compare/rev65&hellip;rev66</a></p>\n",
-                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev66",
-                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev66...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "lego-base-k8s",
-               "url": "https://charmhub.io/lego-base-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 68,
-                     "timestamp": 1713097913
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 68,
-                     "timestamp": 1713097913
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "namecheap-lego-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/namecheap-lego-k8s-operator",
-            "releases": [
-               {
-                  "id": 151066875,
-                  "version": "rev68",
-                  "timestamp": 1713097031,
-                  "title": "Revision 68",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:30 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/114\">#114</a></a></li>\n<li>chore: bump ruff from 0.3.6 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/115\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/115\">#115</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/116\">#116</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/117\">#117</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev67...rev68\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev67&hellip;rev68</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev68",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev68...main"
-               },
-               {
-                  "id": 150817140,
-                  "version": "rev67",
-                  "timestamp": 1712863065,
-                  "title": "Revision 67",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:34 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/107\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/107\">#107</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/108\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/108\">#108</a></a></li>\n<li>chore: bump cosl from 0.0.10 to 0.0.11 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/109\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/109\">#109</a></a></li>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/110\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/110\">#110</a></a></li>\n<li>fix: tell type checkers that the config options are strings by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\">#111</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/112\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/112\">#112</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\">#111</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev66...rev67\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev66&hellip;rev67</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev67",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev67...main"
-               },
-               {
-                  "id": 149100374,
-                  "version": "rev66",
-                  "timestamp": 1711812800,
-                  "title": "Revision 66",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:48 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/106\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/106\">#106</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev65...rev66\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev65&hellip;rev66</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev66",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev66...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "namecheap-lego-k8s",
-               "url": "https://charmhub.io/namecheap-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 6,
-                     "timestamp": 1704924309
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 6,
-                     "timestamp": 1704924241
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 6,
-                     "timestamp": 1704924191
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 68,
-                     "timestamp": 1713097831
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "manual-tls-certificates-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/manual-tls-certificates-operator",
-            "releases": [
-               {
-                  "id": 151066693,
-                  "version": "rev89",
-                  "timestamp": 1713096747,
-                  "title": "Revision 89",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:23 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/200\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/200\">#200</a></a></li>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/202\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/202\">#202</a></a></li>\n<li>chore: bump ruff from 0.3.5 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/203\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/203\">#203</a></a></li>\n<li>chore: centralise status management using collect status by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/204\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/204\">#204</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev88...rev89\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev88&hellip;rev89</a></p>\n",
-                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev89",
-                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev89...main"
-               },
-               {
-                  "id": 150816374,
-                  "version": "rev88",
-                  "timestamp": 1712862996,
-                  "title": "Revision 88",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:28 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.11.0 to 2.12.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/196\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/196\">#196</a></a></li>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/198\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/198\">#198</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/199\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/199\">#199</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/201\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/201\">#201</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev87...rev88\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev87&hellip;rev88</a></p>\n",
-                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev88",
-                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev88...main"
-               },
-               {
-                  "id": 149100165,
-                  "version": "rev87",
-                  "timestamp": 1711812595,
-                  "title": "Revision 87",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:41 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump juju from 3.3.1.1 to 3.4.0.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/195\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/195\">#195</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/197\">#197</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev86...rev87\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev86&hellip;rev87</a></p>\n",
-                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev87",
-                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev87...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "manual-tls-certificates",
-               "url": "https://charmhub.io/manual-tls-certificates",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 78,
-                     "timestamp": 1709839731
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 78,
-                     "timestamp": 1709839636
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 78,
-                     "timestamp": 1709839559
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1713097423
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 37,
-                     "timestamp": 1706200502
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "self-signed-certificates-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/self-signed-certificates-operator",
-            "releases": [
-               {
-                  "id": 151049773,
-                  "version": "rev130",
-                  "timestamp": 1712928530,
-                  "title": "Revision 130",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:27 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/135\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/135\">#135</a></a></li>\n<li>chore: centralize status management using collect status by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/136\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/136\">#136</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/137\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/137\">#137</a></a></li>\n<li>chore: bump ruff from 0.3.5 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/138\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/138\">#138</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev128...rev130\">https://github.com/canonical/self-signed-certificates-operator/compare/rev128&hellip;rev130</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev130",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev130...main"
-               },
-               {
-                  "id": 150816212,
-                  "version": "rev128",
-                  "timestamp": 1712862912,
-                  "title": "Revision 128",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:27 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/131\">#131</a></a></li>\n<li>fix: tell type checkers that the config options are strings by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\">#133</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/134\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/134\">#134</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\">#133</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev127...rev128\">https://github.com/canonical/self-signed-certificates-operator/compare/rev127&hellip;rev128</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev128",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev128...main"
-               },
-               {
-                  "id": 150076344,
-                  "version": "rev127",
-                  "timestamp": 1712234159,
-                  "title": "Revision 127",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:25 UTC on 7 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/129\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/129\">#129</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/130\">#130</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev126...rev127\">https://github.com/canonical/self-signed-certificates-operator/compare/rev126&hellip;rev127</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev127",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev127...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "self-signed-certificates",
-               "url": "https://charmhub.io/self-signed-certificates",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 72,
-                     "timestamp": 1706730123
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 109,
-                     "timestamp": 1709740777
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 109,
-                     "timestamp": 1709739181
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 130,
-                     "timestamp": 1713054424
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 61,
-                     "timestamp": 1706201485
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
                   "edge"
                ],
                "tracks": [
@@ -15247,50 +14788,471 @@
             }
          },
          {
-            "name": "certificate-transfer-interface",
+            "name": "lego-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/lego-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "f5516feb1cd07d94149a522d452df3b89013145f",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1710388459,
+                  "message": "<p>chore: bump docker/login-action from 3.0.0 to 3.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/39\">#39</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/f5516feb1cd07d94149a522d452df3b89013145f"
+               },
+               {
+                  "sha": "91a8ce22d2008ded9851ee042eb28002870f7d4c",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1710334919,
+                  "message": "<p>chore: bump lego to v4.16.1 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/38\">#38</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/91a8ce22d2008ded9851ee042eb28002870f7d4c"
+               },
+               {
+                  "sha": "0b45c8f46d76963da9682efa0934b32482f5eeff",
+                  "author": "saltiyazan",
+                  "timestamp": 1710289008,
+                  "message": "<p>feat: Automates dependabot PR review and merge (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/37\">#37</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/0b45c8f46d76963da9682efa0934b32482f5eeff"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "manual-tls-certificates-operator",
             "newCommits": 1,
-            "url": "https://github.com/canonical/certificate-transfer-interface",
+            "url": "https://github.com/canonical/manual-tls-certificates-operator",
             "releases": [
                {
-                  "id": 151049253,
-                  "version": "rev41",
-                  "timestamp": 1712890240,
-                  "title": "Revision 41",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:11 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\">#60</a></a></li>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev40...rev41\">https://github.com/canonical/certificate-transfer-interface/compare/rev40&hellip;rev41</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev41",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev41...main"
+                  "id": 151066693,
+                  "version": "rev89",
+                  "timestamp": 1713096747,
+                  "title": "Revision 89",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:23 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/200\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/200\">#200</a></a></li>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/202\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/202\">#202</a></a></li>\n<li>chore: bump ruff from 0.3.5 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/203\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/203\">#203</a></a></li>\n<li>chore: centralise status management using collect status by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/204\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/204\">#204</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev88...rev89\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev88&hellip;rev89</a></p>\n",
+                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev89",
+                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev89...main"
                },
                {
-                  "id": 150815727,
-                  "version": "rev40",
-                  "timestamp": 1712863098,
-                  "title": "Revision 40",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:23 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\">#58</a></a></li>\n<li>chore: bump lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev39...rev40\">https://github.com/canonical/certificate-transfer-interface/compare/rev39&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev40",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev40...main"
+                  "id": 150816374,
+                  "version": "rev88",
+                  "timestamp": 1712862996,
+                  "title": "Revision 88",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:28 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ops from 2.11.0 to 2.12.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/196\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/196\">#196</a></a></li>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/198\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/198\">#198</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/199\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/199\">#199</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/201\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/201\">#201</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev87...rev88\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev87&hellip;rev88</a></p>\n",
+                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev88",
+                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev88...main"
                },
                {
-                  "id": 150075142,
-                  "version": "rev39",
-                  "timestamp": 1712198254,
-                  "title": "Revision 39",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:08 UTC on 7 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\">#56</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev38...rev39\">https://github.com/canonical/certificate-transfer-interface/compare/rev38&hellip;rev39</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev39",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev39...main"
+                  "id": 149100165,
+                  "version": "rev87",
+                  "timestamp": 1711812595,
+                  "title": "Revision 87",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:41 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump juju from 3.3.1.1 to 3.4.0.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/195\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/195\">#195</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/manual-tls-certificates-operator/pull/197\">#197</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/manual-tls-certificates-operator/compare/rev86...rev87\">https://github.com/canonical/manual-tls-certificates-operator/compare/rev86&hellip;rev87</a></p>\n",
+                  "url": "https://github.com/canonical/manual-tls-certificates-operator/releases/tag/rev87",
+                  "compareUrl": "https://github.com/canonical/manual-tls-certificates-operator/compare/rev87...main"
                }
             ],
             "tags": null,
             "commits": null,
             "ciActions": [],
             "charm": {
-               "name": "certificate-transfer-interface",
-               "url": "https://charmhub.io/certificate-transfer-interface",
+               "name": "manual-tls-certificates",
+               "url": "https://charmhub.io/manual-tls-certificates",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 78,
+                     "timestamp": 1709839731
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 78,
+                     "timestamp": 1709839636
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 78,
+                     "timestamp": 1709839559
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 89,
+                     "timestamp": 1713097423
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 37,
+                     "timestamp": 1706200502
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "namecheap-lego-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/namecheap-lego-k8s-operator",
+            "releases": [
+               {
+                  "id": 151066875,
+                  "version": "rev68",
+                  "timestamp": 1713097031,
+                  "title": "Revision 68",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:30 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/114\">#114</a></a></li>\n<li>chore: bump ruff from 0.3.6 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/115\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/115\">#115</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/116\">#116</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/117\">#117</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev67...rev68\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev67&hellip;rev68</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev68",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev68...main"
+               },
+               {
+                  "id": 150817140,
+                  "version": "rev67",
+                  "timestamp": 1712863065,
+                  "title": "Revision 67",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:34 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/107\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/107\">#107</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/108\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/108\">#108</a></a></li>\n<li>chore: bump cosl from 0.0.10 to 0.0.11 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/109\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/109\">#109</a></a></li>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/110\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/110\">#110</a></a></li>\n<li>fix: tell type checkers that the config options are strings by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\">#111</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/112\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/112\">#112</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/111\">#111</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev66...rev67\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev66&hellip;rev67</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev67",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev67...main"
+               },
+               {
+                  "id": 149100374,
+                  "version": "rev66",
+                  "timestamp": 1711812800,
+                  "title": "Revision 66",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:48 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/106\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/106\">#106</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev65...rev66\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev65&hellip;rev66</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev66",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev66...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "namecheap-lego-k8s",
+               "url": "https://charmhub.io/namecheap-lego-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 6,
+                     "timestamp": 1704924309
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 6,
+                     "timestamp": 1704924241
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 6,
+                     "timestamp": 1704924191
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 68,
+                     "timestamp": 1713097831
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "route53-lego-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/route53-lego-k8s-operator",
+            "releases": [
+               {
+                  "id": 151066977,
+                  "version": "rev72",
+                  "timestamp": 1713097250,
+                  "title": "Revision 72",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 18</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:34 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 in the pip_dependencies group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/122\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/122\">#122</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/123\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/123\">#123</a></a></li>\n<li>chore: bump ruff from 0.3.6 to 0.3.7 in the pip_dependencies group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/124\">#124</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/125\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/125\">#125</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev71...rev72\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev71&hellip;rev72</a></p>\n",
+                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev72",
+                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev72...main"
+               },
+               {
+                  "id": 150817077,
+                  "version": "rev71",
+                  "timestamp": 1712863037,
+                  "title": "Revision 71",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 18</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:33 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 1 update by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/118\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/118\">#118</a></a></li>\n<li>chore: bump the pip_dependencies group with 1 update by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/119\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/119\">#119</a></a></li>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/120\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/120\">#120</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/121\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/121\">#121</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev70...rev71\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev70&hellip;rev71</a></p>\n",
+                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev71",
+                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev71...main"
+               },
+               {
+                  "id": 149100206,
+                  "version": "rev70",
+                  "timestamp": 1711812529,
+                  "title": "Revision 70",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:42 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 1 update by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/117\">#117</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/116\">#116</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev69...rev70\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev69&hellip;rev70</a></p>\n",
+                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev70",
+                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev70...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "route53-lego-k8s",
+               "url": "https://charmhub.io/route53-lego-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 7,
+                     "timestamp": 1704924164
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 7,
+                     "timestamp": 1704924092
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 7,
+                     "timestamp": 1704923940
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 72,
+                     "timestamp": 1713098054
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "self-signed-certificates-operator",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/self-signed-certificates-operator",
+            "releases": [
+               {
+                  "id": 151049773,
+                  "version": "rev130",
+                  "timestamp": 1712928530,
+                  "title": "Revision 130",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:27 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/135\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/135\">#135</a></a></li>\n<li>chore: centralize status management using collect status by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/136\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/136\">#136</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/137\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/137\">#137</a></a></li>\n<li>chore: bump ruff from 0.3.5 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/138\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/138\">#138</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev128...rev130\">https://github.com/canonical/self-signed-certificates-operator/compare/rev128&hellip;rev130</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev130",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev130...main"
+               },
+               {
+                  "id": 150816212,
+                  "version": "rev128",
+                  "timestamp": 1712862912,
+                  "title": "Revision 128",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:27 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/131\">#131</a></a></li>\n<li>fix: tell type checkers that the config options are strings by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\">#133</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/134\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/134\">#134</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/133\">#133</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev127...rev128\">https://github.com/canonical/self-signed-certificates-operator/compare/rev127&hellip;rev128</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev128",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev128...main"
+               },
+               {
+                  "id": 150076344,
+                  "version": "rev127",
+                  "timestamp": 1712234159,
+                  "title": "Revision 127",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:25 UTC on 7 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/129\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/129\">#129</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/130\">#130</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev126...rev127\">https://github.com/canonical/self-signed-certificates-operator/compare/rev126&hellip;rev127</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev127",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev127...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "self-signed-certificates",
+               "url": "https://charmhub.io/self-signed-certificates",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 72,
+                     "timestamp": 1706730123
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 109,
+                     "timestamp": 1709740777
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 109,
+                     "timestamp": 1709739181
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 130,
+                     "timestamp": 1713054424
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 61,
+                     "timestamp": 1706201485
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "lego-base-k8s-operator",
+            "newCommits": 2,
+            "url": "https://github.com/canonical/lego-base-k8s-operator",
+            "releases": [
+               {
+                  "id": 151066920,
+                  "version": "rev68",
+                  "timestamp": 1713097201,
+                  "title": "Revision 68",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:31 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/103\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/103\">#103</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/104\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/104\">#104</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev67...rev68\">https://github.com/canonical/lego-base-k8s-operator/compare/rev67&hellip;rev68</a></p>\n",
+                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev68",
+                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev68...main"
+               },
+               {
+                  "id": 150816312,
+                  "version": "rev67",
+                  "timestamp": 1712862940,
+                  "title": "Revision 67",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:28 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/98\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/98\">#98</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/99\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/99\">#99</a></a></li>\n<li>chore: bump cosl from 0.0.10 to 0.0.11 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/100\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/100\">#100</a></a></li>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/101\">#101</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/102\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/102\">#102</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev66...rev67\">https://github.com/canonical/lego-base-k8s-operator/compare/rev66&hellip;rev67</a></p>\n",
+                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev67",
+                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev67...main"
+               },
+               {
+                  "id": 149100310,
+                  "version": "rev66",
+                  "timestamp": 1711812816,
+                  "title": "Revision 66",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:46 UTC on 30 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/97\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-base-k8s-operator/pull/97\">#97</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-base-k8s-operator/compare/rev65...rev66\">https://github.com/canonical/lego-base-k8s-operator/compare/rev65&hellip;rev66</a></p>\n",
+                  "url": "https://github.com/canonical/lego-base-k8s-operator/releases/tag/rev66",
+                  "compareUrl": "https://github.com/canonical/lego-base-k8s-operator/compare/rev66...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "lego-base-k8s",
+               "url": "https://charmhub.io/lego-base-k8s",
                "releases": [
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 41,
-                     "timestamp": 1713053517
+                     "revision": 68,
+                     "timestamp": 1713097913
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 68,
+                     "timestamp": 1713097913
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "tls-certificates-interface",
+            "newCommits": 6,
+            "url": "https://github.com/canonical/tls-certificates-interface",
+            "releases": [
+               {
+                  "id": 148988780,
+                  "version": "rev93",
+                  "timestamp": 1711697364,
+                  "title": "Revision 93",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 07:32 UTC on 29 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump juju from 3.0.4 to 3.4.0.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/157\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/157\">#157</a></a></li>\n<li>chore: bump ops from 2.11.0 to 2.12.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/156\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/156\">#156</a></a></li>\n<li>fix: Uses RelationCreatedEvent instead of RelationJoinedEvent in the example requirer in the docstring by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/151\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/151\">#151</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev92...rev93\">https://github.com/canonical/tls-certificates-interface/compare/rev92&hellip;rev93</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev93",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev93...main"
+               },
+               {
+                  "id": 148861092,
+                  "version": "rev92",
+                  "timestamp": 1711630092,
+                  "title": "Revision 92",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:51 UTC on 28 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.355 to 1.1.356 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/155\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/155\">#155</a></a></li>\n<li>docs: require cryptography &gt;= 42.0.0 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/154\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/154\">#154</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev91...rev92\">https://github.com/canonical/tls-certificates-interface/compare/rev91&hellip;rev92</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev92",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev92...main"
+               },
+               {
+                  "id": 148693457,
+                  "version": "rev91",
+                  "timestamp": 1711550972,
+                  "title": "Revision 91",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 14:52 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: log warning instead of crashing when using with wrong juju version by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\">#152</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev90...rev91\">https://github.com/canonical/tls-certificates-interface/compare/rev90&hellip;rev91</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev91",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev91...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "tls-certificates-interface",
+               "url": "https://charmhub.io/tls-certificates-interface",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 19,
+                     "timestamp": 1676042530
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 93,
+                     "timestamp": 1711697568
                   }
                ],
                "channels": [
@@ -15380,56 +15342,50 @@
             "snap": null
          },
          {
-            "name": "tls-certificates-interface",
-            "newCommits": 6,
-            "url": "https://github.com/canonical/tls-certificates-interface",
+            "name": "certificate-transfer-interface",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/certificate-transfer-interface",
             "releases": [
                {
-                  "id": 148988780,
-                  "version": "rev93",
-                  "timestamp": 1711697364,
-                  "title": "Revision 93",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 07:32 UTC on 29 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump juju from 3.0.4 to 3.4.0.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/157\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/157\">#157</a></a></li>\n<li>chore: bump ops from 2.11.0 to 2.12.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/156\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/156\">#156</a></a></li>\n<li>fix: Uses RelationCreatedEvent instead of RelationJoinedEvent in the example requirer in the docstring by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/151\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/151\">#151</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev92...rev93\">https://github.com/canonical/tls-certificates-interface/compare/rev92&hellip;rev93</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev93",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev93...main"
+                  "id": 151049253,
+                  "version": "rev41",
+                  "timestamp": 1712890240,
+                  "title": "Revision 41",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:11 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\">#60</a></a></li>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev40...rev41\">https://github.com/canonical/certificate-transfer-interface/compare/rev40&hellip;rev41</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev41",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev41...main"
                },
                {
-                  "id": 148861092,
-                  "version": "rev92",
-                  "timestamp": 1711630092,
-                  "title": "Revision 92",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:51 UTC on 28 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.355 to 1.1.356 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/155\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/155\">#155</a></a></li>\n<li>docs: require cryptography &gt;= 42.0.0 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/154\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/154\">#154</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev91...rev92\">https://github.com/canonical/tls-certificates-interface/compare/rev91&hellip;rev92</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev92",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev92...main"
+                  "id": 150815727,
+                  "version": "rev40",
+                  "timestamp": 1712863098,
+                  "title": "Revision 40",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:23 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\">#58</a></a></li>\n<li>chore: bump lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev39...rev40\">https://github.com/canonical/certificate-transfer-interface/compare/rev39&hellip;rev40</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev40",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev40...main"
                },
                {
-                  "id": 148693457,
-                  "version": "rev91",
-                  "timestamp": 1711550972,
-                  "title": "Revision 91",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 14:52 UTC on 27 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: log warning instead of crashing when using with wrong juju version by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/152\">#152</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev90...rev91\">https://github.com/canonical/tls-certificates-interface/compare/rev90&hellip;rev91</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev91",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev91...main"
+                  "id": 150075142,
+                  "version": "rev39",
+                  "timestamp": 1712198254,
+                  "title": "Revision 39",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:08 UTC on 7 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\">#56</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev38...rev39\">https://github.com/canonical/certificate-transfer-interface/compare/rev38&hellip;rev39</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev39",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev39...main"
                }
             ],
             "tags": null,
             "commits": null,
             "ciActions": [],
             "charm": {
-               "name": "tls-certificates-interface",
-               "url": "https://charmhub.io/tls-certificates-interface",
+               "name": "certificate-transfer-interface",
+               "url": "https://charmhub.io/certificate-transfer-interface",
                "releases": [
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 19,
-                     "timestamp": 1676042530
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 93,
-                     "timestamp": 1711697568
+                     "revision": 41,
+                     "timestamp": 1713053517
                   }
                ],
                "channels": [
@@ -15442,36 +15398,80 @@
             "snap": null
          },
          {
-            "name": "lego-rock",
+            "name": "httprequest-lego-k8s-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/lego-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "url": "https://github.com/canonical/httprequest-lego-k8s-operator",
+            "releases": [
                {
-                  "sha": "f5516feb1cd07d94149a522d452df3b89013145f",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1710388459,
-                  "message": "<p>chore: bump docker/login-action from 3.0.0 to 3.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/39\">#39</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/f5516feb1cd07d94149a522d452df3b89013145f"
+                  "id": 151396824,
+                  "version": "rev71",
+                  "timestamp": 1713280843,
+                  "title": "Revision 71",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:38 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: increase default timeout for http requests by <a target=\"_blank\" href=\"https://github.com/mthaddon\">@mthaddon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\">#124</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/mthaddon\">@mthaddon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/124\">#124</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev70...rev71\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev70&hellip;rev71</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev71",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev71...main"
                },
                {
-                  "sha": "91a8ce22d2008ded9851ee042eb28002870f7d4c",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1710334919,
-                  "message": "<p>chore: bump lego to v4.16.1 (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/38\">#38</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/91a8ce22d2008ded9851ee042eb28002870f7d4c"
+                  "id": 151066892,
+                  "version": "rev70",
+                  "timestamp": 1713097049,
+                  "title": "Revision 70",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:31 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/118\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/118\">#118</a></a></li>\n<li>chore: Bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/119\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/119\">#119</a></a></li>\n<li>chore: Bump ruff from 0.3.6 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/120\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/120\">#120</a></a></li>\n<li>chore: Bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/121\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/121\">#121</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/122\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/122\">#122</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev69...rev70\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev69&hellip;rev70</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev70",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev70...main"
                },
                {
-                  "sha": "0b45c8f46d76963da9682efa0934b32482f5eeff",
-                  "author": "saltiyazan",
-                  "timestamp": 1710289008,
-                  "message": "<p>feat: Automates dependabot PR review and merge (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/37\">#37</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/0b45c8f46d76963da9682efa0934b32482f5eeff"
+                  "id": 150817226,
+                  "version": "rev69",
+                  "timestamp": 1712863087,
+                  "title": "Revision 69",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:34 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/111\">#111</a></a></li>\n<li>chore: Bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/113\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/113\">#113</a></a></li>\n<li>chore: Bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/114\">#114</a></a></li>\n<li>chore: Bump cosl from 0.0.10 to 0.0.11 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/115\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/115\">#115</a></a></li>\n<li>fix: tell type checkers that the config options are strings by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\">#116</a></a></li>\n<li>fix: freeze lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/117\">#117</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-k8s-operator/pull/116\">#116</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev68...rev69\">https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev68&hellip;rev69</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-k8s-operator/releases/tag/rev69",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-k8s-operator/compare/rev69...main"
                }
             ],
+            "tags": null,
+            "commits": null,
             "ciActions": [],
-            "charm": null,
+            "charm": {
+               "name": "httprequest-lego-k8s",
+               "url": "https://charmhub.io/httprequest-lego-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 40,
+                     "timestamp": 1709041308
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 40,
+                     "timestamp": 1709041252
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 40,
+                     "timestamp": 1709041195
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 71,
+                     "timestamp": 1713281920
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
@@ -16129,6 +16129,87 @@
                ],
                "tracks": [
                   "2"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "kafka-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/kafka-operator",
+            "releases": [
+               {
+                  "id": 151593997,
+                  "version": "rev164",
+                  "timestamp": 1713360737,
+                  "title": "Revision 164",
+                  "body": "<p>Released to 3/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/192\">#192</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/194\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/194\">#194</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-operator/compare/rev163...rev164\">https://github.com/canonical/kafka-operator/compare/rev163&hellip;rev164</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-operator/releases/tag/rev164",
+                  "compareUrl": "https://github.com/canonical/kafka-operator/compare/rev164...main"
+               },
+               {
+                  "id": 150956747,
+                  "version": "rev163",
+                  "timestamp": 1712927226,
+                  "title": "Revision 163",
+                  "body": "<p>Released to 3/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3880] Remove instance field from grafana dashboard by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/191\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/191\">#191</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-operator/compare/rev162...rev163\">https://github.com/canonical/kafka-operator/compare/rev162&hellip;rev163</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-operator/releases/tag/rev163",
+                  "compareUrl": "https://github.com/canonical/kafka-operator/compare/rev163...main"
+               },
+               {
+                  "id": 150551218,
+                  "version": "rev162",
+                  "timestamp": 1712734850,
+                  "title": "Revision 162",
+                  "body": "<p>Released to 3/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3735] Integration of custom alerting rules and dashboards by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/180\">#180</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-operator/compare/rev161...rev162\">https://github.com/canonical/kafka-operator/compare/rev161&hellip;rev162</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-operator/releases/tag/rev162",
+                  "compareUrl": "https://github.com/canonical/kafka-operator/compare/rev162...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/kafka-operator/actions/workflows/release.yaml",
+               "https://github.com/canonical/kafka-operator/actions/workflows/ci.yaml",
+               "https://github.com/canonical/kafka-operator/actions/workflows/sync_docs.yaml"
+            ],
+            "charm": {
+               "name": "kafka",
+               "url": "https://charmhub.io/kafka",
+               "releases": [
+                  {
+                     "track": "3",
+                     "channel": "stable",
+                     "revision": 156,
+                     "timestamp": 1709062812
+                  },
+                  {
+                     "track": "3",
+                     "channel": "candidate",
+                     "revision": 156,
+                     "timestamp": 1709059479
+                  },
+                  {
+                     "track": "3",
+                     "channel": "beta",
+                     "revision": 156,
+                     "timestamp": 1709062819
+                  },
+                  {
+                     "track": "3",
+                     "channel": "edge",
+                     "revision": 164,
+                     "timestamp": 1713370287
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "3"
                ]
             },
             "snap": null
@@ -17137,87 +17218,6 @@
                "tracks": [
                   "14",
                   "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "kafka-operator",
-            "newCommits": 2,
-            "url": "https://github.com/canonical/kafka-operator",
-            "releases": [
-               {
-                  "id": 150956747,
-                  "version": "rev163",
-                  "timestamp": 1712927226,
-                  "title": "Revision 163",
-                  "body": "<p>Released to 3/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3880] Remove instance field from grafana dashboard by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/191\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/191\">#191</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-operator/compare/rev162...rev163\">https://github.com/canonical/kafka-operator/compare/rev162&hellip;rev163</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-operator/releases/tag/rev163",
-                  "compareUrl": "https://github.com/canonical/kafka-operator/compare/rev163...main"
-               },
-               {
-                  "id": 150551218,
-                  "version": "rev162",
-                  "timestamp": 1712734850,
-                  "title": "Revision 162",
-                  "body": "<p>Released to 3/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3735] Integration of custom alerting rules and dashboards by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/180\">#180</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-operator/compare/rev161...rev162\">https://github.com/canonical/kafka-operator/compare/rev161&hellip;rev162</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-operator/releases/tag/rev162",
-                  "compareUrl": "https://github.com/canonical/kafka-operator/compare/rev162...main"
-               },
-               {
-                  "id": 150386267,
-                  "version": "rev161",
-                  "timestamp": 1712655278,
-                  "title": "Revision 161",
-                  "body": "<p>Released to 3/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-3900] Remove APT references by <a target=\"_blank\" href=\"https://github.com/deusebio\">@deusebio</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/183\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-operator/pull/183\">#183</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-operator/compare/rev160...rev161\">https://github.com/canonical/kafka-operator/compare/rev160&hellip;rev161</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-operator/releases/tag/rev161",
-                  "compareUrl": "https://github.com/canonical/kafka-operator/compare/rev161...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/kafka-operator/actions/workflows/release.yaml",
-               "https://github.com/canonical/kafka-operator/actions/workflows/ci.yaml",
-               "https://github.com/canonical/kafka-operator/actions/workflows/sync_docs.yaml"
-            ],
-            "charm": {
-               "name": "kafka",
-               "url": "https://charmhub.io/kafka",
-               "releases": [
-                  {
-                     "track": "3",
-                     "channel": "stable",
-                     "revision": 156,
-                     "timestamp": 1709062812
-                  },
-                  {
-                     "track": "3",
-                     "channel": "candidate",
-                     "revision": 156,
-                     "timestamp": 1709059479
-                  },
-                  {
-                     "track": "3",
-                     "channel": "beta",
-                     "revision": 156,
-                     "timestamp": 1709062819
-                  },
-                  {
-                     "track": "3",
-                     "channel": "edge",
-                     "revision": 163,
-                     "timestamp": 1712938028
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "3"
                ]
             },
             "snap": null
