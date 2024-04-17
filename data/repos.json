@@ -1794,7 +1794,7 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 10,
+            "newCommits": 12,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
                {
@@ -2723,9 +2723,18 @@
          },
          {
             "name": "cos-configuration-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/cos-configuration-k8s-operator",
             "releases": [
+               {
+                  "id": 151559621,
+                  "version": "rev51",
+                  "timestamp": 1713358808,
+                  "title": "Revision 51",
+                  "body": "<p>resources:\n    -  git-sync-image: k8s.gcr.io/git-sync/git-sync:v3.5.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:25 UTC on 17 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: use set_ports instead of open_port by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/cos-configuration-k8s-operator/pull/93\"><a target=\"_blank\" href=\"https://github.com/canonical/cos-configuration-k8s-operator/pull/93\">#93</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/cos-configuration-k8s-operator/compare/rev50...rev51\">https://github.com/canonical/cos-configuration-k8s-operator/compare/rev50&hellip;rev51</a></p>\n",
+                  "url": "https://github.com/canonical/cos-configuration-k8s-operator/releases/tag/rev51",
+                  "compareUrl": "https://github.com/canonical/cos-configuration-k8s-operator/compare/rev51...main"
+               },
                {
                   "id": 151324187,
                   "version": "rev50",
@@ -2743,15 +2752,6 @@
                   "body": "<p>resources:\n    -  git-sync-image: k8s.gcr.io/git-sync/git-sync:v3.5.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:46 UTC on 12 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Reschedule the update-libs workflow by <a target=\"_blank\" href=\"https://github.com/sed-i\">@sed-i</a> in <a target=\"_blank\" href=\"https://github.com/canonical/cos-configuration-k8s-operator/pull/90\"><a target=\"_blank\" href=\"https://github.com/canonical/cos-configuration-k8s-operator/pull/90\">#90</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/cos-configuration-k8s-operator/compare/rev48...rev49\">https://github.com/canonical/cos-configuration-k8s-operator/compare/rev48&hellip;rev49</a></p>\n",
                   "url": "https://github.com/canonical/cos-configuration-k8s-operator/releases/tag/rev49",
                   "compareUrl": "https://github.com/canonical/cos-configuration-k8s-operator/compare/rev49...main"
-               },
-               {
-                  "id": 150645454,
-                  "version": "rev48",
-                  "timestamp": 1712778223,
-                  "title": "Revision 48",
-                  "body": "<p>resources:\n    -  git-sync-image: k8s.gcr.io/git-sync/git-sync:v3.5.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:09 UTC on 10 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fetch-lib by <a target=\"_blank\" href=\"https://github.com/sed-i\">@sed-i</a> in <a target=\"_blank\" href=\"https://github.com/canonical/cos-configuration-k8s-operator/pull/88\"><a target=\"_blank\" href=\"https://github.com/canonical/cos-configuration-k8s-operator/pull/88\">#88</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/cos-configuration-k8s-operator/compare/rev47...rev48\">https://github.com/canonical/cos-configuration-k8s-operator/compare/rev47&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/cos-configuration-k8s-operator/releases/tag/rev48",
-                  "compareUrl": "https://github.com/canonical/cos-configuration-k8s-operator/compare/rev48...main"
                }
             ],
             "tags": null,
@@ -2784,8 +2784,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 50,
-                     "timestamp": 1713259185
+                     "revision": 51,
+                     "timestamp": 1713360345
                   },
                   {
                      "track": "1.0",
@@ -5482,6 +5482,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "36df97207e598c25335e9253ada0d1f93ef64d6a",
+                  "author": "Orfeas Kourkakis",
+                  "timestamp": 1713361747,
+                  "message": "<p>chore: trust katib-controller due to refactor (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/871\">#871</a>)</p>\n",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/36df97207e598c25335e9253ada0d1f93ef64d6a"
+               },
+               {
                   "sha": "2c998578a10274b9318e457c43cd927beb77fca9",
                   "author": "Daniela Plascencia",
                   "timestamp": 1713359106,
@@ -5494,13 +5501,6 @@
                   "timestamp": 1712064358,
                   "message": "<p>feat(ci): Run UATs in AKS workflow (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/850\">#850</a>)</p>\n\n<p>Run UATs in <code>deploy-to-aks.yaml</code> workflow after deploying CKF to an AKS cluster.</p>\n\n<p>Closes <a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/774\">#774</a></p>\n",
                   "url": "https://github.com/canonical/bundle-kubeflow/commit/16c70e9189d89fa4e88082ad6f6731f43533e5e5"
-               },
-               {
-                  "sha": "27c32bf2d9b78d89f13f234dbff60cd5b861b124",
-                  "author": "Orfeas Kourkakis",
-                  "timestamp": 1711710000,
-                  "message": "<p>fix(ci): Update UATs environment in full-bundle-tests.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/858\">#858</a>)</p>\n\n<p>Update UATs environment used in <code>full-bundle-tests.yaml</code> used after changes in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/67\"><a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/67\">#67</a></a>.</p>\n",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/27c32bf2d9b78d89f13f234dbff60cd5b861b124"
                }
             ],
             "ciActions": [
@@ -12423,25 +12423,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "05b19c0f52bb10ed0682c717603c1ae3c85473ab",
+                  "author": "Mark Beierl",
+                  "timestamp": 1713360433,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/209\">#209</a> from canonical/TELCO-1123_switch-track</p>\n\n<p>chore: Remove unused variable</p>\n",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/05b19c0f52bb10ed0682c717603c1ae3c85473ab"
+               },
+               {
+                  "sha": "98980f2f697923c24b96ee27bae9a982295312fb",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1713274167,
+                  "message": "<p>Merge branch &lsquo;main&rsquo; into TELCO-1123_switch-track</p>\n",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/98980f2f697923c24b96ee27bae9a982295312fb"
+               },
+               {
                   "sha": "5bb443844a26efe35151b42039a3d89454a00c9d",
                   "author": "Bartlomiej Gmerek",
                   "timestamp": 1713273993,
                   "message": "<p>chore: Add retries for simulation (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/216\">#216</a>)</p>\n\n<ul>\n<li><p>Adding retries for simulation</p></li>\n\n<li><p>Testing failure</p></li>\n\n<li><p>Adding missing assert</p></li>\n\n<li><p>Fixing tests</p></li>\n\n<li><p>Fixing tests</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/sdcore-tests/commit/5bb443844a26efe35151b42039a3d89454a00c9d"
-               },
-               {
-                  "sha": "e3772a4c8ef20cfe00254e48fcb360e9423e9954",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1713267490,
-                  "message": "<p>chore: use release version of github workflows (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/215\">#215</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/e3772a4c8ef20cfe00254e48fcb360e9423e9954"
-               },
-               {
-                  "sha": "954c11449f7b4ff9230c4cacd991507c3851a44a",
-                  "author": "Mark Beierl",
-                  "timestamp": 1713258364,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/211\">#211</a> from canonical/TELCO-1114-use-ruff</p>\n\n<p>chore: Move to codespell and ruff</p>\n",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/954c11449f7b4ff9230c4cacd991507c3851a44a"
                }
             ],
             "ciActions": [],
@@ -13537,6 +13537,62 @@
       "team": "TLS",
       "repos": [
          {
+            "name": "tls-constraints-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/tls-constraints-operator",
+            "releases": [
+               {
+                  "id": 151568235,
+                  "version": "rev34",
+                  "timestamp": 1713361869,
+                  "title": "Revision 34",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:03 UTC on 17 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump ruff from 0.3.3 to 0.3.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/44\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/44\">#44</a></a></li>\n<li>chore: Bump pyright from 1.1.355 to 1.1.356 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/45\">#45</a></a></li>\n<li>chore: Bump ops from 2.11.0 to 2.12.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/46\">#46</a></a></li>\n<li>chore: Bump juju from 3.3.1.1 to 3.4.0.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/47\">#47</a></a></li>\n<li>chore: Bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/48\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/48\">#48</a></a></li>\n<li>chore: Bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/49\">#49</a></a></li>\n<li>chore: Bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/50\">#50</a></a></li>\n<li>chore: Bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/51\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/51\">#51</a></a></li>\n<li>chore: Bump ruff from 0.3.5 to 0.3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/53\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/53\">#53</a></a></li>\n<li>chore: Bump peter-evans/create-pull-request from 6.0.2 to 6.0.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/52\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/52\">#52</a></a></li>\n<li>feat: Add filtering skeleton by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/54\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/54\">#54</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev33...rev34\">https://github.com/canonical/tls-constraints-operator/compare/rev33&hellip;rev34</a></p>\n",
+                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev34",
+                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev34...main"
+               },
+               {
+                  "id": 147655319,
+                  "version": "rev33",
+                  "timestamp": 1711005039,
+                  "title": "Revision 33",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:21 UTC on 21 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump peter-evans/create-pull-request from 6.0.1 to 6.0.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/38\">#38</a></a></li>\n<li>chore: Bump pyright from 1.1.353 to 1.1.354 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/39\">#39</a></a></li>\n<li>chore: Bump coverage[toml] from 7.4.3 to 7.4.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/40\">#40</a></a></li>\n<li>chore: Bump ruff from 0.3.2 to 0.3.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/41\">#41</a></a></li>\n<li>chore: Bump pyright from 1.1.354 to 1.1.355 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/43\">#43</a></a></li>\n<li>chore: Improves names of integration endpoints by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev32...rev33\">https://github.com/canonical/tls-constraints-operator/compare/rev32&hellip;rev33</a></p>\n",
+                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev33",
+                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev33...main"
+               },
+               {
+                  "id": 146176553,
+                  "version": "rev32",
+                  "timestamp": 1710288720,
+                  "title": "Revision 32",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:01 UTC on 13 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Automates dependabot PR review and merge by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\">#35</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\">#35</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev31...rev32\">https://github.com/canonical/tls-constraints-operator/compare/rev31&hellip;rev32</a></p>\n",
+                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev32",
+                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev32...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "tls-constraints",
+               "url": "https://charmhub.io/tls-constraints",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 34,
+                     "timestamp": 1713362607
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "httprequest-lego-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/httprequest-lego-k8s-operator",
@@ -14095,62 +14151,6 @@
                   "stable",
                   "candidate",
                   "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "certificate-transfer-interface",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/certificate-transfer-interface",
-            "releases": [
-               {
-                  "id": 151049253,
-                  "version": "rev41",
-                  "timestamp": 1712890240,
-                  "title": "Revision 41",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:11 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\">#60</a></a></li>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev40...rev41\">https://github.com/canonical/certificate-transfer-interface/compare/rev40&hellip;rev41</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev41",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev41...main"
-               },
-               {
-                  "id": 150815727,
-                  "version": "rev40",
-                  "timestamp": 1712863098,
-                  "title": "Revision 40",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:23 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\">#58</a></a></li>\n<li>chore: bump lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev39...rev40\">https://github.com/canonical/certificate-transfer-interface/compare/rev39&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev40",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev40...main"
-               },
-               {
-                  "id": 150075142,
-                  "version": "rev39",
-                  "timestamp": 1712198254,
-                  "title": "Revision 39",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:08 UTC on 7 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\">#56</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev38...rev39\">https://github.com/canonical/certificate-transfer-interface/compare/rev38&hellip;rev39</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev39",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev39...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "certificate-transfer-interface",
-               "url": "https://charmhub.io/certificate-transfer-interface",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 41,
-                     "timestamp": 1713053517
-                  }
-               ],
-               "channels": [
                   "edge"
                ],
                "tracks": [
@@ -15247,6 +15247,62 @@
             }
          },
          {
+            "name": "certificate-transfer-interface",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/certificate-transfer-interface",
+            "releases": [
+               {
+                  "id": 151049253,
+                  "version": "rev41",
+                  "timestamp": 1712890240,
+                  "title": "Revision 41",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:11 UTC on 14 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.5 to 0.3.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/60\">#60</a></a></li>\n<li>chore: bump idna from 3.6 to 3.7 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev40...rev41\">https://github.com/canonical/certificate-transfer-interface/compare/rev40&hellip;rev41</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev41",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev41...main"
+               },
+               {
+                  "id": 150815727,
+                  "version": "rev40",
+                  "timestamp": 1712863098,
+                  "title": "Revision 40",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:23 UTC on 11 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pyright from 1.1.357 to 1.1.358 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/58\">#58</a></a></li>\n<li>chore: bump lxd to 5.20/stable by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev39...rev40\">https://github.com/canonical/certificate-transfer-interface/compare/rev39&hellip;rev40</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev40",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev40...main"
+               },
+               {
+                  "id": 150075142,
+                  "version": "rev39",
+                  "timestamp": 1712198254,
+                  "title": "Revision 39",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:08 UTC on 7 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.3.4 to 0.3.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/56\">#56</a></a></li>\n<li>chore: bump pyright from 1.1.356 to 1.1.357 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev38...rev39\">https://github.com/canonical/certificate-transfer-interface/compare/rev38&hellip;rev39</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev39",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev39...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "certificate-transfer-interface",
+               "url": "https://charmhub.io/certificate-transfer-interface",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 41,
+                     "timestamp": 1713053517
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "tls-certificates-requirer-operator",
             "newCommits": 4,
             "url": "https://github.com/canonical/tls-certificates-requirer-operator",
@@ -15386,62 +15442,6 @@
             "snap": null
          },
          {
-            "name": "tls-constraints-operator",
-            "newCommits": 10,
-            "url": "https://github.com/canonical/tls-constraints-operator",
-            "releases": [
-               {
-                  "id": 147655319,
-                  "version": "rev33",
-                  "timestamp": 1711005039,
-                  "title": "Revision 33",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:21 UTC on 21 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump peter-evans/create-pull-request from 6.0.1 to 6.0.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/38\">#38</a></a></li>\n<li>chore: Bump pyright from 1.1.353 to 1.1.354 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/39\">#39</a></a></li>\n<li>chore: Bump coverage[toml] from 7.4.3 to 7.4.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/40\">#40</a></a></li>\n<li>chore: Bump ruff from 0.3.2 to 0.3.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/41\">#41</a></a></li>\n<li>chore: Bump pyright from 1.1.354 to 1.1.355 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/43\">#43</a></a></li>\n<li>chore: Improves names of integration endpoints by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev32...rev33\">https://github.com/canonical/tls-constraints-operator/compare/rev32&hellip;rev33</a></p>\n",
-                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev33",
-                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev33...main"
-               },
-               {
-                  "id": 146176553,
-                  "version": "rev32",
-                  "timestamp": 1710288720,
-                  "title": "Revision 32",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:01 UTC on 13 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Automates dependabot PR review and merge by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\">#35</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/35\">#35</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev31...rev32\">https://github.com/canonical/tls-constraints-operator/compare/rev31&hellip;rev32</a></p>\n",
-                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev32",
-                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev32...main"
-               },
-               {
-                  "id": 145839349,
-                  "version": "rev31",
-                  "timestamp": 1710164447,
-                  "title": "Revision 31",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:51 UTC on 11 Mar 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump pytest from 8.0.2 to 8.1.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-constraints-operator/pull/36\">#36</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-constraints-operator/compare/rev30...rev31\">https://github.com/canonical/tls-constraints-operator/compare/rev30&hellip;rev31</a></p>\n",
-                  "url": "https://github.com/canonical/tls-constraints-operator/releases/tag/rev31",
-                  "compareUrl": "https://github.com/canonical/tls-constraints-operator/compare/rev31...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "tls-constraints",
-               "url": "https://charmhub.io/tls-constraints",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 33,
-                     "timestamp": 1711005694
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "lego-rock",
             "newCommits": 0,
             "url": "https://github.com/canonical/lego-rock",
@@ -15547,9 +15547,18 @@
       "repos": [
          {
             "name": "opensearch-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/opensearch-operator",
             "releases": [
+               {
+                  "id": 151569701,
+                  "version": "rev59",
+                  "timestamp": 1713362502,
+                  "title": "Revision 59",
+                  "body": "<p>Released to 2/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Handle leader raising uncaught exception while acquiring peer databag lock by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opensearch-operator/pull/231\"><a target=\"_blank\" href=\"https://github.com/canonical/opensearch-operator/pull/231\">#231</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opensearch-operator/compare/rev58...rev59\">https://github.com/canonical/opensearch-operator/compare/rev58&hellip;rev59</a></p>\n",
+                  "url": "https://github.com/canonical/opensearch-operator/releases/tag/rev59",
+                  "compareUrl": "https://github.com/canonical/opensearch-operator/compare/rev59...main"
+               },
                {
                   "id": 151553914,
                   "version": "rev58",
@@ -15567,15 +15576,6 @@
                   "body": "<p>Released to 2/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update network cut check by <a target=\"_blank\" href=\"https://github.com/phvalguima\">@phvalguima</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opensearch-operator/pull/239\"><a target=\"_blank\" href=\"https://github.com/canonical/opensearch-operator/pull/239\">#239</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opensearch-operator/compare/rev56...rev57\">https://github.com/canonical/opensearch-operator/compare/rev56&hellip;rev57</a></p>\n",
                   "url": "https://github.com/canonical/opensearch-operator/releases/tag/rev57",
                   "compareUrl": "https://github.com/canonical/opensearch-operator/compare/rev57...main"
-               },
-               {
-                  "id": 151302397,
-                  "version": "rev56",
-                  "timestamp": 1713251293,
-                  "title": "Revision 56",
-                  "body": "<p>Released to 2/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Avoid <code>{</code> and <code>}</code> getting redacted in logs by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opensearch-operator/pull/236\"><a target=\"_blank\" href=\"https://github.com/canonical/opensearch-operator/pull/236\">#236</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opensearch-operator/compare/rev55...rev56\">https://github.com/canonical/opensearch-operator/compare/rev55&hellip;rev56</a></p>\n",
-                  "url": "https://github.com/canonical/opensearch-operator/releases/tag/rev56",
-                  "compareUrl": "https://github.com/canonical/opensearch-operator/compare/rev56...main"
                }
             ],
             "tags": null,
@@ -15592,8 +15592,8 @@
                   {
                      "track": "2",
                      "channel": "edge",
-                     "revision": 58,
-                     "timestamp": 1713358695
+                     "revision": 59,
+                     "timestamp": 1713363007
                   }
                ],
                "channels": [
@@ -15642,6 +15642,141 @@
             "commits": null,
             "ciActions": [],
             "charm": null,
+            "snap": null
+         },
+         {
+            "name": "pgbouncer-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/pgbouncer-operator",
+            "releases": [
+               {
+                  "id": 151564969,
+                  "version": "rev157",
+                  "timestamp": 1713356100,
+                  "title": "Revisions 154, 155, 156, 157",
+                  "body": "<p>Released to 1/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update data-platform-workflows to v13.1.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/216\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/216\">#216</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-operator/compare/rev153...rev157\">https://github.com/canonical/pgbouncer-operator/compare/rev153&hellip;rev157</a></p>\n",
+                  "url": "https://github.com/canonical/pgbouncer-operator/releases/tag/rev157",
+                  "compareUrl": "https://github.com/canonical/pgbouncer-operator/compare/rev157...main"
+               },
+               {
+                  "id": 151455079,
+                  "version": "rev153",
+                  "timestamp": 1713302396,
+                  "title": "Revisions 150, 151, 152, 153",
+                  "body": "<p>Released to 1/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Update operator_libs_linux library to version 2.5 by <a target=\"_blank\" href=\"https://github.com/lucasgameiroborges\">@lucasgameiroborges</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/lucasgameiroborges\">@lucasgameiroborges</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-operator/compare/rev149...rev153\">https://github.com/canonical/pgbouncer-operator/compare/rev149&hellip;rev153</a></p>\n",
+                  "url": "https://github.com/canonical/pgbouncer-operator/releases/tag/rev153",
+                  "compareUrl": "https://github.com/canonical/pgbouncer-operator/compare/rev153...main"
+               },
+               {
+                  "id": 151339554,
+                  "version": "rev149",
+                  "timestamp": 1713256678,
+                  "title": "Revisions 146, 147, 148, 149",
+                  "body": "<p>Released to 1/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Switch to Saas landscape by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/204\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/204\">#204</a></a></li>\n<li>Update data-platform-workflows to v13.1.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/208\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/208\">#208</a></a></li>\n<li>Lock file maintenance Python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/209\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/209\">#209</a></a></li>\n<li>Update dependency Juju 3 to v3.1.8 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/203\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/203\">#203</a></a></li>\n<li>Lock file maintenance Python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/211\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/211\">#211</a></a></li>\n<li>Lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/213\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/213\">#213</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-operator/compare/rev145...rev149\">https://github.com/canonical/pgbouncer-operator/compare/rev145&hellip;rev149</a></p>\n",
+                  "url": "https://github.com/canonical/pgbouncer-operator/releases/tag/rev149",
+                  "compareUrl": "https://github.com/canonical/pgbouncer-operator/compare/rev149...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/pgbouncer-operator/actions/workflows/release.yaml",
+               "https://github.com/canonical/pgbouncer-operator/actions/workflows/ci.yaml"
+            ],
+            "charm": {
+               "name": "pgbouncer",
+               "url": "https://charmhub.io/pgbouncer",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 5,
+                     "timestamp": 1642432463
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 5,
+                     "timestamp": 1642432463
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 5,
+                     "timestamp": 1642432463
+                  },
+                  {
+                     "track": "1",
+                     "channel": "stable",
+                     "revision": 89,
+                     "timestamp": 1708541604
+                  },
+                  {
+                     "track": "1",
+                     "channel": "stable",
+                     "revision": 88,
+                     "timestamp": 1708541599
+                  },
+                  {
+                     "track": "1",
+                     "channel": "candidate",
+                     "revision": 89,
+                     "timestamp": 1707322684
+                  },
+                  {
+                     "track": "1",
+                     "channel": "candidate",
+                     "revision": 101,
+                     "timestamp": 1709112383
+                  },
+                  {
+                     "track": "1",
+                     "channel": "beta",
+                     "revision": 100,
+                     "timestamp": 1708541623
+                  },
+                  {
+                     "track": "1",
+                     "channel": "beta",
+                     "revision": 105,
+                     "timestamp": 1709112389
+                  },
+                  {
+                     "track": "1",
+                     "channel": "edge",
+                     "revision": 156,
+                     "timestamp": 1713361848
+                  },
+                  {
+                     "track": "1",
+                     "channel": "edge",
+                     "revision": 157,
+                     "timestamp": 1713361850
+                  },
+                  {
+                     "track": "1",
+                     "channel": "edge",
+                     "revision": 155,
+                     "timestamp": 1713361846
+                  },
+                  {
+                     "track": "1",
+                     "channel": "edge",
+                     "revision": 154,
+                     "timestamp": 1713361844
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "1"
+               ]
+            },
             "snap": null
          },
          {
@@ -15959,141 +16094,6 @@
                "tracks": [
                   "3",
                   "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "pgbouncer-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/pgbouncer-operator",
-            "releases": [
-               {
-                  "id": 151455079,
-                  "version": "rev153",
-                  "timestamp": 1713302396,
-                  "title": "Revisions 150, 151, 152, 153",
-                  "body": "<p>Released to 1/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Update operator_libs_linux library to version 2.5 by <a target=\"_blank\" href=\"https://github.com/lucasgameiroborges\">@lucasgameiroborges</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/lucasgameiroborges\">@lucasgameiroborges</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-operator/compare/rev149...rev153\">https://github.com/canonical/pgbouncer-operator/compare/rev149&hellip;rev153</a></p>\n",
-                  "url": "https://github.com/canonical/pgbouncer-operator/releases/tag/rev153",
-                  "compareUrl": "https://github.com/canonical/pgbouncer-operator/compare/rev153...main"
-               },
-               {
-                  "id": 151339554,
-                  "version": "rev149",
-                  "timestamp": 1713256678,
-                  "title": "Revisions 146, 147, 148, 149",
-                  "body": "<p>Released to 1/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Switch to Saas landscape by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/204\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/204\">#204</a></a></li>\n<li>Update data-platform-workflows to v13.1.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/208\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/208\">#208</a></a></li>\n<li>Lock file maintenance Python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/209\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/209\">#209</a></a></li>\n<li>Update dependency Juju 3 to v3.1.8 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/203\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/203\">#203</a></a></li>\n<li>Lock file maintenance Python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/211\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/211\">#211</a></a></li>\n<li>Lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/213\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/213\">#213</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-operator/compare/rev145...rev149\">https://github.com/canonical/pgbouncer-operator/compare/rev145&hellip;rev149</a></p>\n",
-                  "url": "https://github.com/canonical/pgbouncer-operator/releases/tag/rev149",
-                  "compareUrl": "https://github.com/canonical/pgbouncer-operator/compare/rev149...main"
-               },
-               {
-                  "id": 150568499,
-                  "version": "rev145",
-                  "timestamp": 1712748775,
-                  "title": "Revisions 142, 143, 144, 145",
-                  "body": "<p>Released to 1/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Lock file maintenance Python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/205\"><a target=\"_blank\" href=\"https://github.com/canonical/pgbouncer-operator/pull/205\">#205</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pgbouncer-operator/compare/rev141...rev145\">https://github.com/canonical/pgbouncer-operator/compare/rev141&hellip;rev145</a></p>\n",
-                  "url": "https://github.com/canonical/pgbouncer-operator/releases/tag/rev145",
-                  "compareUrl": "https://github.com/canonical/pgbouncer-operator/compare/rev145...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/pgbouncer-operator/actions/workflows/release.yaml",
-               "https://github.com/canonical/pgbouncer-operator/actions/workflows/ci.yaml"
-            ],
-            "charm": {
-               "name": "pgbouncer",
-               "url": "https://charmhub.io/pgbouncer",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 5,
-                     "timestamp": 1642432463
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 5,
-                     "timestamp": 1642432463
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 5,
-                     "timestamp": 1642432463
-                  },
-                  {
-                     "track": "1",
-                     "channel": "stable",
-                     "revision": 89,
-                     "timestamp": 1708541604
-                  },
-                  {
-                     "track": "1",
-                     "channel": "stable",
-                     "revision": 88,
-                     "timestamp": 1708541599
-                  },
-                  {
-                     "track": "1",
-                     "channel": "candidate",
-                     "revision": 89,
-                     "timestamp": 1707322684
-                  },
-                  {
-                     "track": "1",
-                     "channel": "candidate",
-                     "revision": 101,
-                     "timestamp": 1709112383
-                  },
-                  {
-                     "track": "1",
-                     "channel": "beta",
-                     "revision": 100,
-                     "timestamp": 1708541623
-                  },
-                  {
-                     "track": "1",
-                     "channel": "beta",
-                     "revision": 105,
-                     "timestamp": 1709112389
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 152,
-                     "timestamp": 1713305615
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 153,
-                     "timestamp": 1713305617
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 151,
-                     "timestamp": 1713305613
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 150,
-                     "timestamp": 1713305612
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "1"
                ]
             },
             "snap": null
@@ -16615,7 +16615,7 @@
          },
          {
             "name": "kafka-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/kafka-operator",
             "releases": [
                {
@@ -19653,7 +19653,7 @@
          },
          {
             "name": "charmcraftcache",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/charmcraftcache",
             "releases": [
                {
@@ -23187,7 +23187,7 @@
          },
          {
             "name": "jenkins-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/jenkins-k8s-operator",
             "releases": [
                {
