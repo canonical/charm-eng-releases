@@ -5449,6 +5449,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "26050354964d39ac2cc15f1faf452487e979a06a",
+                  "author": "Daniela Plascencia",
+                  "timestamp": 1713459636,
+                  "message": "<p>fix: refactor the command to match upstream&rsquo;s (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-rocks/pull/83\">#83</a>)</p>\n\n<p>The command was incorrectly formatted, resulting in an error:\nError: No application module specified.\nThis commit ensures the command actually runs as it is expected from the upstream image.</p>\n",
+                  "url": "https://github.com/canonical/kubeflow-rocks/commit/26050354964d39ac2cc15f1faf452487e979a06a"
+               },
+               {
                   "sha": "816a3b968279d1672daa515a4f525016aa5ce228",
                   "author": "Daniela Plascencia",
                   "timestamp": 1712571057,
@@ -5461,13 +5468,6 @@
                   "timestamp": 1711030872,
                   "message": "<p>Fix pytorch cpu jupyter server rock (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-rocks/pull/79\">#79</a>)</p>\n\n<ul>\n<li>Fix pytorch cpu jupyter server rock</li>\n<li>Fix tox in jupyter pytorch cpu</li>\n</ul>\n",
                   "url": "https://github.com/canonical/kubeflow-rocks/commit/30581932b7bb1c6a43167b3cb6b77baaef6db9f4"
-               },
-               {
-                  "sha": "0719441f679b1e71ee2f1d1c1037932a8508aa21",
-                  "author": "Daniela Plascencia",
-                  "timestamp": 1707988608,
-                  "message": "<p>fix: remove prefix from command and set a working-dir to /app (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-rocks/pull/76\">#76</a>)</p>\n\n<p>In the past, this image used to pass &ndash;prefix /app to the npm start command, which is used to\nforce non-global commands to run in the specified folder. We are removing that prefix and instead\nsetting up a working-dir to keep consisdenty with upstream.</p>\n",
-                  "url": "https://github.com/canonical/kubeflow-rocks/commit/0719441f679b1e71ee2f1d1c1037932a8508aa21"
                }
             ],
             "ciActions": [],
@@ -5876,7 +5876,7 @@
          },
          {
             "name": "data-science-stack",
-            "newCommits": 11,
+            "newCommits": 12,
             "url": "https://github.com/canonical/data-science-stack",
             "releases": [
                {
@@ -10140,27 +10140,39 @@
                   },
                   {
                      "track": "1.30-strict",
-                     "channel": "candidate",
-                     "revision": 6741,
-                     "timestamp": 1712947149
+                     "channel": "stable",
+                     "revision": 6783,
+                     "timestamp": 1713457869
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "stable",
+                     "revision": 6788,
+                     "timestamp": 1713457870
                   },
                   {
                      "track": "1.30-strict",
                      "channel": "candidate",
-                     "revision": 6742,
-                     "timestamp": 1712966133
+                     "revision": 6783,
+                     "timestamp": 1713457865
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "candidate",
+                     "revision": 6788,
+                     "timestamp": 1713457868
                   },
                   {
                      "track": "1.30-strict",
                      "channel": "beta",
-                     "revision": 6719,
-                     "timestamp": 1712015158
+                     "revision": 6783,
+                     "timestamp": 1713457863
                   },
                   {
                      "track": "1.30-strict",
                      "channel": "beta",
-                     "revision": 6717,
-                     "timestamp": 1712002367
+                     "revision": 6788,
+                     "timestamp": 1713457866
                   },
                   {
                      "track": "1.30-strict",
@@ -10188,27 +10200,39 @@
                   },
                   {
                      "track": "1.30",
-                     "channel": "candidate",
-                     "revision": 6740,
-                     "timestamp": 1712946798
+                     "channel": "stable",
+                     "revision": 6782,
+                     "timestamp": 1713457838
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "stable",
+                     "revision": 6787,
+                     "timestamp": 1713457839
                   },
                   {
                      "track": "1.30",
                      "channel": "candidate",
-                     "revision": 6739,
-                     "timestamp": 1712880293
+                     "revision": 6782,
+                     "timestamp": 1713457835
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "candidate",
+                     "revision": 6787,
+                     "timestamp": 1713457837
                   },
                   {
                      "track": "1.30",
                      "channel": "beta",
-                     "revision": 6718,
-                     "timestamp": 1712014785
+                     "revision": 6782,
+                     "timestamp": 1713457834
                   },
                   {
                      "track": "1.30",
                      "channel": "beta",
-                     "revision": 6716,
-                     "timestamp": 1712001997
+                     "revision": 6787,
+                     "timestamp": 1713457836
                   },
                   {
                      "track": "1.30",
@@ -13562,7 +13586,7 @@
       "repos": [
          {
             "name": "tls-constraints-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/tls-constraints-operator",
             "releases": [
                {
@@ -13895,7 +13919,7 @@
                   "version": "rev72",
                   "timestamp": 1713436664,
                   "title": "Revision 72",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:49 UTC on 18 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: build charm in independent workflow step by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/104\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/104\">#104</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev71...rev72\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev71&hellip;rev72</a></p>\n",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:49 UTC on 18 Apr 2024</p>\n\n<p>Released to &lsquo;latest/beta&rsquo; at 16:49 UTC on 18 Apr 2024\nReleased to &lsquo;latest/candidate&rsquo; at 16:50 UTC on 18 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: build charm in independent workflow step by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/104\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-requirer-operator/pull/104\">#104</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-requirer-operator/compare/rev71...rev72\">https://github.com/canonical/tls-certificates-requirer-operator/compare/rev71&hellip;rev72</a></p>\n",
                   "url": "https://github.com/canonical/tls-certificates-requirer-operator/releases/tag/rev72",
                   "compareUrl": "https://github.com/canonical/tls-certificates-requirer-operator/compare/rev72...main"
                },
@@ -13934,14 +13958,14 @@
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 59,
-                     "timestamp": 1709736406
+                     "revision": 72,
+                     "timestamp": 1713459055
                   },
                   {
                      "track": "latest",
                      "channel": "beta",
-                     "revision": 59,
-                     "timestamp": 1709736328
+                     "revision": 72,
+                     "timestamp": 1713458993
                   },
                   {
                      "track": "latest",
@@ -14357,8 +14381,8 @@
                   {
                      "track": "1.15",
                      "channel": "stable",
-                     "revision": 2213,
-                     "timestamp": 1710330564
+                     "revision": 2226,
+                     "timestamp": 1713458707
                   },
                   {
                      "track": "1.15",
@@ -14381,8 +14405,8 @@
                   {
                      "track": "1.15",
                      "channel": "candidate",
-                     "revision": 2213,
-                     "timestamp": 1710330562
+                     "revision": 2226,
+                     "timestamp": 1713458706
                   },
                   {
                      "track": "1.15",
@@ -14405,8 +14429,8 @@
                   {
                      "track": "1.15",
                      "channel": "beta",
-                     "revision": 2213,
-                     "timestamp": 1710190327
+                     "revision": 2226,
+                     "timestamp": 1713458705
                   },
                   {
                      "track": "1.15",
