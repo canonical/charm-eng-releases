@@ -2003,9 +2003,18 @@
       "repos": [
          {
             "name": "operator",
-            "newCommits": 17,
+            "newCommits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 153403615,
+                  "version": "2.13.0",
+                  "timestamp": 1714452081,
+                  "title": "2.13.0 Testing User Secrets with Harness and Other Improvements",
+                  "body": "<p>The main feature this release is the ability to work with user secrets (secrets that a Juju admin adds to the model) in Harness. You&rsquo;ll want to start with the new <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.add_user_secret\"><code>add_user_secret()</code> method</a> and from there can mostly manage them in the same way as application secrets.</p>\n\n<p>Note that one of the fixes corrects the type of config values, which were previously strongly typed as <code>str</code>, when they may be <code>int</code>, <code>float</code>, <code>bool</code>, or <code>str</code>. This may break your existing type checks, although we have endeavoured to reach out preemptively with PRs to address this where possible.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Add support for user secrets in Harness in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1176\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1176\">#1176</a></a></li>\n<li>Add <code>pebble.CheckInfo.change_id</code> field in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1197\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1197\">#1197</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Correct the model config types in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1183\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1183\">#1183</a></a></li>\n<li>In Harness, only inspect the source file if it will be used - this fixes using Harness in a Python REPL in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1181\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1181\">#1181</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Update publishing a release in HACKING.md in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1173\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1173\">#1173</a></a></li>\n<li>Add <code>tox -e docs-deps</code> to compile requirements.txt in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1172\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1172\">#1172</a></a></li>\n<li>Update doc to note deprecated functionality in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1178\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1178\">#1178</a></a></li>\n</ul>\n\n<h2>Tests</h2>\n\n<ul>\n<li>First stage of converting tests from unittest to pytest in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1191, https://github.com/canonical/operator/pull/1192, https://github.com/canonical/operator/pull/1196, https://github.com/canonical/operator/pull/1193, and https://github.com/canonical/operator/pull/1195\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1195\">#1195</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.12.0...2.13.0\">https://github.com/canonical/operator/compare/2.12.0&hellip;2.13.0</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/untagged-1f54508175188bb83eec",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.13.0...main"
+               },
                {
                   "id": 148797379,
                   "version": "2.12.0",
@@ -2023,23 +2032,11 @@
                   "body": "<p>This release marks additional events as not suitable for deferring: <code>StopEvent</code>, <code>RemoveEvent</code>, and the <code>LifecycleEvents</code>: <code>CollectStatusEvent</code>, <code>CommitEvent</code>, and <code>PreCommitEvent</code>. The <code>defer()</code> method on these event classes is marked as <code>NoReturn</code> and calling it will raise a <code>RuntimeError</code>.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>feat: add the action&rsquo;s ID to the ActionEvent object in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1124\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1124\">#1124</a></a></li>\n<li>feat: add the ability to compare two Plan objects with == and create a Plan from a dict in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1134\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1134\">#1134</a></a></li>\n<li>feat: only have a <code>defer()</code> method on events that can be deferred in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1122\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1122\">#1122</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>fix(testing): set JUJU_REMOTE_APP and allow fetching relation data in relation-broken in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1130\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1130\">#1130</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>docs: tweak the wording around can_connect() usage in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1123\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1123\">#1123</a></a></li>\n</ul>\n\n<h2>Tooling</h2>\n\n<ul>\n<li>chore: move to ruff for linting in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1120\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1120\">#1120</a></a></li>\n<li>chore: adjust isort to be more compatible with ruff in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1139\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1139\">#1139</a></a></li>\n<li>chore: expand ruff rule sets and make corresponding minor adjustments in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1114\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1114\">#1114</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.10.0...2.11.0\">https://github.com/canonical/operator/compare/2.10.0&hellip;2.11.0</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.11.0",
                   "compareUrl": "https://github.com/canonical/operator/compare/2.11.0...main"
-               },
-               {
-                  "id": 139235079,
-                  "version": "2.10.0",
-                  "timestamp": 1706665952,
-                  "title": "2.10.0 Pebble custom notices, adjustments to relation-broken, and more",
-                  "body": "<p>This release adds support for Pebble custom notices, including in the Harness testing framework, and removes the broken relation from the model&rsquo;s relations list when in the relation-broken event. There&rsquo;s also the usual collection of documentation improvements, bug fixes, and other minor improvements.</p>\n\n<h2>Pebble Notices</h2>\n\n<p>Pebble now includes a subsystem called <a href=\"https://github.com/canonical/pebble#notices\">Notices</a>, each of which has a <em>type</em> and a <em>key</em> (currently the only type is &ldquo;custom&rdquo;). Custom notices allow the workload to wake up the charm when something interesting happens with the workload, for example, when a PostgreSQL backup process finishes, or some kind of alert occurs.</p>\n\n<p>Workloads can run <code>pebble notify</code> to record an occurrence of a custom notice, providing a unique key and optional data, and Juju will trigger a <code>PebbleCustomNotice</code> event on the charm for it to take appropriate action.</p>\n\n<p>Support for Pebble Notices is available from Juju 3.4.0 onwards. Read the docs about how to <a href=\"https://juju.is/docs/sdk/interact-with-pebble#heading--use-custom-notices-from-the-workload-container\">use custom notices from the workload container</a>.</p>\n\n<h2>Relation-Broken</h2>\n\n<p>When a charm is handling a relation-broken event, the relation is on the verge of being removed. A common pattern in charms is to iterate through <code>Model.relations</code> (to generate a configuration file, for example), and the broken relation should not be included with the active relations. To simplify charm code, <code>Model.relations</code> now excludes the broken relation. The relation is still accessible via the event&rsquo;s <code>.relation</code> attribute, and all <code>Relation</code> objects now have an <code>.active</code> attribute to distinguish between the broken relation (active == False) and other relations (active == True).</p>\n\n<p>The plan is that this change will also appear when using the Juju hook tools directly in a future version of Juju.</p>\n\n<p>This does <em>not</em> change accessing the relation data during relation-broken, and this does <em>not</em> change any behaviour in relation-departed.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>feat: support for Pebble Notices in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1086 and in https://github.com/canonical/operator/pull/1100\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1100\">#1100</a></a></li>\n<li>feat: add Relation.active, exclude inactive relations from Model.relations in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1091\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1091\">#1091</a></a></li>\n<li>feat: when handling actions, print uncaught exceptions to stderr in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1087\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1087\">#1087</a></a></li>\n<li>feat: model error on testing module if invalid status set by charm by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1107\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1107\">#1107</a></a></li>\n<li>feat: add support for v2 fields in CharmMeta in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1106\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1106\">#1106</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>fix: add pebble log targets and checks to testing plan by <a target=\"_blank\" href=\"https://github.com/PietroPasotti\">@PietroPasotti</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1111\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1111\">#1111</a></a></li>\n<li>fix(charm): make collect-status a LifeCycleEvent to avoid logging it by <a target=\"_blank\" href=\"https://github.com/PietroPasotti\">@PietroPasotti</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1080\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1080\">#1080</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>docs: update README.md in light of changes to <code>charmcraft init</code> output by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1089\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1089\">#1089</a></a></li>\n<li>docs: document limitations with pushing locked or bind-mount files in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1094\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1094\">#1094</a></a></li>\n<li>docs: add instructions on how to use a custom version of ops in a Charm in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1092\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1092\">#1092</a></a></li>\n</ul>\n\n<h2>Tooling</h2>\n\n<ul>\n<li>build: migrate to pyproject.toml in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1068\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1068\">#1068</a></a></li>\n<li>ci: use a trusted publisher token for publishing to PyPI in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1061\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1061\">#1061</a></a></li>\n<li>fix(typing): update to latest version of Pyright and fix errors in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1105\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1105\">#1105</a></a></li>\n</ul>\n\n<p>Many thanks to <a target=\"_blank\" href=\"https://github.com/PietroPasotti\">@PietroPasotti</a>, <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a>, and <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> for their contributions to this release!</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.9.0...2.10.0\">https://github.com/canonical/operator/compare/2.9.0&hellip;2.10.0</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.10.0",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.10.0...main"
                }
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/operator/actions/workflows/framework-tests.yaml",
-               "https://github.com/canonical/operator/actions/workflows/publish.yml"
-            ],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -18241,6 +18238,166 @@
             "snap": null
          },
          {
+            "name": "charmed-opensearch-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-opensearch-rock",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "v2.12.0",
+                  "sha": "e03e010d8fe35a70b3bc0391b7fc1f2ef395802a",
+                  "body": "<p>[DPE-3647] Update to 2.12.0</p>\n",
+                  "timestamp": 1709925117,
+                  "url": "https://github.com/canonical/charmed-opensearch-rock/releases/tag/v2.12.0",
+                  "compareUrl": "https://github.com/canonical/charmed-opensearch-rock/compare/main...v2.12.0"
+               },
+               {
+                  "name": "v2.11.1",
+                  "sha": "fc1b1cecc56409e652aae34ec87dcb72afa3d9f2",
+                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-opensearch-rock/pull/25\">#25</a> from canonical/DPE-3647-update-rock-to-2.11.1</p>\n\n<p>[DPE-3647] Update to 2.11.1</p>\n",
+                  "timestamp": 1709890717,
+                  "url": "https://github.com/canonical/charmed-opensearch-rock/releases/tag/v2.11.1",
+                  "compareUrl": "https://github.com/canonical/charmed-opensearch-rock/compare/main...v2.11.1"
+               },
+               {
+                  "name": "v2.10.0",
+                  "sha": "597c0f3fd721968e5c40747cb78de7dc679d86b3",
+                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-opensearch-rock/pull/23\">#23</a> from canonical/add-status-badges</p>\n\n<p>Added workflow badges to readme.md</p>\n",
+                  "timestamp": 1709716724,
+                  "url": "https://github.com/canonical/charmed-opensearch-rock/releases/tag/v2.10.0",
+                  "compareUrl": "https://github.com/canonical/charmed-opensearch-rock/compare/main...v2.10.0"
+               }
+            ],
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/charmed-opensearch-rock/actions/workflows/release.yaml",
+               "https://github.com/canonical/charmed-opensearch-rock/actions/workflows/ci.yaml"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "kafka-k8s-bundle",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/kafka-k8s-bundle",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "1c195b49e601e1a82190b1fc00e4a13413de18b2",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1709076912,
+                  "message": "<p>[MISC] 3/stable versions release (<a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-bundle/pull/15\">#15</a>)</p>\n",
+                  "url": "https://github.com/canonical/kafka-k8s-bundle/commit/1c195b49e601e1a82190b1fc00e4a13413de18b2"
+               },
+               {
+                  "sha": "c44fcc3c4d092b2c558d2e6bf569a4ac2230f9a6",
+                  "author": "Andreia Velasco",
+                  "timestamp": 1708962477,
+                  "message": "<p>Added badges to README (<a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-bundle/pull/18\">#18</a>)</p>\n",
+                  "url": "https://github.com/canonical/kafka-k8s-bundle/commit/c44fcc3c4d092b2c558d2e6bf569a4ac2230f9a6"
+               },
+               {
+                  "sha": "09c316857a6441c44e0a22d1616a5428166d5276",
+                  "author": "Enrico Deusebio",
+                  "timestamp": 1707955295,
+                  "message": "<p>[DPE-3367] End-to-end tests using kafka-k8s bundle</p>\n",
+                  "url": "https://github.com/canonical/kafka-k8s-bundle/commit/09c316857a6441c44e0a22d1616a5428166d5276"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/kafka-k8s-bundle/actions/workflows/release.yaml",
+               "https://github.com/canonical/kafka-k8s-bundle/actions/workflows/ci.yaml"
+            ],
+            "charm": {
+               "name": "kafka-k8s-bundle",
+               "url": "https://charmhub.io/kafka-k8s-bundle",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 2,
+                     "timestamp": 1666100836
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 9,
+                     "timestamp": 1674826969
+                  },
+                  {
+                     "track": "3",
+                     "channel": "stable",
+                     "revision": 16,
+                     "timestamp": 1709078757
+                  },
+                  {
+                     "track": "3",
+                     "channel": "edge",
+                     "revision": 16,
+                     "timestamp": 1709076957
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "3"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "kafka-broker-rack-awareness-operator",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator",
+            "releases": [
+               {
+                  "id": 109565365,
+                  "version": "rev5",
+                  "timestamp": 1687445669,
+                  "title": "Revision 5",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-1904] Add initial charm by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></a></li>\n<li>Fix status handling by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/2\">#2</a></a></li>\n<li>[DPE-2033] Add CI/CD pipeline by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/4\">#4</a></a></li>\n<li>Fix release track by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/6\">#6</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5\">https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator/releases/tag/rev5",
+                  "compareUrl": "https://github.com/canonical/kafka-broker-rack-awareness-operator/compare/rev5...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/kafka-broker-rack-awareness-operator/actions/workflows/release.yaml",
+               "https://github.com/canonical/kafka-broker-rack-awareness-operator/actions/workflows/ci.yaml"
+            ],
+            "charm": {
+               "name": "kafka-broker-rack-awareness",
+               "url": "https://charmhub.io/kafka-broker-rack-awareness",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 5,
+                     "timestamp": 1709040596
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 5,
+                     "timestamp": 1687446351
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "data-platform-workflows",
             "newCommits": 0,
             "url": "https://github.com/canonical/data-platform-workflows",
@@ -18277,6 +18434,405 @@
             "commits": null,
             "ciActions": [],
             "charm": null,
+            "snap": null
+         },
+         {
+            "name": "kafka-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/kafka-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "8811f9d9dff3703b954cf4b1c42fff8253abe15a",
+                  "author": "deusebio",
+                  "timestamp": 1712667653,
+                  "message": "<p>[DPE-3231] Kafka slim image using rockcraft (<a target=\"_blank\" href=\"https://github.com/canonical/kafka-rock/pull/2\">#2</a>)</p>\n",
+                  "url": "https://github.com/canonical/kafka-rock/commit/8811f9d9dff3703b954cf4b1c42fff8253abe15a"
+               },
+               {
+                  "sha": "41086e8a9c6314175e6304ecf7e6b5e0e1e821e3",
+                  "author": "Enrico Deusebio",
+                  "timestamp": 1711645940,
+                  "message": "<p>[MISC] Initial commit</p>\n",
+                  "url": "https://github.com/canonical/kafka-rock/commit/41086e8a9c6314175e6304ecf7e6b5e0e1e821e3"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/kafka-rock/actions/workflows/ci.yaml",
+               "https://github.com/canonical/kafka-rock/actions/workflows/publish.yaml"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "kafka-test-app",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/kafka-test-app",
+            "releases": [
+               {
+                  "id": 151400225,
+                  "version": "rev10",
+                  "timestamp": 1712140599,
+                  "title": "Revision 10",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:58 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Added status badges by <a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\">#15</a></a></li>\n<li>[DPE-3735] Add companion files to how-to integrate monitoring by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\">#16</a></a></li>\n<li>[DPE-3825] Set juju version in CI by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/18\">#18</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\">#15</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-test-app/compare/rev8...rev10\">https://github.com/canonical/kafka-test-app/compare/rev8&hellip;rev10</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-test-app/releases/tag/rev10",
+                  "compareUrl": "https://github.com/canonical/kafka-test-app/compare/rev10...main"
+               },
+               {
+                  "id": 119955718,
+                  "version": "rev8",
+                  "timestamp": 1693910657,
+                  "title": "Revision 8",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:14 UTC on 5 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2493] Change key names by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\">#12</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\">#12</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-test-app/compare/rev7...rev8\">https://github.com/canonical/kafka-test-app/compare/rev7&hellip;rev8</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-test-app/releases/tag/rev8",
+                  "compareUrl": "https://github.com/canonical/kafka-test-app/compare/rev8...main"
+               },
+               {
+                  "id": 119403727,
+                  "version": "rev7",
+                  "timestamp": 1693468065,
+                  "title": "Revision 7",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:10 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Provide ability to manually trigger release pipeline by <a target=\"_blank\" href=\"https://github.com/deusebio\">@deusebio</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/10\">#10</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-test-app/compare/rev6...rev7\">https://github.com/canonical/kafka-test-app/compare/rev6&hellip;rev7</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-test-app/releases/tag/rev7",
+                  "compareUrl": "https://github.com/canonical/kafka-test-app/compare/rev7...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/kafka-test-app/actions/workflows/release.yaml",
+               "https://github.com/canonical/kafka-test-app/actions/workflows/ci.yaml"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "karapace-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/karapace-operator",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "e8038fd329ca66975278067dbe1c56aba50e4870",
+                  "author": "deusebio",
+                  "timestamp": 1709731954,
+                  "message": "<p>Initial commit</p>\n",
+                  "url": "https://github.com/canonical/karapace-operator/commit/e8038fd329ca66975278067dbe1c56aba50e4870"
+               }
+            ],
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "data-platform",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/data-platform",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "2e9b68d8217efea21ccf602108321cd19be49d20",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1712826117,
+                  "message": "<p>Disable Python version updates in renovate preset (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/22\">#22</a>)</p>\n",
+                  "url": "https://github.com/canonical/data-platform/commit/2e9b68d8217efea21ccf602108321cd19be49d20"
+               },
+               {
+                  "sha": "1fbda6604ad9c37384c3cdf0bd29b85236618cdc",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1711123298,
+                  "message": "<p>Reduce charm Renovate groups (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/20\">#20</a>)</p>\n\n<p>Combine\n- charm dependencies\n- charm lib dependencies\n- Python CI dependencies</p>\n\n<p>into a single Renovate group so that they will be combined into 1 PR. (Major version updates will still be separated into a different PR)</p>\n\n<p>Combine GitHub actions updates into 1 group</p>\n\n<p>Purpose: to reduce number of PRs that renovate creates (to reduce # of PR reviews and # of test runs [especially annoying with flaky tests])</p>\n",
+                  "url": "https://github.com/canonical/data-platform/commit/1fbda6604ad9c37384c3cdf0bd29b85236618cdc"
+               },
+               {
+                  "sha": "0dc3c169ad70babd6c278c544e4eccb1f4c3fb8b",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1696927713,
+                  "message": "<p>Use a separate group for Python updates in renovate preset (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/19\">#19</a>)</p>\n",
+                  "url": "https://github.com/canonical/data-platform/commit/0dc3c169ad70babd6c278c544e4eccb1f4c3fb8b"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "mongodb-k8s-operator",
+            "newCommits": 3,
+            "url": "https://github.com/canonical/mongodb-k8s-operator",
+            "releases": [
+               {
+                  "id": 133994804,
+                  "version": "rev40",
+                  "timestamp": 1702549266,
+                  "title": "Revision 40",
+                  "body": "<p>Released to 6/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mongodb-image&rsquo;, &lsquo;revision&rsquo;: 25}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix logging (6/edge) - via copying solution over from VM charm by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/227\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/227\">#227</a></a></li>\n<li>[DPE-3111] Fix integration tests for Charmed MongoDB 6 by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/233\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/233\">#233</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev38...rev40\">https://github.com/canonical/mongodb-k8s-operator/compare/rev38&hellip;rev40</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev40",
+                  "compareUrl": "https://github.com/canonical/mongodb-k8s-operator/compare/rev40...main"
+               },
+               {
+                  "id": 133966281,
+                  "version": "rev39",
+                  "timestamp": 1702542795,
+                  "title": "Revision 39",
+                  "body": "<p>Released to 5/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mongodb-image&rsquo;, &lsquo;revision&rsquo;: 26}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-1917] Updated logs for backup status by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/188\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/188\">#188</a></a></li>\n<li>[DPE-1918] Improve logs for backup by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/189\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/189\">#189</a></a></li>\n<li>[DPE-2412]  Full cluster crash test by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/190\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/190\">#190</a></a></li>\n<li>[DPE-1728] Cluster restart test by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/193\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/193\">#193</a></a></li>\n<li>[DPE-2414] Storage reuse by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/194\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/194\">#194</a></a></li>\n<li>[DPE-2415] generalise lib code so easily repurposable by VM by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/195\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/195\">#195</a></a></li>\n<li>[DPE-2528] Update libraries on K8s charm so charm uses data_interfaces for provider code  by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/197\">#197</a></a></li>\n<li>Fixes for building charm by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/201\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/201\">#201</a></a></li>\n<li>[DPE-2610] Remove support of Juju 2.9 by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/202\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/202\">#202</a></a></li>\n<li>[DPE-2447] Secret labels by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/200\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/200\">#200</a></a></li>\n<li>[DPE-2734] Extended TLS testing by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/206\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/206\">#206</a></a></li>\n<li>Update link to the documentation for MongoDB 5 charm by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/214\">#214</a></a></li>\n<li>Update release workflow for 5/edge by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/217\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/217\">#217</a></a></li>\n<li>Fix branch used to trigger release to 5/edge by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/221\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/221\">#221</a></a></li>\n<li>fix logging (5/edge) - via copying solution over from VM charm  by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/228\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/228\">#228</a></a></li>\n<li>[DPE-3167] 5/edge: Correct retry before initialising users and update CI by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/230\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/230\">#230</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev36...rev39\">https://github.com/canonical/mongodb-k8s-operator/compare/rev36&hellip;rev39</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev39",
+                  "compareUrl": "https://github.com/canonical/mongodb-k8s-operator/compare/rev39...main"
+               },
+               {
+                  "id": 128887299,
+                  "version": "rev38",
+                  "timestamp": 1699598550,
+                  "title": "Revision 38",
+                  "body": "<p>Released to 6/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mongodb-image&rsquo;, &lsquo;revision&rsquo;: 24}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update link to documentation for MongoDB 6 charm by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev37...rev38\">https://github.com/canonical/mongodb-k8s-operator/compare/rev37&hellip;rev38</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev38",
+                  "compareUrl": "https://github.com/canonical/mongodb-k8s-operator/compare/rev38...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "central-uploader",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/central-uploader",
+            "releases": [
+               {
+                  "id": 146884306,
+                  "version": "servlet-filters-0.0.1",
+                  "timestamp": 1710583712,
+                  "title": "Release servlet-filters-0.0.1",
+                  "body": "",
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/servlet-filters-0.0.1",
+                  "compareUrl": "https://github.com/canonical/central-uploader/compare/servlet-filters-0.0.1...main"
+               },
+               {
+                  "id": 145258342,
+                  "version": "opensearch-2.12.0-ubuntu0",
+                  "timestamp": 1709634492,
+                  "title": "Release opensearch-2.12.0-ubuntu0",
+                  "body": "",
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/opensearch-2.12.0-ubuntu0",
+                  "compareUrl": "https://github.com/canonical/central-uploader/compare/opensearch-2.12.0-ubuntu0...main"
+               },
+               {
+                  "id": 145194165,
+                  "version": "opensearch-2.11.1-ubuntu0",
+                  "timestamp": 1709634492,
+                  "title": "Release opensearch-2.11.1-ubuntu0",
+                  "body": "",
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/opensearch-2.11.1-ubuntu0",
+                  "compareUrl": "https://github.com/canonical/central-uploader/compare/opensearch-2.11.1-ubuntu0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/central-uploader/actions/workflows/release-tarball.yaml",
+               "https://github.com/canonical/central-uploader/actions/workflows/release-java-library.yaml",
+               "https://github.com/canonical/central-uploader/actions/workflows/ci.yaml"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charmed-zookeeper-snap",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-zookeeper-snap",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "13f3c620658fdc55b7d6745b81c7b5a00e042e10",
+                  "author": "Alex Batisse",
+                  "timestamp": 1713861920,
+                  "message": "<p>[DPE-2597] Do not change permissions on existing directories (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-zookeeper-snap/pull/22\">#22</a>)</p>\n\n<ul>\n<li><p>fix: Do not change permissions on existing directories</p></li>\n\n<li><p>Fix condition with mounted volume</p></li>\n\n<li><p>Partial revert &ldquo;fix: Do not change permissions on existing directories&rdquo;</p></li>\n</ul>\n\n<p>This reverts commit 1a4507834e273dd7b7af39f596dbece803b56778.</p>\n\n<ul>\n<li><p>docs: Add user id notes in install hook</p></li>\n\n<li><p>fix: Use 750 permissions on DATA folder</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-zookeeper-snap/commit/13f3c620658fdc55b7d6745b81c7b5a00e042e10"
+               },
+               {
+                  "sha": "d85fed4c2f83d99dbc028ff10c2e38915b6cdf04",
+                  "author": "deusebio",
+                  "timestamp": 1710445070,
+                  "message": "<p>[DPE-3726] Fix link path (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-zookeeper-snap/pull/21\">#21</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-zookeeper-snap/commit/d85fed4c2f83d99dbc028ff10c2e38915b6cdf04"
+               },
+               {
+                  "sha": "0ea92dbe196f198b61e31c312ce630f549890f18",
+                  "author": "deusebio",
+                  "timestamp": 1710440644,
+                  "message": "<p>[DPE-3726] Release 3.8.4 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-zookeeper-snap/pull/20\">#20</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-zookeeper-snap/commit/0ea92dbe196f198b61e31c312ce630f549890f18"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/charmed-zookeeper-snap/actions/workflows/publish.yaml"
+            ],
+            "charm": null,
+            "snap": {
+               "name": "charmed-zookeeper",
+               "url": "https://snapcraft.io/charmed-zookeeper",
+               "releases": [
+                  {
+                     "track": "3",
+                     "channel": "stable",
+                     "revision": 28,
+                     "timestamp": 1709032746
+                  },
+                  {
+                     "track": "3",
+                     "channel": "candidate",
+                     "revision": 28,
+                     "timestamp": 1709032747
+                  },
+                  {
+                     "track": "3",
+                     "channel": "beta",
+                     "revision": 28,
+                     "timestamp": 1709032746
+                  },
+                  {
+                     "track": "3",
+                     "channel": "edge",
+                     "revision": 34,
+                     "timestamp": 1713948348
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "3"
+               ]
+            }
+         },
+         {
+            "name": "mysql-bundle",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/mysql-bundle",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "68e855dfd8153793d6a84abaa5a22797152826f0",
+                  "author": "Andreia Velasco",
+                  "timestamp": 1709203262,
+                  "message": "<p>Add status badges to README.md (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/61\">#61</a>)</p>\n",
+                  "url": "https://github.com/canonical/mysql-bundle/commit/68e855dfd8153793d6a84abaa5a22797152826f0"
+               },
+               {
+                  "sha": "caa3cf5bdd871f5caad1702bbad0c4380a8371c4",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1690572245,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/59\">#59</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/mysql-bundle/commit/caa3cf5bdd871f5caad1702bbad0c4380a8371c4"
+               },
+               {
+                  "sha": "6d838bbe492a7b573721e0cf8ece2e7d53492a41",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1689078936,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/58\">#58</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/mysql-bundle/commit/6d838bbe492a7b573721e0cf8ece2e7d53492a41"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/mysql-bundle/actions/workflows/release.yaml",
+               "https://github.com/canonical/mysql-bundle/actions/workflows/ci.yaml"
+            ],
+            "charm": {
+               "name": "mysql-bundle",
+               "url": "https://charmhub.io/mysql-bundle",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 30,
+                     "timestamp": 1680716031
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "edge",
+                     "revision": 44,
+                     "timestamp": 1689094517
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "8.0"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "mysql-k8s-bundle",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/mysql-k8s-bundle",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "ed4a7fd186ab8434f0c3b5f56310e0c05fd8264e",
+                  "author": "Andreia Velasco",
+                  "timestamp": 1708710074,
+                  "message": "<p>Fixed update badge (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-bundle/pull/67\">#67</a>)</p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/ed4a7fd186ab8434f0c3b5f56310e0c05fd8264e"
+               },
+               {
+                  "sha": "eb7fe0c8d557a820fa6680b28f48fac5fbe899c4",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1689078910,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-bundle/pull/65\">#65</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/eb7fe0c8d557a820fa6680b28f48fac5fbe899c4"
+               },
+               {
+                  "sha": "a4757ee8d9e0fb2d1c8ee4cf0f903f408b3b0cbe",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1689002844,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-bundle/pull/64\">#64</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/a4757ee8d9e0fb2d1c8ee4cf0f903f408b3b0cbe"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/mysql-k8s-bundle/actions/workflows/update_bundle.yaml",
+               "https://github.com/canonical/mysql-k8s-bundle/actions/workflows/ci.yaml",
+               "https://github.com/canonical/mysql-k8s-bundle/actions/workflows/release.yaml"
+            ],
+            "charm": {
+               "name": "mysql-k8s-bundle",
+               "url": "https://charmhub.io/mysql-k8s-bundle",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 27,
+                     "timestamp": 1678362499
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "edge",
+                     "revision": 38,
+                     "timestamp": 1689081482
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "8.0"
+               ]
+            },
             "snap": null
          },
          {
@@ -18361,578 +18917,6 @@
             "snap": null
          },
          {
-            "name": "kafka-test-app",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/kafka-test-app",
-            "releases": [
-               {
-                  "id": 151400225,
-                  "version": "rev10",
-                  "timestamp": 1712140599,
-                  "title": "Revision 10",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:58 UTC on 16 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Added status badges by <a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\">#15</a></a></li>\n<li>[DPE-3735] Add companion files to how-to integrate monitoring by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\">#16</a></a></li>\n<li>[DPE-3825] Set juju version in CI by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/18\">#18</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/15\">#15</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-test-app/compare/rev8...rev10\">https://github.com/canonical/kafka-test-app/compare/rev8&hellip;rev10</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-test-app/releases/tag/rev10",
-                  "compareUrl": "https://github.com/canonical/kafka-test-app/compare/rev10...main"
-               },
-               {
-                  "id": 119955718,
-                  "version": "rev8",
-                  "timestamp": 1693910657,
-                  "title": "Revision 8",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:14 UTC on 5 Sep 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2493] Change key names by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\">#12</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/12\">#12</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-test-app/compare/rev7...rev8\">https://github.com/canonical/kafka-test-app/compare/rev7&hellip;rev8</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-test-app/releases/tag/rev8",
-                  "compareUrl": "https://github.com/canonical/kafka-test-app/compare/rev8...main"
-               },
-               {
-                  "id": 119403727,
-                  "version": "rev7",
-                  "timestamp": 1693468065,
-                  "title": "Revision 7",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:10 UTC on 31 Aug 2023</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Provide ability to manually trigger release pipeline by <a target=\"_blank\" href=\"https://github.com/deusebio\">@deusebio</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-test-app/pull/10\">#10</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-test-app/compare/rev6...rev7\">https://github.com/canonical/kafka-test-app/compare/rev6&hellip;rev7</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-test-app/releases/tag/rev7",
-                  "compareUrl": "https://github.com/canonical/kafka-test-app/compare/rev7...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/kafka-test-app/actions/workflows/release.yaml",
-               "https://github.com/canonical/kafka-test-app/actions/workflows/ci.yaml"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charmcraftcache-hub",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charmcraftcache-hub",
-            "releases": [
-               {
-                  "id": 153384453,
-                  "version": "build-1714436664-v3",
-                  "timestamp": 1712070980,
-                  "title": "build-1714436664-v3",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1714436664-v3",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1714436664-v3...main"
-               },
-               {
-                  "id": 153169570,
-                  "version": "build-1714350300-v3",
-                  "timestamp": 1712070980,
-                  "title": "build-1714350300-v3",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1714350300-v3",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1714350300-v3...main"
-               },
-               {
-                  "id": 153111476,
-                  "version": "build-1714264070-v3",
-                  "timestamp": 1712070980,
-                  "title": "build-1714264070-v3",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1714264070-v3",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1714264070-v3...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/charmcraftcache-hub/actions/workflows/build.yaml"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "spark-k8s-bundle",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/spark-k8s-bundle",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "0bafcb4dabca10170da28a03f98e78f4f34af2d8",
-                  "author": "Enrico Deusebio",
-                  "timestamp": 1712787845,
-                  "message": "<p>[DPE-3964;DPE-4044] spark-test package alpha version</p>\n",
-                  "url": "https://github.com/canonical/spark-k8s-bundle/commit/0bafcb4dabca10170da28a03f98e78f4f34af2d8"
-               },
-               {
-                  "sha": "2838fe226df4f65df68b0a701acf41acd760afe3",
-                  "author": "Enrico Deusebio",
-                  "timestamp": 1712785867,
-                  "message": "<p>[DPE-3964;DPE-4043] CI/CD Skeleton</p>\n",
-                  "url": "https://github.com/canonical/spark-k8s-bundle/commit/2838fe226df4f65df68b0a701acf41acd760afe3"
-               },
-               {
-                  "sha": "1bf59e634b626c95d9b18954c0ad0c343dd11b8a",
-                  "author": "Enrico Deusebio",
-                  "timestamp": 1712783538,
-                  "message": "<p>[MISC] Initial commit</p>\n",
-                  "url": "https://github.com/canonical/spark-k8s-bundle/commit/1bf59e634b626c95d9b18954c0ad0c343dd11b8a"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "karapace-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/karapace-operator",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "e8038fd329ca66975278067dbe1c56aba50e4870",
-                  "author": "deusebio",
-                  "timestamp": 1709731954,
-                  "message": "<p>Initial commit</p>\n",
-                  "url": "https://github.com/canonical/karapace-operator/commit/e8038fd329ca66975278067dbe1c56aba50e4870"
-               }
-            ],
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charmed-karapace-snap",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-karapace-snap",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "bca3dd56244699728cd4649fee555739f4e2ebbb",
-                  "author": "Raúl Zamora Martínez",
-                  "timestamp": 1713778266,
-                  "message": "<p>add version app (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-karapace-snap/pull/3\">#3</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-karapace-snap/commit/bca3dd56244699728cd4649fee555739f4e2ebbb"
-               },
-               {
-                  "sha": "1541faa43c64ed80f6ae02bf8c73e5fb3068aa67",
-                  "author": "Raúl Zamora Martínez",
-                  "timestamp": 1713444500,
-                  "message": "<p>Update publish.yaml</p>\n",
-                  "url": "https://github.com/canonical/charmed-karapace-snap/commit/1541faa43c64ed80f6ae02bf8c73e5fb3068aa67"
-               },
-               {
-                  "sha": "d13c147d5449b4ab245555b197884cf2d7674257",
-                  "author": "Raúl Zamora Martínez",
-                  "timestamp": 1713439464,
-                  "message": "<p>Update publish.yaml</p>\n",
-                  "url": "https://github.com/canonical/charmed-karapace-snap/commit/d13c147d5449b4ab245555b197884cf2d7674257"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/charmed-karapace-snap/actions/workflows/publish.yaml"
-            ],
-            "charm": null,
-            "snap": {
-               "name": "charmed-karapace",
-               "url": "https://snapcraft.io/charmed-karapace",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 2,
-                     "timestamp": 1713778529
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
-         },
-         {
-            "name": "mongodb-k8s-operator",
-            "newCommits": 3,
-            "url": "https://github.com/canonical/mongodb-k8s-operator",
-            "releases": [
-               {
-                  "id": 133994804,
-                  "version": "rev40",
-                  "timestamp": 1702549266,
-                  "title": "Revision 40",
-                  "body": "<p>Released to 6/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mongodb-image&rsquo;, &lsquo;revision&rsquo;: 25}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix logging (6/edge) - via copying solution over from VM charm by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/227\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/227\">#227</a></a></li>\n<li>[DPE-3111] Fix integration tests for Charmed MongoDB 6 by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/233\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/233\">#233</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev38...rev40\">https://github.com/canonical/mongodb-k8s-operator/compare/rev38&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev40",
-                  "compareUrl": "https://github.com/canonical/mongodb-k8s-operator/compare/rev40...main"
-               },
-               {
-                  "id": 133966281,
-                  "version": "rev39",
-                  "timestamp": 1702542795,
-                  "title": "Revision 39",
-                  "body": "<p>Released to 5/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mongodb-image&rsquo;, &lsquo;revision&rsquo;: 26}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-1917] Updated logs for backup status by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/188\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/188\">#188</a></a></li>\n<li>[DPE-1918] Improve logs for backup by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/189\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/189\">#189</a></a></li>\n<li>[DPE-2412]  Full cluster crash test by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/190\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/190\">#190</a></a></li>\n<li>[DPE-1728] Cluster restart test by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/193\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/193\">#193</a></a></li>\n<li>[DPE-2414] Storage reuse by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/194\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/194\">#194</a></a></li>\n<li>[DPE-2415] generalise lib code so easily repurposable by VM by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/195\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/195\">#195</a></a></li>\n<li>[DPE-2528] Update libraries on K8s charm so charm uses data_interfaces for provider code  by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/197\">#197</a></a></li>\n<li>Fixes for building charm by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/201\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/201\">#201</a></a></li>\n<li>[DPE-2610] Remove support of Juju 2.9 by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/202\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/202\">#202</a></a></li>\n<li>[DPE-2447] Secret labels by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/200\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/200\">#200</a></a></li>\n<li>[DPE-2734] Extended TLS testing by <a target=\"_blank\" href=\"https://github.com/juditnovak\">@juditnovak</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/206\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/206\">#206</a></a></li>\n<li>Update link to the documentation for MongoDB 5 charm by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/214\">#214</a></a></li>\n<li>Update release workflow for 5/edge by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/217\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/217\">#217</a></a></li>\n<li>Fix branch used to trigger release to 5/edge by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/221\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/221\">#221</a></a></li>\n<li>fix logging (5/edge) - via copying solution over from VM charm  by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/228\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/228\">#228</a></a></li>\n<li>[DPE-3167] 5/edge: Correct retry before initialising users and update CI by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/230\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/230\">#230</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev36...rev39\">https://github.com/canonical/mongodb-k8s-operator/compare/rev36&hellip;rev39</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev39",
-                  "compareUrl": "https://github.com/canonical/mongodb-k8s-operator/compare/rev39...main"
-               },
-               {
-                  "id": 128887299,
-                  "version": "rev38",
-                  "timestamp": 1699598550,
-                  "title": "Revision 38",
-                  "body": "<p>Released to 6/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mongodb-image&rsquo;, &lsquo;revision&rsquo;: 24}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update link to documentation for MongoDB 6 charm by <a target=\"_blank\" href=\"https://github.com/dmitry-ratushnyy\">@dmitry-ratushnyy</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-k8s-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-k8s-operator/compare/rev37...rev38\">https://github.com/canonical/mongodb-k8s-operator/compare/rev37&hellip;rev38</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-k8s-operator/releases/tag/rev38",
-                  "compareUrl": "https://github.com/canonical/mongodb-k8s-operator/compare/rev38...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charmed-kafka-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-kafka-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "729f96060a3fecc34a872392e5655e1665ab4c97",
-                  "author": "deusebio",
-                  "timestamp": 1710521712,
-                  "message": "<p>[DPE-3214] Release 3.6.1 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-rock/pull/20\">#20</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-kafka-rock/commit/729f96060a3fecc34a872392e5655e1665ab4c97"
-               },
-               {
-                  "sha": "fa17e79fc249024dd677361e450a5dc2430958c0",
-                  "author": "Genc Tato",
-                  "timestamp": 1709732099,
-                  "message": "<p>CSS-6390 - fix: leave cacert to verify OAuth certs and update jmx path (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-rock/pull/18\">#18</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-kafka-rock/commit/fa17e79fc249024dd677361e450a5dc2430958c0"
-               },
-               {
-                  "sha": "d0af5aabcddf0cc5f55a422943057f9d5df67dd0",
-                  "author": "deusebio",
-                  "timestamp": 1708380616,
-                  "message": "<p>[DPE-3457] Add description to OCI image to be rendered on GitHub Container Registry (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-rock/pull/19\">#19</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-kafka-rock/commit/d0af5aabcddf0cc5f55a422943057f9d5df67dd0"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/charmed-kafka-rock/actions/workflows/publish.yaml"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "mysql-k8s-bundle",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/mysql-k8s-bundle",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "ed4a7fd186ab8434f0c3b5f56310e0c05fd8264e",
-                  "author": "Andreia Velasco",
-                  "timestamp": 1708710074,
-                  "message": "<p>Fixed update badge (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-bundle/pull/67\">#67</a>)</p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/ed4a7fd186ab8434f0c3b5f56310e0c05fd8264e"
-               },
-               {
-                  "sha": "eb7fe0c8d557a820fa6680b28f48fac5fbe899c4",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1689078910,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-bundle/pull/65\">#65</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/eb7fe0c8d557a820fa6680b28f48fac5fbe899c4"
-               },
-               {
-                  "sha": "a4757ee8d9e0fb2d1c8ee4cf0f903f408b3b0cbe",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1689002844,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-bundle/pull/64\">#64</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-bundle/commit/a4757ee8d9e0fb2d1c8ee4cf0f903f408b3b0cbe"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/mysql-k8s-bundle/actions/workflows/update_bundle.yaml",
-               "https://github.com/canonical/mysql-k8s-bundle/actions/workflows/ci.yaml",
-               "https://github.com/canonical/mysql-k8s-bundle/actions/workflows/release.yaml"
-            ],
-            "charm": {
-               "name": "mysql-k8s-bundle",
-               "url": "https://charmhub.io/mysql-k8s-bundle",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 27,
-                     "timestamp": 1678362499
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "edge",
-                     "revision": 38,
-                     "timestamp": 1689081482
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "8.0"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "mysql-bundle",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/mysql-bundle",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "68e855dfd8153793d6a84abaa5a22797152826f0",
-                  "author": "Andreia Velasco",
-                  "timestamp": 1709203262,
-                  "message": "<p>Add status badges to README.md (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/61\">#61</a>)</p>\n",
-                  "url": "https://github.com/canonical/mysql-bundle/commit/68e855dfd8153793d6a84abaa5a22797152826f0"
-               },
-               {
-                  "sha": "caa3cf5bdd871f5caad1702bbad0c4380a8371c4",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1690572245,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/59\">#59</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/mysql-bundle/commit/caa3cf5bdd871f5caad1702bbad0c4380a8371c4"
-               },
-               {
-                  "sha": "6d838bbe492a7b573721e0cf8ece2e7d53492a41",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1689078936,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/58\">#58</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/mysql-bundle/commit/6d838bbe492a7b573721e0cf8ece2e7d53492a41"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/mysql-bundle/actions/workflows/release.yaml",
-               "https://github.com/canonical/mysql-bundle/actions/workflows/ci.yaml"
-            ],
-            "charm": {
-               "name": "mysql-bundle",
-               "url": "https://charmhub.io/mysql-bundle",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 30,
-                     "timestamp": 1680716031
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "edge",
-                     "revision": 44,
-                     "timestamp": 1689094517
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "8.0"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "charmed-mongodb-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-mongodb-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "9bf59277e6a5383eaf334c3fa269a1e9af38dbe3",
-                  "author": "Andreia Velasco",
-                  "timestamp": 1709127493,
-                  "message": "<p>Added badges to README.md (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mongodb-rock/pull/33\">#33</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-mongodb-rock/commit/9bf59277e6a5383eaf334c3fa269a1e9af38dbe3"
-               },
-               {
-                  "sha": "75f92a325786cd1a033511e9af120b05f3b73e2f",
-                  "author": "Dmitry Ratushnyy",
-                  "timestamp": 1701799214,
-                  "message": "<p>Fix published file name (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mongodb-rock/pull/31\">#31</a>)</p>\n\n<ul>\n<li><p>Fix published artifact filename</p></li>\n\n<li><p>Use a better variable name</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charmed-mongodb-rock/commit/75f92a325786cd1a033511e9af120b05f3b73e2f"
-               },
-               {
-                  "sha": "50f90edcd6c480cf157b74be591b6757ea558fa6",
-                  "author": "Dmitry Ratushnyy",
-                  "timestamp": 1701796512,
-                  "message": "<p>Fix publishing job (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mongodb-rock/pull/30\">#30</a>)</p>\n\n<ul>\n<li><p>Fix publishing workflow</p></li>\n\n<li><p>Add workflow for publishing beta</p></li>\n\n<li><p>Do not limit branches for manual beta publishing</p></li>\n\n<li><p>Reformat file</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charmed-mongodb-rock/commit/50f90edcd6c480cf157b74be591b6757ea558fa6"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/charmed-mongodb-rock/actions/workflows/publish.yaml",
-               "https://github.com/canonical/charmed-mongodb-rock/actions/workflows/integration.yaml"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "data-platform",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/data-platform",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "2e9b68d8217efea21ccf602108321cd19be49d20",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1712826117,
-                  "message": "<p>Disable Python version updates in renovate preset (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/22\">#22</a>)</p>\n",
-                  "url": "https://github.com/canonical/data-platform/commit/2e9b68d8217efea21ccf602108321cd19be49d20"
-               },
-               {
-                  "sha": "1fbda6604ad9c37384c3cdf0bd29b85236618cdc",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1711123298,
-                  "message": "<p>Reduce charm Renovate groups (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/20\">#20</a>)</p>\n\n<p>Combine\n- charm dependencies\n- charm lib dependencies\n- Python CI dependencies</p>\n\n<p>into a single Renovate group so that they will be combined into 1 PR. (Major version updates will still be separated into a different PR)</p>\n\n<p>Combine GitHub actions updates into 1 group</p>\n\n<p>Purpose: to reduce number of PRs that renovate creates (to reduce # of PR reviews and # of test runs [especially annoying with flaky tests])</p>\n",
-                  "url": "https://github.com/canonical/data-platform/commit/1fbda6604ad9c37384c3cdf0bd29b85236618cdc"
-               },
-               {
-                  "sha": "0dc3c169ad70babd6c278c544e4eccb1f4c3fb8b",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1696927713,
-                  "message": "<p>Use a separate group for Python updates in renovate preset (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/19\">#19</a>)</p>\n",
-                  "url": "https://github.com/canonical/data-platform/commit/0dc3c169ad70babd6c278c544e4eccb1f4c3fb8b"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "kafka-broker-rack-awareness-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator",
-            "releases": [
-               {
-                  "id": 109565365,
-                  "version": "rev5",
-                  "timestamp": 1687445669,
-                  "title": "Revision 5",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-1904] Add initial charm by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></a></li>\n<li>Fix status handling by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/2\">#2</a></a></li>\n<li>[DPE-2033] Add CI/CD pipeline by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/4\">#4</a></a></li>\n<li>Fix release track by <a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/6\">#6</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/zmraul\">@zmraul</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/pull/1\">#1</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5\">https://github.com/canonical/kafka-broker-rack-awareness-operator/commits/rev5</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-broker-rack-awareness-operator/releases/tag/rev5",
-                  "compareUrl": "https://github.com/canonical/kafka-broker-rack-awareness-operator/compare/rev5...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/kafka-broker-rack-awareness-operator/actions/workflows/release.yaml",
-               "https://github.com/canonical/kafka-broker-rack-awareness-operator/actions/workflows/ci.yaml"
-            ],
-            "charm": {
-               "name": "kafka-broker-rack-awareness",
-               "url": "https://charmhub.io/kafka-broker-rack-awareness",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 5,
-                     "timestamp": 1709040596
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 5,
-                     "timestamp": 1687446351
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "charmed-zookeeper-snap",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-zookeeper-snap",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "13f3c620658fdc55b7d6745b81c7b5a00e042e10",
-                  "author": "Alex Batisse",
-                  "timestamp": 1713861920,
-                  "message": "<p>[DPE-2597] Do not change permissions on existing directories (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-zookeeper-snap/pull/22\">#22</a>)</p>\n\n<ul>\n<li><p>fix: Do not change permissions on existing directories</p></li>\n\n<li><p>Fix condition with mounted volume</p></li>\n\n<li><p>Partial revert &ldquo;fix: Do not change permissions on existing directories&rdquo;</p></li>\n</ul>\n\n<p>This reverts commit 1a4507834e273dd7b7af39f596dbece803b56778.</p>\n\n<ul>\n<li><p>docs: Add user id notes in install hook</p></li>\n\n<li><p>fix: Use 750 permissions on DATA folder</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charmed-zookeeper-snap/commit/13f3c620658fdc55b7d6745b81c7b5a00e042e10"
-               },
-               {
-                  "sha": "d85fed4c2f83d99dbc028ff10c2e38915b6cdf04",
-                  "author": "deusebio",
-                  "timestamp": 1710445070,
-                  "message": "<p>[DPE-3726] Fix link path (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-zookeeper-snap/pull/21\">#21</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-zookeeper-snap/commit/d85fed4c2f83d99dbc028ff10c2e38915b6cdf04"
-               },
-               {
-                  "sha": "0ea92dbe196f198b61e31c312ce630f549890f18",
-                  "author": "deusebio",
-                  "timestamp": 1710440644,
-                  "message": "<p>[DPE-3726] Release 3.8.4 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-zookeeper-snap/pull/20\">#20</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-zookeeper-snap/commit/0ea92dbe196f198b61e31c312ce630f549890f18"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/charmed-zookeeper-snap/actions/workflows/publish.yaml"
-            ],
-            "charm": null,
-            "snap": {
-               "name": "charmed-zookeeper",
-               "url": "https://snapcraft.io/charmed-zookeeper",
-               "releases": [
-                  {
-                     "track": "3",
-                     "channel": "stable",
-                     "revision": 28,
-                     "timestamp": 1709032746
-                  },
-                  {
-                     "track": "3",
-                     "channel": "candidate",
-                     "revision": 28,
-                     "timestamp": 1709032747
-                  },
-                  {
-                     "track": "3",
-                     "channel": "beta",
-                     "revision": 28,
-                     "timestamp": 1709032746
-                  },
-                  {
-                     "track": "3",
-                     "channel": "edge",
-                     "revision": 34,
-                     "timestamp": 1713948348
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "3"
-               ]
-            }
-         },
-         {
             "name": "charmed-zookeeper-rock",
             "newCommits": 0,
             "url": "https://github.com/canonical/charmed-zookeeper-rock",
@@ -18968,66 +18952,6 @@
             "snap": null
          },
          {
-            "name": "postgresql-bundle",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/postgresql-bundle",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "817e190dc047dee5d1c064c4655643861980bcfe",
-                  "author": "Andreia Velasco",
-                  "timestamp": 1712139179,
-                  "message": "<p>Added badges (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/77\">#77</a>)</p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/817e190dc047dee5d1c064c4655643861980bcfe"
-               },
-               {
-                  "sha": "d69c4dcb749cea82874042d6e3a6f1f7a100ac18",
-                  "author": "renovate[bot]",
-                  "timestamp": 1696085790,
-                  "message": "<p>Update dependency juju/juju to v2.9.45 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/73\">#73</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/d69c4dcb749cea82874042d6e3a6f1f7a100ac18"
-               },
-               {
-                  "sha": "583718919a45b14a12b9f1de782423d9dbf9f9f5",
-                  "author": "renovate[bot]",
-                  "timestamp": 1695922001,
-                  "message": "<p>Update Python dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/70\">#70</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/583718919a45b14a12b9f1de782423d9dbf9f9f5"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/postgresql-bundle/actions/workflows/release.yaml",
-               "https://github.com/canonical/postgresql-bundle/actions/workflows/ci.yaml"
-            ],
-            "charm": {
-               "name": "postgresql-bundle",
-               "url": "https://charmhub.io/postgresql-bundle",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 22,
-                     "timestamp": 1681330556
-                  },
-                  {
-                     "track": "14",
-                     "channel": "edge",
-                     "revision": 34,
-                     "timestamp": 1695956408
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "14"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "charmed-spark-rock",
             "newCommits": 0,
             "url": "https://github.com/canonical/charmed-spark-rock",
@@ -19058,6 +18982,152 @@
             ],
             "ciActions": [
                "https://github.com/canonical/charmed-spark-rock/actions/workflows/publish.yaml"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charmed-redis-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-redis-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "ac35c9e4095eefd078154623598cf259d3ffc10d",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1686153451,
+                  "message": "<p>Update bug_report.md issue template (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/3\">#3</a>)</p>\n\n<p>Ported from <a target=\"_blank\" href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/91\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/91\">#91</a></a></p>\n",
+                  "url": "https://github.com/canonical/charmed-redis-rock/commit/ac35c9e4095eefd078154623598cf259d3ffc10d"
+               },
+               {
+                  "sha": "81531a2995431f4ec00479910fef905bda6a69bd",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1681224508,
+                  "message": "<p>Sync GitHub issues to Jira (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/1\">#1</a>)</p>\n\n<p>Ported from <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/108\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/108\">#108</a></a></p>\n",
+                  "url": "https://github.com/canonical/charmed-redis-rock/commit/81531a2995431f4ec00479910fef905bda6a69bd"
+               },
+               {
+                  "sha": "02aee8d546bb0597d5fce8a566bd54354552ecbb",
+                  "author": "Alex Lutay",
+                  "timestamp": 1679650690,
+                  "message": "<p>Initial commit</p>\n",
+                  "url": "https://github.com/canonical/charmed-redis-rock/commit/02aee8d546bb0597d5fce8a566bd54354552ecbb"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "mysql-test-app",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/mysql-test-app",
+            "releases": [
+               {
+                  "id": 149246743,
+                  "version": "rev36",
+                  "timestamp": 1711984637,
+                  "title": "Revision 36",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Refrain from writing unused data to peer databag; allow mysql-test-app to scale to more than 1 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev35...rev36\">https://github.com/canonical/mysql-test-app/compare/rev35&hellip;rev36</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev36",
+                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev36...main"
+               },
+               {
+                  "id": 149152361,
+                  "version": "rev35",
+                  "timestamp": 1711911597,
+                  "title": "Revision 35",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Create config for database name by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\">#27</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\">#27</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev34...rev35\">https://github.com/canonical/mysql-test-app/compare/rev34&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev35...main"
+               },
+               {
+                  "id": 147711638,
+                  "version": "rev34",
+                  "timestamp": 1711024005,
+                  "title": "Revision 34",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-3843 pick up from last value by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/26\">#26</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev33...rev34\">https://github.com/canonical/mysql-test-app/compare/rev33&hellip;rev34</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev34",
+                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev34...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/mysql-test-app/actions/workflows/release.yaml",
+               "https://github.com/canonical/mysql-test-app/actions/workflows/ci.yaml"
+            ],
+            "charm": {
+               "name": "mysql-test-app",
+               "url": "https://charmhub.io/mysql-test-app",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 36,
+                     "timestamp": 1712009822
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 36,
+                     "timestamp": 1712009822
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 36,
+                     "timestamp": 1711984920
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 36,
+                     "timestamp": 1711984920
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "charmed-postgresql-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-postgresql-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "0e79bc5a82b941a642819dfeaa3208f71c5c8832",
+                  "author": "renovate[bot]",
+                  "timestamp": 1712825928,
+                  "message": "<p>Update canonical/data-platform-workflows action to v13.1.1 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/29\">#29</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/charmed-postgresql-rock/commit/0e79bc5a82b941a642819dfeaa3208f71c5c8832"
+               },
+               {
+                  "sha": "3246b9a286e7d9ed97e03f01f201b5459a5650c2",
+                  "author": "renovate[bot]",
+                  "timestamp": 1712230042,
+                  "message": "<p>Update data-platform-workflows to v13 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/28\">#28</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/charmed-postgresql-rock/commit/3246b9a286e7d9ed97e03f01f201b5459a5650c2"
+               },
+               {
+                  "sha": "7a9be42a05c2e419ead4c406d3b8ba8ac2da6b2e",
+                  "author": "renovate[bot]",
+                  "timestamp": 1712228993,
+                  "message": "<p>Configure Renovate (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/2\">#2</a>)</p>\n\n<ul>\n<li><p>Add renovate.json</p></li>\n\n<li><p>Move renovate conf</p></li>\n\n<li><p>Manual dispatch</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>\nCo-authored-by: Dragomir Penev <a href=\"mailto:dragomir.penev@canonical.com\">dragomir.penev@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-postgresql-rock/commit/7a9be42a05c2e419ead4c406d3b8ba8ac2da6b2e"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/charmed-postgresql-rock/actions/workflows/release.yaml"
             ],
             "charm": null,
             "snap": null
@@ -19193,6 +19263,42 @@
             "snap": null
          },
          {
+            "name": "charmed-mysql-snap",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-mysql-snap",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "1239ad1e834f9b28cafc52fe932c7b67042cb5f1",
+                  "author": "shayancanonical",
+                  "timestamp": 1713437526,
+                  "message": "<p>[DPE-3824, DPE-3689] router exporter TLS + update mysqld exporter to v0.15 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/45\">#45</a>)</p>\n\n<ul>\n<li><p>WIP: router exporter TLS + update mysqld exporter to v0.15</p></li>\n\n<li><p>Update unix socket address in mysqld-exporter script + upgrade mysqlrouter-exporter to 5.1.0</p></li>\n\n<li><p>Downgrade mysqld-exporter to 0.14, and address PR feedback</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-mysql-snap/commit/1239ad1e834f9b28cafc52fe932c7b67042cb5f1"
+               },
+               {
+                  "sha": "a682a1aa6547eef24a12375fa521f2d210e4b485",
+                  "author": "shayancanonical",
+                  "timestamp": 1709842019,
+                  "message": "<p>[DPE-3717] I mprovements to smoke tests to not skip any services + Upgrade to 8.0.36 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/44\">#44</a>)</p>\n\n<ul>\n<li><p>Improvements to smoke tests to not skip any services</p></li>\n\n<li><p>Upgrade server, router and shell to 8.0.36</p></li>\n\n<li><p>Resolve bugs revealed by added smoke tests</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-mysql-snap/commit/a682a1aa6547eef24a12375fa521f2d210e4b485"
+               },
+               {
+                  "sha": "2c2abf48caad966a5eab4fe41e1666c9d4f99725",
+                  "author": "Andreia Velasco",
+                  "timestamp": 1708701366,
+                  "message": "<p>Added badges to README</p>\n",
+                  "url": "https://github.com/canonical/charmed-mysql-snap/commit/2c2abf48caad966a5eab4fe41e1666c9d4f99725"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/charmed-mysql-snap/actions/workflows/publish.yaml",
+               "https://github.com/canonical/charmed-mysql-snap/actions/workflows/tmate.yaml"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "charmed-mysql-rock",
             "newCommits": 0,
             "url": "https://github.com/canonical/charmed-mysql-rock",
@@ -19229,108 +19335,61 @@
             "snap": null
          },
          {
-            "name": "kafka-rock",
+            "name": "postgresql-bundle",
             "newCommits": 0,
-            "url": "https://github.com/canonical/kafka-rock",
+            "url": "https://github.com/canonical/postgresql-bundle",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "8811f9d9dff3703b954cf4b1c42fff8253abe15a",
-                  "author": "deusebio",
-                  "timestamp": 1712667653,
-                  "message": "<p>[DPE-3231] Kafka slim image using rockcraft (<a target=\"_blank\" href=\"https://github.com/canonical/kafka-rock/pull/2\">#2</a>)</p>\n",
-                  "url": "https://github.com/canonical/kafka-rock/commit/8811f9d9dff3703b954cf4b1c42fff8253abe15a"
+                  "sha": "817e190dc047dee5d1c064c4655643861980bcfe",
+                  "author": "Andreia Velasco",
+                  "timestamp": 1712139179,
+                  "message": "<p>Added badges (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/77\">#77</a>)</p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/817e190dc047dee5d1c064c4655643861980bcfe"
                },
                {
-                  "sha": "41086e8a9c6314175e6304ecf7e6b5e0e1e821e3",
-                  "author": "Enrico Deusebio",
-                  "timestamp": 1711645940,
-                  "message": "<p>[MISC] Initial commit</p>\n",
-                  "url": "https://github.com/canonical/kafka-rock/commit/41086e8a9c6314175e6304ecf7e6b5e0e1e821e3"
+                  "sha": "d69c4dcb749cea82874042d6e3a6f1f7a100ac18",
+                  "author": "renovate[bot]",
+                  "timestamp": 1696085790,
+                  "message": "<p>Update dependency juju/juju to v2.9.45 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/73\">#73</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/d69c4dcb749cea82874042d6e3a6f1f7a100ac18"
+               },
+               {
+                  "sha": "583718919a45b14a12b9f1de782423d9dbf9f9f5",
+                  "author": "renovate[bot]",
+                  "timestamp": 1695922001,
+                  "message": "<p>Update Python dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/70\">#70</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/583718919a45b14a12b9f1de782423d9dbf9f9f5"
                }
             ],
             "ciActions": [
-               "https://github.com/canonical/kafka-rock/actions/workflows/ci.yaml",
-               "https://github.com/canonical/kafka-rock/actions/workflows/publish.yaml"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "mysql-test-app",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/mysql-test-app",
-            "releases": [
-               {
-                  "id": 149246743,
-                  "version": "rev36",
-                  "timestamp": 1711984637,
-                  "title": "Revision 36",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Refrain from writing unused data to peer databag; allow mysql-test-app to scale to more than 1 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev35...rev36\">https://github.com/canonical/mysql-test-app/compare/rev35&hellip;rev36</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev36",
-                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev36...main"
-               },
-               {
-                  "id": 149152361,
-                  "version": "rev35",
-                  "timestamp": 1711911597,
-                  "title": "Revision 35",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Create config for database name by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\">#27</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/27\">#27</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev34...rev35\">https://github.com/canonical/mysql-test-app/compare/rev34&hellip;rev35</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev35",
-                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev35...main"
-               },
-               {
-                  "id": 147711638,
-                  "version": "rev34",
-                  "timestamp": 1711024005,
-                  "title": "Revision 34",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-3843 pick up from last value by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-test-app/pull/26\">#26</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-test-app/compare/rev33...rev34\">https://github.com/canonical/mysql-test-app/compare/rev33&hellip;rev34</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-test-app/releases/tag/rev34",
-                  "compareUrl": "https://github.com/canonical/mysql-test-app/compare/rev34...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/mysql-test-app/actions/workflows/release.yaml",
-               "https://github.com/canonical/mysql-test-app/actions/workflows/ci.yaml"
+               "https://github.com/canonical/postgresql-bundle/actions/workflows/release.yaml",
+               "https://github.com/canonical/postgresql-bundle/actions/workflows/ci.yaml"
             ],
             "charm": {
-               "name": "mysql-test-app",
-               "url": "https://charmhub.io/mysql-test-app",
+               "name": "postgresql-bundle",
+               "url": "https://charmhub.io/postgresql-bundle",
                "releases": [
                   {
                      "track": "latest",
-                     "channel": "stable",
-                     "revision": 36,
-                     "timestamp": 1712009822
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 36,
-                     "timestamp": 1712009822
-                  },
-                  {
-                     "track": "latest",
                      "channel": "edge",
-                     "revision": 36,
-                     "timestamp": 1711984920
+                     "revision": 22,
+                     "timestamp": 1681330556
                   },
                   {
-                     "track": "latest",
+                     "track": "14",
                      "channel": "edge",
-                     "revision": 36,
-                     "timestamp": 1711984920
+                     "revision": 34,
+                     "timestamp": 1695956408
                   }
                ],
                "channels": [
-                  "stable",
                   "edge"
                ],
                "tracks": [
-                  "latest"
+                  "latest",
+                  "14"
                ]
             },
             "snap": null
@@ -19397,122 +19456,6 @@
             "snap": null
          },
          {
-            "name": "central-uploader",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/central-uploader",
-            "releases": [
-               {
-                  "id": 146884306,
-                  "version": "servlet-filters-0.0.1",
-                  "timestamp": 1710583712,
-                  "title": "Release servlet-filters-0.0.1",
-                  "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/servlet-filters-0.0.1",
-                  "compareUrl": "https://github.com/canonical/central-uploader/compare/servlet-filters-0.0.1...main"
-               },
-               {
-                  "id": 145258342,
-                  "version": "opensearch-2.12.0-ubuntu0",
-                  "timestamp": 1709634492,
-                  "title": "Release opensearch-2.12.0-ubuntu0",
-                  "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/opensearch-2.12.0-ubuntu0",
-                  "compareUrl": "https://github.com/canonical/central-uploader/compare/opensearch-2.12.0-ubuntu0...main"
-               },
-               {
-                  "id": 145194165,
-                  "version": "opensearch-2.11.1-ubuntu0",
-                  "timestamp": 1709634492,
-                  "title": "Release opensearch-2.11.1-ubuntu0",
-                  "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/opensearch-2.11.1-ubuntu0",
-                  "compareUrl": "https://github.com/canonical/central-uploader/compare/opensearch-2.11.1-ubuntu0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/central-uploader/actions/workflows/release-tarball.yaml",
-               "https://github.com/canonical/central-uploader/actions/workflows/release-java-library.yaml",
-               "https://github.com/canonical/central-uploader/actions/workflows/ci.yaml"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "kafka-k8s-bundle",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/kafka-k8s-bundle",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "1c195b49e601e1a82190b1fc00e4a13413de18b2",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1709076912,
-                  "message": "<p>[MISC] 3/stable versions release (<a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-bundle/pull/15\">#15</a>)</p>\n",
-                  "url": "https://github.com/canonical/kafka-k8s-bundle/commit/1c195b49e601e1a82190b1fc00e4a13413de18b2"
-               },
-               {
-                  "sha": "c44fcc3c4d092b2c558d2e6bf569a4ac2230f9a6",
-                  "author": "Andreia Velasco",
-                  "timestamp": 1708962477,
-                  "message": "<p>Added badges to README (<a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-bundle/pull/18\">#18</a>)</p>\n",
-                  "url": "https://github.com/canonical/kafka-k8s-bundle/commit/c44fcc3c4d092b2c558d2e6bf569a4ac2230f9a6"
-               },
-               {
-                  "sha": "09c316857a6441c44e0a22d1616a5428166d5276",
-                  "author": "Enrico Deusebio",
-                  "timestamp": 1707955295,
-                  "message": "<p>[DPE-3367] End-to-end tests using kafka-k8s bundle</p>\n",
-                  "url": "https://github.com/canonical/kafka-k8s-bundle/commit/09c316857a6441c44e0a22d1616a5428166d5276"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/kafka-k8s-bundle/actions/workflows/release.yaml",
-               "https://github.com/canonical/kafka-k8s-bundle/actions/workflows/ci.yaml"
-            ],
-            "charm": {
-               "name": "kafka-k8s-bundle",
-               "url": "https://charmhub.io/kafka-k8s-bundle",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 2,
-                     "timestamp": 1666100836
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 9,
-                     "timestamp": 1674826969
-                  },
-                  {
-                     "track": "3",
-                     "channel": "stable",
-                     "revision": 16,
-                     "timestamp": 1709078757
-                  },
-                  {
-                     "track": "3",
-                     "channel": "edge",
-                     "revision": 16,
-                     "timestamp": 1709076957
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "3"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "charmed-mongodb-snap",
             "newCommits": 0,
             "url": "https://github.com/canonical/charmed-mongodb-snap",
@@ -19546,6 +19489,94 @@
             ],
             "charm": null,
             "snap": null
+         },
+         {
+            "name": "charmed-mongodb-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-mongodb-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "9bf59277e6a5383eaf334c3fa269a1e9af38dbe3",
+                  "author": "Andreia Velasco",
+                  "timestamp": 1709127493,
+                  "message": "<p>Added badges to README.md (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mongodb-rock/pull/33\">#33</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-mongodb-rock/commit/9bf59277e6a5383eaf334c3fa269a1e9af38dbe3"
+               },
+               {
+                  "sha": "75f92a325786cd1a033511e9af120b05f3b73e2f",
+                  "author": "Dmitry Ratushnyy",
+                  "timestamp": 1701799214,
+                  "message": "<p>Fix published file name (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mongodb-rock/pull/31\">#31</a>)</p>\n\n<ul>\n<li><p>Fix published artifact filename</p></li>\n\n<li><p>Use a better variable name</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-mongodb-rock/commit/75f92a325786cd1a033511e9af120b05f3b73e2f"
+               },
+               {
+                  "sha": "50f90edcd6c480cf157b74be591b6757ea558fa6",
+                  "author": "Dmitry Ratushnyy",
+                  "timestamp": 1701796512,
+                  "message": "<p>Fix publishing job (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mongodb-rock/pull/30\">#30</a>)</p>\n\n<ul>\n<li><p>Fix publishing workflow</p></li>\n\n<li><p>Add workflow for publishing beta</p></li>\n\n<li><p>Do not limit branches for manual beta publishing</p></li>\n\n<li><p>Reformat file</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-mongodb-rock/commit/50f90edcd6c480cf157b74be591b6757ea558fa6"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/charmed-mongodb-rock/actions/workflows/publish.yaml",
+               "https://github.com/canonical/charmed-mongodb-rock/actions/workflows/integration.yaml"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charmed-karapace-snap",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-karapace-snap",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "bca3dd56244699728cd4649fee555739f4e2ebbb",
+                  "author": "Raúl Zamora Martínez",
+                  "timestamp": 1713778266,
+                  "message": "<p>add version app (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-karapace-snap/pull/3\">#3</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-karapace-snap/commit/bca3dd56244699728cd4649fee555739f4e2ebbb"
+               },
+               {
+                  "sha": "1541faa43c64ed80f6ae02bf8c73e5fb3068aa67",
+                  "author": "Raúl Zamora Martínez",
+                  "timestamp": 1713444500,
+                  "message": "<p>Update publish.yaml</p>\n",
+                  "url": "https://github.com/canonical/charmed-karapace-snap/commit/1541faa43c64ed80f6ae02bf8c73e5fb3068aa67"
+               },
+               {
+                  "sha": "d13c147d5449b4ab245555b197884cf2d7674257",
+                  "author": "Raúl Zamora Martínez",
+                  "timestamp": 1713439464,
+                  "message": "<p>Update publish.yaml</p>\n",
+                  "url": "https://github.com/canonical/charmed-karapace-snap/commit/d13c147d5449b4ab245555b197884cf2d7674257"
+               }
+            ],
+            "ciActions": [
+               "https://github.com/canonical/charmed-karapace-snap/actions/workflows/publish.yaml"
+            ],
+            "charm": null,
+            "snap": {
+               "name": "charmed-karapace",
+               "url": "https://snapcraft.io/charmed-karapace",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 2,
+                     "timestamp": 1713778529
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            }
          },
          {
             "name": "redis-k8s-operator",
@@ -19931,39 +19962,77 @@
             "snap": null
          },
          {
-            "name": "charmed-postgresql-rock",
+            "name": "charmed-kafka-snap",
             "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-postgresql-rock",
+            "url": "https://github.com/canonical/charmed-kafka-snap",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "0e79bc5a82b941a642819dfeaa3208f71c5c8832",
-                  "author": "renovate[bot]",
-                  "timestamp": 1712825928,
-                  "message": "<p>Update canonical/data-platform-workflows action to v13.1.1 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/29\">#29</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/charmed-postgresql-rock/commit/0e79bc5a82b941a642819dfeaa3208f71c5c8832"
+                  "sha": "a2ede5b19aac3453b625c622f9b42a231f065bd9",
+                  "author": "Alex Batisse",
+                  "timestamp": 1713944153,
+                  "message": "<p>fix: Do not change permission on existing data directory (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-snap/pull/40\">#40</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-kafka-snap/commit/a2ede5b19aac3453b625c622f9b42a231f065bd9"
                },
                {
-                  "sha": "3246b9a286e7d9ed97e03f01f201b5459a5650c2",
-                  "author": "renovate[bot]",
-                  "timestamp": 1712230042,
-                  "message": "<p>Update data-platform-workflows to v13 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/28\">#28</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/charmed-postgresql-rock/commit/3246b9a286e7d9ed97e03f01f201b5459a5650c2"
+                  "sha": "d13bdd607bfa9743e3cbcdde3c1ea684bd552e80",
+                  "author": "deusebio",
+                  "timestamp": 1710440662,
+                  "message": "<p>[DPE-3214] Release 3.6.1 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-snap/pull/39\">#39</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-kafka-snap/commit/d13bdd607bfa9743e3cbcdde3c1ea684bd552e80"
                },
                {
-                  "sha": "7a9be42a05c2e419ead4c406d3b8ba8ac2da6b2e",
-                  "author": "renovate[bot]",
-                  "timestamp": 1712228993,
-                  "message": "<p>Configure Renovate (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/2\">#2</a>)</p>\n\n<ul>\n<li><p>Add renovate.json</p></li>\n\n<li><p>Move renovate conf</p></li>\n\n<li><p>Manual dispatch</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>\nCo-authored-by: Dragomir Penev <a href=\"mailto:dragomir.penev@canonical.com\">dragomir.penev@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-postgresql-rock/commit/7a9be42a05c2e419ead4c406d3b8ba8ac2da6b2e"
+                  "sha": "74a6b078c6b8c011cbcb3e83b5b8fdbb3f128993",
+                  "author": "Genc Tato",
+                  "timestamp": 1706283318,
+                  "message": "<p>CSS-6389 - feat: add OAuth support through Strimzi libs (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-snap/pull/34\">#34</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-kafka-snap/commit/74a6b078c6b8c011cbcb3e83b5b8fdbb3f128993"
                }
             ],
             "ciActions": [
-               "https://github.com/canonical/charmed-postgresql-rock/actions/workflows/release.yaml"
+               "https://github.com/canonical/charmed-kafka-snap/actions/workflows/publish.yaml"
             ],
             "charm": null,
-            "snap": null
+            "snap": {
+               "name": "charmed-kafka",
+               "url": "https://snapcraft.io/charmed-kafka",
+               "releases": [
+                  {
+                     "track": "3",
+                     "channel": "stable",
+                     "revision": 30,
+                     "timestamp": 1709032652
+                  },
+                  {
+                     "track": "3",
+                     "channel": "candidate",
+                     "revision": 30,
+                     "timestamp": 1709032654
+                  },
+                  {
+                     "track": "3",
+                     "channel": "beta",
+                     "revision": 30,
+                     "timestamp": 1709032653
+                  },
+                  {
+                     "track": "3",
+                     "channel": "edge",
+                     "revision": 35,
+                     "timestamp": 1713944505
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "3"
+               ]
+            }
          },
          {
             "name": "spark-integration-hub-rock",
@@ -19999,32 +20068,32 @@
             "snap": null
          },
          {
-            "name": "charmed-redis-rock",
+            "name": "spark-k8s-bundle",
             "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-redis-rock",
+            "url": "https://github.com/canonical/spark-k8s-bundle",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "ac35c9e4095eefd078154623598cf259d3ffc10d",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1686153451,
-                  "message": "<p>Update bug_report.md issue template (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/3\">#3</a>)</p>\n\n<p>Ported from <a target=\"_blank\" href=\"https://github.com/canonical/mysql-router-k8s-operator/pull/91\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/91\">#91</a></a></p>\n",
-                  "url": "https://github.com/canonical/charmed-redis-rock/commit/ac35c9e4095eefd078154623598cf259d3ffc10d"
+                  "sha": "0bafcb4dabca10170da28a03f98e78f4f34af2d8",
+                  "author": "Enrico Deusebio",
+                  "timestamp": 1712787845,
+                  "message": "<p>[DPE-3964;DPE-4044] spark-test package alpha version</p>\n",
+                  "url": "https://github.com/canonical/spark-k8s-bundle/commit/0bafcb4dabca10170da28a03f98e78f4f34af2d8"
                },
                {
-                  "sha": "81531a2995431f4ec00479910fef905bda6a69bd",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1681224508,
-                  "message": "<p>Sync GitHub issues to Jira (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/1\">#1</a>)</p>\n\n<p>Ported from <a target=\"_blank\" href=\"https://github.com/canonical/mysql-operator/pull/108\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-redis-rock/pull/108\">#108</a></a></p>\n",
-                  "url": "https://github.com/canonical/charmed-redis-rock/commit/81531a2995431f4ec00479910fef905bda6a69bd"
+                  "sha": "2838fe226df4f65df68b0a701acf41acd760afe3",
+                  "author": "Enrico Deusebio",
+                  "timestamp": 1712785867,
+                  "message": "<p>[DPE-3964;DPE-4043] CI/CD Skeleton</p>\n",
+                  "url": "https://github.com/canonical/spark-k8s-bundle/commit/2838fe226df4f65df68b0a701acf41acd760afe3"
                },
                {
-                  "sha": "02aee8d546bb0597d5fce8a566bd54354552ecbb",
-                  "author": "Alex Lutay",
-                  "timestamp": 1679650690,
-                  "message": "<p>Initial commit</p>\n",
-                  "url": "https://github.com/canonical/charmed-redis-rock/commit/02aee8d546bb0597d5fce8a566bd54354552ecbb"
+                  "sha": "1bf59e634b626c95d9b18954c0ad0c343dd11b8a",
+                  "author": "Enrico Deusebio",
+                  "timestamp": 1712783538,
+                  "message": "<p>[MISC] Initial commit</p>\n",
+                  "url": "https://github.com/canonical/spark-k8s-bundle/commit/1bf59e634b626c95d9b18954c0ad0c343dd11b8a"
                }
             ],
             "ciActions": [],
@@ -20074,76 +20143,77 @@
             "snap": null
          },
          {
-            "name": "charmed-opensearch-rock",
+            "name": "charmed-kafka-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-opensearch-rock",
+            "url": "https://github.com/canonical/charmed-kafka-rock",
             "releases": null,
-            "tags": [
+            "tags": null,
+            "commits": [
                {
-                  "name": "v2.12.0",
-                  "sha": "e03e010d8fe35a70b3bc0391b7fc1f2ef395802a",
-                  "body": "<p>[DPE-3647] Update to 2.12.0</p>\n",
-                  "timestamp": 1709925117,
-                  "url": "https://github.com/canonical/charmed-opensearch-rock/releases/tag/v2.12.0",
-                  "compareUrl": "https://github.com/canonical/charmed-opensearch-rock/compare/main...v2.12.0"
+                  "sha": "729f96060a3fecc34a872392e5655e1665ab4c97",
+                  "author": "deusebio",
+                  "timestamp": 1710521712,
+                  "message": "<p>[DPE-3214] Release 3.6.1 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-rock/pull/20\">#20</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-kafka-rock/commit/729f96060a3fecc34a872392e5655e1665ab4c97"
                },
                {
-                  "name": "v2.11.1",
-                  "sha": "fc1b1cecc56409e652aae34ec87dcb72afa3d9f2",
-                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-opensearch-rock/pull/25\">#25</a> from canonical/DPE-3647-update-rock-to-2.11.1</p>\n\n<p>[DPE-3647] Update to 2.11.1</p>\n",
-                  "timestamp": 1709890717,
-                  "url": "https://github.com/canonical/charmed-opensearch-rock/releases/tag/v2.11.1",
-                  "compareUrl": "https://github.com/canonical/charmed-opensearch-rock/compare/main...v2.11.1"
+                  "sha": "fa17e79fc249024dd677361e450a5dc2430958c0",
+                  "author": "Genc Tato",
+                  "timestamp": 1709732099,
+                  "message": "<p>CSS-6390 - fix: leave cacert to verify OAuth certs and update jmx path (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-rock/pull/18\">#18</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-kafka-rock/commit/fa17e79fc249024dd677361e450a5dc2430958c0"
                },
                {
-                  "name": "v2.10.0",
-                  "sha": "597c0f3fd721968e5c40747cb78de7dc679d86b3",
-                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-opensearch-rock/pull/23\">#23</a> from canonical/add-status-badges</p>\n\n<p>Added workflow badges to readme.md</p>\n",
-                  "timestamp": 1709716724,
-                  "url": "https://github.com/canonical/charmed-opensearch-rock/releases/tag/v2.10.0",
-                  "compareUrl": "https://github.com/canonical/charmed-opensearch-rock/compare/main...v2.10.0"
+                  "sha": "d0af5aabcddf0cc5f55a422943057f9d5df67dd0",
+                  "author": "deusebio",
+                  "timestamp": 1708380616,
+                  "message": "<p>[DPE-3457] Add description to OCI image to be rendered on GitHub Container Registry (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kafka-rock/pull/19\">#19</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-kafka-rock/commit/d0af5aabcddf0cc5f55a422943057f9d5df67dd0"
                }
             ],
-            "commits": null,
             "ciActions": [
-               "https://github.com/canonical/charmed-opensearch-rock/actions/workflows/release.yaml",
-               "https://github.com/canonical/charmed-opensearch-rock/actions/workflows/ci.yaml"
+               "https://github.com/canonical/charmed-kafka-rock/actions/workflows/publish.yaml"
             ],
             "charm": null,
             "snap": null
          },
          {
-            "name": "charmed-mysql-snap",
+            "name": "charmcraftcache-hub",
             "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-mysql-snap",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "url": "https://github.com/canonical/charmcraftcache-hub",
+            "releases": [
                {
-                  "sha": "1239ad1e834f9b28cafc52fe932c7b67042cb5f1",
-                  "author": "shayancanonical",
-                  "timestamp": 1713437526,
-                  "message": "<p>[DPE-3824, DPE-3689] router exporter TLS + update mysqld exporter to v0.15 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/45\">#45</a>)</p>\n\n<ul>\n<li><p>WIP: router exporter TLS + update mysqld exporter to v0.15</p></li>\n\n<li><p>Update unix socket address in mysqld-exporter script + upgrade mysqlrouter-exporter to 5.1.0</p></li>\n\n<li><p>Downgrade mysqld-exporter to 0.14, and address PR feedback</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-snap/commit/1239ad1e834f9b28cafc52fe932c7b67042cb5f1"
+                  "id": 153384453,
+                  "version": "build-1714436664-v3",
+                  "timestamp": 1712070980,
+                  "title": "build-1714436664-v3",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1714436664-v3",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1714436664-v3...main"
                },
                {
-                  "sha": "a682a1aa6547eef24a12375fa521f2d210e4b485",
-                  "author": "shayancanonical",
-                  "timestamp": 1709842019,
-                  "message": "<p>[DPE-3717] I mprovements to smoke tests to not skip any services + Upgrade to 8.0.36 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/44\">#44</a>)</p>\n\n<ul>\n<li><p>Improvements to smoke tests to not skip any services</p></li>\n\n<li><p>Upgrade server, router and shell to 8.0.36</p></li>\n\n<li><p>Resolve bugs revealed by added smoke tests</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-snap/commit/a682a1aa6547eef24a12375fa521f2d210e4b485"
+                  "id": 153169570,
+                  "version": "build-1714350300-v3",
+                  "timestamp": 1712070980,
+                  "title": "build-1714350300-v3",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1714350300-v3",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1714350300-v3...main"
                },
                {
-                  "sha": "2c2abf48caad966a5eab4fe41e1666c9d4f99725",
-                  "author": "Andreia Velasco",
-                  "timestamp": 1708701366,
-                  "message": "<p>Added badges to README</p>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-snap/commit/2c2abf48caad966a5eab4fe41e1666c9d4f99725"
+                  "id": 153111476,
+                  "version": "build-1714264070-v3",
+                  "timestamp": 1712070980,
+                  "title": "build-1714264070-v3",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1714264070-v3",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1714264070-v3...main"
                }
             ],
+            "tags": null,
+            "commits": null,
             "ciActions": [
-               "https://github.com/canonical/charmed-mysql-snap/actions/workflows/publish.yaml",
-               "https://github.com/canonical/charmed-mysql-snap/actions/workflows/tmate.yaml"
+               "https://github.com/canonical/charmcraftcache-hub/actions/workflows/build.yaml"
             ],
             "charm": null,
             "snap": null
