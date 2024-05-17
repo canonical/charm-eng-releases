@@ -7203,36 +7203,33 @@
             "name": "notebook-operators",
             "newCommits": 12,
             "url": "https://github.com/canonical/notebook-operators",
-            "releases": [
+            "releases": null,
+            "tags": [
                {
-                  "id": 154828161,
-                  "version": "jupyter-ui-rev870",
+                  "name": "jupyter-ui-rev870",
+                  "sha": "98609c4f92b2870f8b73cc1c880311415f193764",
+                  "body": "<p>ci: bump juju 3.1 -&gt; 3.5 in track (<a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/350\">#350</a>)</p>\n\n<ul>\n<li>ci: bump juju to 3.5</li>\n</ul>\n\n<p>Co-authored-by: NohaIhab <a href=\"mailto:noha.ihab@canonical.com\">noha.ihab@canonical.com</a></p>\n",
                   "timestamp": 1715191789,
-                  "title": "Revision 870",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/jupyter-web-app:1.8-2605035\n       resource-revision: 751</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 18:36 UTC on 8 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev950...jupyter-ui-rev870\">https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev950&hellip;jupyter-ui-rev870</a></p>\n",
                   "url": "https://github.com/canonical/notebook-operators/releases/tag/jupyter-ui-rev870",
-                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/jupyter-ui-rev870...main"
+                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/main...jupyter-ui-rev870"
                },
                {
-                  "id": 154828151,
-                  "version": "jupyter-controller-rev950",
-                  "timestamp": 1715191789,
-                  "title": "Revision 950",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/notebook-controller:v1.8.0\n       resource-revision: 1000</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 18:36 UTC on 8 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: bump juju 3.1 -&gt; 3.5 in track by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/350\"><a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/350\">#350</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/notebook-operators/compare/jupyter-ui-rev858...jupyter-controller-rev950\">https://github.com/canonical/notebook-operators/compare/jupyter-ui-rev858&hellip;jupyter-controller-rev950</a></p>\n",
-                  "url": "https://github.com/canonical/notebook-operators/releases/tag/jupyter-controller-rev950",
-                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev950...main"
-               },
-               {
-                  "id": 153872740,
-                  "version": "jupyter-ui-rev858",
+                  "name": "jupyter-ui-rev858",
+                  "sha": "898aecfb40e32d7e4137ae379c7a024bcbc4eb51",
+                  "body": "<p>backport New Notebook UI configuration to 1.8 (<a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/364\">#364</a>)</p>\n\n<ul>\n<li>Enable configuration of New Notebook UI (<a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/345\">#345</a>)</li>\n</ul>\n\n<p>(cherry pick of 3ec71e9 from main)</p>\n\n<ul>\n<li>Enable configuration of New Notebook UI</li>\n</ul>\n\n<p>This commit adds configuration for:\n* the default number of GPUs and the GPUs available\n* the default PodDefaults selected\n* the Toleration configurations available\n* the Affinity configurations available</p>\n\n<p>These configurations are enabled through newly exposed charm configs.  These configs are lightly validated to ensure they&rsquo;re valid yaml, but not validated enough to ensure things like Tolerations or Affinities are proper Kubernetes yaml</p>\n\n<p>(cherry picked from commit 3ec71e9b59d3734ef43963afa8aa8402bc0155e5)</p>\n\n<ul>\n<li>Fix spawner_ui_config.yaml to use correct null values for configurations (<a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/361\">#361</a>)</li>\n</ul>\n\n<p>Previously, the spawner_ui_config.yaml was rendered with empty strings and lists being rendered as null values in the configuration file.  For example if the GPU vendors list was empty and the default vendor was <code>&quot;&quot;</code>,  the config file would have (shown truncated):</p>\n\n<pre><code>  gpus:\n    value:\n      vendor:\n\n      vendors:\n</code></pre>\n\n<p>whereas jupyter web app expected:</p>\n\n<pre><code>  gpus:\n    value:\n      vendor: &quot;&quot;\n\n      vendors: []\n</code></pre>\n\n<p>This commit updates the template to ensure we always output the correct empty values.</p>\n\n<p>Closes <a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/360\">#360</a></p>\n\n<p>(cherry picked from commit 211a37ba040e5711e61204af802edf0c69322787)</p>\n",
                   "timestamp": 1714643237,
-                  "title": "Revision 858",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/jupyter-web-app:1.8-2605035\n       resource-revision: 751</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 17:44 UTC on 2 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev938...jupyter-ui-rev85Released\">https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev938&hellip;jupyter-ui-rev85Released</a> to &lsquo;1.8/stable&rsquo; at 18:09 UTC on 2 May 2024\n8</p>\n",
                   "url": "https://github.com/canonical/notebook-operators/releases/tag/jupyter-ui-rev858",
-                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/jupyter-ui-rev858...main"
+                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/main...jupyter-ui-rev858"
+               },
+               {
+                  "name": "jupyter-ui-rev856",
+                  "sha": "79a3584d88b0117ca563ce114e64f4afed67db46",
+                  "body": "<p>chore: Bump o11y libs and remove obsolete juju topology (<a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/362\">#362</a>)</p>\n\n<p>Ref canonical/bundle-kubeflow<a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/880\">#880</a>\nRef canonical/bundle-kubeflow<a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/849\">#849</a></p>\n",
+                  "timestamp": 1714579121,
+                  "url": "https://github.com/canonical/notebook-operators/releases/tag/jupyter-ui-rev856",
+                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/main...jupyter-ui-rev856"
                }
             ],
-            "tags": null,
             "commits": null,
             "ciActions": [],
             "charm": {
@@ -8811,36 +8808,33 @@
             "name": "oathkeeper-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/oathkeeper-operator",
-            "releases": [
+            "releases": null,
+            "tags": [
                {
-                  "id": 152753345,
-                  "version": "rev41",
+                  "name": "rev41",
+                  "sha": "1b9148af7a2c6ce96bbd2403041377f0d09cb6dc",
+                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/71\">#71</a> from canonical/ci/release</p>\n\n<p>ci: update base-channel for charm release</p>\n",
                   "timestamp": 1713972495,
-                  "title": "Revision 41",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 20</p>\n\n<p>Static resources:\n Released to &lsquo;0.2/edge&rsquo; at 08:15 UTC on 25 Apr 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev39...rev4Released\">https://github.com/canonical/oathkeeper-operator/compare/rev39&hellip;rev4Released</a> to &lsquo;0.2/stable&rsquo; at 08:15 UTC on 25 Apr 2024\n1</p>\n",
                   "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev41",
-                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev41...main"
+                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/main...rev41"
                },
                {
-                  "id": 152638878,
-                  "version": "rev39",
+                  "name": "rev39",
+                  "sha": "1b9148af7a2c6ce96bbd2403041377f0d09cb6dc",
+                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/71\">#71</a> from canonical/ci/release</p>\n\n<p>ci: update base-channel for charm release</p>\n",
                   "timestamp": 1713972495,
-                  "title": "Revision 39",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 20</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:44 UTC on 24 Apr 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 15:46 UTC on 24 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: update base-channel for charm release by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/71\">#71</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev38...rev39\">https://github.com/canonical/oathkeeper-operator/compare/rev38&hellip;rev39</a></p>\n",
                   "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev39",
-                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev39...main"
+                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/main...rev39"
                },
                {
-                  "id": 152620466,
-                  "version": "rev38",
+                  "name": "rev38",
+                  "sha": "49b0b467c3c9b719d1baf223edad27c5fa9b9624",
+                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/70\">#70</a> from canonical/icon</p>\n\n<p>chore: add icon.svg</p>\n",
                   "timestamp": 1713951797,
-                  "title": "Revision 38",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 20</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:21 UTC on 24 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: add icon.svg by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/70\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/70\">#70</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/70\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/70\">#70</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev37...rev38\">https://github.com/canonical/oathkeeper-operator/compare/rev37&hellip;rev38</a></p>\n",
                   "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev38",
-                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev38...main"
+                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/main...rev38"
                }
             ],
-            "tags": null,
             "commits": null,
             "ciActions": [],
             "charm": {
