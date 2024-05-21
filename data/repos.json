@@ -2368,7 +2368,7 @@
          },
          {
             "name": "traefik-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/traefik-k8s-operator",
             "releases": [
                {
@@ -2727,7 +2727,7 @@
          },
          {
             "name": "mimir-worker-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mimir-worker-k8s-operator",
             "releases": [
                {
@@ -4729,7 +4729,7 @@
          },
          {
             "name": "prometheus-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/prometheus-k8s-operator",
             "releases": [
                {
@@ -7047,6 +7047,15 @@
             "url": "https://github.com/canonical/mlmd-operator",
             "releases": [
                {
+                  "id": 156678990,
+                  "version": "rev180",
+                  "timestamp": 1716291252,
+                  "title": "Revision 180",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.14.0\n       resource-revision: 130</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:04 UTC on 21 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: update README with upgrade guide for mlmd&gt;1.14 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/79\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/79\">#79</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlmd-operator/compare/rev174...rev180\">https://github.com/canonical/mlmd-operator/compare/rev174&hellip;rev180</a></p>\n",
+                  "url": "https://github.com/canonical/mlmd-operator/releases/tag/rev180",
+                  "compareUrl": "https://github.com/canonical/mlmd-operator/compare/rev180...main"
+               },
+               {
                   "id": 154828605,
                   "version": "rev174",
                   "timestamp": 1715191769,
@@ -7063,15 +7072,6 @@
                   "body": "<p>resources:\n    -  oci-image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.14.0\n       resource-revision: 130</p>\n\n<p>Static resources:\n Released to &lsquo;1.14/edge&rsquo; at 18:20 UTC on 8 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: bump juju 3.1 -&gt; 3.5 in track by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/76\">#76</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlmd-operator/compare/rev160...rev171\">https://github.com/canonical/mlmd-operator/compare/rev160&hellip;rev171</a></p>\n",
                   "url": "https://github.com/canonical/mlmd-operator/releases/tag/rev171",
                   "compareUrl": "https://github.com/canonical/mlmd-operator/compare/rev171...main"
-               },
-               {
-                  "id": 151876114,
-                  "version": "rev160",
-                  "timestamp": 1713510252,
-                  "title": "Revision 160",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.14.0\n       resource-revision: 130</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:35 UTC on 19 Apr 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>refactor: revert relation name k8s-service-info -&gt; grpc by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlmd-operator/compare/rev156...rev160\">https://github.com/canonical/mlmd-operator/compare/rev156&hellip;rev160</a></p>\n",
-                  "url": "https://github.com/canonical/mlmd-operator/releases/tag/rev160",
-                  "compareUrl": "https://github.com/canonical/mlmd-operator/compare/rev160...main"
                }
             ],
             "tags": null,
@@ -9693,6 +9693,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "52c2dbb287d88b7c06eba55ddcd74d2ec2b41527",
+                  "author": "Louise K. Schmidtgen",
+                  "timestamp": 1716290291,
+                  "message": "<p>Harden CI (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/385\">#385</a>)</p>\n\n<ul>\n<li><p>gh token permissions</p></li>\n\n<li><p>add security agent to runner</p></li>\n\n<li><p>fmt</p></li>\n\n<li><p>gh token permissions</p></li>\n\n<li><p>add security agent to runner</p></li>\n\n<li><p>fmt</p></li>\n\n<li><p>rm permissions</p></li>\n\n<li><p>rm permission restriction strict</p></li>\n\n<li><p>rm harden runner from integration tests</p></li>\n\n<li><p>lets try with these allowed endpoints</p></li>\n\n<li><p>move code</p></li>\n\n<li><p>rm harden runner for integration tests</p></li>\n\n<li><p>test more runs</p></li>\n\n<li><p>rm harden runner from strict integration</p></li>\n\n<li><p>add write to ticks test</p></li>\n\n<li><p>rm run workflow on PR for testing</p></li>\n\n<li><p>tag pinnning and comments removed</p></li>\n\n<li><p>cleanup</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/52c2dbb287d88b7c06eba55ddcd74d2ec2b41527"
+               },
+               {
                   "sha": "4ce1b9b03f1c09ffe61c761ebb6121a3bc843c6f",
                   "author": "Angelos Kolaitis",
                   "timestamp": 1715940293,
@@ -9705,13 +9712,6 @@
                   "timestamp": 1715939319,
                   "message": "<p>attempt to fix missing CI on release branches component upgrades (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/433\">#433</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/fce15cbe02d5ffb4eb91c9b7b835988ca71625c6"
-               },
-               {
-                  "sha": "85ad878cf38b28f32f4b34059bff64184155cdbe",
-                  "author": "Angelos Kolaitis",
-                  "timestamp": 1715901398,
-                  "message": "<p>attempt to fix missing CI on release branches component upgrades (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/429\">#429</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/85ad878cf38b28f32f4b34059bff64184155cdbe"
                }
             ],
             "ciActions": [
@@ -11659,9 +11659,18 @@
          },
          {
             "name": "sdcore-amf-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
             "releases": [
+               {
+                  "id": 156680270,
+                  "version": "rev318",
+                  "timestamp": 1716292138,
+                  "title": "Revision 318",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/TELCO-1221-port-pytest-unit-tests&rsquo; at 12:13 UTC on 21 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 69.5.0.20240513 to 69.5.0.20240519 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\">#234</a></a></li>\n<li>chore: bump pytest from 8.1.1 to 8.2.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\">#235</a></a></li>\n<li>chore: bump requests from 2.31.0 to 2.32.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/237\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/237\">#237</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304...rev318\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304&hellip;rev318</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev318",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev318...main"
+               },
                {
                   "id": 156659992,
                   "version": "rev317",
@@ -11679,15 +11688,6 @@
                   "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/v1-4&rsquo; at 08:23 UTC on 21 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.1.1 to 8.2.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/233\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/233\">#233</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev309...rev316\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev309&hellip;rev316</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev316",
                   "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev316...main"
-               },
-               {
-                  "id": 156640178,
-                  "version": "rev315",
-                  "timestamp": 1716277451,
-                  "title": "Revision 315",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-requests-2-32-0&rsquo; at 08:08 UTC on 21 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 69.5.0.20240513 to 69.5.0.20240519 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\">#234</a></a></li>\n<li>chore: bump pytest from 8.1.1 to 8.2.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\">#235</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304...rev315\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304&hellip;rev315</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev315",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev315...main"
                }
             ],
             "tags": null,
@@ -12483,7 +12483,7 @@
          },
          {
             "name": "sdcore-nssf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-nssf-k8s-operator",
             "releases": [
                {
@@ -22679,6 +22679,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "f178f05bc8b3cbf30ef9dd7298c6b6440baca3b7",
+                  "author": "renovate[bot]",
+                  "timestamp": 1716292495,
+                  "message": "<p>chore(deps): update typescript-eslint monorepo to v7.10.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/320\">#320</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/f178f05bc8b3cbf30ef9dd7298c6b6440baca3b7"
+               },
+               {
                   "sha": "ffc34ce7333d1fbef7edf136300c9819a32c9c8a",
                   "author": "renovate[bot]",
                   "timestamp": 1716277959,
@@ -22691,13 +22698,6 @@
                   "timestamp": 1715941134,
                   "message": "<p>chore(deps): update actions/checkout action to v4.1.6 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/319\">#319</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/687ead17e9a52ffc7885d7955b33ed03e1836492"
-               },
-               {
-                  "sha": "6b7adb96d11b4eb803bc7b856b901a23ee186107",
-                  "author": "renovate[bot]",
-                  "timestamp": 1715863818,
-                  "message": "<p>chore(deps): update typescript-eslint monorepo to v7.9.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/315\">#315</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/6b7adb96d11b4eb803bc7b856b901a23ee186107"
                }
             ],
             "ciActions": [],
