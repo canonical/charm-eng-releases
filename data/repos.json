@@ -2356,7 +2356,7 @@
       "repos": [
          {
             "name": "loki-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/loki-k8s-operator",
             "releases": [
                {
@@ -2468,7 +2468,7 @@
          },
          {
             "name": "alertmanager-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/alertmanager-k8s-operator",
             "releases": [
                {
@@ -3622,7 +3622,7 @@
          },
          {
             "name": "grafana-agent-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/grafana-agent-operator",
             "releases": [
                {
@@ -5900,6 +5900,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "e4eadef12bc1295a505b89b257413053a783772c",
+                  "author": "Noha Ihab",
+                  "timestamp": 1716463353,
+                  "message": "<p>fix: add github dependency attributes to mysql charm in 1.8 bundle (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/902\">#902</a>)</p>\n\n<p>adds the _github_dependency_repo_name and _github_dependency_repo_branch attributes to mysql-k8s-operator charm in the 1.8 bundle yamls.</p>\n",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/e4eadef12bc1295a505b89b257413053a783772c"
+               },
+               {
                   "sha": "03f1132add5a1942e805d64060b4a0481f3d9bcd",
                   "author": "Orfeas Kourkakis",
                   "timestamp": 1715190995,
@@ -5912,13 +5919,6 @@
                   "timestamp": 1713361747,
                   "message": "<p>chore: trust katib-controller due to refactor (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/871\">#871</a>)</p>\n",
                   "url": "https://github.com/canonical/bundle-kubeflow/commit/36df97207e598c25335e9253ada0d1f93ef64d6a"
-               },
-               {
-                  "sha": "2c998578a10274b9318e457c43cd927beb77fca9",
-                  "author": "Daniela Plascencia",
-                  "timestamp": 1713359106,
-                  "message": "<p>chore: trust mlmd due to refactor (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/869\">#869</a>)</p>\n\n<p>mlmd was recently refactored to use the sidecar pattern, which now requires\nthis charm to be trusted as it applies k8s resources.</p>\n",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/2c998578a10274b9318e457c43cd927beb77fca9"
                }
             ],
             "ciActions": [
@@ -6402,9 +6402,27 @@
          },
          {
             "name": "envoy-operator",
-            "newCommits": 13,
+            "newCommits": 14,
             "url": "https://github.com/canonical/envoy-operator",
             "releases": [
+               {
+                  "id": 157110328,
+                  "version": "rev192",
+                  "timestamp": 1716464541,
+                  "title": "Revision 192",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/metadata-envoy:2.0.2\n       resource-revision: 101</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 11:58 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add get images script (<a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/96\">#96</a>) by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/97\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/97\">#97</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/envoy-operator/compare/rev185...rev192\">https://github.com/canonical/envoy-operator/compare/rev185&hellip;rev192</a></p>\n",
+                  "url": "https://github.com/canonical/envoy-operator/releases/tag/rev192",
+                  "compareUrl": "https://github.com/canonical/envoy-operator/compare/rev192...main"
+               },
+               {
+                  "id": 157107432,
+                  "version": "rev191",
+                  "timestamp": 1716462964,
+                  "title": "Revision 191",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/metadata-envoy:2.0.2\n       resource-revision: 101</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:48 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add get images script by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/96\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/96\">#96</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/envoy-operator/compare/rev183...rev191\">https://github.com/canonical/envoy-operator/compare/rev183&hellip;rev191</a></p>\n",
+                  "url": "https://github.com/canonical/envoy-operator/releases/tag/rev191",
+                  "compareUrl": "https://github.com/canonical/envoy-operator/compare/rev191...main"
+               },
                {
                   "id": 154924093,
                   "version": "rev185",
@@ -6413,24 +6431,6 @@
                   "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/metadata-envoy:2.0.2\n       resource-revision: 101</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 11:35 UTC on 9 May 2024</p>\n\n<p>Released to &lsquo;2.0/stable&rsquo; at 08:10 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>backport(fix): Fix dashboard panels not working from <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/80\">#80</a> by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/82\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/82\">#82</a></a></li>\n<li>backport(fix): Rename relation to <code>grafana-dashboard</code> from <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/79\">#79</a> by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/81\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/81\">#81</a></a></li>\n<li>tests: pin deployed charms to a CKF 1.8 compatible version by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/85\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/85\">#85</a></a></li>\n<li>ci: bump juju 3.1 -&gt; 3.5 in track by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/84\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/84\">#84</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/envoy-operator/compare/rev183...rev185\">https://github.com/canonical/envoy-operator/compare/rev183&hellip;rev185</a></p>\n",
                   "url": "https://github.com/canonical/envoy-operator/releases/tag/rev185",
                   "compareUrl": "https://github.com/canonical/envoy-operator/compare/rev185...main"
-               },
-               {
-                  "id": 154827454,
-                  "version": "rev183",
-                  "timestamp": 1715191095,
-                  "title": "Revision 183",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/metadata-envoy:2.0.2\n       resource-revision: 101</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:31 UTC on 8 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: bump juju 3.1 -&gt; 3.5 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/83\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/83\">#83</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/envoy-operator/compare/rev178...rev183\">https://github.com/canonical/envoy-operator/compare/rev178&hellip;rev183</a></p>\n",
-                  "url": "https://github.com/canonical/envoy-operator/releases/tag/rev183",
-                  "compareUrl": "https://github.com/canonical/envoy-operator/compare/rev183...main"
-               },
-               {
-                  "id": 153654709,
-                  "version": "rev178",
-                  "timestamp": 1714395638,
-                  "title": "Revision 178",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/metadata-envoy:2.0.2\n       resource-revision: 101</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:46 UTC on 1 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Bump prometheus_scrape lib by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/88\"><a target=\"_blank\" href=\"https://github.com/canonical/envoy-operator/pull/88\">#88</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/envoy-operator/compare/rev173...rev178\">https://github.com/canonical/envoy-operator/compare/rev173&hellip;rev178</a></p>\n",
-                  "url": "https://github.com/canonical/envoy-operator/releases/tag/rev178",
-                  "compareUrl": "https://github.com/canonical/envoy-operator/compare/rev178...main"
                }
             ],
             "tags": null,
@@ -6585,9 +6585,18 @@
          },
          {
             "name": "kfp-operators",
-            "newCommits": 17,
+            "newCommits": 0,
             "url": "https://github.com/canonical/kfp-operators",
             "releases": [
+               {
+                  "id": 157098559,
+                  "version": "kfp-viz-rev1242",
+                  "timestamp": 1716381420,
+                  "title": "Revision 1242",
+                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/visualization-server:2.0.5-4ae34a1\n       resource-revision: 974</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:17 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(api-server): Enable charm configuration of launcher and driver images by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/455\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/455\">#455</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1270...kfp-viz-rev1242\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1270&hellip;kfp-viz-rev1242</a></p>\n",
+                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-viz-rev1242",
+                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-viz-rev1242...main"
+               },
                {
                   "id": 156916075,
                   "version": "kfp-viz-rev1235",
@@ -6605,15 +6614,6 @@
                   "body": "<p>resources:\n    -  kfp-viewer-image: charmedkubeflow/viewer-crd-controller:2.0.5-f28db97\n       resource-revision: 350</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:09 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(api-server): Enable charm configuration of launcher and driver images by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/455\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/455\">#455</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1270...kfp-viewer-rev1324\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1270&hellip;kfp-viewer-rev1324</a></p>\n",
                   "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-viewer-rev1324",
                   "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-viewer-rev1324...main"
-               },
-               {
-                  "id": 156914693,
-                  "version": "kfp-viewer-rev1317",
-                  "timestamp": 1716390066,
-                  "title": "Revision 1317",
-                  "body": "<p>resources:\n    -  kfp-viewer-image: charmedkubeflow/viewer-crd-controller:2.0.5-f28db97\n       resource-revision: 350</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 15:37 UTC on 22 May 2024</p>\n\n<p>Released to &lsquo;2.0/stable&rsquo; at 08:02 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: bump juju 3.1 -&gt; 3.5 in track by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/425\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/425\">#425</a></a></li>\n<li>chore: bump images to KFP 2.0.5 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/457\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/457\">#457</a></a></li>\n<li>backport(feat): Enable configuration in kfp-api of launcher and driver images from <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/455\">#455</a> by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/467\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/467\">#467</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1250...kfp-viewer-rev1317\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1250&hellip;kfp-viewer-rev1317</a></p>\n",
-                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-viewer-rev1317",
-                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-viewer-rev1317...main"
                }
             ],
             "tags": null,
@@ -6928,9 +6928,18 @@
          },
          {
             "name": "kubeflow-dashboard-operator",
-            "newCommits": 0,
+            "newCommits": 5,
             "url": "https://github.com/canonical/kubeflow-dashboard-operator",
             "releases": [
+               {
+                  "id": 157101209,
+                  "version": "rev527",
+                  "timestamp": 1716462829,
+                  "title": "Revision 527",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/centraldashboard:v1.8.0\n       resource-revision: 683</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 11:34 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Revert &ldquo;chore: use charmedkubeflow/kubeflow-central-dashboard as oci-image (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/178\">#178</a>)&rdquo; by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/192\">#192</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/compare/rev518...rev527\">https://github.com/canonical/kubeflow-dashboard-operator/compare/rev518&hellip;rev527</a></p>\n",
+                  "url": "https://github.com/canonical/kubeflow-dashboard-operator/releases/tag/rev527",
+                  "compareUrl": "https://github.com/canonical/kubeflow-dashboard-operator/compare/rev527...main"
+               },
                {
                   "id": 157083791,
                   "version": "rev521",
@@ -6948,15 +6957,6 @@
                   "body": "<p>resources:\n    -  oci-image: charmedkubeflow/kubeflow-central-dashboard:1.8-0719441\n       resource-revision: 683</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 18:29 UTC on 8 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use charmedkubeflow/kubeflow-central-dashboard as oci-image (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/178\">#178</a>) by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/180\">#180</a></a></li>\n<li>fix: Pin integration test dependencies by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/185\"><a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/185\">#185</a></a></li>\n<li>ci: bump juju 3.1 -&gt; 3.5 in track by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/184\"><a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/184\">#184</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/compare/rev517...rev518\">https://github.com/canonical/kubeflow-dashboard-operator/compare/rev517&hellip;rev518</a></p>\n",
                   "url": "https://github.com/canonical/kubeflow-dashboard-operator/releases/tag/rev518",
                   "compareUrl": "https://github.com/canonical/kubeflow-dashboard-operator/compare/rev518...main"
-               },
-               {
-                  "id": 154826968,
-                  "version": "rev517",
-                  "timestamp": 1715191657,
-                  "title": "Revision 517",
-                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/kubeflow-central-dashboard:1.8-0719441\n       resource-revision: 683</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:27 UTC on 8 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: bump juju 3.1 -&gt; 3.5 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/182\"><a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-dashboard-operator/pull/182\">#182</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kubeflow-dashboard-operator/compare/rev508...rev517\">https://github.com/canonical/kubeflow-dashboard-operator/compare/rev508&hellip;rev517</a></p>\n",
-                  "url": "https://github.com/canonical/kubeflow-dashboard-operator/releases/tag/rev517",
-                  "compareUrl": "https://github.com/canonical/kubeflow-dashboard-operator/compare/rev517...main"
                }
             ],
             "tags": null,
@@ -7372,9 +7372,18 @@
          },
          {
             "name": "mlmd-operator",
-            "newCommits": 0,
+            "newCommits": 6,
             "url": "https://github.com/canonical/mlmd-operator",
             "releases": [
+               {
+                  "id": 157109635,
+                  "version": "rev186",
+                  "timestamp": 1716464565,
+                  "title": "Revision 186",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.14.0\n       resource-revision: 130</p>\n\n<p>Static resources:\n Released to &lsquo;1.14/edge&rsquo; at 11:54 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add get images script (<a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/83\">#83</a>) by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/84\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/84\">#84</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlmd-operator/compare/rev171...rev186\">https://github.com/canonical/mlmd-operator/compare/rev171&hellip;rev186</a></p>\n",
+                  "url": "https://github.com/canonical/mlmd-operator/releases/tag/rev186",
+                  "compareUrl": "https://github.com/canonical/mlmd-operator/compare/rev186...main"
+               },
                {
                   "id": 157084977,
                   "version": "rev184",
@@ -7392,15 +7401,6 @@
                   "body": "<p>resources:\n    -  oci-image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.14.0\n       resource-revision: 130</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:04 UTC on 21 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: update README with upgrade guide for mlmd&gt;1.14 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/79\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/79\">#79</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlmd-operator/compare/rev174...rev180\">https://github.com/canonical/mlmd-operator/compare/rev174&hellip;rev180</a></p>\n",
                   "url": "https://github.com/canonical/mlmd-operator/releases/tag/rev180",
                   "compareUrl": "https://github.com/canonical/mlmd-operator/compare/rev180...main"
-               },
-               {
-                  "id": 154828605,
-                  "version": "rev174",
-                  "timestamp": 1715191769,
-                  "title": "Revision 174",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/tfx-oss-public/ml_metadata_store_server:1.14.0\n       resource-revision: 130</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:39 UTC on 8 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update GH files for issue templates and Jira automation by <a target=\"_blank\" href=\"https://github.com/kimwnasptd\">@kimwnasptd</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/69\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/69\">#69</a></a></li>\n<li>refactor: rewrite mlmd charm to sidecar pattern by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/72\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/72\">#72</a></a></li>\n<li>refactor: revert relation name k8s-service-info -&gt; grpc by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/78\">#78</a></a></li>\n<li>ci: bump juju 3.1 -&gt; 3.5 in main by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/mlmd-operator/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlmd-operator/compare/rev171...rev174\">https://github.com/canonical/mlmd-operator/compare/rev171&hellip;rev174</a></p>\n",
-                  "url": "https://github.com/canonical/mlmd-operator/releases/tag/rev174",
-                  "compareUrl": "https://github.com/canonical/mlmd-operator/compare/rev174...main"
                }
             ],
             "tags": null,
@@ -12275,9 +12275,18 @@
          },
          {
             "name": "sdcore-amf-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
             "releases": [
+               {
+                  "id": 157112610,
+                  "version": "rev321",
+                  "timestamp": 1716465260,
+                  "title": "Revision 321",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-types-setuptools-70-0-0-20240523&rsquo; at 12:12 UTC on 23 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 69.5.0.20240519 to 69.5.0.20240522 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/238\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/238\">#238</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev319...rev321\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev319&hellip;rev321</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev321",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev321...main"
+               },
                {
                   "id": 156862991,
                   "version": "rev320",
@@ -12295,15 +12304,6 @@
                   "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/refs-heads-main&rsquo; at 07:13 UTC on 22 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 69.5.0.20240513 to 69.5.0.20240519 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\">#234</a></a></li>\n<li>chore: bump pytest from 8.1.1 to 8.2.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\">#235</a></a></li>\n<li>chore: bump requests from 2.31.0 to 2.32.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/237\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/237\">#237</a></a></li>\n<li>chore: use pytest for unit tests by <a target=\"_blank\" href=\"https://github.com/dariofaccin\">@dariofaccin</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/236\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/236\">#236</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304...rev319\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304&hellip;rev319</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev319",
                   "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev319...main"
-               },
-               {
-                  "id": 156680270,
-                  "version": "rev318",
-                  "timestamp": 1716292138,
-                  "title": "Revision 318",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/TELCO-1221-port-pytest-unit-tests&rsquo; at 12:13 UTC on 21 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 69.5.0.20240513 to 69.5.0.20240519 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/234\">#234</a></a></li>\n<li>chore: bump pytest from 8.1.1 to 8.2.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/235\">#235</a></a></li>\n<li>chore: bump requests from 2.31.0 to 2.32.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/237\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/237\">#237</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304...rev318\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev304&hellip;rev318</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev318",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev318...main"
                }
             ],
             "tags": null,
