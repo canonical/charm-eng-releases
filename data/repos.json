@@ -11543,6 +11543,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4a9350ba0000ac489c58afacf25371efe8072806",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1716823930,
+                  "message": "<p>Explicitly set timeout in each CLI command (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/443\">#443</a>)</p>\n\n<ul>\n<li>Explicitly set timeout in each CLI command</li>\n</ul>\n\n<p>Right now, the context deadline is initially set at root level when the command is created.\nThis causes problems for interactive commands as the deadline may be exceeded while the user inputs the data.\nTo prevent this, we remove the global timeout and specifically set it in\neach command right before the RPC calls.</p>\n\n<ul>\n<li>update docs</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/4a9350ba0000ac489c58afacf25371efe8072806"
+               },
+               {
                   "sha": "14f80882f0121791861b594a06b6e11ba188a091",
                   "author": "github-actions[bot]",
                   "timestamp": 1716809138,
@@ -11555,13 +11562,6 @@
                   "timestamp": 1716413625,
                   "message": "<p>Copy control-plane taint from bootstrap config (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/425\">#425</a>)</p>\n\n<ul>\n<li>Copy control-plane taint from bootstrap config</li>\n<li>Add tests for ControlPlaneTaints</li>\n<li>Empty control plane taints slices can be ignored</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/f4fd0e35ac7ee369c9c40213c9cf820b8a2ebe1d"
-               },
-               {
-                  "sha": "0bd5c82ca8d6844661c158f78c8b773246fe6448",
-                  "author": "Louise K. Schmidtgen",
-                  "timestamp": 1716370806,
-                  "message": "<p>Harden CI follow up (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/437\">#437</a>)</p>\n\n<ul>\n<li><p>more CI hardening</p></li>\n\n<li><p>cleanup testing bits</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/0bd5c82ca8d6844661c158f78c8b773246fe6448"
                }
             ],
             "ciActions": [
@@ -12307,6 +12307,15 @@
             "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
             "releases": [
                {
+                  "id": 157656463,
+                  "version": "rev342",
+                  "timestamp": 1716823537,
+                  "title": "Revision 342",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/v1-4&rsquo; at 15:46 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.1 to 7.5.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/244\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/244\">#244</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev341...rev342\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev341&hellip;rev342</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev342",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev342...main"
+               },
+               {
                   "id": 157641978,
                   "version": "rev341",
                   "timestamp": 1716818225,
@@ -12323,15 +12332,6 @@
                   "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-5-2&rsquo; at 14:19 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.4.4 to 0.4.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/246\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/246\">#246</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev337...rev340\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev337&hellip;rev340</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev340",
                   "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev340...main"
-               },
-               {
-                  "id": 157635507,
-                  "version": "rev339",
-                  "timestamp": 1716816279,
-                  "title": "Revision 339",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 21</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/v1-4&rsquo; at 13:48 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump codespell from 2.2.6 to 2.3.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/247\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/247\">#247</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev334...rev339\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev334&hellip;rev339</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev339",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev339...main"
                }
             ],
             "tags": null,
@@ -12412,6 +12412,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "733069e4e9b1e96277d2d4033cc222e1fcc698be",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1716823730,
+                  "message": "<p>chore: bump build base to ubuntu 24.04 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/30\">#30</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/733069e4e9b1e96277d2d4033cc222e1fcc698be"
+               },
+               {
                   "sha": "3902f70ce73d5b5f3e75fe99b28a37fe74c49782",
                   "author": "Guillaume Belanger",
                   "timestamp": 1716619622,
@@ -12424,13 +12431,6 @@
                   "timestamp": 1716475527,
                   "message": "<p>chore: fix rocks terminology (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/28\">#28</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-amf-rock/commit/60753dd6d8492d96f68867b727a019b699d63eb5"
-               },
-               {
-                  "sha": "164adf0543defd773f66172f96b5ed2ac3bff605",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1714473857,
-                  "message": "<p>chore: bump build base to ubuntu 24.04 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/27\">#27</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/164adf0543defd773f66172f96b5ed2ac3bff605"
                }
             ],
             "ciActions": [],
@@ -13443,6 +13443,15 @@
             "url": "https://github.com/canonical/sdcore-smf-k8s-operator",
             "releases": [
                {
+                  "id": 157656796,
+                  "version": "rev280",
+                  "timestamp": 1716823468,
+                  "title": "Revision 280",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 24</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/v1-4&rsquo; at 15:48 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.4.3 to 0.4.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/203\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/203\">#203</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev278...rev280\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev278&hellip;rev280</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev280",
+                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev280...main"
+               },
+               {
                   "id": 157642317,
                   "version": "rev279",
                   "timestamp": 1716818187,
@@ -13459,15 +13468,6 @@
                   "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 24</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/v1-4&rsquo; at 14:14 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump codespell from 2.2.6 to 2.3.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/204\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/204\">#204</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev277...rev278\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev277&hellip;rev278</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev278",
                   "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev278...main"
-               },
-               {
-                  "id": 157635623,
-                  "version": "rev277",
-                  "timestamp": 1716816348,
-                  "title": "Revision 277",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 24</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/v1-4&rsquo; at 13:49 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.1 to 7.5.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/206\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/206\">#206</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev271...rev277\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev271&hellip;rev277</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev277",
-                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev277...main"
                }
             ],
             "tags": null,
@@ -13641,9 +13641,18 @@
          },
          {
             "name": "sdcore-udm-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-udm-k8s-operator",
             "releases": [
+               {
+                  "id": 157654862,
+                  "version": "rev205",
+                  "timestamp": 1716822816,
+                  "title": "Revision 205",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 23</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-coverage-toml&ndash;7-5-2&rsquo; at 15:33 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev204...rev205\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev204&hellip;rev205</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev205",
+                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev205...main"
+               },
                {
                   "id": 157612200,
                   "version": "rev204",
@@ -13661,15 +13670,6 @@
                   "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 23</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/TELCO-1230-use-pytest&rsquo; at 11:14 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump codespell from 2.2.6 to 2.3.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/170\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/170\">#170</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev200...rev203\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev200&hellip;rev203</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev203",
                   "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev203...main"
-               },
-               {
-                  "id": 157503513,
-                  "version": "rev202",
-                  "timestamp": 1716565181,
-                  "title": "Revision 202",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 23</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/refs-heads-main&rsquo; at 07:25 UTC on 26 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.2.0 to 8.2.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/165\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/165\">#165</a></a></li>\n<li>chore: bump requests from 2.31.0 to 2.32.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/167\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/167\">#167</a></a></li>\n<li>chore: bump ruff from 0.4.4 to 0.4.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/169\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/169\">#169</a></a></li>\n<li>chore: bump codespell from 2.2.6 to 2.3.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/170\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/170\">#170</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev186...rev202\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev186&hellip;rev202</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev202",
-                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev202...main"
                }
             ],
             "tags": null,
@@ -14198,31 +14198,31 @@
             "url": "https://github.com/canonical/sdcore-webui-k8s-operator",
             "releases": [
                {
-                  "id": 157616761,
-                  "version": "rev185",
-                  "timestamp": 1716809747,
-                  "title": "Revision 185",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/Improve-charm-config-changed-event-handler-method&rsquo; at 11:58 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev183...rev185\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev183&hellip;rev185</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev185",
-                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev185...main"
+                  "id": 157657056,
+                  "version": "rev188",
+                  "timestamp": 1716823644,
+                  "title": "Revision 188",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/Improve-charm-config-changed-event-handler-method&rsquo; at 15:50 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev185...rev188\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev185&hellip;rev188</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev188",
+                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev188...main"
                },
                {
-                  "id": 157605111,
-                  "version": "rev184",
-                  "timestamp": 1716804083,
-                  "title": "Revision 184",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/Improve-charm-config-changed-event-handler-method&rsquo; at 10:56 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev183...rev184\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev183&hellip;rev184</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev184",
-                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev184...main"
+                  "id": 157655660,
+                  "version": "rev187",
+                  "timestamp": 1716822969,
+                  "title": "Revision 187",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/Improve-charm-config-changed-event-handler-method&rsquo; at 15:39 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev185...rev187\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev185&hellip;rev187</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev187",
+                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev187...main"
                },
                {
-                  "id": 157587070,
-                  "version": "rev183",
-                  "timestamp": 1716798557,
-                  "title": "Revision 183",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/refs-heads-main&rsquo; at 08:52 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: use pytest for unit tests by <a target=\"_blank\" href=\"https://github.com/patriciareinoso\">@patriciareinoso</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-webui-k8s-operator/pull/136\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-webui-k8s-operator/pull/136\">#136</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev180...rev183\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev180&hellip;rev183</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev183",
-                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev183...main"
+                  "id": 157655076,
+                  "version": "rev186",
+                  "timestamp": 1716822682,
+                  "title": "Revision 186",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/Improve-charm-config-changed-event-handler-method&rsquo; at 15:35 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev185...rev186\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev185&hellip;rev186</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev186",
+                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev186...main"
                }
             ],
             "tags": null,
@@ -14493,6 +14493,24 @@
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
                {
+                  "id": 157657082,
+                  "version": "rev211",
+                  "timestamp": 1716823868,
+                  "title": "Revision 211",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-codespell-2-3-0&rsquo; at 15:50 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.1 to 7.5.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/180\">#180</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204...rev211\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204&hellip;rev211</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev211",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev211...main"
+               },
+               {
+                  "id": 157656464,
+                  "version": "rev210",
+                  "timestamp": 1716823626,
+                  "title": "Revision 210",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-4-5&rsquo; at 15:46 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.1 to 7.5.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/180\">#180</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204...rev210\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204&hellip;rev210</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev210",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev210...main"
+               },
+               {
                   "id": 157644265,
                   "version": "rev209",
                   "timestamp": 1716819263,
@@ -14500,24 +14518,6 @@
                   "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-codespell-2-3-0&rsquo; at 14:32 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204...rev209\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204&hellip;rev209</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev209",
                   "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev209...main"
-               },
-               {
-                  "id": 157644218,
-                  "version": "rev208",
-                  "timestamp": 1716819209,
-                  "title": "Revision 208",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-5-2&rsquo; at 14:32 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204...rev208\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204&hellip;rev208</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev208",
-                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev208...main"
-               },
-               {
-                  "id": 157644120,
-                  "version": "rev207",
-                  "timestamp": 1716819136,
-                  "title": "Revision 207",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-4-5&rsquo; at 14:31 UTC on 27 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204...rev207\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev204&hellip;rev207</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev207",
-                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev207...main"
                }
             ],
             "tags": null,
@@ -23189,25 +23189,6 @@
             "snap": null
          },
          {
-            "name": "dotnet-containers",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/dotnet-containers",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "aacfd563c29fd2d17c3a0e0b735249870148319b",
-                  "author": "Cristovao Cordeiro",
-                  "timestamp": 1710232590,
-                  "message": "<p>Initial commit</p>\n",
-                  "url": "https://github.com/canonical/dotnet-containers/commit/aacfd563c29fd2d17c3a0e0b735249870148319b"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "oci-factory",
             "newCommits": 5,
             "url": "https://github.com/canonical/oci-factory",
@@ -24607,9 +24588,18 @@
          },
          {
             "name": "indico-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/indico-operator",
             "releases": [
+               {
+                  "id": 157655021,
+                  "version": "rev205",
+                  "timestamp": 1716822446,
+                  "title": "Revision 205",
+                  "body": "<p>resources:\n    -  indico-image: undefined\n       resource-revision: 194\n    -  indico-nginx-image: undefined\n       resource-revision: 237</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:34 UTC on 27 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Improve logging configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/402\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/402\">#402</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev204...rev205\">https://github.com/canonical/indico-operator/compare/rev204&hellip;rev205</a></p>\n",
+                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev205",
+                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev205...main"
+               },
                {
                   "id": 157578668,
                   "version": "rev204",
@@ -24627,15 +24617,6 @@
                   "body": "<p>resources:\n    -  indico-image: undefined\n       resource-revision: 192\n    -  indico-nginx-image: undefined\n       resource-revision: 235</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:42 UTC on 9 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/398\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/398\">#398</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev202...rev203\">https://github.com/canonical/indico-operator/compare/rev202&hellip;rev203</a></p>\n",
                   "url": "https://github.com/canonical/indico-operator/releases/tag/rev203",
                   "compareUrl": "https://github.com/canonical/indico-operator/compare/rev203...main"
-               },
-               {
-                  "id": 154372900,
-                  "version": "rev202",
-                  "timestamp": 1714985345,
-                  "title": "Revision 202",
-                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 234\n    -  indico-image: undefined\n       resource-revision: 191</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:26 UTC on 6 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/393\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/393\">#393</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev201...rev202\">https://github.com/canonical/indico-operator/compare/rev201&hellip;rev202</a></p>\n",
-                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev202",
-                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev202...main"
                }
             ],
             "tags": null,
@@ -24658,8 +24639,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 204,
-                     "timestamp": 1716796431,
+                     "revision": 205,
+                     "timestamp": 1716824094,
                      "base": ""
                   },
                   {
