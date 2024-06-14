@@ -1904,7 +1904,7 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 20,
+            "newCommits": 26,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
                {
@@ -11677,6 +11677,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "468b810e598b73307ee97e3323c308fd631f8901",
+                  "author": "eaudetcobello",
+                  "timestamp": 1718351260,
+                  "message": "<p>Add arguments to improve cis compliance and adjust tests accordingly (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/494\">#494</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/468b810e598b73307ee97e3323c308fd631f8901"
+               },
+               {
                   "sha": "ee017318d958b4c7ed1ab78d3cf4d8b7e94559c5",
                   "author": "Benjamin Schimke",
                   "timestamp": 1718284004,
@@ -11689,13 +11696,6 @@
                   "timestamp": 1718025283,
                   "message": "<p>Cleanup Status check code (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/481\">#481</a>)</p>\n\n<ul>\n<li>Refactor IsPodReady to <code>CheckForReadyPods</code> and add go-docs</li>\n<li>Add unittest for <code>CheckForReadyPods</code></li>\n<li>Remove <code>ListPods</code></li>\n<li>Refactor <code>CheckNetwork</code> and <code>CheckDNS</code> to only return error (nil-&gt;success)</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/f0a4e7d507dbd8f78b2c1a536dc01ef7b1be19af"
-               },
-               {
-                  "sha": "15817e3f3cd5e24e5ddfb2473a6d433977b298fe",
-                  "author": "Angelos Kolaitis",
-                  "timestamp": 1718024024,
-                  "message": "<p>Add optional pebble support (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/478\">#478</a>)</p>\n\n<ul>\n<li><p>refactor snap.NewSnap to use a struct for options</p></li>\n\n<li><p>add pebble implementation</p></li>\n\n<li><p>pick runtime through environment values</p></li>\n\n<li><p>add pebble component (do not include in snap)</p></li>\n\n<li><p>consolidate pebble configs</p></li>\n\n<li><p>fix issues with installing tzdata deb package</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/15817e3f3cd5e24e5ddfb2473a6d433977b298fe"
                }
             ],
             "ciActions": [
@@ -17971,6 +17971,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "bbdeabbe66a6c2721af5f26d29784e4ea9c19126",
+                  "author": "bikalpa",
+                  "timestamp": 1718350960,
+                  "message": "<p>[DPE-4485] Split Kyuubi OCI image from Charmed Spark OCI image (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-spark-rock/pull/87\">#87</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-spark-rock/commit/bbdeabbe66a6c2721af5f26d29784e4ea9c19126"
+               },
+               {
                   "sha": "a24230ff99c53ab844871f63ce65e7a2bd62df73",
                   "author": "welpaolo",
                   "timestamp": 1716367353,
@@ -17983,13 +17990,6 @@
                   "timestamp": 1716363416,
                   "message": "<p>[DPE-4322] Release 3.4.2-ubuntu4 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-spark-rock/pull/86\">#86</a>)</p>\n",
                   "url": "https://github.com/canonical/charmed-spark-rock/commit/8fc8f2810bbb2128e94eefde46b4662197a29b62"
-               },
-               {
-                  "sha": "0a29b65741b737fa4b76ed159ae2eefabf90b8a1",
-                  "author": "welpaolo",
-                  "timestamp": 1716361273,
-                  "message": "<p>[DPE-3961] Add issues syncing with Jira (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-spark-rock/pull/84\">#84</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-spark-rock/commit/0a29b65741b737fa4b76ed159ae2eefabf90b8a1"
                }
             ],
             "ciActions": [
@@ -25576,6 +25576,28 @@
             }
          },
          {
+            "name": "netbox",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/netbox",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "discourse-gatekeeper/base-content",
+                  "sha": "c135cab90d5cd86ea86745c24023a3549057f39c",
+                  "body": "<p>Tutorial to run NetBox with one (three) commands. (<a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/30\">#30</a>)</p>\n",
+                  "timestamp": 1717756929,
+                  "url": "https://github.com/canonical/netbox/releases/tag/discourse-gatekeeper%2Fbase-content",
+                  "compareUrl": "https://github.com/canonical/netbox/compare/main...discourse-gatekeeper%2Fbase-content"
+               }
+            ],
+            "commits": null,
+            "ciActions": [
+               "https://github.com/netbox-community/netbox/workflows/CI"
+            ],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "nginx-ingress-integrator-operator",
             "newCommits": 2,
             "url": "https://github.com/canonical/nginx-ingress-integrator-operator",
@@ -25698,29 +25720,6 @@
                   "v2"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "netbox",
-            "newCommits": 2,
-            "url": "https://github.com/canonical/netbox",
-            "releases": [
-               {
-                  "id": 150880684,
-                  "version": "discourse-gatekeeper/base-content",
-                  "timestamp": 1712771951,
-                  "title": "discourse-gatekeeper/base-content",
-                  "body": "<p>I deleted it accidentally</p>\n",
-                  "url": "https://github.com/canonical/netbox/releases/tag/discourse-gatekeeper/base-content",
-                  "compareUrl": "https://github.com/canonical/netbox/compare/discourse-gatekeeper/base-content...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/netbox-community/netbox/workflows/CI"
-            ],
-            "charm": null,
             "snap": null
          },
          {
