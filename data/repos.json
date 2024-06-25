@@ -17569,6 +17569,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "5cea721044810d9654fc2e956fbdf262b3712e81",
+                  "author": "Kayra",
+                  "timestamp": 1719347035,
+                  "message": "<p>feat: Reject &amp; Delete CSR (<a target=\"_blank\" href=\"https://github.com/canonical/gocert/pull/23\">#23</a>)</p>\n",
+                  "url": "https://github.com/canonical/gocert/commit/5cea721044810d9654fc2e956fbdf262b3712e81"
+               },
+               {
                   "sha": "7e6603f57b7123b9898374c44ac2b04d6b49bc8b",
                   "author": "Kayra",
                   "timestamp": 1718970792,
@@ -17581,13 +17588,6 @@
                   "timestamp": 1718956703,
                   "message": "<p>feat: Add POST CSR query functionality (<a target=\"_blank\" href=\"https://github.com/canonical/gocert/pull/22\">#22</a>)</p>\n",
                   "url": "https://github.com/canonical/gocert/commit/34fc01a7b2a42defce18f0859fb0817a1f70f9ea"
-               },
-               {
-                  "sha": "84ff6088b664e01e154e24db238eeb97292a6f15",
-                  "author": "Kayra",
-                  "timestamp": 1718878714,
-                  "message": "<p>feat: Certificate Requests Table Query (<a target=\"_blank\" href=\"https://github.com/canonical/gocert/pull/21\">#21</a>)</p>\n",
-                  "url": "https://github.com/canonical/gocert/commit/84ff6088b664e01e154e24db238eeb97292a6f15"
                }
             ],
             "ciActions": [],
@@ -17928,7 +17928,7 @@
          },
          {
             "name": "postgresql-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/postgresql-operator",
             "releases": [
                {
@@ -25037,6 +25037,45 @@
             "snap": null
          },
          {
+            "name": "discourse-gatekeeper",
+            "newCommits": 16,
+            "url": "https://github.com/canonical/discourse-gatekeeper",
+            "releases": [
+               {
+                  "id": 137666752,
+                  "version": "v0.8.1",
+                  "timestamp": 1705644051,
+                  "title": "v0.8.1",
+                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Migration error where discourse is in-line with the default branch but the\nbase content tag is behind. This no longer attempts migration and now also\nmoves the tag to the latest commit on the default branch.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.1",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.1...main"
+               },
+               {
+                  "id": 132209416,
+                  "version": "v0.8.0",
+                  "timestamp": 1701350249,
+                  "title": "v0.8.0",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for migrating the navigation table to the contents index</li>\n<li>Checks that external references on the contents index return a 2XX response to\nHEAD requests</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Whitespace buildup between generated and input content</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.0",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.0...main"
+               },
+               {
+                  "id": 124217285,
+                  "version": "v0.7.0",
+                  "timestamp": 1696835711,
+                  "title": "v0.7.0",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "discourse-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/discourse-k8s-operator",
@@ -25102,45 +25141,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "discourse-gatekeeper",
-            "newCommits": 16,
-            "url": "https://github.com/canonical/discourse-gatekeeper",
-            "releases": [
-               {
-                  "id": 137666752,
-                  "version": "v0.8.1",
-                  "timestamp": 1705644051,
-                  "title": "v0.8.1",
-                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Migration error where discourse is in-line with the default branch but the\nbase content tag is behind. This no longer attempts migration and now also\nmoves the tag to the latest commit on the default branch.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.1",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.1...main"
-               },
-               {
-                  "id": 132209416,
-                  "version": "v0.8.0",
-                  "timestamp": 1701350249,
-                  "title": "v0.8.0",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for migrating the navigation table to the contents index</li>\n<li>Checks that external references on the contents index return a 2XX response to\nHEAD requests</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Whitespace buildup between generated and input content</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.0",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.0...main"
-               },
-               {
-                  "id": 124217285,
-                  "version": "v0.7.0",
-                  "timestamp": 1696835711,
-                  "title": "v0.7.0",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
             "snap": null
          },
          {
@@ -25787,84 +25787,6 @@
             "snap": null
          },
          {
-            "name": "jenkins-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/jenkins-k8s-operator",
-            "releases": [
-               {
-                  "id": 160533044,
-                  "version": "rev107",
-                  "timestamp": 1718381751,
-                  "title": "Revision 107",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 102</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:23 UTC on 14 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.12 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\">#168</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/170\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/170\">#170</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev105...rev107\">https://github.com/canonical/jenkins-k8s-operator/compare/rev105&hellip;rev107</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev107",
-                  "compareUrl": "https://github.com/canonical/jenkins-k8s-operator/compare/rev107...main"
-               },
-               {
-                  "id": 159151850,
-                  "version": "rev106",
-                  "timestamp": 1717664895,
-                  "title": "Revision 106",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 101</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:16 UTC on 6 Jun 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 08:40 UTC on 11 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.12 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\">#168</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev105...rev106\">https://github.com/canonical/jenkins-k8s-operator/compare/rev105&hellip;rev106</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev106",
-                  "compareUrl": "https://github.com/canonical/jenkins-k8s-operator/compare/rev106...main"
-               },
-               {
-                  "id": 158835325,
-                  "version": "rev105",
-                  "timestamp": 1717516109,
-                  "title": "Revision 105",
-                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 100</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:59 UTC on 4 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Go to 2.452.1 by <a target=\"_blank\" href=\"https://github.com/jdkandersson\">@jdkandersson</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/167\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/167\">#167</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev104...rev105\">https://github.com/canonical/jenkins-k8s-operator/compare/rev104&hellip;rev105</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev105",
-                  "compareUrl": "https://github.com/canonical/jenkins-k8s-operator/compare/rev105...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "jenkins-agent-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/jenkins-agent-operator",
-            "releases": [
-               {
-                  "id": 160018721,
-                  "version": "rev49",
-                  "timestamp": 1718175967,
-                  "title": "Revision 49",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:07 UTC on 12 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\">#39</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\">#28</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\">#40</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev47...rev49\">https://github.com/canonical/jenkins-agent-operator/compare/rev47&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev49",
-                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev49...main"
-               },
-               {
-                  "id": 158611113,
-                  "version": "rev48",
-                  "timestamp": 1717420361,
-                  "title": "Revision 48",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:14 UTC on 3 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\">#39</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev47...rev48\">https://github.com/canonical/jenkins-agent-operator/compare/rev47&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev48",
-                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev48...main"
-               },
-               {
-                  "id": 158553341,
-                  "version": "rev47",
-                  "timestamp": 1717399168,
-                  "title": "Revision 47",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:20 UTC on 3 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/33\">#33</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev46...rev47\">https://github.com/canonical/jenkins-agent-operator/compare/rev46&hellip;rev47</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev47",
-                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev47...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "jenkins-agent-k8s-operator",
             "newCommits": 2,
             "url": "https://github.com/canonical/jenkins-agent-k8s-operator",
@@ -25944,6 +25866,84 @@
                   "latest"
                ]
             },
+            "snap": null
+         },
+         {
+            "name": "jenkins-agent-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/jenkins-agent-operator",
+            "releases": [
+               {
+                  "id": 160018721,
+                  "version": "rev49",
+                  "timestamp": 1718175967,
+                  "title": "Revision 49",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:07 UTC on 12 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\">#39</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\">#28</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\">#40</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev47...rev49\">https://github.com/canonical/jenkins-agent-operator/compare/rev47&hellip;rev49</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev49",
+                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev49...main"
+               },
+               {
+                  "id": 158611113,
+                  "version": "rev48",
+                  "timestamp": 1717420361,
+                  "title": "Revision 48",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:14 UTC on 3 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\">#39</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev47...rev48\">https://github.com/canonical/jenkins-agent-operator/compare/rev47&hellip;rev48</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev48",
+                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev48...main"
+               },
+               {
+                  "id": 158553341,
+                  "version": "rev47",
+                  "timestamp": 1717399168,
+                  "title": "Revision 47",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:20 UTC on 3 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/33\">#33</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev46...rev47\">https://github.com/canonical/jenkins-agent-operator/compare/rev46&hellip;rev47</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev47",
+                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev47...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "jenkins-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/jenkins-k8s-operator",
+            "releases": [
+               {
+                  "id": 160533044,
+                  "version": "rev107",
+                  "timestamp": 1718381751,
+                  "title": "Revision 107",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 102</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:23 UTC on 14 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.12 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\">#168</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/170\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/170\">#170</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev105...rev107\">https://github.com/canonical/jenkins-k8s-operator/compare/rev105&hellip;rev107</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev107",
+                  "compareUrl": "https://github.com/canonical/jenkins-k8s-operator/compare/rev107...main"
+               },
+               {
+                  "id": 159151850,
+                  "version": "rev106",
+                  "timestamp": 1717664895,
+                  "title": "Revision 106",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 101</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:16 UTC on 6 Jun 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 08:40 UTC on 11 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.12 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/168\">#168</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev105...rev106\">https://github.com/canonical/jenkins-k8s-operator/compare/rev105&hellip;rev106</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev106",
+                  "compareUrl": "https://github.com/canonical/jenkins-k8s-operator/compare/rev106...main"
+               },
+               {
+                  "id": 158835325,
+                  "version": "rev105",
+                  "timestamp": 1717516109,
+                  "title": "Revision 105",
+                  "body": "<p>resources:\n    -  jenkins-image: undefined\n       resource-revision: 100</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:59 UTC on 4 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Go to 2.452.1 by <a target=\"_blank\" href=\"https://github.com/jdkandersson\">@jdkandersson</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/167\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-k8s-operator/pull/167\">#167</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-k8s-operator/compare/rev104...rev105\">https://github.com/canonical/jenkins-k8s-operator/compare/rev104&hellip;rev105</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-k8s-operator/releases/tag/rev105",
+                  "compareUrl": "https://github.com/canonical/jenkins-k8s-operator/compare/rev105...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
             "snap": null
          },
          {
@@ -26350,45 +26350,6 @@
             "snap": null
          },
          {
-            "name": "repo-policy-compliance",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/repo-policy-compliance",
-            "releases": [
-               {
-                  "id": 161978341,
-                  "version": "rev32",
-                  "timestamp": 1719210340,
-                  "title": "Revision 32",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:27 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: forked repo test by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1812\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1812\">#1812</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev31...rev32\">https://github.com/canonical/repo-policy-compliance/compare/rev31&hellip;rev32</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev32",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev32...main"
-               },
-               {
-                  "id": 161441572,
-                  "version": "rev31",
-                  "timestamp": 1718876876,
-                  "title": "Revision 31",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:49 UTC on 20 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.7.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1809\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1809\">#1809</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev30...rev31\">https://github.com/canonical/repo-policy-compliance/compare/rev30&hellip;rev31</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev31",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev31...main"
-               },
-               {
-                  "id": 161426179,
-                  "version": "rev30",
-                  "timestamp": 1718872250,
-                  "title": "Revision 30",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:32 UTC on 20 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency sqlalchemy to v2.0.31 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1815\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1815\">#1815</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev29...rev30\">https://github.com/canonical/repo-policy-compliance/compare/rev29&hellip;rev30</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev30",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev30...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "pollen-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/pollen-operator",
@@ -26419,6 +26380,45 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:12 UTC on 3 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev24...rev25\">https://github.com/canonical/pollen-operator/compare/rev24&hellip;rev25</a></p>\n",
                   "url": "https://github.com/canonical/pollen-operator/releases/tag/rev25",
                   "compareUrl": "https://github.com/canonical/pollen-operator/compare/rev25...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "repo-policy-compliance",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/repo-policy-compliance",
+            "releases": [
+               {
+                  "id": 161978341,
+                  "version": "rev32",
+                  "timestamp": 1719210340,
+                  "title": "Revision 32",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:27 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: forked repo test by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1812\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1812\">#1812</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev31...rev32\">https://github.com/canonical/repo-policy-compliance/compare/rev31&hellip;rev32</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev32",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev32...main"
+               },
+               {
+                  "id": 161441572,
+                  "version": "rev31",
+                  "timestamp": 1718876876,
+                  "title": "Revision 31",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:49 UTC on 20 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.7.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1809\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1809\">#1809</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev30...rev31\">https://github.com/canonical/repo-policy-compliance/compare/rev30&hellip;rev31</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev31",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev31...main"
+               },
+               {
+                  "id": 161426179,
+                  "version": "rev30",
+                  "timestamp": 1718872250,
+                  "title": "Revision 30",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:32 UTC on 20 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency sqlalchemy to v2.0.31 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1815\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1815\">#1815</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev29...rev30\">https://github.com/canonical/repo-policy-compliance/compare/rev29&hellip;rev30</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev30",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev30...main"
                }
             ],
             "tags": null,
@@ -27268,1020 +27268,6 @@
                   "timestamp": 1706193645,
                   "url": "https://github.com/canonical/xiilib/releases/tag/v0.1.0",
                   "compareUrl": "https://github.com/canonical/xiilib/compare/main...v0.1.0"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "apt-stresstest-charm",
-            "newCommits": 2,
-            "url": "https://git.launchpad.net/apt-stresstest-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev13",
-                  "sha": "39c0903719263deedf2a06362f33a3a27c482040",
-                  "body": "",
-                  "timestamp": 1661822528,
-                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev13",
-                  "compareUrl": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=39c0903719263deedf2a06362f33a3a27c482040&id2=master"
-               },
-               {
-                  "name": "rev12",
-                  "sha": "5def53390850f0ee67464a64b34fbafde1d90e82",
-                  "body": "",
-                  "timestamp": 1614650162,
-                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev12",
-                  "compareUrl": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=5def53390850f0ee67464a64b34fbafde1d90e82&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "bind-resolver-charm",
-            "newCommits": 0,
-            "url": "https://git.launchpad.net/bind-resolver-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev2",
-                  "sha": "fff742df583089e6371afc733751e587bc1774fb",
-                  "body": "",
-                  "timestamp": 1653866749,
-                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/bind-resolver-charm/diff/?id=fff742df583089e6371afc733751e587bc1774fb&id2=master"
-               },
-               {
-                  "name": "rev1",
-                  "sha": "01e09d8b419b558724d7c2a22db54ce28dfa9612",
-                  "body": "",
-                  "timestamp": 1575653154,
-                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/bind-resolver-charm/diff/?id=01e09d8b419b558724d7c2a22db54ce28dfa9612&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "container-log-archive-charm",
-            "newCommits": 3,
-            "url": "https://git.launchpad.net/container-log-archive-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev21",
-                  "sha": "2d92d8f1da496b1085799174fa3b89fa0cb5ee5e",
-                  "body": "",
-                  "timestamp": 1659664959,
-                  "url": "https://git.launchpad.net/container-log-archive-charm/tag/?h=rev21",
-                  "compareUrl": "https://git.launchpad.net/container-log-archive-charm/diff/?id=2d92d8f1da496b1085799174fa3b89fa0cb5ee5e&id2=master"
-               },
-               {
-                  "name": "rev20",
-                  "sha": "c04ecaed35f07d8239f277dda402aca62b165ab0",
-                  "body": "",
-                  "timestamp": 1658809170,
-                  "url": "https://git.launchpad.net/container-log-archive-charm/tag/?h=rev20",
-                  "compareUrl": "https://git.launchpad.net/container-log-archive-charm/diff/?id=c04ecaed35f07d8239f277dda402aca62b165ab0&id2=master"
-               },
-               {
-                  "name": "rev16",
-                  "sha": "66075535e5cde0e9b6b47eea6b9bd01392aaea89",
-                  "body": "",
-                  "timestamp": 1642114498,
-                  "url": "https://git.launchpad.net/container-log-archive-charm/tag/?h=rev16",
-                  "compareUrl": "https://git.launchpad.net/container-log-archive-charm/diff/?id=66075535e5cde0e9b6b47eea6b9bd01392aaea89&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "content-cache-charm",
-            "newCommits": 50,
-            "url": "https://git.launchpad.net/content-cache-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev94",
-                  "sha": "fb97c1af297bf84ebbc1f824c1a67a605bd9babe",
-                  "body": "",
-                  "timestamp": 1665611471,
-                  "url": "https://git.launchpad.net/content-cache-charm/tag/?h=rev94",
-                  "compareUrl": "https://git.launchpad.net/content-cache-charm/diff/?id=fb97c1af297bf84ebbc1f824c1a67a605bd9babe&id2=master"
-               },
-               {
-                  "name": "rev93",
-                  "sha": "fda52e52fc24ab863e4b2967a020c274fc489e81",
-                  "body": "",
-                  "timestamp": 1662100341,
-                  "url": "https://git.launchpad.net/content-cache-charm/tag/?h=rev93",
-                  "compareUrl": "https://git.launchpad.net/content-cache-charm/diff/?id=fda52e52fc24ab863e4b2967a020c274fc489e81&id2=master"
-               },
-               {
-                  "name": "rev92",
-                  "sha": "b35631ad0dcccb6787827dd0beb8071ac1b7d418",
-                  "body": "",
-                  "timestamp": 1661832299,
-                  "url": "https://git.launchpad.net/content-cache-charm/tag/?h=rev92",
-                  "compareUrl": "https://git.launchpad.net/content-cache-charm/diff/?id=b35631ad0dcccb6787827dd0beb8071ac1b7d418&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": {
-               "name": "content-cache",
-               "url": "https://charmhub.io/content-cache",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 91,
-                     "timestamp": 1643727028,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 372,
-                     "timestamp": 1715302290,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 372,
-                     "timestamp": 1715302290,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 340,
-                     "timestamp": 1710420035,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 372,
-                     "timestamp": 1715302290,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 345,
-                     "timestamp": 1710423396,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 372,
-                     "timestamp": 1715302290,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 91,
-                     "timestamp": 1643727028,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 371,
-                     "timestamp": 1715302170,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 371,
-                     "timestamp": 1715302170,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 334,
-                     "timestamp": 1710419907,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 371,
-                     "timestamp": 1715302170,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 346,
-                     "timestamp": 1710423452,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 371,
-                     "timestamp": 1715302170,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 373,
-                     "timestamp": 1715302351,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 373,
-                     "timestamp": 1715302351,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 341,
-                     "timestamp": 1710420036,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 373,
-                     "timestamp": 1715302351,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 344,
-                     "timestamp": 1710423342,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 373,
-                     "timestamp": 1715302351,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 23,
-                     "timestamp": 1617897784,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 353,
-                     "timestamp": 1710570601,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 353,
-                     "timestamp": 1710570601,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 353,
-                     "timestamp": 1710570601,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 345,
-                     "timestamp": 1710423530,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 353,
-                     "timestamp": 1710570601,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 354,
-                     "timestamp": 1710570629,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 354,
-                     "timestamp": 1710570629,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 354,
-                     "timestamp": 1710570629,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 346,
-                     "timestamp": 1710423536,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 354,
-                     "timestamp": 1710570629,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 355,
-                     "timestamp": 1710570641,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 355,
-                     "timestamp": 1710570641,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 355,
-                     "timestamp": 1710570641,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 344,
-                     "timestamp": 1710423523,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 355,
-                     "timestamp": 1710570641,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 353,
-                     "timestamp": 1710570621,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 353,
-                     "timestamp": 1710570621,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 353,
-                     "timestamp": 1710570621,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 345,
-                     "timestamp": 1710423575,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 353,
-                     "timestamp": 1710570621,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 354,
-                     "timestamp": 1710570632,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 354,
-                     "timestamp": 1710570632,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 354,
-                     "timestamp": 1710570632,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 346,
-                     "timestamp": 1710423582,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 354,
-                     "timestamp": 1710570632,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 355,
-                     "timestamp": 1710570644,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 355,
-                     "timestamp": 1710570644,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 355,
-                     "timestamp": 1710570644,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 344,
-                     "timestamp": 1710423568,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 355,
-                     "timestamp": 1710570644,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1642085321,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 353,
-                     "timestamp": 1710570623,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 353,
-                     "timestamp": 1710570623,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 353,
-                     "timestamp": 1710570623,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 345,
-                     "timestamp": 1710423499,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 353,
-                     "timestamp": 1710570623,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1642085321,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 354,
-                     "timestamp": 1710570635,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 354,
-                     "timestamp": 1710570635,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 354,
-                     "timestamp": 1710570635,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 346,
-                     "timestamp": 1710423506,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 354,
-                     "timestamp": 1710570635,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 355,
-                     "timestamp": 1710570647,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 355,
-                     "timestamp": 1710570647,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 355,
-                     "timestamp": 1710570647,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 344,
-                     "timestamp": 1710423460,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 355,
-                     "timestamp": 1710570647,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "internal-proxy-charm",
-            "newCommits": 2,
-            "url": "https://git.launchpad.net/internal-proxy-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev1",
-                  "sha": "94f0040d8f2ef2186f70cbaf806ddb855492532b",
-                  "body": "",
-                  "timestamp": 1653437944,
-                  "url": "https://git.launchpad.net/internal-proxy-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/internal-proxy-charm/diff/?id=94f0040d8f2ef2186f70cbaf806ddb855492532b&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "juju-introspection-proxy-charm",
-            "newCommits": 0,
-            "url": "https://git.launchpad.net/juju-introspection-proxy-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev2",
-                  "sha": "200a836f7656d60efb664a8a8096df1c251381c4",
-                  "body": "",
-                  "timestamp": 1665149994,
-                  "url": "https://git.launchpad.net/juju-introspection-proxy-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/juju-introspection-proxy-charm/diff/?id=200a836f7656d60efb664a8a8096df1c251381c4&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "mailman3-core-charm",
-            "newCommits": 5,
-            "url": "https://git.launchpad.net/mailman3-core-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev4",
-                  "sha": "36f3623ef8edda6f6b547e4c6c425382a0ad5e6b",
-                  "body": "",
-                  "timestamp": 1647477010,
-                  "url": "https://git.launchpad.net/mailman3-core-charm/tag/?h=rev4",
-                  "compareUrl": "https://git.launchpad.net/mailman3-core-charm/diff/?id=36f3623ef8edda6f6b547e4c6c425382a0ad5e6b&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "mailman3-web-charm",
-            "newCommits": 6,
-            "url": "https://git.launchpad.net/mailman3-web-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev2",
-                  "sha": "765506056f23708471349fad0c553363e4438aeb",
-                  "body": "",
-                  "timestamp": 1661837463,
-                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=765506056f23708471349fad0c553363e4438aeb&id2=master"
-               },
-               {
-                  "name": "rev1",
-                  "sha": "3f5ac5471ba7295afabfcf5335690c7d80add166",
-                  "body": "",
-                  "timestamp": 1631627191,
-                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=3f5ac5471ba7295afabfcf5335690c7d80add166&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "ntp-charm",
-            "newCommits": 4,
-            "url": "https://git.launchpad.net/ntp-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev50",
-                  "sha": "669ff5972f115c782095dbfc2872f4f39ee92209",
-                  "body": "",
-                  "timestamp": 1661753169,
-                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev50",
-                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=669ff5972f115c782095dbfc2872f4f39ee92209&id2=master"
-               },
-               {
-                  "name": "rev49",
-                  "sha": "84ee0663302ec12a592adc7e105d6b17d65b8cf3",
-                  "body": "",
-                  "timestamp": 1660612253,
-                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev49",
-                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=84ee0663302ec12a592adc7e105d6b17d65b8cf3&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "openvpn-server-charm",
-            "newCommits": 0,
-            "url": "https://git.launchpad.net/openvpn-server-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev2",
-                  "sha": "815c065cf9845673880fc12238c69075bb26d4af",
-                  "body": "",
-                  "timestamp": 1653883439,
-                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=815c065cf9845673880fc12238c69075bb26d4af&id2=master"
-               },
-               {
-                  "name": "rev1",
-                  "sha": "172ff9f7f03a0dca96c633912081204ca911d30e",
-                  "body": "",
-                  "timestamp": 1575653072,
-                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=172ff9f7f03a0dca96c633912081204ca911d30e&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "postgresql-charm",
-            "newCommits": 28,
-            "url": "https://git.launchpad.net/postgresql-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev241",
-                  "sha": "f4424fed30c56ca52a65b749b7a29ab4303d3c49",
-                  "body": "",
-                  "timestamp": 1655891323,
-                  "url": "https://git.launchpad.net/postgresql-charm/tag/?h=rev241",
-                  "compareUrl": "https://git.launchpad.net/postgresql-charm/diff/?id=f4424fed30c56ca52a65b749b7a29ab4303d3c49&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "smtp-dkim-signing-charm",
-            "newCommits": 2,
-            "url": "https://git.launchpad.net/smtp-dkim-signing-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev3",
-                  "sha": "756dd7be811f6cda7cea0e9cc2b7e365dd452b3a",
-                  "body": "",
-                  "timestamp": 1665609391,
-                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev3",
-                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=756dd7be811f6cda7cea0e9cc2b7e365dd452b3a&id2=master"
-               },
-               {
-                  "name": "rev2",
-                  "sha": "772e48fc1a99c67171bd98b0fc11abb867d602ac",
-                  "body": "",
-                  "timestamp": 1665529709,
-                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=772e48fc1a99c67171bd98b0fc11abb867d602ac&id2=master"
-               },
-               {
-                  "name": "rev1",
-                  "sha": "f3187b0a79b8101fe683882414717895e9aa0012",
-                  "body": "",
-                  "timestamp": 1661755189,
-                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=f3187b0a79b8101fe683882414717895e9aa0012&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "smtp-relay-charm",
-            "newCommits": 8,
-            "url": "https://git.launchpad.net/smtp-relay-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev7",
-                  "sha": "634b08502fee446ddce8da6d35e80e32be58cb80",
-                  "body": "",
-                  "timestamp": 1665609954,
-                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev7",
-                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=634b08502fee446ddce8da6d35e80e32be58cb80&id2=master"
-               },
-               {
-                  "name": "rev6",
-                  "sha": "49f39ebcc5c9446de655a55c85a790cbf6b73110",
-                  "body": "",
-                  "timestamp": 1665533235,
-                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev6",
-                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=49f39ebcc5c9446de655a55c85a790cbf6b73110&id2=master"
-               },
-               {
-                  "name": "rev5",
-                  "sha": "4cc60e3f11cb7cca6adbb15a05aa92b5ee1698b8",
-                  "body": "",
-                  "timestamp": 1662000660,
-                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev5",
-                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=4cc60e3f11cb7cca6adbb15a05aa92b5ee1698b8&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "stunnel-charm",
-            "newCommits": 2,
-            "url": "https://git.launchpad.net/stunnel-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev1",
-                  "sha": "6fbfb1d7ea7d73640b20aeb875d2d45b4148c04d",
-                  "body": "",
-                  "timestamp": 1665645551,
-                  "url": "https://git.launchpad.net/stunnel-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/stunnel-charm/diff/?id=6fbfb1d7ea7d73640b20aeb875d2d45b4148c04d&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "ubuntu-mirror-charm",
-            "newCommits": 50,
-            "url": "https://git.launchpad.net/ubuntu-mirror-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev17",
-                  "sha": "1c93562e9ab5a033fafe7a43fde4feca75acc122",
-                  "body": "",
-                  "timestamp": 1659597733,
-                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev17",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=1c93562e9ab5a033fafe7a43fde4feca75acc122&id2=master"
-               },
-               {
-                  "name": "rev10",
-                  "sha": "f32f68414d12ccf92341c00762a5bf03243468bd",
-                  "body": "",
-                  "timestamp": 1636424958,
-                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev10",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=f32f68414d12ccf92341c00762a5bf03243468bd&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "ubuntu-repository-cache",
-            "newCommits": 50,
-            "url": "https://git.launchpad.net/ubuntu-repository-cache",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev59",
-                  "sha": "ebb84e3d9c052ba0b1d3eba5e0082b588ea0291c",
-                  "body": "",
-                  "timestamp": 1664328393,
-                  "url": "https://git.launchpad.net/ubuntu-repository-cache/tag/?h=rev59",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-repository-cache/diff/?id=ebb84e3d9c052ba0b1d3eba5e0082b588ea0291c&id2=master"
-               },
-               {
-                  "name": "rev58",
-                  "sha": "79dd3248bb5ea9556361eabb8018357d45361f8b",
-                  "body": "",
-                  "timestamp": 1664324289,
-                  "url": "https://git.launchpad.net/ubuntu-repository-cache/tag/?h=rev58",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-repository-cache/diff/?id=79dd3248bb5ea9556361eabb8018357d45361f8b&id2=master"
-               },
-               {
-                  "name": "rev57",
-                  "sha": "b411991e3fb4c9dbff9a2cb2ec075218f46d11af",
-                  "body": "",
-                  "timestamp": 1664154920,
-                  "url": "https://git.launchpad.net/ubuntu-repository-cache/tag/?h=rev57",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-repository-cache/diff/?id=b411991e3fb4c9dbff9a2cb2ec075218f46d11af&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "ubuntu-syncproxy-charm",
-            "newCommits": 4,
-            "url": "https://git.launchpad.net/ubuntu-syncproxy-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev1",
-                  "sha": "bbc1848fdad83c73707433f8f0e82df3d4d2d006",
-                  "body": "",
-                  "timestamp": 1652411083,
-                  "url": "https://git.launchpad.net/ubuntu-syncproxy-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-syncproxy-charm/diff/?id=bbc1848fdad83c73707433f8f0e82df3d4d2d006&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "autocert-charm",
-            "newCommits": 19,
-            "url": "https://git.launchpad.net/autocert-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev79",
-                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
-                  "body": "",
-                  "timestamp": 1666143335,
-                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev79",
-                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
-               },
-               {
-                  "name": "rev80",
-                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
-                  "body": "",
-                  "timestamp": 1666143335,
-                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev80",
-                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
-               },
-               {
-                  "name": "rev81",
-                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
-                  "body": "",
-                  "timestamp": 1666143335,
-                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev81",
-                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charm-k8s-postgresql",
-            "newCommits": 12,
-            "url": "https://git.launchpad.net/charm-k8s-postgresql",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev4",
-                  "sha": "3ad6cfb1cad71f05854b4378cb6ca08722ca986a",
-                  "body": "",
-                  "timestamp": 1655125120,
-                  "url": "https://git.launchpad.net/charm-k8s-postgresql/tag/?h=rev4",
-                  "compareUrl": "https://git.launchpad.net/charm-k8s-postgresql/diff/?id=3ad6cfb1cad71f05854b4378cb6ca08722ca986a&id2=master"
                }
             ],
             "commits": null,
