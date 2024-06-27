@@ -717,8 +717,8 @@
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 27645,
-                     "timestamp": 1719380102,
+                     "revision": 27665,
+                     "timestamp": 1719451908,
                      "base": "core20"
                   },
                   {
@@ -2169,9 +2169,18 @@
       "repos": [
          {
             "name": "operator",
-            "newCommits": 25,
+            "newCommits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 162665465,
+                  "version": "2.15.0",
+                  "timestamp": 1719450819,
+                  "title": "2.15.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>No new features with this release, but it includes a significant fix for Pebble <code>exec</code> to avoid hanging when Pebble is unable to respond quickly.</p>\n\n<p>We&rsquo;ve also corrected the Harness behaviour when working with secrets when the secret does not exist or the charm does not have permission to view/modify it, and also expanded the API reference documentation for secrets.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Add connect timeout for exec websockets to avoid hanging in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1247\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1247\">#1247</a></a></li>\n<li>Correct email address in PyPI project metadata <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1257\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1257\">#1257</a></a></li>\n<li>Adjust Harness secret behaviour to align with Juju in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1248\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1248\">#1248</a></a></li>\n</ul>\n\n<h2>Tests</h2>\n\n<ul>\n<li>Fix TypeError when running test.pebble_cli in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1245\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1245\">#1245</a></a></li>\n<li>Properly clean up after running setup_root_logging in test_log in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1259\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1259\">#1259</a></a></li>\n<li>Verify that defer() is not usable on stop,remove,secret-expired,secret-rotate in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1233\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1233\">#1233</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Fix HACKING.md link on PyPI, and internal links in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1261 and https://github.com/canonical/operator/pull/1236\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1236\">#1236</a></a></li>\n<li>Add a section to HACKING.md on PR titles (commit messages to main) in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1252\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1252\">#1252</a></a></li>\n<li>Add release step to update pinned charm tests in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1213\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1213\">#1213</a></a></li>\n<li>Add a security policy in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1266\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1266\">#1266</a></a></li>\n</ul>\n\n<h2>CI</h2>\n\n<ul>\n<li>Only run tests once on push to PR in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1242\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1242\">#1242</a></a></li>\n<li>Validate PR title against conventional commit rules in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1262\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1262\">#1262</a></a></li>\n<li>Only update ops, not all dependencies, in charm tests in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1275\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1275\">#1275</a></a></li>\n<li>Add artefact attestation in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1267\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1267\">#1267</a></a></li>\n</ul>\n\n<p>Thanks go to the members of the Canonical security teams who helped out putting the security policy together!</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.14.0...2.15.0\">https://github.com/canonical/operator/compare/2.14.0&hellip;2.15.0</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/untagged-03a19517fb37b1b8da97",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.15.0...main"
+               },
                {
                   "id": 157900718,
                   "version": "2.14.0",
@@ -2189,23 +2198,11 @@
                   "body": "<p>The main feature this release is the ability to work with user secrets (secrets that a Juju admin adds to the model) in Harness. You&rsquo;ll want to start with the new <a href=\"https://ops.readthedocs.io/en/latest/#ops.testing.Harness.add_user_secret\"><code>add_user_secret()</code> method</a> and from there can mostly manage them in the same way as application secrets.</p>\n\n<p>Note that one of the fixes corrects the type of config values, which were previously strongly typed as <code>str</code>, when they may be <code>int</code>, <code>float</code>, <code>bool</code>, or <code>str</code>. This may break your existing type checks, although we have endeavoured to reach out preemptively with PRs to address this where possible.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Add support for user secrets in Harness in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1176\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1176\">#1176</a></a></li>\n<li>Add <code>pebble.CheckInfo.change_id</code> field in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1197\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1197\">#1197</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Correct the model config types in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1183\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1183\">#1183</a></a></li>\n<li>In Harness, only inspect the source file if it will be used - this fixes using Harness in a Python REPL in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1181\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1181\">#1181</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Update publishing a release in HACKING.md in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1173\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1173\">#1173</a></a></li>\n<li>Add <code>tox -e docs-deps</code> to compile requirements.txt in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1172\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1172\">#1172</a></a></li>\n<li>Update doc to note deprecated functionality in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1178\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1178\">#1178</a></a></li>\n</ul>\n\n<h2>Tests</h2>\n\n<ul>\n<li>First stage of converting tests from unittest to pytest in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1191, https://github.com/canonical/operator/pull/1192, https://github.com/canonical/operator/pull/1196, https://github.com/canonical/operator/pull/1193, and https://github.com/canonical/operator/pull/1195\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1195\">#1195</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.12.0...2.13.0\">https://github.com/canonical/operator/compare/2.12.0&hellip;2.13.0</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.13.0",
                   "compareUrl": "https://github.com/canonical/operator/compare/2.13.0...main"
-               },
-               {
-                  "id": 148797379,
-                  "version": "2.12.0",
-                  "timestamp": 1711603921,
-                  "title": "2.12.0 Support getting cloud specs via the credential-get hook tool, and other improvements.",
-                  "body": "<p>This release adds a new model method, <code>get_cloud_spec</code>, that returns information about the cloud where the charm is deployed. This may also include credentials that can be used by the charm to interact directly with the cloud, where Juju does not yet provide sufficient modelling. If your charm is currently using the <code>credential-get</code> tool directly, you can now make use of this native support in ops. Note that this functionality is only available on machine charms.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Added <code>Model.get_cloud_spec</code> which uses the <code>credential-get</code> hook tool to get details of the cloud where the model is deployed <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1152\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1152\">#1152</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Add a consistency check and default network to <code>add_relation</code> by <a target=\"_blank\" href=\"https://github.com/PietroPasotti\">@PietroPasotti</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1138\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1138\">#1138</a></a></li>\n<li>Warn when an observer weakref is lost by <a target=\"_blank\" href=\"https://github.com/PietroPasotti\">@PietroPasotti</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1142\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1142\">#1142</a></a></li>\n<li>Update Pebble Notices <code>get_notices</code> parameter name to <code>users=all</code> (previously <code>select=all</code>) <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1146\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1146\">#1146</a></a></li>\n<li>More robust validation of observer signatures <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1147\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1147\">#1147</a></a></li>\n<li>Fix attaching storage in Harness before <code>begin</code> <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1150\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1150\">#1150</a></a></li>\n<li>Change <code>Model.relation.app</code> type from <code>Application|None</code> to <code>Application</code> <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1151\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1151\">#1151</a></a></li>\n<li>Fixed an issue where <code>pebble.Client.exec</code> might leak a <code>socket.timeout</code> (<code>builtins.TimeoutError</code>) exception <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1155\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1155\">#1155</a></a></li>\n<li>Don&rsquo;t special-case <code>get_relation</code> behaviour in <code>leader-elected</code> <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1156\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1156\">#1156</a></a></li>\n<li>Accept <code>type: secret</code> for config options by <a target=\"_blank\" href=\"https://github.com/jameinel\">@jameinel</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1167\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1167\">#1167</a></a></li>\n</ul>\n\n<h2>Refactoring</h2>\n\n<ul>\n<li>Refactor main.py, creating a new <code>_Manager</code> class by <a target=\"_blank\" href=\"https://github.com/PietroPasotti\">@PietroPasotti</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1085\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1085\">#1085</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Use &ldquo;integrate with&rdquo; rather than &ldquo;relate to&rdquo; <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1145\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1145\">#1145</a></a></li>\n<li>Updated code examples in the docstring of <code>ops.testing</code> from unittest to pytest style <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1157\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1157\">#1157</a></a></li>\n<li>Add peer relation details in <code>Harness.add_relation</code> docstring <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1168\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1168\">#1168</a></a></li>\n<li>Update Read the Docs Sphinx Furo theme to use Canonical&rsquo;s latest styling <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1163, https://github.com/canonical/operator/pull/1164, https://github.com/canonical/operator/pull/1165\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1165\">#1165</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<p>Thanks <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> for your first contributions, and welcome to the team!</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.11.0...2.12.0\">https://github.com/canonical/operator/compare/2.11.0&hellip;2.12.0</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.12.0",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.12.0...main"
                }
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/operator/actions/workflows/framework-tests.yaml",
-               "https://github.com/canonical/operator/actions/workflows/publish.yml"
-            ],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -12840,9 +12837,18 @@
          },
          {
             "name": "sdcore-amf-k8s-operator",
-            "newCommits": 69,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
             "releases": [
+               {
+                  "id": 162661345,
+                  "version": "rev445",
+                  "timestamp": 1719446829,
+                  "title": "Revision 445",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.2\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 00:28 UTC on 27 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump urllib3 from 2.2.1 to 2.2.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/290\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/290\">#290</a></a></li>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/294\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/294\">#294</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev435...rev445\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev435&hellip;rev445</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev445",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev445...main"
+               },
                {
                   "id": 162059467,
                   "version": "rev444",
@@ -12860,15 +12866,6 @@
                   "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-4-10&rsquo; at 12:37 UTC on 24 Jun 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev442...rev443\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev442&hellip;rev443</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev443",
                   "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev443...main"
-               },
-               {
-                  "id": 162048810,
-                  "version": "rev442",
-                  "timestamp": 1719231174,
-                  "title": "Revision 442",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 12:35 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.3 to 7.5.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/292\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/292\">#292</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev438...rev442\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev438&hellip;rev442</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev442",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev442...main"
                }
             ],
             "tags": null,
@@ -12976,9 +12973,18 @@
          },
          {
             "name": "sdcore-ausf-k8s-operator",
-            "newCommits": 49,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-ausf-k8s-operator",
             "releases": [
+               {
+                  "id": 162661581,
+                  "version": "rev317",
+                  "timestamp": 1719447017,
+                  "title": "Revision 317",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.1\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 00:30 UTC on 27 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/222\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/222\">#222</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev309...rev317\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev309&hellip;rev317</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev317",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev317...main"
+               },
                {
                   "id": 162049803,
                   "version": "rev316",
@@ -12996,15 +13002,6 @@
                   "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 10:35 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.4.9 to 0.4.10 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/221\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/221\">#221</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev310...rev315\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev310&hellip;rev315</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev315",
                   "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev315...main"
-               },
-               {
-                  "id": 162024443,
-                  "version": "rev314",
-                  "timestamp": 1719224259,
-                  "title": "Revision 314",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-5-4&rsquo; at 10:35 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.4.9 to 0.4.10 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/221\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/221\">#221</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev311...rev314\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev311&hellip;rev314</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev314",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev314...main"
                }
             ],
             "tags": null,
@@ -13704,9 +13701,18 @@
          },
          {
             "name": "sdcore-nssf-k8s-operator",
-            "newCommits": 49,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-nssf-k8s-operator",
             "releases": [
+               {
+                  "id": 162661705,
+                  "version": "rev266",
+                  "timestamp": 1719446945,
+                  "title": "Revision 266",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.1\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 00:32 UTC on 27 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/216\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/216\">#216</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev256...rev266\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev256&hellip;rev266</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev266",
+                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev266...main"
+               },
                {
                   "id": 162058999,
                   "version": "rev265",
@@ -13724,15 +13730,6 @@
                   "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-4-10&rsquo; at 12:41 UTC on 24 Jun 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev263...rev264\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev263&hellip;rev264</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev264",
                   "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev264...main"
-               },
-               {
-                  "id": 162049784,
-                  "version": "rev263",
-                  "timestamp": 1719231534,
-                  "title": "Revision 263",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 12:40 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.3 to 7.5.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/217\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/217\">#217</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev259...rev263\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev259&hellip;rev263</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev263",
-                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev263...main"
                }
             ],
             "tags": null,
@@ -13840,9 +13837,18 @@
          },
          {
             "name": "sdcore-pcf-k8s-operator",
-            "newCommits": 51,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-pcf-k8s-operator",
             "releases": [
+               {
+                  "id": 162663241,
+                  "version": "rev335",
+                  "timestamp": 1719447340,
+                  "title": "Revision 335",
+                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.2\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 00:49 UTC on 27 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/228\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/228\">#228</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev323...rev335\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev323&hellip;rev335</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev335",
+                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev335...main"
+               },
                {
                   "id": 162049868,
                   "version": "rev334",
@@ -13860,15 +13866,6 @@
                   "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.0\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-5-4&rsquo; at 10:38 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.4.9 to 0.4.10 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/229\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/229\">#229</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev331...rev333\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev331&hellip;rev333</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev333",
                   "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev333...main"
-               },
-               {
-                  "id": 162024781,
-                  "version": "rev332",
-                  "timestamp": 1719224233,
-                  "title": "Revision 332",
-                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.0\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 10:37 UTC on 24 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.4.9 to 0.4.10 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/229\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/229\">#229</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev328...rev332\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev328&hellip;rev332</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev332",
-                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev332...main"
                }
             ],
             "tags": null,
@@ -14178,9 +14175,18 @@
          },
          {
             "name": "sdcore-udm-k8s-operator",
-            "newCommits": 50,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-udm-k8s-operator",
             "releases": [
+               {
+                  "id": 162661798,
+                  "version": "rev292",
+                  "timestamp": 1719446895,
+                  "title": "Revision 292",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.2\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 00:33 UTC on 27 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev282...rev292\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev282&hellip;rev292</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev292",
+                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev292...main"
+               },
                {
                   "id": 162239982,
                   "version": "rev291",
@@ -14198,15 +14204,6 @@
                   "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-4-10&rsquo; at 08:12 UTC on 25 Jun 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev289...rev290\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev289&hellip;rev290</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev290",
                   "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev290...main"
-               },
-               {
-                  "id": 162235228,
-                  "version": "rev289",
-                  "timestamp": 1719301930,
-                  "title": "Revision 289",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 08:11 UTC on 25 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.3 to 7.5.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/213\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/213\">#213</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev285...rev289\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev285&hellip;rev289</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev289",
-                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev289...main"
                }
             ],
             "tags": null,
@@ -15026,9 +15023,18 @@
          },
          {
             "name": "sdcore-udr-k8s-operator",
-            "newCommits": 53,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
+               {
+                  "id": 162661810,
+                  "version": "rev301",
+                  "timestamp": 1719447146,
+                  "title": "Revision 301",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.1\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 00:33 UTC on 27 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/229\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/229\">#229</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev292...rev301\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev292&hellip;rev301</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev301",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev301...main"
+               },
                {
                   "id": 162239942,
                   "version": "rev300",
@@ -15046,15 +15052,6 @@
                   "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-4-10&rsquo; at 08:11 UTC on 25 Jun 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev298...rev299\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev298&hellip;rev299</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev299",
                   "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev299...main"
-               },
-               {
-                  "id": 162235177,
-                  "version": "rev298",
-                  "timestamp": 1719301904,
-                  "title": "Revision 298",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 39</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 08:10 UTC on 25 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.3 to 7.5.4 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/227\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/227\">#227</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev294...rev298\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev294&hellip;rev298</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev298",
-                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev298...main"
                }
             ],
             "tags": null,
