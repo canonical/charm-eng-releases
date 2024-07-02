@@ -2219,9 +2219,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 6,
+            "newCommits": 0,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 163444965,
+                  "version": "v1.13.0",
+                  "timestamp": 1719877946,
+                  "title": "v1.13.0",
+                  "body": "<p>This release includes a few minor fixes, notably disabling <code>--verbose</code> for <code>pebble enter exec</code> now that <code>--verbose</code> <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/rockcraft/pull/495&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/495&quot;&gt;#495&lt;/a&gt;&lt;/a\">has been removed</a> from the default Rockcraft entrypoint.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: work around issue with user.Lookup not returning UnknownUserError in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/427\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/427\">#427</a></a></li>\n<li>fix(daemon): turn off net/http panic recovery in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/350\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/350\">#350</a></a></li>\n<li>fix(enter): block &ndash;verbose for exec subcommand by <a target=\"_blank\" href=\"https://github.com/rebornplusplus\">@rebornplusplus</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/394\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/394\">#394</a></a></li>\n<li>docs: a new getting started tutorial for pebble in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/421\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/421\">#421</a></a></li>\n<li>docs: create reusable content for how to install guide and the tutorial in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/433\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/433\">#433</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.12.0...v1.13.0\">https://github.com/canonical/pebble/compare/v1.12.0&hellip;v1.13.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.13.0",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.13.0...master"
+               },
                {
                   "id": 159581682,
                   "version": "v1.12.0",
@@ -2239,15 +2248,6 @@
                   "body": "<p>The highlight of this release is that health checks were reimplemented as Changes and Tasks, making it possible to introspect and debug check failures (<a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/409\">#409</a>).</p>\n\n<p>Also included are the security fixes from <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/406\">#406</a>, which were also released in the v1.10.2 patch release. In addition, there are a couple of minor fixes for layer validation and client ID validation from first-time contributor <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a>.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(client): add change-update notice type by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/401\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/401\">#401</a></a></li>\n<li>fix(daemon): require admin access for POSTs and file pull API by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/406\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/406\">#406</a></a></li>\n<li>feat: make layers with label prefix &ldquo;pebble-&rdquo; reserved by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/403\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/403\">#403</a></a></li>\n<li>feat: client side change id validation by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/404\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/404\">#404</a></a></li>\n<li>chore: use RFC2602 domain (example.com) in custom notice examples by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/407\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/407\">#407</a></a></li>\n<li>feat: perform health checks via changes and tasks by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/409\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/409\">#409</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.10.0...v1.11.0\">https://github.com/canonical/pebble/compare/v1.10.0&hellip;v1.11.0</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.11.0",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.11.0...master"
-               },
-               {
-                  "id": 149509617,
-                  "version": "v1.10.2",
-                  "timestamp": 1712117649,
-                  "title": "v1.10.2: require admin access for POSTs and file pull API",
-                  "body": "<p>This addresses the following security issues:</p>\n\n<ul>\n<li>Lock down all POSTs/writes to require admin.</li>\n<li>Lock down the files &ldquo;pull&rdquo; API to require admin.</li>\n<li>Lock down the task-websocket endpoint to admin.</li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.10.1...v1.10.2\">https://github.com/canonical/pebble/compare/v1.10.1&hellip;v1.10.2</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.10.2",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.10.2...master"
                }
             ],
             "tags": null,
@@ -2300,71 +2300,71 @@
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 697,
-                     "timestamp": 1717981693,
+                     "revision": 734,
+                     "timestamp": 1719879515,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 696,
-                     "timestamp": 1717981702,
+                     "revision": 735,
+                     "timestamp": 1719879512,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 694,
-                     "timestamp": 1717981694,
+                     "revision": 736,
+                     "timestamp": 1719879508,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 698,
-                     "timestamp": 1717981697,
+                     "revision": 737,
+                     "timestamp": 1719879508,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 695,
-                     "timestamp": 1717981696,
+                     "revision": 738,
+                     "timestamp": 1719879505,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 728,
-                     "timestamp": 1719777756,
+                     "revision": 734,
+                     "timestamp": 1719879459,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 727,
-                     "timestamp": 1719777752,
+                     "revision": 735,
+                     "timestamp": 1719879464,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 724,
-                     "timestamp": 1719777742,
+                     "revision": 736,
+                     "timestamp": 1719879467,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 725,
-                     "timestamp": 1719777746,
+                     "revision": 737,
+                     "timestamp": 1719879470,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 726,
-                     "timestamp": 1719777749,
+                     "revision": 738,
+                     "timestamp": 1719879477,
                      "base": "bare"
                   }
                ],
@@ -25326,6 +25326,24 @@
             "url": "https://github.com/canonical/gateway-api-integrator-operator",
             "releases": [
                {
+                  "id": 163442433,
+                  "version": "rev20",
+                  "timestamp": 1719876636,
+                  "title": "Revision 20",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:31 UTC on 1 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.8.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/41\">#41</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev19...rev20\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev19&hellip;rev20</a></p>\n",
+                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev20",
+                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev20...main"
+               },
+               {
+                  "id": 163441763,
+                  "version": "rev19",
+                  "timestamp": 1719876066,
+                  "title": "Revision 19",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:22 UTC on 1 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\">#32</a></a></li>\n<li>Revert the changes that cleared the charm&rsquo;s docs so that discourse-gatekeeper works correctly by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/42\">#42</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev17...rev19\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev17&hellip;rev19</a></p>\n",
+                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev19",
+                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev19...main"
+               },
+               {
                   "id": 163438923,
                   "version": "rev18",
                   "timestamp": 1719873949,
@@ -25333,24 +25351,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:46 UTC on 1 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev17...rev18\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev17&hellip;rev18</a></p>\n",
                   "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev18",
                   "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev18...main"
-               },
-               {
-                  "id": 163378748,
-                  "version": "rev17",
-                  "timestamp": 1719847695,
-                  "title": "Revision 17",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:29 UTC on 1 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Validate gateway class in charm state by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/29\">#29</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev16...rev17\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev16&hellip;rev17</a></p>\n",
-                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev17",
-                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev17...main"
-               },
-               {
-                  "id": 163327038,
-                  "version": "rev16",
-                  "timestamp": 1719832688,
-                  "title": "Revision 16",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:19 UTC on 1 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/is-devops-bot\">@is-devops-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/35\">#35</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev15...rev16\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev15&hellip;rev16</a></p>\n",
-                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev16",
-                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev16...main"
                }
             ],
             "tags": null,
