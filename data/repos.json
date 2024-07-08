@@ -2303,9 +2303,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 4,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 164314996,
+                  "version": "v1.14.0",
+                  "timestamp": 1720394390,
+                  "title": "v1.14.0",
+                  "body": "<p>This is a very small release, mainly so that we can start using the check-name feature in Juju.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(planstate): don&rsquo;t hold planLock while calling plan-changed listeners by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/436\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/436\">#436</a></a></li>\n<li>docs: various improvements to &ldquo;service dependencies&rdquo; section by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/442\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/442\">#442</a></a></li>\n<li>feat: include check name in notice data for perform-check and recover-check by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/444\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/444\">#444</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.13.0...v1.14.0\">https://github.com/canonical/pebble/compare/v1.13.0&hellip;v1.14.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.14.0",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.14.0...master"
+               },
                {
                   "id": 163444965,
                   "version": "v1.13.0",
@@ -2323,15 +2332,6 @@
                   "body": "<p>One change to fix a significant panic in the new health checks system (<a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/415\">#415</a>), a fix for <code>mkdir</code> to chmod as expected, and several minor changes.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(checkstate): ignore and abort carryover changes by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/415\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/415\">#415</a></a></li>\n<li>feat(personality): Allow state filename customization by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/416\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/416\">#416</a></a></li>\n<li>docs: starter pack by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/417\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/417\">#417</a></a></li>\n<li>docs: splitting readme into pebble docs with the diataxis method by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/419\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/419\">#419</a></a></li>\n<li>feat: unified osutil.Mkdir API with options by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/418\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/418\">#418</a></a></li>\n<li>fix: note exist-ok behaviour of &ldquo;mkdir -p&rdquo; in argument help by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/424\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/424\">#424</a></a></li>\n<li>fix: avoid legacy Snapcraft location for LP creds by <a target=\"_blank\" href=\"https://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/425\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/425\">#425</a></a></li>\n<li>feat(osutil.Mkdir): add the chmod flag by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/423\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/423\">#423</a></a></li>\n<li>chore: update golang.org/x dependencies by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/426\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/426\">#426</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.11.0...v1.12.0\">https://github.com/canonical/pebble/compare/v1.11.0&hellip;v1.12.0</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.12.0",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.12.0...master"
-               },
-               {
-                  "id": 152912562,
-                  "version": "v1.11.0",
-                  "timestamp": 1714096201,
-                  "title": "v1.11.0: health checks implemented with Changes and Tasks",
-                  "body": "<p>The highlight of this release is that health checks were reimplemented as Changes and Tasks, making it possible to introspect and debug check failures (<a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/409\">#409</a>).</p>\n\n<p>Also included are the security fixes from <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/406\">#406</a>, which were also released in the v1.10.2 patch release. In addition, there are a couple of minor fixes for layer validation and client ID validation from first-time contributor <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a>.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(client): add change-update notice type by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/401\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/401\">#401</a></a></li>\n<li>fix(daemon): require admin access for POSTs and file pull API by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/406\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/406\">#406</a></a></li>\n<li>feat: make layers with label prefix &ldquo;pebble-&rdquo; reserved by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/403\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/403\">#403</a></a></li>\n<li>feat: client side change id validation by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/404\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/404\">#404</a></a></li>\n<li>chore: use RFC2602 domain (example.com) in custom notice examples by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/407\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/407\">#407</a></a></li>\n<li>feat: perform health checks via changes and tasks by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/409\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/409\">#409</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.10.0...v1.11.0\">https://github.com/canonical/pebble/compare/v1.10.0&hellip;v1.11.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.11.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.11.0...master"
                }
             ],
             "tags": null,
@@ -2384,71 +2384,71 @@
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 734,
-                     "timestamp": 1719879515,
+                     "revision": 766,
+                     "timestamp": 1720395777,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 735,
-                     "timestamp": 1719879512,
+                     "revision": 764,
+                     "timestamp": 1720395780,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 736,
-                     "timestamp": 1719879508,
+                     "revision": 767,
+                     "timestamp": 1720395781,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 737,
-                     "timestamp": 1719879508,
+                     "revision": 765,
+                     "timestamp": 1720395789,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 738,
-                     "timestamp": 1719879505,
+                     "revision": 768,
+                     "timestamp": 1720395791,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 758,
-                     "timestamp": 1720154089,
+                     "revision": 769,
+                     "timestamp": 1720396998,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 756,
-                     "timestamp": 1720154082,
+                     "revision": 772,
+                     "timestamp": 1720397010,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 755,
-                     "timestamp": 1720154078,
+                     "revision": 773,
+                     "timestamp": 1720397014,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 754,
-                     "timestamp": 1720154075,
+                     "revision": 771,
+                     "timestamp": 1720397006,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 757,
-                     "timestamp": 1720154086,
+                     "revision": 770,
+                     "timestamp": 1720397003,
                      "base": "bare"
                   }
                ],
@@ -8981,7 +8981,7 @@
          },
          {
             "name": "identity-platform-admin-ui",
-            "newCommits": 10,
+            "newCommits": 13,
             "url": "https://github.com/canonical/identity-platform-admin-ui",
             "releases": [
                {
@@ -19177,6 +19177,15 @@
             "url": "https://github.com/canonical/charmcraftcache-hub",
             "releases": [
                {
+                  "id": 164318348,
+                  "version": "build-1720398697-v3",
+                  "timestamp": 1720097987,
+                  "title": "build-1720398697-v3",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/untagged-1feb2eea6c722c218ade",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1720398697-v3...main"
+               },
+               {
                   "id": 164273873,
                   "version": "build-1720312201-v3",
                   "timestamp": 1720097987,
@@ -19193,15 +19202,6 @@
                   "body": "",
                   "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1720225941-v3",
                   "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1720225941-v3...main"
-               },
-               {
-                  "id": 164080702,
-                  "version": "build-1720139450-v3",
-                  "timestamp": 1720097987,
-                  "title": "build-1720139450-v3",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1720139450-v3",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1720139450-v3...main"
                }
             ],
             "tags": null,
