@@ -2247,9 +2247,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 8,
+            "newCommits": 0,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 165555356,
+                  "version": "v1.15.0",
+                  "timestamp": 1721096710,
+                  "title": "v1.15.0: Identities, Go 1.22",
+                  "body": "<p>This version adds support for the Pebble Identities features (described in <a href=\"https://docs.google.com/document/d/1nASgUt-piV94i1cpFsbEPRk_xFbZt8AskgL97gh1Dgg/edit\">OP043</a>), and updates the Go version when building binaries and Snaps from Go 1.20 to Go 1.22.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(state): core of reading/writing identities in state by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/428\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/428\">#428</a></a></li>\n<li>feat(daemon): identities API endpoints by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/429\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/429\">#429</a></a></li>\n<li>feat(client): Go client for identities by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/430\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/430\">#430</a></a></li>\n<li>feat(cli): identities CLI commands by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/431\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/431\">#431</a></a></li>\n<li>fix(snap): build snap with Go 1.22 to fix CVE-2024-24790 by <a target=\"_blank\" href=\"https://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/448\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/448\">#448</a></a></li>\n<li>feat(daemon): use identities to auth API requests by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/434\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/434\">#434</a></a></li>\n<li>chore: use Go 1.22 (supported), in go.mod and binary builds by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/449\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/449\">#449</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.14.0...v1.15.0\">https://github.com/canonical/pebble/compare/v1.14.0&hellip;v1.15.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.15.0",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.15.0...master"
+               },
                {
                   "id": 165540716,
                   "version": "v1.14.1",
@@ -2267,15 +2276,6 @@
                   "body": "<p>This is a very small release, mainly so that we can start using the check-name feature in Juju.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(planstate): don&rsquo;t hold planLock while calling plan-changed listeners by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/436\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/436\">#436</a></a></li>\n<li>docs: various improvements to &ldquo;service dependencies&rdquo; section by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/442\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/442\">#442</a></a></li>\n<li>feat: include check name in notice data for perform-check and recover-check by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/444\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/444\">#444</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.13.0...v1.14.0\">https://github.com/canonical/pebble/compare/v1.13.0&hellip;v1.14.0</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.14.0",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.14.0...master"
-               },
-               {
-                  "id": 163444965,
-                  "version": "v1.13.0",
-                  "timestamp": 1719877946,
-                  "title": "v1.13.0",
-                  "body": "<p>This release includes a few minor fixes, notably disabling <code>--verbose</code> for <code>pebble enter exec</code> now that <code>--verbose</code> <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/rockcraft/pull/495&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/495&quot;&gt;#495&lt;/a&gt;&lt;/a\">has been removed</a> from the default Rockcraft entrypoint.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: work around issue with user.Lookup not returning UnknownUserError in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/427\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/427\">#427</a></a></li>\n<li>fix(daemon): turn off net/http panic recovery in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/350\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/350\">#350</a></a></li>\n<li>fix(enter): block &ndash;verbose for exec subcommand by <a target=\"_blank\" href=\"https://github.com/rebornplusplus\">@rebornplusplus</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/394\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/394\">#394</a></a></li>\n<li>docs: a new getting started tutorial for pebble in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/421\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/421\">#421</a></a></li>\n<li>docs: create reusable content for how to install guide and the tutorial in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/433\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/433\">#433</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.12.0...v1.13.0\">https://github.com/canonical/pebble/compare/v1.12.0&hellip;v1.13.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.13.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.13.0...master"
                }
             ],
             "tags": null,
@@ -26211,6 +26211,15 @@
             "url": "https://github.com/canonical/github-runner-operator",
             "releases": [
                {
+                  "id": 165556116,
+                  "version": "rev217",
+                  "timestamp": 1721097631,
+                  "title": "Revision 217",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:41 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: remove config opts, docs: LXD naming limit by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/322\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/322\">#322</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev215...rev217\">https://github.com/canonical/github-runner-operator/compare/rev215&hellip;rev217</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev217",
+                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev217...main"
+               },
+               {
                   "id": 165551380,
                   "version": "rev215",
                   "timestamp": 1721093757,
@@ -26227,15 +26236,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:52 UTC on 15 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Weekly test for legacy features by <a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/311\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/311\">#311</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev213...rev214\">https://github.com/canonical/github-runner-operator/compare/rev213&hellip;rev214</a></p>\n",
                   "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev214",
                   "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev214...main"
-               },
-               {
-                  "id": 165250650,
-                  "version": "rev213",
-                  "timestamp": 1720815879,
-                  "title": "Revision 213",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:25 UTC on 12 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Grafana Dashboard: Combine 3 queries into one by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/317\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/317\">#317</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev212...rev213\">https://github.com/canonical/github-runner-operator/compare/rev212&hellip;rev213</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev213",
-                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev213...main"
                }
             ],
             "tags": null,
@@ -26292,8 +26292,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 215,
-                     "timestamp": 1721093820,
+                     "revision": 217,
+                     "timestamp": 1721097715,
                      "base": ""
                   },
                   {
