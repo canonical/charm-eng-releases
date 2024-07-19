@@ -6579,15 +6579,15 @@
                   {
                      "track": "1.9",
                      "channel": "beta",
-                     "revision": 418,
-                     "timestamp": 1720816585,
+                     "revision": 420,
+                     "timestamp": 1721376574,
                      "base": ""
                   },
                   {
                      "track": "1.9",
                      "channel": "edge",
-                     "revision": 417,
-                     "timestamp": 1720816557,
+                     "revision": 419,
+                     "timestamp": 1721376603,
                      "base": ""
                   },
                   {
@@ -7368,15 +7368,15 @@
                   {
                      "track": "1.9",
                      "channel": "beta",
-                     "revision": 418,
-                     "timestamp": 1720816585,
+                     "revision": 420,
+                     "timestamp": 1721376574,
                      "base": ""
                   },
                   {
                      "track": "1.9",
                      "channel": "edge",
-                     "revision": 417,
-                     "timestamp": 1720816557,
+                     "revision": 419,
+                     "timestamp": 1721376603,
                      "base": ""
                   },
                   {
@@ -10967,7 +10967,7 @@
          },
          {
             "name": "k8s-dqlite",
-            "newCommits": 4,
+            "newCommits": 5,
             "url": "https://github.com/canonical/k8s-dqlite",
             "releases": [
                {
@@ -11075,6 +11075,39 @@
             "ciActions": [
                "https://github.com/canonical/k8s-snap/actions/workflows/integration.yaml"
             ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "k8s-test-harness",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/k8s-test-harness",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "27998f4682fd942c0db7fd365c191a961a374cd7",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1721375814,
+                  "message": "<p>Apply tox -e format and tox -e lint changes (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/19\">#19</a>)</p>\n\n<p>Currently, the CI jobs fail because of these issues.</p>\n",
+                  "url": "https://github.com/canonical/k8s-test-harness/commit/27998f4682fd942c0db7fd365c191a961a374cd7"
+               },
+               {
+                  "sha": "00455749b025baa977ee61fdc2f083aef6f7b174",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1721375509,
+                  "message": "<p>Adds docker-related utils (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/11\">#11</a>)</p>\n\n<p>These functions run the given commands in the given docker image.</p>\n",
+                  "url": "https://github.com/canonical/k8s-test-harness/commit/00455749b025baa977ee61fdc2f083aef6f7b174"
+               },
+               {
+                  "sha": "9f694d8291e88d97feb5ba7d2eafefa9d280973c",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1721375246,
+                  "message": "<p>Adds helm install command util (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/10\">#10</a>)</p>\n\n<p>Adds an util function that generates a helm install command for the\ngiven helm chart.</p>\n",
+                  "url": "https://github.com/canonical/k8s-test-harness/commit/9f694d8291e88d97feb5ba7d2eafefa9d280973c"
+               }
+            ],
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -13274,25 +13307,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "b37daa09fe34002a0344d977a1c9293c59eca3f5",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1721374918,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/velero-rocks/pull/5\">#5</a> from claudiubelu/adds-tests</p>\n\n<p>Adds tox.ini and basic rock sanity tests</p>\n",
+                  "url": "https://github.com/canonical/velero-rocks/commit/b37daa09fe34002a0344d977a1c9293c59eca3f5"
+               },
+               {
+                  "sha": "6655ca8249f90309abb67d8ae72f59666183b48a",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1720598243,
+                  "message": "<p>Adds tox.ini and basic rock sanity tests</p>\n\n<p>Adds the following tox targets: format, lint, sanity, integration.</p>\n\n<p>Adds basic rock tests, checking that the expected files exist in the\nrock, and checking the added executables outputs.</p>\n\n<p>Note that Pebble was recently updated, no longer allowing exec after\n&ndash;verbose (which is in the entrypoint). Using the &ndash;entrypoint docker\nrun parameter instead.</p>\n",
+                  "url": "https://github.com/canonical/velero-rocks/commit/6655ca8249f90309abb67d8ae72f59666183b48a"
+               },
+               {
                   "sha": "1cf4150c32d890e6f191d9f596f9d8f9a8c9b32f",
                   "author": "Claudiu Belu",
                   "timestamp": 1721204247,
                   "message": "<p>Add kubectl and velero rock</p>\n\n<p>Kubectl Rock is built from kubernetes/kubernetes repository.\nVelero Rock is based on <a href=\"https://github.com/vmware-tanzu/velero/blob/v1.13.2/Dockerfile\">https://github.com/vmware-tanzu/velero/blob/v1.13.2/Dockerfile</a></p>\n",
                   "url": "https://github.com/canonical/velero-rocks/commit/1cf4150c32d890e6f191d9f596f9d8f9a8c9b32f"
-               },
-               {
-                  "sha": "db0bbed58bf1a62ea551269a830c506fc943683d",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1720700978,
-                  "message": "<p>use self-hosted arm runners (<a target=\"_blank\" href=\"https://github.com/canonical/velero-rocks/pull/3\">#3</a>)</p>\n",
-                  "url": "https://github.com/canonical/velero-rocks/commit/db0bbed58bf1a62ea551269a830c506fc943683d"
-               },
-               {
-                  "sha": "e2a36c86890a7295e5608db8f2a8cc393fd55e5b",
-                  "author": "Berkay Tekin Öz",
-                  "timestamp": 1720523136,
-                  "message": "<p>Add rock publishing workflows (<a target=\"_blank\" href=\"https://github.com/canonical/velero-rocks/pull/1\">#1</a>)</p>\n",
-                  "url": "https://github.com/canonical/velero-rocks/commit/e2a36c86890a7295e5608db8f2a8cc393fd55e5b"
                }
             ],
             "ciActions": [],
@@ -13307,6 +13340,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "f73a54f4dc37d7fb77083416ca6594e3065a42b0",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1721376111,
+                  "message": "<p>Adds other versions of Whereabouts (<a target=\"_blank\" href=\"https://github.com/canonical/whereabouts-rock/pull/9\">#9</a>)</p>\n\n<p>Added support for versions 0.5.4 and 0.6.1. Added rockcraft.yaml\nfiles based on their Dockerfiles.</p>\n\n<p>Adds /host folder in the rocks. The /install-cni.sh script requires\nthis folder. It does mkdir it, but the bitnami helm chart creates\nthe daemonsets with read-only filesystem, making it impossible to\ncreate the folder.</p>\n",
+                  "url": "https://github.com/canonical/whereabouts-rock/commit/f73a54f4dc37d7fb77083416ca6594e3065a42b0"
+               },
+               {
                   "sha": "d2cbe773c034d54fc12914a356acb3f41b818719",
                   "author": "Claudiu Belu",
                   "timestamp": 1721204965,
@@ -13319,13 +13359,6 @@
                   "timestamp": 1721204728,
                   "message": "<p>Adds /host folder in the rock (<a target=\"_blank\" href=\"https://github.com/canonical/whereabouts-rock/pull/8\">#8</a>)</p>\n\n<p>The /install-cni.sh script requires this folder. It does mkdir it,\nbut the bitnami helm chart creates the daemonsets with read-only\nfilesystem, making it impossible to create the folder.</p>\n",
                   "url": "https://github.com/canonical/whereabouts-rock/commit/961365f00d200646ee6d8f745e81296102b993b0"
-               },
-               {
-                  "sha": "c015edaec94547d8bf325ced2a77ef681487c7bb",
-                  "author": "Berkay Tekin Öz",
-                  "timestamp": 1721122745,
-                  "message": "<p>Add wherabouts rock (<a target=\"_blank\" href=\"https://github.com/canonical/whereabouts-rock/pull/6\">#6</a>)</p>\n\n<ul>\n<li>Adds whereabouts rock</li>\n</ul>\n\n<p>Based on the Dockerfile: <a href=\"https://github.com/k8snetworkplumbingwg/whereabouts/blob/v0.6.3/Dockerfile\">https://github.com/k8snetworkplumbingwg/whereabouts/blob/v0.6.3/Dockerfile</a></p>\n\n<p>Using ubuntu@22.04 as a base since we&rsquo;re supposed to run\n/install-cni.sh, which needs to run commands.</p>\n\n<p>Additionally, not running as <em>daemon</em>, as it may need root access for\nsome of the operations.</p>\n\n<hr>\n\n<p>Co-authored-by: Claudiu Belu <a href=\"mailto:cbelu@cloudbasesolutions.com\">cbelu@cloudbasesolutions.com</a></p>\n",
-                  "url": "https://github.com/canonical/whereabouts-rock/commit/c015edaec94547d8bf325ced2a77ef681487c7bb"
                }
             ],
             "ciActions": [],
@@ -19226,25 +19259,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "8dbffc155765a4e1e983f07b5873b5ba9f84ed1f",
+                  "sha": "05d7facfb61317efea93a494347314cef47f7f3a",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392987,
                   "message": "<p>is</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-is-x64-postgresql-operator/commit/8dbffc155765a4e1e983f07b5873b5ba9f84ed1f"
+                  "url": "https://github.com/canonical/test-runners-2-is-x64-postgresql-operator/commit/05d7facfb61317efea93a494347314cef47f7f3a"
                },
                {
-                  "sha": "028b0b3ec377461c553c013e24aab819f46efb9f",
+                  "sha": "176fcdd0e77c23902638e73329ed9fd6c48d625d",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392904,
                   "message": "<p>amd64</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-is-x64-postgresql-operator/commit/028b0b3ec377461c553c013e24aab819f46efb9f"
+                  "url": "https://github.com/canonical/test-runners-2-is-x64-postgresql-operator/commit/176fcdd0e77c23902638e73329ed9fd6c48d625d"
                },
                {
-                  "sha": "9b32c4498bf976e31b950eb07d7f7d3dbf82c36e",
+                  "sha": "df997b2bc5122981c7855684bd41b59d903a10c8",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392885,
                   "message": "<p>workflows</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-is-x64-postgresql-operator/commit/9b32c4498bf976e31b950eb07d7f7d3dbf82c36e"
+                  "url": "https://github.com/canonical/test-runners-2-is-x64-postgresql-operator/commit/df997b2bc5122981c7855684bd41b59d903a10c8"
                }
             ],
             "ciActions": [
@@ -20712,25 +20745,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "2fba771083e4365fb40a64bf746aea4f48f0e2ec",
+                  "sha": "0b2e0632d3d1762fcf2b76244dc818a8df94699d",
                   "author": "Carl Csaposs",
                   "timestamp": 1719393135,
                   "message": "<p>is &amp; arm</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-is-arm64-postgresql-operator/commit/2fba771083e4365fb40a64bf746aea4f48f0e2ec"
+                  "url": "https://github.com/canonical/test-runners-2-is-arm64-postgresql-operator/commit/0b2e0632d3d1762fcf2b76244dc818a8df94699d"
                },
                {
-                  "sha": "8dbffc155765a4e1e983f07b5873b5ba9f84ed1f",
+                  "sha": "05d7facfb61317efea93a494347314cef47f7f3a",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392987,
                   "message": "<p>is</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-is-arm64-postgresql-operator/commit/8dbffc155765a4e1e983f07b5873b5ba9f84ed1f"
+                  "url": "https://github.com/canonical/test-runners-2-is-arm64-postgresql-operator/commit/05d7facfb61317efea93a494347314cef47f7f3a"
                },
                {
-                  "sha": "028b0b3ec377461c553c013e24aab819f46efb9f",
+                  "sha": "176fcdd0e77c23902638e73329ed9fd6c48d625d",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392904,
                   "message": "<p>amd64</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-is-arm64-postgresql-operator/commit/028b0b3ec377461c553c013e24aab819f46efb9f"
+                  "url": "https://github.com/canonical/test-runners-2-is-arm64-postgresql-operator/commit/176fcdd0e77c23902638e73329ed9fd6c48d625d"
                }
             ],
             "ciActions": [
@@ -21066,25 +21099,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "028b0b3ec377461c553c013e24aab819f46efb9f",
+                  "sha": "176fcdd0e77c23902638e73329ed9fd6c48d625d",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392904,
                   "message": "<p>amd64</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/commit/028b0b3ec377461c553c013e24aab819f46efb9f"
+                  "url": "https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/commit/176fcdd0e77c23902638e73329ed9fd6c48d625d"
                },
                {
-                  "sha": "9b32c4498bf976e31b950eb07d7f7d3dbf82c36e",
+                  "sha": "df997b2bc5122981c7855684bd41b59d903a10c8",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392885,
                   "message": "<p>workflows</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/commit/9b32c4498bf976e31b950eb07d7f7d3dbf82c36e"
+                  "url": "https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/commit/df997b2bc5122981c7855684bd41b59d903a10c8"
                },
                {
-                  "sha": "dd72f654a4d4b80bf5883ce06a0541c6aff65d23",
-                  "author": "Lucas Gameiro",
-                  "timestamp": 1721050722,
-                  "message": "<p>add libpq connection string (<a target=\"_blank\" href=\"https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/pull/527\">#527</a>)</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/commit/dd72f654a4d4b80bf5883ce06a0541c6aff65d23"
+                  "sha": "5f7fe2b1fcf8ddbe86ab31d527c60310e3875500",
+                  "author": "Dragomir Penev",
+                  "timestamp": 1721339710,
+                  "message": "<p>Always check databag (<a target=\"_blank\" href=\"https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/pull/533\">#533</a>)</p>\n",
+                  "url": "https://github.com/canonical/test-runners-2-github-x64-postgresql-operator/commit/5f7fe2b1fcf8ddbe86ab31d527c60310e3875500"
                }
             ],
             "ciActions": [
@@ -22368,25 +22401,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "87e2d8021c72c853658bde6643504b76a5828d83",
+                  "sha": "61f1fc2dd1e260330d74ed1e8b7ef74913ec2a05",
                   "author": "Carl Csaposs",
                   "timestamp": 1721215855,
                   "message": "<p>arm</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-azure-arm64-postgresql-operator/commit/87e2d8021c72c853658bde6643504b76a5828d83"
+                  "url": "https://github.com/canonical/test-runners-2-azure-arm64-postgresql-operator/commit/61f1fc2dd1e260330d74ed1e8b7ef74913ec2a05"
                },
                {
-                  "sha": "028b0b3ec377461c553c013e24aab819f46efb9f",
+                  "sha": "176fcdd0e77c23902638e73329ed9fd6c48d625d",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392904,
                   "message": "<p>amd64</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-azure-arm64-postgresql-operator/commit/028b0b3ec377461c553c013e24aab819f46efb9f"
+                  "url": "https://github.com/canonical/test-runners-2-azure-arm64-postgresql-operator/commit/176fcdd0e77c23902638e73329ed9fd6c48d625d"
                },
                {
-                  "sha": "9b32c4498bf976e31b950eb07d7f7d3dbf82c36e",
+                  "sha": "df997b2bc5122981c7855684bd41b59d903a10c8",
                   "author": "Carl Csaposs",
                   "timestamp": 1719392885,
                   "message": "<p>workflows</p>\n",
-                  "url": "https://github.com/canonical/test-runners-2-azure-arm64-postgresql-operator/commit/9b32c4498bf976e31b950eb07d7f7d3dbf82c36e"
+                  "url": "https://github.com/canonical/test-runners-2-azure-arm64-postgresql-operator/commit/df997b2bc5122981c7855684bd41b59d903a10c8"
                }
             ],
             "ciActions": [
@@ -27537,6 +27570,15 @@
             "url": "https://github.com/canonical/repo-policy-compliance",
             "releases": [
                {
+                  "id": 166190926,
+                  "version": "rev43",
+                  "timestamp": 1721375442,
+                  "title": "Revision 43",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:52 UTC on 19 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency rpds-py to v0.19.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1821\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1821\">#1821</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev42...rev43\">https://github.com/canonical/repo-policy-compliance/compare/rev42&hellip;rev43</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev43",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev43...main"
+               },
+               {
                   "id": 166185566,
                   "version": "rev42",
                   "timestamp": 1721372606,
@@ -27553,15 +27595,6 @@
                   "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:10 UTC on 19 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Catch 404 errors by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1824\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1824\">#1824</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev40...rev41\">https://github.com/canonical/repo-policy-compliance/compare/rev40&hellip;rev41</a></p>\n",
                   "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev41",
                   "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev41...main"
-               },
-               {
-                  "id": 166028981,
-                  "version": "rev40",
-                  "timestamp": 1721302925,
-                  "title": "Revision 40",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:44 UTC on 18 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add workflows for tracks support by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1823\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1823\">#1823</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1823\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1823\">#1823</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev39...rev40\">https://github.com/canonical/repo-policy-compliance/compare/rev39&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev40",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev40...main"
                }
             ],
             "tags": null,
