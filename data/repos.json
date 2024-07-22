@@ -9083,7 +9083,7 @@
          },
          {
             "name": "kratos-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/kratos-operator",
             "releases": [
                {
@@ -10270,6 +10270,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8d3de81fa49ed600442620e46641d137ea07aa83",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1721646980,
+                  "message": "<p>Refactor tests and add v1.10.1 support (<a target=\"_blank\" href=\"https://github.com/canonical/cert-manager-rock/pull/8\">#8</a>)</p>\n\n<p>We&rsquo;re adding a rock definition for cert-manager 1.10.1.</p>\n\n<p>At the same time, we&rsquo;re refactoring the tests to use the updated\ntest harness.</p>\n",
+                  "url": "https://github.com/canonical/cert-manager-rock/commit/8d3de81fa49ed600442620e46641d137ea07aa83"
+               },
+               {
                   "sha": "655db579265f599516f2ef5df01b43a45ead4f1c",
                   "author": "Berkay Tekin Öz",
                   "timestamp": 1720785711,
@@ -10282,13 +10289,6 @@
                   "timestamp": 1720605002,
                   "message": "<p>ROCKs for cert-manager (<a target=\"_blank\" href=\"https://github.com/canonical/cert-manager-rock/pull/3\">#3</a>)</p>\n",
                   "url": "https://github.com/canonical/cert-manager-rock/commit/bef62cd152a8f636f9e291a609c1a976c228e982"
-               },
-               {
-                  "sha": "898798570693d2abdba7e4873aa716cb409c8c53",
-                  "author": "Berkay Tekin Öz",
-                  "timestamp": 1720452582,
-                  "message": "<p>Add rocks workflows (<a target=\"_blank\" href=\"https://github.com/canonical/cert-manager-rock/pull/4\">#4</a>)</p>\n",
-                  "url": "https://github.com/canonical/cert-manager-rock/commit/898798570693d2abdba7e4873aa716cb409c8c53"
                }
             ],
             "ciActions": [],
@@ -10751,6 +10751,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "87b95fa6a88507d941e633a53197a31b8b2f533f",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1721647019,
+                  "message": "<p>Adds the 1.9.5 fluent-bit rock (<a target=\"_blank\" href=\"https://github.com/canonical/fluent-bit-rock/pull/5\">#5</a>)</p>\n\n<p>The -DFLB_TRACE=Off cmake flag is set in v1.9.5, and the\n-DFLB_CHUNK_TRACE=On is set in v2.1.6.</p>\n\n<p>Updated the sanity tests to also test v1.9.5 image.</p>\n\n<p>Updated integration test to pick the v2.1.6 image.</p>\n",
+                  "url": "https://github.com/canonical/fluent-bit-rock/commit/87b95fa6a88507d941e633a53197a31b8b2f533f"
+               },
+               {
                   "sha": "6e9c648fc6a0689fcb21da263d8967b912ae65c8",
                   "author": "Claudiu Belu",
                   "timestamp": 1721632967,
@@ -10763,13 +10770,6 @@
                   "timestamp": 1721402235,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/fluent-bit-rock/pull/1\">#1</a> from canonical/story/KU-1064/ROCK-for-fluent-bit/rockraft-file</p>\n\n<p>rockcraft file</p>\n",
                   "url": "https://github.com/canonical/fluent-bit-rock/commit/efdf34b9751d790c89a6ebbb59a09e60d8b9d02e"
-               },
-               {
-                  "sha": "3855ff2b5a322a79941d180f0a0feb7b5ea8ecf9",
-                  "author": "Berkay Tekin Oz",
-                  "timestamp": 1721397257,
-                  "message": "<p>Fix linting issue</p>\n",
-                  "url": "https://github.com/canonical/fluent-bit-rock/commit/3855ff2b5a322a79941d180f0a0feb7b5ea8ecf9"
                }
             ],
             "ciActions": [],
@@ -10995,7 +10995,7 @@
          },
          {
             "name": "k8s-dqlite",
-            "newCommits": 5,
+            "newCommits": 50,
             "url": "https://github.com/canonical/k8s-dqlite",
             "releases": [
                {
@@ -11114,6 +11114,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "739c102c92577cf161f2d79eb8e2cf7c086b40d4",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1721646916,
+                  "message": "<p>Add function scoped instance fixture (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/22\">#22</a>)</p>\n\n<p>In some cases, we have identical tests for multiple rock versions.\nUsing a module scoped instance forces us to define separate modules,\nwhich is unnecessary.</p>\n\n<p>This can be avoided by defining a new function scoped instance\nfixture.</p>\n",
+                  "url": "https://github.com/canonical/k8s-test-harness/commit/739c102c92577cf161f2d79eb8e2cf7c086b40d4"
+               },
+               {
                   "sha": "4852f65794bca5d99c775f5a6a02730e2904aa85",
                   "author": "Claudiu Belu",
                   "timestamp": 1721392690,
@@ -11126,13 +11133,6 @@
                   "timestamp": 1721377423,
                   "message": "<p>Updates HelmImage to get an image URI instead (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/20\">#20</a>)</p>\n\n<p>We now support testing multiple rocks, information about which\nwe can find in BUILT_ROCKS_METADATA. Thus, we can&rsquo;t rely on\nROCK_THING env variables in these scenarios.</p>\n",
                   "url": "https://github.com/canonical/k8s-test-harness/commit/0b3af96e1a6dfc5312165933d4869c8db46a3246"
-               },
-               {
-                  "sha": "27998f4682fd942c0db7fd365c191a961a374cd7",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1721375814,
-                  "message": "<p>Apply tox -e format and tox -e lint changes (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/19\">#19</a>)</p>\n\n<p>Currently, the CI jobs fail because of these issues.</p>\n",
-                  "url": "https://github.com/canonical/k8s-test-harness/commit/27998f4682fd942c0db7fd365c191a961a374cd7"
                }
             ],
             "ciActions": [],
@@ -13496,35 +13496,35 @@
          },
          {
             "name": "sdcore-amf-k8s-operator",
-            "newCommits": 76,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
             "releases": [
                {
-                  "id": 166383205,
-                  "version": "rev500",
-                  "timestamp": 1721531167,
-                  "title": "Revision 500",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/chore-auto-libs&rsquo; at 03:28 UTC on 21 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev499...rev500\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev499&hellip;rev500</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev500",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev500...main"
+                  "id": 166500509,
+                  "version": "rev507",
+                  "timestamp": 1721648749,
+                  "title": "Revision 507",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.2\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-pip-dependencies-9e81d8032d&rsquo; at 12:07 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev501...rev507\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev501&hellip;rev507</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev507",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev507...main"
                },
                {
-                  "id": 165634255,
-                  "version": "rev499",
-                  "timestamp": 1721131455,
-                  "title": "Revision 499",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 12:27 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 70.2.0.20240704 to 70.3.0.20240710 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/309\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/309\">#309</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev498...rev499\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev498&hellip;rev499</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev499",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev499...main"
+                  "id": 166496553,
+                  "version": "rev506",
+                  "timestamp": 1721647002,
+                  "title": "Revision 506",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-mypy-1-11-0&rsquo; at 11:42 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev499...rev506\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev499&hellip;rev506</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev506",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev506...main"
                },
                {
-                  "id": 165629943,
-                  "version": "rev498",
-                  "timestamp": 1721129864,
-                  "title": "Revision 498",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 12:01 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.5.1 to 0.5.2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/310\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/310\">#310</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev494...rev498\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev494&hellip;rev498</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev498",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev498...main"
+                  "id": 166496219,
+                  "version": "rev505",
+                  "timestamp": 1721646910,
+                  "title": "Revision 505",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-8-3-1&rsquo; at 11:39 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev499...rev505\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev499&hellip;rev505</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev505",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev505...main"
                }
             ],
             "tags": null,
@@ -14360,35 +14360,35 @@
          },
          {
             "name": "sdcore-nssf-k8s-operator",
-            "newCommits": 55,
+            "newCommits": 56,
             "url": "https://github.com/canonical/sdcore-nssf-k8s-operator",
             "releases": [
                {
-                  "id": 166382463,
-                  "version": "rev305",
-                  "timestamp": 1721530973,
-                  "title": "Revision 305",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/chore-auto-libs&rsquo; at 03:27 UTC on 21 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304...rev305\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304&hellip;rev305</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev305",
-                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev305...main"
+                  "id": 166497215,
+                  "version": "rev311",
+                  "timestamp": 1721647444,
+                  "title": "Revision 311",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 43</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cryptography-43-0-0&rsquo; at 11:46 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304...rev311\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304&hellip;rev311</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev311",
+                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev311...main"
                },
                {
-                  "id": 165629664,
-                  "version": "rev304",
-                  "timestamp": 1721129904,
-                  "title": "Revision 304",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 11:59 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.4 to 7.6.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/231\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/231\">#231</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev302...rev304\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev302&hellip;rev304</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev304",
-                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304...main"
+                  "id": 166496877,
+                  "version": "rev310",
+                  "timestamp": 1721647360,
+                  "title": "Revision 310",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 43</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-13&rsquo; at 11:44 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304...rev310\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304&hellip;rev310</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev310",
+                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev310...main"
                },
                {
-                  "id": 165625150,
-                  "version": "rev303",
-                  "timestamp": 1721128024,
-                  "title": "Revision 303",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-6-0&rsquo; at 11:29 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump jsonschema from 4.22.0 to 4.23.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/233\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/233\">#233</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev301...rev303\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev301&hellip;rev303</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev303",
-                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev303...main"
+                  "id": 166496869,
+                  "version": "rev309",
+                  "timestamp": 1721647318,
+                  "title": "Revision 309",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.0\n       resource-revision: 43</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-8-3-1&rsquo; at 11:44 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304...rev309\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev304&hellip;rev309</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev309",
+                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev309...main"
                }
             ],
             "tags": null,
@@ -14632,35 +14632,35 @@
          },
          {
             "name": "sdcore-smf-k8s-operator",
-            "newCommits": 66,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-smf-k8s-operator",
             "releases": [
                {
-                  "id": 166383592,
-                  "version": "rev424",
-                  "timestamp": 1721531183,
-                  "title": "Revision 424",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/chore-auto-libs&rsquo; at 03:29 UTC on 21 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev422...rev424\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev422&hellip;rev424</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev424",
-                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev424...main"
+                  "id": 166496787,
+                  "version": "rev429",
+                  "timestamp": 1721647314,
+                  "title": "Revision 429",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.2\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-pip-dependencies-9e81d8032d&rsquo; at 11:44 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev425...rev429\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev425&hellip;rev429</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev429",
+                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev429...main"
                },
                {
-                  "id": 165625464,
-                  "version": "rev423",
-                  "timestamp": 1721128057,
-                  "title": "Revision 423",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-5-2&rsquo; at 11:32 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.4 to 7.6.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/267\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/267\">#267</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev421...rev423\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev421&hellip;rev423</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev423",
-                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev423...main"
+                  "id": 166495772,
+                  "version": "rev428",
+                  "timestamp": 1721646712,
+                  "title": "Revision 428",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-8-3-1&rsquo; at 11:36 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev422...rev428\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev422&hellip;rev428</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev428",
+                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev428...main"
                },
                {
-                  "id": 165624653,
-                  "version": "rev422",
-                  "timestamp": 1721127963,
-                  "title": "Revision 422",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 11:25 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.5.4 to 7.6.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/267\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/267\">#267</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev419...rev422\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev419&hellip;rev422</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev422",
-                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev422...main"
+                  "id": 166495629,
+                  "version": "rev427",
+                  "timestamp": 1721646724,
+                  "title": "Revision 427",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.0\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-13&rsquo; at 11:35 UTC on 22 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev422...rev427\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev422&hellip;rev427</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev427",
+                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev427...main"
                }
             ],
             "tags": null,
@@ -16653,7 +16653,7 @@
          },
          {
             "name": "manual-tls-certificates-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/manual-tls-certificates-operator",
             "releases": [
                {
@@ -22602,7 +22602,7 @@
          },
          {
             "name": "pgbouncer-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -22714,7 +22714,7 @@
          },
          {
             "name": "pgbouncer-operator",
-            "newCommits": 3,
+            "newCommits": 4,
             "url": "https://github.com/canonical/pgbouncer-operator",
             "releases": [
                {
@@ -22910,25 +22910,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "e4896f2b52d6e53421422ed4b0181b148066f284",
+                  "author": "renovate[bot]",
+                  "timestamp": 1721650022,
+                  "message": "<p>Lock file maintenance Python dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/122\">#122</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/e4896f2b52d6e53421422ed4b0181b148066f284"
+               },
+               {
+                  "sha": "cc0ca285a6ec2fbac04fa5a520e8fd5f85eebbaa",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1721648634,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/120\">#120</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/cc0ca285a6ec2fbac04fa5a520e8fd5f85eebbaa"
+               },
+               {
                   "sha": "a26d202cb3de8c3b910060d31ffd9f80069e6f38",
                   "author": "Canonical Data Platform Bot",
                   "timestamp": 1721385118,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/119\">#119</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-bundle/commit/a26d202cb3de8c3b910060d31ffd9f80069e6f38"
-               },
-               {
-                  "sha": "c7a55211d3b02d2d7d292e0f6aa8830f8de47cf9",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1721300696,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/98\">#98</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/c7a55211d3b02d2d7d292e0f6aa8830f8de47cf9"
-               },
-               {
-                  "sha": "02db23e57b20f38e48d18163785aa76aee34e326",
-                  "author": "renovate[bot]",
-                  "timestamp": 1721291468,
-                  "message": "<p>Update data-platform-workflows to v16.3.3 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/118\">#118</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/02db23e57b20f38e48d18163785aa76aee34e326"
                }
             ],
             "ciActions": [
@@ -22949,8 +22949,8 @@
                   {
                      "track": "14",
                      "channel": "edge",
-                     "revision": 76,
-                     "timestamp": 1721386306,
+                     "revision": 77,
+                     "timestamp": 1721649818,
                      "base": ""
                   }
                ],
@@ -22972,25 +22972,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "31620fccc43ade80593314ff8ae1b5c8b38b9112",
+                  "author": "renovate[bot]",
+                  "timestamp": 1721650067,
+                  "message": "<p>Lock file maintenance Python dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/120\">#120</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/31620fccc43ade80593314ff8ae1b5c8b38b9112"
+               },
+               {
+                  "sha": "928d38553d6d42d257157cd65627dae8d7192920",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1721648710,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/118\">#118</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/928d38553d6d42d257157cd65627dae8d7192920"
+               },
+               {
                   "sha": "be0d74f037648ef68fe0fd023a3d4a395024b884",
                   "author": "renovate[bot]",
                   "timestamp": 1721385902,
                   "message": "<p>Lock file maintenance Python dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/116\">#116</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/be0d74f037648ef68fe0fd023a3d4a395024b884"
-               },
-               {
-                  "sha": "3ea54f8a1838057c9bab0c7004657f51cb328ca7",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1721385138,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/117\">#117</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/3ea54f8a1838057c9bab0c7004657f51cb328ca7"
-               },
-               {
-                  "sha": "f0f90090f85f3b614fe97388ecb84ba948b005a7",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1721300723,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/95\">#95</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/f0f90090f85f3b614fe97388ecb84ba948b005a7"
                }
             ],
             "ciActions": [
@@ -23012,8 +23012,8 @@
                   {
                      "track": "14",
                      "channel": "edge",
-                     "revision": 62,
-                     "timestamp": 1721301851,
+                     "revision": 63,
+                     "timestamp": 1721650006,
                      "base": ""
                   }
                ],
@@ -23029,7 +23029,7 @@
          },
          {
             "name": "postgresql-k8s-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
                {
@@ -24479,7 +24479,7 @@
          },
          {
             "name": "mongodb-operator",
-            "newCommits": 8,
+            "newCommits": 9,
             "url": "https://github.com/canonical/mongodb-operator",
             "releases": [
                {
