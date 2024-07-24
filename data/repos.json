@@ -7034,7 +7034,7 @@
          },
          {
             "name": "envoy-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/envoy-operator",
             "releases": [
                {
@@ -7145,7 +7145,7 @@
          },
          {
             "name": "katib-operators",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/katib-operators",
             "releases": [
                {
@@ -7295,7 +7295,7 @@
          },
          {
             "name": "kserve-operators",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/kserve-operators",
             "releases": [
                {
@@ -7758,7 +7758,7 @@
          },
          {
             "name": "kubeflow-tensorboards-operator",
-            "newCommits": 11,
+            "newCommits": 12,
             "url": "https://github.com/canonical/kubeflow-tensorboards-operator",
             "releases": [
                {
@@ -8019,7 +8019,7 @@
          },
          {
             "name": "mlmd-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mlmd-operator",
             "releases": [
                {
@@ -8536,7 +8536,7 @@
          },
          {
             "name": "resource-dispatcher",
-            "newCommits": 11,
+            "newCommits": 12,
             "url": "https://github.com/canonical/resource-dispatcher",
             "releases": [
                {
@@ -9416,7 +9416,7 @@
          },
          {
             "name": "iam-bundle",
-            "newCommits": 174,
+            "newCommits": 176,
             "url": "https://github.com/canonical/iam-bundle",
             "releases": [
                {
@@ -19006,31 +19006,19 @@
             "name": "charmed-mysql-rock",
             "newCommits": 0,
             "url": "https://github.com/canonical/charmed-mysql-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "releases": [
                {
-                  "sha": "dca632c7856697c75075552d9509b0f2a2eb9924",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1719579184,
-                  "message": "<p>Build &amp; release arm64 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/42\">#42</a>)</p>\n\n<ul>\n<li><p>Use reusable workflows</p></li>\n\n<li><p>arm64</p></li>\n\n<li><p>Remove override-stage</p></li>\n</ul>\n\n<p>Current <code>override-stage</code> has no effect on final rock</p>\n\n<p>I inspected the rock we&rsquo;re currently building (i.e. ghcr.io/canonical/charmed-mysql:8.0.37-22.04_edge), and it looks like it doesn&rsquo;t contain <code>/var/lib/mysql</code></p>\n\n<pre><code>root@foo-0:/# find / -name mysql\n/home/mysql\n/usr/lib/x86_64-linux-gnu/perl5/5.34/DBD/mysql\n/usr/lib/x86_64-linux-gnu/perl5/5.34/auto/DBD/mysql\n/usr/lib/mysql\n/usr/share/mysql\n/usr/bin/mysql\n/var/log/mysql\n/etc/init.d/mysql\n/etc/mysql\nroot@foo-0:/# mysqld --initialize-insecure -u mysql\nroot@foo-0:/# find / -name mysql\n/home/mysql\n/usr/lib/x86_64-linux-gnu/perl5/5.34/DBD/mysql\n/usr/lib/x86_64-linux-gnu/perl5/5.34/auto/DBD/mysql\n/usr/lib/mysql\n/usr/share/mysql\n/usr/bin/mysql\n/var/log/mysql\n/var/lib/mysql\n/var/lib/mysql/mysql\n/etc/init.d/mysql\n/etc/mysql\n</code></pre>\n\n<p>so I think the entire <code>override-stage</code> in our rock is doing nothing</p>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-rock/commit/dca632c7856697c75075552d9509b0f2a2eb9924"
-               },
-               {
-                  "sha": "e9de063aee121ba5e20f4c207d0f4fa3c1ff8b16",
-                  "author": "shayancanonical",
-                  "timestamp": 1719517181,
-                  "message": "<p>Update rock version to 8.0.37 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/46\">#46</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-rock/commit/e9de063aee121ba5e20f4c207d0f4fa3c1ff8b16"
-               },
-               {
-                  "sha": "80e9d7b75843fd6e290e3ac99a6f64d865ec6888",
-                  "author": "shayancanonical",
-                  "timestamp": 1710762199,
-                  "message": "<p>Update ROCK version to 8.0.36 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/40\">#40</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-rock/commit/80e9d7b75843fd6e290e3ac99a6f64d865ec6888"
+                  "id": 166889551,
+                  "version": "image-11e6287fecac5a235b0e32b6b88389c0ee051cf2cd7cba9d88e70e1a0166256c",
+                  "timestamp": 1721822014,
+                  "title": "Image 11e6287fecac5a235b0e32b6b88389c0ee051cf2cd7cba9d88e70e1a0166256c",
+                  "body": "<p>Released to ghcr.io/canonical/charmed-mysql:8.0.37-22.04_edge</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add build artifacts for the MySQL OCI image by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/1\">#1</a></a></li>\n<li>Expose group replication port by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/2\">#2</a></a></li>\n<li>Implement MySQL server ROCK with rockcraft by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/4\">#4</a></a></li>\n<li>Add xtrabackup Snap to ROCK by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/5\">#5</a></a></li>\n<li>Fix initialization of mysqld by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/6\">#6</a></a></li>\n<li>Sync GitHub issues to Jira by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/7\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/7\">#7</a></a></li>\n<li>Pin sync_issue_to_jira workflow version by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/8\">#8</a></a></li>\n<li>Convert base to snap from deb by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/9\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/9\">#9</a></a></li>\n<li>Fix publishing branch filters by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/10\">#10</a></a></li>\n<li>Cancel CI that is not the latest commit on a branch by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/11\">#11</a></a></li>\n<li>Add licenses directory with the appropriate licenses by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/12\">#12</a></a></li>\n<li>Add Foresight actions to CI by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/14\">#14</a></a></li>\n<li>Add missing dependencies by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/16\">#16</a></a></li>\n<li>Move container to ghcr by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/15\">#15</a></a></li>\n<li>Fix retagging during build by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/17\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/17\">#17</a></a></li>\n<li>Check version workflow by <a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/18\">#18</a></a></li>\n<li>Update sync_issue_to_jira.yaml to v2 by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/19\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/19\">#19</a></a></li>\n<li>Add missing package required by MySQL v8.0.32 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/20\">#20</a></a></li>\n<li>Revert &ldquo;Add Foresight actions to CI (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/14\">#14</a>)&rdquo; by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/24\">#24</a></a></li>\n<li>Remove cmd from rockcraft.yaml by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/22\">#22</a></a></li>\n<li>Create and chown log directory for mysqlrouter by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/23\">#23</a></a></li>\n<li>Create <code>/etc/mysqlrouter</code> directory by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/25\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/25\">#25</a></a></li>\n<li>Update bug_report.md issue template by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/26\">#26</a></a></li>\n<li>[DPE-2080] Generate dpkg manifest by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/27\">#27</a></a></li>\n<li>Fix permissions for <code>/home/mysql</code> directory by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/28\">#28</a></a></li>\n<li>Create <code>/var/lib/mysqlrouter</code> by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/29\">#29</a></a></li>\n<li>Add mysql-shell python dependencies by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/30\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/30\">#30</a></a></li>\n<li>[DPE-2137] Add SBOM generation by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/31\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/31\">#31</a></a></li>\n<li>DPE-2221 DPE-2224 Rename version and dump only rock license into the image by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/32\">#32</a></a></li>\n<li>DPE-2424 Update rock version to 8.0.34 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/33\">#33</a></a></li>\n<li>Add logrotate to the list of packages installed by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/34\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/34\">#34</a></a></li>\n<li>Update rock version to 8.0.35 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/37\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/37\">#37</a></a></li>\n<li>Fix env var in sbom.yaml by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/38\">#38</a></a></li>\n<li>Added badges to README by <a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/39\">#39</a></a></li>\n<li>Update ROCK version to 8.0.36 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/40\">#40</a></a></li>\n<li>Update rock version to 8.0.37 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/46\">#46</a></a></li>\n<li>Build &amp; release arm64 by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/42\">#42</a></a></li>\n<li>Update data-platform-workflows to v17 by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/48\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/48\">#48</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/1\">#1</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/2\">#2</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/jardon\">@jardon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/4\">#4</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/7\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/7\">#7</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/27\">#27</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/a-velasco\">@a-velasco</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-rock/pull/39\">#39</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-mysql-rock/commits/image-11e6287fecac5a235b0e32b6b88389c0ee051cf2cd7cba9d88e70e1a0166256c\">https://github.com/canonical/charmed-mysql-rock/commits/image-11e6287fecac5a235b0e32b6b88389c0ee051cf2cd7cba9d88e70e1a0166256c</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-mysql-rock/releases/tag/image-11e6287fecac5a235b0e32b6b88389c0ee051cf2cd7cba9d88e70e1a0166256c",
+                  "compareUrl": "https://github.com/canonical/charmed-mysql-rock/compare/image-11e6287fecac5a235b0e32b6b88389c0ee051cf2cd7cba9d88e70e1a0166256c...8.0-22.04"
                }
             ],
+            "tags": null,
+            "commits": null,
             "ciActions": [
                "https://github.com/canonical/charmed-mysql-rock/actions/workflows/release.yaml"
             ],
@@ -24538,7 +24526,7 @@
          },
          {
             "name": "mongodb-operator",
-            "newCommits": 9,
+            "newCommits": 10,
             "url": "https://github.com/canonical/mongodb-operator",
             "releases": [
                {
@@ -26017,26 +26005,18 @@
             "snap": null
          },
          {
-            "name": "mailman3-web-charm",
-            "newCommits": 6,
-            "url": "https://git.launchpad.net/mailman3-web-charm",
+            "name": "mailman3-core-charm",
+            "newCommits": 5,
+            "url": "https://git.launchpad.net/mailman3-core-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev2",
-                  "sha": "765506056f23708471349fad0c553363e4438aeb",
+                  "name": "rev4",
+                  "sha": "36f3623ef8edda6f6b547e4c6c425382a0ad5e6b",
                   "body": "",
-                  "timestamp": 1661837463,
-                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=765506056f23708471349fad0c553363e4438aeb&id2=master"
-               },
-               {
-                  "name": "rev1",
-                  "sha": "3f5ac5471ba7295afabfcf5335690c7d80add166",
-                  "body": "",
-                  "timestamp": 1631627191,
-                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=3f5ac5471ba7295afabfcf5335690c7d80add166&id2=master"
+                  "timestamp": 1647477010,
+                  "url": "https://git.launchpad.net/mailman3-core-charm/tag/?h=rev4",
+                  "compareUrl": "https://git.launchpad.net/mailman3-core-charm/diff/?id=36f3623ef8edda6f6b547e4c6c425382a0ad5e6b&id2=master"
                }
             ],
             "commits": null,
@@ -26417,34 +26397,40 @@
             "snap": null
          },
          {
-            "name": ".github",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/.github",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "name": "discourse-gatekeeper",
+            "newCommits": 16,
+            "url": "https://github.com/canonical/discourse-gatekeeper",
+            "releases": [
                {
-                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1668098113,
-                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
-                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
+                  "id": 137666752,
+                  "version": "v0.8.1",
+                  "timestamp": 1705644051,
+                  "title": "v0.8.1",
+                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Migration error where discourse is in-line with the default branch but the\nbase content tag is behind. This no longer attempts migration and now also\nmoves the tag to the latest commit on the default branch.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.1",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.1...main"
                },
                {
-                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
-                  "author": "arturo-seijas",
-                  "timestamp": 1668092923,
-                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
+                  "id": 132209416,
+                  "version": "v0.8.0",
+                  "timestamp": 1701350249,
+                  "title": "v0.8.0",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for migrating the navigation table to the contents index</li>\n<li>Checks that external references on the contents index return a 2XX response to\nHEAD requests</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Whitespace buildup between generated and input content</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.0",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.0...main"
                },
                {
-                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
-                  "author": "arturo-seijas",
-                  "timestamp": 1668087850,
-                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
+                  "id": 124217285,
+                  "version": "v0.7.0",
+                  "timestamp": 1696835711,
+                  "title": "v0.7.0",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
                }
             ],
+            "tags": null,
+            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -27299,40 +27285,34 @@
             "snap": null
          },
          {
-            "name": "jenkins-agent-operator",
+            "name": ".github",
             "newCommits": 0,
-            "url": "https://github.com/canonical/jenkins-agent-operator",
-            "releases": [
+            "url": "https://github.com/canonical/.github",
+            "releases": null,
+            "tags": null,
+            "commits": [
                {
-                  "id": 166456618,
-                  "version": "rev51",
-                  "timestamp": 1721632088,
-                  "title": "Revision 51",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:13 UTC on 22 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.15.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev50...rev51\">https://github.com/canonical/jenkins-agent-operator/compare/rev50&hellip;rev51</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev51",
-                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev51...main"
+                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
+                  "author": "Mariyan Dimitrov",
+                  "timestamp": 1668098113,
+                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
+                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
                },
                {
-                  "id": 162952491,
-                  "version": "rev50",
-                  "timestamp": 1719565251,
-                  "title": "Revision 50",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:01 UTC on 28 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev49...rev50\">https://github.com/canonical/jenkins-agent-operator/compare/rev49&hellip;rev50</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev50",
-                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev50...main"
+                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668092923,
+                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
                },
                {
-                  "id": 160018721,
-                  "version": "rev49",
-                  "timestamp": 1718175967,
-                  "title": "Revision 49",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:07 UTC on 12 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\">#39</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\">#28</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\">#40</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev47...rev49\">https://github.com/canonical/jenkins-agent-operator/compare/rev47&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev49",
-                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev49...main"
+                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668087850,
+                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
                }
             ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -27455,6 +27435,39 @@
             "snap": null
          },
          {
+            "name": "mattermost-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/mattermost-k8s-operator",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b",
+                  "author": "arturo-seijas",
+                  "timestamp": 1720695889,
+                  "message": "<p>Add workflows for tracks support (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/27\">#27</a>)</p>\n\n<ul>\n<li><p>Add workflows for tracks support</p></li>\n\n<li><p>Fix linting</p></li>\n\n<li><p>Update trivyignore</p></li>\n\n<li><p>Update trivyignore</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b"
+               },
+               {
+                  "sha": "f7714430700bacc30e5458dd1aa052c37621370b",
+                  "author": "arturo-seijas",
+                  "timestamp": 1720686986,
+                  "message": "<p>Fix license headers (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/28\">#28</a>)</p>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/f7714430700bacc30e5458dd1aa052c37621370b"
+               },
+               {
+                  "sha": "21f82df64a45b1503f1aebe350dc43ae25f073aa",
+                  "author": "renovate[bot]",
+                  "timestamp": 1697789923,
+                  "message": "<p>chore(deps): pin ubuntu docker tag to ed4a422 (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/23\">#23</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/21f82df64a45b1503f1aebe350dc43ae25f073aa"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "pollen-operator",
             "newCommits": 1,
             "url": "https://github.com/canonical/pollen-operator",
@@ -27492,52 +27505,6 @@
             "ciActions": [],
             "charm": null,
             "snap": null
-         },
-         {
-            "name": "mjolnir-snap",
-            "newCommits": 5,
-            "url": "https://github.com/canonical/mjolnir-snap",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "v1.6.5",
-                  "sha": "5062b05fc839b23adf298256f127c70bfed22c8d",
-                  "body": "<p>Add README</p>\n",
-                  "timestamp": 1704376161,
-                  "url": "https://github.com/canonical/mjolnir-snap/releases/tag/v1.6.5",
-                  "compareUrl": "https://github.com/canonical/mjolnir-snap/compare/main...v1.6.5"
-               }
-            ],
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": {
-               "name": "mjolnir",
-               "url": "https://snapcraft.io/mjolnir",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 6,
-                     "timestamp": 1705493211,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 6,
-                     "timestamp": 1704393600,
-                     "base": "core22"
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            }
          },
          {
             "name": "netbox",
@@ -27720,36 +27687,36 @@
             "snap": null
          },
          {
-            "name": "discourse-gatekeeper",
-            "newCommits": 16,
-            "url": "https://github.com/canonical/discourse-gatekeeper",
+            "name": "jenkins-agent-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/jenkins-agent-operator",
             "releases": [
                {
-                  "id": 137666752,
-                  "version": "v0.8.1",
-                  "timestamp": 1705644051,
-                  "title": "v0.8.1",
-                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Migration error where discourse is in-line with the default branch but the\nbase content tag is behind. This no longer attempts migration and now also\nmoves the tag to the latest commit on the default branch.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.1",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.1...main"
+                  "id": 166456618,
+                  "version": "rev51",
+                  "timestamp": 1721632088,
+                  "title": "Revision 51",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:13 UTC on 22 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.15.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev50...rev51\">https://github.com/canonical/jenkins-agent-operator/compare/rev50&hellip;rev51</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev51",
+                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev51...main"
                },
                {
-                  "id": 132209416,
-                  "version": "v0.8.0",
-                  "timestamp": 1701350249,
-                  "title": "v0.8.0",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for migrating the navigation table to the contents index</li>\n<li>Checks that external references on the contents index return a 2XX response to\nHEAD requests</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Whitespace buildup between generated and input content</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.0",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.0...main"
+                  "id": 162952491,
+                  "version": "rev50",
+                  "timestamp": 1719565251,
+                  "title": "Revision 50",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:01 UTC on 28 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev49...rev50\">https://github.com/canonical/jenkins-agent-operator/compare/rev49&hellip;rev50</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev50",
+                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev50...main"
                },
                {
-                  "id": 124217285,
-                  "version": "v0.7.0",
-                  "timestamp": 1696835711,
-                  "title": "v0.7.0",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
+                  "id": 160018721,
+                  "version": "rev49",
+                  "timestamp": 1718175967,
+                  "title": "Revision 49",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:07 UTC on 12 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.14.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/39\">#39</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/28\">#28</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/jenkins-agent-operator/pull/40\">#40</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jenkins-agent-operator/compare/rev47...rev49\">https://github.com/canonical/jenkins-agent-operator/compare/rev47&hellip;rev49</a></p>\n",
+                  "url": "https://github.com/canonical/jenkins-agent-operator/releases/tag/rev49",
+                  "compareUrl": "https://github.com/canonical/jenkins-agent-operator/compare/rev49...main"
                }
             ],
             "tags": null,
@@ -27792,37 +27759,50 @@
             "snap": null
          },
          {
-            "name": "mattermost-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/mattermost-k8s-operator",
+            "name": "mjolnir-snap",
+            "newCommits": 5,
+            "url": "https://github.com/canonical/mjolnir-snap",
             "releases": null,
-            "tags": null,
-            "commits": [
+            "tags": [
                {
-                  "sha": "88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b",
-                  "author": "arturo-seijas",
-                  "timestamp": 1720695889,
-                  "message": "<p>Add workflows for tracks support (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/27\">#27</a>)</p>\n\n<ul>\n<li><p>Add workflows for tracks support</p></li>\n\n<li><p>Fix linting</p></li>\n\n<li><p>Update trivyignore</p></li>\n\n<li><p>Update trivyignore</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b"
-               },
-               {
-                  "sha": "f7714430700bacc30e5458dd1aa052c37621370b",
-                  "author": "arturo-seijas",
-                  "timestamp": 1720686986,
-                  "message": "<p>Fix license headers (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/28\">#28</a>)</p>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/f7714430700bacc30e5458dd1aa052c37621370b"
-               },
-               {
-                  "sha": "21f82df64a45b1503f1aebe350dc43ae25f073aa",
-                  "author": "renovate[bot]",
-                  "timestamp": 1697789923,
-                  "message": "<p>chore(deps): pin ubuntu docker tag to ed4a422 (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/23\">#23</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/21f82df64a45b1503f1aebe350dc43ae25f073aa"
+                  "name": "v1.6.5",
+                  "sha": "5062b05fc839b23adf298256f127c70bfed22c8d",
+                  "body": "<p>Add README</p>\n",
+                  "timestamp": 1704376161,
+                  "url": "https://github.com/canonical/mjolnir-snap/releases/tag/v1.6.5",
+                  "compareUrl": "https://github.com/canonical/mjolnir-snap/compare/main...v1.6.5"
                }
             ],
+            "commits": null,
             "ciActions": [],
             "charm": null,
-            "snap": null
+            "snap": {
+               "name": "mjolnir",
+               "url": "https://snapcraft.io/mjolnir",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 6,
+                     "timestamp": 1705493211,
+                     "base": "core22"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 6,
+                     "timestamp": 1704393600,
+                     "base": "core22"
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            }
          },
          {
             "name": "repo-policy-compliance",
@@ -29455,26 +29435,6 @@
             "snap": null
          },
          {
-            "name": "mailman3-core-charm",
-            "newCommits": 5,
-            "url": "https://git.launchpad.net/mailman3-core-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev4",
-                  "sha": "36f3623ef8edda6f6b547e4c6c425382a0ad5e6b",
-                  "body": "",
-                  "timestamp": 1647477010,
-                  "url": "https://git.launchpad.net/mailman3-core-charm/tag/?h=rev4",
-                  "compareUrl": "https://git.launchpad.net/mailman3-core-charm/diff/?id=36f3623ef8edda6f6b547e4c6c425382a0ad5e6b&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "penpot-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/penpot-operator",
@@ -29507,6 +29467,34 @@
                "https://github.com/canonical/penpot-operator/actions/workflows/publish_charm.yaml",
                "https://github.com/canonical/penpot-operator/actions/workflows/promote_charm.yaml"
             ],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "mailman3-web-charm",
+            "newCommits": 6,
+            "url": "https://git.launchpad.net/mailman3-web-charm",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "rev2",
+                  "sha": "765506056f23708471349fad0c553363e4438aeb",
+                  "body": "",
+                  "timestamp": 1661837463,
+                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev2",
+                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=765506056f23708471349fad0c553363e4438aeb&id2=master"
+               },
+               {
+                  "name": "rev1",
+                  "sha": "3f5ac5471ba7295afabfcf5335690c7d80add166",
+                  "body": "",
+                  "timestamp": 1631627191,
+                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev1",
+                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=3f5ac5471ba7295afabfcf5335690c7d80add166&id2=master"
+               }
+            ],
+            "commits": null,
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -29559,26 +29547,6 @@
                   "timestamp": 1575653072,
                   "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev1",
                   "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=172ff9f7f03a0dca96c633912081204ca911d30e&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "postgresql-charm",
-            "newCommits": 28,
-            "url": "https://git.launchpad.net/postgresql-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev241",
-                  "sha": "f4424fed30c56ca52a65b749b7a29ab4303d3c49",
-                  "body": "",
-                  "timestamp": 1655891323,
-                  "url": "https://git.launchpad.net/postgresql-charm/tag/?h=rev241",
-                  "compareUrl": "https://git.launchpad.net/postgresql-charm/diff/?id=f4424fed30c56ca52a65b749b7a29ab4303d3c49&id2=master"
                }
             ],
             "commits": null,
