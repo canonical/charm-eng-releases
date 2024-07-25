@@ -1137,29 +1137,29 @@
                   {
                      "track": "2.9",
                      "channel": "candidate",
-                     "revision": 26973,
-                     "timestamp": 1712567324,
+                     "revision": 28040,
+                     "timestamp": 1721899847,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "candidate",
-                     "revision": 26974,
-                     "timestamp": 1712571889,
+                     "revision": 28041,
+                     "timestamp": 1721899855,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "candidate",
-                     "revision": 26975,
-                     "timestamp": 1712571890,
+                     "revision": 28042,
+                     "timestamp": 1721899863,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "candidate",
-                     "revision": 26976,
-                     "timestamp": 1712571891,
+                     "revision": 28043,
+                     "timestamp": 1721899872,
                      "base": "core20"
                   },
                   {
@@ -11373,6 +11373,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "24324f8dab91bb304f7400dadc263ac6106268cb",
+                  "author": "Samuel Allan",
+                  "timestamp": 1721902035,
+                  "message": "<p>Pin immutables to <0.16 on bionic to fix install (<a target=\"_blank\" href=\"https://github.com/canonical/layer-basic/pull/228\">#228</a>)</p>\n\n<p>immutables &gt;= 0.16 requires setuptools &gt;= 42,\nbut setuptools is pinned to <42 for python 3.8 (for bionic base).</p>\n\n<p>Fixes: <a target=\"_blank\" href=\"https://github.com/canonical/layer-basic/pull/223\">#223</a></p>\n",
+                  "url": "https://github.com/canonical/layer-basic/commit/24324f8dab91bb304f7400dadc263ac6106268cb"
+               },
+               {
                   "sha": "b23e3684ceaa07cede7c0b81d908746ee4b648dc",
                   "author": "Haw Loeung",
                   "timestamp": 1721895475,
@@ -11385,13 +11392,6 @@
                   "timestamp": 1714484594,
                   "message": "<p>Update virtualenv along with setuptools. (<a target=\"_blank\" href=\"https://github.com/canonical/layer-basic/pull/226\">#226</a>)</p>\n\n<p>Using older virtualenv with setuptools above version 60 can lead\nto undesirable behavior. Example of these problems are:</p>\n\n<ul>\n<li>Unexpected layout within the virtual environment</li>\n<li>Failure to isolate virtual environment from system-wide packages</li>\n</ul>\n\n<p>Fixes <a target=\"_blank\" href=\"https://github.com/canonical/layer-basic/pull/225\">#225</a></p>\n\n<p>Signed-off-by: Martin Kalcok <a href=\"mailto:martin.kalcok@canonical.com\">martin.kalcok@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/layer-basic/commit/33526bd6aaa01ffe717a5c66ed62bc4790344ef2"
-               },
-               {
-                  "sha": "1edd5ccd3fb6240ca734b64a7dae9f1cb30b66f6",
-                  "author": "Felipe Reyes",
-                  "timestamp": 1713170488,
-                  "message": "<p>Unpin setuptools for Python&gt;=3.12 (<a target=\"_blank\" href=\"https://github.com/canonical/layer-basic/pull/224\">#224</a>)</p>\n\n<ul>\n<li>Unpin setuptools for Python&gt;=3.12</li>\n</ul>\n\n<p>The version of setuptools pinned by the wheelhouse is incompatible with\npython 3.12, to avoid breaking old charms, this patch unpins setuptools\nonly for python&gt;=3.12</p>\n\n<p>Fixes the following error at build time:</p>\n\n<pre><code>  File &quot;/tmp/pip-download-gg1zdrmr/setuptools_ebd74bdeeaf0421480a69f5448330f5e/setuptools/__init__.py&quot;, line 16, in &lt;module&gt;\n    import setuptools.version\n  File &quot;/tmp/pip-download-gg1zdrmr/setuptools_ebd74bdeeaf0421480a69f5448330f5e/setuptools/version.py&quot;, line 1, in &lt;module&gt;\n    import pkg_resources\n  File &quot;/tmp/pip-download-gg1zdrmr/setuptools_ebd74bdeeaf0421480a69f5448330f5e/pkg_resources/__init__.py&quot;, line 2191, in &lt;module&gt;\n    register_finder(pkgutil.ImpImporter, find_on_path)\n                    ^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'pkgutil' has no attribute 'ImpImporter'. Did you mean: 'zipimporter'?\n</code></pre>\n\n<ul>\n<li>Unpin setuptools-scm</li>\n</ul>\n\n<p>Drop anyio and sniffio for python&gt;=3.12, this allows them to be pulled\nin indirectly by whoever needs them instead of carrying them as part of\nlayer basic</p>\n\n<ul>\n<li>Set TEST_JUJU3 env variable</li>\n</ul>\n\n<p>When TEST_JUJU3 is set, zaza will allow the use of python-libjuju&gt;=3.0</p>\n\n<ul>\n<li>Allow passing TEST_* env variables</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/layer-basic/commit/1edd5ccd3fb6240ca734b64a7dae9f1cb30b66f6"
                }
             ],
             "ciActions": [],
