@@ -13174,6 +13174,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "78f20055ff5bb5f3a9e12f9a03387f10f77ae2d9",
+                  "author": "Stéphane Talbot",
+                  "timestamp": 1722237142,
+                  "message": "<p>Allow IPV6 ranges for Metallb addon (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/282\">#282</a>)</p>\n",
+                  "url": "https://github.com/canonical/microk8s-core-addons/commit/78f20055ff5bb5f3a9e12f9a03387f10f77ae2d9"
+               },
+               {
                   "sha": "184c39c7cd5e25f0233602de16e55d86db02515c",
                   "author": "Yann Ponzoni",
                   "timestamp": 1721997910,
@@ -13186,13 +13193,6 @@
                   "timestamp": 1721626939,
                   "message": "<p>Update cert-manager to 1.14.5 (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/281\">#281</a>)</p>\n\n<ul>\n<li>update cert-manager to 1.14.5</li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Berkay Tekin Oz <a href=\"mailto:berkay.tekinoz@canonical.com\">berkay.tekinoz@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/microk8s-core-addons/commit/86e6cd8e80315d5f12e6715b24dad4e0b5da4469"
-               },
-               {
-                  "sha": "deba841ca2c237524298a609e80c827ec48d4b0f",
-                  "author": "Berkay Tekin Öz",
-                  "timestamp": 1716973543,
-                  "message": "<p>Increase gpu validation pod wait timeout (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/280\">#280</a>)</p>\n",
-                  "url": "https://github.com/canonical/microk8s-core-addons/commit/deba841ca2c237524298a609e80c827ec48d4b0f"
                }
             ],
             "ciActions": [],
@@ -13259,6 +13259,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "01e151848a538217923da3fa15983608759196fb",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1722237727,
+                  "message": "<p>Fixes integration tests (<a target=\"_blank\" href=\"https://github.com/canonical/multus-rock/pull/11\">#11</a>)</p>\n\n<p>The bitnami helm chart requires the image registry to be separated from\nthe image name. Without this, it would try to use something like the\nfollowing as an image name: docker.io/ghcr.io/repository/multus:tag,\nwhich is incorrect.</p>\n\n<p>The integration tests currently work if the rock image is published on\ndocker.io, but not on ghcr.io.</p>\n",
+                  "url": "https://github.com/canonical/multus-rock/commit/01e151848a538217923da3fa15983608759196fb"
+               },
+               {
                   "sha": "607cd6ecc53e15a3835f290a83bd3b19c69d5d97",
                   "author": "Benjamin Schimke",
                   "timestamp": 1721397862,
@@ -13271,13 +13278,6 @@
                   "timestamp": 1721397784,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/multus-rock/pull/10\">#10</a> from petrutlucian94/test_refactoring</p>\n\n<p>Refactor the tests as per harness updates</p>\n",
                   "url": "https://github.com/canonical/multus-rock/commit/4d3408e7da0813dc82134573f53042de2ed8743d"
-               },
-               {
-                  "sha": "b97c5a870dc8b397c5165d8e2367d79a8d18d083",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1721379979,
-                  "message": "<p>Refactor the tests as per harness updates</p>\n\n<p>The test harness project was updated to include various helpers that\ncan greatly simplify our tests.</p>\n",
-                  "url": "https://github.com/canonical/multus-rock/commit/b97c5a870dc8b397c5165d8e2367d79a8d18d083"
                }
             ],
             "ciActions": [],
@@ -13689,35 +13689,35 @@
          },
          {
             "name": "sdcore-ausf-k8s-operator",
-            "newCommits": 59,
+            "newCommits": 60,
             "url": "https://github.com/canonical/sdcore-ausf-k8s-operator",
             "releases": [
                {
-                  "id": 167590803,
-                  "version": "rev376",
-                  "timestamp": 1722235478,
-                  "title": "Revision 376",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 07:08 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.5.4 to 0.5.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/252\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/252\">#252</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev362...rev376\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev362&hellip;rev376</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev376",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev376...main"
+                  "id": 167598050,
+                  "version": "rev379",
+                  "timestamp": 1722238634,
+                  "title": "Revision 379",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 08:01 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update juju/juju requirement from ~&gt; 0.12.0 to ~&gt; 0.13.0 in /terraform by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/250\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/250\">#250</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev376...rev379\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev376&hellip;rev379</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev379",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev379...main"
                },
                {
-                  "id": 167568091,
-                  "version": "rev375",
-                  "timestamp": 1722221797,
-                  "title": "Revision 375",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-5-5&rsquo; at 03:20 UTC on 29 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev362...rev375\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev362&hellip;rev375</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev375",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev375...main"
+                  "id": 167591862,
+                  "version": "rev378",
+                  "timestamp": 1722236041,
+                  "title": "Revision 378",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-terraform-terraform-v1-4-juju-juju-tw-0-13-0&rsquo; at 07:17 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.5.4 to 0.5.5 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/252\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/252\">#252</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev373...rev378\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev373&hellip;rev378</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev378",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev378...main"
                },
                {
-                  "id": 167567433,
-                  "version": "rev374",
-                  "timestamp": 1722220727,
-                  "title": "Revision 374",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.1\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-terraform-terraform-terraform-modules-89ef5681f3&rsquo; at 03:07 UTC on 29 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev369...rev374\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev369&hellip;rev374</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev374",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev374...main"
+                  "id": 167591230,
+                  "version": "rev377",
+                  "timestamp": 1722235525,
+                  "title": "Revision 377",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.1\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-terraform-terraform-terraform-modules-89ef5681f3&rsquo; at 07:11 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 4 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/249\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/249\">#249</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev374...rev377\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev374&hellip;rev377</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev377",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev377...main"
                }
             ],
             "tags": null,
@@ -13737,8 +13737,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 376,
-                     "timestamp": 1722236881,
+                     "revision": 379,
+                     "timestamp": 1722240092,
                      "base": ""
                   },
                   {
@@ -14170,35 +14170,35 @@
          },
          {
             "name": "sdcore-nrf-k8s-operator",
-            "newCommits": 67,
+            "newCommits": 68,
             "url": "https://github.com/canonical/sdcore-nrf-k8s-operator",
             "releases": [
                {
-                  "id": 167562073,
-                  "version": "rev440",
-                  "timestamp": 1722214512,
-                  "title": "Revision 440",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-terraform-terraform-v1-4-juju-juju-tw-0-13-0&rsquo; at 01:21 UTC on 29 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev432...rev440\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev432&hellip;rev440</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev440",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev440...main"
+                  "id": 167600111,
+                  "version": "rev448",
+                  "timestamp": 1722238780,
+                  "title": "Revision 448",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-mypy-1-11-0&rsquo; at 08:11 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.12 to 0.0.13 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/284\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/284\">#284</a></a></li>\n<li>chore: bump types-pyyaml from 6.0.12.20240311 to 6.0.12.20240724 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/295\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/295\">#295</a></a></li>\n<li>chore: update juju/juju requirement from ~&gt; 0.12.0 to ~&gt; 0.13.0 in /terraform by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/297\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/297\">#297</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev426...rev448\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev426&hellip;rev448</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev448",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev448...main"
                },
                {
-                  "id": 167561941,
-                  "version": "rev439",
-                  "timestamp": 1722214304,
-                  "title": "Revision 439",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-types-pyyaml-6-0-12-20240724&rsquo; at 01:18 UTC on 29 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev432...rev439\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev432&hellip;rev439</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev439",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev439...main"
+                  "id": 167599194,
+                  "version": "rev447",
+                  "timestamp": 1722238806,
+                  "title": "Revision 447",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cryptography-43-0-0&rsquo; at 08:07 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.12 to 0.0.13 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/284\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/284\">#284</a></a></li>\n<li>chore: bump types-pyyaml from 6.0.12.20240311 to 6.0.12.20240724 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/295\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/295\">#295</a></a></li>\n<li>chore: update juju/juju requirement from ~&gt; 0.12.0 to ~&gt; 0.13.0 in /terraform by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/297\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/297\">#297</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev428...rev447\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev428&hellip;rev447</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev447",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev447...main"
                },
                {
-                  "id": 167561911,
-                  "version": "rev438",
-                  "timestamp": 1722214346,
-                  "title": "Revision 438",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-16&rsquo; at 01:17 UTC on 29 Jul 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev432...rev438\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev432&hellip;rev438</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev438",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev438...main"
+                  "id": 167599049,
+                  "version": "rev446",
+                  "timestamp": 1722238748,
+                  "title": "Revision 446",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-ruff-0-5-4&rsquo; at 08:06 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.12 to 0.0.13 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/284\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/284\">#284</a></a></li>\n<li>chore: bump types-pyyaml from 6.0.12.20240311 to 6.0.12.20240724 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/295\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/295\">#295</a></a></li>\n<li>chore: update juju/juju requirement from ~&gt; 0.12.0 to ~&gt; 0.13.0 in /terraform by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/297\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/297\">#297</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev427...rev446\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev427&hellip;rev446</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev446",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev446...main"
                }
             ],
             "tags": null,
@@ -14218,8 +14218,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 432,
-                     "timestamp": 1721736146,
+                     "revision": 445,
+                     "timestamp": 1722240323,
                      "base": ""
                   },
                   {
@@ -16178,6 +16178,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "33d29502cf2679c7c7e7abe288b4a2ccafef47ff",
+                  "author": "saltiyazan",
+                  "timestamp": 1722238499,
+                  "message": "<p>chore: Fix the upload workflow and the list of authors (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/8\">#8</a>)</p>\n",
+                  "url": "https://github.com/canonical/pylego/commit/33d29502cf2679c7c7e7abe288b4a2ccafef47ff"
+               },
+               {
                   "sha": "6f78c3dde097162e52bbf2d0451125221b6d6a90",
                   "author": "saltiyazan",
                   "timestamp": 1721997084,
@@ -16190,13 +16197,6 @@
                   "timestamp": 1721994652,
                   "message": "<p>chore: Renames Lepy to PyLego (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/7\">#7</a>)</p>\n",
                   "url": "https://github.com/canonical/pylego/commit/b2aef060fe9bdd9b3a0df0a65e732c194cde0259"
-               },
-               {
-                  "sha": "b501edd5c0bb70dec42e3565380f57766db3c5e0",
-                  "author": "saltiyazan",
-                  "timestamp": 1721718954,
-                  "message": "<p>feat: Adds template files, workflows and dependabot config (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/5\">#5</a>)</p>\n",
-                  "url": "https://github.com/canonical/pylego/commit/b501edd5c0bb70dec42e3565380f57766db3c5e0"
                }
             ],
             "ciActions": [],
@@ -18592,6 +18592,15 @@
             "url": "https://github.com/canonical/certificate-transfer-interface",
             "releases": [
                {
+                  "id": 167600297,
+                  "version": "rev62",
+                  "timestamp": 1722239510,
+                  "title": "Revision 62",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:12 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Adds a set of certificates to the relation data instead of individual certs by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/96\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/96\">#96</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev60...rev62\">https://github.com/canonical/certificate-transfer-interface/compare/rev60&hellip;rev62</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev62",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev62...main"
+               },
+               {
                   "id": 167495095,
                   "version": "rev61",
                   "timestamp": 1721831377,
@@ -18608,15 +18617,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:51 UTC on 24 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 3 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/94\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/94\">#94</a></a></li>\n<li>chore: bump ops from 2.14.1 to 2.15.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/95\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/95\">#95</a></a></li>\n<li>feat: Use lists for v1 of certificate interface by <a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/89\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/89\">#89</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/89\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/89\">#89</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev58...rev60\">https://github.com/canonical/certificate-transfer-interface/compare/rev58&hellip;rev60</a></p>\n",
                   "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev60",
                   "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev60...main"
-               },
-               {
-                  "id": 166376270,
-                  "version": "rev59",
-                  "timestamp": 1721217149,
-                  "title": "Revision 59",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:12 UTC on 21 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>style: Format using ruff by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/93\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/93\">#93</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev57...rev59\">https://github.com/canonical/certificate-transfer-interface/compare/rev57&hellip;rev59</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev59",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev59...main"
                }
             ],
             "tags": null,
@@ -18629,8 +18629,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 61,
-                     "timestamp": 1722126198,
+                     "revision": 62,
+                     "timestamp": 1722240760,
                      "base": ""
                   }
                ],
@@ -21324,9 +21324,18 @@
          },
          {
             "name": "mongodb-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/mongodb-operator",
             "releases": [
+               {
+                  "id": 167594256,
+                  "version": "rev176",
+                  "timestamp": 1721999094,
+                  "title": "Revision 176",
+                  "body": "<p>Released to 6/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-4912] Resolve library version issues by <a target=\"_blank\" href=\"https://github.com/Gu1nness\">@Gu1nness</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/437\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/437\">#437</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev175...rev176\">https://github.com/canonical/mongodb-operator/compare/rev175&hellip;rev176</a></p>\n",
+                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev176",
+                  "compareUrl": "https://github.com/canonical/mongodb-operator/compare/rev176...6/edge"
+               },
                {
                   "id": 167394796,
                   "version": "rev175",
@@ -21344,15 +21353,6 @@
                   "body": "<p>Released to 6/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-4490] New upgrade implementation by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/418\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/418\">#418</a></a></li>\n<li>[DPE-4494] Revision checking by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/419\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/419\">#419</a></a></li>\n<li>[DPE-4494] add unit tests for revision checker by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/421\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/421\">#421</a></a></li>\n<li>Migrate to use version checker as a pip package by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/424\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/424\">#424</a></a></li>\n<li>[DPE-4665 ] Pre upgrade check sharding by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/422\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/422\">#422</a></a></li>\n<li>[DPE-4667] check unit status before upgrade by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/425\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/425\">#425</a></a></li>\n<li>[DPE-4755] [DPE-4753] Implement upgrade proceedure and basic integration tests for upgrading a sharded cluster by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/428\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/428\">#428</a></a></li>\n<li>[DPE-4143] Add a post upgrade check for cluster upgrades by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/429\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/429\">#429</a></a></li>\n<li>[DPE-4663]: Fix flaky sharding + tls tests by <a target=\"_blank\" href=\"https://github.com/Gu1nness\">@Gu1nness</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/433\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/433\">#433</a></a></li>\n<li>[DPE-4897]: Stabilize sharding race condition tests by <a target=\"_blank\" href=\"https://github.com/Gu1nness\">@Gu1nness</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/435\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/435\">#435</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/Gu1nness\">@Gu1nness</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/433\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/433\">#433</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev173...rev174\">https://github.com/canonical/mongodb-operator/compare/rev173&hellip;rev174</a></p>\n",
                   "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev174",
                   "compareUrl": "https://github.com/canonical/mongodb-operator/compare/rev174...6/edge"
-               },
-               {
-                  "id": 157634617,
-                  "version": "rev173",
-                  "timestamp": 1716813471,
-                  "title": "Revision 173",
-                  "body": "<p>Released to 6/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-4434] fix lint in ci by <a target=\"_blank\" href=\"https://github.com/MiaAltieri\">@MiaAltieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/415\"><a target=\"_blank\" href=\"https://github.com/canonical/mongodb-operator/pull/415\">#415</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mongodb-operator/compare/rev172...rev173\">https://github.com/canonical/mongodb-operator/compare/rev172&hellip;rev173</a></p>\n",
-                  "url": "https://github.com/canonical/mongodb-operator/releases/tag/rev173",
-                  "compareUrl": "https://github.com/canonical/mongodb-operator/compare/rev173...6/edge"
                }
             ],
             "tags": null,
@@ -21389,8 +21389,8 @@
                   {
                      "track": "6",
                      "channel": "edge",
-                     "revision": 175,
-                     "timestamp": 1722009766,
+                     "revision": 176,
+                     "timestamp": 1722238580,
                      "base": ""
                   },
                   {
@@ -24988,7 +24988,7 @@
          },
          {
             "name": "spark-k8s-toolkit-py",
-            "newCommits": 61,
+            "newCommits": 63,
             "url": "https://github.com/canonical/spark-k8s-toolkit-py",
             "releases": [
                {
@@ -28357,6 +28357,15 @@
             "url": "https://github.com/canonical/synapse-operator",
             "releases": [
                {
+                  "id": 167596752,
+                  "version": "rev339",
+                  "timestamp": 1722238720,
+                  "title": "Revision 339",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 321\n    -  synapse-nginx-image: undefined\n       resource-revision: 322</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:54 UTC on 29 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/is-devops-bot\">@is-devops-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/438\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/438\">#438</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev338...rev339\">https://github.com/canonical/synapse-operator/compare/rev338&hellip;rev339</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev339",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev339...main"
+               },
+               {
                   "id": 167350816,
                   "version": "rev338",
                   "timestamp": 1721993350,
@@ -28373,15 +28382,6 @@
                   "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 320\n    -  synapse-image: undefined\n       resource-revision: 319</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:16 UTC on 26 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.34.149 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/435\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/435\">#435</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev336...rev337\">https://github.com/canonical/synapse-operator/compare/rev336&hellip;rev337</a></p>\n",
                   "url": "https://github.com/canonical/synapse-operator/releases/tag/rev337",
                   "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev337...main"
-               },
-               {
-                  "id": 167108136,
-                  "version": "rev336",
-                  "timestamp": 1721904732,
-                  "title": "Revision 336",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 318\n    -  synapse-nginx-image: undefined\n       resource-revision: 319</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:05 UTC on 25 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(promo): Publish between 1/ tracks by <a target=\"_blank\" href=\"https://github.com/merkata\">@merkata</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/433\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/433\">#433</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev335...rev336\">https://github.com/canonical/synapse-operator/compare/rev335&hellip;rev336</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev336",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev336...main"
                }
             ],
             "tags": null,
@@ -28404,8 +28404,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 338,
-                     "timestamp": 1721994255,
+                     "revision": 339,
+                     "timestamp": 1722239697,
                      "base": ""
                   }
                ],
