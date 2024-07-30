@@ -4195,7 +4195,25 @@
             "ciActions": [
                "https://github.com/canonical/istio-k8s-operator/actions/workflows/release.yaml"
             ],
-            "charm": null,
+            "charm": {
+               "name": "istio-k8s",
+               "url": "https://charmhub.io/istio-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 1,
+                     "timestamp": 1722363510,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
@@ -6930,7 +6948,7 @@
          },
          {
             "name": "data-science-stack",
-            "newCommits": 70,
+            "newCommits": 71,
             "url": "https://github.com/canonical/data-science-stack",
             "releases": [
                {
@@ -7206,7 +7224,7 @@
          },
          {
             "name": "kfp-operators",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/kfp-operators",
             "releases": [
                {
@@ -7825,7 +7843,7 @@
          },
          {
             "name": "metacontroller-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/metacontroller-operator",
             "releases": [
                {
@@ -11151,6 +11169,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4e15dae38c66c57e20aa14f4f51c2a76450dd2b2",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1722366366,
+                  "message": "<p>Update microcluster version and adapt to API changes (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/562\">#562</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Mateo Florido <a href=\"mailto:32885896+mateoflorido@users.noreply.github.com\">32885896+mateoflorido@users.noreply.github.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/4e15dae38c66c57e20aa14f4f51c2a76450dd2b2"
+               },
+               {
                   "sha": "032a5836d01450b7db612f83ddcb0fb9bf34c4f0",
                   "author": "Homayoon Alimohammadi",
                   "timestamp": 1722336267,
@@ -11163,13 +11188,6 @@
                   "timestamp": 1722264665,
                   "message": "<p>Disable cilium e2e on Github Actions (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/566\">#566</a>)</p>\n\n<p>Test is known to be flaky on the runners.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/6ae7ac92638b1e1fdf214818d74222d5143034e7"
-               },
-               {
-                  "sha": "6e610cd5cd3029602d0ed44f2a256306c708b486",
-                  "author": "Homayoon Alimohammadi",
-                  "timestamp": 1721982636,
-                  "message": "<p>Show correct message on NodeStatus failure (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/564\">#564</a>)</p>\n\n<ul>\n<li>Show correct message on NodeStatus failure</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/6e610cd5cd3029602d0ed44f2a256306c708b486"
                }
             ],
             "ciActions": [
@@ -20329,7 +20347,7 @@
          },
          {
             "name": "mysql-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mysql-k8s-operator",
             "releases": [
                {
@@ -23010,7 +23028,7 @@
          },
          {
             "name": "postgresql-operator",
-            "newCommits": 11,
+            "newCommits": 13,
             "url": "https://github.com/canonical/postgresql-operator",
             "releases": [
                {
@@ -26246,38 +26264,35 @@
       "team": "IS",
       "repos": [
          {
-            "name": "penpot-operator",
+            "name": "paas-app-charmer",
             "newCommits": 0,
-            "url": "https://github.com/canonical/penpot-operator",
+            "url": "https://github.com/canonical/paas-app-charmer",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "c6e640461368241d9102af4c0b41f100f68cc555",
-                  "author": "mthaddon",
-                  "timestamp": 1719501703,
-                  "message": "<p>Initial README, with sections commented out that aren&rsquo;t yet true (<a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/3\">#3</a>)</p>\n\n<ul>\n<li><p>Remove templated metadata.yaml and populate initial charmcraft yaml so that basic charm can be built</p></li>\n\n<li><p>Updates for lint and unit tests to pass</p></li>\n\n<li><p>Fix integration tests</p></li>\n\n<li><p>Update variable name in integration tests</p></li>\n\n<li><p>We need to define the charm file in integration test</p></li>\n\n<li><p>Update formatting</p></li>\n\n<li><p>Run integration test on juju 3.3 since we&rsquo;re deploying noble</p></li>\n\n<li><p>Switch to canonical k8s which supports juju 3.3</p></li>\n\n<li><p>Use strictly confined microk8s</p></li>\n\n<li><p>Noble isn&rsquo;t supported on 3.3, bump to 3.4</p></li>\n\n<li><p>Match pylibjuju version to juju version for noble support</p></li>\n\n<li><p>Remove explicit reference to noble in charm deploy</p></li>\n\n<li><p>Initial README, with sections commented out that aren&rsquo;t yet true</p></li>\n\n<li><p>Fix typo</p></li>\n\n<li><p>Include link to Penpot</p></li>\n</ul>\n\n<p>Co-authored-by: Mariyan Dimitrov <a href=\"mailto:mariyan.dimitrov@gmail.com\">mariyan.dimitrov@gmail.com</a></p>\n\n<ul>\n<li><p>Fix typo</p></li>\n\n<li><p>Minor phrasing update</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Mariyan Dimitrov <a href=\"mailto:mariyan.dimitrov@gmail.com\">mariyan.dimitrov@gmail.com</a></p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/commit/c6e640461368241d9102af4c0b41f100f68cc555"
+                  "sha": "67773b52272286aedd23ae50aceae2e7276db7c7",
+                  "author": "javierdelapuente",
+                  "timestamp": 1721094152,
+                  "message": "<p>Update version to 1.0.4 (<a target=\"_blank\" href=\"https://github.com/canonical/paas-app-charmer/pull/28\">#28</a>)</p>\n",
+                  "url": "https://github.com/canonical/paas-app-charmer/commit/67773b52272286aedd23ae50aceae2e7276db7c7"
                },
                {
-                  "sha": "b1cf2e81bdfe1cec1ce93cefc317b9b63cc02229",
-                  "author": "mthaddon",
-                  "timestamp": 1719388236,
-                  "message": "<p>Remove templated metadata.yaml and populate initial charmcraft yaml (<a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/2\">#2</a>)</p>\n\n<ul>\n<li><p>Remove templated metadata.yaml and populate initial charmcraft yaml so that basic charm can be built</p></li>\n\n<li><p>Updates for lint and unit tests to pass</p></li>\n\n<li><p>Fix integration tests</p></li>\n\n<li><p>Update variable name in integration tests</p></li>\n\n<li><p>We need to define the charm file in integration test</p></li>\n\n<li><p>Update formatting</p></li>\n\n<li><p>Run integration test on juju 3.3 since we&rsquo;re deploying noble</p></li>\n\n<li><p>Switch to canonical k8s which supports juju 3.3</p></li>\n\n<li><p>Use strictly confined microk8s</p></li>\n\n<li><p>Noble isn&rsquo;t supported on 3.3, bump to 3.4</p></li>\n\n<li><p>Match pylibjuju version to juju version for noble support</p></li>\n\n<li><p>Remove explicit reference to noble in charm deploy</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/penpot-operator/commit/b1cf2e81bdfe1cec1ce93cefc317b9b63cc02229"
+                  "sha": "8bb498e35cb1305e5757caa073fc6fbc2b71f137",
+                  "author": "javierdelapuente",
+                  "timestamp": 1720603868,
+                  "message": "<p>Add new env variable {framework}_BASE_URL with the ingress url (<a target=\"_blank\" href=\"https://github.com/canonical/paas-app-charmer/pull/27\">#27</a>)</p>\n",
+                  "url": "https://github.com/canonical/paas-app-charmer/commit/8bb498e35cb1305e5757caa073fc6fbc2b71f137"
                },
                {
-                  "sha": "5d0bd0a445274e95faffd6886c6c75829004a599",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1717748329,
-                  "message": "<p>Initial commit</p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/commit/5d0bd0a445274e95faffd6886c6c75829004a599"
+                  "sha": "5a6b7795d2804eb2df37a004a817062851f9e10b",
+                  "author": "javierdelapuente",
+                  "timestamp": 1720159971,
+                  "message": "<p>Parse all components of a database url (<a target=\"_blank\" href=\"https://github.com/canonical/paas-app-charmer/pull/26\">#26</a>)</p>\n",
+                  "url": "https://github.com/canonical/paas-app-charmer/commit/5a6b7795d2804eb2df37a004a817062851f9e10b"
                }
             ],
-            "ciActions": [
-               "https://github.com/canonical/penpot-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/penpot-operator/actions/workflows/promote_charm.yaml"
-            ],
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -26682,40 +26697,34 @@
             "snap": null
          },
          {
-            "name": "discourse-gatekeeper",
-            "newCommits": 16,
-            "url": "https://github.com/canonical/discourse-gatekeeper",
-            "releases": [
+            "name": ".github",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/.github",
+            "releases": null,
+            "tags": null,
+            "commits": [
                {
-                  "id": 137666752,
-                  "version": "v0.8.1",
-                  "timestamp": 1705644051,
-                  "title": "v0.8.1",
-                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Migration error where discourse is in-line with the default branch but the\nbase content tag is behind. This no longer attempts migration and now also\nmoves the tag to the latest commit on the default branch.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.1",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.1...main"
+                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
+                  "author": "Mariyan Dimitrov",
+                  "timestamp": 1668098113,
+                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
+                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
                },
                {
-                  "id": 132209416,
-                  "version": "v0.8.0",
-                  "timestamp": 1701350249,
-                  "title": "v0.8.0",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for migrating the navigation table to the contents index</li>\n<li>Checks that external references on the contents index return a 2XX response to\nHEAD requests</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Whitespace buildup between generated and input content</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.0",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.0...main"
+                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668092923,
+                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
                },
                {
-                  "id": 124217285,
-                  "version": "v0.7.0",
-                  "timestamp": 1696835711,
-                  "title": "v0.7.0",
-                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
-                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
+                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668087850,
+                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
                }
             ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -27268,39 +27277,6 @@
             "snap": null
          },
          {
-            "name": "haproxy-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/haproxy-operator",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "a8c69784143cc72223f304e7bb17392cca6703b8",
-                  "author": "Thanhphan1147",
-                  "timestamp": 1722300197,
-                  "message": "<p>Revert &ldquo;Minimal charm that installs the haproxy apt package&rdquo;</p>\n\n<p>This reverts commit 621c13128807f7a9bdb45d469bd4f5785177808e.</p>\n",
-                  "url": "https://github.com/canonical/haproxy-operator/commit/a8c69784143cc72223f304e7bb17392cca6703b8"
-               },
-               {
-                  "sha": "621c13128807f7a9bdb45d469bd4f5785177808e",
-                  "author": "Thanhphan1147",
-                  "timestamp": 1722299766,
-                  "message": "<p>Minimal charm that installs the haproxy apt package</p>\n",
-                  "url": "https://github.com/canonical/haproxy-operator/commit/621c13128807f7a9bdb45d469bd4f5785177808e"
-               },
-               {
-                  "sha": "16e909352f31fbeea894386d7c3e3bfdba9569bd",
-                  "author": "Thanhphan1147",
-                  "timestamp": 1722291528,
-                  "message": "<p>bootstrap charm repo from is-charms template</p>\n",
-                  "url": "https://github.com/canonical/haproxy-operator/commit/16e909352f31fbeea894386d7c3e3bfdba9569bd"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "httprequest-lego-provider",
             "newCommits": 17,
             "url": "https://github.com/canonical/httprequest-lego-provider",
@@ -27759,34 +27735,40 @@
             "snap": null
          },
          {
-            "name": "mattermost-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/mattermost-k8s-operator",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "name": "pollen-operator",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/pollen-operator",
+            "releases": [
                {
-                  "sha": "88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b",
-                  "author": "arturo-seijas",
-                  "timestamp": 1720695889,
-                  "message": "<p>Add workflows for tracks support (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/27\">#27</a>)</p>\n\n<ul>\n<li><p>Add workflows for tracks support</p></li>\n\n<li><p>Fix linting</p></li>\n\n<li><p>Update trivyignore</p></li>\n\n<li><p>Update trivyignore</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b"
+                  "id": 161620096,
+                  "version": "rev27",
+                  "timestamp": 1718958542,
+                  "title": "Revision 27",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:30 UTC on 21 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v1.10.17 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev26...rev27\">https://github.com/canonical/pollen-operator/compare/rev26&hellip;rev27</a></p>\n",
+                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev27",
+                  "compareUrl": "https://github.com/canonical/pollen-operator/compare/rev27...main"
                },
                {
-                  "sha": "f7714430700bacc30e5458dd1aa052c37621370b",
-                  "author": "arturo-seijas",
-                  "timestamp": 1720686986,
-                  "message": "<p>Fix license headers (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/28\">#28</a>)</p>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/f7714430700bacc30e5458dd1aa052c37621370b"
+                  "id": 160018810,
+                  "version": "rev26",
+                  "timestamp": 1718176008,
+                  "title": "Revision 26",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:07 UTC on 12 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\">#32</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev24...rev26\">https://github.com/canonical/pollen-operator/compare/rev24&hellip;rev26</a></p>\n",
+                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev26",
+                  "compareUrl": "https://github.com/canonical/pollen-operator/compare/rev26...main"
                },
                {
-                  "sha": "21f82df64a45b1503f1aebe350dc43ae25f073aa",
-                  "author": "renovate[bot]",
-                  "timestamp": 1697789923,
-                  "message": "<p>chore(deps): pin ubuntu docker tag to ed4a422 (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/23\">#23</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/21f82df64a45b1503f1aebe350dc43ae25f073aa"
+                  "id": 158580807,
+                  "version": "rev25",
+                  "timestamp": 1717409515,
+                  "title": "Revision 25",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:12 UTC on 3 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev24...rev25\">https://github.com/canonical/pollen-operator/compare/rev24&hellip;rev25</a></p>\n",
+                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev25",
+                  "compareUrl": "https://github.com/canonical/pollen-operator/compare/rev25...main"
                }
             ],
+            "tags": null,
+            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -27985,21 +27967,74 @@
             "snap": null
          },
          {
-            "name": "sample-flask",
+            "name": "operator-workflows",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sample-flask",
+            "url": "https://github.com/canonical/operator-workflows",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "617398f85788f9ff7ac8227c2f7349b0a480f7dd",
-                  "author": "Weii Wang",
-                  "timestamp": 1705308321,
-                  "message": "<p>Initial commit</p>\n",
-                  "url": "https://github.com/canonical/sample-flask/commit/617398f85788f9ff7ac8227c2f7349b0a480f7dd"
+                  "sha": "f287ef5ba656c5b25c545ef55b2831ba29efce0e",
+                  "author": "Yanks Yoon",
+                  "timestamp": 1721979587,
+                  "message": "<p>feat: multiarch promote (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/378\">#378</a>)</p>\n\n<ul>\n<li><p>remove unused get runner image(used to get runs-on)</p></li>\n\n<li><p>remove unused get runner image workflow</p></li>\n\n<li><p>validate promotable</p></li>\n\n<li><p>default arch for optional archs</p></li>\n\n<li><p>trigger test</p></li>\n\n<li><p>remove unneeded dependency</p></li>\n\n<li><p>use deafult base</p></li>\n\n<li><p>use default if no input</p></li>\n\n<li><p>test mode</p></li>\n\n<li><p>fix outputs from get-runner-image</p></li>\n\n<li><p>fix var assignment</p></li>\n\n<li><p>fix var empty string</p></li>\n\n<li><p>fix outputs channel</p></li>\n\n<li><p>re-enable real workflow</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Christopher Bartz <a href=\"mailto:christopher.bartz@canonical.com\">christopher.bartz@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/f287ef5ba656c5b25c545ef55b2831ba29efce0e"
+               },
+               {
+                  "sha": "5a97ecdc79c7d90495b0f992daa5c8ae92612eae",
+                  "author": "renovate[bot]",
+                  "timestamp": 1721833693,
+                  "message": "<p>chore(deps): update dependency node to v20.16.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/379\">#379</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/5a97ecdc79c7d90495b0f992daa5c8ae92612eae"
+               },
+               {
+                  "sha": "b525cb6aee2d7fe05c557e4d332dfa03340af124",
+                  "author": "renovate[bot]",
+                  "timestamp": 1721651002,
+                  "message": "<p>chore(deps): update docker/login-action action to v3.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/377\">#377</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/b525cb6aee2d7fe05c557e4d332dfa03340af124"
                }
             ],
-            "ciActions": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "discourse-gatekeeper",
+            "newCommits": 16,
+            "url": "https://github.com/canonical/discourse-gatekeeper",
+            "releases": [
+               {
+                  "id": 137666752,
+                  "version": "v0.8.1",
+                  "timestamp": 1705644051,
+                  "title": "v0.8.1",
+                  "body": "<h3>Fixed</h3>\n\n<ul>\n<li>Migration error where discourse is in-line with the default branch but the\nbase content tag is behind. This no longer attempts migration and now also\nmoves the tag to the latest commit on the default branch.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.1",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.1...main"
+               },
+               {
+                  "id": 132209416,
+                  "version": "v0.8.0",
+                  "timestamp": 1701350249,
+                  "title": "v0.8.0",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for migrating the navigation table to the contents index</li>\n<li>Checks that external references on the contents index return a 2XX response to\nHEAD requests</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Whitespace buildup between generated and input content</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.8.0",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.8.0...main"
+               },
+               {
+                  "id": 124217285,
+                  "version": "v0.7.0",
+                  "timestamp": 1696835711,
+                  "title": "v0.7.0",
+                  "body": "<h3>Added</h3>\n\n<ul>\n<li>Support for defining a contents index in the <code>index.md</code> file.</li>\n<li>Support for hidden items on the contentx index.</li>\n<li>Support for external items on the contents index</li>\n<li>Automatically moving the <code>discourse-gatekeeper/content</code> tag when the\ndocumentation is up to date with discourse</li>\n</ul>\n\n<h3>Fixed</h3>\n\n<ul>\n<li>Navigation table not getting removed if the contents was hidden using the\n<code>[details=...]...[/details]</code> tag.</li>\n<li>No longer use empty values from <code>INPUT_COMMIT_SHA</code> instead of reading the\nevent/ environment</li>\n<li>Removing leading and trailing whitespace in base content for comparison</li>\n<li>Correct failing pre-flight checks due to shallowly checked out repos</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/discourse-gatekeeper/releases/tag/v0.7.0",
+                  "compareUrl": "https://github.com/canonical/discourse-gatekeeper/compare/v0.7.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -28037,73 +28072,34 @@
             "snap": null
          },
          {
-            "name": "operator-workflows",
+            "name": "mattermost-k8s-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/operator-workflows",
+            "url": "https://github.com/canonical/mattermost-k8s-operator",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "f287ef5ba656c5b25c545ef55b2831ba29efce0e",
-                  "author": "Yanks Yoon",
-                  "timestamp": 1721979587,
-                  "message": "<p>feat: multiarch promote (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/378\">#378</a>)</p>\n\n<ul>\n<li><p>remove unused get runner image(used to get runs-on)</p></li>\n\n<li><p>remove unused get runner image workflow</p></li>\n\n<li><p>validate promotable</p></li>\n\n<li><p>default arch for optional archs</p></li>\n\n<li><p>trigger test</p></li>\n\n<li><p>remove unneeded dependency</p></li>\n\n<li><p>use deafult base</p></li>\n\n<li><p>use default if no input</p></li>\n\n<li><p>test mode</p></li>\n\n<li><p>fix outputs from get-runner-image</p></li>\n\n<li><p>fix var assignment</p></li>\n\n<li><p>fix var empty string</p></li>\n\n<li><p>fix outputs channel</p></li>\n\n<li><p>re-enable real workflow</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Christopher Bartz <a href=\"mailto:christopher.bartz@canonical.com\">christopher.bartz@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/f287ef5ba656c5b25c545ef55b2831ba29efce0e"
+                  "sha": "88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b",
+                  "author": "arturo-seijas",
+                  "timestamp": 1720695889,
+                  "message": "<p>Add workflows for tracks support (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/27\">#27</a>)</p>\n\n<ul>\n<li><p>Add workflows for tracks support</p></li>\n\n<li><p>Fix linting</p></li>\n\n<li><p>Update trivyignore</p></li>\n\n<li><p>Update trivyignore</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/88ba47a7ecf61f31636d3f8c662d97bf6c0bc76b"
                },
                {
-                  "sha": "5a97ecdc79c7d90495b0f992daa5c8ae92612eae",
-                  "author": "renovate[bot]",
-                  "timestamp": 1721833693,
-                  "message": "<p>chore(deps): update dependency node to v20.16.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/379\">#379</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/5a97ecdc79c7d90495b0f992daa5c8ae92612eae"
+                  "sha": "f7714430700bacc30e5458dd1aa052c37621370b",
+                  "author": "arturo-seijas",
+                  "timestamp": 1720686986,
+                  "message": "<p>Fix license headers (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/28\">#28</a>)</p>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/f7714430700bacc30e5458dd1aa052c37621370b"
                },
                {
-                  "sha": "b525cb6aee2d7fe05c557e4d332dfa03340af124",
+                  "sha": "21f82df64a45b1503f1aebe350dc43ae25f073aa",
                   "author": "renovate[bot]",
-                  "timestamp": 1721651002,
-                  "message": "<p>chore(deps): update docker/login-action action to v3.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/377\">#377</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/b525cb6aee2d7fe05c557e4d332dfa03340af124"
+                  "timestamp": 1697789923,
+                  "message": "<p>chore(deps): pin ubuntu docker tag to ed4a422 (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/23\">#23</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/21f82df64a45b1503f1aebe350dc43ae25f073aa"
                }
             ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "pollen-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/pollen-operator",
-            "releases": [
-               {
-                  "id": 161620096,
-                  "version": "rev27",
-                  "timestamp": 1718958542,
-                  "title": "Revision 27",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:30 UTC on 21 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v1.10.17 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev26...rev27\">https://github.com/canonical/pollen-operator/compare/rev26&hellip;rev27</a></p>\n",
-                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev27",
-                  "compareUrl": "https://github.com/canonical/pollen-operator/compare/rev27...main"
-               },
-               {
-                  "id": 160018810,
-                  "version": "rev26",
-                  "timestamp": 1718176008,
-                  "title": "Revision 26",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:07 UTC on 12 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\">#32</a></a></li>\n<li>chore(deps): update dependency pydantic to v1.10.16 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev24...rev26\">https://github.com/canonical/pollen-operator/compare/rev24&hellip;rev26</a></p>\n",
-                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev26",
-                  "compareUrl": "https://github.com/canonical/pollen-operator/compare/rev26...main"
-               },
-               {
-                  "id": 158580807,
-                  "version": "rev25",
-                  "timestamp": 1717409515,
-                  "title": "Revision 25",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:12 UTC on 3 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/pollen-operator/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pollen-operator/compare/rev24...rev25\">https://github.com/canonical/pollen-operator/compare/rev24&hellip;rev25</a></p>\n",
-                  "url": "https://github.com/canonical/pollen-operator/releases/tag/rev25",
-                  "compareUrl": "https://github.com/canonical/pollen-operator/compare/rev25...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -28223,35 +28219,21 @@
             "snap": null
          },
          {
-            "name": ".github",
+            "name": "sample-flask",
             "newCommits": 0,
-            "url": "https://github.com/canonical/.github",
+            "url": "https://github.com/canonical/sample-flask",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1668098113,
-                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
-                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
-               },
-               {
-                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
-                  "author": "arturo-seijas",
-                  "timestamp": 1668092923,
-                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
-               },
-               {
-                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
-                  "author": "arturo-seijas",
-                  "timestamp": 1668087850,
-                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
+                  "sha": "617398f85788f9ff7ac8227c2f7349b0a480f7dd",
+                  "author": "Weii Wang",
+                  "timestamp": 1705308321,
+                  "message": "<p>Initial commit</p>\n",
+                  "url": "https://github.com/canonical/sample-flask/commit/617398f85788f9ff7ac8227c2f7349b0a480f7dd"
                }
             ],
-            "ciActions": [],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -29788,35 +29770,38 @@
             "snap": null
          },
          {
-            "name": "paas-app-charmer",
+            "name": "penpot-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/paas-app-charmer",
+            "url": "https://github.com/canonical/penpot-operator",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "67773b52272286aedd23ae50aceae2e7276db7c7",
-                  "author": "javierdelapuente",
-                  "timestamp": 1721094152,
-                  "message": "<p>Update version to 1.0.4 (<a target=\"_blank\" href=\"https://github.com/canonical/paas-app-charmer/pull/28\">#28</a>)</p>\n",
-                  "url": "https://github.com/canonical/paas-app-charmer/commit/67773b52272286aedd23ae50aceae2e7276db7c7"
+                  "sha": "c6e640461368241d9102af4c0b41f100f68cc555",
+                  "author": "mthaddon",
+                  "timestamp": 1719501703,
+                  "message": "<p>Initial README, with sections commented out that aren&rsquo;t yet true (<a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/3\">#3</a>)</p>\n\n<ul>\n<li><p>Remove templated metadata.yaml and populate initial charmcraft yaml so that basic charm can be built</p></li>\n\n<li><p>Updates for lint and unit tests to pass</p></li>\n\n<li><p>Fix integration tests</p></li>\n\n<li><p>Update variable name in integration tests</p></li>\n\n<li><p>We need to define the charm file in integration test</p></li>\n\n<li><p>Update formatting</p></li>\n\n<li><p>Run integration test on juju 3.3 since we&rsquo;re deploying noble</p></li>\n\n<li><p>Switch to canonical k8s which supports juju 3.3</p></li>\n\n<li><p>Use strictly confined microk8s</p></li>\n\n<li><p>Noble isn&rsquo;t supported on 3.3, bump to 3.4</p></li>\n\n<li><p>Match pylibjuju version to juju version for noble support</p></li>\n\n<li><p>Remove explicit reference to noble in charm deploy</p></li>\n\n<li><p>Initial README, with sections commented out that aren&rsquo;t yet true</p></li>\n\n<li><p>Fix typo</p></li>\n\n<li><p>Include link to Penpot</p></li>\n</ul>\n\n<p>Co-authored-by: Mariyan Dimitrov <a href=\"mailto:mariyan.dimitrov@gmail.com\">mariyan.dimitrov@gmail.com</a></p>\n\n<ul>\n<li><p>Fix typo</p></li>\n\n<li><p>Minor phrasing update</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Mariyan Dimitrov <a href=\"mailto:mariyan.dimitrov@gmail.com\">mariyan.dimitrov@gmail.com</a></p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/commit/c6e640461368241d9102af4c0b41f100f68cc555"
                },
                {
-                  "sha": "8bb498e35cb1305e5757caa073fc6fbc2b71f137",
-                  "author": "javierdelapuente",
-                  "timestamp": 1720603868,
-                  "message": "<p>Add new env variable {framework}_BASE_URL with the ingress url (<a target=\"_blank\" href=\"https://github.com/canonical/paas-app-charmer/pull/27\">#27</a>)</p>\n",
-                  "url": "https://github.com/canonical/paas-app-charmer/commit/8bb498e35cb1305e5757caa073fc6fbc2b71f137"
+                  "sha": "b1cf2e81bdfe1cec1ce93cefc317b9b63cc02229",
+                  "author": "mthaddon",
+                  "timestamp": 1719388236,
+                  "message": "<p>Remove templated metadata.yaml and populate initial charmcraft yaml (<a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/2\">#2</a>)</p>\n\n<ul>\n<li><p>Remove templated metadata.yaml and populate initial charmcraft yaml so that basic charm can be built</p></li>\n\n<li><p>Updates for lint and unit tests to pass</p></li>\n\n<li><p>Fix integration tests</p></li>\n\n<li><p>Update variable name in integration tests</p></li>\n\n<li><p>We need to define the charm file in integration test</p></li>\n\n<li><p>Update formatting</p></li>\n\n<li><p>Run integration test on juju 3.3 since we&rsquo;re deploying noble</p></li>\n\n<li><p>Switch to canonical k8s which supports juju 3.3</p></li>\n\n<li><p>Use strictly confined microk8s</p></li>\n\n<li><p>Noble isn&rsquo;t supported on 3.3, bump to 3.4</p></li>\n\n<li><p>Match pylibjuju version to juju version for noble support</p></li>\n\n<li><p>Remove explicit reference to noble in charm deploy</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/penpot-operator/commit/b1cf2e81bdfe1cec1ce93cefc317b9b63cc02229"
                },
                {
-                  "sha": "5a6b7795d2804eb2df37a004a817062851f9e10b",
-                  "author": "javierdelapuente",
-                  "timestamp": 1720159971,
-                  "message": "<p>Parse all components of a database url (<a target=\"_blank\" href=\"https://github.com/canonical/paas-app-charmer/pull/26\">#26</a>)</p>\n",
-                  "url": "https://github.com/canonical/paas-app-charmer/commit/5a6b7795d2804eb2df37a004a817062851f9e10b"
+                  "sha": "5d0bd0a445274e95faffd6886c6c75829004a599",
+                  "author": "Mariyan Dimitrov",
+                  "timestamp": 1717748329,
+                  "message": "<p>Initial commit</p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/commit/5d0bd0a445274e95faffd6886c6c75829004a599"
                }
             ],
-            "ciActions": [],
+            "ciActions": [
+               "https://github.com/canonical/penpot-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/penpot-operator/actions/workflows/promote_charm.yaml"
+            ],
             "charm": null,
             "snap": null
          },
