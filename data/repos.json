@@ -10713,25 +10713,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "a457a05d7fbba69e85f242354f9e6b912f47033f",
+                  "sha": "b8d2b0a474284d9ff58f5c5f8beaba3e215219d4",
                   "author": "Benjamin Schimke",
-                  "timestamp": 1722349541,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/envoy-rock/pull/2\">#2</a> from claudiubelu/adds-boilerplate</p>\n\n<p>Adds boilerplate files and fixes to existing ones</p>\n",
-                  "url": "https://github.com/canonical/envoy-rock/commit/a457a05d7fbba69e85f242354f9e6b912f47033f"
+                  "timestamp": 1722412920,
+                  "message": "<p>Use correct runner label (<a target=\"_blank\" href=\"https://github.com/canonical/envoy-rock/pull/5\">#5</a>)</p>\n",
+                  "url": "https://github.com/canonical/envoy-rock/commit/b8d2b0a474284d9ff58f5c5f8beaba3e215219d4"
                },
                {
-                  "sha": "9d30315ab139103117ea881274a2681b4147b2f2",
+                  "sha": "c74fb73a26b60372cba13eba52a0218222a546e8",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1722410850,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/envoy-rock/pull/3\">#3</a> from claudiubelu/adds-rock</p>\n\n<p>Adds the envoy rock</p>\n",
+                  "url": "https://github.com/canonical/envoy-rock/commit/c74fb73a26b60372cba13eba52a0218222a546e8"
+               },
+               {
+                  "sha": "53a63c2c042445c87cb8aca653efc11cc1ae51c3",
                   "author": "Claudiu Belu",
-                  "timestamp": 1722321419,
-                  "message": "<p>Adds boilerplate files and fixes to existing ones</p>\n\n<p>Adds files to the repository to bring it in line with the other rocks.</p>\n",
-                  "url": "https://github.com/canonical/envoy-rock/commit/9d30315ab139103117ea881274a2681b4147b2f2"
-               },
-               {
-                  "sha": "2bdba4addeb22434ac3420119bb3db0c017bf7c8",
-                  "author": "Maciej Golaszewski",
-                  "timestamp": 1722014575,
-                  "message": "<p>added workflows</p>\n",
-                  "url": "https://github.com/canonical/envoy-rock/commit/2bdba4addeb22434ac3420119bb3db0c017bf7c8"
+                  "timestamp": 1722339310,
+                  "message": "<p>Switches amd64 runner with a self-hosted one</p>\n\n<p>There are some issues when trying to use the github runners for\nbuilding the envoy rock, specifically when it comes to building\nand linking the envoy binary. The Runner can lose communication\nwith the server due to CPU / Memory starvation, causing the runner\nto be terminated.</p>\n\n<p>The self-hosted runners are bigger, so the compilation time should\nbe significantly smaller, and it shouldn&rsquo;t end up in resource starvation.</p>\n",
+                  "url": "https://github.com/canonical/envoy-rock/commit/53a63c2c042445c87cb8aca653efc11cc1ae51c3"
                }
             ],
             "ciActions": [],
@@ -11143,6 +11143,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "f7167b5be0645c42ff5eb23231a8ad4cda9ecdfc",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1722410502,
+                  "message": "<p>Improve join logic to handle unreachable nodes (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/560\">#560</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Mateo Florido <a href=\"mailto:32885896+mateoflorido@users.noreply.github.com\">32885896+mateoflorido@users.noreply.github.com</a>\nCo-authored-by: Louise K. Schmidtgen <a href=\"mailto:louise.schmidtgen@canonical.com\">louise.schmidtgen@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/f7167b5be0645c42ff5eb23231a8ad4cda9ecdfc"
+               },
+               {
                   "sha": "4e15dae38c66c57e20aa14f4f51c2a76450dd2b2",
                   "author": "Benjamin Schimke",
                   "timestamp": 1722366366,
@@ -11155,13 +11162,6 @@
                   "timestamp": 1722336267,
                   "message": "<p>Improve k8s status (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/563\">#563</a>)</p>\n\n<ul>\n<li>Reworked k8s status to comply with the new proposal</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/032a5836d01450b7db612f83ddcb0fb9bf34c4f0"
-               },
-               {
-                  "sha": "6ae7ac92638b1e1fdf214818d74222d5143034e7",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1722264665,
-                  "message": "<p>Disable cilium e2e on Github Actions (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/566\">#566</a>)</p>\n\n<p>Test is known to be flaky on the runners.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/6ae7ac92638b1e1fdf214818d74222d5143034e7"
                }
             ],
             "ciActions": [
@@ -21492,7 +21492,7 @@
          },
          {
             "name": "mongodb-k8s-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/mongodb-k8s-operator",
             "releases": [
                {
@@ -26944,6 +26944,15 @@
             "url": "https://github.com/canonical/github-actions-exporter-operator",
             "releases": [
                {
+                  "id": 167989513,
+                  "version": "rev38",
+                  "timestamp": 1722412688,
+                  "title": "Revision 38",
+                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 38</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:00 UTC on 31 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: revert charm binary packages (fixed upstream) by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/52\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/52\">#52</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev37...rev38\">https://github.com/canonical/github-actions-exporter-operator/compare/rev37&hellip;rev38</a></p>\n",
+                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev38",
+                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev38...main"
+               },
+               {
                   "id": 167970917,
                   "version": "rev37",
                   "timestamp": 1722401041,
@@ -26960,15 +26969,6 @@
                   "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:43 UTC on 31 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.19 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev35...rev36\">https://github.com/canonical/github-actions-exporter-operator/compare/rev35&hellip;rev36</a></p>\n",
                   "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev36",
                   "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev36...main"
-               },
-               {
-                  "id": 167926362,
-                  "version": "rev35",
-                  "timestamp": 1722372170,
-                  "title": "Revision 35",
-                  "body": "<p>resources:\n    -  github-actions-exporter-image: undefined\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:45 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix setuptools breaking dep issue by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/github-actions-exporter-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-actions-exporter-operator/compare/rev34...rev35\">https://github.com/canonical/github-actions-exporter-operator/compare/rev34&hellip;rev35</a></p>\n",
-                  "url": "https://github.com/canonical/github-actions-exporter-operator/releases/tag/rev35",
-                  "compareUrl": "https://github.com/canonical/github-actions-exporter-operator/compare/rev35...main"
                }
             ],
             "tags": null,
@@ -26979,23 +26979,23 @@
          },
          {
             "name": "github-runner-image-builder",
-            "newCommits": 9,
+            "newCommits": 0,
             "url": "https://github.com/canonical/github-runner-image-builder",
             "releases": null,
             "tags": [
                {
                   "name": "stable",
-                  "sha": "31575256306acf983204b7e8dd94543caddc2d3e",
-                  "body": "<p>increment patch version</p>\n",
-                  "timestamp": 1717730442,
+                  "sha": "c7c7492bfbc816c6087f7c5240919eed4410cd79",
+                  "body": "<p>feat: enable generic kernel (hwe) (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder/pull/13\">#13</a>)</p>\n\n<ul>\n<li><p>enable generic kernel (hwe)</p></li>\n\n<li><p>update version</p></li>\n\n<li><p>increase mount size</p></li>\n\n<li><p>increase mount size</p></li>\n\n<li><p>install recommended packages</p></li>\n\n<li><p>add more space</p></li>\n\n<li><p>add more space</p></li>\n\n<li><p>try all lazy umount</p></li>\n\n<li><p>add coverage test</p></li>\n\n<li><p>test: fix id</p></li>\n\n<li><p>chore: remove default return</p></li>\n</ul>\n",
+                  "timestamp": 1722335030,
                   "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/stable",
                   "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...stable"
                },
                {
                   "name": "edge",
-                  "sha": "2e3de26b725c0e60763723aebbdd35b31215ddbb",
-                  "body": "<p>fix: add apt packages (missing gcc issue on integration tests) (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder/pull/12\">#12</a>)</p>\n\n<ul>\n<li><p>add apt packages</p></li>\n\n<li><p>add python3-dev</p></li>\n</ul>\n",
-                  "timestamp": 1721041843,
+                  "sha": "c7c7492bfbc816c6087f7c5240919eed4410cd79",
+                  "body": "<p>feat: enable generic kernel (hwe) (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder/pull/13\">#13</a>)</p>\n\n<ul>\n<li><p>enable generic kernel (hwe)</p></li>\n\n<li><p>update version</p></li>\n\n<li><p>increase mount size</p></li>\n\n<li><p>increase mount size</p></li>\n\n<li><p>install recommended packages</p></li>\n\n<li><p>add more space</p></li>\n\n<li><p>add more space</p></li>\n\n<li><p>try all lazy umount</p></li>\n\n<li><p>add coverage test</p></li>\n\n<li><p>test: fix id</p></li>\n\n<li><p>chore: remove default return</p></li>\n</ul>\n",
+                  "timestamp": 1722335030,
                   "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/edge",
                   "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...edge"
                }
@@ -27092,6 +27092,15 @@
             "url": "https://github.com/canonical/github-runner-operator",
             "releases": [
                {
+                  "id": 167991520,
+                  "version": "rev231",
+                  "timestamp": 1722413509,
+                  "title": "Revision 231",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:13 UTC on 31 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Refine token docs for OpenStack by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/342\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/342\">#342</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev230...rev231\">https://github.com/canonical/github-runner-operator/compare/rev230&hellip;rev231</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev231",
+                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev231...main"
+               },
+               {
                   "id": 167358048,
                   "version": "rev230",
                   "timestamp": 1721997263,
@@ -27108,15 +27117,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:35 UTC on 26 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use returned security group for create server by <a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/337\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/337\">#337</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev228...rev229\">https://github.com/canonical/github-runner-operator/compare/rev228&hellip;rev229</a></p>\n",
                   "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev229",
                   "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev229...main"
-               },
-               {
-                  "id": 167057550,
-                  "version": "rev228",
-                  "timestamp": 1721883664,
-                  "title": "Revision 228",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:02 UTC on 25 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add security group rules by ID by <a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/335\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/335\">#335</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev227...rev228\">https://github.com/canonical/github-runner-operator/compare/rev227&hellip;rev228</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev228",
-                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev228...main"
                }
             ],
             "tags": null,
@@ -27173,8 +27173,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 230,
-                     "timestamp": 1721997336,
+                     "revision": 231,
+                     "timestamp": 1722413611,
                      "base": ""
                   },
                   {
