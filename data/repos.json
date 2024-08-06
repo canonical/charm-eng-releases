@@ -4071,15 +4071,15 @@
                   {
                      "track": "0.40-classic",
                      "channel": "edge",
-                     "revision": 70,
-                     "timestamp": 1722938408,
+                     "revision": 74,
+                     "timestamp": 1722954120,
                      "base": "core20"
                   },
                   {
                      "track": "0.40-classic",
                      "channel": "edge",
-                     "revision": 71,
-                     "timestamp": 1722938465,
+                     "revision": 75,
+                     "timestamp": 1722954177,
                      "base": "core20"
                   }
                ],
@@ -6454,15 +6454,15 @@
                   {
                      "track": "0.40-classic",
                      "channel": "edge",
-                     "revision": 70,
-                     "timestamp": 1722938408,
+                     "revision": 74,
+                     "timestamp": 1722954120,
                      "base": "core20"
                   },
                   {
                      "track": "0.40-classic",
                      "channel": "edge",
-                     "revision": 71,
-                     "timestamp": 1722938465,
+                     "revision": 75,
+                     "timestamp": 1722954177,
                      "base": "core20"
                   }
                ],
@@ -6522,6 +6522,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7fd1f46add230eb4611b14dc473156dd05ce348a",
+                  "author": "Daniela Plascencia",
+                  "timestamp": 1722955753,
+                  "message": "<p>fix, tests: add condition for waiting for and setting the public-url config option (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/1001\">#1001</a>)</p>\n\n<ul>\n<li>fix, tests: add condition for waiting for and setting the public-url config option</li>\n</ul>\n\n<p>Due to recent changes in dex and oidc charms for CKF 1.9, this configuration option is not\nrequired anymore for this and greater versions of the bundle.\nThe config option is still required by CKF 1.8 charms, though, to allow this test to run for\n1.8 and 1.9, this commits adds logic to set it or not depending on the deployed version.</p>\n\n<p>Fixes <a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/997\">#997</a></p>\n",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/7fd1f46add230eb4611b14dc473156dd05ce348a"
+               },
+               {
                   "sha": "337cbcfe6d6df10d1fb90693b155b4e4ef7f7050",
                   "author": "Daniela Plascencia",
                   "timestamp": 1722358528,
@@ -6534,13 +6541,6 @@
                   "timestamp": 1721998174,
                   "message": "<p>chore: add relation for dex-oidc-config (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/992\">#992</a>)</p>\n\n<p>Add relation between dex-auth and oidc-gatekeeper to share Dex&rsquo;s OIDC configuration.</p>\n",
                   "url": "https://github.com/canonical/bundle-kubeflow/commit/451772eb7253bf248526772e174167389072d117"
-               },
-               {
-                  "sha": "fc02f76b2d3079370742589ebb72716fef9a9876",
-                  "author": "Noha Ihab",
-                  "timestamp": 1721302655,
-                  "message": "<p>add dashboard-links relation with training operator (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/987\">#987</a>)</p>\n\n<ul>\n<li>add dashboard-links relation with training operator in latest/edge</li>\n<li>add dashboard links relation to training operator in latest/beta</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/fc02f76b2d3079370742589ebb72716fef9a9876"
                }
             ],
             "ciActions": [
@@ -6731,36 +6731,36 @@
             "snap": null
          },
          {
-            "name": "argo-operators",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/argo-operators",
+            "name": "admission-webhook-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/admission-webhook-operator",
             "releases": [
                {
-                  "id": 168848669,
-                  "version": "argo-controller-rev550",
-                  "timestamp": 1722929742,
-                  "title": "Revision 550",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/workflow-controller:v3.4.16-license-compliance\n       resource-revision: 356</p>\n\n<p>Static resources:\n Released to &lsquo;3.4/edge&rsquo; at 08:26 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/3.4 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/192\">#192</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/argo-operators/compare/argo-controller-rev544...argo-controller-rev550\">https://github.com/canonical/argo-operators/compare/argo-controller-rev544&hellip;argo-controller-rev550</a></p>\n",
-                  "url": "https://github.com/canonical/argo-operators/releases/tag/argo-controller-rev550",
-                  "compareUrl": "https://github.com/canonical/argo-operators/compare/argo-controller-rev550...main"
+                  "id": 168848320,
+                  "version": "rev348",
+                  "timestamp": 1722929700,
+                  "title": "Revision 348",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/poddefaults-webhook:v1.9.0\n       resource-revision: 286</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:23 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/147\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/147\">#147</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/admission-webhook-operator/compare/rev342...rev348\">https://github.com/canonical/admission-webhook-operator/compare/rev342&hellip;rev348</a></p>\n",
+                  "url": "https://github.com/canonical/admission-webhook-operator/releases/tag/rev348",
+                  "compareUrl": "https://github.com/canonical/admission-webhook-operator/compare/rev348...main"
                },
                {
-                  "id": 168848107,
-                  "version": "argo-controller-rev549",
-                  "timestamp": 1722929735,
-                  "title": "Revision 549",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/workflow-controller:v3.4.16-license-compliance\n       resource-revision: 356</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:22 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/190\"><a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/190\">#190</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/argo-operators/compare/argo-controller-rev544...argo-controller-rev549\">https://github.com/canonical/argo-operators/compare/argo-controller-rev544&hellip;argo-controller-rev549</a></p>\n",
-                  "url": "https://github.com/canonical/argo-operators/releases/tag/argo-controller-rev549",
-                  "compareUrl": "https://github.com/canonical/argo-operators/compare/argo-controller-rev549...main"
+                  "id": 168848110,
+                  "version": "rev347",
+                  "timestamp": 1722929715,
+                  "title": "Revision 347",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/poddefaults-webhook:v1.9.0\n       resource-revision: 286</p>\n\n<p>Static resources:\n Released to &lsquo;1.9/edge&rsquo; at 08:22 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/1.9 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/149\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/149\">#149</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/admission-webhook-operator/compare/rev342...rev347\">https://github.com/canonical/admission-webhook-operator/compare/rev342&hellip;rev347</a></p>\n",
+                  "url": "https://github.com/canonical/admission-webhook-operator/releases/tag/rev347",
+                  "compareUrl": "https://github.com/canonical/admission-webhook-operator/compare/rev347...main"
                },
                {
-                  "id": 167319493,
-                  "version": "argo-controller-rev545",
-                  "timestamp": 1721823649,
-                  "title": "Revision 545",
-                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/workflow-controller:v3.4.16-license-compliance\n       resource-revision: 354</p>\n\n<p>Static resources:\n Released to &lsquo;3.4/edge&rsquo; at 08:54 UTC on 26 Jul 2024</p>\n\n<p>Released to &lsquo;3.4/stable&rsquo; at 11:31 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build: bump jinja2 3.1.x -&gt; 3.1.4 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/189\"><a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/189\">#189</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/argo-operators/compare/argo-controller-rev538...argo-controller-rev545\">https://github.com/canonical/argo-operators/compare/argo-controller-rev538&hellip;argo-controller-rev545</a></p>\n",
-                  "url": "https://github.com/canonical/argo-operators/releases/tag/argo-controller-rev545",
-                  "compareUrl": "https://github.com/canonical/argo-operators/compare/argo-controller-rev545...main"
+                  "id": 167350463,
+                  "version": "rev344",
+                  "timestamp": 1721823458,
+                  "title": "Revision 344",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/poddefaults-webhook:v1.9.0\n       resource-revision: 285</p>\n\n<p>Static resources:\n Released to &lsquo;1.9/edge&rsquo; at 11:41 UTC on 26 Jul 2024</p>\n\n<p>Released to &lsquo;1.9/stable&rsquo; at 11:30 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update manifests for kf v1.9.0 by <a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/144\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/144\">#144</a></a></li>\n<li>build: bump jinja2 3.1.x -&gt; 3.1.4 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/146\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/146\">#146</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/admission-webhook-operator/compare/rev339...rev344\">https://github.com/canonical/admission-webhook-operator/compare/rev339&hellip;rev344</a></p>\n",
+                  "url": "https://github.com/canonical/admission-webhook-operator/releases/tag/rev344",
+                  "compareUrl": "https://github.com/canonical/admission-webhook-operator/compare/rev344...main"
                }
             ],
             "tags": null,
@@ -6883,36 +6883,27 @@
             "snap": null
          },
          {
-            "name": "dex-auth-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/dex-auth-operator",
+            "name": "charmed-kubeflow-workflows",
+            "newCommits": 21,
+            "url": "https://github.com/canonical/charmed-kubeflow-workflows",
             "releases": [
                {
-                  "id": 168903269,
-                  "version": "rev558",
-                  "timestamp": 1722945935,
-                  "title": "Revision 558",
-                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/dex:2.39.1-a91817e\n       resource-revision: 463</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:14 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>tests: Update relations to oidc by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/219\"><a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/219\">#219</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev547...rev558\">https://github.com/canonical/dex-auth-operator/compare/rev547&hellip;rev558</a></p>\n",
-                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev558",
-                  "compareUrl": "https://github.com/canonical/dex-auth-operator/compare/rev558...main"
+                  "id": 110336011,
+                  "version": "v1.0.0",
+                  "timestamp": 1688032094,
+                  "title": "v1.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>V1 of reusable actions by <a target=\"_blank\" href=\"https://github.com/beliaev-maksim\">@beliaev-maksim</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\">#15</a></a></li>\n<li>feat: common ci workflow by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\">#5</a></a></li>\n<li>ROCK common workflows by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/6\">#6</a></a></li>\n<li>fix: modified secrets handling by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/8\">#8</a></a></li>\n<li>Fix build scan by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/9\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/9\">#9</a></a></li>\n<li>fix: removed inherit from jobs by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/10\">#10</a></a></li>\n<li>feat: added credentials by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/11\">#11</a></a></li>\n<li>fix: remove working directory from workflow by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/12\">#12</a></a></li>\n<li>Fix remove quotes by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/13\">#13</a></a></li>\n<li>KF-3652 add renovate preset with fixed python 3.8.10 and byweekly sch… by <a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\">#14</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\">#5</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\">#14</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/beliaev-maksim\">@beliaev-maksim</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\">#15</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-kubeflow-workflows/compare/v0.0.1...v1.0.0\">https://github.com/canonical/charmed-kubeflow-workflows/compare/v0.0.1&hellip;v1.0.0</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-kubeflow-workflows/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/charmed-kubeflow-workflows/compare/v1.0.0...main"
                },
                {
-                  "id": 167354212,
-                  "version": "rev548",
-                  "timestamp": 1721988178,
-                  "title": "Revision 548",
-                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/dex:2.39.1-a91817e\n       resource-revision: 460</p>\n\n<p>Static resources:\n Released to &lsquo;2.39/edge&rsquo; at 12:09 UTC on 26 Jul 2024</p>\n\n<p>Released to &lsquo;2.39/stable&rsquo; at 11:32 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: add config_changed as refresh event for dex-oidc-config provider by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\">#214</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev543...rev548\">https://github.com/canonical/dex-auth-operator/compare/rev543&hellip;rev548</a></p>\n",
-                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev548",
-                  "compareUrl": "https://github.com/canonical/dex-auth-operator/compare/rev548...main"
-               },
-               {
-                  "id": 167338820,
-                  "version": "rev547",
-                  "timestamp": 1721988178,
-                  "title": "Revision 547",
-                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/dex:2.39.1-a91817e\n       resource-revision: 460</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:12 UTC on 26 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: add config_changed as refresh event for dex-oidc-config provider by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\">#214</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev543...rev547\">https://github.com/canonical/dex-auth-operator/compare/rev543&hellip;rev547</a></p>\n",
-                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev547",
-                  "compareUrl": "https://github.com/canonical/dex-auth-operator/compare/rev547...main"
+                  "id": 77409698,
+                  "version": "v0.0.1",
+                  "timestamp": 1662753480,
+                  "title": "Release update-libs.yaml workflow",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmed-kubeflow-workflows/releases/tag/v0.0.1",
+                  "compareUrl": "https://github.com/canonical/charmed-kubeflow-workflows/compare/v0.0.1...main"
                }
             ],
             "tags": null,
@@ -6982,27 +6973,36 @@
             "snap": null
          },
          {
-            "name": "charmed-kubeflow-workflows",
-            "newCommits": 21,
-            "url": "https://github.com/canonical/charmed-kubeflow-workflows",
+            "name": "dex-auth-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/dex-auth-operator",
             "releases": [
                {
-                  "id": 110336011,
-                  "version": "v1.0.0",
-                  "timestamp": 1688032094,
-                  "title": "v1.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>V1 of reusable actions by <a target=\"_blank\" href=\"https://github.com/beliaev-maksim\">@beliaev-maksim</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\">#15</a></a></li>\n<li>feat: common ci workflow by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\">#5</a></a></li>\n<li>ROCK common workflows by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/6\">#6</a></a></li>\n<li>fix: modified secrets handling by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/8\">#8</a></a></li>\n<li>Fix build scan by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/9\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/9\">#9</a></a></li>\n<li>fix: removed inherit from jobs by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/10\">#10</a></a></li>\n<li>feat: added credentials by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/11\">#11</a></a></li>\n<li>fix: remove working directory from workflow by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/12\">#12</a></a></li>\n<li>Fix remove quotes by <a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/13\">#13</a></a></li>\n<li>KF-3652 add renovate preset with fixed python 3.8.10 and byweekly sch… by <a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\">#14</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/i-chvets\">@i-chvets</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/5\">#5</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/14\">#14</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/beliaev-maksim\">@beliaev-maksim</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-workflows/pull/15\">#15</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-kubeflow-workflows/compare/v0.0.1...v1.0.0\">https://github.com/canonical/charmed-kubeflow-workflows/compare/v0.0.1&hellip;v1.0.0</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-kubeflow-workflows/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/charmed-kubeflow-workflows/compare/v1.0.0...main"
+                  "id": 168903269,
+                  "version": "rev558",
+                  "timestamp": 1722945935,
+                  "title": "Revision 558",
+                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/dex:2.39.1-a91817e\n       resource-revision: 463</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:14 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>tests: Update relations to oidc by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/219\"><a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/219\">#219</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev547...rev558\">https://github.com/canonical/dex-auth-operator/compare/rev547&hellip;rev558</a></p>\n",
+                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev558",
+                  "compareUrl": "https://github.com/canonical/dex-auth-operator/compare/rev558...main"
                },
                {
-                  "id": 77409698,
-                  "version": "v0.0.1",
-                  "timestamp": 1662753480,
-                  "title": "Release update-libs.yaml workflow",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmed-kubeflow-workflows/releases/tag/v0.0.1",
-                  "compareUrl": "https://github.com/canonical/charmed-kubeflow-workflows/compare/v0.0.1...main"
+                  "id": 167354212,
+                  "version": "rev548",
+                  "timestamp": 1721988178,
+                  "title": "Revision 548",
+                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/dex:2.39.1-a91817e\n       resource-revision: 460</p>\n\n<p>Static resources:\n Released to &lsquo;2.39/edge&rsquo; at 12:09 UTC on 26 Jul 2024</p>\n\n<p>Released to &lsquo;2.39/stable&rsquo; at 11:32 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: add config_changed as refresh event for dex-oidc-config provider by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\">#214</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev543...rev548\">https://github.com/canonical/dex-auth-operator/compare/rev543&hellip;rev548</a></p>\n",
+                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev548",
+                  "compareUrl": "https://github.com/canonical/dex-auth-operator/compare/rev548...main"
+               },
+               {
+                  "id": 167338820,
+                  "version": "rev547",
+                  "timestamp": 1721988178,
+                  "title": "Revision 547",
+                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/dex:2.39.1-a91817e\n       resource-revision: 460</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:12 UTC on 26 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: add config_changed as refresh event for dex-oidc-config provider by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/dex-auth-operator/pull/214\">#214</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/dex-auth-operator/compare/rev543...rev547\">https://github.com/canonical/dex-auth-operator/compare/rev543&hellip;rev547</a></p>\n",
+                  "url": "https://github.com/canonical/dex-auth-operator/releases/tag/rev547",
+                  "compareUrl": "https://github.com/canonical/dex-auth-operator/compare/rev547...main"
                }
             ],
             "tags": null,
@@ -7117,45 +7117,6 @@
             "snap": null
          },
          {
-            "name": "katib-operators",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/katib-operators",
-            "releases": [
-               {
-                  "id": 168868004,
-                  "version": "katib-ui-rev724",
-                  "timestamp": 1722929918,
-                  "title": "Revision 724",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflowkatib/katib-ui:v0.17.0\n       resource-revision: 671</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:44 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/226\"><a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/226\">#226</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/katib-operators/compare/katib-controller-rev749...katib-ui-rev724\">https://github.com/canonical/katib-operators/compare/katib-controller-rev749&hellip;katib-ui-rev724</a></p>\n",
-                  "url": "https://github.com/canonical/katib-operators/releases/tag/katib-ui-rev724",
-                  "compareUrl": "https://github.com/canonical/katib-operators/compare/katib-ui-rev724...main"
-               },
-               {
-                  "id": 168867204,
-                  "version": "katib-ui-rev723",
-                  "timestamp": 1722929930,
-                  "title": "Revision 723",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflowkatib/katib-ui:v0.17.0\n       resource-revision: 671</p>\n\n<p>Static resources:\n Released to &lsquo;0.17/edge&rsquo; at 09:39 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/0.17 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/228\"><a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/228\">#228</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/katib-operators/compare/katib-controller-rev749...katib-ui-rev723\">https://github.com/canonical/katib-operators/compare/katib-controller-rev749&hellip;katib-ui-rev723</a></p>\n",
-                  "url": "https://github.com/canonical/katib-operators/releases/tag/katib-ui-rev723",
-                  "compareUrl": "https://github.com/canonical/katib-operators/compare/katib-ui-rev723...main"
-               },
-               {
-                  "id": 168853575,
-                  "version": "katib-ui-rev722",
-                  "timestamp": 1722929925,
-                  "title": "Revision 722",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflowkatib/katib-ui:v0.16.0\n       resource-revision: 672</p>\n\n<p>Static resources:\n Released to &lsquo;0.16/edge&rsquo; at 08:54 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/0.16 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/227\"><a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/227\">#227</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/katib-operators/compare/katib-controller-rev706...katib-ui-rev722\">https://github.com/canonical/katib-operators/compare/katib-controller-rev706&hellip;katib-ui-rev722</a></p>\n",
-                  "url": "https://github.com/canonical/katib-operators/releases/tag/katib-ui-rev722",
-                  "compareUrl": "https://github.com/canonical/katib-operators/compare/katib-ui-rev722...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "istio-operators",
             "newCommits": 23,
             "url": "https://github.com/canonical/istio-operators",
@@ -7195,6 +7156,45 @@
             "snap": null
          },
          {
+            "name": "katib-operators",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/katib-operators",
+            "releases": [
+               {
+                  "id": 168868004,
+                  "version": "katib-ui-rev724",
+                  "timestamp": 1722929918,
+                  "title": "Revision 724",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflowkatib/katib-ui:v0.17.0\n       resource-revision: 671</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:44 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/226\"><a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/226\">#226</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/katib-operators/compare/katib-controller-rev749...katib-ui-rev724\">https://github.com/canonical/katib-operators/compare/katib-controller-rev749&hellip;katib-ui-rev724</a></p>\n",
+                  "url": "https://github.com/canonical/katib-operators/releases/tag/katib-ui-rev724",
+                  "compareUrl": "https://github.com/canonical/katib-operators/compare/katib-ui-rev724...main"
+               },
+               {
+                  "id": 168867204,
+                  "version": "katib-ui-rev723",
+                  "timestamp": 1722929930,
+                  "title": "Revision 723",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflowkatib/katib-ui:v0.17.0\n       resource-revision: 671</p>\n\n<p>Static resources:\n Released to &lsquo;0.17/edge&rsquo; at 09:39 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/0.17 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/228\"><a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/228\">#228</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/katib-operators/compare/katib-controller-rev749...katib-ui-rev723\">https://github.com/canonical/katib-operators/compare/katib-controller-rev749&hellip;katib-ui-rev723</a></p>\n",
+                  "url": "https://github.com/canonical/katib-operators/releases/tag/katib-ui-rev723",
+                  "compareUrl": "https://github.com/canonical/katib-operators/compare/katib-ui-rev723...main"
+               },
+               {
+                  "id": 168853575,
+                  "version": "katib-ui-rev722",
+                  "timestamp": 1722929925,
+                  "title": "Revision 722",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflowkatib/katib-ui:v0.16.0\n       resource-revision: 672</p>\n\n<p>Static resources:\n Released to &lsquo;0.16/edge&rsquo; at 08:54 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/0.16 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/227\"><a target=\"_blank\" href=\"https://github.com/canonical/katib-operators/pull/227\">#227</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/katib-operators/compare/katib-controller-rev706...katib-ui-rev722\">https://github.com/canonical/katib-operators/compare/katib-controller-rev706&hellip;katib-ui-rev722</a></p>\n",
+                  "url": "https://github.com/canonical/katib-operators/releases/tag/katib-ui-rev722",
+                  "compareUrl": "https://github.com/canonical/katib-operators/compare/katib-ui-rev722...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "katib-rocks",
             "newCommits": 0,
             "url": "https://github.com/canonical/katib-rocks",
@@ -7223,6 +7223,45 @@
                   "url": "https://github.com/canonical/katib-rocks/commit/6df17a55ec70b8fb6848413460e83bf99ab8f13a"
                }
             ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "kfp-operators",
+            "newCommits": 59,
+            "url": "https://github.com/canonical/kfp-operators",
+            "releases": [
+               {
+                  "id": 168900325,
+                  "version": "kfp-viz-rev1510",
+                  "timestamp": 1722929954,
+                  "title": "Revision 1510",
+                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/visualization-server:2.0.5-4ae34a1\n       resource-revision: 980</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 13:02 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/2.0 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\">#558</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553...kfp-viz-rev1510\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553&hellip;kfp-viz-rev1510</a></p>\n",
+                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-viz-rev1510",
+                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-viz-rev1510...main"
+               },
+               {
+                  "id": 168899808,
+                  "version": "kfp-viewer-rev1592",
+                  "timestamp": 1722929954,
+                  "title": "Revision 1592",
+                  "body": "<p>resources:\n    -  kfp-viewer-image: charmedkubeflow/viewer-crd-controller:2.0.5-f28db97\n       resource-revision: 409</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 12:59 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/2.0 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\">#558</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553...kfp-viewer-rev1592\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553&hellip;kfp-viewer-rev1592</a></p>\n",
+                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-viewer-rev1592",
+                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-viewer-rev1592...main"
+               },
+               {
+                  "id": 168899913,
+                  "version": "kfp-ui-rev1561",
+                  "timestamp": 1722929954,
+                  "title": "Revision 1561",
+                  "body": "<p>resources:\n    -  ml-pipeline-ui: gcr.io/ml-pipeline/frontend:2.0.5\n       resource-revision: 299</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 13:00 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/2.0 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\">#558</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553...kfp-ui-rev1561\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553&hellip;kfp-ui-rev1561</a></p>\n",
+                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-ui-rev1561",
+                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-ui-rev1561...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -7455,45 +7494,6 @@
             "snap": null
          },
          {
-            "name": "kfp-operators",
-            "newCommits": 58,
-            "url": "https://github.com/canonical/kfp-operators",
-            "releases": [
-               {
-                  "id": 168900325,
-                  "version": "kfp-viz-rev1510",
-                  "timestamp": 1722929954,
-                  "title": "Revision 1510",
-                  "body": "<p>resources:\n    -  oci-image: charmedkubeflow/visualization-server:2.0.5-4ae34a1\n       resource-revision: 980</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 13:02 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/2.0 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\">#558</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553...kfp-viz-rev1510\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553&hellip;kfp-viz-rev1510</a></p>\n",
-                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-viz-rev1510",
-                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-viz-rev1510...main"
-               },
-               {
-                  "id": 168899808,
-                  "version": "kfp-viewer-rev1592",
-                  "timestamp": 1722929954,
-                  "title": "Revision 1592",
-                  "body": "<p>resources:\n    -  kfp-viewer-image: charmedkubeflow/viewer-crd-controller:2.0.5-f28db97\n       resource-revision: 409</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 12:59 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/2.0 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\">#558</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553...kfp-viewer-rev1592\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553&hellip;kfp-viewer-rev1592</a></p>\n",
-                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-viewer-rev1592",
-                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-viewer-rev1592...main"
-               },
-               {
-                  "id": 168899913,
-                  "version": "kfp-ui-rev1561",
-                  "timestamp": 1722929954,
-                  "title": "Revision 1561",
-                  "body": "<p>resources:\n    -  ml-pipeline-ui: gcr.io/ml-pipeline/frontend:2.0.5\n       resource-revision: 299</p>\n\n<p>Static resources:\n Released to &lsquo;2.0/edge&rsquo; at 13:00 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/2.0 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\"><a target=\"_blank\" href=\"https://github.com/canonical/kfp-operators/pull/558\">#558</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553...kfp-ui-rev1561\">https://github.com/canonical/kfp-operators/compare/kfp-api-rev1553&hellip;kfp-ui-rev1561</a></p>\n",
-                  "url": "https://github.com/canonical/kfp-operators/releases/tag/kfp-ui-rev1561",
-                  "compareUrl": "https://github.com/canonical/kfp-operators/compare/kfp-ui-rev1561...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "kserve-rocks",
             "newCommits": 0,
             "url": "https://github.com/canonical/kserve-rocks",
@@ -7665,36 +7665,36 @@
             "snap": null
          },
          {
-            "name": "admission-webhook-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/admission-webhook-operator",
+            "name": "argo-operators",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/argo-operators",
             "releases": [
                {
-                  "id": 168848320,
-                  "version": "rev348",
-                  "timestamp": 1722929700,
-                  "title": "Revision 348",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/poddefaults-webhook:v1.9.0\n       resource-revision: 286</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:23 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/147\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/147\">#147</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/admission-webhook-operator/compare/rev342...rev348\">https://github.com/canonical/admission-webhook-operator/compare/rev342&hellip;rev348</a></p>\n",
-                  "url": "https://github.com/canonical/admission-webhook-operator/releases/tag/rev348",
-                  "compareUrl": "https://github.com/canonical/admission-webhook-operator/compare/rev348...main"
+                  "id": 168848669,
+                  "version": "argo-controller-rev550",
+                  "timestamp": 1722929742,
+                  "title": "Revision 550",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/workflow-controller:v3.4.16-license-compliance\n       resource-revision: 356</p>\n\n<p>Static resources:\n Released to &lsquo;3.4/edge&rsquo; at 08:26 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/3.4 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/192\">#192</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/argo-operators/compare/argo-controller-rev544...argo-controller-rev550\">https://github.com/canonical/argo-operators/compare/argo-controller-rev544&hellip;argo-controller-rev550</a></p>\n",
+                  "url": "https://github.com/canonical/argo-operators/releases/tag/argo-controller-rev550",
+                  "compareUrl": "https://github.com/canonical/argo-operators/compare/argo-controller-rev550...main"
                },
                {
-                  "id": 168848110,
-                  "version": "rev347",
-                  "timestamp": 1722929715,
-                  "title": "Revision 347",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/poddefaults-webhook:v1.9.0\n       resource-revision: 286</p>\n\n<p>Static resources:\n Released to &lsquo;1.9/edge&rsquo; at 08:22 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/1.9 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/149\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/149\">#149</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/admission-webhook-operator/compare/rev342...rev347\">https://github.com/canonical/admission-webhook-operator/compare/rev342&hellip;rev347</a></p>\n",
-                  "url": "https://github.com/canonical/admission-webhook-operator/releases/tag/rev347",
-                  "compareUrl": "https://github.com/canonical/admission-webhook-operator/compare/rev347...main"
+                  "id": 168848107,
+                  "version": "argo-controller-rev549",
+                  "timestamp": 1722929735,
+                  "title": "Revision 549",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/workflow-controller:v3.4.16-license-compliance\n       resource-revision: 356</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:22 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/190\"><a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/190\">#190</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/argo-operators/compare/argo-controller-rev544...argo-controller-rev549\">https://github.com/canonical/argo-operators/compare/argo-controller-rev544&hellip;argo-controller-rev549</a></p>\n",
+                  "url": "https://github.com/canonical/argo-operators/releases/tag/argo-controller-rev549",
+                  "compareUrl": "https://github.com/canonical/argo-operators/compare/argo-controller-rev549...main"
                },
                {
-                  "id": 167350463,
-                  "version": "rev344",
-                  "timestamp": 1721823458,
-                  "title": "Revision 344",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/kubeflownotebookswg/poddefaults-webhook:v1.9.0\n       resource-revision: 285</p>\n\n<p>Static resources:\n Released to &lsquo;1.9/edge&rsquo; at 11:41 UTC on 26 Jul 2024</p>\n\n<p>Released to &lsquo;1.9/stable&rsquo; at 11:30 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update manifests for kf v1.9.0 by <a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/144\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/144\">#144</a></a></li>\n<li>build: bump jinja2 3.1.x -&gt; 3.1.4 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/146\"><a target=\"_blank\" href=\"https://github.com/canonical/admission-webhook-operator/pull/146\">#146</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/admission-webhook-operator/compare/rev339...rev344\">https://github.com/canonical/admission-webhook-operator/compare/rev339&hellip;rev344</a></p>\n",
-                  "url": "https://github.com/canonical/admission-webhook-operator/releases/tag/rev344",
-                  "compareUrl": "https://github.com/canonical/admission-webhook-operator/compare/rev344...main"
+                  "id": 167319493,
+                  "version": "argo-controller-rev545",
+                  "timestamp": 1721823649,
+                  "title": "Revision 545",
+                  "body": "<p>resources:\n    -  oci-image: gcr.io/ml-pipeline/workflow-controller:v3.4.16-license-compliance\n       resource-revision: 354</p>\n\n<p>Static resources:\n Released to &lsquo;3.4/edge&rsquo; at 08:54 UTC on 26 Jul 2024</p>\n\n<p>Released to &lsquo;3.4/stable&rsquo; at 11:31 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build: bump jinja2 3.1.x -&gt; 3.1.4 by <a target=\"_blank\" href=\"https://github.com/DnPlas\">@DnPlas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/189\"><a target=\"_blank\" href=\"https://github.com/canonical/argo-operators/pull/189\">#189</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/argo-operators/compare/argo-controller-rev538...argo-controller-rev545\">https://github.com/canonical/argo-operators/compare/argo-controller-rev538&hellip;argo-controller-rev545</a></p>\n",
+                  "url": "https://github.com/canonical/argo-operators/releases/tag/argo-controller-rev545",
+                  "compareUrl": "https://github.com/canonical/argo-operators/compare/argo-controller-rev545...main"
                }
             ],
             "tags": null,
@@ -8220,9 +8220,18 @@
          },
          {
             "name": "notebook-operators",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/notebook-operators",
             "releases": [
+               {
+                  "id": 168925418,
+                  "version": "jupyter-ui-rev969",
+                  "timestamp": 1722946043,
+                  "title": "Revision 969",
+                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/jupyter-web-app:1.9.0-2920db1\n       resource-revision: 759</p>\n\n<p>Static resources:\n Released to &lsquo;1.9/edge&rsquo; at 14:27 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/1.9 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/399\"><a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/399\">#399</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1037...jupyter-ui-rev969\">https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1037&hellip;jupyter-ui-rev969</a></p>\n",
+                  "url": "https://github.com/canonical/notebook-operators/releases/tag/jupyter-ui-rev969",
+                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/jupyter-ui-rev969...main"
+               },
                {
                   "id": 168853175,
                   "version": "jupyter-ui-rev968",
@@ -8240,15 +8249,6 @@
                   "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/notebook-controller:1.9.0-249e99c\n       resource-revision: 1008</p>\n\n<p>Static resources:\n Released to &lsquo;1.9/edge&rsquo; at 13:13 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/1.9 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/399\"><a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/399\">#399</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1037...jupyter-controller-rev1046\">https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1037&hellip;jupyter-controller-rev1046</a></p>\n",
                   "url": "https://github.com/canonical/notebook-operators/releases/tag/jupyter-controller-rev1046",
                   "compareUrl": "https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1046...main"
-               },
-               {
-                  "id": 168853251,
-                  "version": "jupyter-controller-rev1045",
-                  "timestamp": 1722930451,
-                  "title": "Revision 1045",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/notebook-controller:1.9.0-249e99c\n       resource-revision: 1008</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:53 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/396\"><a target=\"_blank\" href=\"https://github.com/canonical/notebook-operators/pull/396\">#396</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1037...jupyter-controller-rev1045\">https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1037&hellip;jupyter-controller-rev1045</a></p>\n",
-                  "url": "https://github.com/canonical/notebook-operators/releases/tag/jupyter-controller-rev1045",
-                  "compareUrl": "https://github.com/canonical/notebook-operators/compare/jupyter-controller-rev1045...main"
                }
             ],
             "tags": null,
@@ -8883,9 +8883,18 @@
          },
          {
             "name": "training-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/training-operator",
             "releases": [
+               {
+                  "id": 168933601,
+                  "version": "rev508",
+                  "timestamp": 1722930707,
+                  "title": "Revision 508",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 15:05 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/1.8 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/training-operator/pull/189\"><a target=\"_blank\" href=\"https://github.com/canonical/training-operator/pull/189\">#189</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/training-operator/compare/rev502...rev508\">https://github.com/canonical/training-operator/compare/rev502&hellip;rev508</a></p>\n",
+                  "url": "https://github.com/canonical/training-operator/releases/tag/rev508",
+                  "compareUrl": "https://github.com/canonical/training-operator/compare/rev508...main"
+               },
                {
                   "id": 168851352,
                   "version": "rev507",
@@ -8903,15 +8912,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.8/edge&rsquo; at 09:04 UTC on 26 Jul 2024</p>\n\n<p>Released to &lsquo;1.8/stable&rsquo; at 11:50 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump training operator to v1.8.0 by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/training-operator/pull/184\"><a target=\"_blank\" href=\"https://github.com/canonical/training-operator/pull/184\">#184</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/training-operator/compare/rev500...rev503\">https://github.com/canonical/training-operator/compare/rev500&hellip;rev503</a></p>\n",
                   "url": "https://github.com/canonical/training-operator/releases/tag/rev503",
                   "compareUrl": "https://github.com/canonical/training-operator/compare/rev503...main"
-               },
-               {
-                  "id": 167083037,
-                  "version": "rev502",
-                  "timestamp": 1721893239,
-                  "title": "Revision 502",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:32 UTC on 25 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump training operator to v1.8.0 by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/training-operator/pull/184\"><a target=\"_blank\" href=\"https://github.com/canonical/training-operator/pull/184\">#184</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/training-operator/compare/rev500...rev502\">https://github.com/canonical/training-operator/compare/rev500&hellip;rev502</a></p>\n",
-                  "url": "https://github.com/canonical/training-operator/releases/tag/rev502",
-                  "compareUrl": "https://github.com/canonical/training-operator/compare/rev502...main"
                }
             ],
             "tags": null,
@@ -11887,15 +11887,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 7074,
-                     "timestamp": 1722889980,
+                     "revision": 7087,
+                     "timestamp": 1722953957,
                      "base": "core20"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 7080,
-                     "timestamp": 1722893170,
+                     "revision": 7088,
+                     "timestamp": 1722955757,
                      "base": "core20"
                   },
                   {
@@ -14587,6 +14587,15 @@
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
                {
+                  "id": 168934541,
+                  "version": "rev469",
+                  "timestamp": 1722955254,
+                  "title": "Revision 469",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 15:09 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.17 to 0.0.19 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/272\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/272\">#272</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev467...rev469\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev467&hellip;rev469</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev469",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev469...main"
+               },
+               {
                   "id": 168915120,
                   "version": "rev468",
                   "timestamp": 1722950154,
@@ -14603,15 +14612,6 @@
                   "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 13:36 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump mypy from 1.11.0 to 1.11.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/270\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/270\">#270</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev464...rev467\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev464&hellip;rev467</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev467",
                   "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev467...main"
-               },
-               {
-                  "id": 168903468,
-                  "version": "rev466",
-                  "timestamp": 1722948341,
-                  "title": "Revision 466",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-19&rsquo; at 13:15 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest-interface-tester from 2.0.1 to 3.0.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/271\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/271\">#271</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev463...rev466\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev463&hellip;rev466</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev466",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev466...main"
                }
             ],
             "tags": null,
@@ -14631,8 +14631,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 467,
-                     "timestamp": 1722951366,
+                     "revision": 469,
+                     "timestamp": 1722956997,
                      "base": ""
                   },
                   {
@@ -18531,9 +18531,18 @@
          },
          {
             "name": "tls-certificates-interface",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/tls-certificates-interface",
             "releases": [
+               {
+                  "id": 168930157,
+                  "version": "rev110",
+                  "timestamp": 1722955188,
+                  "title": "Revision 110",
+                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 14:50 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump rpds-py from 0.18.0 to 0.18.1 in /tests/integration/v4/provider_charm in the pip_dependencies group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/216\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/216\">#216</a></a></li>\n<li>chore: bump the pip_dependencies group across 1 directory with 6 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/217\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/217\">#217</a></a></li>\n<li>feat: implement provider side of tls certificates v4 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/214\">#214</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev109...rev110\">https://github.com/canonical/tls-certificates-interface/compare/rev109&hellip;rev110</a></p>\n",
+                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev110",
+                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev110...main"
+               },
                {
                   "id": 167870630,
                   "version": "rev109",
@@ -18551,15 +18560,6 @@
                   "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 12:43 UTC on 30 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group across 1 directory with 6 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/209\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/209\">#209</a></a></li>\n<li>chore: bump the pip_dependencies group with 3 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/210\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/210\">#210</a></a></li>\n<li>feat: add TLS library v4.0 (requirer) by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/197\">#197</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev107...rev108\">https://github.com/canonical/tls-certificates-interface/compare/rev107&hellip;rev108</a></p>\n",
                   "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev108",
                   "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev108...main"
-               },
-               {
-                  "id": 166712749,
-                  "version": "rev107",
-                  "timestamp": 1721742061,
-                  "title": "Revision 107",
-                  "body": "<p>resources:\n    -  placeholder-image: undefined\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;edge&rsquo; at 13:44 UTC on 23 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Pins pytest-asyncio by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/208\"><a target=\"_blank\" href=\"https://github.com/canonical/tls-certificates-interface/pull/208\">#208</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tls-certificates-interface/compare/rev106...rev107\">https://github.com/canonical/tls-certificates-interface/compare/rev106&hellip;rev107</a></p>\n",
-                  "url": "https://github.com/canonical/tls-certificates-interface/releases/tag/rev107",
-                  "compareUrl": "https://github.com/canonical/tls-certificates-interface/compare/rev107...main"
                }
             ],
             "tags": null,
@@ -18579,8 +18579,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 109,
-                     "timestamp": 1722351168,
+                     "revision": 110,
+                     "timestamp": 1722955836,
                      "base": ""
                   }
                ],
@@ -21552,7 +21552,7 @@
          },
          {
             "name": "charmcraftcache-hub",
-            "newCommits": 0,
+            "newCommits": 4,
             "url": "https://github.com/canonical/charmcraftcache-hub",
             "releases": [
                {
@@ -28197,6 +28197,15 @@
             "url": "https://github.com/canonical/nginx-ingress-integrator-operator",
             "releases": [
                {
+                  "id": 168926316,
+                  "version": "rev111",
+                  "timestamp": 1722954645,
+                  "title": "Revision 111",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:31 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.15.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/146\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/146\">#146</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev110...rev111\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev110&hellip;rev111</a></p>\n",
+                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev111",
+                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev111...main"
+               },
+               {
                   "id": 168907994,
                   "version": "rev110",
                   "timestamp": 1722949284,
@@ -28213,15 +28222,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:17 UTC on 22 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cryptography to v43 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/156\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/156\">#156</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev108...rev109\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev108&hellip;rev109</a></p>\n",
                   "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev109",
                   "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev109...main"
-               },
-               {
-                  "id": 164942112,
-                  "version": "rev108",
-                  "timestamp": 1720683202,
-                  "title": "Revision 108",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:34 UTC on 11 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add workflows for tracks support by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/155\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/155\">#155</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev107...rev108\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev107&hellip;rev108</a></p>\n",
-                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev108",
-                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev108...main"
                }
             ],
             "tags": null,
@@ -28265,15 +28265,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 110,
-                     "timestamp": 1722951254,
+                     "revision": 111,
+                     "timestamp": 1722954707,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 110,
-                     "timestamp": 1722951254,
+                     "revision": 111,
+                     "timestamp": 1722954707,
                      "base": ""
                   },
                   {
