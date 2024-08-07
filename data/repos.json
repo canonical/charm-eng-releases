@@ -5156,7 +5156,7 @@
          },
          {
             "name": "grafana-agent-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/grafana-agent-operator",
             "releases": [
                {
@@ -6625,6 +6625,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "3b3138d7b3d7556de3f60b43040742564d5a287a",
+                  "author": "Daniela Plascencia",
+                  "timestamp": 1723036836,
+                  "message": "<p>tests: use dex-auth svc DNS name as public-url (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/1012\">#1012</a>)</p>\n\n<p>For CKF 1.8, dex-auth and oidc-gatekeeper&rsquo;s public-url config option can be set to\n<a href=\"http://dex-auth.kubeflow.svc:5556\">http://dex-auth.kubeflow.svc:5556</a>, this is because the whole authentication process is\ndone internally in the cluster with dex-auth as an IdP and oidc-gatekeeper as an OIDC client.</p>\n",
+                  "url": "https://github.com/canonical/bundle-kubeflow/commit/3b3138d7b3d7556de3f60b43040742564d5a287a"
+               },
+               {
                   "sha": "34801f6e27bd0d4843692c7565e49af26a21f62c",
                   "author": "Daniela Plascencia",
                   "timestamp": 1723019634,
@@ -6637,13 +6644,6 @@
                   "timestamp": 1723015643,
                   "message": "<p>chore: point the 1.9 bundle tests to 1.9/stable (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/1008\">#1008</a>)</p>\n\n<p>Since this version of the bundle is now released, the automation should test with\nthe right path to the 1.9/stable bundle.yaml.</p>\n",
                   "url": "https://github.com/canonical/bundle-kubeflow/commit/4b6bda67950da573fcf0f64710f0911ccd032cf7"
-               },
-               {
-                  "sha": "7fd1f46add230eb4611b14dc473156dd05ce348a",
-                  "author": "Daniela Plascencia",
-                  "timestamp": 1722955753,
-                  "message": "<p>fix, tests: add condition for waiting for and setting the public-url config option (<a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/1001\">#1001</a>)</p>\n\n<ul>\n<li>fix, tests: add condition for waiting for and setting the public-url config option</li>\n</ul>\n\n<p>Due to recent changes in dex and oidc charms for CKF 1.9, this configuration option is not\nrequired anymore for this and greater versions of the bundle.\nThe config option is still required by CKF 1.8 charms, though, to allow this test to run for\n1.8 and 1.9, this commits adds logic to set it or not depending on the deployed version.</p>\n\n<p>Fixes <a target=\"_blank\" href=\"https://github.com/canonical/bundle-kubeflow/pull/997\">#997</a></p>\n",
-                  "url": "https://github.com/canonical/bundle-kubeflow/commit/7fd1f46add230eb4611b14dc473156dd05ce348a"
                }
             ],
             "ciActions": [
@@ -8957,6 +8957,104 @@
       "team": "Identity",
       "repos": [
          {
+            "name": "kratos-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/kratos-operator",
+            "releases": [
+               {
+                  "id": 169106620,
+                  "version": "rev436",
+                  "timestamp": 1723036465,
+                  "title": "Revision 436",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.1.0\n       resource-revision: 398</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:37 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/217\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/217\">#217</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev435...rev436\">https://github.com/canonical/kratos-operator/compare/rev435&hellip;rev436</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev436",
+                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev436...main"
+               },
+               {
+                  "id": 169059174,
+                  "version": "rev435",
+                  "timestamp": 1723019568,
+                  "title": "Revision 435",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.1.0\n       resource-revision: 398</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:58 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/216\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/216\">#216</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev434...rev435\">https://github.com/canonical/kratos-operator/compare/rev434&hellip;rev435</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev435",
+                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev435...main"
+               },
+               {
+                  "id": 169010139,
+                  "version": "rev434",
+                  "timestamp": 1722991658,
+                  "title": "Revision 434",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.1.0\n       resource-revision: 398</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:15 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.20.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev433...rev434\">https://github.com/canonical/kratos-operator/compare/rev433&hellip;rev434</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev434",
+                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev434...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/kratos-operator/actions/workflows/on_push.yaml"
+            ],
+            "charm": {
+               "name": "kratos",
+               "url": "https://charmhub.io/kratos",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 397,
+                     "timestamp": 1713967536,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 436,
+                     "timestamp": 1723037843,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.3",
+                     "channel": "edge",
+                     "revision": 419,
+                     "timestamp": 1720190848,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "stable",
+                     "revision": 406,
+                     "timestamp": 1719401888,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "edge",
+                     "revision": 406,
+                     "timestamp": 1714645493,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.1",
+                     "channel": "edge",
+                     "revision": 383,
+                     "timestamp": 1695986740,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "0.3",
+                  "0.2",
+                  "0.1"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "kratos-external-idp-integrator",
             "newCommits": 0,
             "url": "https://github.com/canonical/kratos-external-idp-integrator",
@@ -9033,104 +9131,6 @@
                ],
                "tracks": [
                   "latest",
-                  "0.2",
-                  "0.1"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "kratos-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/kratos-operator",
-            "releases": [
-               {
-                  "id": 169059174,
-                  "version": "rev435",
-                  "timestamp": 1723019568,
-                  "title": "Revision 435",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.1.0\n       resource-revision: 398</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:58 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/216\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/216\">#216</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev434...rev435\">https://github.com/canonical/kratos-operator/compare/rev434&hellip;rev435</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev435",
-                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev435...main"
-               },
-               {
-                  "id": 169010139,
-                  "version": "rev434",
-                  "timestamp": 1722991658,
-                  "title": "Revision 434",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.1.0\n       resource-revision: 398</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:15 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.20.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/215\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/215\">#215</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev433...rev434\">https://github.com/canonical/kratos-operator/compare/rev433&hellip;rev434</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev434",
-                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev434...main"
-               },
-               {
-                  "id": 168991678,
-                  "version": "rev433",
-                  "timestamp": 1722977993,
-                  "title": "Revision 433",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.1.0\n       resource-revision: 398</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:20 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.19.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/214\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/214\">#214</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev432...rev433\">https://github.com/canonical/kratos-operator/compare/rev432&hellip;rev433</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev433",
-                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev433...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/kratos-operator/actions/workflows/on_push.yaml"
-            ],
-            "charm": {
-               "name": "kratos",
-               "url": "https://charmhub.io/kratos",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 397,
-                     "timestamp": 1713967536,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 435,
-                     "timestamp": 1723021101,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.3",
-                     "channel": "edge",
-                     "revision": 419,
-                     "timestamp": 1720190848,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "stable",
-                     "revision": 406,
-                     "timestamp": 1719401888,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "edge",
-                     "revision": 406,
-                     "timestamp": 1714645493,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.1",
-                     "channel": "edge",
-                     "revision": 383,
-                     "timestamp": 1695986740,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "0.3",
                   "0.2",
                   "0.1"
                ]
@@ -9229,7 +9229,7 @@
          },
          {
             "name": "identity-platform-admin-ui-operator",
-            "newCommits": 8,
+            "newCommits": 10,
             "url": "https://github.com/canonical/identity-platform-admin-ui-operator",
             "releases": [
                {
@@ -10033,25 +10033,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "701e0564ba7d51474e4d543270fc315ea7214bb4",
+                  "author": "canonical-iam",
+                  "timestamp": 1723038930,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/74\">#74</a> from canonical/renovate/auto-patch-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.1</p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/701e0564ba7d51474e4d543270fc315ea7214bb4"
+               },
+               {
+                  "sha": "a02a26b9213d543fefe6c0d8fa9c0f86ce77cb56",
+                  "author": "renovate[bot]",
+                  "timestamp": 1723038625,
+                  "message": "<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.1</p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/a02a26b9213d543fefe6c0d8fa9c0f86ce77cb56"
+               },
+               {
                   "sha": "2b1b69c0e63b844c47905ec8881e31e53590fb50",
                   "author": "canonical-iam",
                   "timestamp": 1723031219,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/73\">#73</a> from canonical/renovate/auto-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.0</p>\n",
                   "url": "https://github.com/canonical/kratos-rock/commit/2b1b69c0e63b844c47905ec8881e31e53590fb50"
-               },
-               {
-                  "sha": "0eb7fc26b292e29109cb73cb16118b44e5776291",
-                  "author": "renovate[bot]",
-                  "timestamp": 1723030993,
-                  "message": "<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.0</p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/0eb7fc26b292e29109cb73cb16118b44e5776291"
-               },
-               {
-                  "sha": "d9d17ed6b26d90ac1d7f9e13cf13ddd1f21aaf2f",
-                  "author": "canonical-iam",
-                  "timestamp": 1722990855,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/72\">#72</a> from canonical/renovate/auto-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.20.1</p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/d9d17ed6b26d90ac1d7f9e13cf13ddd1f21aaf2f"
                }
             ],
             "ciActions": [
@@ -11278,25 +11278,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7075a554d2b574959a4bc418bd70a6a0212ebbbb",
+                  "author": "Homayoon Alimohammadi",
+                  "timestamp": 1723039690,
+                  "message": "<p>Fix DeleteNode log (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/588\">#588</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/7075a554d2b574959a4bc418bd70a6a0212ebbbb"
+               },
+               {
+                  "sha": "a33cd3ecf30fc80050dc90920c94c426309140a9",
+                  "author": "Angelos Kolaitis",
+                  "timestamp": 1723039679,
+                  "message": "<p>Consistent field names in k8s status outputs (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/589\">#589</a>)</p>\n\n<ul>\n<li><p>fix yaml status output</p></li>\n\n<li><p>silence config in k8s status json and yaml</p></li>\n\n<li><p>update node status output in yaml</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/a33cd3ecf30fc80050dc90920c94c426309140a9"
+               },
+               {
                   "sha": "c134c90a54a284e254dae605aecf6c32bb4bf7f2",
                   "author": "Nick Veitch",
                   "timestamp": 1722942941,
                   "message": "<p>Moonray docs  (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/581\">#581</a>)</p>\n\n<ul>\n<li>add moonray docs</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/c134c90a54a284e254dae605aecf6c32bb4bf7f2"
-               },
-               {
-                  "sha": "0e487f9c46753533c72fae15aeee48a52fb143e3",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1722880106,
-                  "message": "<p>Bump github.com/regclient/regclient in /src/k8s/tools (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/582\">#582</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/regclient/regclient\">github.com/regclient/regclient</a> from 0.6.1 to 0.7.1.\n- <a href=\"https://github.com/regclient/regclient/releases\">Release notes</a>\n- <a href=\"https://github.com/regclient/regclient/blob/v0.7.1/release.md\">Changelog</a>\n- <a href=\"https://github.com/regclient/regclient/compare/v0.6.1...v0.7.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: github.com/regclient/regclient\n  dependency-type: direct:production\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/0e487f9c46753533c72fae15aeee48a52fb143e3"
-               },
-               {
-                  "sha": "aad11050e5d05d4bbe4666e863bd52c9a2dc22ab",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1722591196,
-                  "message": "<p>Add Config Option to Control Kubernetes Node Removal (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/577\">#577</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/aad11050e5d05d4bbe4666e863bd52c9a2dc22ab"
                }
             ],
             "ciActions": [
@@ -11346,6 +11346,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "1d0eb45ff982b67f9069fafd55f7ee41a4eec6c8",
+                  "author": "Maciek Gołaszewski",
+                  "timestamp": 1723037073,
+                  "message": "<p>Only build and publish new ROCK version if rockfile.yaml changed (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/16\">#16</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-workflows/commit/1d0eb45ff982b67f9069fafd55f7ee41a4eec6c8"
+               },
+               {
                   "sha": "886c450f759934a524351697f2e19686894bddd4",
                   "author": "Claudiu Belu",
                   "timestamp": 1723022684,
@@ -11358,13 +11365,6 @@
                   "timestamp": 1721301569,
                   "message": "<p>Pass full built ROCKs metadata to testing env (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/15\">#15</a>)</p>\n\n<p>Pass the entire list of built ROCKs metadata produced by the\n<code>build_rocks.yaml</code> workflow as an environment variable to the\ntesting steps.</p>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nazhari@cloudbasesolutions.com\">nazhari@cloudbasesolutions.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-workflows/commit/a91b010173352cd63bf52552c8de168f8da14ea5"
-               },
-               {
-                  "sha": "73c2f8f26449566e592a207c0670434c5494b68a",
-                  "author": "Nashwan Azhari",
-                  "timestamp": 1721296012,
-                  "message": "<p>Allow all rock builds to run (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/13\">#13</a>)</p>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nazhari@cloudbasesolutions.com\">nazhari@cloudbasesolutions.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-workflows/commit/73c2f8f26449566e592a207c0670434c5494b68a"
                }
             ],
             "ciActions": null,
@@ -13924,9 +13924,18 @@
          },
          {
             "name": "sdcore-udm-k8s-operator",
-            "newCommits": 62,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-udm-k8s-operator",
             "releases": [
+               {
+                  "id": 169107721,
+                  "version": "rev400",
+                  "timestamp": 1723036410,
+                  "title": "Revision 400",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.2\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 13:42 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/252\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/252\">#252</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev378...rev400\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev378&hellip;rev400</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev400",
+                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev400...main"
+               },
                {
                   "id": 168789818,
                   "version": "rev399",
@@ -13944,15 +13953,6 @@
                   "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 20:44 UTC on 5 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.17 to 0.0.19 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/253\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/253\">#253</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev394...rev398\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev394&hellip;rev398</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev398",
                   "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev398...main"
-               },
-               {
-                  "id": 168786455,
-                  "version": "rev397",
-                  "timestamp": 1722889148,
-                  "title": "Revision 397",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.0\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-6-1&rsquo; at 20:43 UTC on 5 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.17 to 0.0.19 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/253\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/253\">#253</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev394...rev397\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev394&hellip;rev397</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev397",
-                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev397...main"
                }
             ],
             "tags": null,
@@ -14644,9 +14644,18 @@
          },
          {
             "name": "sdcore-nms-k8s-operator",
-            "newCommits": 62,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
+               {
+                  "id": 169108920,
+                  "version": "rev470",
+                  "timestamp": 1723028659,
+                  "title": "Revision 470",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 64</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/TELCO-1152-merge-with-webui&rsquo; at 13:48 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/268\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/268\">#268</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev445...rev470\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev445&hellip;rev470</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev470",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev470...main"
+               },
                {
                   "id": 168934541,
                   "version": "rev469",
@@ -14664,15 +14673,6 @@
                   "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-19&rsquo; at 13:41 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump mypy from 1.11.0 to 1.11.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/270\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/270\">#270</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev466...rev468\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev466&hellip;rev468</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev468",
                   "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev468...main"
-               },
-               {
-                  "id": 168910129,
-                  "version": "rev467",
-                  "timestamp": 1722949432,
-                  "title": "Revision 467",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 13:36 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump mypy from 1.11.0 to 1.11.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/270\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/270\">#270</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev464...rev467\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev464&hellip;rev467</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev467",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev467...main"
                }
             ],
             "tags": null,
@@ -14755,9 +14755,18 @@
          },
          {
             "name": "sdcore-nrf-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-nrf-k8s-operator",
             "releases": [
+               {
+                  "id": 169107460,
+                  "version": "rev488",
+                  "timestamp": 1723036357,
+                  "title": "Revision 488",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.1\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 13:41 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/308\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/308\">#308</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev484...rev488\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev484&hellip;rev488</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev488",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev488...main"
+               },
                {
                   "id": 169091056,
                   "version": "rev487",
@@ -14775,15 +14784,6 @@
                   "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.1\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 20:41 UTC on 6 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev484...rev486\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev484&hellip;rev486</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev486",
                   "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev486...main"
-               },
-               {
-                  "id": 168954386,
-                  "version": "rev485",
-                  "timestamp": 1722962140,
-                  "title": "Revision 485",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 44</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 17:09 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-setuptools from 70.3.0.20240710 to 71.1.0.20240726 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/304\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/304\">#304</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev481...rev485\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev481&hellip;rev485</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev485",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev485...main"
                }
             ],
             "tags": null,
@@ -14824,8 +14824,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 484,
-                     "timestamp": 1722951574,
+                     "revision": 488,
+                     "timestamp": 1723038082,
                      "base": ""
                   },
                   {
@@ -15507,9 +15507,27 @@
          },
          {
             "name": "sdcore-udr-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
+               {
+                  "id": 169111312,
+                  "version": "rev405",
+                  "timestamp": 1723037037,
+                  "title": "Revision 405",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 13:52 UTC on 7 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev404...rev405\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev404&hellip;rev405</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev405",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev405...main"
+               },
+               {
+                  "id": 169104571,
+                  "version": "rev404",
+                  "timestamp": 1722947574,
+                  "title": "Revision 404",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 13:27 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/267\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/267\">#267</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/273\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/273\">#273</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev383...rev404\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev383&hellip;rev404</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev404",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev404...main"
+               },
                {
                   "id": 168894390,
                   "version": "rev403",
@@ -15518,24 +15536,6 @@
                   "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 12:31 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/267\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/267\">#267</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev383...rev403\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev383&hellip;rev403</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev403",
                   "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev403...main"
-               },
-               {
-                  "id": 168786699,
-                  "version": "rev402",
-                  "timestamp": 1722889060,
-                  "title": "Revision 402",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 20:45 UTC on 5 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.6.0 to 7.6.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/270\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/270\">#270</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev401...rev402\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev401&hellip;rev402</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev402",
-                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev402...main"
-               },
-               {
-                  "id": 168771423,
-                  "version": "rev401",
-                  "timestamp": 1722882421,
-                  "title": "Revision 401",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.0\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 18:59 UTC on 5 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.5.5 to 0.5.6 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/269\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/269\">#269</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev399...rev401\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev399&hellip;rev401</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev401",
-                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev401...main"
                }
             ],
             "tags": null,
@@ -15576,8 +15576,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 383,
-                     "timestamp": 1722756998,
+                     "revision": 404,
+                     "timestamp": 1723037250,
                      "base": ""
                   },
                   {
@@ -18950,7 +18950,7 @@
          },
          {
             "name": "vault-operator",
-            "newCommits": 13,
+            "newCommits": 14,
             "url": "https://github.com/canonical/vault-operator",
             "releases": [
                {
@@ -19051,9 +19051,27 @@
       "repos": [
          {
             "name": "test-runners-data-platform",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/test-runners-data-platform",
             "releases": [
+               {
+                  "id": 169111975,
+                  "version": "rev37",
+                  "timestamp": 1723037301,
+                  "title": "Revisions 36, 37",
+                  "body": "<p>Released to latest/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-router-image&rsquo;, &lsquo;revision&rsquo;: 1}\n<strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/test-runners-data-platform/compare/rev35...rev37\">https://github.com/canonical/test-runners-data-platform/compare/rev35&hellip;rev37</a></p>\n",
+                  "url": "https://github.com/canonical/test-runners-data-platform/releases/tag/rev37",
+                  "compareUrl": "https://github.com/canonical/test-runners-data-platform/compare/rev37...main"
+               },
+               {
+                  "id": 169111456,
+                  "version": "rev35",
+                  "timestamp": 1723037080,
+                  "title": "Revisions 34, 35",
+                  "body": "<p>Released to latest/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-router-image&rsquo;, &lsquo;revision&rsquo;: 1}</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/test-runners-data-platform/compare/rev33...rev35\">https://github.com/canonical/test-runners-data-platform/compare/rev33&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/test-runners-data-platform/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/test-runners-data-platform/compare/rev35...main"
+               },
                {
                   "id": 169094152,
                   "version": "rev33",
@@ -19062,15 +19080,6 @@
                   "body": "<p>Released to latest/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-router-image&rsquo;, &lsquo;revision&rsquo;: 1}\n<strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/test-runners-data-platform/compare/rev31...rev33\">https://github.com/canonical/test-runners-data-platform/compare/rev31&hellip;rev33</a></p>\n",
                   "url": "https://github.com/canonical/test-runners-data-platform/releases/tag/rev33",
                   "compareUrl": "https://github.com/canonical/test-runners-data-platform/compare/rev33...main"
-               },
-               {
-                  "id": 169089631,
-                  "version": "rev31",
-                  "timestamp": 1723030962,
-                  "title": "Revisions 30, 31",
-                  "body": "<p>Released to latest/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-router-image&rsquo;, &lsquo;revision&rsquo;: 1}</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/test-runners-data-platform/commits/rev31\">https://github.com/canonical/test-runners-data-platform/commits/rev31</a></p>\n",
-                  "url": "https://github.com/canonical/test-runners-data-platform/releases/tag/rev31",
-                  "compareUrl": "https://github.com/canonical/test-runners-data-platform/compare/rev31...main"
                }
             ],
             "tags": null,
@@ -19295,7 +19304,7 @@
          },
          {
             "name": "opensearch-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/opensearch-operator",
             "releases": [
                {
@@ -27708,7 +27717,7 @@
          },
          {
             "name": "httprequest-lego-provider",
-            "newCommits": 18,
+            "newCommits": 19,
             "url": "https://github.com/canonical/httprequest-lego-provider",
             "releases": null,
             "tags": [
