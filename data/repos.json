@@ -2667,7 +2667,7 @@
          },
          {
             "name": "loki-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/loki-k8s-operator",
             "releases": [
                {
@@ -6587,6 +6587,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "bebc9bd332483da820fe953172fdce4d139f3fce",
+                  "author": "Orfeas Kourkakis",
+                  "timestamp": 1723116257,
+                  "message": "<p>Add CODEOWNERS file</p>\n",
+                  "url": "https://github.com/canonical/base-mlflow/commit/bebc9bd332483da820fe953172fdce4d139f3fce"
+               },
+               {
                   "sha": "03442eb96dcf9ebc57f999a955a622e0cb1f6a68",
                   "author": "Michal Hucko",
                   "timestamp": 1713273176,
@@ -6599,13 +6606,6 @@
                   "timestamp": 1690549125,
                   "message": "<p>KF-4011 install necessary libs (<a target=\"_blank\" href=\"https://github.com/canonical/base-mlflow/pull/10\">#10</a>)</p>\n\n<ul>\n<li>Add mysql necessary libs</li>\n<li>Fix rockcraft</li>\n</ul>\n",
                   "url": "https://github.com/canonical/base-mlflow/commit/da07a7207643bb68f3c22f4e0a37e4856dab6711"
-               },
-               {
-                  "sha": "8826085ea7475181f96620ead00fcdc97fde66ab",
-                  "author": "Michal Hucko",
-                  "timestamp": 1686570854,
-                  "message": "<p>KF-2356 fix rock requirements (<a target=\"_blank\" href=\"https://github.com/canonical/base-mlflow/pull/8\">#8</a>)</p>\n\n<ul>\n<li>add missing packages and rename the startup sevice to match charm container</li>\n<li>fix version</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/base-mlflow/commit/8826085ea7475181f96620ead00fcdc97fde66ab"
                }
             ],
             "ciActions": [],
@@ -7294,9 +7294,18 @@
          },
          {
             "name": "kserve-operators",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/kserve-operators",
             "releases": [
+               {
+                  "id": 169304831,
+                  "version": "kserve-controller-rev612",
+                  "timestamp": 1723014233,
+                  "title": "Revision 612",
+                  "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 442\n    -  kserve-controller-image: charmedkubeflow/kserve-controller:0.13.0-e151c86\n       resource-revision: 448</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:39 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add metrics relation by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/261\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/261\">#261</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev609...kserve-controller-rev612\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev609&hellip;kserve-controller-rev612</a></p>\n",
+                  "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev612",
+                  "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev612...main"
+               },
                {
                   "id": 168852085,
                   "version": "kserve-controller-rev609",
@@ -7314,15 +7323,6 @@
                   "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 442\n    -  kserve-controller-image: charmedkubeflow/kserve-controller:0.13.0-e151c86\n       resource-revision: 448</p>\n\n<p>Static resources:\n Released to &lsquo;0.13/edge&rsquo; at 08:46 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci(upload-charm): use charmcraft from latest/candidate in track/0.13 by <a target=\"_blank\" href=\"https://github.com/orfeas-k\">@orfeas-k</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/260\">#260</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev596...kserve-controller-rev608\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev596&hellip;kserve-controller-rev608</a></p>\n",
                   "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev608",
                   "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev608...main"
-               },
-               {
-                  "id": 168699227,
-                  "version": "kserve-controller-rev605",
-                  "timestamp": 1722855190,
-                  "title": "Revision 605",
-                  "body": "<p>resources:\n    -  kube-rbac-proxy-image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1\n       resource-revision: 442\n    -  kserve-controller-image: charmedkubeflow/kserve-controller:0.13.0-e151c86\n       resource-revision: 448</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:00 UTC on 5 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: configure proxy env vars storage init container by <a target=\"_blank\" href=\"https://github.com/NohaIhab\">@NohaIhab</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/kserve-operators/pull/257\">#257</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kserve-operators/compare/kserve-controller-rev596...kserve-controller-rev605\">https://github.com/canonical/kserve-operators/compare/kserve-controller-rev596&hellip;kserve-controller-rev605</a></p>\n",
-                  "url": "https://github.com/canonical/kserve-operators/releases/tag/kserve-controller-rev605",
-                  "compareUrl": "https://github.com/canonical/kserve-operators/compare/kserve-controller-rev605...main"
                }
             ],
             "tags": null,
@@ -10103,25 +10103,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "6668e084c43f83e7f8b8f108908b722c8a0ea1db",
+                  "author": "canonical-iam",
+                  "timestamp": 1723118485,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-rock/pull/44\">#44</a> from canonical/renovate/auto-patch-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.4</p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-rock/commit/6668e084c43f83e7f8b8f108908b722c8a0ea1db"
+               },
+               {
+                  "sha": "1d7c8a3f98c89d63a03592f0d5c209ad8359dbd2",
+                  "author": "renovate[bot]",
+                  "timestamp": 1723118074,
+                  "message": "<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.4</p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-rock/commit/1d7c8a3f98c89d63a03592f0d5c209ad8359dbd2"
+               },
+               {
                   "sha": "803660110eb4d486982ec0c477608b37928be5b7",
                   "author": "canonical-iam",
                   "timestamp": 1723079939,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-rock/pull/43\">#43</a> from canonical/renovate/auto-patch-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.3</p>\n",
                   "url": "https://github.com/canonical/oathkeeper-rock/commit/803660110eb4d486982ec0c477608b37928be5b7"
-               },
-               {
-                  "sha": "2f1eb51d15d11431dcb53a78234fa0ac83432e8f",
-                  "author": "renovate[bot]",
-                  "timestamp": 1723079706,
-                  "message": "<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.3</p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-rock/commit/2f1eb51d15d11431dcb53a78234fa0ac83432e8f"
-               },
-               {
-                  "sha": "771eb0f925a99b901eb0151aa47b1854479023d1",
-                  "author": "canonical-iam",
-                  "timestamp": 1723052185,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-rock/pull/42\">#42</a> from canonical/renovate/auto-patch-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.21.2</p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-rock/commit/771eb0f925a99b901eb0151aa47b1854479023d1"
                }
             ],
             "ciActions": [
@@ -11196,7 +11196,7 @@
          },
          {
             "name": "k8s-dqlite",
-            "newCommits": 61,
+            "newCommits": 64,
             "url": "https://github.com/canonical/k8s-dqlite",
             "releases": [
                {
@@ -11280,6 +11280,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7d34ca4bb368e7a896416c5dd913fa1d48764e5a",
+                  "author": "Louise K. Schmidtgen",
+                  "timestamp": 1723116784,
+                  "message": "<p>Update dqlite and deps (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/580\">#580</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/7d34ca4bb368e7a896416c5dd913fa1d48764e5a"
+               },
+               {
                   "sha": "97d1db8537065b8d869855b8c2ae83fba0c744ea",
                   "author": "Louise K. Schmidtgen",
                   "timestamp": 1723110617,
@@ -11292,13 +11299,6 @@
                   "timestamp": 1723039690,
                   "message": "<p>Fix DeleteNode log (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/588\">#588</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/7075a554d2b574959a4bc418bd70a6a0212ebbbb"
-               },
-               {
-                  "sha": "a33cd3ecf30fc80050dc90920c94c426309140a9",
-                  "author": "Angelos Kolaitis",
-                  "timestamp": 1723039679,
-                  "message": "<p>Consistent field names in k8s status outputs (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/589\">#589</a>)</p>\n\n<ul>\n<li><p>fix yaml status output</p></li>\n\n<li><p>silence config in k8s status json and yaml</p></li>\n\n<li><p>update node status output in yaml</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/a33cd3ecf30fc80050dc90920c94c426309140a9"
                }
             ],
             "ciActions": [
@@ -13890,21 +13890,49 @@
          },
          {
             "name": "oai-ran-cu-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/oai-ran-cu-k8s-operator",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "releases": [
                {
-                  "sha": "f0ba7690524bb7d25db786565b4db8f2d8ed2999",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1722596356,
-                  "message": "<p>Initial commit</p>\n",
-                  "url": "https://github.com/canonical/oai-ran-cu-k8s-operator/commit/f0ba7690524bb7d25db786565b4db8f2d8ed2999"
+                  "id": 169304659,
+                  "version": "rev4",
+                  "timestamp": 1723115650,
+                  "title": "Revision 4",
+                  "body": "<p>resources:\n    -  cu-image: ghcr.io/canonical/oai-ran-cu:2.1.1\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;2.1/edge/&rsquo; at 11:37 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Adds the OAI RAN CU K8s operator by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-k8s-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-k8s-operator/pull/2\">#2</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-k8s-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-k8s-operator/pull/2\">#2</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oai-ran-cu-k8s-operator/commits/rev4\">https://github.com/canonical/oai-ran-cu-k8s-operator/commits/rev4</a></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-cu-k8s-operator/releases/tag/rev4",
+                  "compareUrl": "https://github.com/canonical/oai-ran-cu-k8s-operator/compare/rev4...main"
                }
             ],
+            "tags": null,
+            "commits": null,
             "ciActions": [],
-            "charm": null,
+            "charm": {
+               "name": "oai-ran-cu-k8s",
+               "url": "https://charmhub.io/oai-ran-cu-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 1,
+                     "timestamp": 1722882801,
+                     "base": ""
+                  },
+                  {
+                     "track": "2.1",
+                     "channel": "edge",
+                     "revision": 4,
+                     "timestamp": 1723117074,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "2.1"
+               ]
+            },
             "snap": null
          },
          {
@@ -13965,6 +13993,15 @@
             "url": "https://github.com/canonical/sdcore-udm-k8s-operator",
             "releases": [
                {
+                  "id": 169307352,
+                  "version": "rev403",
+                  "timestamp": 1723116318,
+                  "title": "Revision 403",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.2\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:56 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/259\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/259\">#259</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev401...rev403\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev401&hellip;rev403</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev403",
+                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev403...main"
+               },
+               {
                   "id": 169227431,
                   "version": "rev402",
                   "timestamp": 1723075707,
@@ -13981,15 +14018,6 @@
                   "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.2\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 15:32 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/252\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/252\">#252</a></a></li>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/258\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/258\">#258</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev378...rev401\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev378&hellip;rev401</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev401",
                   "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev401...main"
-               },
-               {
-                  "id": 169107721,
-                  "version": "rev400",
-                  "timestamp": 1723036410,
-                  "title": "Revision 400",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.4.2\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 13:42 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/252\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/252\">#252</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev378...rev400\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev378&hellip;rev400</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev400",
-                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev400...main"
                }
             ],
             "tags": null,
@@ -14030,8 +14058,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 401,
-                     "timestamp": 1723044758,
+                     "revision": 403,
+                     "timestamp": 1723118161,
                      "base": ""
                   },
                   {
@@ -14068,6 +14096,15 @@
             "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
             "releases": [
                {
+                  "id": 169307311,
+                  "version": "rev583",
+                  "timestamp": 1723116251,
+                  "title": "Revision 583",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.2\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:55 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/347\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/347\">#347</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev581...rev583\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev581&hellip;rev583</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev583",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev583...main"
+               },
+               {
                   "id": 169227128,
                   "version": "rev582",
                   "timestamp": 1723075640,
@@ -14084,15 +14121,6 @@
                   "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.2\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 12:06 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/346\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/346\">#346</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev579...rev581\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev579&hellip;rev581</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev581",
                   "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev581...main"
-               },
-               {
-                  "id": 168981784,
-                  "version": "rev580",
-                  "timestamp": 1722973629,
-                  "title": "Revision 580",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.4.2\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright2&rsquo; at 20:19 UTC on 6 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev579...rev580\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev579&hellip;rev580</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev580",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev580...main"
                }
             ],
             "tags": null,
@@ -14133,8 +14161,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 581,
-                     "timestamp": 1723032415,
+                     "revision": 583,
+                     "timestamp": 1723118151,
                      "base": ""
                   },
                   {
@@ -14204,6 +14232,15 @@
             "url": "https://github.com/canonical/sdcore-ausf-k8s-operator",
             "releases": [
                {
+                  "id": 169306807,
+                  "version": "rev409",
+                  "timestamp": 1723116127,
+                  "title": "Revision 409",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:52 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/261\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/261\">#261</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev407...rev409\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev407&hellip;rev409</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev409",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev409...main"
+               },
+               {
                   "id": 169227315,
                   "version": "rev408",
                   "timestamp": 1723075832,
@@ -14220,15 +14257,6 @@
                   "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 12:05 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: add ruff formatting to lint checks by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/260\">#260</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev404...rev407\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev404&hellip;rev407</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev407",
                   "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev407...main"
-               },
-               {
-                  "id": 168973309,
-                  "version": "rev406",
-                  "timestamp": 1722970235,
-                  "title": "Revision 406",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-ruff-format&rsquo; at 19:20 UTC on 6 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev404...rev406\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev404&hellip;rev406</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev406",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev406...main"
                }
             ],
             "tags": null,
@@ -14269,8 +14297,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 407,
-                     "timestamp": 1723032304,
+                     "revision": 409,
+                     "timestamp": 1723117945,
                      "base": ""
                   },
                   {
@@ -14516,6 +14544,24 @@
             "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator",
             "releases": [
                {
+                  "id": 169308566,
+                  "version": "rev415",
+                  "timestamp": 1723116798,
+                  "title": "Revision 415",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.3\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 12:02 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/264\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/264\">#264</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev413...rev415\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev413&hellip;rev415</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev415",
+                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev415...main"
+               },
+               {
+                  "id": 169303779,
+                  "version": "rev414",
+                  "timestamp": 1723075552,
+                  "title": "Revision 414",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.3\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 11:32 UTC on 8 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev413...rev414\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev413&hellip;rev414</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev414",
+                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev414...main"
+               },
+               {
                   "id": 169210472,
                   "version": "rev413",
                   "timestamp": 1723065039,
@@ -14523,24 +14569,6 @@
                   "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.3\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 21:43 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/257\">#257</a></a></li>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/263\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/263\">#263</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev391...rev413\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev391&hellip;rev413</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev413",
                   "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev413...main"
-               },
-               {
-                  "id": 169163479,
-                  "version": "rev412",
-                  "timestamp": 1723049049,
-                  "title": "Revision 412",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.3\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 17:16 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/257\">#257</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev391...rev412\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev391&hellip;rev412</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev412",
-                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev412...main"
-               },
-               {
-                  "id": 168837958,
-                  "version": "rev411",
-                  "timestamp": 1722926822,
-                  "title": "Revision 411",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.0\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 07:11 UTC on 6 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.6.0 to 7.6.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/258\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/258\">#258</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev409...rev411\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev409&hellip;rev411</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev411",
-                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev411...main"
                }
             ],
             "tags": null,
@@ -14581,8 +14609,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 413,
-                     "timestamp": 1723067016,
+                     "revision": 415,
+                     "timestamp": 1723118564,
                      "base": ""
                   },
                   {
@@ -14685,6 +14713,15 @@
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
                {
+                  "id": 169307518,
+                  "version": "rev475",
+                  "timestamp": 1723116302,
+                  "title": "Revision 475",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 64</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:56 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/275\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/275\">#275</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev473...rev475\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev473&hellip;rev475</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev475",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev475...main"
+               },
+               {
                   "id": 169227715,
                   "version": "rev474",
                   "timestamp": 1723075670,
@@ -14701,15 +14738,6 @@
                   "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 64</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 21:42 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/274\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/274\">#274</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev471...rev473\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev471&hellip;rev473</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev473",
                   "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev473...main"
-               },
-               {
-                  "id": 169166141,
-                  "version": "rev472",
-                  "timestamp": 1723049864,
-                  "title": "Revision 472",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 64</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 17:35 UTC on 7 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev471...rev472\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev471&hellip;rev472</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev472",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev472...main"
                }
             ],
             "tags": null,
@@ -14750,8 +14778,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 473,
-                     "timestamp": 1723066952,
+                     "revision": 475,
+                     "timestamp": 1723118219,
                      "base": ""
                   },
                   {
@@ -14932,6 +14960,15 @@
             "url": "https://github.com/canonical/sdcore-nssf-k8s-operator",
             "releases": [
                {
+                  "id": 169306980,
+                  "version": "rev377",
+                  "timestamp": 1723116149,
+                  "title": "Revision 377",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:53 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/262\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/262\">#262</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev375...rev377\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev375&hellip;rev377</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev377",
+                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev377...main"
+               },
+               {
                   "id": 169227537,
                   "version": "rev376",
                   "timestamp": 1723075757,
@@ -14948,15 +14985,6 @@
                   "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 15:30 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/255\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/255\">#255</a></a></li>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/261\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/261\">#261</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev351...rev375\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev351&hellip;rev375</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev375",
                   "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev375...main"
-               },
-               {
-                  "id": 169090584,
-                  "version": "rev374",
-                  "timestamp": 1723030754,
-                  "title": "Revision 374",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 12:14 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/255\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/255\">#255</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev351...rev374\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev351&hellip;rev374</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev374",
-                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev374...main"
                }
             ],
             "tags": null,
@@ -14997,8 +15025,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 375,
-                     "timestamp": 1723044637,
+                     "revision": 377,
+                     "timestamp": 1723118008,
                      "base": ""
                   },
                   {
@@ -15068,6 +15096,15 @@
             "url": "https://github.com/canonical/sdcore-pcf-k8s-operator",
             "releases": [
                {
+                  "id": 169306720,
+                  "version": "rev434",
+                  "timestamp": 1723116110,
+                  "title": "Revision 434",
+                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:51 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/274\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/274\">#274</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev432...rev434\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev432&hellip;rev434</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev434",
+                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev434...main"
+               },
+               {
                   "id": 169227691,
                   "version": "rev433",
                   "timestamp": 1723076181,
@@ -15084,15 +15121,6 @@
                   "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 16:32 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/267\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/267\">#267</a></a></li>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/273\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/273\">#273</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev410...rev432\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev410&hellip;rev432</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev432",
                   "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev432...main"
-               },
-               {
-                  "id": 169136924,
-                  "version": "rev431",
-                  "timestamp": 1723043030,
-                  "title": "Revision 431",
-                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 15:36 UTC on 7 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev430...rev431\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev430&hellip;rev431</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev431",
-                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev431...main"
                }
             ],
             "tags": null,
@@ -15133,8 +15161,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 432,
-                     "timestamp": 1723048331,
+                     "revision": 434,
+                     "timestamp": 1723117908,
                      "base": ""
                   },
                   {
@@ -15303,6 +15331,24 @@
             "url": "https://github.com/canonical/sdcore-smf-k8s-operator",
             "releases": [
                {
+                  "id": 169308543,
+                  "version": "rev499",
+                  "timestamp": 1723116861,
+                  "title": "Revision 499",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 12:02 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/298\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/298\">#298</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev497...rev499\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev497&hellip;rev499</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev499",
+                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev499...main"
+               },
+               {
+                  "id": 169304078,
+                  "version": "rev498",
+                  "timestamp": 1723076447,
+                  "title": "Revision 498",
+                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-auto-libs&rsquo; at 11:34 UTC on 8 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev497...rev498\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev497&hellip;rev498</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev498",
+                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev498...main"
+               },
+               {
                   "id": 169135694,
                   "version": "rev497",
                   "timestamp": 1723042823,
@@ -15310,24 +15356,6 @@
                   "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 15:29 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/297\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/297\">#297</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev494...rev497\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev494&hellip;rev497</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev497",
                   "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev497...main"
-               },
-               {
-                  "id": 169097242,
-                  "version": "rev496",
-                  "timestamp": 1723031293,
-                  "title": "Revision 496",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 12:53 UTC on 7 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev494...rev496\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev494&hellip;rev496</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev496",
-                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev496...main"
-               },
-               {
-                  "id": 169091971,
-                  "version": "rev495",
-                  "timestamp": 1722947973,
-                  "title": "Revision 495",
-                  "body": "<p>resources:\n    -  smf-image: ghcr.io/canonical/sdcore-smf:1.4.2\n       resource-revision: 36</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 12:22 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/295\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/295\">#295</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/296\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-k8s-operator/pull/296\">#296</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev463...rev495\">https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev463&hellip;rev495</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-k8s-operator/releases/tag/rev495",
-                  "compareUrl": "https://github.com/canonical/sdcore-smf-k8s-operator/compare/rev495...main"
                }
             ],
             "tags": null,
@@ -15368,8 +15396,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 497,
-                     "timestamp": 1723044553,
+                     "revision": 499,
+                     "timestamp": 1723118557,
                      "base": ""
                   },
                   {
@@ -15445,6 +15473,15 @@
             "url": "https://github.com/canonical/sdcore-router-k8s-operator",
             "releases": [
                {
+                  "id": 169306371,
+                  "version": "rev285",
+                  "timestamp": 1723116359,
+                  "title": "Revision 285",
+                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 14</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:49 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/187\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/187\">#187</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev283...rev285\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev283&hellip;rev285</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev285",
+                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev285...main"
+               },
+               {
                   "id": 169226959,
                   "version": "rev284",
                   "timestamp": 1723075745,
@@ -15461,15 +15498,6 @@
                   "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 14</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 21:33 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/186\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/186\">#186</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev279...rev283\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev279&hellip;rev283</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev283",
                   "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev283...main"
-               },
-               {
-                  "id": 169195365,
-                  "version": "rev282",
-                  "timestamp": 1723060451,
-                  "title": "Revision 282",
-                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 14</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 20:14 UTC on 7 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev279...rev282\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev279&hellip;rev282</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev282",
-                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev282...main"
                }
             ],
             "tags": null,
@@ -15510,8 +15538,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 283,
-                     "timestamp": 1723066437,
+                     "revision": 285,
+                     "timestamp": 1723117762,
                      "base": ""
                   },
                   {
@@ -15548,6 +15576,15 @@
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
                {
+                  "id": 169306761,
+                  "version": "rev408",
+                  "timestamp": 1723116137,
+                  "title": "Revision 408",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:52 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/275\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/275\">#275</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev406...rev408\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev406&hellip;rev408</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev408",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev408...main"
+               },
+               {
                   "id": 169227458,
                   "version": "rev407",
                   "timestamp": 1723075973,
@@ -15564,15 +15601,6 @@
                   "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 15:32 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: replace mypy with pyright by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/274\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/274\">#274</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev404...rev406\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev404&hellip;rev406</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev406",
                   "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev406...main"
-               },
-               {
-                  "id": 169111312,
-                  "version": "rev405",
-                  "timestamp": 1723037037,
-                  "title": "Revision 405",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.4.1\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-pyright&rsquo; at 13:52 UTC on 7 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev404...rev405\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev404&hellip;rev405</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev405",
-                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev405...main"
                }
             ],
             "tags": null,
@@ -15613,8 +15641,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 406,
-                     "timestamp": 1723044721,
+                     "revision": 408,
+                     "timestamp": 1723117926,
                      "base": ""
                   },
                   {
@@ -15717,6 +15745,15 @@
             "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
             "releases": [
                {
+                  "id": 169305912,
+                  "version": "rev497",
+                  "timestamp": 1723116063,
+                  "title": "Revision 497",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 40</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 11:46 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/324\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/324\">#324</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev495...rev497\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev495&hellip;rev497</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev497",
+                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev497...main"
+               },
+               {
                   "id": 169228057,
                   "version": "rev496",
                   "timestamp": 1723076551,
@@ -15733,15 +15770,6 @@
                   "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 40</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 21:37 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: move k8s service code to its own class/file by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/323\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/323\">#323</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev493...rev495\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev493&hellip;rev495</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev495",
                   "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev495...main"
-               },
-               {
-                  "id": 169195122,
-                  "version": "rev494",
-                  "timestamp": 1723059979,
-                  "title": "Revision 494",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 40</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-k8s&rsquo; at 20:13 UTC on 7 Aug 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev493...rev494\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev493&hellip;rev494</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev494",
-                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev494...main"
                }
             ],
             "tags": null,
@@ -15782,8 +15810,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 495,
-                     "timestamp": 1723066620,
+                     "revision": 497,
+                     "timestamp": 1723117570,
                      "base": ""
                   },
                   {
@@ -16649,6 +16677,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c6088ad72ffddbeb3c249247a3fbb48327e77894",
+                  "author": "Kayra",
+                  "timestamp": 1723117639,
+                  "message": "<p>feat: authorize charm when starting gocert (<a target=\"_blank\" href=\"https://github.com/canonical/gocert-k8s-operator/pull/14\">#14</a>)</p>\n",
+                  "url": "https://github.com/canonical/gocert-k8s-operator/commit/c6088ad72ffddbeb3c249247a3fbb48327e77894"
+               },
+               {
                   "sha": "c72d0d996da6e40c8280151e00ef4f6d62fabb55",
                   "author": "Kayra",
                   "timestamp": 1722950214,
@@ -16661,13 +16696,6 @@
                   "timestamp": 1722921323,
                   "message": "<p>feat: use storage mounts to keep config and db files (<a target=\"_blank\" href=\"https://github.com/canonical/gocert-k8s-operator/pull/3\">#3</a>)</p>\n\n<p>Co-authored-by: PietroPasotti <a href=\"mailto:pietro.pasotti@canonical.com\">pietro.pasotti@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/gocert-k8s-operator/commit/5811df7eb115cba374cac86f3ce7e5b6a78d68ff"
-               },
-               {
-                  "sha": "7ac32ea515cc7c02b20aa14ae44ebef052ab2089",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1722860049,
-                  "message": "<p>chore: bump coverage[toml] from 7.6.0 to 7.6.1 in the pip_dependencies group (<a target=\"_blank\" href=\"https://github.com/canonical/gocert-k8s-operator/pull/12\">#12</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/gocert-k8s-operator/commit/7ac32ea515cc7c02b20aa14ae44ebef052ab2089"
                }
             ],
             "ciActions": [],
@@ -19087,6 +19115,45 @@
       "team": "Data",
       "repos": [
          {
+            "name": "sysbench-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sysbench-operator",
+            "releases": [
+               {
+                  "id": 169309968,
+                  "version": "rev46",
+                  "timestamp": 1723117730,
+                  "title": "Revisions 45, 46",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Update dpw to v18 by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev44...rev46\">https://github.com/canonical/sysbench-operator/compare/rev44&hellip;rev46</a></p>\n",
+                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev46",
+                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev46...main"
+               },
+               {
+                  "id": 166657361,
+                  "version": "rev44",
+                  "timestamp": 1721723317,
+                  "title": "Revisions 43, 44",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bump ops from 2.12.0 to 2.15.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/48\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/48\">#48</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev42...rev44\">https://github.com/canonical/sysbench-operator/compare/rev42&hellip;rev44</a></p>\n",
+                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev44",
+                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev44...main"
+               },
+               {
+                  "id": 165741871,
+                  "version": "rev42",
+                  "timestamp": 1721172304,
+                  "title": "Revisions 41, 42",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Update libs by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev40...rev42\">https://github.com/canonical/sysbench-operator/compare/rev40&hellip;rev42</a></p>\n",
+                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev42",
+                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev42...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "data-platform-workflows",
             "newCommits": 0,
             "url": "https://github.com/canonical/data-platform-workflows",
@@ -19127,7 +19194,7 @@
          },
          {
             "name": "postgresql-test-app",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/postgresql-test-app",
             "releases": [
                {
@@ -19220,6 +19287,47 @@
                   "latest"
                ]
             },
+            "snap": null
+         },
+         {
+            "name": "charmcraftcache-hub",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmcraftcache-hub",
+            "releases": [
+               {
+                  "id": 169306556,
+                  "version": "build-1723117836-v3",
+                  "timestamp": 1723108951,
+                  "title": "build-1723117836-v3",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1723117836-v3",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1723117836-v3...main"
+               },
+               {
+                  "id": 169227740,
+                  "version": "build-1723078037-v3",
+                  "timestamp": 1723013579,
+                  "title": "build-1723078037-v3",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1723078037-v3",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1723078037-v3...main"
+               },
+               {
+                  "id": 169048043,
+                  "version": "build-1723016893-v3",
+                  "timestamp": 1723013579,
+                  "title": "build-1723016893-v3",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1723016893-v3",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1723016893-v3...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/charmcraftcache-hub/actions/workflows/build.yaml"
+            ],
+            "charm": null,
             "snap": null
          },
          {
@@ -19615,49 +19723,8 @@
             "snap": null
          },
          {
-            "name": "charmcraftcache-hub",
-            "newCommits": 2,
-            "url": "https://github.com/canonical/charmcraftcache-hub",
-            "releases": [
-               {
-                  "id": 169227740,
-                  "version": "build-1723078037-v3",
-                  "timestamp": 1723013579,
-                  "title": "build-1723078037-v3",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1723078037-v3",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1723078037-v3...main"
-               },
-               {
-                  "id": 169048043,
-                  "version": "build-1723016893-v3",
-                  "timestamp": 1723013579,
-                  "title": "build-1723016893-v3",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1723016893-v3",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1723016893-v3...main"
-               },
-               {
-                  "id": 168939811,
-                  "version": "build-1722958628-v3",
-                  "timestamp": 1722956124,
-                  "title": "build-1722958628-v3",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1722958628-v3",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1722958628-v3...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/charmcraftcache-hub/actions/workflows/build.yaml"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "postgresql-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/postgresql-operator",
             "releases": [
                {
@@ -19826,7 +19893,7 @@
          },
          {
             "name": "postgresql-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
                {
@@ -20563,7 +20630,7 @@
          },
          {
             "name": "pgbouncer-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -21366,45 +21433,6 @@
             "ciActions": [
                "https://github.com/canonical/charmed-mysql-rock/actions/workflows/release.yaml"
             ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "sysbench-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sysbench-operator",
-            "releases": [
-               {
-                  "id": 166657361,
-                  "version": "rev44",
-                  "timestamp": 1721723317,
-                  "title": "Revisions 43, 44",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bump ops from 2.12.0 to 2.15.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/48\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/48\">#48</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev42...rev44\">https://github.com/canonical/sysbench-operator/compare/rev42&hellip;rev44</a></p>\n",
-                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev44",
-                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev44...main"
-               },
-               {
-                  "id": 165741871,
-                  "version": "rev42",
-                  "timestamp": 1721172304,
-                  "title": "Revisions 41, 42",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Update libs by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev40...rev42\">https://github.com/canonical/sysbench-operator/compare/rev40&hellip;rev42</a></p>\n",
-                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev42",
-                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev42...main"
-               },
-               {
-                  "id": 165659487,
-                  "version": "rev40",
-                  "timestamp": 1721138675,
-                  "title": "Revisions 39, 40",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bump setuptools from 69.2.0 to 70.0.0 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/46\">#46</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev38...rev40\">https://github.com/canonical/sysbench-operator/compare/rev38&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev40",
-                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev40...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -25878,31 +25906,31 @@
             "url": "https://github.com/canonical/oci-factory",
             "releases": [
                {
-                  "id": 169136479,
+                  "id": 169294342,
                   "version": "mock-rock_test_edge",
-                  "timestamp": 1723044814,
+                  "timestamp": 1723113709,
                   "title": "mock-rock_test_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-21c0b590de625239aa73",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-e512b47e07b8b558f7b9",
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
                },
                {
-                  "id": 169127093,
-                  "version": "mock-rock_test_edge",
-                  "timestamp": 1723041928,
-                  "title": "mock-rock_test_edge",
-                  "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-00a4c67770d1007b6911",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
-               },
-               {
-                  "id": 169136490,
+                  "id": 169294322,
                   "version": "mock-rock_test_beta",
-                  "timestamp": 1723044817,
+                  "timestamp": 1723113705,
                   "title": "mock-rock_test_beta",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-e529cd04c27552ac8792",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-ca2283080f150d66610d",
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_beta...main"
+               },
+               {
+                  "id": 169294336,
+                  "version": "mock-rock_edge",
+                  "timestamp": 1723113708,
+                  "title": "mock-rock_edge",
+                  "body": "",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-c451203f7cdb3fbd2d38",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_edge...main"
                }
             ],
             "tags": null,
@@ -25965,7 +25993,7 @@
                   "version": "rev31",
                   "timestamp": 1723042748,
                   "title": "Revision 31",
-                  "body": "<p>resources:\n    -  superset-image: ghcr.io/canonical/charmed-superset-rock:2.1.0-22.04-edge\n       resource-revision: 13</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:33 UTC on 7 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update redis lib by <a target=\"_blank\" href=\"https://github.com/gtato\">@gtato</a> in <a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/gtato\">@gtato</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/superset-k8s-operator/compare/rev30...rev31\">https://github.com/canonical/superset-k8s-operator/compare/rev30&hellip;rev31</a></p>\n",
+                  "body": "<p>resources:\n    -  superset-image: ghcr.io/canonical/charmed-superset-rock:2.1.0-22.04-edge\n       resource-revision: 13</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:33 UTC on 7 Aug 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 11:23 UTC on 8 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update redis lib by <a target=\"_blank\" href=\"https://github.com/gtato\">@gtato</a> in <a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/gtato\">@gtato</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/superset-k8s-operator/compare/rev30...rev31\">https://github.com/canonical/superset-k8s-operator/compare/rev30&hellip;rev31</a></p>\n",
                   "url": "https://github.com/canonical/superset-k8s-operator/releases/tag/rev31",
                   "compareUrl": "https://github.com/canonical/superset-k8s-operator/compare/rev31...main"
                },
@@ -26000,8 +26028,8 @@
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 28,
-                     "timestamp": 1715183041,
+                     "revision": 31,
+                     "timestamp": 1723116199,
                      "base": ""
                   },
                   {
@@ -31830,15 +31858,15 @@
                   {
                      "track": "2.9",
                      "channel": "stable",
-                     "revision": 59,
-                     "timestamp": 1687248971,
+                     "revision": 73,
+                     "timestamp": 1723116455,
                      "base": "core22"
                   },
                   {
                      "track": "2.9",
                      "channel": "candidate",
-                     "revision": 59,
-                     "timestamp": 1687248978,
+                     "revision": 73,
+                     "timestamp": 1723116455,
                      "base": "core22"
                   },
                   {
