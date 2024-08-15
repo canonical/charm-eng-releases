@@ -3527,7 +3527,7 @@
          },
          {
             "name": "grafana-agent-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/grafana-agent-operator",
             "releases": [
                {
@@ -4278,25 +4278,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "28a789c8857b21cf02cfa09bdc2cfb1254f5307c",
+                  "author": "Mateusz Kulewicz",
+                  "timestamp": 1723720239,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/tempo-coordinator-k8s-operator/pull/22\">#22</a> from canonical/deploy-minio-script</p>\n\n<p>small script to deploy and configure minio + s3 for manual testing</p>\n",
+                  "url": "https://github.com/canonical/tempo-coordinator-k8s-operator/commit/28a789c8857b21cf02cfa09bdc2cfb1254f5307c"
+               },
+               {
+                  "sha": "4442a6a35e2bf51b64cde7111cdbee11161d5640",
+                  "author": "Pietro Pasotti",
+                  "timestamp": 1723636281,
+                  "message": "<p>deploy minio script</p>\n",
+                  "url": "https://github.com/canonical/tempo-coordinator-k8s-operator/commit/4442a6a35e2bf51b64cde7111cdbee11161d5640"
+               },
+               {
                   "sha": "3892509eaab97dd6496c42390a2b7f11477bf0c4",
                   "author": "Noctua",
                   "timestamp": 1722514165,
                   "message": "<p>chore: update charm libraries (<a target=\"_blank\" href=\"https://github.com/canonical/tempo-coordinator-k8s-operator/pull/17\">#17</a>)</p>\n",
                   "url": "https://github.com/canonical/tempo-coordinator-k8s-operator/commit/3892509eaab97dd6496c42390a2b7f11477bf0c4"
-               },
-               {
-                  "sha": "cdc48abfce6ce1e52910cdf9cba5c2508f3dc603",
-                  "author": "Noctua",
-                  "timestamp": 1722370037,
-                  "message": "<p>chore: update charm libraries (<a target=\"_blank\" href=\"https://github.com/canonical/tempo-coordinator-k8s-operator/pull/16\">#16</a>)</p>\n",
-                  "url": "https://github.com/canonical/tempo-coordinator-k8s-operator/commit/cdc48abfce6ce1e52910cdf9cba5c2508f3dc603"
-               },
-               {
-                  "sha": "b114df1175568726032a414d90cf4b05a2a95fe0",
-                  "author": "Michael Dmitry",
-                  "timestamp": 1722362728,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/tempo-coordinator-k8s-operator/pull/13\">#13</a> from canonical/OPENG-2562</p>\n\n<p>Fix ReceiverProtocols confusion</p>\n",
-                  "url": "https://github.com/canonical/tempo-coordinator-k8s-operator/commit/b114df1175568726032a414d90cf4b05a2a95fe0"
                }
             ],
             "ciActions": [
@@ -6868,6 +6868,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "57e01e947053f8dd5b5b67ae09d8d554b3283fc2",
+                  "author": "Michal Hucko",
+                  "timestamp": 1723720510,
+                  "message": "<p>Update requirements in MLflow&rsquo;s UATs (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/102\">#102</a>)</p>\n\n<ul>\n<li>Update requirements in MLflow&rsquo;s UATs</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-kubeflow-uats/commit/57e01e947053f8dd5b5b67ae09d8d554b3283fc2"
+               },
+               {
                   "sha": "ff50a868440cfd19fb555717c6486ac102ed6bfc",
                   "author": "Manos Vlassis",
                   "timestamp": 1721832130,
@@ -6880,13 +6887,6 @@
                   "timestamp": 1721218946,
                   "message": "<p>fix(katib): Increase experiment batch-size (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/93\">#93</a>)</p>\n\n<p>Increase experiment&rsquo;s batch-size in order for the experiment to perform\nless training and thus complete earlier. The UAT&rsquo;s role is to confirm that\nthe controller works, rather than run a full experiment training.</p>\n\n<p>Fixes canonical/katib-operators<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/211\">#211</a></p>\n",
                   "url": "https://github.com/canonical/charmed-kubeflow-uats/commit/6a3edd689421750b0e9738f32b40d17fd20346bf"
-               },
-               {
-                  "sha": "d1531e0dff156b8dabba3725d2fbe89322bddf0f",
-                  "author": "Manos Vlassis",
-                  "timestamp": 1721118135,
-                  "message": "<p>Add section in README.md about testing on older versions of Charmed Kubeflow (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/91\">#91</a>)</p>\n\n<ul>\n<li><p>Update requirements and image for UATS python 3.11 scipy 1.8 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-kubeflow-uats/pull/83\">#83</a>)</p></li>\n\n<li><p>Update requirements and image for UATS 1.8</p></li>\n\n<li><p>Use requirements.txt in notebooks</p></li>\n\n<li><p>Add a short section in README mentioning the different tracks</p></li>\n\n<li><p>Correct version mistake in README.md</p></li>\n\n<li><p>Update image, requirements.in, and requirements.txt</p></li>\n\n<li><p>Revert &ldquo;Update image, requirements.in, and requirements.txt&rdquo;</p></li>\n</ul>\n\n<p>This reverts commit 87b1fd3f0274bb509add683e75b80d22c69ce653.</p>\n\n<hr>\n\n<p>Co-authored-by: Michal Hucko <a href=\"mailto:michal.hucko@canonical.com\">michal.hucko@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-kubeflow-uats/commit/d1531e0dff156b8dabba3725d2fbe89322bddf0f"
                }
             ],
             "ciActions": [
@@ -7979,9 +7979,18 @@
          },
          {
             "name": "mlflow-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/mlflow-operator",
             "releases": [
+               {
+                  "id": 170338843,
+                  "version": "rev658",
+                  "timestamp": 1723719902,
+                  "title": "Revision 658",
+                  "body": "<p>resources:\n    -  exporter-oci-image: docker.io/charmedkubeflow/mlflow-prometheus-exporter:1.0-22.04\n       resource-revision: 212\n    -  oci-image: docker.io/charmedkubeflow/mlflow:v2.15.1-d756ce7\n       resource-revision: 507</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:53 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update docs for 2.15 by <a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlflow-operator/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/mlflow-operator/pull/260\">#260</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlflow-operator/compare/rev637...rev658\">https://github.com/canonical/mlflow-operator/compare/rev637&hellip;rev658</a></p>\n",
+                  "url": "https://github.com/canonical/mlflow-operator/releases/tag/rev658",
+                  "compareUrl": "https://github.com/canonical/mlflow-operator/compare/rev658...main"
+               },
                {
                   "id": 169503923,
                   "version": "rev638",
@@ -7999,15 +8008,6 @@
                   "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/mlflow:v2.15.1-d756ce7\n       resource-revision: 507\n    -  exporter-oci-image: docker.io/charmedkubeflow/mlflow-prometheus-exporter:1.0-22.04\n       resource-revision: 210</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:59 UTC on 9 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add 2.15 mlflow bundles by <a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlflow-operator/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/mlflow-operator/pull/257\">#257</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlflow-operator/compare/rev629...rev637\">https://github.com/canonical/mlflow-operator/compare/rev629&hellip;rev637</a></p>\n",
                   "url": "https://github.com/canonical/mlflow-operator/releases/tag/rev637",
                   "compareUrl": "https://github.com/canonical/mlflow-operator/compare/rev637...main"
-               },
-               {
-                  "id": 169464846,
-                  "version": "rev629",
-                  "timestamp": 1723187151,
-                  "title": "Revision 629",
-                  "body": "<p>resources:\n    -  oci-image: docker.io/charmedkubeflow/mlflow:v2.15.1-d756ce7\n       resource-revision: 507\n    -  exporter-oci-image: docker.io/charmedkubeflow/mlflow-prometheus-exporter:1.0-22.04\n       resource-revision: 210</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:55 UTC on 9 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use v2.15 image by <a target=\"_blank\" href=\"https://github.com/misohu\">@misohu</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mlflow-operator/pull/255\"><a target=\"_blank\" href=\"https://github.com/canonical/mlflow-operator/pull/255\">#255</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mlflow-operator/compare/rev618...rev629\">https://github.com/canonical/mlflow-operator/compare/rev618&hellip;rev629</a></p>\n",
-                  "url": "https://github.com/canonical/mlflow-operator/releases/tag/rev629",
-                  "compareUrl": "https://github.com/canonical/mlflow-operator/compare/rev629...main"
                }
             ],
             "tags": null,
@@ -8985,6 +8985,89 @@
       "team": "Identity",
       "repos": [
          {
+            "name": "kratos-external-idp-integrator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/kratos-external-idp-integrator",
+            "releases": [
+               {
+                  "id": 170340109,
+                  "version": "rev224",
+                  "timestamp": 1723722648,
+                  "title": "Revision 224",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:04 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.33.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/103\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/103\">#103</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev223...rev224\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev223&hellip;rev224</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev224",
+                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev224...main"
+               },
+               {
+                  "id": 170296767,
+                  "version": "rev223",
+                  "timestamp": 1723700071,
+                  "title": "Revision 223",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:48 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.32.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/102\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/102\">#102</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev222...rev223\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev222&hellip;rev223</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev223",
+                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev223...main"
+               },
+               {
+                  "id": 170277336,
+                  "version": "rev222",
+                  "timestamp": 1723685628,
+                  "title": "Revision 222",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:48 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.32.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/101\">#101</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev221...rev222\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev221&hellip;rev222</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev222",
+                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev222...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/kratos-external-idp-integrator/actions/workflows/on_push.yaml"
+            ],
+            "charm": {
+               "name": "kratos-external-idp-integrator",
+               "url": "https://charmhub.io/kratos-external-idp-integrator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 224,
+                     "timestamp": 1723723459,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "stable",
+                     "revision": 192,
+                     "timestamp": 1719402415,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "edge",
+                     "revision": 192,
+                     "timestamp": 1714555895,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.1",
+                     "channel": "edge",
+                     "revision": 182,
+                     "timestamp": 1694777824,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge",
+                  "stable"
+               ],
+               "tracks": [
+                  "latest",
+                  "0.2",
+                  "0.1"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "kratos-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/kratos-operator",
@@ -9076,89 +9159,6 @@
                "tracks": [
                   "latest",
                   "0.3",
-                  "0.2",
-                  "0.1"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "kratos-external-idp-integrator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/kratos-external-idp-integrator",
-            "releases": [
-               {
-                  "id": 170296767,
-                  "version": "rev223",
-                  "timestamp": 1723700071,
-                  "title": "Revision 223",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:48 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.32.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/102\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/102\">#102</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev222...rev223\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev222&hellip;rev223</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev223",
-                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev223...main"
-               },
-               {
-                  "id": 170277336,
-                  "version": "rev222",
-                  "timestamp": 1723685628,
-                  "title": "Revision 222",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:48 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.32.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/101\">#101</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev221...rev222\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev221&hellip;rev222</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev222",
-                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev222...main"
-               },
-               {
-                  "id": 170267075,
-                  "version": "rev221",
-                  "timestamp": 1723673663,
-                  "title": "Revision 221",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:27 UTC on 14 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook renovatebot/pre-commit-hooks to v38.31.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/100\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/100\">#100</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev220...rev221\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev220&hellip;rev221</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev221",
-                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev221...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/kratos-external-idp-integrator/actions/workflows/on_push.yaml"
-            ],
-            "charm": {
-               "name": "kratos-external-idp-integrator",
-               "url": "https://charmhub.io/kratos-external-idp-integrator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 223,
-                     "timestamp": 1723700891,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "stable",
-                     "revision": 192,
-                     "timestamp": 1719402415,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "edge",
-                     "revision": 192,
-                     "timestamp": 1714555895,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.1",
-                     "channel": "edge",
-                     "revision": 182,
-                     "timestamp": 1694777824,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "edge",
-                  "stable"
-               ],
-               "tracks": [
-                  "latest",
                   "0.2",
                   "0.1"
                ]
@@ -9628,7 +9628,7 @@
          },
          {
             "name": "identity-platform-admin-ui",
-            "newCommits": 2,
+            "newCommits": 4,
             "url": "https://github.com/canonical/identity-platform-admin-ui",
             "releases": [
                {
@@ -12415,8 +12415,8 @@
                   {
                      "track": "1.29",
                      "channel": "edge",
-                     "revision": 7148,
-                     "timestamp": 1723690891,
+                     "revision": 7164,
+                     "timestamp": 1723720578,
                      "base": "core20"
                   },
                   {
@@ -16980,6 +16980,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "6ff6d99bf31d556f98e6244a30475de1dfdcc931",
+                  "author": "Kayra",
+                  "timestamp": 1723723484,
+                  "message": "<p>feat: metrics integrations (<a target=\"_blank\" href=\"https://github.com/canonical/gocert-k8s-operator/pull/18\">#18</a>)</p>\n\n<p>Co-authored-by: Guillaume Belanger <a href=\"mailto:guillaume.belanger@canonical.com\">guillaume.belanger@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/gocert-k8s-operator/commit/6ff6d99bf31d556f98e6244a30475de1dfdcc931"
+               },
+               {
                   "sha": "c60abf4cdf81c9fe81bd7cb02879f406e42b39d5",
                   "author": "Guillaume Belanger",
                   "timestamp": 1723643591,
@@ -16992,13 +16999,6 @@
                   "timestamp": 1723635079,
                   "message": "<p>chore: separate workflow in multiple jobs (<a target=\"_blank\" href=\"https://github.com/canonical/gocert-k8s-operator/pull/16\">#16</a>)</p>\n\n<p>Signed-off-by: guillaume <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
                   "url": "https://github.com/canonical/gocert-k8s-operator/commit/88e397b25af151bb2b88ce36725749b7df88bbc3"
-               },
-               {
-                  "sha": "a256484f07ef103a11931ea10c17d2068bf8c0b0",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1723456308,
-                  "message": "<p>chore: bump the pip_dependencies group with 3 updates (<a target=\"_blank\" href=\"https://github.com/canonical/gocert-k8s-operator/pull/17\">#17</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/gocert-k8s-operator/commit/a256484f07ef103a11931ea10c17d2068bf8c0b0"
                }
             ],
             "ciActions": [],
@@ -19024,7 +19024,7 @@
          },
          {
             "name": "tls-certificates-requirer-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/tls-certificates-requirer-operator",
             "releases": [
                {
@@ -19992,6 +19992,15 @@
             "url": "https://github.com/canonical/charmed-postgresql-rock",
             "releases": [
                {
+                  "id": 170337086,
+                  "version": "image-1ef86aff8735ef79c98a6d9110bc476b099c7e3aa9ba32234aa9b4d57ed29aee",
+                  "timestamp": 1723721342,
+                  "title": "Image 1ef86aff8735ef79c98a6d9110bc476b099c7e3aa9ba32234aa9b4d57ed29aee",
+                  "body": "<p>Released to ghcr.io/canonical/charmed-postgresql:14.12-22.04_edge</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update canonical/data-platform-workflows action to v19.1.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-postgresql-rock/compare/image-38d5e5583fb1f5fdd7aeeedfbbe43b9223f9bf4572e1d2da37b1089edb46cad4...image-1ef86aff8735ef79c98a6d9110bc476b099c7e3aa9ba32234aa9b4d57ed29aee\">https://github.com/canonical/charmed-postgresql-rock/compare/image-38d5e5583fb1f5fdd7aeeedfbbe43b9223f9bf4572e1d2da37b1089edb46cad4&hellip;image-1ef86aff8735ef79c98a6d9110bc476b099c7e3aa9ba32234aa9b4d57ed29aee</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-postgresql-rock/releases/tag/image-1ef86aff8735ef79c98a6d9110bc476b099c7e3aa9ba32234aa9b4d57ed29aee",
+                  "compareUrl": "https://github.com/canonical/charmed-postgresql-rock/compare/image-1ef86aff8735ef79c98a6d9110bc476b099c7e3aa9ba32234aa9b4d57ed29aee...14-22.04"
+               },
+               {
                   "id": 169473158,
                   "version": "image-38d5e5583fb1f5fdd7aeeedfbbe43b9223f9bf4572e1d2da37b1089edb46cad4",
                   "timestamp": 1723191317,
@@ -20008,15 +20017,6 @@
                   "body": "<p>Released to ghcr.io/canonical/charmed-postgresql:14.12-22.04_edge</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update data-platform-workflows to v18 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/48\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/48\">#48</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-postgresql-rock/compare/image-fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e...image-f16f7d0b534e0dd1b5e7cee6c82aaa01a8838c33f1d458ef2bd2d534908d0c2c\">https://github.com/canonical/charmed-postgresql-rock/compare/image-fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e&hellip;image-f16f7d0b534e0dd1b5e7cee6c82aaa01a8838c33f1d458ef2bd2d534908d0c2c</a></p>\n",
                   "url": "https://github.com/canonical/charmed-postgresql-rock/releases/tag/image-f16f7d0b534e0dd1b5e7cee6c82aaa01a8838c33f1d458ef2bd2d534908d0c2c",
                   "compareUrl": "https://github.com/canonical/charmed-postgresql-rock/compare/image-f16f7d0b534e0dd1b5e7cee6c82aaa01a8838c33f1d458ef2bd2d534908d0c2c...14-22.04"
-               },
-               {
-                  "id": 167646379,
-                  "version": "image-fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e",
-                  "timestamp": 1722257025,
-                  "title": "Image fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e",
-                  "body": "<p>Released to ghcr.io/canonical/charmed-postgresql:14.12-22.04_edge</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update canonical/data-platform-workflows action to v17.0.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-postgresql-rock/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-postgresql-rock/compare/image-b0fb95160347215417ac28ed270557d07832ede4934339b845df9dffbf767cc6...image-fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e\">https://github.com/canonical/charmed-postgresql-rock/compare/image-b0fb95160347215417ac28ed270557d07832ede4934339b845df9dffbf767cc6&hellip;image-fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-postgresql-rock/releases/tag/image-fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e",
-                  "compareUrl": "https://github.com/canonical/charmed-postgresql-rock/compare/image-fbda3067ff91a4e31869298e5e87c8a622b23d70aac8e6ef8ba0365a9755e49e...14-22.04"
                }
             ],
             "tags": null,
@@ -20884,9 +20884,18 @@
          },
          {
             "name": "kafka-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/kafka-k8s-operator",
             "releases": [
+               {
+                  "id": 170337223,
+                  "version": "rev67",
+                  "timestamp": 1723568051,
+                  "title": "Revision 67",
+                  "body": "<p>Released to 3/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;kafka-image&rsquo;, &lsquo;revision&rsquo;: 46}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/120\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/120\">#120</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-k8s-operator/compare/rev66...rev67\">https://github.com/canonical/kafka-k8s-operator/compare/rev66&hellip;rev67</a></p>\n",
+                  "url": "https://github.com/canonical/kafka-k8s-operator/releases/tag/rev67",
+                  "compareUrl": "https://github.com/canonical/kafka-k8s-operator/compare/rev67...main"
+               },
                {
                   "id": 170013271,
                   "version": "rev66",
@@ -20904,15 +20913,6 @@
                   "body": "<p>Released to 3/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;kafka-image&rsquo;, &lsquo;revision&rsquo;: 46}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/115\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/115\">#115</a></a></li>\n<li>[DPE-4582] Cruise Control by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/114\">#114</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-k8s-operator/compare/rev64...rev65\">https://github.com/canonical/kafka-k8s-operator/compare/rev64&hellip;rev65</a></p>\n",
                   "url": "https://github.com/canonical/kafka-k8s-operator/releases/tag/rev65",
                   "compareUrl": "https://github.com/canonical/kafka-k8s-operator/compare/rev65...main"
-               },
-               {
-                  "id": 164833575,
-                  "version": "rev64",
-                  "timestamp": 1720611019,
-                  "title": "Revision 64",
-                  "body": "<p>Released to 3/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;kafka-image&rsquo;, &lsquo;revision&rsquo;: 45}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add Oauth config from the oauth interface by <a target=\"_blank\" href=\"https://github.com/gtato\">@gtato</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/77\">#77</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/gtato\">@gtato</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/kafka-k8s-operator/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kafka-k8s-operator/compare/rev63...rev64\">https://github.com/canonical/kafka-k8s-operator/compare/rev63&hellip;rev64</a></p>\n",
-                  "url": "https://github.com/canonical/kafka-k8s-operator/releases/tag/rev64",
-                  "compareUrl": "https://github.com/canonical/kafka-k8s-operator/compare/rev64...main"
                }
             ],
             "tags": null,
@@ -20950,8 +20950,8 @@
                   {
                      "track": "3",
                      "channel": "edge",
-                     "revision": 66,
-                     "timestamp": 1723566732,
+                     "revision": 67,
+                     "timestamp": 1723721844,
                      "base": ""
                   },
                   {
@@ -21851,9 +21851,18 @@
          },
          {
             "name": "mysql-k8s-operator",
-            "newCommits": 3,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mysql-k8s-operator",
             "releases": [
+               {
+                  "id": 170341772,
+                  "version": "rev177",
+                  "timestamp": 1723666631,
+                  "title": "Revisions 176, 177",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2477] Add a minimal set of alert rules from the Awesome Prometheus Alert Rules blog by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/469\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/469\">#469</a></a></li>\n<li>Update data-platform-workflows to v18 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/467\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/467\">#467</a></a></li>\n<li>Use poetry package-mode=false by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/472\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/472\">#472</a></a></li>\n<li>DPE-4970 Audit log support by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/474\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/474\">#474</a></a></li>\n<li>[DPE-4266] Strip passwords from command execute output and tracebacks by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/473\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/473\">#473</a></a></li>\n<li>[DPE-4985] Create fixture for HA cluster set up + break HA tests into separate groups by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/475\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/475\">#475</a></a></li>\n<li>DPE-4933 Avoid early calls to unit_initialized by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/481\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/481\">#481</a></a></li>\n<li>DPE-4247 Change binlog retention period by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/478\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/478\">#478</a></a></li>\n<li>Update Juju agents (patch) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/470\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/470\">#470</a></a></li>\n<li>Update canonical/charming-actions action to v2.6.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/454\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/454\">#454</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev169...rev177\">https://github.com/canonical/mysql-k8s-operator/compare/rev169&hellip;rev177</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev177",
+                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev177...main"
+               },
                {
                   "id": 170152596,
                   "version": "rev175",
@@ -21871,15 +21880,6 @@
                   "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2477] Add a minimal set of alert rules from the Awesome Prometheus Alert Rules blog by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/469\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/469\">#469</a></a></li>\n<li>Update data-platform-workflows to v18 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/467\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/467\">#467</a></a></li>\n<li>Use poetry package-mode=false by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/472\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/472\">#472</a></a></li>\n<li>DPE-4970 Audit log support by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/474\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/474\">#474</a></a></li>\n<li>[DPE-4266] Strip passwords from command execute output and tracebacks by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/473\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/473\">#473</a></a></li>\n<li>[DPE-4985] Create fixture for HA cluster set up + break HA tests into separate groups by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/475\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/475\">#475</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev169...rev173\">https://github.com/canonical/mysql-k8s-operator/compare/rev169&hellip;rev173</a></p>\n",
                   "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev173",
                   "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev173...main"
-               },
-               {
-                  "id": 168728861,
-                  "version": "rev171",
-                  "timestamp": 1722863568,
-                  "title": "Revisions 170, 171",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 112}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[DPE-2477] Add a minimal set of alert rules from the Awesome Prometheus Alert Rules blog by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/469\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/469\">#469</a></a></li>\n<li>Update data-platform-workflows to v18 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/467\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/467\">#467</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev169...rev171\">https://github.com/canonical/mysql-k8s-operator/compare/rev169&hellip;rev171</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev171",
-                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev171...main"
                }
             ],
             "tags": null,
@@ -21924,15 +21924,15 @@
                   {
                      "track": "8.0",
                      "channel": "edge",
-                     "revision": 174,
-                     "timestamp": 1723635889,
+                     "revision": 176,
+                     "timestamp": 1723724128,
                      "base": ""
                   },
                   {
                      "track": "8.0",
                      "channel": "edge",
-                     "revision": 175,
-                     "timestamp": 1723635891,
+                     "revision": 177,
+                     "timestamp": 1723724130,
                      "base": ""
                   }
                ],
@@ -23122,7 +23122,7 @@
          },
          {
             "name": "pgbouncer-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -23234,7 +23234,7 @@
          },
          {
             "name": "pgbouncer-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pgbouncer-operator",
             "releases": [
                {
@@ -23430,6 +23430,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8183cca8bb4e39fb6658c92a2eae5d9ae236ba85",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1723720541,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/156\">#156</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/8183cca8bb4e39fb6658c92a2eae5d9ae236ba85"
+               },
+               {
                   "sha": "80b5dcd90a7835af06ef325a889481db7f605016",
                   "author": "renovate[bot]",
                   "timestamp": 1723642153,
@@ -23442,13 +23449,6 @@
                   "timestamp": 1723639454,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/154\">#154</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-bundle/commit/2fa4f0dc529377c05b11779bb1b57ba791467411"
-               },
-               {
-                  "sha": "002d4ed0b85623d5cd88562be548bd8f01281b50",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1723575539,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/153\">#153</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/002d4ed0b85623d5cd88562be548bd8f01281b50"
                }
             ],
             "ciActions": [
@@ -23462,8 +23462,8 @@
                   {
                      "track": "14",
                      "channel": "edge",
-                     "revision": 105,
-                     "timestamp": 1723643845,
+                     "revision": 106,
+                     "timestamp": 1723721689,
                      "base": ""
                   }
                ],
@@ -23484,25 +23484,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "cee9ce3329f830e8f7d95acb0fc43f397208ec3d",
+                  "author": "renovate[bot]",
+                  "timestamp": 1723721413,
+                  "message": "<p>Update dependency canonical/microk8s to v1.31 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/155\">#155</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/cee9ce3329f830e8f7d95acb0fc43f397208ec3d"
+               },
+               {
+                  "sha": "44bd04ddd4f093b3b3d8e59ab87543087c34092e",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1723720574,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/154\">#154</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/44bd04ddd4f093b3b3d8e59ab87543087c34092e"
+               },
+               {
                   "sha": "91794bab68b9ee2cc1ef4cc6ac4de3600341330a",
                   "author": "renovate[bot]",
                   "timestamp": 1723642110,
                   "message": "<p>Update data-platform-workflows to v19.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/153\">#153</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/91794bab68b9ee2cc1ef4cc6ac4de3600341330a"
-               },
-               {
-                  "sha": "b27d3e7e3522852ddada55003467376bbfb08e16",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1723639442,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/152\">#152</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/b27d3e7e3522852ddada55003467376bbfb08e16"
-               },
-               {
-                  "sha": "4452d72572d72c91c1ec5511cb7dc807b2440541",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1723575666,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/151\">#151</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/4452d72572d72c91c1ec5511cb7dc807b2440541"
                }
             ],
             "ciActions": [
@@ -23517,8 +23517,8 @@
                   {
                      "track": "14",
                      "channel": "edge",
-                     "revision": 92,
-                     "timestamp": 1723642876,
+                     "revision": 94,
+                     "timestamp": 1723722144,
                      "base": ""
                   },
                   {
@@ -23541,7 +23541,7 @@
          },
          {
             "name": "postgresql-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
                {
@@ -23830,7 +23830,7 @@
          },
          {
             "name": "postgresql-test-app",
-            "newCommits": 1,
+            "newCommits": 3,
             "url": "https://github.com/canonical/postgresql-test-app",
             "releases": [
                {
@@ -30964,6 +30964,45 @@
       "team": "Solutions Engineering",
       "repos": [
          {
+            "name": "charm-userdir-ldap",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charm-userdir-ldap",
+            "releases": [
+               {
+                  "id": 170338768,
+                  "version": "rev25",
+                  "timestamp": 1723712572,
+                  "title": "Revision 25",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:52 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add arm64 support by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/30\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/30\">#30</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/33\">#33</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/31\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/31\">#31</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/30\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/30\">#30</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/33\">#33</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-userdir-ldap/compare/rev24...rev25\">https://github.com/canonical/charm-userdir-ldap/compare/rev24&hellip;rev25</a></p>\n",
+                  "url": "https://github.com/canonical/charm-userdir-ldap/releases/tag/rev25",
+                  "compareUrl": "https://github.com/canonical/charm-userdir-ldap/compare/rev25...main"
+               },
+               {
+                  "id": 157942295,
+                  "version": "rev24",
+                  "timestamp": 1716970516,
+                  "title": "Revision 24",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:55 UTC on 29 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: apply new github bot for jira and gh sync and remove the old jira_gh sync action by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\">#29</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\">#29</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-userdir-ldap/compare/24.04...rev24\">https://github.com/canonical/charm-userdir-ldap/compare/24.04&hellip;rev24</a></p>\n",
+                  "url": "https://github.com/canonical/charm-userdir-ldap/releases/tag/rev24",
+                  "compareUrl": "https://github.com/canonical/charm-userdir-ldap/compare/rev24...main"
+               },
+               {
+                  "id": 154583372,
+                  "version": "24.04",
+                  "timestamp": 1715088039,
+                  "title": "24.04",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li><a href=\"https://git.launchpad.net/charm-userdir-ldap/commit/?id=d2fa60b8aef7f99255c78ee362a5042078a433e3\">userdb.internal has moved, ISDB-662</a><a href=\"https://git.launchpad.net/charm-userdir-ldap/commit/?id=d2fa60b8aef7f99255c78ee362a5042078a433e3\">HEAD</a><a href=\"https://git.launchpad.net/charm-userdir-ldap/log/\">master</a>\tPaul Collins</li>\n<li><a href=\"https://git.launchpad.net/charm-userdir-ldap/commit/?id=ea807cfc72b2665e3896208426f53de715628fd8\">userdb.internal has moved</a>\tPaul Collins</li>\n<li>Add CI workflow by <a target=\"_blank\" href=\"https://github.com/sudeephb\">@sudeephb</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\">#21</a></a></li>\n<li>Add workflow dispatch event trigger to check.yaml by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\">#24</a></a></li>\n<li>fix installing the python-host during build by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\">#23</a></a></li>\n<li>Set controller channel to 3.4 in CI by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/26\">#26</a></a></li>\n<li>Add new release and promote workflow by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/27\">#27</a></a></li>\n<li>missing submodule for charm build by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/28\">#28</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/sudeephb\">@sudeephb</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\">#21</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\">#24</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\">#23</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-userdir-ldap/compare/23.10...24.04\">https://github.com/canonical/charm-userdir-ldap/compare/23.10&hellip;24.04</a></p>\n",
+                  "url": "https://github.com/canonical/charm-userdir-ldap/releases/tag/24.04",
+                  "compareUrl": "https://github.com/canonical/charm-userdir-ldap/compare/24.04...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "charm-local-users",
             "newCommits": 0,
             "url": "https://github.com/canonical/charm-local-users",
@@ -31678,45 +31717,6 @@
                   "body": "<p>resources:</p>\n\n<pre><code>-  fcbtest: \n   resource-revision: 0\n-  snapd: \n   resource-revision: 0\n-  core18: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:31 UTC on 7 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-openstack-service-checks/compare/24.04...rev5Released\">https://github.com/canonical/charm-openstack-service-checks/compare/24.04&hellip;rev5Released</a> to &lsquo;latest/candidate&rsquo; at 05:17 UTC on 8 May 2024\nReleased to &lsquo;latest/stable&rsquo; at 00:01 UTC on 8 Jun 2024\n0</p>\n",
                   "url": "https://github.com/canonical/charm-openstack-service-checks/releases/tag/rev50",
                   "compareUrl": "https://github.com/canonical/charm-openstack-service-checks/compare/rev50...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charm-userdir-ldap",
-            "newCommits": 3,
-            "url": "https://github.com/canonical/charm-userdir-ldap",
-            "releases": [
-               {
-                  "id": 157942295,
-                  "version": "rev24",
-                  "timestamp": 1716970516,
-                  "title": "Revision 24",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:55 UTC on 29 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: apply new github bot for jira and gh sync and remove the old jira_gh sync action by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\">#29</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/29\">#29</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-userdir-ldap/compare/24.04...rev24\">https://github.com/canonical/charm-userdir-ldap/compare/24.04&hellip;rev24</a></p>\n",
-                  "url": "https://github.com/canonical/charm-userdir-ldap/releases/tag/rev24",
-                  "compareUrl": "https://github.com/canonical/charm-userdir-ldap/compare/rev24...main"
-               },
-               {
-                  "id": 154583372,
-                  "version": "24.04",
-                  "timestamp": 1715088039,
-                  "title": "24.04",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li><a href=\"https://git.launchpad.net/charm-userdir-ldap/commit/?id=d2fa60b8aef7f99255c78ee362a5042078a433e3\">userdb.internal has moved, ISDB-662</a><a href=\"https://git.launchpad.net/charm-userdir-ldap/commit/?id=d2fa60b8aef7f99255c78ee362a5042078a433e3\">HEAD</a><a href=\"https://git.launchpad.net/charm-userdir-ldap/log/\">master</a>\tPaul Collins</li>\n<li><a href=\"https://git.launchpad.net/charm-userdir-ldap/commit/?id=ea807cfc72b2665e3896208426f53de715628fd8\">userdb.internal has moved</a>\tPaul Collins</li>\n<li>Add CI workflow by <a target=\"_blank\" href=\"https://github.com/sudeephb\">@sudeephb</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\">#21</a></a></li>\n<li>Add workflow dispatch event trigger to check.yaml by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\">#24</a></a></li>\n<li>fix installing the python-host during build by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\">#23</a></a></li>\n<li>Set controller channel to 3.4 in CI by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/26\">#26</a></a></li>\n<li>Add new release and promote workflow by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/27\">#27</a></a></li>\n<li>missing submodule for charm build by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/28\">#28</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/sudeephb\">@sudeephb</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/21\">#21</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/24\">#24</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-userdir-ldap/pull/23\">#23</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-userdir-ldap/compare/23.10...24.04\">https://github.com/canonical/charm-userdir-ldap/compare/23.10&hellip;24.04</a></p>\n",
-                  "url": "https://github.com/canonical/charm-userdir-ldap/releases/tag/24.04",
-                  "compareUrl": "https://github.com/canonical/charm-userdir-ldap/compare/24.04...main"
-               },
-               {
-                  "id": 154600461,
-                  "version": "rev23",
-                  "timestamp": 1715088039,
-                  "title": "Revision 23",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:48 UTC on 7 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-userdir-ldap/compare/24.04...rev2Released\">https://github.com/canonical/charm-userdir-ldap/compare/24.04&hellip;rev2Released</a> to &lsquo;latest/candidate&rsquo; at 14:51 UTC on 7 May 2024\nReleased to &lsquo;latest/stable&rsquo; at 00:03 UTC on 8 Jun 2024\n3</p>\n",
-                  "url": "https://github.com/canonical/charm-userdir-ldap/releases/tag/rev23",
-                  "compareUrl": "https://github.com/canonical/charm-userdir-ldap/compare/rev23...main"
                }
             ],
             "tags": null,
