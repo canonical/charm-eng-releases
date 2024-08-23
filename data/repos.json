@@ -5165,7 +5165,7 @@
          },
          {
             "name": "prometheus-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/prometheus-k8s-operator",
             "releases": [
                {
@@ -11464,6 +11464,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "a1dc288a0f6f15acf2d35c18871b3d0891a1d7bb",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1724398018,
+                  "message": "<p>Delay Gateway API CRD Removal Until After Cilium Update (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/614\">#614</a>)</p>\n\n<p>Previously, Gateway API CRDs were installed and removed at the start of\nenabling or disabling the Gateway feature.\nThis approach caused issues when the Gateway feature was disabled, as the CRDs were\nremoved too early, leading to failures in Cilium&rsquo;s cleanup process due to the absence of these CRDs.</p>\n\n<p>This commit ensures that Gateway API CRDs are only removed after Cilium has been updated, preventing cleanup failures.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/a1dc288a0f6f15acf2d35c18871b3d0891a1d7bb"
+               },
+               {
                   "sha": "51abfa31ebf788513cbada93a49eabf89a017bdc",
                   "author": "Mateo Florido",
                   "timestamp": 1724358960,
@@ -11476,13 +11483,6 @@
                   "timestamp": 1724342072,
                   "message": "<p>Generate inspection report on CI failures (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/593\">#593</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Angelos Kolaitis <a href=\"mailto:angelos.kolaitis@canonical.com\">angelos.kolaitis@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/0d57dc7c0d99abc2c6c7d95a9656316e53796ec6"
-               },
-               {
-                  "sha": "4c9cdcae1513c7f2a0b9617bd6430cbc2c1b8201",
-                  "author": "Berkay Tekin Öz",
-                  "timestamp": 1724075168,
-                  "message": "<p>Switch to microcluster fork without join name verification (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/609\">#609</a>)</p>\n\n<ul>\n<li><p>Switch to microcluster fork without join name verification</p></li>\n\n<li><p>Add comment for the replace directive</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/4c9cdcae1513c7f2a0b9617bd6430cbc2c1b8201"
                }
             ],
             "ciActions": [
@@ -20290,7 +20290,7 @@
          },
          {
             "name": "mongodb-operator",
-            "newCommits": 1,
+            "newCommits": 3,
             "url": "https://github.com/canonical/mongodb-operator",
             "releases": [
                {
@@ -23337,6 +23337,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "18d101fab7d6e1ea3799807523adb70cb133eed3",
+                  "author": "Neha Oudin",
+                  "timestamp": 1724400448,
+                  "message": "<p>feat(DPE-5229): Fix release pipeline (<a target=\"_blank\" href=\"https://github.com/canonical/mongos-k8s-operator/pull/25\">#25</a>)</p>\n",
+                  "url": "https://github.com/canonical/mongos-k8s-operator/commit/18d101fab7d6e1ea3799807523adb70cb133eed3"
+               },
+               {
                   "sha": "08db428305903026df3c2ffa54088ce8bc35d427",
                   "author": "Mia Altieri",
                   "timestamp": 1724154128,
@@ -23349,13 +23356,6 @@
                   "timestamp": 1724081471,
                   "message": "<p>more feedback</p>\n",
                   "url": "https://github.com/canonical/mongos-k8s-operator/commit/d1e94d5112dfe21bb0771be5491af2de13f72147"
-               },
-               {
-                  "sha": "5457e0e1047d4edacac8d212a8358734401d0449",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1724056749,
-                  "message": "<p>Switch Jira issue sync from workflow to bot (<a target=\"_blank\" href=\"https://github.com/canonical/mongos-k8s-operator/pull/22\">#22</a>)</p>\n\n<ul>\n<li>Switch Jira issue sync from workflow to bot</li>\n</ul>\n\n<p><a href=\"https://warthogs.atlassian.net/browse/DPE-3154\">https://warthogs.atlassian.net/browse/DPE-3154</a></p>\n\n<ul>\n<li>Update .jira_sync_config.yaml</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/mongos-k8s-operator/commit/5457e0e1047d4edacac8d212a8358734401d0449"
                }
             ],
             "ciActions": [],
@@ -27212,6 +27212,224 @@
       "team": "IS",
       "repos": [
          {
+            "name": "indico-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/indico-operator",
+            "releases": [
+               {
+                  "id": 171619153,
+                  "version": "rev227",
+                  "timestamp": 1724400589,
+                  "title": "Revision 227",
+                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 259\n    -  indico-image: undefined\n       resource-revision: 216</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:14 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v1.10.18 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/445\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/445\">#445</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev226...rev227\">https://github.com/canonical/indico-operator/compare/rev226&hellip;rev227</a></p>\n",
+                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev227",
+                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev227...main"
+               },
+               {
+                  "id": 171121543,
+                  "version": "rev226",
+                  "timestamp": 1724174389,
+                  "title": "Revision 226",
+                  "body": "<p>resources:\n    -  indico-image: undefined\n       resource-revision: 215\n    -  indico-nginx-image: undefined\n       resource-revision: 258</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:24 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update how-to documentation by <a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\">#444</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\">#444</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev225...rev226\">https://github.com/canonical/indico-operator/compare/rev225&hellip;rev226</a></p>\n",
+                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev226",
+                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev226...main"
+               },
+               {
+                  "id": 171002770,
+                  "version": "rev225",
+                  "timestamp": 1724136400,
+                  "title": "Revision 225",
+                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 257\n    -  indico-image: undefined\n       resource-revision: 214</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:52 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/is-devops-bot\">@is-devops-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/443\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/443\">#443</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev224...rev225\">https://github.com/canonical/indico-operator/compare/rev224&hellip;rev225</a></p>\n",
+                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev225",
+                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev225...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/indico-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/indico-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "indico",
+               "url": "https://charmhub.io/indico",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 213,
+                     "timestamp": 1717738845,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 227,
+                     "timestamp": 1724400873,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 99,
+                     "timestamp": 1668766500,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "synapse-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/synapse-operator",
+            "releases": [
+               {
+                  "id": 171617208,
+                  "version": "rev379",
+                  "timestamp": 1724399813,
+                  "title": "Revision 379",
+                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 361\n    -  synapse-image: undefined\n       resource-revision: 361</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:01 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v1.10.18 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/484\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/484\">#484</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev378...rev379\">https://github.com/canonical/synapse-operator/compare/rev378&hellip;rev379</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev379",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev379...main"
+               },
+               {
+                  "id": 171610216,
+                  "version": "rev378",
+                  "timestamp": 1724396446,
+                  "title": "Revision 378",
+                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 360\n    -  synapse-image: undefined\n       resource-revision: 360</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:05 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/483\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/483\">#483</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev377...rev378\">https://github.com/canonical/synapse-operator/compare/rev377&hellip;rev378</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev378",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev378...main"
+               },
+               {
+                  "id": 171415679,
+                  "version": "rev377",
+                  "timestamp": 1724312120,
+                  "title": "Revision 377",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 359\n    -  synapse-nginx-image: undefined\n       resource-revision: 359</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:39 UTC on 22 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/482\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/482\">#482</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev376...rev377\">https://github.com/canonical/synapse-operator/compare/rev376&hellip;rev377</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev377",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev377...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "synapse",
+               "url": "https://charmhub.io/synapse",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 374,
+                     "timestamp": 1724166042,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 379,
+                     "timestamp": 1724400064,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "stable",
+                     "revision": 303,
+                     "timestamp": 1722344909,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "edge",
+                     "revision": 345,
+                     "timestamp": 1722416578,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "1"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "chrony-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/chrony-operator",
+            "releases": [
+               {
+                  "id": 171613413,
+                  "version": "rev23",
+                  "timestamp": 1724398251,
+                  "title": "Revision 23",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:32 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev22...rev23\">https://github.com/canonical/chrony-operator/compare/rev22&hellip;rev23</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev23",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev23...main"
+               },
+               {
+                  "id": 171433690,
+                  "version": "rev22",
+                  "timestamp": 1724318632,
+                  "title": "Revision 22",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:25 UTC on 22 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/27\">#27</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev21...rev22\">https://github.com/canonical/chrony-operator/compare/rev21&hellip;rev22</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev22",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev22...main"
+               },
+               {
+                  "id": 171090046,
+                  "version": "rev21",
+                  "timestamp": 1724164864,
+                  "title": "Revision 21",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:42 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.23 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/26\">#26</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev20...rev21\">https://github.com/canonical/chrony-operator/compare/rev20&hellip;rev21</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev21",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev21...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/chrony-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/chrony-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "chrony",
+               "url": "https://charmhub.io/chrony",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 23,
+                     "timestamp": 1724398322,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "jenkins-agent-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/jenkins-agent-operator",
@@ -27365,89 +27583,6 @@
             "snap": null
          },
          {
-            "name": "synapse-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/synapse-operator",
-            "releases": [
-               {
-                  "id": 171610216,
-                  "version": "rev378",
-                  "timestamp": 1724396446,
-                  "title": "Revision 378",
-                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 360\n    -  synapse-image: undefined\n       resource-revision: 360</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:05 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/483\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/483\">#483</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev377...rev378\">https://github.com/canonical/synapse-operator/compare/rev377&hellip;rev378</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev378",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev378...main"
-               },
-               {
-                  "id": 171415679,
-                  "version": "rev377",
-                  "timestamp": 1724312120,
-                  "title": "Revision 377",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 359\n    -  synapse-nginx-image: undefined\n       resource-revision: 359</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:39 UTC on 22 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/482\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/482\">#482</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev376...rev377\">https://github.com/canonical/synapse-operator/compare/rev376&hellip;rev377</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev377",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev377...main"
-               },
-               {
-                  "id": 171214508,
-                  "version": "rev376",
-                  "timestamp": 1724226817,
-                  "title": "Revision 376",
-                  "body": "<p>resources:\n    -  synapse-nginx-image: undefined\n       resource-revision: 358\n    -  synapse-image: undefined\n       resource-revision: 358</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:57 UTC on 21 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/481\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/481\">#481</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev375...rev376\">https://github.com/canonical/synapse-operator/compare/rev375&hellip;rev376</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev376",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev376...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "synapse",
-               "url": "https://charmhub.io/synapse",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 374,
-                     "timestamp": 1724166042,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 378,
-                     "timestamp": 1724396702,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "stable",
-                     "revision": 303,
-                     "timestamp": 1722344909,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 345,
-                     "timestamp": 1722416578,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "1"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "wordpress-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/wordpress-k8s-operator",
@@ -27521,66 +27656,6 @@
                ],
                "channels": [
                   "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "chrony-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/chrony-operator",
-            "releases": [
-               {
-                  "id": 171433690,
-                  "version": "rev22",
-                  "timestamp": 1724318632,
-                  "title": "Revision 22",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:25 UTC on 22 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/27\">#27</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev21...rev22\">https://github.com/canonical/chrony-operator/compare/rev21&hellip;rev22</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev22",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev22...main"
-               },
-               {
-                  "id": 171090046,
-                  "version": "rev21",
-                  "timestamp": 1724164864,
-                  "title": "Revision 21",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:42 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.23 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/26\">#26</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev20...rev21\">https://github.com/canonical/chrony-operator/compare/rev20&hellip;rev21</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev21",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev21...main"
-               },
-               {
-                  "id": 170815367,
-                  "version": "rev20",
-                  "timestamp": 1724053715,
-                  "title": "Revision 20",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:49 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.22 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/25\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/25\">#25</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev19...rev20\">https://github.com/canonical/chrony-operator/compare/rev19&hellip;rev20</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev20",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev20...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/chrony-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/chrony-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "chrony",
-               "url": "https://charmhub.io/chrony",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 22,
-                     "timestamp": 1724318699,
-                     "base": ""
-                  }
-               ],
-               "channels": [
                   "edge"
                ],
                "tracks": [
@@ -27829,81 +27904,6 @@
                      "channel": "edge",
                      "revision": 163,
                      "timestamp": 1724226033,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "indico-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/indico-operator",
-            "releases": [
-               {
-                  "id": 171121543,
-                  "version": "rev226",
-                  "timestamp": 1724174389,
-                  "title": "Revision 226",
-                  "body": "<p>resources:\n    -  indico-image: undefined\n       resource-revision: 215\n    -  indico-nginx-image: undefined\n       resource-revision: 258</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:24 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update how-to documentation by <a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\">#444</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/444\">#444</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev225...rev226\">https://github.com/canonical/indico-operator/compare/rev225&hellip;rev226</a></p>\n",
-                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev226",
-                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev226...main"
-               },
-               {
-                  "id": 171002770,
-                  "version": "rev225",
-                  "timestamp": 1724136400,
-                  "title": "Revision 225",
-                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 257\n    -  indico-image: undefined\n       resource-revision: 214</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:52 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/is-devops-bot\">@is-devops-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/443\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/443\">#443</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev224...rev225\">https://github.com/canonical/indico-operator/compare/rev224&hellip;rev225</a></p>\n",
-                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev225",
-                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev225...main"
-               },
-               {
-                  "id": 169718270,
-                  "version": "rev224",
-                  "timestamp": 1723445680,
-                  "title": "Revision 224",
-                  "body": "<p>resources:\n    -  indico-nginx-image: undefined\n       resource-revision: 256\n    -  indico-image: undefined\n       resource-revision: 213</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:10 UTC on 12 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/is-devops-bot\">@is-devops-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/439\"><a target=\"_blank\" href=\"https://github.com/canonical/indico-operator/pull/439\">#439</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/indico-operator/compare/rev223...rev224\">https://github.com/canonical/indico-operator/compare/rev223&hellip;rev224</a></p>\n",
-                  "url": "https://github.com/canonical/indico-operator/releases/tag/rev224",
-                  "compareUrl": "https://github.com/canonical/indico-operator/compare/rev224...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/indico-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/indico-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "indico",
-               "url": "https://charmhub.io/indico",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 213,
-                     "timestamp": 1717738845,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 226,
-                     "timestamp": 1724174659,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 99,
-                     "timestamp": 1668766500,
                      "base": ""
                   }
                ],
@@ -31113,10 +31113,214 @@
       "team": "Solutions Engineering",
       "repos": [
          {
+            "name": "charm-apt-mirror",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charm-apt-mirror",
+            "releases": [
+               {
+                  "id": 171616334,
+                  "version": "rev36",
+                  "timestamp": 1724398026,
+                  "title": "Revision 36",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:54 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/44\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/44\">#44</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/44\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/44\">#44</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev35...rev36\">https://github.com/canonical/charm-apt-mirror/compare/rev35&hellip;rev36</a></p>\n",
+                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev36",
+                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev36...main"
+               },
+               {
+                  "id": 170954267,
+                  "version": "rev35",
+                  "timestamp": 1724102278,
+                  "title": "Revision 35",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:51 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: apply new github bot for jira and gh sync and remove the old jira_gh sync action by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/42\">#42</a></a></li>\n<li>Update workflows to follow latest templates by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/24.04...rev35\">https://github.com/canonical/charm-apt-mirror/compare/24.04&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev35...main"
+               },
+               {
+                  "id": 153715603,
+                  "version": "24.04",
+                  "timestamp": 1715019757,
+                  "title": "24.04",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>drop bionic support by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/27\">#27</a></a></li>\n<li>Create CODEOWNERS by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\">#26</a></a></li>\n<li>ci: Rework GitHub workflow files by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/35\">#35</a></a></li>\n<li>ci: Add workflow_call to check.yaml by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/37\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/37\">#37</a></a></li>\n<li>refined functions to get packages indices by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/28\">#28</a></a></li>\n<li>Fix bug in convert_bytes by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\">#38</a></a></li>\n<li>Add workflow dispatch event to check.yaml by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/39\">#39</a></a></li>\n<li>Set controller channel to 3.4 in CI by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/40\">#40</a></a></li>\n<li>* Add new release and promote workflow by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/41\">#41</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\">#26</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\">#38</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/23.10...24.04\">https://github.com/canonical/charm-apt-mirror/compare/23.10&hellip;24.04</a></p>\n",
+                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/24.04",
+                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/24.04...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charm-prometheus-libvirt-exporter",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter",
+            "releases": [
+               {
+                  "id": 171616935,
+                  "version": "rev37",
+                  "timestamp": 1724397974,
+                  "title": "Revision 37",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  dashboards: \n   resource-revision: 0\n-  prometheus-libvirt-exporter: \n   resource-revision: 0\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:59 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev34...rev37\">https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev34&hellip;rev37</a></p>\n",
+                  "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter/releases/tag/rev37",
+                  "compareUrl": "https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev37...main"
+               },
+               {
+                  "id": 171616477,
+                  "version": "rev36",
+                  "timestamp": 1724397974,
+                  "title": "Revision 36",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  prometheus-libvirt-exporter: \n   resource-revision: 0\n-  dashboards: \n   resource-revision: 0\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:55 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev34...rev36\">https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev34&hellip;rev36</a></p>\n",
+                  "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter/releases/tag/rev36",
+                  "compareUrl": "https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev36...main"
+               },
+               {
+                  "id": 170869550,
+                  "version": "rev35",
+                  "timestamp": 1724071833,
+                  "title": "Revision 35",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  prometheus-libvirt-exporter: \n   resource-revision: 0\n-  dashboards: \n   resource-revision: 0\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:22 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev32...rev35\">https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev32&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev35...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charm-advanced-routing",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charm-advanced-routing",
+            "releases": [
+               {
+                  "id": 171616265,
+                  "version": "rev34",
+                  "timestamp": 1724397876,
+                  "title": "Revision 34",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:54 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/46\">#46</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev33...rev34\">https://github.com/canonical/charm-advanced-routing/compare/rev33&hellip;rev34</a></p>\n",
+                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev34",
+                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev34...main"
+               },
+               {
+                  "id": 170809022,
+                  "version": "rev33",
+                  "timestamp": 1724049026,
+                  "title": "Revision 33",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:58 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\">#45</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\">#45</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev32...rev33\">https://github.com/canonical/charm-advanced-routing/compare/rev32&hellip;rev33</a></p>\n",
+                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev33",
+                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev33...main"
+               },
+               {
+                  "id": 170775446,
+                  "version": "rev32",
+                  "timestamp": 1724017630,
+                  "title": "Revision 32",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:16 UTC on 18 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: apply new github bot for jira and gh sync and remove the old jira_gh sync action by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\">#43</a></a></li>\n<li>Update to latest workflows templates by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\">#44</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\">#43</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\">#44</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev31...rev32\">https://github.com/canonical/charm-advanced-routing/compare/rev31&hellip;rev32</a></p>\n",
+                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev32",
+                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev32...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charm-sysconfig",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charm-sysconfig",
+            "releases": [
+               {
+                  "id": 171615519,
+                  "version": "rev44",
+                  "timestamp": 1724397851,
+                  "title": "Revision 44",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:49 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/63\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/63\">#63</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-sysconfig/compare/rev41...rev44\">https://github.com/canonical/charm-sysconfig/compare/rev41&hellip;rev44</a></p>\n",
+                  "url": "https://github.com/canonical/charm-sysconfig/releases/tag/rev44",
+                  "compareUrl": "https://github.com/canonical/charm-sysconfig/compare/rev44...main"
+               },
+               {
+                  "id": 171615334,
+                  "version": "rev43",
+                  "timestamp": 1724397851,
+                  "title": "Revision 43",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:47 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/63\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/63\">#63</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-sysconfig/compare/rev41...rev43\">https://github.com/canonical/charm-sysconfig/compare/rev41&hellip;rev43</a></p>\n",
+                  "url": "https://github.com/canonical/charm-sysconfig/releases/tag/rev43",
+                  "compareUrl": "https://github.com/canonical/charm-sysconfig/compare/rev43...main"
+               },
+               {
+                  "id": 171024832,
+                  "version": "rev42",
+                  "timestamp": 1724142547,
+                  "title": "Revision 42",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:11 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\">#62</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\">#62</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-sysconfig/compare/rev39...rev42\">https://github.com/canonical/charm-sysconfig/compare/rev39&hellip;rev42</a></p>\n",
+                  "url": "https://github.com/canonical/charm-sysconfig/releases/tag/rev42",
+                  "compareUrl": "https://github.com/canonical/charm-sysconfig/compare/rev42...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charm-nrpe",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charm-nrpe",
+            "releases": [
+               {
+                  "id": 171614795,
+                  "version": "rev129",
+                  "timestamp": 1724397822,
+                  "title": "Revision 129",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:43 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/196\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/196\">#196</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-nrpe/compare/rev128...rev129\">https://github.com/canonical/charm-nrpe/compare/rev128&hellip;rev129</a></p>\n",
+                  "url": "https://github.com/canonical/charm-nrpe/releases/tag/rev129",
+                  "compareUrl": "https://github.com/canonical/charm-nrpe/compare/rev129...main"
+               },
+               {
+                  "id": 170807175,
+                  "version": "rev128",
+                  "timestamp": 1724048558,
+                  "title": "Revision 128",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:39 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/195\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/195\">#195</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-nrpe/compare/rev127...rev128\">https://github.com/canonical/charm-nrpe/compare/rev127&hellip;rev128</a></p>\n",
+                  "url": "https://github.com/canonical/charm-nrpe/releases/tag/rev128",
+                  "compareUrl": "https://github.com/canonical/charm-nrpe/compare/rev128...main"
+               },
+               {
+                  "id": 170301746,
+                  "version": "rev127",
+                  "timestamp": 1723703991,
+                  "title": "Revision 127",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:59 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\">#194</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\">#194</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-nrpe/compare/rev126...rev127\">https://github.com/canonical/charm-nrpe/compare/rev126&hellip;rev127</a></p>\n",
+                  "url": "https://github.com/canonical/charm-nrpe/releases/tag/rev127",
+                  "compareUrl": "https://github.com/canonical/charm-nrpe/compare/rev127...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "charm-cloudsupport",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/charm-cloudsupport",
             "releases": [
+               {
+                  "id": 171616840,
+                  "version": "rev13",
+                  "timestamp": 1724397525,
+                  "title": "Revision 13",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:58 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add metadata and a link to the docs by <a target=\"_blank\" href=\"https://github.com/aieri\">@aieri</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/28\">#28</a></a></li>\n<li>Clean up workflow by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/38\">#38</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-cloudsupport/compare/rev12...rev13\">https://github.com/canonical/charm-cloudsupport/compare/rev12&hellip;rev13</a></p>\n",
+                  "url": "https://github.com/canonical/charm-cloudsupport/releases/tag/rev13",
+                  "compareUrl": "https://github.com/canonical/charm-cloudsupport/compare/rev13...main"
+               },
                {
                   "id": 171555368,
                   "version": "rev12",
@@ -31134,15 +31338,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:36 UTC on 2 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>test: update workload status message for cos proxy by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/26\">#26</a></a></li>\n<li>chore: apply new github bot for jira and gh sync and remove the old jira_gh sync action by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/25\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/25\">#25</a></a></li>\n<li>Fix functional tests on juju3 by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/27\">#27</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/26\">#26</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/27\">#27</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-cloudsupport/compare/24.04...rev11\">https://github.com/canonical/charm-cloudsupport/compare/24.04&hellip;rev11</a></p>\n",
                   "url": "https://github.com/canonical/charm-cloudsupport/releases/tag/rev11",
                   "compareUrl": "https://github.com/canonical/charm-cloudsupport/compare/rev11...main"
-               },
-               {
-                  "id": 153715893,
-                  "version": "24.04",
-                  "timestamp": 1715020188,
-                  "title": "24.04",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Ci/enable workflow by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/14\">#14</a></a></li>\n<li>ci: Release build on focal by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/15\">#15</a></a></li>\n<li>ci: Release use v3 action by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/17\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/17\">#17</a></a></li>\n<li>change from workflow_call to workflow_dispatch by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/20\">#20</a></a></li>\n<li>Support Juju 3.4 by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/21\">#21</a></a></li>\n<li>Add new release and promote workflow by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/24\">#24</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/14\">#14</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-cloudsupport/pull/20\">#20</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-cloudsupport/compare/23.10...24.04\">https://github.com/canonical/charm-cloudsupport/compare/23.10&hellip;24.04</a></p>\n",
-                  "url": "https://github.com/canonical/charm-cloudsupport/releases/tag/24.04",
-                  "compareUrl": "https://github.com/canonical/charm-cloudsupport/compare/24.04...main"
                }
             ],
             "tags": null,
@@ -31338,162 +31533,6 @@
             "snap": null
          },
          {
-            "name": "charm-sysconfig",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charm-sysconfig",
-            "releases": [
-               {
-                  "id": 171024832,
-                  "version": "rev42",
-                  "timestamp": 1724142547,
-                  "title": "Revision 42",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:11 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\">#62</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\">#62</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-sysconfig/compare/rev39...rev42\">https://github.com/canonical/charm-sysconfig/compare/rev39&hellip;rev42</a></p>\n",
-                  "url": "https://github.com/canonical/charm-sysconfig/releases/tag/rev42",
-                  "compareUrl": "https://github.com/canonical/charm-sysconfig/compare/rev42...main"
-               },
-               {
-                  "id": 171024809,
-                  "version": "rev41",
-                  "timestamp": 1724142547,
-                  "title": "Revision 41",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:11 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\">#62</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/62\">#62</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-sysconfig/compare/rev39...rev41\">https://github.com/canonical/charm-sysconfig/compare/rev39&hellip;rev41</a></p>\n",
-                  "url": "https://github.com/canonical/charm-sysconfig/releases/tag/rev41",
-                  "compareUrl": "https://github.com/canonical/charm-sysconfig/compare/rev41...main"
-               },
-               {
-                  "id": 171002804,
-                  "version": "rev40",
-                  "timestamp": 1724135429,
-                  "title": "Revision 40",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:52 UTC on 20 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Move tox.ini to root of project directory by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-sysconfig/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-sysconfig/compare/rev37...rev40\">https://github.com/canonical/charm-sysconfig/compare/rev37&hellip;rev40</a></p>\n",
-                  "url": "https://github.com/canonical/charm-sysconfig/releases/tag/rev40",
-                  "compareUrl": "https://github.com/canonical/charm-sysconfig/compare/rev40...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charm-apt-mirror",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charm-apt-mirror",
-            "releases": [
-               {
-                  "id": 170954267,
-                  "version": "rev35",
-                  "timestamp": 1724102278,
-                  "title": "Revision 35",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:51 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: apply new github bot for jira and gh sync and remove the old jira_gh sync action by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/42\">#42</a></a></li>\n<li>Update workflows to follow latest templates by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/43\">#43</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/24.04...rev35\">https://github.com/canonical/charm-apt-mirror/compare/24.04&hellip;rev35</a></p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev35",
-                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev35...main"
-               },
-               {
-                  "id": 153715603,
-                  "version": "24.04",
-                  "timestamp": 1715019757,
-                  "title": "24.04",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>drop bionic support by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/27\">#27</a></a></li>\n<li>Create CODEOWNERS by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\">#26</a></a></li>\n<li>ci: Rework GitHub workflow files by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/35\">#35</a></a></li>\n<li>ci: Add workflow_call to check.yaml by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/37\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/37\">#37</a></a></li>\n<li>refined functions to get packages indices by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/28\">#28</a></a></li>\n<li>Fix bug in convert_bytes by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\">#38</a></a></li>\n<li>Add workflow dispatch event to check.yaml by <a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/39\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/39\">#39</a></a></li>\n<li>Set controller channel to 3.4 in CI by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/40\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/40\">#40</a></a></li>\n<li>* Add new release and promote workflow by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/41\">#41</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/dashmage\">@dashmage</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/26\">#26</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/38\">#38</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/23.10...24.04\">https://github.com/canonical/charm-apt-mirror/compare/23.10&hellip;24.04</a></p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/24.04",
-                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/24.04...main"
-               },
-               {
-                  "id": 154464773,
-                  "version": "rev34",
-                  "timestamp": 1715019757,
-                  "title": "Revision 34",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:40 UTC on 6 May 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/24.04...rev3Released\">https://github.com/canonical/charm-apt-mirror/compare/24.04&hellip;rev3Released</a> to &lsquo;latest/candidate&rsquo; at 19:42 UTC on 6 May 2024\nReleased to &lsquo;latest/stable&rsquo; at 23:38 UTC on 7 Jun 2024\n4</p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev34",
-                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev34...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charm-prometheus-libvirt-exporter",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter",
-            "releases": [
-               {
-                  "id": 170869550,
-                  "version": "rev35",
-                  "timestamp": 1724071833,
-                  "title": "Revision 35",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  prometheus-libvirt-exporter: \n   resource-revision: 0\n-  dashboards: \n   resource-revision: 0\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:22 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev32...rev35\">https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev32&hellip;rev35</a></p>\n",
-                  "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter/releases/tag/rev35",
-                  "compareUrl": "https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev35...main"
-               },
-               {
-                  "id": 170868986,
-                  "version": "rev34",
-                  "timestamp": 1724071833,
-                  "title": "Revision 34",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  dashboards: \n   resource-revision: 0\n-  prometheus-libvirt-exporter: \n   resource-revision: 0\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:19 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev32...rev34\">https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev32&hellip;rev34</a></p>\n",
-                  "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter/releases/tag/rev34",
-                  "compareUrl": "https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev34...main"
-               },
-               {
-                  "id": 170475948,
-                  "version": "rev33",
-                  "timestamp": 1723782182,
-                  "title": "Revision 33",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  prometheus-libvirt-exporter: \n   resource-revision: 0\n-  dashboards: \n   resource-revision: 0\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 04:55 UTC on 16 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/41\">#41</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/41\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/pull/41\">#41</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev30...rev33\">https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev30&hellip;rev33</a></p>\n",
-                  "url": "https://github.com/canonical/charm-prometheus-libvirt-exporter/releases/tag/rev33",
-                  "compareUrl": "https://github.com/canonical/charm-prometheus-libvirt-exporter/compare/rev33...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charm-advanced-routing",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charm-advanced-routing",
-            "releases": [
-               {
-                  "id": 170809022,
-                  "version": "rev33",
-                  "timestamp": 1724049026,
-                  "title": "Revision 33",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:58 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\">#45</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/45\">#45</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev32...rev33\">https://github.com/canonical/charm-advanced-routing/compare/rev32&hellip;rev33</a></p>\n",
-                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev33",
-                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev33...main"
-               },
-               {
-                  "id": 170775446,
-                  "version": "rev32",
-                  "timestamp": 1724017630,
-                  "title": "Revision 32",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:16 UTC on 18 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: apply new github bot for jira and gh sync and remove the old jira_gh sync action by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\">#43</a></a></li>\n<li>Update to latest workflows templates by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\">#44</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/43\">#43</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/44\">#44</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev31...rev32\">https://github.com/canonical/charm-advanced-routing/compare/rev31&hellip;rev32</a></p>\n",
-                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev32",
-                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev32...main"
-               },
-               {
-                  "id": 154460664,
-                  "version": "rev31",
-                  "timestamp": 1715020439,
-                  "title": "Revision 31",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:11 UTC on 6 May 2024</p>\n\n<p>Released to &lsquo;latest/candidate&rsquo; at 19:18 UTC on 6 May 2024\nReleased to &lsquo;latest/stable&rsquo; at 23:36 UTC on 7 Jun 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>apply suggestions to promote and release by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/24.04...rev31\">https://github.com/canonical/charm-advanced-routing/compare/24.04&hellip;rev31</a></p>\n",
-                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev31",
-                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev31...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "charm-userdir-ldap",
             "newCommits": 0,
             "url": "https://github.com/canonical/charm-userdir-ldap",
@@ -31563,45 +31602,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:07 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-local-users/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-local-users/pull/35\">#35</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-local-users/compare/rev37...rev40\">https://github.com/canonical/charm-local-users/compare/rev37&hellip;rev40</a></p>\n",
                   "url": "https://github.com/canonical/charm-local-users/releases/tag/rev40",
                   "compareUrl": "https://github.com/canonical/charm-local-users/compare/rev40...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charm-nrpe",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charm-nrpe",
-            "releases": [
-               {
-                  "id": 170807175,
-                  "version": "rev128",
-                  "timestamp": 1724048558,
-                  "title": "Revision 128",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:39 UTC on 19 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/195\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/195\">#195</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-nrpe/compare/rev127...rev128\">https://github.com/canonical/charm-nrpe/compare/rev127&hellip;rev128</a></p>\n",
-                  "url": "https://github.com/canonical/charm-nrpe/releases/tag/rev128",
-                  "compareUrl": "https://github.com/canonical/charm-nrpe/compare/rev128...main"
-               },
-               {
-                  "id": 170301746,
-                  "version": "rev127",
-                  "timestamp": 1723703991,
-                  "title": "Revision 127",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:59 UTC on 15 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\">#194</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/194\">#194</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-nrpe/compare/rev126...rev127\">https://github.com/canonical/charm-nrpe/compare/rev126&hellip;rev127</a></p>\n",
-                  "url": "https://github.com/canonical/charm-nrpe/releases/tag/rev127",
-                  "compareUrl": "https://github.com/canonical/charm-nrpe/compare/rev127...main"
-               },
-               {
-                  "id": 170267283,
-                  "version": "rev126",
-                  "timestamp": 1723672790,
-                  "title": "Revision 126",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:30 UTC on 14 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add arm64 run-on support by <a target=\"_blank\" href=\"https://github.com/samuelallan72\">@samuelallan72</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/193\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-nrpe/pull/193\">#193</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-nrpe/compare/rev125...rev126\">https://github.com/canonical/charm-nrpe/compare/rev125&hellip;rev126</a></p>\n",
-                  "url": "https://github.com/canonical/charm-nrpe/releases/tag/rev126",
-                  "compareUrl": "https://github.com/canonical/charm-nrpe/compare/rev126...main"
                }
             ],
             "tags": null,
