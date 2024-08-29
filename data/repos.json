@@ -2185,9 +2185,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 32,
+            "newCommits": 0,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 172466488,
+                  "version": "v1.16.0",
+                  "timestamp": 1724893051,
+                  "title": "v1.16.0: better service start/stop, warnings as notices",
+                  "body": "<p>This release includes a few significant, user-visible changes and fixes:</p>\n\n<ul>\n<li>Improvements to how services with dependencies are started and stopped (using &ldquo;lanes&rdquo;), so that independent services are started in parallel, and dependent services start up serially. Error handling is also improved. Fix in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/437\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/437\">#437</a></a> and closes <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/231\">#231</a> (thanks <a target=\"_blank\" href=\"https://github.com/troyanov\">@troyanov</a> for the report).</li>\n<li>A fix for a tricky bug in <code>pebble exec</code>, so it doesn&rsquo;t lose output in interactive mode. Thanks <a target=\"_blank\" href=\"https://github.com/dmitry-lyfar\">@dmitry-lyfar</a> for the report, and the fix in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/466\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/466\">#466</a></a>!</li>\n<li>Reduce the size of <code>exec</code> tasks by not storing the execSetup (which includes all environment variables) in state. This speeds up (and shrinks the data) when serialising state to disk during <code>state.Unlock</code>. Fix is in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/478\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/478\">#478</a></a>.</li>\n<li>Ensure Pebble doesn&rsquo;t hang (with no error message) when the state file directory is read-only or otherwise inaccessible. Thanks for the report <a target=\"_blank\" href=\"https://github.com/berkayoz\">@berkayoz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/462\">#462</a>. Fix in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/481\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/481\">#481</a></a>.</li>\n<li>Re-implement warnings using notices. This was always the intention since the notices feature was added (it was designed as a superset of warnings), but we&rsquo;d never gotten to it. Lots of nice code deletion in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/486\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/486\">#486</a></a>.</li>\n</ul>\n\n<p>Also, something that doesn&rsquo;t affect the operation of Pebble: we&rsquo;ve moved the documentation from a &ldquo;big long README&rdquo; to a proper documentation site. Code is in the <code>docs</code> directory, and the website lives at <a href=\"https://canonical-pebble.readthedocs-hosted.com/\">https://canonical-pebble.readthedocs-hosted.com/</a>. Thanks <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> for your work on this!</p>\n\n<p>There are also a ton of minor fixes and tweaks, listed below.</p>\n\n<h2>Other minor changes:</h2>\n\n<ul>\n<li>fix(snap): set Pebble version before snap builds by <a target=\"_blank\" href=\"https://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/450\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/450\">#450</a></a></li>\n<li>refactor: pull in the snapd RestartManager refactoring in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/446\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/446\">#446</a></a></li>\n<li>fix: avoid need to lock state for restart.Pending() in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/451\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/451\">#451</a></a></li>\n<li>fix: make Client.Pull properly handle API errors in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/452\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/452\">#452</a></a></li>\n<li>feat(daemon): add Err() to retrieve the tomb death reason by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/453\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/453\">#453</a></a></li>\n<li>fix: actually turn off child subreaping in reaper.Stop in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/454\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/454\">#454</a></a></li>\n<li>feat(daemon): allow overriding layers directory in daemon.Options by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/456\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/456\">#456</a></a></li>\n<li>feat(overlord): reversed order of manager stop by <a target=\"_blank\" href=\"https://github.com/Ardelean-Calin\">@Ardelean-Calin</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/447\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/447\">#447</a></a></li>\n<li>fix(logger): Make MockLogger threadsafe by <a target=\"_blank\" href=\"https://github.com/thp-canonical\">@thp-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/441\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/441\">#441</a></a></li>\n<li>fix(overlord): allow ensure when state is available by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/482\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/482\">#482</a></a></li>\n<li>fix: initialize socketPath to prevent stale cache by <a target=\"_blank\" href=\"https://github.com/holmanb\">@holmanb</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/491\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/491\">#491</a></a></li>\n<li>test: improve osutil.mkdir test coverage in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/492\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/492\">#492</a></a></li>\n<li>ci: add a monthly (or on demand) TIOBE reporting workflow in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/494\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/494\">#494</a></a></li>\n<li>refactor(state): avoid need for state lock in LatestWarningTime in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/493\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/493\">#493</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/AnneCYH\">@AnneCYH</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/457\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/457\">#457</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/Ardelean-Calin\">@Ardelean-Calin</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/447\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/447\">#447</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/holmanb\">@holmanb</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/491\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/491\">#491</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.15.0...v1.16.0\">https://github.com/canonical/pebble/compare/v1.15.0&hellip;v1.16.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.16.0",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.16.0...master"
+               },
                {
                   "id": 165555356,
                   "version": "v1.15.0",
@@ -2205,15 +2214,6 @@
                   "body": "<p>This is a patch release which includes two fixes:</p>\n\n<ul>\n<li><a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/448&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/448&quot;&gt;#448&lt;/a&gt;&lt;/a\">Build the Snap on Go 1.22 to fix/silence CVE-2024-24790</a></li>\n<li><a href=\"https://github.com/canonical/pebble/commit/f976e505337af350e5f064b2522f71aecfb89e80\">Fix the Snap tagged version</a></li>\n</ul>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.14.1",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.14.1...master"
-               },
-               {
-                  "id": 164314996,
-                  "version": "v1.14.0",
-                  "timestamp": 1720394390,
-                  "title": "v1.14.0",
-                  "body": "<p>This is a very small release, mainly so that we can start using the check-name feature in Juju.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(planstate): don&rsquo;t hold planLock while calling plan-changed listeners by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/436\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/436\">#436</a></a></li>\n<li>docs: various improvements to &ldquo;service dependencies&rdquo; section by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/442\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/442\">#442</a></a></li>\n<li>feat: include check name in notice data for perform-check and recover-check by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/444\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/444\">#444</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.13.0...v1.14.0\">https://github.com/canonical/pebble/compare/v1.13.0&hellip;v1.14.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.14.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.14.0...master"
                }
             ],
             "tags": null,
@@ -2266,71 +2266,71 @@
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 789,
-                     "timestamp": 1721135955,
+                     "revision": 932,
+                     "timestamp": 1724895136,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 793,
-                     "timestamp": 1721135961,
+                     "revision": 931,
+                     "timestamp": 1724895146,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 792,
-                     "timestamp": 1721135959,
+                     "revision": 933,
+                     "timestamp": 1724895138,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 790,
-                     "timestamp": 1721135958,
+                     "revision": 929,
+                     "timestamp": 1724895140,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 791,
-                     "timestamp": 1721135961,
+                     "revision": 930,
+                     "timestamp": 1724895136,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 919,
-                     "timestamp": 1724811684,
+                     "revision": 932,
+                     "timestamp": 1724894880,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 921,
-                     "timestamp": 1724811690,
+                     "revision": 931,
+                     "timestamp": 1724894877,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 922,
-                     "timestamp": 1724811697,
+                     "revision": 933,
+                     "timestamp": 1724895110,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 920,
-                     "timestamp": 1724811687,
+                     "revision": 929,
+                     "timestamp": 1724894871,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 923,
-                     "timestamp": 1724811700,
+                     "revision": 930,
+                     "timestamp": 1724894874,
                      "base": "bare"
                   }
                ],
