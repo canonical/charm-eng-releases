@@ -373,29 +373,29 @@
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28334,
-                     "timestamp": 1724845202,
+                     "revision": 28354,
+                     "timestamp": 1724917106,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28335,
-                     "timestamp": 1724845293,
+                     "revision": 28355,
+                     "timestamp": 1724917177,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28336,
-                     "timestamp": 1724845388,
+                     "revision": 28356,
+                     "timestamp": 1724917268,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28337,
-                     "timestamp": 1724845473,
+                     "revision": 28357,
+                     "timestamp": 1724917343,
                      "base": "core24"
                   },
                   {
@@ -10860,25 +10860,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "7f3a894f14fe4e31fb2842806202757f144cff70",
+                  "sha": "ae8fcac75aaa5d6e19bcb4c32beb3183e50910af",
                   "author": "Claudiu Belu",
-                  "timestamp": 1724328532,
-                  "message": "<p>Adds NFS CSI plugin integration test (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/11\">#11</a>)</p>\n\n<p>The Helm chart is for deploying the NFS CSI plugin, but it\nrequires the CSI components as well.</p>\n\n<p>The test will also check the Pod probes to make sure that the service is\nup, without waiting for Kubernetes to do the check.</p>\n\n<p>The test will also spawn a NFS server, and create an NGINX Pod requiring\na NFS volume.</p>\n",
-                  "url": "https://github.com/canonical/csi-rocks/commit/7f3a894f14fe4e31fb2842806202757f144cff70"
+                  "timestamp": 1724917858,
+                  "message": "<p>Adds csi-snapshotter 7.0.2 rock (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/18\">#18</a>)</p>\n\n<p>Based on the 6.3.3 rock and upstream Dockerfile. The golang version was\nupdated. Note that longhornio/csi-snapshotter:v7.0.2 is only a retag of the\nKubernetes official image.</p>\n\n<p>Updates unit test to also test the new image.</p>\n",
+                  "url": "https://github.com/canonical/csi-rocks/commit/ae8fcac75aaa5d6e19bcb4c32beb3183e50910af"
                },
                {
-                  "sha": "2644a77e32e4d8ee3829e64613b6b16781cb4179",
+                  "sha": "c659d682b1d11863a46ffd1ed5ac39790bb79869",
                   "author": "Claudiu Belu",
-                  "timestamp": 1724247079,
-                  "message": "<p>Removes run-user from rocks (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/13\">#13</a>)</p>\n\n<p>The CSI components need to be able to connect to the\nunix:///csi/csi.sock file, and they cannot do that with the current\nuser.</p>\n",
-                  "url": "https://github.com/canonical/csi-rocks/commit/2644a77e32e4d8ee3829e64613b6b16781cb4179"
+                  "timestamp": 1724917816,
+                  "message": "<p>Adds csi-node-driver-registrar 2.11.1 rock (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/16\">#16</a>)</p>\n\n<p>Based on the 2.10.0 rock and upstream Dockerfile. The golang version was\nupdated. Note that longhornio/csi-node-driver-registrar:v2.11.1 is only a\nretag of the Kubernetes official image.</p>\n\n<p>Updates unit test to also test the new image.</p>\n",
+                  "url": "https://github.com/canonical/csi-rocks/commit/c659d682b1d11863a46ffd1ed5ac39790bb79869"
                },
                {
-                  "sha": "1af8995cedc6fb3d98960dd9285566906bbb608e",
-                  "author": "Maciek Gołaszewski",
-                  "timestamp": 1724072300,
-                  "message": "<p>Update pull_request.yaml after KU-1195 (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/12\">#12</a>)</p>\n",
-                  "url": "https://github.com/canonical/csi-rocks/commit/1af8995cedc6fb3d98960dd9285566906bbb608e"
+                  "sha": "2dcadfaae4d7ae12fb2cabe58461294a637729cd",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1724917763,
+                  "message": "<p>Adds csi-provisioner 4.0.1 rock (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/15\">#15</a>)</p>\n\n<p>Based on the 4.0.1 rock and upstream Dockerfile. Note that longhornio/csi-provisioner:v4.0.1\nis only a retag of the Kubernetes official image.</p>\n\n<p>Updates unit test to also test the new image.</p>\n",
+                  "url": "https://github.com/canonical/csi-rocks/commit/2dcadfaae4d7ae12fb2cabe58461294a637729cd"
                }
             ],
             "ciActions": [],
@@ -11454,6 +11454,15 @@
             "newCommits": 0,
             "url": "https://github.com/canonical/k8s-snap-api",
             "releases": [
+               {
+                  "id": 172499727,
+                  "version": "v1.0.4",
+                  "timestamp": 1724915921,
+                  "title": "v1.0.4",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add SnapRefresh RPC by <a target=\"_blank\" href=\"https://github.com/berkayoz\">@berkayoz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/6\">#6</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/berkayoz\">@berkayoz</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/6\">#6</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-snap-api/compare/v1.0.3...v1.0.4\">https://github.com/canonical/k8s-snap-api/compare/v1.0.3&hellip;v1.0.4</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap-api/releases/tag/v1.0.4",
+                  "compareUrl": "https://github.com/canonical/k8s-snap-api/compare/v1.0.4...main"
+               },
                {
                   "id": 171699036,
                   "version": "v1.0.3",
@@ -27501,6 +27510,15 @@
             "url": "https://github.com/canonical/chrony-operator",
             "releases": [
                {
+                  "id": 172504100,
+                  "version": "rev25",
+                  "timestamp": 1724918056,
+                  "title": "Revision 25",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:55 UTC on 29 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.16.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/30\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/30\">#30</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev24...rev25\">https://github.com/canonical/chrony-operator/compare/rev24&hellip;rev25</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev25",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev25...main"
+               },
+               {
                   "id": 172228048,
                   "version": "rev24",
                   "timestamp": 1724789582,
@@ -27517,15 +27535,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:32 UTC on 23 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/28\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/28\">#28</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev22...rev23\">https://github.com/canonical/chrony-operator/compare/rev22&hellip;rev23</a></p>\n",
                   "url": "https://github.com/canonical/chrony-operator/releases/tag/rev23",
                   "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev23...main"
-               },
-               {
-                  "id": 171433690,
-                  "version": "rev22",
-                  "timestamp": 1724318632,
-                  "title": "Revision 22",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:25 UTC on 22 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/27\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/27\">#27</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev21...rev22\">https://github.com/canonical/chrony-operator/compare/rev21&hellip;rev22</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev22",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev22...main"
                }
             ],
             "tags": null,
@@ -27541,8 +27550,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 24,
-                     "timestamp": 1724789645,
+                     "revision": 25,
+                     "timestamp": 1724918144,
                      "base": ""
                   }
                ],
@@ -28036,6 +28045,15 @@
             "url": "https://github.com/canonical/github-runner-operator",
             "releases": [
                {
+                  "id": 172501812,
+                  "version": "rev246",
+                  "timestamp": 1724917273,
+                  "title": "Revision 246",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:42 UTC on 29 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: image-builder openstack creds relation by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/357\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/357\">#357</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev245...rev246\">https://github.com/canonical/github-runner-operator/compare/rev245&hellip;rev246</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev246",
+                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev246...main"
+               },
+               {
                   "id": 172302971,
                   "version": "rev245",
                   "timestamp": 1724833950,
@@ -28052,15 +28070,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:08 UTC on 22 Aug 2024</p>\n\n<p>Released to &lsquo;latest/beta&rsquo; at 06:11 UTC on 26 Aug 2024\nReleased to &lsquo;latest/stable&rsquo; at 06:18 UTC on 26 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>change hostname of the runner to mitigate too long hostname by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/352\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/352\">#352</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev242...rev243\">https://github.com/canonical/github-runner-operator/compare/rev242&hellip;rev243</a></p>\n",
                   "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev243",
                   "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev243...main"
-               },
-               {
-                  "id": 171396766,
-                  "version": "rev242",
-                  "timestamp": 1724299896,
-                  "title": "Revision 242",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 04:12 UTC on 22 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: ssh health check failure status report by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/349\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/349\">#349</a></a></li>\n<li>Refactor of openstack runner manager by <a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/345\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operator/pull/345\">#345</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operator/compare/rev238...rev242\">https://github.com/canonical/github-runner-operator/compare/rev238&hellip;rev242</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-operator/releases/tag/rev242",
-                  "compareUrl": "https://github.com/canonical/github-runner-operator/compare/rev242...main"
                }
             ],
             "tags": null,
@@ -28117,8 +28126,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 245,
-                     "timestamp": 1724834017,
+                     "revision": 246,
+                     "timestamp": 1724917327,
                      "base": ""
                   },
                   {
@@ -28910,25 +28919,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "d48e9fcc4e4eadd338f94a33b0772327b49f0526",
+                  "author": "arturo-seijas",
+                  "timestamp": 1724916795,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/atlantis-operator/pull/12\">#12</a> from canonical/renovate/ops-2.x</p>\n\n<p>Update dependency ops to v2.16.0</p>\n",
+                  "url": "https://github.com/canonical/atlantis-operator/commit/d48e9fcc4e4eadd338f94a33b0772327b49f0526"
+               },
+               {
+                  "sha": "055b712292afb6c981c3381c7fe1562fbda0b0e6",
+                  "author": "renovate[bot]",
+                  "timestamp": 1724914851,
+                  "message": "<p>Update dependency ops to v2.16.0</p>\n",
+                  "url": "https://github.com/canonical/atlantis-operator/commit/055b712292afb6c981c3381c7fe1562fbda0b0e6"
+               },
+               {
                   "sha": "aca23e16df9e601458ed332d5c32f43c430331e3",
                   "author": "arturo-seijas",
                   "timestamp": 1724659676,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/atlantis-operator/pull/11\">#11</a> from canonical/renovate/pydantic-2.x</p>\n\n<p>Update dependency pydantic to v2</p>\n",
                   "url": "https://github.com/canonical/atlantis-operator/commit/aca23e16df9e601458ed332d5c32f43c430331e3"
-               },
-               {
-                  "sha": "626f7eae2222f433b4a7f22ca1326b1712907222",
-                  "author": "renovate[bot]",
-                  "timestamp": 1724422486,
-                  "message": "<p>Update dependency pydantic to v2</p>\n",
-                  "url": "https://github.com/canonical/atlantis-operator/commit/626f7eae2222f433b4a7f22ca1326b1712907222"
-               },
-               {
-                  "sha": "e7f93105b1d3e3c81b6c24a4327b68945db9ebbf",
-                  "author": "Tom Haddon",
-                  "timestamp": 1724422425,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/atlantis-operator/pull/10\">#10</a> from canonical/ingress-v2</p>\n\n<p>Switch to ingress v2 to simplify the charm, allow us to remove site-url config</p>\n",
-                  "url": "https://github.com/canonical/atlantis-operator/commit/e7f93105b1d3e3c81b6c24a4327b68945db9ebbf"
                }
             ],
             "ciActions": [],
@@ -30807,7 +30816,7 @@
          },
          {
             "name": "bind-operator",
-            "newCommits": 5,
+            "newCommits": 6,
             "url": "https://github.com/canonical/bind-operator",
             "releases": [
                {
