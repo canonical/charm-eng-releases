@@ -3,6 +3,36 @@
       "team": "Juju",
       "repos": [
          {
+            "name": "retry",
+            "newCommits": 0,
+            "url": "https://github.com/juju/retry",
+            "releases": [
+               {
+                  "id": 175313786,
+                  "version": "",
+                  "timestamp": 1726516555,
+                  "title": "v1.0.1",
+                  "body": "<p>This is a small bugfix update from previous versions, though there is one small behavioral change.</p>\n\n<p>The primary fix is that previously if you did <code>ExpBackoff(min=1.0, max=200, factor=2.0, jitter=false)</code>, then the times would be in the expected 1.0, 2.0, 4.0. Up to the max. However, when you set <code>jitter=true</code>, while it would preserve the maximum to be the same time as the original backoff, it would pick a random value from 0ms to the max delay, and then truncate that to the minDelay. Which meant that it actually changed the average wait time to something close to 50% of the expected times.</p>\n\n<p>The new logic does a +/- 20% from the expected delay, and then caps that at min and max. This averages very close to the expected values (in testing, the over time difference is around a 1% shift.)</p>\n",
+                  "url": "https://github.com/juju/retry/releases/tag/untagged-04382034462f0a9dbc8e",
+                  "compareUrl": "https://github.com/juju/retry/compare/...master"
+               },
+               {
+                  "id": 71786430,
+                  "version": "v1.0.0",
+                  "timestamp": 1643967499,
+                  "title": "v1.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>go doc does not work that way by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/retry/pull/4\">https://github.com/juju/retry/pull/4</a></li>\n<li>Use juju/clock. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/retry/pull/6\">https://github.com/juju/retry/pull/6</a></li>\n<li>Implement exponential back-off delay generator by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/retry/pull/7\">https://github.com/juju/retry/pull/7</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/retry/pull/8\">https://github.com/juju/retry/pull/8</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> made their first contribution in <a href=\"https://github.com/juju/retry/pull/4\">https://github.com/juju/retry/pull/4</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> made their first contribution in <a href=\"https://github.com/juju/retry/pull/7\">https://github.com/juju/retry/pull/7</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/retry/pull/8\">https://github.com/juju/retry/pull/8</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/retry/commits/v1.0.0\">https://github.com/juju/retry/commits/v1.0.0</a></p>\n",
+                  "url": "https://github.com/juju/retry/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/juju/retry/compare/v1.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "terraform-provider-juju",
             "newCommits": 2,
             "url": "https://github.com/juju/terraform-provider-juju",
@@ -1700,6 +1730,195 @@
             "snap": null
          },
          {
+            "name": "terms-client",
+            "newCommits": 0,
+            "url": "https://github.com/juju/terms-client",
+            "releases": [
+               {
+                  "id": 71881649,
+                  "version": "v2.0.0",
+                  "timestamp": 1644195045,
+                  "title": "v2.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix publish-term command with zero revision. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terms-client/pull/8\">https://github.com/juju/terms-client/pull/8</a></li>\n<li>Update dependencies, switch from launchpad.net/gnuflags to juju/gnufl… by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/terms-client/pull/12\">https://github.com/juju/terms-client/pull/12</a></li>\n<li>Add &ndash;content switch to just show the term content text. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/11\">https://github.com/juju/terms-client/pull/11</a></li>\n<li>List-terms command. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terms-client/pull/14\">https://github.com/juju/terms-client/pull/14</a></li>\n<li>Remove plugin wrapper. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/17\">https://github.com/juju/terms-client/pull/17</a></li>\n<li>cmd/list_terms: Minor docs and command rename by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/terms-client/pull/18\">https://github.com/juju/terms-client/pull/18</a></li>\n<li>Common command base; support no-browser login, browser by default. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/19\">https://github.com/juju/terms-client/pull/19</a></li>\n<li>Added context to all methods by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terms-client/pull/20\">https://github.com/juju/terms-client/pull/20</a></li>\n<li>Update README.md by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/21\">https://github.com/juju/terms-client/pull/21</a></li>\n<li>Update code to use bakery.v2 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/22\">https://github.com/juju/terms-client/pull/22</a></li>\n<li>Bump juju/errors version by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/terms-client/pull/23\">https://github.com/juju/terms-client/pull/23</a></li>\n<li>Enable juju-bot for this repo by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/terms-client/pull/24\">https://github.com/juju/terms-client/pull/24</a></li>\n<li>update dependencies by <a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> in <a href=\"https://github.com/juju/terms-client/pull/25\">https://github.com/juju/terms-client/pull/25</a></li>\n<li>Use github.com/go-macaroon-bakery/macaroon-bakery/v3 instead of the gopkg.in v2 version by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/26\">https://github.com/juju/terms-client/pull/26</a></li>\n<li>Use gopkg.in/macaroon-bakery.v3 instead of github.com/go-macaroon-bakery/macaroon-bakery/v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/27\">https://github.com/juju/terms-client/pull/27</a></li>\n<li>Use bakery v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/28\">https://github.com/juju/terms-client/pull/28</a></li>\n<li>Remove import of the entire juju/juju repo by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/29\">https://github.com/juju/terms-client/pull/29</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/30\">https://github.com/juju/terms-client/pull/30</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/12\">https://github.com/juju/terms-client/pull/12</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/22\">https://github.com/juju/terms-client/pull/22</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/23\">https://github.com/juju/terms-client/pull/23</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/25\">https://github.com/juju/terms-client/pull/25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terms-client/compare/v1.0.1...v2.0.0\">https://github.com/juju/terms-client/compare/v1.0.1&hellip;v2.0.0</a></p>\n",
+                  "url": "https://github.com/juju/terms-client/releases/tag/v2.0.0",
+                  "compareUrl": "https://github.com/juju/terms-client/compare/v2.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "romulus",
+            "newCommits": 0,
+            "url": "https://github.com/juju/romulus",
+            "releases": [
+               {
+                  "id": 71786484,
+                  "version": "v1.0.0",
+                  "timestamp": 1644194996,
+                  "title": "v1.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>wireformat/budget: export baseURL to help with testing by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/22\">https://github.com/juju/romulus/pull/22</a></li>\n<li>ALLOCATED and BY are separate columns. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/23\">https://github.com/juju/romulus/pull/23</a></li>\n<li>Fixed the missing newline in createbudget response. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/24\">https://github.com/juju/romulus/pull/24</a></li>\n<li>Fixes newlines in cmd responses. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/26\">https://github.com/juju/romulus/pull/26</a></li>\n<li>Decode error messages from omnibus. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/27\">https://github.com/juju/romulus/pull/27</a></li>\n<li>cmd: Minor changes to make ftests easier to write by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/28\">https://github.com/juju/romulus/pull/28</a></li>\n<li>Parse allocation limit properly in the allocate command. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/29\">https://github.com/juju/romulus/pull/29</a></li>\n<li>Use uitable right-alignment feature with numerics. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/30\">https://github.com/juju/romulus/pull/30</a></li>\n<li>Sorted allocations. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/32\">https://github.com/juju/romulus/pull/32</a></li>\n<li>plan/api: Export url to help ftests by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/31\">https://github.com/juju/romulus/pull/31</a></li>\n<li>api/terms: Export BaseURL to make testing easier by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/33\">https://github.com/juju/romulus/pull/33</a></li>\n<li>20160418 juju deps by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/36\">https://github.com/juju/romulus/pull/36</a></li>\n<li>Update juju dependencies. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/34\">https://github.com/juju/romulus/pull/34</a></li>\n<li>Resolving model name in show-budget. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/35\">https://github.com/juju/romulus/pull/35</a></li>\n<li>cmd/listplans: Return a more appropriate type to help with testing by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/37\">https://github.com/juju/romulus/pull/37</a></li>\n<li>setplan: Fixed the output of set plan, argument order was reversed in error message by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/39\">https://github.com/juju/romulus/pull/39</a></li>\n<li>Allow specifying juju allocate &ndash;model-uuid, improve help. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/40\">https://github.com/juju/romulus/pull/40</a></li>\n<li>Rename service to application by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/43\">https://github.com/juju/romulus/pull/43</a></li>\n<li>Account for service to application changes in juju-core by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/44\">https://github.com/juju/romulus/pull/44</a></li>\n<li>Update dependencies to juju w/ service-to-application landed. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/47\">https://github.com/juju/romulus/pull/47</a></li>\n<li>cmd/allocate: Improvement on error message to make order of args obvious by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/41\">https://github.com/juju/romulus/pull/41</a></li>\n<li>Make juju list-<cmd> aliases for their juju <cmd> by <a target=\"_blank\" href=\"https://github.com/macgreagoir\">@macgreagoir</a> in <a href=\"https://github.com/juju/romulus/pull/45\">https://github.com/juju/romulus/pull/45</a></li>\n<li>Changes the &ldquo;less&rdquo; prompt to remind user to press q to exit. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/46\">https://github.com/juju/romulus/pull/46</a></li>\n<li>Update command help text for romulus commands by <a target=\"_blank\" href=\"https://github.com/cherylj\">@cherylj</a> in <a href=\"https://github.com/juju/romulus/pull/48\">https://github.com/juju/romulus/pull/48</a></li>\n<li>JUJU_TERMS environment variable for base terms service url. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/50\">https://github.com/juju/romulus/pull/50</a></li>\n<li>Update to new juju modelcmd API. by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/romulus/pull/55\">https://github.com/juju/romulus/pull/55</a></li>\n<li>cmd/agree: Updated agree command to support terms that have owners by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/51\">https://github.com/juju/romulus/pull/51</a></li>\n<li>Using charm.v6 ParseTerm method in the agree command. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/56\">https://github.com/juju/romulus/pull/56</a></li>\n<li>Update to the latest version of charm.v6-unstable. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/57\">https://github.com/juju/romulus/pull/57</a></li>\n<li>api/terms: Removed terms api (now lives in juju/terms-client) by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/58\">https://github.com/juju/romulus/pull/58</a></li>\n<li>Update juju, gnuflag deps, jujuclienttesting.MemStore tests use user-qualified model names. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/60\">https://github.com/juju/romulus/pull/60</a></li>\n<li>Move the commands to core juju repo. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/romulus/pull/61\">https://github.com/juju/romulus/pull/61</a></li>\n<li>UserStatusResponse structure by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/62\">https://github.com/juju/romulus/pull/62</a></li>\n<li>Added sla credentials to the wireformat. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/64\">https://github.com/juju/romulus/pull/64</a></li>\n<li>sla: Added packages that implement the support api by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/63\">https://github.com/juju/romulus/pull/63</a></li>\n<li>Add model meter status. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/66\">https://github.com/juju/romulus/pull/66</a></li>\n<li>budget svc refactor changes by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/65\">https://github.com/juju/romulus/pull/65</a></li>\n<li>Decode service response errors in sla api. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/67\">https://github.com/juju/romulus/pull/67</a></li>\n<li>Support indicating default budget in list budgets response. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/68\">https://github.com/juju/romulus/pull/68</a></li>\n<li>Add owner to SLA response wireformat. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/69\">https://github.com/juju/romulus/pull/69</a></li>\n<li>Handle unack&rsquo;able batches. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/70\">https://github.com/juju/romulus/pull/70</a></li>\n<li>s/budget/wallet/; s/allocate|allocation/budget/; by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/71\">https://github.com/juju/romulus/pull/71</a></li>\n<li>Added a message field to the sla response. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/73\">https://github.com/juju/romulus/pull/73</a></li>\n<li>Added wallet parameter to update budget requests. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/74\">https://github.com/juju/romulus/pull/74</a></li>\n<li>Add labels to metrics. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/75\">https://github.com/juju/romulus/pull/75</a></li>\n<li>Added model name to the metric batch type. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/77\">https://github.com/juju/romulus/pull/77</a></li>\n<li>Update to macaroon/macaroon-bakery v2-unstable by <a target=\"_blank\" href=\"https://github.com/Veebers\">@Veebers</a> in <a href=\"https://github.com/juju/romulus/pull/76\">https://github.com/juju/romulus/pull/76</a></li>\n<li>Configurable API root for clients. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/78\">https://github.com/juju/romulus/pull/78</a></li>\n<li>Update to use macaroon.v2 and bakery.v2 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/80\">https://github.com/juju/romulus/pull/80</a></li>\n<li>Convert to go mod and use macaroon-bakery v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/81\">https://github.com/juju/romulus/pull/81</a></li>\n<li>Use gopkg.in/macaroon-bakery.v3 instead of github.com/go-macaroon-bakery/macaroon-bakery/v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/82\">https://github.com/juju/romulus/pull/82</a></li>\n<li>Use latest bakery v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/83\">https://github.com/juju/romulus/pull/83</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/84\">https://github.com/juju/romulus/pull/84</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/macgreagoir\">@macgreagoir</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/45\">https://github.com/juju/romulus/pull/45</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/cherylj\">@cherylj</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/48\">https://github.com/juju/romulus/pull/48</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/55\">https://github.com/juju/romulus/pull/55</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/61\">https://github.com/juju/romulus/pull/61</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/Veebers\">@Veebers</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/76\">https://github.com/juju/romulus/pull/76</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/romulus/commits/v1.0.0\">https://github.com/juju/romulus/commits/v1.0.0</a></p>\n",
+                  "url": "https://github.com/juju/romulus/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/juju/romulus/compare/v1.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "blobstore",
+            "newCommits": 4,
+            "url": "https://github.com/juju/blobstore",
+            "releases": [
+               {
+                  "id": 72000848,
+                  "version": "v2.0.0",
+                  "timestamp": 1643982913,
+                  "title": "v2.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use github.com/juju/mgo/v2 and convert to go mod by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/blobstore/pull/29\">https://github.com/juju/blobstore/pull/29</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/blobstore/pull/30\">https://github.com/juju/blobstore/pull/30</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/blobstore/commits/v2.0.0\">https://github.com/juju/blobstore/commits/v2.0.0</a></p>\n",
+                  "url": "https://github.com/juju/blobstore/releases/tag/v2.0.0",
+                  "compareUrl": "https://github.com/juju/blobstore/compare/v2.0.0...v3"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "version",
+            "newCommits": 2,
+            "url": "https://github.com/juju/version",
+            "releases": [
+               {
+                  "id": 71882330,
+                  "version": "v2.0.0",
+                  "timestamp": 1643978864,
+                  "title": "v2.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix parse for tags w/ double digit patch numbers by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/version/pull/3\">https://github.com/juju/version/pull/3</a></li>\n<li>make group <a target=\"_blank\" href=\"https://github.com/juju/version/pull/3\">#3</a> non-capturing, since we never reference it. by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/version/pull/2\">https://github.com/juju/version/pull/2</a></li>\n<li>No need to validate series when parsing binary version by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/4\">https://github.com/juju/version/pull/4</a></li>\n<li>Mention proper license by <a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> in <a href=\"https://github.com/juju/version/pull/5\">https://github.com/juju/version/pull/5</a></li>\n<li>Export regex patterns by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a href=\"https://github.com/juju/version/pull/6\">https://github.com/juju/version/pull/6</a></li>\n<li>Version without build by <a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> in <a href=\"https://github.com/juju/version/pull/7\">https://github.com/juju/version/pull/7</a></li>\n<li>Convert to go mod and use juju/mgo/v2 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/8\">https://github.com/juju/version/pull/8</a></li>\n<li>Rename Series to Release to make the version Binary more generic by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/9\">https://github.com/juju/version/pull/9</a></li>\n<li>Support non-strict version parsing by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/version/pull/10\">https://github.com/juju/version/pull/10</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/11\">https://github.com/juju/version/pull/11</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/4\">https://github.com/juju/version/pull/4</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/5\">https://github.com/juju/version/pull/5</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/6\">https://github.com/juju/version/pull/6</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/7\">https://github.com/juju/version/pull/7</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/10\">https://github.com/juju/version/pull/10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/version/commits/v2.0.0\">https://github.com/juju/version/commits/v2.0.0</a></p>\n",
+                  "url": "https://github.com/juju/version/releases/tag/v2.0.0",
+                  "compareUrl": "https://github.com/juju/version/compare/v2.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "mutex",
+            "newCommits": 0,
+            "url": "https://github.com/juju/mutex",
+            "releases": [
+               {
+                  "id": 71803688,
+                  "version": "v2.0.0",
+                  "timestamp": 1643855501,
+                  "title": "v2.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Initial import of working mutex. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/mutex/pull/1\">https://github.com/juju/mutex/pull/1</a></li>\n<li>typo fix by <a target=\"_blank\" href=\"https://github.com/jameinel\">@jameinel</a> in <a href=\"https://github.com/juju/mutex/pull/3\">https://github.com/juju/mutex/pull/3</a></li>\n<li>Blocking mutexes by <a target=\"_blank\" href=\"https://github.com/axw\">@axw</a> in <a href=\"https://github.com/juju/mutex/pull/4\">https://github.com/juju/mutex/pull/4</a></li>\n<li>Set close-on-exec flag on the flock FD by <a target=\"_blank\" href=\"https://github.com/axw\">@axw</a> in <a href=\"https://github.com/juju/mutex/pull/5\">https://github.com/juju/mutex/pull/5</a></li>\n<li>Re-write permissions if running as root by <a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> in <a href=\"https://github.com/juju/mutex/pull/6\">https://github.com/juju/mutex/pull/6</a></li>\n<li>Remove legacy mutex and update to go mod by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/mutex/pull/12\">https://github.com/juju/mutex/pull/12</a></li>\n<li>Replace a windows build directive accidentally removed by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/mutex/pull/13\">https://github.com/juju/mutex/pull/13</a></li>\n<li>Update upstream deps by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/mutex/pull/14\">https://github.com/juju/mutex/pull/14</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/1\">https://github.com/juju/mutex/pull/1</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/jameinel\">@jameinel</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/3\">https://github.com/juju/mutex/pull/3</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/axw\">@axw</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/4\">https://github.com/juju/mutex/pull/4</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/6\">https://github.com/juju/mutex/pull/6</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/12\">https://github.com/juju/mutex/pull/12</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/mutex/commits/v2.0.0\">https://github.com/juju/mutex/commits/v2.0.0</a></p>\n",
+                  "url": "https://github.com/juju/mutex/releases/tag/v2.0.0",
+                  "compareUrl": "https://github.com/juju/mutex/compare/v2.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "ansiterm",
+            "newCommits": 0,
+            "url": "https://github.com/juju/ansiterm",
+            "releases": [
+               {
+                  "id": 71784934,
+                  "version": "v1.0.0",
+                  "timestamp": 1632924891,
+                  "title": "v1.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Initial proposal for juju inclusion. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/1\">https://github.com/juju/ansiterm/pull/1</a></li>\n<li>Expose the Init and Flush tabwriter methods. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/2\">https://github.com/juju/ansiterm/pull/2</a></li>\n<li>Check for dumb TERM vars, and add method to explicitly set color. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/3\">https://github.com/juju/ansiterm/pull/3</a></li>\n<li>Make individual columns able to be right aligned. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/4\">https://github.com/juju/ansiterm/pull/4</a></li>\n<li>Fix index out of range panic. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/ansiterm/pull/5\">https://github.com/juju/ansiterm/pull/5</a></li>\n<li>Add missing LICENSE file by <a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> in <a href=\"https://github.com/juju/ansiterm/pull/6\">https://github.com/juju/ansiterm/pull/6</a></li>\n<li>Fix small typo in NewTabWriter comment details by <a target=\"_blank\" href=\"https://github.com/paddymorgan84\">@paddymorgan84</a> in <a href=\"https://github.com/juju/ansiterm/pull/7\">https://github.com/juju/ansiterm/pull/7</a></li>\n<li>Color Writer: NO_COLOR support by <a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> in <a href=\"https://github.com/juju/ansiterm/pull/8\">https://github.com/juju/ansiterm/pull/8</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/1\">https://github.com/juju/ansiterm/pull/1</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/5\">https://github.com/juju/ansiterm/pull/5</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/6\">https://github.com/juju/ansiterm/pull/6</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/paddymorgan84\">@paddymorgan84</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/7\">https://github.com/juju/ansiterm/pull/7</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/8\">https://github.com/juju/ansiterm/pull/8</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/ansiterm/commits/v1.0.0\">https://github.com/juju/ansiterm/commits/v1.0.0</a></p>\n",
+                  "url": "https://github.com/juju/ansiterm/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/juju/ansiterm/compare/v1.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "ratelimit",
+            "newCommits": 0,
+            "url": "https://github.com/juju/ratelimit",
+            "releases": [
+               {
+                  "id": 71874733,
+                  "version": "v1.0.2",
+                  "timestamp": 1569997611,
+                  "title": "v1.0.2",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>improved documentation and add the “Available” function explain. by <a target=\"_blank\" href=\"https://github.com/zhuCheer\">@zhuCheer</a> in <a href=\"https://github.com/juju/ratelimit/pull/29\">https://github.com/juju/ratelimit/pull/29</a></li>\n<li>Fix bonus tokens by function adjustavailableTokens (<a target=\"_blank\" href=\"https://github.com/juju/ratelimit/pull/31\">#31</a>) by <a target=\"_blank\" href=\"https://github.com/kingsamchen\">@kingsamchen</a> in <a href=\"https://github.com/juju/ratelimit/pull/31\">https://github.com/juju/ratelimit/pull/31</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/zhuCheer\">@zhuCheer</a> made their first contribution in <a href=\"https://github.com/juju/ratelimit/pull/29\">https://github.com/juju/ratelimit/pull/29</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/kingsamchen\">@kingsamchen</a> made their first contribution in <a href=\"https://github.com/juju/ratelimit/pull/31\">https://github.com/juju/ratelimit/pull/31</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/ratelimit/compare/v1.0.1...v1.0.2\">https://github.com/juju/ratelimit/compare/v1.0.1&hellip;v1.0.2</a></p>\n",
+                  "url": "https://github.com/juju/ratelimit/releases/tag/v1.0.2",
+                  "compareUrl": "https://github.com/juju/ratelimit/compare/v1.0.2...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "persistent-cookiejar",
+            "newCommits": 0,
+            "url": "https://github.com/juju/persistent-cookiejar",
+            "releases": [
+               {
+                  "id": 71786216,
+                  "version": "v1.0.0",
+                  "timestamp": 1509026221,
+                  "title": "v1.0.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add extra jar manipulations by <a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/15\">https://github.com/juju/persistent-cookiejar/pull/15</a></li>\n<li>Removeall by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/18\">https://github.com/juju/persistent-cookiejar/pull/18</a></li>\n<li>Update file locking to use juju/mutex by <a target=\"_blank\" href=\"https://github.com/voidspace\">@voidspace</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/19\">https://github.com/juju/persistent-cookiejar/pull/19</a></li>\n<li>Remve unneeded loop and increase polling time by <a target=\"_blank\" href=\"https://github.com/voidspace\">@voidspace</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/20\">https://github.com/juju/persistent-cookiejar/pull/20</a></li>\n<li>revert back to file-based locking; increase timeout by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/21\">https://github.com/juju/persistent-cookiejar/pull/21</a></li>\n<li>add NoPersist option by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/24\">https://github.com/juju/persistent-cookiejar/pull/24</a></li>\n<li>allow open to succeed when parent dir doesn&rsquo;t exist by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/23\">https://github.com/juju/persistent-cookiejar/pull/23</a></li>\n<li>add RemoveAll method by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/25\">https://github.com/juju/persistent-cookiejar/pull/25</a></li>\n<li>Implement MarshalJSON on the jar. by <a target=\"_blank\" href=\"https://github.com/frankban\">@frankban</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/27\">https://github.com/juju/persistent-cookiejar/pull/27</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/15\">https://github.com/juju/persistent-cookiejar/pull/15</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/18\">https://github.com/juju/persistent-cookiejar/pull/18</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/voidspace\">@voidspace</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/19\">https://github.com/juju/persistent-cookiejar/pull/19</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/frankban\">@frankban</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/27\">https://github.com/juju/persistent-cookiejar/pull/27</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/persistent-cookiejar/commits/v1.0.0\">https://github.com/juju/persistent-cookiejar/commits/v1.0.0</a></p>\n",
+                  "url": "https://github.com/juju/persistent-cookiejar/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/juju/persistent-cookiejar/compare/v1.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "gojsonschema",
+            "newCommits": 0,
+            "url": "https://github.com/juju/gojsonschema",
+            "releases": [
+               {
+                  "id": 71785656,
+                  "version": "v1.0.0",
+                  "timestamp": 1426179616,
+                  "title": "v1.0.0",
+                  "body": "<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/gojsonschema/commits/v1.0.0\">https://github.com/juju/gojsonschema/commits/v1.0.0</a></p>\n",
+                  "url": "https://github.com/juju/gojsonschema/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/juju/gojsonschema/compare/v1.0.0...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "httprequest",
             "newCommits": 0,
             "url": "https://github.com/juju/httprequest",
@@ -1731,25 +1950,6 @@
                }
             ],
             "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "musl-cross-pkg-snap",
-            "newCommits": 0,
-            "url": "https://github.com/juju/musl-cross-pkg-snap",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "03296aa384e50fa914ca164bf594948e5f745e6e",
-                  "author": "John Arbash Meinel",
-                  "timestamp": 1678210607,
-                  "message": "<p>Initial commit</p>\n",
-                  "url": "https://github.com/juju/musl-cross-pkg-snap/commit/03296aa384e50fa914ca164bf594948e5f745e6e"
-               }
-            ],
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -1791,205 +1991,6 @@
             "snap": null
          },
          {
-            "name": "persistent-cookiejar",
-            "newCommits": 0,
-            "url": "https://github.com/juju/persistent-cookiejar",
-            "releases": [
-               {
-                  "id": 71786216,
-                  "version": "v1.0.0",
-                  "timestamp": 1509026221,
-                  "title": "v1.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add extra jar manipulations by <a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/15\">https://github.com/juju/persistent-cookiejar/pull/15</a></li>\n<li>Removeall by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/18\">https://github.com/juju/persistent-cookiejar/pull/18</a></li>\n<li>Update file locking to use juju/mutex by <a target=\"_blank\" href=\"https://github.com/voidspace\">@voidspace</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/19\">https://github.com/juju/persistent-cookiejar/pull/19</a></li>\n<li>Remve unneeded loop and increase polling time by <a target=\"_blank\" href=\"https://github.com/voidspace\">@voidspace</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/20\">https://github.com/juju/persistent-cookiejar/pull/20</a></li>\n<li>revert back to file-based locking; increase timeout by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/21\">https://github.com/juju/persistent-cookiejar/pull/21</a></li>\n<li>add NoPersist option by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/24\">https://github.com/juju/persistent-cookiejar/pull/24</a></li>\n<li>allow open to succeed when parent dir doesn&rsquo;t exist by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/23\">https://github.com/juju/persistent-cookiejar/pull/23</a></li>\n<li>add RemoveAll method by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/25\">https://github.com/juju/persistent-cookiejar/pull/25</a></li>\n<li>Implement MarshalJSON on the jar. by <a target=\"_blank\" href=\"https://github.com/frankban\">@frankban</a> in <a href=\"https://github.com/juju/persistent-cookiejar/pull/27\">https://github.com/juju/persistent-cookiejar/pull/27</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/15\">https://github.com/juju/persistent-cookiejar/pull/15</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/18\">https://github.com/juju/persistent-cookiejar/pull/18</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/voidspace\">@voidspace</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/19\">https://github.com/juju/persistent-cookiejar/pull/19</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/frankban\">@frankban</a> made their first contribution in <a href=\"https://github.com/juju/persistent-cookiejar/pull/27\">https://github.com/juju/persistent-cookiejar/pull/27</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/persistent-cookiejar/commits/v1.0.0\">https://github.com/juju/persistent-cookiejar/commits/v1.0.0</a></p>\n",
-                  "url": "https://github.com/juju/persistent-cookiejar/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/juju/persistent-cookiejar/compare/v1.0.0...master"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "lru",
-            "newCommits": 0,
-            "url": "https://github.com/juju/lru",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "v1.0.0",
-                  "sha": "f0bce43c487e1d906d49e05d9fbd47bca96a0a57",
-                  "body": "<p>Go mod</p>\n",
-                  "timestamp": 1658332660,
-                  "url": "https://github.com/juju/lru/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/juju/lru/compare/master...v1.0.0"
-               }
-            ],
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "juju-db-snap",
-            "newCommits": 0,
-            "url": "https://github.com/juju/juju-db-snap",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "4.0.9",
-                  "sha": "2f24fb3ec03661151ccfa3acea3e67d82a067c35",
-                  "body": "<p>grade: stable</p>\n",
-                  "timestamp": 1555559594,
-                  "url": "https://github.com/juju/juju-db-snap/releases/tag/4.0.9",
-                  "compareUrl": "https://github.com/juju/juju-db-snap/compare/master...4.0.9"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "ratelimit",
-            "newCommits": 0,
-            "url": "https://github.com/juju/ratelimit",
-            "releases": [
-               {
-                  "id": 71874733,
-                  "version": "v1.0.2",
-                  "timestamp": 1569997611,
-                  "title": "v1.0.2",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>improved documentation and add the “Available” function explain. by <a target=\"_blank\" href=\"https://github.com/zhuCheer\">@zhuCheer</a> in <a href=\"https://github.com/juju/ratelimit/pull/29\">https://github.com/juju/ratelimit/pull/29</a></li>\n<li>Fix bonus tokens by function adjustavailableTokens (<a target=\"_blank\" href=\"https://github.com/juju/ratelimit/pull/31\">#31</a>) by <a target=\"_blank\" href=\"https://github.com/kingsamchen\">@kingsamchen</a> in <a href=\"https://github.com/juju/ratelimit/pull/31\">https://github.com/juju/ratelimit/pull/31</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/zhuCheer\">@zhuCheer</a> made their first contribution in <a href=\"https://github.com/juju/ratelimit/pull/29\">https://github.com/juju/ratelimit/pull/29</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/kingsamchen\">@kingsamchen</a> made their first contribution in <a href=\"https://github.com/juju/ratelimit/pull/31\">https://github.com/juju/ratelimit/pull/31</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/ratelimit/compare/v1.0.1...v1.0.2\">https://github.com/juju/ratelimit/compare/v1.0.1&hellip;v1.0.2</a></p>\n",
-                  "url": "https://github.com/juju/ratelimit/releases/tag/v1.0.2",
-                  "compareUrl": "https://github.com/juju/ratelimit/compare/v1.0.2...master"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "juju-db-oci",
-            "newCommits": 0,
-            "url": "https://github.com/juju/juju-db-oci",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "9c7b46c7d5baa7de69be46f9f3d70f2ba5eed7ec",
-                  "author": "Harry Pidcock",
-                  "timestamp": 1718945108,
-                  "message": "<p>Trigger builds.</p>\n",
-                  "url": "https://github.com/juju/juju-db-oci/commit/9c7b46c7d5baa7de69be46f9f3d70f2ba5eed7ec"
-               },
-               {
-                  "sha": "40edd5acd4a29db525cd7e6d94dc61426bd4eb3b",
-                  "author": "Harry Pidcock",
-                  "timestamp": 1696816494,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/juju/juju-db-oci/pull/10\">#10</a> from hpidcock/release-oci-cron</p>\n\n<p>Add ghcr.io</p>\n",
-                  "url": "https://github.com/juju/juju-db-oci/commit/40edd5acd4a29db525cd7e6d94dc61426bd4eb3b"
-               },
-               {
-                  "sha": "ad3db84bb46a4c32e27ccaf47bc2115534018820",
-                  "author": "Harry Pidcock",
-                  "timestamp": 1696811457,
-                  "message": "<p>Add ghcr.io</p>\n",
-                  "url": "https://github.com/juju/juju-db-oci/commit/ad3db84bb46a4c32e27ccaf47bc2115534018820"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "retry",
-            "newCommits": 4,
-            "url": "https://github.com/juju/retry",
-            "releases": [
-               {
-                  "id": 71786430,
-                  "version": "v1.0.0",
-                  "timestamp": 1643967499,
-                  "title": "v1.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>go doc does not work that way by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/retry/pull/4\">https://github.com/juju/retry/pull/4</a></li>\n<li>Use juju/clock. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/retry/pull/6\">https://github.com/juju/retry/pull/6</a></li>\n<li>Implement exponential back-off delay generator by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/retry/pull/7\">https://github.com/juju/retry/pull/7</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/retry/pull/8\">https://github.com/juju/retry/pull/8</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> made their first contribution in <a href=\"https://github.com/juju/retry/pull/4\">https://github.com/juju/retry/pull/4</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> made their first contribution in <a href=\"https://github.com/juju/retry/pull/7\">https://github.com/juju/retry/pull/7</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/retry/pull/8\">https://github.com/juju/retry/pull/8</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/retry/commits/v1.0.0\">https://github.com/juju/retry/commits/v1.0.0</a></p>\n",
-                  "url": "https://github.com/juju/retry/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/juju/retry/compare/v1.0.0...master"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "romulus",
-            "newCommits": 0,
-            "url": "https://github.com/juju/romulus",
-            "releases": [
-               {
-                  "id": 71786484,
-                  "version": "v1.0.0",
-                  "timestamp": 1644194996,
-                  "title": "v1.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>wireformat/budget: export baseURL to help with testing by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/22\">https://github.com/juju/romulus/pull/22</a></li>\n<li>ALLOCATED and BY are separate columns. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/23\">https://github.com/juju/romulus/pull/23</a></li>\n<li>Fixed the missing newline in createbudget response. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/24\">https://github.com/juju/romulus/pull/24</a></li>\n<li>Fixes newlines in cmd responses. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/26\">https://github.com/juju/romulus/pull/26</a></li>\n<li>Decode error messages from omnibus. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/27\">https://github.com/juju/romulus/pull/27</a></li>\n<li>cmd: Minor changes to make ftests easier to write by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/28\">https://github.com/juju/romulus/pull/28</a></li>\n<li>Parse allocation limit properly in the allocate command. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/29\">https://github.com/juju/romulus/pull/29</a></li>\n<li>Use uitable right-alignment feature with numerics. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/30\">https://github.com/juju/romulus/pull/30</a></li>\n<li>Sorted allocations. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/32\">https://github.com/juju/romulus/pull/32</a></li>\n<li>plan/api: Export url to help ftests by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/31\">https://github.com/juju/romulus/pull/31</a></li>\n<li>api/terms: Export BaseURL to make testing easier by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/33\">https://github.com/juju/romulus/pull/33</a></li>\n<li>20160418 juju deps by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/36\">https://github.com/juju/romulus/pull/36</a></li>\n<li>Update juju dependencies. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/34\">https://github.com/juju/romulus/pull/34</a></li>\n<li>Resolving model name in show-budget. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/35\">https://github.com/juju/romulus/pull/35</a></li>\n<li>cmd/listplans: Return a more appropriate type to help with testing by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/37\">https://github.com/juju/romulus/pull/37</a></li>\n<li>setplan: Fixed the output of set plan, argument order was reversed in error message by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/39\">https://github.com/juju/romulus/pull/39</a></li>\n<li>Allow specifying juju allocate &ndash;model-uuid, improve help. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/40\">https://github.com/juju/romulus/pull/40</a></li>\n<li>Rename service to application by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/43\">https://github.com/juju/romulus/pull/43</a></li>\n<li>Account for service to application changes in juju-core by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/44\">https://github.com/juju/romulus/pull/44</a></li>\n<li>Update dependencies to juju w/ service-to-application landed. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/47\">https://github.com/juju/romulus/pull/47</a></li>\n<li>cmd/allocate: Improvement on error message to make order of args obvious by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/41\">https://github.com/juju/romulus/pull/41</a></li>\n<li>Make juju list-<cmd> aliases for their juju <cmd> by <a target=\"_blank\" href=\"https://github.com/macgreagoir\">@macgreagoir</a> in <a href=\"https://github.com/juju/romulus/pull/45\">https://github.com/juju/romulus/pull/45</a></li>\n<li>Changes the &ldquo;less&rdquo; prompt to remind user to press q to exit. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/46\">https://github.com/juju/romulus/pull/46</a></li>\n<li>Update command help text for romulus commands by <a target=\"_blank\" href=\"https://github.com/cherylj\">@cherylj</a> in <a href=\"https://github.com/juju/romulus/pull/48\">https://github.com/juju/romulus/pull/48</a></li>\n<li>JUJU_TERMS environment variable for base terms service url. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/50\">https://github.com/juju/romulus/pull/50</a></li>\n<li>Update to new juju modelcmd API. by <a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> in <a href=\"https://github.com/juju/romulus/pull/55\">https://github.com/juju/romulus/pull/55</a></li>\n<li>cmd/agree: Updated agree command to support terms that have owners by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/51\">https://github.com/juju/romulus/pull/51</a></li>\n<li>Using charm.v6 ParseTerm method in the agree command. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/56\">https://github.com/juju/romulus/pull/56</a></li>\n<li>Update to the latest version of charm.v6-unstable. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/57\">https://github.com/juju/romulus/pull/57</a></li>\n<li>api/terms: Removed terms api (now lives in juju/terms-client) by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/58\">https://github.com/juju/romulus/pull/58</a></li>\n<li>Update juju, gnuflag deps, jujuclienttesting.MemStore tests use user-qualified model names. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/60\">https://github.com/juju/romulus/pull/60</a></li>\n<li>Move the commands to core juju repo. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/romulus/pull/61\">https://github.com/juju/romulus/pull/61</a></li>\n<li>UserStatusResponse structure by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/62\">https://github.com/juju/romulus/pull/62</a></li>\n<li>Added sla credentials to the wireformat. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/64\">https://github.com/juju/romulus/pull/64</a></li>\n<li>sla: Added packages that implement the support api by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/romulus/pull/63\">https://github.com/juju/romulus/pull/63</a></li>\n<li>Add model meter status. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/66\">https://github.com/juju/romulus/pull/66</a></li>\n<li>budget svc refactor changes by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/65\">https://github.com/juju/romulus/pull/65</a></li>\n<li>Decode service response errors in sla api. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/67\">https://github.com/juju/romulus/pull/67</a></li>\n<li>Support indicating default budget in list budgets response. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/68\">https://github.com/juju/romulus/pull/68</a></li>\n<li>Add owner to SLA response wireformat. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/69\">https://github.com/juju/romulus/pull/69</a></li>\n<li>Handle unack&rsquo;able batches. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/70\">https://github.com/juju/romulus/pull/70</a></li>\n<li>s/budget/wallet/; s/allocate|allocation/budget/; by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/71\">https://github.com/juju/romulus/pull/71</a></li>\n<li>Added a message field to the sla response. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/73\">https://github.com/juju/romulus/pull/73</a></li>\n<li>Added wallet parameter to update budget requests. by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/romulus/pull/74\">https://github.com/juju/romulus/pull/74</a></li>\n<li>Add labels to metrics. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/75\">https://github.com/juju/romulus/pull/75</a></li>\n<li>Added model name to the metric batch type. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/romulus/pull/77\">https://github.com/juju/romulus/pull/77</a></li>\n<li>Update to macaroon/macaroon-bakery v2-unstable by <a target=\"_blank\" href=\"https://github.com/Veebers\">@Veebers</a> in <a href=\"https://github.com/juju/romulus/pull/76\">https://github.com/juju/romulus/pull/76</a></li>\n<li>Configurable API root for clients. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/romulus/pull/78\">https://github.com/juju/romulus/pull/78</a></li>\n<li>Update to use macaroon.v2 and bakery.v2 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/80\">https://github.com/juju/romulus/pull/80</a></li>\n<li>Convert to go mod and use macaroon-bakery v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/81\">https://github.com/juju/romulus/pull/81</a></li>\n<li>Use gopkg.in/macaroon-bakery.v3 instead of github.com/go-macaroon-bakery/macaroon-bakery/v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/82\">https://github.com/juju/romulus/pull/82</a></li>\n<li>Use latest bakery v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/83\">https://github.com/juju/romulus/pull/83</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/romulus/pull/84\">https://github.com/juju/romulus/pull/84</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/macgreagoir\">@macgreagoir</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/45\">https://github.com/juju/romulus/pull/45</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/cherylj\">@cherylj</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/48\">https://github.com/juju/romulus/pull/48</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/rogpeppe\">@rogpeppe</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/55\">https://github.com/juju/romulus/pull/55</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/61\">https://github.com/juju/romulus/pull/61</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/Veebers\">@Veebers</a> made their first contribution in <a href=\"https://github.com/juju/romulus/pull/76\">https://github.com/juju/romulus/pull/76</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/romulus/commits/v1.0.0\">https://github.com/juju/romulus/commits/v1.0.0</a></p>\n",
-                  "url": "https://github.com/juju/romulus/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/juju/romulus/compare/v1.0.0...master"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "mutex",
-            "newCommits": 0,
-            "url": "https://github.com/juju/mutex",
-            "releases": [
-               {
-                  "id": 71803688,
-                  "version": "v2.0.0",
-                  "timestamp": 1643855501,
-                  "title": "v2.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Initial import of working mutex. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/mutex/pull/1\">https://github.com/juju/mutex/pull/1</a></li>\n<li>typo fix by <a target=\"_blank\" href=\"https://github.com/jameinel\">@jameinel</a> in <a href=\"https://github.com/juju/mutex/pull/3\">https://github.com/juju/mutex/pull/3</a></li>\n<li>Blocking mutexes by <a target=\"_blank\" href=\"https://github.com/axw\">@axw</a> in <a href=\"https://github.com/juju/mutex/pull/4\">https://github.com/juju/mutex/pull/4</a></li>\n<li>Set close-on-exec flag on the flock FD by <a target=\"_blank\" href=\"https://github.com/axw\">@axw</a> in <a href=\"https://github.com/juju/mutex/pull/5\">https://github.com/juju/mutex/pull/5</a></li>\n<li>Re-write permissions if running as root by <a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> in <a href=\"https://github.com/juju/mutex/pull/6\">https://github.com/juju/mutex/pull/6</a></li>\n<li>Remove legacy mutex and update to go mod by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/mutex/pull/12\">https://github.com/juju/mutex/pull/12</a></li>\n<li>Replace a windows build directive accidentally removed by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/mutex/pull/13\">https://github.com/juju/mutex/pull/13</a></li>\n<li>Update upstream deps by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/mutex/pull/14\">https://github.com/juju/mutex/pull/14</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/1\">https://github.com/juju/mutex/pull/1</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/jameinel\">@jameinel</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/3\">https://github.com/juju/mutex/pull/3</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/axw\">@axw</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/4\">https://github.com/juju/mutex/pull/4</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/6\">https://github.com/juju/mutex/pull/6</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/mutex/pull/12\">https://github.com/juju/mutex/pull/12</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/mutex/commits/v2.0.0\">https://github.com/juju/mutex/commits/v2.0.0</a></p>\n",
-                  "url": "https://github.com/juju/mutex/releases/tag/v2.0.0",
-                  "compareUrl": "https://github.com/juju/mutex/compare/v2.0.0...master"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "gojsonschema",
-            "newCommits": 0,
-            "url": "https://github.com/juju/gojsonschema",
-            "releases": [
-               {
-                  "id": 71785656,
-                  "version": "v1.0.0",
-                  "timestamp": 1426179616,
-                  "title": "v1.0.0",
-                  "body": "<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/gojsonschema/commits/v1.0.0\">https://github.com/juju/gojsonschema/commits/v1.0.0</a></p>\n",
-                  "url": "https://github.com/juju/gojsonschema/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/juju/gojsonschema/compare/v1.0.0...master"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "systems",
             "newCommits": 0,
             "url": "https://github.com/juju/systems",
@@ -2023,21 +2024,20 @@
             "snap": null
          },
          {
-            "name": "terms-client",
+            "name": "lru",
             "newCommits": 0,
-            "url": "https://github.com/juju/terms-client",
-            "releases": [
+            "url": "https://github.com/juju/lru",
+            "releases": null,
+            "tags": [
                {
-                  "id": 71881649,
-                  "version": "v2.0.0",
-                  "timestamp": 1644195045,
-                  "title": "v2.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix publish-term command with zero revision. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terms-client/pull/8\">https://github.com/juju/terms-client/pull/8</a></li>\n<li>Update dependencies, switch from launchpad.net/gnuflags to juju/gnufl… by <a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> in <a href=\"https://github.com/juju/terms-client/pull/12\">https://github.com/juju/terms-client/pull/12</a></li>\n<li>Add &ndash;content switch to just show the term content text. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/11\">https://github.com/juju/terms-client/pull/11</a></li>\n<li>List-terms command. by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terms-client/pull/14\">https://github.com/juju/terms-client/pull/14</a></li>\n<li>Remove plugin wrapper. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/17\">https://github.com/juju/terms-client/pull/17</a></li>\n<li>cmd/list_terms: Minor docs and command rename by <a target=\"_blank\" href=\"https://github.com/mattyw\">@mattyw</a> in <a href=\"https://github.com/juju/terms-client/pull/18\">https://github.com/juju/terms-client/pull/18</a></li>\n<li>Common command base; support no-browser login, browser by default. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/19\">https://github.com/juju/terms-client/pull/19</a></li>\n<li>Added context to all methods by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terms-client/pull/20\">https://github.com/juju/terms-client/pull/20</a></li>\n<li>Update README.md by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/terms-client/pull/21\">https://github.com/juju/terms-client/pull/21</a></li>\n<li>Update code to use bakery.v2 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/22\">https://github.com/juju/terms-client/pull/22</a></li>\n<li>Bump juju/errors version by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/terms-client/pull/23\">https://github.com/juju/terms-client/pull/23</a></li>\n<li>Enable juju-bot for this repo by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/terms-client/pull/24\">https://github.com/juju/terms-client/pull/24</a></li>\n<li>update dependencies by <a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> in <a href=\"https://github.com/juju/terms-client/pull/25\">https://github.com/juju/terms-client/pull/25</a></li>\n<li>Use github.com/go-macaroon-bakery/macaroon-bakery/v3 instead of the gopkg.in v2 version by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/26\">https://github.com/juju/terms-client/pull/26</a></li>\n<li>Use gopkg.in/macaroon-bakery.v3 instead of github.com/go-macaroon-bakery/macaroon-bakery/v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/27\">https://github.com/juju/terms-client/pull/27</a></li>\n<li>Use bakery v3 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/28\">https://github.com/juju/terms-client/pull/28</a></li>\n<li>Remove import of the entire juju/juju repo by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/29\">https://github.com/juju/terms-client/pull/29</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/terms-client/pull/30\">https://github.com/juju/terms-client/pull/30</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/tasdomas\">@tasdomas</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/12\">https://github.com/juju/terms-client/pull/12</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/22\">https://github.com/juju/terms-client/pull/22</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/23\">https://github.com/juju/terms-client/pull/23</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/mhilton\">@mhilton</a> made their first contribution in <a href=\"https://github.com/juju/terms-client/pull/25\">https://github.com/juju/terms-client/pull/25</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terms-client/compare/v1.0.1...v2.0.0\">https://github.com/juju/terms-client/compare/v1.0.1&hellip;v2.0.0</a></p>\n",
-                  "url": "https://github.com/juju/terms-client/releases/tag/v2.0.0",
-                  "compareUrl": "https://github.com/juju/terms-client/compare/v2.0.0...master"
+                  "name": "v1.0.0",
+                  "sha": "f0bce43c487e1d906d49e05d9fbd47bca96a0a57",
+                  "body": "<p>Go mod</p>\n",
+                  "timestamp": 1658332660,
+                  "url": "https://github.com/juju/lru/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/juju/lru/compare/master...v1.0.0"
                }
             ],
-            "tags": null,
             "commits": null,
             "ciActions": [],
             "charm": null,
@@ -2077,22 +2077,20 @@
             "snap": null
          },
          {
-            "name": "ansiterm",
+            "name": "musl-cross-pkg-snap",
             "newCommits": 0,
-            "url": "https://github.com/juju/ansiterm",
-            "releases": [
+            "url": "https://github.com/juju/musl-cross-pkg-snap",
+            "releases": null,
+            "tags": null,
+            "commits": [
                {
-                  "id": 71784934,
-                  "version": "v1.0.0",
-                  "timestamp": 1632924891,
-                  "title": "v1.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Initial proposal for juju inclusion. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/1\">https://github.com/juju/ansiterm/pull/1</a></li>\n<li>Expose the Init and Flush tabwriter methods. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/2\">https://github.com/juju/ansiterm/pull/2</a></li>\n<li>Check for dumb TERM vars, and add method to explicitly set color. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/3\">https://github.com/juju/ansiterm/pull/3</a></li>\n<li>Make individual columns able to be right aligned. by <a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> in <a href=\"https://github.com/juju/ansiterm/pull/4\">https://github.com/juju/ansiterm/pull/4</a></li>\n<li>Fix index out of range panic. by <a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> in <a href=\"https://github.com/juju/ansiterm/pull/5\">https://github.com/juju/ansiterm/pull/5</a></li>\n<li>Add missing LICENSE file by <a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> in <a href=\"https://github.com/juju/ansiterm/pull/6\">https://github.com/juju/ansiterm/pull/6</a></li>\n<li>Fix small typo in NewTabWriter comment details by <a target=\"_blank\" href=\"https://github.com/paddymorgan84\">@paddymorgan84</a> in <a href=\"https://github.com/juju/ansiterm/pull/7\">https://github.com/juju/ansiterm/pull/7</a></li>\n<li>Color Writer: NO_COLOR support by <a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> in <a href=\"https://github.com/juju/ansiterm/pull/8\">https://github.com/juju/ansiterm/pull/8</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/howbazaar\">@howbazaar</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/1\">https://github.com/juju/ansiterm/pull/1</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/cmars\">@cmars</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/5\">https://github.com/juju/ansiterm/pull/5</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/6\">https://github.com/juju/ansiterm/pull/6</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/paddymorgan84\">@paddymorgan84</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/7\">https://github.com/juju/ansiterm/pull/7</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> made their first contribution in <a href=\"https://github.com/juju/ansiterm/pull/8\">https://github.com/juju/ansiterm/pull/8</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/ansiterm/commits/v1.0.0\">https://github.com/juju/ansiterm/commits/v1.0.0</a></p>\n",
-                  "url": "https://github.com/juju/ansiterm/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/juju/ansiterm/compare/v1.0.0...master"
+                  "sha": "03296aa384e50fa914ca164bf594948e5f745e6e",
+                  "author": "John Arbash Meinel",
+                  "timestamp": 1678210607,
+                  "message": "<p>Initial commit</p>\n",
+                  "url": "https://github.com/juju/musl-cross-pkg-snap/commit/03296aa384e50fa914ca164bf594948e5f745e6e"
                }
             ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -2195,43 +2193,54 @@
             "snap": null
          },
          {
-            "name": "version",
-            "newCommits": 2,
-            "url": "https://github.com/juju/version",
-            "releases": [
+            "name": "juju-db-snap",
+            "newCommits": 0,
+            "url": "https://github.com/juju/juju-db-snap",
+            "releases": null,
+            "tags": [
                {
-                  "id": 71882330,
-                  "version": "v2.0.0",
-                  "timestamp": 1643978864,
-                  "title": "v2.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix parse for tags w/ double digit patch numbers by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/version/pull/3\">https://github.com/juju/version/pull/3</a></li>\n<li>make group <a target=\"_blank\" href=\"https://github.com/juju/version/pull/3\">#3</a> non-capturing, since we never reference it. by <a target=\"_blank\" href=\"https://github.com/natefinch\">@natefinch</a> in <a href=\"https://github.com/juju/version/pull/2\">https://github.com/juju/version/pull/2</a></li>\n<li>No need to validate series when parsing binary version by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/4\">https://github.com/juju/version/pull/4</a></li>\n<li>Mention proper license by <a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> in <a href=\"https://github.com/juju/version/pull/5\">https://github.com/juju/version/pull/5</a></li>\n<li>Export regex patterns by <a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> in <a href=\"https://github.com/juju/version/pull/6\">https://github.com/juju/version/pull/6</a></li>\n<li>Version without build by <a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> in <a href=\"https://github.com/juju/version/pull/7\">https://github.com/juju/version/pull/7</a></li>\n<li>Convert to go mod and use juju/mgo/v2 by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/8\">https://github.com/juju/version/pull/8</a></li>\n<li>Rename Series to Release to make the version Binary more generic by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/9\">https://github.com/juju/version/pull/9</a></li>\n<li>Support non-strict version parsing by <a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> in <a href=\"https://github.com/juju/version/pull/10\">https://github.com/juju/version/pull/10</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/version/pull/11\">https://github.com/juju/version/pull/11</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/4\">https://github.com/juju/version/pull/4</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/aviau\">@aviau</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/5\">https://github.com/juju/version/pull/5</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/hpidcock\">@hpidcock</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/6\">https://github.com/juju/version/pull/6</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/SimonRichardson\">@SimonRichardson</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/7\">https://github.com/juju/version/pull/7</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/achilleasa\">@achilleasa</a> made their first contribution in <a href=\"https://github.com/juju/version/pull/10\">https://github.com/juju/version/pull/10</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/version/commits/v2.0.0\">https://github.com/juju/version/commits/v2.0.0</a></p>\n",
-                  "url": "https://github.com/juju/version/releases/tag/v2.0.0",
-                  "compareUrl": "https://github.com/juju/version/compare/v2.0.0...master"
+                  "name": "4.0.9",
+                  "sha": "2f24fb3ec03661151ccfa3acea3e67d82a067c35",
+                  "body": "<p>grade: stable</p>\n",
+                  "timestamp": 1555559594,
+                  "url": "https://github.com/juju/juju-db-snap/releases/tag/4.0.9",
+                  "compareUrl": "https://github.com/juju/juju-db-snap/compare/master...4.0.9"
                }
             ],
-            "tags": null,
             "commits": null,
-            "ciActions": [],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
          {
-            "name": "blobstore",
-            "newCommits": 4,
-            "url": "https://github.com/juju/blobstore",
-            "releases": [
+            "name": "juju-db-oci",
+            "newCommits": 0,
+            "url": "https://github.com/juju/juju-db-oci",
+            "releases": null,
+            "tags": null,
+            "commits": [
                {
-                  "id": 72000848,
-                  "version": "v2.0.0",
-                  "timestamp": 1643982913,
-                  "title": "v2.0.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Use github.com/juju/mgo/v2 and convert to go mod by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/blobstore/pull/29\">https://github.com/juju/blobstore/pull/29</a></li>\n<li>Update to go 1.17 and latest upstream by <a target=\"_blank\" href=\"https://github.com/wallyworld\">@wallyworld</a> in <a href=\"https://github.com/juju/blobstore/pull/30\">https://github.com/juju/blobstore/pull/30</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/blobstore/commits/v2.0.0\">https://github.com/juju/blobstore/commits/v2.0.0</a></p>\n",
-                  "url": "https://github.com/juju/blobstore/releases/tag/v2.0.0",
-                  "compareUrl": "https://github.com/juju/blobstore/compare/v2.0.0...v3"
+                  "sha": "9c7b46c7d5baa7de69be46f9f3d70f2ba5eed7ec",
+                  "author": "Harry Pidcock",
+                  "timestamp": 1718945108,
+                  "message": "<p>Trigger builds.</p>\n",
+                  "url": "https://github.com/juju/juju-db-oci/commit/9c7b46c7d5baa7de69be46f9f3d70f2ba5eed7ec"
+               },
+               {
+                  "sha": "40edd5acd4a29db525cd7e6d94dc61426bd4eb3b",
+                  "author": "Harry Pidcock",
+                  "timestamp": 1696816494,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/juju/juju-db-oci/pull/10\">#10</a> from hpidcock/release-oci-cron</p>\n\n<p>Add ghcr.io</p>\n",
+                  "url": "https://github.com/juju/juju-db-oci/commit/40edd5acd4a29db525cd7e6d94dc61426bd4eb3b"
+               },
+               {
+                  "sha": "ad3db84bb46a4c32e27ccaf47bc2115534018820",
+                  "author": "Harry Pidcock",
+                  "timestamp": 1696811457,
+                  "message": "<p>Add ghcr.io</p>\n",
+                  "url": "https://github.com/juju/juju-db-oci/commit/ad3db84bb46a4c32e27ccaf47bc2115534018820"
                }
             ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -14517,113 +14526,28 @@
       "team": "Telco",
       "repos": [
          {
-            "name": "sdcore-upf-k8s-operator",
-            "newCommits": 81,
-            "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
-            "releases": [
-               {
-                  "id": 175300330,
-                  "version": "rev587",
-                  "timestamp": 1726509943,
-                  "title": "Revision 587",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-8-3-3&rsquo; at 18:30 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586...rev587\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586&hellip;rev587</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev587",
-                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev587...main"
-               },
-               {
-                  "id": 175299780,
-                  "version": "rev586",
-                  "timestamp": 1726509817,
-                  "title": "Revision 586",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 18:26 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump lightkube-models from 1.30.0.8 to 1.31.1.8 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/372\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/372\">#372</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev583...rev586\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev583&hellip;rev586</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev586",
-                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586...main"
-               },
-               {
-                  "id": 175288572,
-                  "version": "rev585",
-                  "timestamp": 1726505481,
-                  "title": "Revision 585",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-8-3-3&rsquo; at 17:15 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev583...rev585\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev583&hellip;rev585</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev585",
-                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev585...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "sdcore-upf-k8s",
-               "url": "https://charmhub.io/sdcore-upf-k8s",
-               "releases": [
-                  {
-                     "track": "1.4",
-                     "channel": "beta",
-                     "revision": 280,
-                     "timestamp": 1716989432,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.4",
-                     "channel": "edge",
-                     "revision": 586,
-                     "timestamp": 1726511206,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 13,
-                     "timestamp": 1704298711,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 21,
-                     "timestamp": 1705823182,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "edge",
-                     "revision": 578,
-                     "timestamp": 1726407812,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "beta",
-                     "revision": 13,
-                     "timestamp": 1705952856,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "edge",
-                     "revision": 105,
-                     "timestamp": 1712335483,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "1.4",
-                  "latest",
-                  "1.5",
-                  "1.3"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "sdcore-gnbsim-k8s-operator",
             "newCommits": 70,
             "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator",
             "releases": [
+               {
+                  "id": 175310545,
+                  "version": "rev496",
+                  "timestamp": 1726513661,
+                  "title": "Revision 496",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.0\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-34&rsquo; at 19:34 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev495...rev496\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev495&hellip;rev496</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev496",
+                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev496...main"
+               },
+               {
+                  "id": 175310158,
+                  "version": "rev495",
+                  "timestamp": 1726513570,
+                  "title": "Revision 495",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.0\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 19:33 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump lightkube-models from 1.30.0.8 to 1.31.1.8 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/309\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/309\">#309</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev492...rev495\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev492&hellip;rev495</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev495",
+                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev495...main"
+               },
                {
                   "id": 175300566,
                   "version": "rev494",
@@ -14632,24 +14556,6 @@
                   "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.0\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-lightkube-models-1-31-1-8&rsquo; at 18:31 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev492...rev494\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev492&hellip;rev494</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev494",
                   "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev494...main"
-               },
-               {
-                  "id": 175300538,
-                  "version": "rev493",
-                  "timestamp": 1726509882,
-                  "title": "Revision 493",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.0\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-34&rsquo; at 18:31 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev492...rev493\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev492&hellip;rev493</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev493",
-                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev493...main"
-               },
-               {
-                  "id": 175300084,
-                  "version": "rev492",
-                  "timestamp": 1726509781,
-                  "title": "Revision 492",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.0\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 18:28 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.3.2 to 8.3.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/308\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/308\">#308</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev484...rev492\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev484&hellip;rev492</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev492",
-                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev492...main"
                }
             ],
             "tags": null,
@@ -14669,8 +14575,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 492,
-                     "timestamp": 1726511327,
+                     "revision": 495,
+                     "timestamp": 1726515197,
                      "base": ""
                   },
                   {
@@ -14728,6 +14634,24 @@
             "url": "https://github.com/canonical/sdcore-webui-k8s-operator",
             "releases": [
                {
+                  "id": 175311104,
+                  "version": "rev417",
+                  "timestamp": 1726513585,
+                  "title": "Revision 417",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 76</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 19:38 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.3.2 to 8.3.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-webui-k8s-operator/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-webui-k8s-operator/pull/260\">#260</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409...rev417\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409&hellip;rev417</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev417",
+                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev417...main"
+               },
+               {
+                  "id": 175310502,
+                  "version": "rev416",
+                  "timestamp": 1726513707,
+                  "title": "Revision 416",
+                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 76</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-34&rsquo; at 19:34 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.3.2 to 8.3.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-webui-k8s-operator/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-webui-k8s-operator/pull/260\">#260</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409...rev416\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409&hellip;rev416</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev416",
+                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev416...main"
+               },
+               {
                   "id": 175294772,
                   "version": "rev415",
                   "timestamp": 1726507388,
@@ -14735,24 +14659,6 @@
                   "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 76</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-34&rsquo; at 17:54 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409...rev415\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409&hellip;rev415</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev415",
                   "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev415...main"
-               },
-               {
-                  "id": 175294120,
-                  "version": "rev414",
-                  "timestamp": 1726507468,
-                  "title": "Revision 414",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 76</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-8-3-3&rsquo; at 17:50 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409...rev414\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409&hellip;rev414</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev414",
-                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev414...main"
-               },
-               {
-                  "id": 175105470,
-                  "version": "rev412",
-                  "timestamp": 1726369569,
-                  "title": "Revision 412",
-                  "body": "<p>resources:\n    -  webui-image: ghcr.io/canonical/sdcore-webui:1.4.0\n       resource-revision: 76</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/chore-auto-libs&rsquo; at 03:36 UTC on 15 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409...rev412\">https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev409&hellip;rev412</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-webui-k8s-operator/releases/tag/rev412",
-                  "compareUrl": "https://github.com/canonical/sdcore-webui-k8s-operator/compare/rev412...main"
                }
             ],
             "tags": null,
@@ -14772,8 +14678,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 409,
-                     "timestamp": 1725923575,
+                     "revision": 417,
+                     "timestamp": 1726515499,
                      "base": ""
                   },
                   {
@@ -14809,6 +14715,109 @@
                      "channel": "edge",
                      "revision": 46,
                      "timestamp": 1712324377,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "1.4",
+                  "latest",
+                  "1.5",
+                  "1.3"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "sdcore-upf-k8s-operator",
+            "newCommits": 81,
+            "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
+            "releases": [
+               {
+                  "id": 175309649,
+                  "version": "rev588",
+                  "timestamp": 1726513547,
+                  "title": "Revision 588",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 19:29 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump pytest from 8.3.2 to 8.3.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/371\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/371\">#371</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586...rev588\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586&hellip;rev588</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev588",
+                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev588...main"
+               },
+               {
+                  "id": 175300330,
+                  "version": "rev587",
+                  "timestamp": 1726509943,
+                  "title": "Revision 587",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-8-3-3&rsquo; at 18:30 UTC on 16 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586...rev587\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586&hellip;rev587</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev587",
+                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev587...main"
+               },
+               {
+                  "id": 175299780,
+                  "version": "rev586",
+                  "timestamp": 1726509817,
+                  "title": "Revision 586",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 38\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 42</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 18:26 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump lightkube-models from 1.30.0.8 to 1.31.1.8 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/372\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/372\">#372</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev583...rev586\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev583&hellip;rev586</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev586",
+                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev586...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "sdcore-upf-k8s",
+               "url": "https://charmhub.io/sdcore-upf-k8s",
+               "releases": [
+                  {
+                     "track": "1.4",
+                     "channel": "beta",
+                     "revision": 280,
+                     "timestamp": 1716989432,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "edge",
+                     "revision": 588,
+                     "timestamp": 1726514983,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 13,
+                     "timestamp": 1704298711,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 21,
+                     "timestamp": 1705823182,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "edge",
+                     "revision": 578,
+                     "timestamp": 1726407812,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "beta",
+                     "revision": 13,
+                     "timestamp": 1705952856,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "edge",
+                     "revision": 105,
+                     "timestamp": 1712335483,
                      "base": ""
                   }
                ],
@@ -18049,7 +18058,7 @@
          },
          {
             "name": "httprequest-lego-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/httprequest-lego-k8s-operator",
             "releases": [
                {
@@ -20104,6 +20113,119 @@
       "team": "Data",
       "repos": [
          {
+            "name": "mysql-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/mysql-k8s-operator",
+            "releases": [
+               {
+                  "id": 175309025,
+                  "version": "rev199",
+                  "timestamp": 1726510456,
+                  "title": "Revisions 198, 199",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Recover from pod restarts during cluster creation during setup by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/499\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/499\">#499</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev197...rev199\">https://github.com/canonical/mysql-k8s-operator/compare/rev197&hellip;rev199</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev199",
+                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev199...main"
+               },
+               {
+                  "id": 174827057,
+                  "version": "rev197",
+                  "timestamp": 1726155839,
+                  "title": "Revisions 196, 197",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-5178 Admin address by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/502\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/502\">#502</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev195...rev197\">https://github.com/canonical/mysql-k8s-operator/compare/rev195&hellip;rev197</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev197",
+                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev197...main"
+               },
+               {
+                  "id": 174765412,
+                  "version": "rev195",
+                  "timestamp": 1726145101,
+                  "title": "Revisions 194, 195",
+                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update data-platform-workflows to v21.0.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/492\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/492\">#492</a></a></li>\n<li>DPE-4613 Test for multi-relation scale in/out by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/489\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/489\">#489</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev193...rev195\">https://github.com/canonical/mysql-k8s-operator/compare/rev193&hellip;rev195</a></p>\n",
+                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev195",
+                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev195...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/release.yaml",
+               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/ci.yaml",
+               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/sync_docs.yaml"
+            ],
+            "charm": {
+               "name": "mysql-k8s",
+               "url": "https://charmhub.io/mysql-k8s",
+               "releases": [
+                  {
+                     "track": "8.0",
+                     "channel": "stable",
+                     "revision": 180,
+                     "timestamp": 1725294241,
+                     "base": ""
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "stable",
+                     "revision": 181,
+                     "timestamp": 1725294236,
+                     "base": ""
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "candidate",
+                     "revision": 180,
+                     "timestamp": 1724688158,
+                     "base": ""
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "candidate",
+                     "revision": 181,
+                     "timestamp": 1724688147,
+                     "base": ""
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "beta",
+                     "revision": 180,
+                     "timestamp": 1724180404,
+                     "base": ""
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "beta",
+                     "revision": 181,
+                     "timestamp": 1724180412,
+                     "base": ""
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "edge",
+                     "revision": 199,
+                     "timestamp": 1726514738,
+                     "base": ""
+                  },
+                  {
+                     "track": "8.0",
+                     "channel": "edge",
+                     "revision": 198,
+                     "timestamp": 1726514737,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "8.0"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "mongodb-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/mongodb-operator",
@@ -21227,119 +21349,6 @@
             "commits": null,
             "ciActions": [],
             "charm": null,
-            "snap": null
-         },
-         {
-            "name": "mysql-k8s-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/mysql-k8s-operator",
-            "releases": [
-               {
-                  "id": 174827057,
-                  "version": "rev197",
-                  "timestamp": 1726155839,
-                  "title": "Revisions 196, 197",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>DPE-5178 Admin address by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/502\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/502\">#502</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev195...rev197\">https://github.com/canonical/mysql-k8s-operator/compare/rev195&hellip;rev197</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev197",
-                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev197...main"
-               },
-               {
-                  "id": 174765412,
-                  "version": "rev195",
-                  "timestamp": 1726145101,
-                  "title": "Revisions 194, 195",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update data-platform-workflows to v21.0.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/492\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/492\">#492</a></a></li>\n<li>DPE-4613 Test for multi-relation scale in/out by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/489\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/489\">#489</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev193...rev195\">https://github.com/canonical/mysql-k8s-operator/compare/rev193&hellip;rev195</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev195",
-                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev195...main"
-               },
-               {
-                  "id": 174628885,
-                  "version": "rev193",
-                  "timestamp": 1726081516,
-                  "title": "Revisions 192, 193",
-                  "body": "<p>Released to 8.0/edge\nOCI images:\n- {&lsquo;resource_name&rsquo;: &lsquo;mysql-image&rsquo;, &lsquo;revision&rsquo;: 113}</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Sync docs from Discourse by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/503\"><a target=\"_blank\" href=\"https://github.com/canonical/mysql-k8s-operator/pull/503\">#503</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/mysql-k8s-operator/compare/rev191...rev193\">https://github.com/canonical/mysql-k8s-operator/compare/rev191&hellip;rev193</a></p>\n",
-                  "url": "https://github.com/canonical/mysql-k8s-operator/releases/tag/rev193",
-                  "compareUrl": "https://github.com/canonical/mysql-k8s-operator/compare/rev193...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/release.yaml",
-               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/ci.yaml",
-               "https://github.com/canonical/mysql-k8s-operator/actions/workflows/sync_docs.yaml"
-            ],
-            "charm": {
-               "name": "mysql-k8s",
-               "url": "https://charmhub.io/mysql-k8s",
-               "releases": [
-                  {
-                     "track": "8.0",
-                     "channel": "stable",
-                     "revision": 180,
-                     "timestamp": 1725294241,
-                     "base": ""
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "stable",
-                     "revision": 181,
-                     "timestamp": 1725294236,
-                     "base": ""
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "candidate",
-                     "revision": 180,
-                     "timestamp": 1724688158,
-                     "base": ""
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "candidate",
-                     "revision": 181,
-                     "timestamp": 1724688147,
-                     "base": ""
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "beta",
-                     "revision": 180,
-                     "timestamp": 1724180404,
-                     "base": ""
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "beta",
-                     "revision": 181,
-                     "timestamp": 1724180412,
-                     "base": ""
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "edge",
-                     "revision": 197,
-                     "timestamp": 1726166795,
-                     "base": ""
-                  },
-                  {
-                     "track": "8.0",
-                     "channel": "edge",
-                     "revision": 196,
-                     "timestamp": 1726166793,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "8.0"
-               ]
-            },
             "snap": null
          },
          {
@@ -27336,7 +27345,7 @@
                   "version": "rev3",
                   "timestamp": 1722433850,
                   "title": "Revision 3",
-                  "body": "<p>resources:\n    -  airbyte-workers: airbyte/worker:0.60.0\n       resource-revision: 1\n    -  airbyte-connector-builder-server: airbyte/connector-builder-server:0.60.0\n       resource-revision: 1\n    -  airbyte-bootloader: airbyte/bootloader:0.60.0\n       resource-revision: 1\n    -  airbyte-pod-sweeper: bitnami/kubectl:1.29.4\n       resource-revision: 1\n    -  airbyte-cron: airbyte/cron:0.60.0\n       resource-revision: 1\n    -  airbyte-server: airbyte/server:0.60.0\n       resource-revision: 1\n    -  airbyte-api-server: airbyte/airbyte-api-server:0.60.0\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:51 UTC on 31 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Address charm listing review comments by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/16\">#16</a></a></li>\n<li>Update README by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/17\"><a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/17\">#17</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/airbyte-k8s-operator/compare/rev2...rev3\">https://github.com/canonical/airbyte-k8s-operator/compare/rev2&hellip;rev3</a></p>\n",
+                  "body": "<p>resources:\n    -  airbyte-workers: airbyte/worker:0.60.0\n       resource-revision: 1\n    -  airbyte-connector-builder-server: airbyte/connector-builder-server:0.60.0\n       resource-revision: 1\n    -  airbyte-bootloader: airbyte/bootloader:0.60.0\n       resource-revision: 1\n    -  airbyte-pod-sweeper: bitnami/kubectl:1.29.4\n       resource-revision: 1\n    -  airbyte-cron: airbyte/cron:0.60.0\n       resource-revision: 1\n    -  airbyte-server: airbyte/server:0.60.0\n       resource-revision: 1\n    -  airbyte-api-server: airbyte/airbyte-api-server:0.60.0\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:51 UTC on 31 Jul 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 20:01 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Address charm listing review comments by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/16\">#16</a></a></li>\n<li>Update README by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/17\"><a target=\"_blank\" href=\"https://github.com/canonical/airbyte-k8s-operator/pull/17\">#17</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/airbyte-k8s-operator/compare/rev2...rev3\">https://github.com/canonical/airbyte-k8s-operator/compare/rev2&hellip;rev3</a></p>\n",
                   "url": "https://github.com/canonical/airbyte-k8s-operator/releases/tag/rev3",
                   "compareUrl": "https://github.com/canonical/airbyte-k8s-operator/compare/rev3...main"
                },
@@ -27361,6 +27370,13 @@
                "releases": [
                   {
                      "track": "latest",
+                     "channel": "stable",
+                     "revision": 3,
+                     "timestamp": 1726516905,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
                      "channel": "edge",
                      "revision": 3,
                      "timestamp": 1722433913,
@@ -27368,6 +27384,7 @@
                   }
                ],
                "channels": [
+                  "stable",
                   "edge"
                ],
                "tracks": [
@@ -27707,7 +27724,7 @@
                   "version": "rev3",
                   "timestamp": 1721125954,
                   "title": "Revision 3",
-                  "body": "<p>resources:\n    -  airbyte-webapp: airbyte/webapp:0.60.0\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:33 UTC on 16 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Address charm review comments by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/airbyte-ui-k8s-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/airbyte-ui-k8s-operator/pull/11\">#11</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/airbyte-ui-k8s-operator/compare/rev2...rev3\">https://github.com/canonical/airbyte-ui-k8s-operator/compare/rev2&hellip;rev3</a></p>\n",
+                  "body": "<p>resources:\n    -  airbyte-webapp: airbyte/webapp:0.60.0\n       resource-revision: 1</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:33 UTC on 16 Jul 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 20:02 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Address charm review comments by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/airbyte-ui-k8s-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/airbyte-ui-k8s-operator/pull/11\">#11</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/airbyte-ui-k8s-operator/compare/rev2...rev3\">https://github.com/canonical/airbyte-ui-k8s-operator/compare/rev2&hellip;rev3</a></p>\n",
                   "url": "https://github.com/canonical/airbyte-ui-k8s-operator/releases/tag/rev3",
                   "compareUrl": "https://github.com/canonical/airbyte-ui-k8s-operator/compare/rev3...main"
                },
@@ -27732,6 +27749,13 @@
                "releases": [
                   {
                      "track": "latest",
+                     "channel": "stable",
+                     "revision": 3,
+                     "timestamp": 1726516920,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
                      "channel": "edge",
                      "revision": 3,
                      "timestamp": 1721126011,
@@ -27739,6 +27763,7 @@
                   }
                ],
                "channels": [
+                  "stable",
                   "edge"
                ],
                "tracks": [
