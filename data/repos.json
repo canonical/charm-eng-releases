@@ -4718,7 +4718,7 @@
          },
          {
             "name": "loki-coordinator-k8s-operator",
-            "newCommits": 4,
+            "newCommits": 22,
             "url": "https://github.com/canonical/loki-coordinator-k8s-operator",
             "releases": [
                {
@@ -6211,8 +6211,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 81,
-                     "timestamp": 1726050012,
+                     "revision": 82,
+                     "timestamp": 1726577560,
                      "base": ""
                   }
                ],
@@ -6230,9 +6230,18 @@
          },
          {
             "name": "tempo-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/tempo-k8s-operator",
             "releases": [
+               {
+                  "id": 175447569,
+                  "version": "rev82",
+                  "timestamp": 1726571750,
+                  "title": "Revision 82",
+                  "body": "<p>resources:\n    -  tempo-image: grafana/tempo:2.4.0\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:52 UTC on 17 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add using <code>is_ready</code> safeguard to <code>get_endpoint</code> docstring by <a target=\"_blank\" href=\"https://github.com/michaeldmitry\">@michaeldmitry</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tempo-k8s-operator/pull/170\"><a target=\"_blank\" href=\"https://github.com/canonical/tempo-k8s-operator/pull/170\">#170</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tempo-k8s-operator/compare/rev81...rev82\">https://github.com/canonical/tempo-k8s-operator/compare/rev81&hellip;rev82</a></p>\n",
+                  "url": "https://github.com/canonical/tempo-k8s-operator/releases/tag/rev82",
+                  "compareUrl": "https://github.com/canonical/tempo-k8s-operator/compare/rev82...main"
+               },
                {
                   "id": 174517283,
                   "version": "rev81",
@@ -6250,15 +6259,6 @@
                   "body": "<p>resources:\n    -  tempo-image: grafana/tempo:2.4.0\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:21 UTC on 2 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add tempo-ready service for interface tests by <a target=\"_blank\" href=\"https://github.com/mmkay\">@mmkay</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tempo-k8s-operator/pull/164\"><a target=\"_blank\" href=\"https://github.com/canonical/tempo-k8s-operator/pull/164\">#164</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tempo-k8s-operator/compare/rev79...rev80\">https://github.com/canonical/tempo-k8s-operator/compare/rev79&hellip;rev80</a></p>\n",
                   "url": "https://github.com/canonical/tempo-k8s-operator/releases/tag/rev80",
                   "compareUrl": "https://github.com/canonical/tempo-k8s-operator/compare/rev80...main"
-               },
-               {
-                  "id": 172021661,
-                  "version": "rev79",
-                  "timestamp": 1724702757,
-                  "title": "Revision 79",
-                  "body": "<p>resources:\n    -  tempo-image: grafana/tempo:2.4.0\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:46 UTC on 26 Aug 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update charm libraries by <a target=\"_blank\" href=\"https://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tempo-k8s-operator/pull/162\"><a target=\"_blank\" href=\"https://github.com/canonical/tempo-k8s-operator/pull/162\">#162</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tempo-k8s-operator/compare/rev78...rev79\">https://github.com/canonical/tempo-k8s-operator/compare/rev78&hellip;rev79</a></p>\n",
-                  "url": "https://github.com/canonical/tempo-k8s-operator/releases/tag/rev79",
-                  "compareUrl": "https://github.com/canonical/tempo-k8s-operator/compare/rev79...main"
                }
             ],
             "tags": null,
@@ -6322,8 +6322,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 81,
-                     "timestamp": 1726050012,
+                     "revision": 82,
+                     "timestamp": 1726577560,
                      "base": ""
                   }
                ],
@@ -12186,25 +12186,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "9ff42980ccfd006b9f0b40bf7acecbe095b068f1",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1726577946,
+                  "message": "<p>Adds nfsv4 PVC scenario to the integration test (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/30\">#30</a>)</p>\n\n<p>The longhorn-share-manager rock is currently untested because it&rsquo;s not\nneeded for ReadWriteOnce PVCs (ext4 volumes).</p>\n\n<p>The integration test now also creates a Pod with a ReadWriteMany PVC,\nwhich will result in a nfsv4 mount, which will require the\nlonghorn-share-manager rock to work properly.</p>\n",
+                  "url": "https://github.com/canonical/longhorn-rocks/commit/9ff42980ccfd006b9f0b40bf7acecbe095b068f1"
+               },
+               {
+                  "sha": "943fbc14bf89c2191baabc0455a22d0ccbbca438",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1726577829,
+                  "message": "<p>Cleans up rocks and test (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/33\">#33</a>)</p>\n\n<ul>\n<li>Cleans up rockcraft.yaml files</li>\n</ul>\n\n<p>Corrects URLs which are pointing towards incorrect things.</p>\n\n<p>Adds additional links to some of the rockcraft.yaml files, bringing them\nmore in line with the other ones.</p>\n\n<p>Removes unnecessry cd $CRAFT_PART_SRC</p>\n\n<ul>\n<li>Cleans up integration test</li>\n</ul>\n\n<p>Removes unused dictionary.</p>\n\n<p>Refactors the code.</p>\n",
+                  "url": "https://github.com/canonical/longhorn-rocks/commit/943fbc14bf89c2191baabc0455a22d0ccbbca438"
+               },
+               {
                   "sha": "3c7d372c0a5d04a9efbc64c29a034c8cb5c6127e",
                   "author": "Claudiu Belu",
                   "timestamp": 1726487424,
                   "message": "<p>Fixes longhorn-share-manager rocks (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/27\">#27</a>)</p>\n\n<p>The longhorn helm chart passes arguments to the longhorn-share-manager\nentrypoint. Our rock should pass these arguments to the entrypoint\nservice.</p>\n",
                   "url": "https://github.com/canonical/longhorn-rocks/commit/3c7d372c0a5d04a9efbc64c29a034c8cb5c6127e"
-               },
-               {
-                  "sha": "7c8bf055d4e0dc3aea93b75276ced4ee66d7d5d0",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1726487389,
-                  "message": "<p>Fixes lint (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/29\">#29</a>)</p>\n",
-                  "url": "https://github.com/canonical/longhorn-rocks/commit/7c8bf055d4e0dc3aea93b75276ced4ee66d7d5d0"
-               },
-               {
-                  "sha": "332253c7e1fbc9d70d351c049f3d2d126cbed480",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1726486011,
-                  "message": "<p>Adds Longhorn v1.6.2 integration test (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/28\">#28</a>)</p>\n\n<p>We have already added rocks for Longhorn v1.6.2. We should test them as\nwell.</p>\n",
-                  "url": "https://github.com/canonical/longhorn-rocks/commit/332253c7e1fbc9d70d351c049f3d2d126cbed480"
                }
             ],
             "ciActions": [],
@@ -14527,9 +14527,18 @@
       "repos": [
          {
             "name": "oai-ran-ue-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/oai-ran-ue-k8s-operator",
             "releases": [
+               {
+                  "id": 175447528,
+                  "version": "rev14",
+                  "timestamp": 1726575984,
+                  "title": "Revision 14",
+                  "body": "<p>resources:\n    -  ue-image: ghcr.io/canonical/oai-ran-ue:2.1.1\n       resource-revision: 5</p>\n\n<p>Static resources:\n Released to &lsquo;2.1/edge/&rsquo; at 12:52 UTC on 17 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Fixes Slice Differentiator config param by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/pull/13\">#13</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev13...rev14\">https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev13&hellip;rev14</a></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-ue-k8s-operator/releases/tag/rev14",
+                  "compareUrl": "https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev14...main"
+               },
                {
                   "id": 175422197,
                   "version": "rev13",
@@ -14547,15 +14556,6 @@
                   "body": "<p>resources:\n    -  ue-image: ghcr.io/canonical/oai-ran-ue:2.1.1\n       resource-revision: 5</p>\n\n<p>Static resources:\n Released to &lsquo;2.1/edge/&rsquo; at 09:58 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Expose fiveg_rfsim endpoint in terraform module by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/pull/9\"><a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/pull/9\">#9</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev10...rev12\">https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev10&hellip;rev12</a></p>\n",
                   "url": "https://github.com/canonical/oai-ran-ue-k8s-operator/releases/tag/rev12",
                   "compareUrl": "https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev12...main"
-               },
-               {
-                  "id": 175109923,
-                  "version": "rev11",
-                  "timestamp": 1726341157,
-                  "title": "Revision 11",
-                  "body": "<p>resources:\n    -  ue-image: ghcr.io/canonical/oai-ran-ue:2.1.1\n       resource-revision: 5</p>\n\n<p>Static resources:\n Released to &lsquo;2.1/edge/&rsquo; at 06:54 UTC on 15 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: implement the requirer side of fiveg_rfsim interface by <a target=\"_blank\" href=\"https://github.com/gatici\">@gatici</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/pull/8\">#8</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev9...rev11\">https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev9&hellip;rev11</a></p>\n",
-                  "url": "https://github.com/canonical/oai-ran-ue-k8s-operator/releases/tag/rev11",
-                  "compareUrl": "https://github.com/canonical/oai-ran-ue-k8s-operator/compare/rev11...main"
                }
             ],
             "tags": null,
@@ -14575,8 +14575,8 @@
                   {
                      "track": "2.1",
                      "channel": "edge",
-                     "revision": 13,
-                     "timestamp": 1726569268,
+                     "revision": 14,
+                     "timestamp": 1726577547,
                      "base": ""
                   }
                ],
@@ -16159,6 +16159,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "9ae085998d6ca2df4d444af1adad12fd88e51aed",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1726576813,
+                  "message": "<p>fix: Fixes the value of the Slice Differentiator to represent a valid 24-bit int (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/638\">#638</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms/commit/9ae085998d6ca2df4d444af1adad12fd88e51aed"
+               },
+               {
                   "sha": "7a14e1cebc248ddd435109048be6ef493aee93d9",
                   "author": "dependabot[bot]",
                   "timestamp": 1726482580,
@@ -16171,13 +16178,6 @@
                   "timestamp": 1725880167,
                   "message": "<p>chore: Bump the npm_dependencies group with 9 updates (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/636\">#636</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms/commit/1e205100ddac181efd653e9e4136525ce8d27a66"
-               },
-               {
-                  "sha": "ab4df85b716c9a15b7561cdf98fff412bf7c5605",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1725272486,
-                  "message": "<p>chore: Bump the npm_dependencies group with 9 updates (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/635\">#635</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms/commit/ab4df85b716c9a15b7561cdf98fff412bf7c5605"
                }
             ],
             "ciActions": [],
@@ -19752,7 +19752,7 @@
          },
          {
             "name": "namecheap-lego-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/namecheap-lego-k8s-operator",
             "releases": [
                {
@@ -19897,7 +19897,7 @@
          },
          {
             "name": "httprequest-lego-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/httprequest-lego-k8s-operator",
             "releases": [
                {
@@ -20120,6 +20120,45 @@
       "team": "Data",
       "repos": [
          {
+            "name": "sysbench-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sysbench-operator",
+            "releases": [
+               {
+                  "id": 175442907,
+                  "version": "rev62",
+                  "timestamp": 1726575233,
+                  "title": "Revisions 61, 62",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Lock file maintenance Python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/57\">#57</a></a></li>\n<li>[MISC] Add rustup to charm build by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/60\">#60</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev60...rev62\">https://github.com/canonical/sysbench-operator/compare/rev60&hellip;rev62</a></p>\n",
+                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev62",
+                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev62...main"
+               },
+               {
+                  "id": 175419426,
+                  "version": "rev60",
+                  "timestamp": 1726567069,
+                  "title": "Revisions 59, 60",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Switch to ruff linting by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/58\">#58</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev58...rev60\">https://github.com/canonical/sysbench-operator/compare/rev58&hellip;rev60</a></p>\n",
+                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev60",
+                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev60...main"
+               },
+               {
+                  "id": 175351413,
+                  "version": "rev58",
+                  "timestamp": 1726541519,
+                  "title": "Revisions 57, 58",
+                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency pytest-microceph to v21 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev56...rev58\">https://github.com/canonical/sysbench-operator/compare/rev56&hellip;rev58</a></p>\n",
+                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev58",
+                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev58...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "data-integrator",
             "newCommits": 0,
             "url": "https://github.com/canonical/data-integrator",
@@ -20199,45 +20238,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "sysbench-operator",
-            "newCommits": 2,
-            "url": "https://github.com/canonical/sysbench-operator",
-            "releases": [
-               {
-                  "id": 175419426,
-                  "version": "rev60",
-                  "timestamp": 1726567069,
-                  "title": "Revisions 59, 60",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[MISC] Switch to ruff linting by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/58\">#58</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev58...rev60\">https://github.com/canonical/sysbench-operator/compare/rev58&hellip;rev60</a></p>\n",
-                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev60",
-                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev60...main"
-               },
-               {
-                  "id": 175351413,
-                  "version": "rev58",
-                  "timestamp": 1726541519,
-                  "title": "Revisions 57, 58",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency pytest-microceph to v21 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev56...rev58\">https://github.com/canonical/sysbench-operator/compare/rev56&hellip;rev58</a></p>\n",
-                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev58",
-                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev58...main"
-               },
-               {
-                  "id": 175242793,
-                  "version": "rev56",
-                  "timestamp": 1726493294,
-                  "title": "Revisions 55, 56",
-                  "body": "<p>Released to latest/edge\nOCI images:</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency cryptography to v43 [SECURITY] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/53\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/53\">#53</a></a></li>\n<li>Update canonical/charming-actions action to v2.6.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/55\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/55\">#55</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/53\"><a target=\"_blank\" href=\"https://github.com/canonical/sysbench-operator/pull/53\">#53</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sysbench-operator/compare/rev52...rev56\">https://github.com/canonical/sysbench-operator/compare/rev52&hellip;rev56</a></p>\n",
-                  "url": "https://github.com/canonical/sysbench-operator/releases/tag/rev56",
-                  "compareUrl": "https://github.com/canonical/sysbench-operator/compare/rev56...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
             "snap": null
          },
          {
@@ -20324,7 +20324,7 @@
          },
          {
             "name": "mysql-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mysql-k8s-operator",
             "releases": [
                {
@@ -26974,34 +26974,34 @@
          },
          {
             "name": "oci-factory",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/oci-factory",
             "releases": [
                {
-                  "id": 175218075,
+                  "id": 175374411,
                   "version": "mock-rock_test_edge",
-                  "timestamp": 1726487354,
+                  "timestamp": 1726553443,
                   "title": "mock-rock_test_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-3dea863077685aa7eaa6",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-7781e3f139146c69034a",
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
                },
                {
-                  "id": 175218067,
+                  "id": 175374429,
                   "version": "mock-rock_test_beta",
-                  "timestamp": 1726487353,
+                  "timestamp": 1726553447,
                   "title": "mock-rock_test_beta",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-85a415c8928584d2be13",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-fd187cf82ebceb2a2445",
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_beta...main"
                },
                {
-                  "id": 175218064,
+                  "id": 175374438,
                   "version": "mock-rock_edge",
-                  "timestamp": 1726487353,
+                  "timestamp": 1726553455,
                   "title": "mock-rock_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-27982e6001925722885d",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-47f1934c6c82d3959960",
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_edge...main"
                }
             ],
@@ -27055,6 +27055,73 @@
    {
       "team": "Comm Sys",
       "repos": [
+         {
+            "name": "temporal-admin-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/temporal-admin-k8s-operator",
+            "releases": [
+               {
+                  "id": 175446784,
+                  "version": "rev13",
+                  "timestamp": 1726577281,
+                  "title": "Revision 13",
+                  "body": "<p>resources:\n    -  temporal-admin-image: temporalio/admin-tools:1.23.1.0\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:49 UTC on 17 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-10666: Grab tls flag from relation by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/19\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/19\">#19</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/compare/rev12...rev13\">https://github.com/canonical/temporal-admin-k8s-operator/compare/rev12&hellip;rev13</a></p>\n",
+                  "url": "https://github.com/canonical/temporal-admin-k8s-operator/releases/tag/rev13",
+                  "compareUrl": "https://github.com/canonical/temporal-admin-k8s-operator/compare/rev13...main"
+               },
+               {
+                  "id": 175203777,
+                  "version": "rev12",
+                  "timestamp": 1726482098,
+                  "title": "Revision 12",
+                  "body": "<p>resources:\n    -  temporal-admin-image: temporalio/admin-tools:1.23.1.0\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:22 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add tls_enabled flag in admin relation by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/compare/rev11...rev12\">https://github.com/canonical/temporal-admin-k8s-operator/compare/rev11&hellip;rev12</a></p>\n",
+                  "url": "https://github.com/canonical/temporal-admin-k8s-operator/releases/tag/rev12",
+                  "compareUrl": "https://github.com/canonical/temporal-admin-k8s-operator/compare/rev12...main"
+               },
+               {
+                  "id": 164760243,
+                  "version": "rev11",
+                  "timestamp": 1720603541,
+                  "title": "Revision 11",
+                  "body": "<p>resources:\n    -  temporal-admin-image: temporalio/admin-tools:1.23.1\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:26 UTC on 10 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-9373: Add schema setup action by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/15\">#15</a></a></li>\n<li>Fix publish charm workflow issue by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/compare/rev10...rev11\">https://github.com/canonical/temporal-admin-k8s-operator/compare/rev10&hellip;rev11</a></p>\n",
+                  "url": "https://github.com/canonical/temporal-admin-k8s-operator/releases/tag/rev11",
+                  "compareUrl": "https://github.com/canonical/temporal-admin-k8s-operator/compare/rev11...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/temporal-admin-k8s-operator/actions/workflows/test_and_publish_charm.yaml"
+            ],
+            "charm": {
+               "name": "temporal-admin-k8s",
+               "url": "https://charmhub.io/temporal-admin-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 9,
+                     "timestamp": 1707825255,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 13,
+                     "timestamp": 1726577341,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
          {
             "name": "superset-k8s-operator",
             "newCommits": 0,
@@ -27122,73 +27189,6 @@
                "channels": [
                   "stable",
                   "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "temporal-admin-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/temporal-admin-k8s-operator",
-            "releases": [
-               {
-                  "id": 175203777,
-                  "version": "rev12",
-                  "timestamp": 1726482098,
-                  "title": "Revision 12",
-                  "body": "<p>resources:\n    -  temporal-admin-image: temporalio/admin-tools:1.23.1.0\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:22 UTC on 16 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add tls_enabled flag in admin relation by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/compare/rev11...rev12\">https://github.com/canonical/temporal-admin-k8s-operator/compare/rev11&hellip;rev12</a></p>\n",
-                  "url": "https://github.com/canonical/temporal-admin-k8s-operator/releases/tag/rev12",
-                  "compareUrl": "https://github.com/canonical/temporal-admin-k8s-operator/compare/rev12...main"
-               },
-               {
-                  "id": 164760243,
-                  "version": "rev11",
-                  "timestamp": 1720603541,
-                  "title": "Revision 11",
-                  "body": "<p>resources:\n    -  temporal-admin-image: temporalio/admin-tools:1.23.1\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:26 UTC on 10 Jul 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>CSS-9373: Add schema setup action by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/15\">#15</a></a></li>\n<li>Fix publish charm workflow issue by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/compare/rev10...rev11\">https://github.com/canonical/temporal-admin-k8s-operator/compare/rev10&hellip;rev11</a></p>\n",
-                  "url": "https://github.com/canonical/temporal-admin-k8s-operator/releases/tag/rev11",
-                  "compareUrl": "https://github.com/canonical/temporal-admin-k8s-operator/compare/rev11...main"
-               },
-               {
-                  "id": 158158943,
-                  "version": "rev10",
-                  "timestamp": 1717068622,
-                  "title": "Revision 10",
-                  "body": "<p>resources:\n    -  temporal-admin-image: undefined\n       resource-revision: 3</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:53 UTC on 30 May 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update to v1.23.1 by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/temporal-admin-k8s-operator/pull/14\">#14</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/temporal-admin-k8s-operator/compare/rev9...rev10\">https://github.com/canonical/temporal-admin-k8s-operator/compare/rev9&hellip;rev10</a></p>\n",
-                  "url": "https://github.com/canonical/temporal-admin-k8s-operator/releases/tag/rev10",
-                  "compareUrl": "https://github.com/canonical/temporal-admin-k8s-operator/compare/rev10...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/temporal-admin-k8s-operator/actions/workflows/test_and_publish_charm.yaml"
-            ],
-            "charm": {
-               "name": "temporal-admin-k8s",
-               "url": "https://charmhub.io/temporal-admin-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 9,
-                     "timestamp": 1707825255,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 12,
-                     "timestamp": 1726482169,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
                   "edge"
                ],
                "tracks": [
@@ -29634,6 +29634,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "6dc01172b8356db950761edbf5c600d703c407a0",
+                  "author": "Amanda H. L. de Andrade Katz",
+                  "timestamp": 1726579063,
+                  "message": "<p>feat: add Ingress integration (<a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/8\">#8</a>)</p>\n",
+                  "url": "https://github.com/canonical/maubot-operator/commit/6dc01172b8356db950761edbf5c600d703c407a0"
+               },
+               {
                   "sha": "c764822fc70f082c6449fd9680eed8488a3a508e",
                   "author": "Amanda H. L. de Andrade Katz",
                   "timestamp": 1725978481,
@@ -29646,13 +29653,6 @@
                   "timestamp": 1725906420,
                   "message": "<p>docs: change README (<a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/2\">#2</a>)</p>\n",
                   "url": "https://github.com/canonical/maubot-operator/commit/310b16dee40739e3f3c67da7ca5a14eeb0eca9d4"
-               },
-               {
-                  "sha": "5358f0780227548e154bf3bcf293c3b84fb92abb",
-                  "author": "renovate[bot]",
-                  "timestamp": 1725543783,
-                  "message": "<p>chore(deps): update dependency ops to v2.16.1 (<a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/5\">#5</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/maubot-operator/commit/5358f0780227548e154bf3bcf293c3b84fb92abb"
                }
             ],
             "ciActions": [
