@@ -2333,6 +2333,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "a1aaa35135220d564f7a63854388b38752de09c4",
+                  "author": "James Garner",
+                  "timestamp": 1726618668,
+                  "message": "<p>Improve unit test coverage for v2/snap.py (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/132\">#132</a>)</p>\n",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/a1aaa35135220d564f7a63854388b38752de09c4"
+               },
+               {
                   "sha": "30ea2e7b21a413ff0cf884c6395da5f7d411efa3",
                   "author": "Nobuto Murata",
                   "timestamp": 1724283059,
@@ -2345,13 +2352,6 @@
                   "timestamp": 1721595299,
                   "message": "<p>feat: enable juju-systemd-notices to observe snap services (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/128\">#128</a>)</p>\n\n<ul>\n<li>fix: <code>ruff</code> -&gt; <code>ruff check</code></li>\n</ul>\n\n<p>Original <code>ruff $@</code> is no longer supported by latest versions of ruff</p>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>fix!: add support for observing snap services</li>\n</ul>\n\n<p>Adds the <code>watch.yaml</code> file for configuring how the notices\ndaemon observes services. The daemon will get the service\nalias from this file and use the alias to determine the\nproper hook to fire when the observed service is started or stopped.</p>\n\n<p>BREAKING CHANGES: <strong>init</strong> for SystemdNotices now takes the Service\ndata class instead of a generic list. The Service dataclass was added\nso that it would be easier to specify an alias for an observed service.</p>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>tests: update unit tests to reflect new notices API</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>tests: update integration tests</p></li>\n\n<li><p>Consolidates metadata.yaml and actions.yaml into charmcraft.yaml\nfor test charm. Less files to worry about.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>docs: update lib documentation</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>chore(fmt): apply formatting rules</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>chore(lint): update copyright year</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>refactor: <code>open</code> -&gt; <code>write_text</code></li>\n</ul>\n\n<p><code>yaml.dump()</code> returns a string if steam is none, so it\nis easier to just pass the content off to <code>write_text</code> instead\nof opening the file with a context manager.</p>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>fix(tests): correctly patch filesystem on python 3.8</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>reactor: remove watch.yaml mechanism</p></li>\n\n<li><p>Switch to passing the service names and aliases\nvia argparse rather than using the pyyaml external\ndependency to create the watch.yaml file.</p></li>\n\n<li><p>Use global map to track the observed service rather than\ncaching the output of a watch.yaml read.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>tests: update tests to not use watch.yaml</p></li>\n\n<li><p>Reverted SystemdNotices in test charm back to the\noriginal constructor API.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>fix(tests): remove pyfakefs as test dependency</p></li>\n\n<li><p>Fixes unit tests failing on Python 3.10 due to incorrect patching.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>refactor: remove explicit global references</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>docs: update example to use correct constructor arguments</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>chore: bump libpatch version</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<hr>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n",
                   "url": "https://github.com/canonical/operator-libs-linux/commit/9c7f6175e7d6a24796227e293ab0071cd5cb97af"
-               },
-               {
-                  "sha": "74ddb086a64dd9c0c8c588aff293ef3d4c2274a4",
-                  "author": "Guillaume Boutry",
-                  "timestamp": 1717106815,
-                  "message": "<p>snap.py: fix snap.get optional key (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/125\">#125</a>)</p>\n\n<p>Fix snap.get method to handle the case where the key is falsy. Treat it\nas no key provided, which results in the expected behavior to get all\nvalues from snap configs.</p>\n",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/74ddb086a64dd9c0c8c588aff293ef3d4c2274a4"
                }
             ],
             "ciActions": [
@@ -33114,6 +33114,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7b4a4a171beacce4faef14841180777296cb67c7",
+                  "author": "Samuel Allan",
+                  "timestamp": 1726615214,
+                  "message": "<p>Remove unused/old files (<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/82\">#82</a>)</p>\n\n<ul>\n<li>we don&rsquo;t use Sonar any more</li>\n<li>Makefile and rename.sh are also not really used; use tox.ini or snapcraft directly.</li>\n<li>update check.yaml to follow our latest conventions</li>\n<li>we don&rsquo;t really use pre-commit any more, or the tox dev-environment target</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/7b4a4a171beacce4faef14841180777296cb67c7"
+               },
+               {
                   "sha": "0551fcbee63ed86144fb85f63f5d8cd5a7243f80",
                   "author": "soleng-terraform[bot]",
                   "timestamp": 1724694769,
@@ -33126,13 +33133,6 @@
                   "timestamp": 1722520707,
                   "message": "<p>Simplify the fetch exception on redfish (<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/79\">#79</a>)</p>\n\n<p>When any exception happens during redfish fetch the metric\nredfish_call_success is set to 0 that will trigger Prometheus\nalerts.</p>\n",
                   "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/3ce26fe2721355b078b9fe1428e23c71ac144587"
-               },
-               {
-                  "sha": "5ddd4d2b9162d8e6d29733ae9cc819ebb164b5e7",
-                  "author": "Gabriel Cocenza",
-                  "timestamp": 1722519941,
-                  "message": "<p>Ignore if redfish fails to logout (<a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/78\">#78</a>)</p>\n\n<ul>\n<li>Igonore if redfish fails to logout with 401 as as response</li>\n</ul>\n\n<p>Redfish sometimes fails to logout after scraping the data and this\nend up generating the metric redfish_collector_failed that trigger\nprometheus alerts that can be noise.</p>\n\n<p>This can be a BMC problem that might not be properly closing\nsessions.</p>\n\n<p>For more info see:\n<a href=\"https://github.com/DMTF/python-redfish-library/issues/160\">https://github.com/DMTF/python-redfish-library/issues/160</a></p>\n\n<p>Closes: <a target=\"_blank\" href=\"https://github.com/canonical/prometheus-hardware-exporter/pull/76\">#76</a></p>\n",
-                  "url": "https://github.com/canonical/prometheus-hardware-exporter/commit/5ddd4d2b9162d8e6d29733ae9cc819ebb164b5e7"
                }
             ],
             "ciActions": [],
@@ -33186,6 +33186,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "74e8a9252a6356b8d93319767c4d844510336c29",
+                  "author": "Gabriel Cocenza",
+                  "timestamp": 1726619405,
+                  "message": "<p>Test changes on automation for building the snap on arm64 is working (<a target=\"_blank\" href=\"https://github.com/canonical/dcgm-snap/pull/15\">#15</a>)</p>\n",
+                  "url": "https://github.com/canonical/dcgm-snap/commit/74e8a9252a6356b8d93319767c4d844510336c29"
+               },
+               {
                   "sha": "cddf5da67883f32b74358b65a83be08e1b9e6b63",
                   "author": "Andrea Ieri",
                   "timestamp": 1726595343,
@@ -33198,13 +33205,6 @@
                   "timestamp": 1726536245,
                   "message": "<p>Remove all dcgmproftester (<a target=\"_blank\" href=\"https://github.com/canonical/dcgm-snap/pull/19\">#19</a>)</p>\n\n<ul>\n<li>Remove all dcgmproftester</li>\n</ul>\n\n<p><code>dcgmproftester</code> has diffetent versions and needs libcuda which is\nnot currently shipped in the snap, so it does not work out of the\nbox. Moreover, some versions like the <code>dcgmproftester10</code> is not\npresent in the arm64 version that breaks the build.</p>\n\n<p>This PR removes all dcgmproftester until we have a more clear way\non how to ship this service and keep the support for multi-arch</p>\n\n<p>Closes: <a target=\"_blank\" href=\"https://github.com/canonical/dcgm-snap/pull/18\">#18</a></p>\n",
                   "url": "https://github.com/canonical/dcgm-snap/commit/0f17eee78ddb852d519144c7cc399167a74d8d66"
-               },
-               {
-                  "sha": "080ab2e42295a47c106a2b6aed880220addf2e82",
-                  "author": "Iurii Kondrakov",
-                  "timestamp": 1726529298,
-                  "message": "<p>DCGM snap tests (<a target=\"_blank\" href=\"https://github.com/canonical/dcgm-snap/pull/4\">#4</a>)</p>\n\n<p>Implement simple tests for dcgm-snap:</p>\n\n<ul>\n<li>Makes and deploys dcgm-exporter as a daemon with the snap.</li>\n<li>Adds tests for dcgm-exporter, dcgmi, nv-hostengine and user configs.</li>\n<li>Adds the snap template files on top.</li>\n<li>The tests are simple and should cover the primary use cases.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/dcgm-snap/commit/080ab2e42295a47c106a2b6aed880220addf2e82"
                }
             ],
             "ciActions": [],
