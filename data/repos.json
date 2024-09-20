@@ -34,7 +34,7 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 2,
+            "newCommits": 5,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
                {
@@ -470,29 +470,29 @@
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28612,
-                     "timestamp": 1726832498,
+                     "revision": 28616,
+                     "timestamp": 1726850211,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28613,
-                     "timestamp": 1726832639,
+                     "revision": 28617,
+                     "timestamp": 1726850359,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28614,
-                     "timestamp": 1726832726,
+                     "revision": 28618,
+                     "timestamp": 1726850470,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 28615,
-                     "timestamp": 1726832811,
+                     "revision": 28619,
+                     "timestamp": 1726850610,
                      "base": "core24"
                   },
                   {
@@ -11696,6 +11696,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "5fe3c27356a1a54082558b5efebf8b701224dfa0",
+                  "author": "Maciek Gołaszewski",
+                  "timestamp": 1726850132,
+                  "message": "<p>Skip Go/K8s test suite when docs are changed (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/685\">#685</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/5fe3c27356a1a54082558b5efebf8b701224dfa0"
+               },
+               {
                   "sha": "d1898163b7a7d7b13080f63067dc045574974f6b",
                   "author": "Benjamin Schimke",
                   "timestamp": 1726836893,
@@ -11708,13 +11715,6 @@
                   "timestamp": 1726831649,
                   "message": "<p>Add unit tests for coredns (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/684\">#684</a>)</p>\n\n<ul>\n<li>Add unit tests for coredns\nKU-1515</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/cfa7f993a343b191c08691f3666d6f5cd4e239d6"
-               },
-               {
-                  "sha": "27c91c882bb87f0bcab936bd43e7e08eef379418",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1726826492,
-                  "message": "<p>Do not stop Kubernetes services on node removal if annotation is set. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/681\">#681</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/27c91c882bb87f0bcab936bd43e7e08eef379418"
                }
             ],
             "ciActions": [
@@ -12633,8 +12633,8 @@
                   {
                      "track": "1.30-strict",
                      "channel": "candidate",
-                     "revision": 7181,
-                     "timestamp": 1725477145,
+                     "revision": 7235,
+                     "timestamp": 1726849382,
                      "base": "core20"
                   },
                   {
@@ -12647,8 +12647,8 @@
                   {
                      "track": "1.30-strict",
                      "channel": "beta",
-                     "revision": 7181,
-                     "timestamp": 1725477142,
+                     "revision": 7235,
+                     "timestamp": 1726849379,
                      "base": "core20"
                   },
                   {
@@ -14064,6 +14064,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8340271ef8930ccc8986779b6aa8eb1096c1cd74",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1726850732,
+                  "message": "<p>minio: Adds additional minio tenant user (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/299\">#299</a>)</p>\n\n<p>Previously, when the minio krew plugin was used to deploy the minio tenant,\nthe krew plugin created an additional user, with the credentials set in the\n$TENANT_NAME-user-1 Kubernetes secret.</p>\n\n<p>The Helm chart we&rsquo;re using does not do that by default, but it does accept\na list of Kubernetes secrets with CONSOLE_ACCESS_KEY (user) and\nCONSOLE_SECRET_KEY (password) fields set in them.</p>\n\n<p>With this change, we&rsquo;re now creating the secret ourselves, and passing it\nonto the Helm chart. The minio tenant will have this new user, in addition\nto the regular root user. With this, the behaviour that the krew plugin had\nis preserved.</p>\n\n<p>Additionally, remvoes reference to the kubectl-minio plugin since it doesn&rsquo;t\nexist anymore.</p>\n",
+                  "url": "https://github.com/canonical/microk8s-core-addons/commit/8340271ef8930ccc8986779b6aa8eb1096c1cd74"
+               },
+               {
                   "sha": "a8d3cd9e300d66012c01c1ecf364ddd23657b97c",
                   "author": "Benjamin Schimke",
                   "timestamp": 1724224604,
@@ -14076,13 +14083,6 @@
                   "timestamp": 1723814758,
                   "message": "<p>Fixes minio addon</p>\n\n<p>Minio removed the kubectl krew plugin in 5.0.15, which means that the\ncurrent workflow for installing the minio addon is outdated and will not\nwork for newer releases.</p>\n\n<p>Updates the minio addon installation to use Helm instead, and brings it\nup to date.</p>\n",
                   "url": "https://github.com/canonical/microk8s-core-addons/commit/1a6aa1bc4107d81f7fa59010ed5f89c170b50211"
-               },
-               {
-                  "sha": "e1d3ebb32ef8758787db8968cf56d09fd3dbaee0",
-                  "author": "Adam Dyess",
-                  "timestamp": 1724181746,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/291\">#291</a> from canonical/fix/update-ingress-nginx-version</p>\n\n<p>Update nginx version to v1.11.2</p>\n",
-                  "url": "https://github.com/canonical/microk8s-core-addons/commit/e1d3ebb32ef8758787db8968cf56d09fd3dbaee0"
                }
             ],
             "ciActions": [],
@@ -24530,6 +24530,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4a091aa7b727d92578400368d8dff6467f715816",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1726852351,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/184\">#184</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/4a091aa7b727d92578400368d8dff6467f715816"
+               },
+               {
                   "sha": "8a5cc5375aa48d43187f9e5b4586f8665a1013c4",
                   "author": "renovate[bot]",
                   "timestamp": 1726831286,
@@ -24542,13 +24549,6 @@
                   "timestamp": 1726772202,
                   "message": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/182\">#182</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-bundle/commit/58780aad7b35349e3f0ed655bea877393298bf33"
-               },
-               {
-                  "sha": "6294978f0242c8860f6ae04103a181b14e90da77",
-                  "author": "renovate[bot]",
-                  "timestamp": 1726486106,
-                  "message": "<p>Lock file maintenance Python dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/181\">#181</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/6294978f0242c8860f6ae04103a181b14e90da77"
                }
             ],
             "ciActions": [
@@ -26832,35 +26832,35 @@
          },
          {
             "name": "oci-factory",
-            "newCommits": 5,
+            "newCommits": 4,
             "url": "https://github.com/canonical/oci-factory",
             "releases": [
                {
-                  "id": 175948645,
-                  "version": "mock-rock_test_edge",
-                  "timestamp": 1726765841,
-                  "title": "mock-rock_test_edge",
+                  "id": 175975927,
+                  "version": "prometheus-pushgateway_1.8.0-22.04_stable",
+                  "timestamp": 1726774930,
+                  "title": "prometheus-pushgateway_1.8.0-22.04_stable",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-4b0b32be6666999e7fbe",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-2ce2c5877bbf9a037849",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/prometheus-pushgateway_1.8.0-22.04_stable...main"
                },
                {
-                  "id": 175942069,
-                  "version": "mock-rock_test_edge",
-                  "timestamp": 1726763967,
-                  "title": "mock-rock_test_edge",
+                  "id": 175975935,
+                  "version": "prometheus-pushgateway_1.8.0-22.04_edge",
+                  "timestamp": 1726774931,
+                  "title": "prometheus-pushgateway_1.8.0-22.04_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-372fd90bc09cdf5219e4",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-eb24ec9678620df459fa",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/prometheus-pushgateway_1.8.0-22.04_edge...main"
                },
                {
-                  "id": 175948642,
-                  "version": "mock-rock_test_beta",
-                  "timestamp": 1726765840,
-                  "title": "mock-rock_test_beta",
+                  "id": 175975924,
+                  "version": "prometheus-pushgateway_1.8.0-22.04_candidate",
+                  "timestamp": 1726774929,
+                  "title": "prometheus-pushgateway_1.8.0-22.04_candidate",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-8d86474c991fd0c3e36a",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_beta...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-7c098e5b7cdad316ef1d",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/prometheus-pushgateway_1.8.0-22.04_candidate...main"
                }
             ],
             "tags": null,
