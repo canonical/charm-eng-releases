@@ -10045,7 +10045,7 @@
          },
          {
             "name": "iam-bundle-integration",
-            "newCommits": 3,
+            "newCommits": 5,
             "url": "https://github.com/canonical/iam-bundle-integration",
             "releases": [
                {
@@ -11705,25 +11705,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "a2c00fb6be9951f582e139d83d97ad1dceb4ec13",
+                  "author": "Homayoon Alimohammadi",
+                  "timestamp": 1727167698,
+                  "message": "<p>Use map of struct instead of bool (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/693\">#693</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/a2c00fb6be9951f582e139d83d97ad1dceb4ec13"
+               },
+               {
+                  "sha": "a5d0ae408bf39e0d27b9f5eb7927a208648f9143",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1727167420,
+                  "message": "<p>Return non-zero exit code in case of errors (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/690\">#690</a>)</p>\n\n<ul>\n<li>Return non-zero exit code in case of errors</li>\n</ul>\n\n<p>At the moment, k8s and k8sd return 0 even if the command fails,\nwhich is a problem especially when used inside scripts.</p>\n\n<p>We&rsquo;ll ensure that a non-zero exit code is returned if the commands\nfail.</p>\n\n<ul>\n<li>Update the cluster recovery command to use cobra &ldquo;Run&rdquo;</li>\n</ul>\n\n<p>The cluster recovery command currently uses &ldquo;RunE&rdquo; and returns an\nerror in case of failures.</p>\n\n<p>To stay consistent with other commands, we&rsquo;ll use &ldquo;Run&rdquo; and call\nenv.Exit as part of the command callback instead of returning the\nerrors.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/a5d0ae408bf39e0d27b9f5eb7927a208648f9143"
+               },
+               {
                   "sha": "6ce90fa76c02c1fa8adbcc4b011ab63aa6bbe461",
                   "author": "Benjamin Schimke",
                   "timestamp": 1727160950,
                   "message": "<p>Add version upgrade tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/678\">#678</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Adam Dyess <a href=\"mailto:adam.dyess@canonical.com\">adam.dyess@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/6ce90fa76c02c1fa8adbcc4b011ab63aa6bbe461"
-               },
-               {
-                  "sha": "02f369b42641cd8972f540b667f83398b9776c17",
-                  "author": "Maciek Gołaszewski",
-                  "timestamp": 1727119841,
-                  "message": "<p>Unit tests for Metrics Server k8sd feature (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/691\">#691</a>)</p>\n\n<p>Metrics Server feature lacks unit test this PR implements tests for Metrics Server functionality.\nKU-1515</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/02f369b42641cd8972f540b667f83398b9776c17"
-               },
-               {
-                  "sha": "6b15893e1a4d656f11c339d69a7669f9cd640df7",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1727089888,
-                  "message": "<p>Ignore part of cluster check (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/688\">#688</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/6b15893e1a4d656f11c339d69a7669f9cd640df7"
                }
             ],
             "ciActions": [
@@ -14488,35 +14488,35 @@
       "repos": [
          {
             "name": "sdcore-nms-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 84,
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
                {
-                  "id": 176511493,
-                  "version": "rev586",
-                  "timestamp": 1727135989,
-                  "title": "Revision 586",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 73</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-pip-dependencies-871619f53a&rsquo; at 00:30 UTC on 24 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev579...rev586\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev579&hellip;rev586</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev586",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev586...main"
+                  "id": 176571340,
+                  "version": "rev590",
+                  "timestamp": 1727166634,
+                  "title": "Revision 590",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 73</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pydantic-2-9-2&rsquo; at 09:00 UTC on 24 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev587...rev590\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev587&hellip;rev590</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev590",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev590...main"
                },
                {
-                  "id": 176511253,
-                  "version": "rev585",
-                  "timestamp": 1727135830,
-                  "title": "Revision 585",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 73</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-types-pyyaml-6-0-12-20240917&rsquo; at 00:27 UTC on 24 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev576...rev585\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev576&hellip;rev585</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev585",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev585...main"
+                  "id": 176571264,
+                  "version": "rev589",
+                  "timestamp": 1727166635,
+                  "title": "Revision 589",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 73</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-interface-tester-3-1-1&rsquo; at 09:00 UTC on 24 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev587...rev589\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev587&hellip;rev589</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev589",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev589...main"
                },
                {
-                  "id": 176511085,
-                  "version": "rev584",
-                  "timestamp": 1727135776,
-                  "title": "Revision 584",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 73</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-types-setuptools-75-1-0-20240917&rsquo; at 00:25 UTC on 24 Sep 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev576...rev584\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev576&hellip;rev584</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev584",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev584...main"
+                  "id": 176570925,
+                  "version": "rev588",
+                  "timestamp": 1727166548,
+                  "title": "Revision 588",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:0.2.0\n       resource-revision: 73</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-types-setuptools-75-1-0-20240917&rsquo; at 08:58 UTC on 24 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump types-pyyaml from 6.0.12.20240808 to 6.0.12.20240917 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/335\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/335\">#335</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev584...rev588\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev584&hellip;rev588</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev588",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev588...main"
                }
             ],
             "tags": null,
@@ -14536,8 +14536,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 576,
-                     "timestamp": 1726564882,
+                     "revision": 587,
+                     "timestamp": 1727168278,
                      "base": ""
                   },
                   {
@@ -17558,9 +17558,27 @@
       "repos": [
          {
             "name": "lego-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/lego-operator",
             "releases": [
+               {
+                  "id": 176571426,
+                  "version": "rev7",
+                  "timestamp": 1727166738,
+                  "title": "Revision 7",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 09:00 UTC on 24 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump peter-evans/create-pull-request from 7.0.3 to 7.0.5 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/8\">#8</a></a></li>\n<li>feat: basic validators for plugins by <a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/7\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/7\">#7</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/compare/rev4...rev7\">https://github.com/canonical/lego-operator/compare/rev4&hellip;rev7</a></p>\n",
+                  "url": "https://github.com/canonical/lego-operator/releases/tag/rev7",
+                  "compareUrl": "https://github.com/canonical/lego-operator/compare/rev7...main"
+               },
+               {
+                  "id": 176571417,
+                  "version": "rev6",
+                  "timestamp": 1727166738,
+                  "title": "Revision 6",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 09:00 UTC on 24 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump peter-evans/create-pull-request from 7.0.3 to 7.0.5 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/8\">#8</a></a></li>\n<li>feat: basic validators for plugins by <a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/7\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/7\">#7</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/compare/rev4...rev6\">https://github.com/canonical/lego-operator/compare/rev4&hellip;rev6</a></p>\n",
+                  "url": "https://github.com/canonical/lego-operator/releases/tag/rev6",
+                  "compareUrl": "https://github.com/canonical/lego-operator/compare/rev6...main"
+               },
                {
                   "id": 176375719,
                   "version": "rev5",
@@ -17569,15 +17587,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 11:41 UTC on 23 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: skeleton by <a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\">#2</a></a></li>\n<li>chore: bump the github_actions group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\">#4</a></a></li>\n<li>feat: implement lego operator by <a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/1\">#1</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 7.0.1 to 7.0.3 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/5\">#5</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\">#6</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\">#2</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\">#4</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\">#6</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/commits/rev5\">https://github.com/canonical/lego-operator/commits/rev5</a></p>\n",
                   "url": "https://github.com/canonical/lego-operator/releases/tag/rev5",
                   "compareUrl": "https://github.com/canonical/lego-operator/compare/rev5...main"
-               },
-               {
-                  "id": 176375694,
-                  "version": "rev4",
-                  "timestamp": 1727089889,
-                  "title": "Revision 4",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 11:41 UTC on 23 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: skeleton by <a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\">#2</a></a></li>\n<li>chore: bump the github_actions group with 2 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\">#4</a></a></li>\n<li>feat: implement lego operator by <a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/1\">#1</a></a></li>\n<li>chore: bump peter-evans/create-pull-request from 7.0.1 to 7.0.3 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/5\">#5</a></a></li>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\">#6</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/kayra1\">@kayra1</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/2\">#2</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/4\">#4</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/6\">#6</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/commits/rev4\">https://github.com/canonical/lego-operator/commits/rev4</a></p>\n",
-                  "url": "https://github.com/canonical/lego-operator/releases/tag/rev4",
-                  "compareUrl": "https://github.com/canonical/lego-operator/compare/rev4...main"
                }
             ],
             "tags": null,
@@ -22030,7 +22039,7 @@
          },
          {
             "name": "mongodb-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mongodb-operator",
             "releases": [
                {
@@ -32752,7 +32761,7 @@
          },
          {
             "name": "prometheus-juju-exporter",
-            "newCommits": 5,
+            "newCommits": 6,
             "url": "https://github.com/canonical/prometheus-juju-exporter",
             "releases": [
                {
