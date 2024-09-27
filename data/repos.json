@@ -11723,6 +11723,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "d3c4a36febb0fdae692809a3071eee45d599a55b",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1727460113,
+                  "message": "<p>Add IPv6 unittests for cluster setup (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/698\">#698</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/d3c4a36febb0fdae692809a3071eee45d599a55b"
+               },
+               {
                   "sha": "c74b9f580f92b2fc6b77bf4ad692eb348b62a17f",
                   "author": "Louise K. Schmidtgen",
                   "timestamp": 1727331257,
@@ -11735,13 +11742,6 @@
                   "timestamp": 1727167698,
                   "message": "<p>Use map of struct instead of bool (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/693\">#693</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/a2c00fb6be9951f582e139d83d97ad1dceb4ec13"
-               },
-               {
-                  "sha": "a5d0ae408bf39e0d27b9f5eb7927a208648f9143",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1727167420,
-                  "message": "<p>Return non-zero exit code in case of errors (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/690\">#690</a>)</p>\n\n<ul>\n<li>Return non-zero exit code in case of errors</li>\n</ul>\n\n<p>At the moment, k8s and k8sd return 0 even if the command fails,\nwhich is a problem especially when used inside scripts.</p>\n\n<p>We&rsquo;ll ensure that a non-zero exit code is returned if the commands\nfail.</p>\n\n<ul>\n<li>Update the cluster recovery command to use cobra &ldquo;Run&rdquo;</li>\n</ul>\n\n<p>The cluster recovery command currently uses &ldquo;RunE&rdquo; and returns an\nerror in case of failures.</p>\n\n<p>To stay consistent with other commands, we&rsquo;ll use &ldquo;Run&rdquo; and call\nenv.Exit as part of the command callback instead of returning the\nerrors.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/a5d0ae408bf39e0d27b9f5eb7927a208648f9143"
                }
             ],
             "ciActions": [
@@ -16573,6 +16573,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "0d49817ac5fc37d114416e2e23d8eefa08c2b721",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1727458423,
+                  "message": "<p>chore: bump pyright from 1.1.382 to 1.1.382.post0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/436\">#436</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/RobertCraigie/pyright-python\">pyright</a> from 1.1.382 to 1.1.382.post0.\n- <a href=\"https://github.com/RobertCraigie/pyright-python/releases\">Release notes</a>\n- <a href=\"https://github.com/RobertCraigie/pyright-python/compare/v1.1.382...v1.1.382.post0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: pyright\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: Guillaume Belanger <a href=\"mailto:guillaume.belanger@canonical.com\">guillaume.belanger@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/0d49817ac5fc37d114416e2e23d8eefa08c2b721"
+               },
+               {
                   "sha": "18a866a314740e4cd9de182367dce24c923d91bb",
                   "author": "Bartlomiej Gmerek",
                   "timestamp": 1727444001,
@@ -16585,13 +16592,6 @@
                   "timestamp": 1727438215,
                   "message": "<p>chore: bump ruff from 0.6.7 to 0.6.8 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/437\">#437</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/astral-sh/ruff\">ruff</a> from 0.6.7 to 0.6.8.\n- <a href=\"https://github.com/astral-sh/ruff/releases\">Release notes</a>\n- <a href=\"https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md\">Changelog</a>\n- <a href=\"https://github.com/astral-sh/ruff/compare/0.6.7...0.6.8\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: ruff\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/sdcore-tests/commit/5aa2dbcdbb713bd9c5f8c6bc03239566c59ad2b0"
-               },
-               {
-                  "sha": "e822b61de79a0b1c015a8d8859cb9679712b6c23",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1727252733,
-                  "message": "<p>chore: bump pyright from 1.1.381 to 1.1.382 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/434\">#434</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/RobertCraigie/pyright-python\">pyright</a> from 1.1.381 to 1.1.382.\n- <a href=\"https://github.com/RobertCraigie/pyright-python/releases\">Release notes</a>\n- <a href=\"https://github.com/RobertCraigie/pyright-python/compare/v1.1.381...v1.1.382\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: pyright\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/e822b61de79a0b1c015a8d8859cb9679712b6c23"
                }
             ],
             "ciActions": [],
