@@ -9948,7 +9948,7 @@
          },
          {
             "name": "identity-platform-admin-ui",
-            "newCommits": 12,
+            "newCommits": 17,
             "url": "https://github.com/canonical/identity-platform-admin-ui",
             "releases": [
                {
@@ -11308,6 +11308,39 @@
                   "timestamp": 1531390398,
                   "message": "<p>etcd and etcdctl changed paths</p>\n",
                   "url": "https://github.com/canonical/etcd-snaps/commit/5075911913cfdb07f6fefa5841f9d20a1798198a"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "falco-rocks",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/falco-rocks",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "188aac6557c72c1f297be433d6983213c2875a11",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1728027666,
+                  "message": "<p>Adds falcoctl 0.9.0 rock (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/8\">#8</a>)</p>\n\n<p>This version of falcoctl is also bundled in the falco image.</p>\n\n<p>Note that Pebble doesn&rsquo;t like it when a process finishes too quickly.\nWhich is why we&rsquo;re adding a sleep workaround for this rock image, as\nit&rsquo;s expected for the image workload to eventually end.</p>\n\n<p>Adds ca-certificates to falcoctl, as it&rsquo;s required by falcoctl to be\nable to verify certificates.</p>\n\n<p>Adds falcoctl usage to integration test.</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/188aac6557c72c1f297be433d6983213c2875a11"
+               },
+               {
+                  "sha": "c87094241f8b4b03a36b5ad77c76518d78353298",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1727857083,
+                  "message": "<p>Adds integration test for falco (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/4\">#4</a>)</p>\n\n<p>After deploying falco through the helm chart, we&rsquo;re deploying an event\ngenerator. After it finishes, falco should have detected its activities\nand it should have logged in its stdout some warnings.</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/c87094241f8b4b03a36b5ad77c76518d78353298"
+               },
+               {
+                  "sha": "205bb20136b00d1614a67622379c6f363f8cee5e",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1727856959,
+                  "message": "<p>Fixes falco arm64 build (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/11\">#11</a>)</p>\n\n<p>The packages we need to install are different on arm64. This addresses\nthat issue.</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/205bb20136b00d1614a67622379c6f363f8cee5e"
                }
             ],
             "ciActions": [],
@@ -27748,6 +27781,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "2f13f463f2a491b3f77bfaf7d8f7e27d4be03742",
+                  "author": "renovate[bot]",
+                  "timestamp": 1728028147,
+                  "message": "<p>chore(deps): update dependency node to v20.18.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/431\">#431</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/2f13f463f2a491b3f77bfaf7d8f7e27d4be03742"
+               },
+               {
                   "sha": "6e24f81662acefb1628717f007e65c72c2e6584a",
                   "author": "renovate[bot]",
                   "timestamp": 1727941424,
@@ -27760,13 +27800,6 @@
                   "timestamp": 1727771635,
                   "message": "<p>chore(deps): update typescript-eslint monorepo to v8.8.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/428\">#428</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/8410e2e0ed0804c9ae275e27de422fa126c44479"
-               },
-               {
-                  "sha": "808a31d770a61231fd9f7da0d49e0e2a01d40851",
-                  "author": "renovate[bot]",
-                  "timestamp": 1727680097,
-                  "message": "<p>chore(deps): update dependency <a target=\"_blank\" href=\"https://github.com/types\">@types</a>/node to v22.7.4 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/426\">#426</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/808a31d770a61231fd9f7da0d49e0e2a01d40851"
                }
             ],
             "ciActions": [],
@@ -29426,7 +29459,7 @@
          },
          {
             "name": "mjolnir-snap",
-            "newCommits": 11,
+            "newCommits": 12,
             "url": "https://github.com/canonical/mjolnir-snap",
             "releases": null,
             "tags": [
@@ -29456,8 +29489,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 6,
-                     "timestamp": 1727973815,
+                     "revision": 10,
+                     "timestamp": 1728028893,
                      "base": "core22"
                   }
                ],
