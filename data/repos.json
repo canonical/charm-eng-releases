@@ -11749,6 +11749,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "d44b5c5fd638e592e5a966acd09fc34981b445ee",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1728231508,
+                  "message": "<p>Automatically generate config documentation (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/711\">#711</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/d44b5c5fd638e592e5a966acd09fc34981b445ee"
+               },
+               {
                   "sha": "83ca3ed4eb84e3eb470dd63b9ed47f58e14bc2a5",
                   "author": "Maciek Gołaszewski",
                   "timestamp": 1727876527,
@@ -11761,13 +11768,6 @@
                   "timestamp": 1727874578,
                   "message": "<p>Unit tests for contour k8sd feature (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/705\">#705</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/ed252142fb1304b2f975c474c131b2b2f3989e82"
-               },
-               {
-                  "sha": "a646a0bdbf0216cab0df6544513cf021bd56ae04",
-                  "author": "Maciek Gołaszewski",
-                  "timestamp": 1727873918,
-                  "message": "<p>docs spec check (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/707\">#707</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/a646a0bdbf0216cab0df6544513cf021bd56ae04"
                }
             ],
             "ciActions": [
@@ -11856,6 +11856,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7b677a9a5ae283dd7ba786062abc8438bb353716",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1728231260,
+                  "message": "<p>Adds additional tag without -ckN suffix (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/23\">#23</a>)</p>\n\n<p>Currently, we publish manifest lists for each image and version with the\n-ckN suffix, where N is the number of versions we have published for\nthat rock.</p>\n\n<p>This commit also publishes the same manifest lists without the -ckN\nsuffix. This will help in 2 regards:</p>\n\n<ul>\n<li>We typically want to deploy the latest version of a published rock.\nWhen it comes to user experience, it&rsquo;s a lot easier to just use the\nghcr.io/canonical/foo:1.0.0 rock, rather than ghcr.io/canonical/foo:1.0.0-ckN,\nwhere a user would have too manually check what is the latest N\nrevision of that rock. This issue is even more egregious in cases in\nwhich we&rsquo;d need multiple rocks for the same application deployment\n(e.g.: Longhorn).</li>\n<li>The documentation where these rocks are referenced with the -ckN\nsuffix will get outdated over time, referencing an out-of-date revision.\nInstead, the manifest list without the -ckN suffix will always point\ntowards the latest revision.</li>\n</ul>\n\n<p>The -ckN manifest lists are still published, so a user may still be able\nto pick a previous revision if needed.</p>\n",
+                  "url": "https://github.com/canonical/k8s-workflows/commit/7b677a9a5ae283dd7ba786062abc8438bb353716"
+               },
+               {
                   "sha": "e516d3a022bee944a87d65fbf436c950ff0c6a31",
                   "author": "Claudiu Belu",
                   "timestamp": 1727160720,
@@ -11868,13 +11875,6 @@
                   "timestamp": 1727160698,
                   "message": "<p>Adds running lint step to run_tests.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/21\">#21</a>)</p>\n\n<p>Some rock repositories have linting issues because this action did not\nspecifically test for them.</p>\n\n<p>Signed-off-by: Claudiu Belu <a href=\"mailto:claudiu.belu@canonical.com\">claudiu.belu@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-workflows/commit/1f5abda690b50bc49c9b2ac418f89c7d56cedb4d"
-               },
-               {
-                  "sha": "f4bd3d53c90ce0ddfc5709d362309e51f4229cd4",
-                  "author": "Maciek Gołaszewski",
-                  "timestamp": 1724250564,
-                  "message": "<p>Sending trivy CVEs to Jira (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/20\">#20</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-workflows/commit/f4bd3d53c90ce0ddfc5709d362309e51f4229cd4"
                }
             ],
             "ciActions": null,
