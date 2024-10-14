@@ -592,29 +592,29 @@
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 28714,
-                     "timestamp": 1727774809,
+                     "revision": 28850,
+                     "timestamp": 1728890922,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 28715,
-                     "timestamp": 1727774910,
+                     "revision": 28851,
+                     "timestamp": 1728891016,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 28801,
-                     "timestamp": 1728493899,
+                     "revision": 28852,
+                     "timestamp": 1728891141,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 28802,
-                     "timestamp": 1728494046,
+                     "revision": 28853,
+                     "timestamp": 1728891352,
                      "base": "core20"
                   },
                   {
@@ -11296,25 +11296,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "7dbffa5d05e056950014a87a65267ba98989764e",
+                  "sha": "ad978cb41622c0adc6afbf41ac354116dcd03462",
                   "author": "Claudiu Belu",
-                  "timestamp": 1728230403,
-                  "message": "<p>Adds falco and falco-driver-loader 0.39.0 and falcoctl 0.10.0 rocks (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/14\">#14</a>)</p>\n\n<p>Note that the Dockerfiles are identical to the previous versions. Thus, the\nrockfiles are also the same.</p>\n\n<p>Falco 0.39.0 comes with falcoctl 0.10.0, which is why we&rsquo;re building\nthat version as well.</p>\n\n<p>Added the new versions into the sanity and integration tests.</p>\n",
-                  "url": "https://github.com/canonical/falco-rocks/commit/7dbffa5d05e056950014a87a65267ba98989764e"
+                  "timestamp": 1728891063,
+                  "message": "<p>Adds falcosidekick to the integration test (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/17\">#17</a>)</p>\n\n<p>The falcosidekick helm chart doesn&rsquo;t pass any arguments to\nfalcosidekick, but we&rsquo;ve set the &ndash;help as the default argument, meaning\nthat it won&rsquo;t start up as intended.</p>\n\n<p>falcosidekick helm chart also creates a deployment with\nreadOnlyRootFilesystem=True set, which means that Pebble won&rsquo;t be able\nto copy its necessary files. We can use the Pebble mutating webhook to\nsolve this issue.</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/ad978cb41622c0adc6afbf41ac354116dcd03462"
                },
                {
-                  "sha": "e4eb6f3c4e82e099c8e1ccb2bfeaa41704f88de0",
+                  "sha": "606d024d0e73083eeffd40bf4b44cd05609355d3",
                   "author": "Claudiu Belu",
-                  "timestamp": 1727708914,
-                  "message": "<p>Adds falco-driver-loader 0.38.2 rock</p>\n\n<p>The falco-driver-loader is just the falco image with a different\nentrypoint.</p>\n\n<p>Note that Pebble doesn&rsquo;t like it when a process finishes too quickly.\nWhich is why we&rsquo;re adding a sleep workaround for this rock image, as\nit is expected for the image workload to eventually end.</p>\n\n<p>Adds falco-driver-loader usage to the integration test. We also need to\nset the &ldquo;driver.kind=modern_ebpf&rdquo; Helm chart option, in order for the\nfalco-driver-loader init container to properly run. By default, it will\ntry to autodetect the right driver, but it will fail when trying to use\nthe kmod driver (insmod will fail with &ldquo;Operation not permitted&rdquo;), but\nthe script exit code is still 0, meaning that the init container &ldquo;successfully&rdquo;\nfinishes, which results in the workload container to not start properly.</p>\n",
-                  "url": "https://github.com/canonical/falco-rocks/commit/e4eb6f3c4e82e099c8e1ccb2bfeaa41704f88de0"
+                  "timestamp": 1728890549,
+                  "message": "<p>falco: Adds jammy packages in the building stages (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/16\">#16</a>)</p>\n\n<p>We&rsquo;re currently building rocks using LXD, meaning that they LXDs will\nshare the host&rsquo;s kernel. In the GitHub action, we&rsquo;re building on\nubuntu 22.04 nodes.</p>\n\n<p>In the falco and falco-driver-loader rocks, we have set the base rocks\nto ubuntu 24.04. The building LXD container will have the 24.04 apt\npackage repositories, though we&rsquo;re going to need 22.04&rsquo;s repositories in\norder to install the right linux-headers, linux-tools, and\nlinux-cloud-tools (based on uname -r). Otherwise, falco will fail to\nbuild.</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/606d024d0e73083eeffd40bf4b44cd05609355d3"
                },
                {
-                  "sha": "188aac6557c72c1f297be433d6983213c2875a11",
+                  "sha": "2419b9b8fb1dcbeacbd057140707170eca199b54",
                   "author": "Claudiu Belu",
-                  "timestamp": 1728027666,
-                  "message": "<p>Adds falcoctl 0.9.0 rock (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/8\">#8</a>)</p>\n\n<p>This version of falcoctl is also bundled in the falco image.</p>\n\n<p>Note that Pebble doesn&rsquo;t like it when a process finishes too quickly.\nWhich is why we&rsquo;re adding a sleep workaround for this rock image, as\nit&rsquo;s expected for the image workload to eventually end.</p>\n\n<p>Adds ca-certificates to falcoctl, as it&rsquo;s required by falcoctl to be\nable to verify certificates.</p>\n\n<p>Adds falcoctl usage to integration test.</p>\n",
-                  "url": "https://github.com/canonical/falco-rocks/commit/188aac6557c72c1f297be433d6983213c2875a11"
+                  "timestamp": 1728890063,
+                  "message": "<p>Fixes integration test (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/15\">#15</a>)</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/2419b9b8fb1dcbeacbd057140707170eca199b54"
                }
             ],
             "ciActions": [],
@@ -11797,6 +11797,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "3ecf83017799e4d8182f08307e6ca4d0d07f43a8",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1728890624,
+                  "message": "<p>Adds install mutating pebble webhook util function (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/35\">#35</a>)</p>\n\n<p>Some helm charts deploy pods / charts with readOnlyRootFilesystem=True\ndaemonsets or deployments, which means Pebble won&rsquo;t be able to copy its\nnecessary files. This mutating webhook solves this issue by adding an\nemptydir volume to Pods for Pebble to use.</p>\n",
+                  "url": "https://github.com/canonical/k8s-test-harness/commit/3ecf83017799e4d8182f08307e6ca4d0d07f43a8"
+               },
+               {
                   "sha": "7831e6d23d61006c06d44750cd589417cbd3a54c",
                   "author": "Claudiu Belu",
                   "timestamp": 1727857036,
@@ -11809,13 +11816,6 @@
                   "timestamp": 1727856994,
                   "message": "<p>k8s_util: Adds option to split the registry from helm images (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/33\">#33</a>)</p>\n\n<p>There are a few Helm charts that have the registry option separate from\nthe image registry. Adding this option will simplify the usage in those\ncases.</p>\n",
                   "url": "https://github.com/canonical/k8s-test-harness/commit/49a57cd6826dddc34a032ad4a499fb66f0a83379"
-               },
-               {
-                  "sha": "368ba3f22b4eba27d2758c6fa13ba01cfff90669",
-                  "author": "Maciek Gołaszewski",
-                  "timestamp": 1723793921,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/k8s-test-harness/pull/32\">#32</a> from canonical/KU-1234/icrease-get-node-retry</p>\n\n<p>Increase retry when creating k8s cluster</p>\n",
-                  "url": "https://github.com/canonical/k8s-test-harness/commit/368ba3f22b4eba27d2758c6fa13ba01cfff90669"
                }
             ],
             "ciActions": [],
@@ -12359,7 +12359,1531 @@
                "https://github.com/canonical/microk8s/actions/workflows/build-snap.yml"
             ],
             "charm": null,
-            "snap": null
+            "snap": {
+               "name": "microk8s",
+               "url": "https://snapcraft.io/microk8s",
+               "releases": [
+                  {
+                     "track": "1.30",
+                     "channel": "stable",
+                     "revision": 7232,
+                     "timestamp": 1727543350,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "stable",
+                     "revision": 7239,
+                     "timestamp": 1727393373,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "candidate",
+                     "revision": 7232,
+                     "timestamp": 1726767816,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "candidate",
+                     "revision": 7239,
+                     "timestamp": 1726870311,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "beta",
+                     "revision": 7232,
+                     "timestamp": 1726767814,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "beta",
+                     "revision": 7239,
+                     "timestamp": 1726870309,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "edge",
+                     "revision": 7232,
+                     "timestamp": 1726497352,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "edge",
+                     "revision": 7239,
+                     "timestamp": 1726498277,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "edge",
+                     "revision": 7249,
+                     "timestamp": 1726499777,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30",
+                     "channel": "edge",
+                     "revision": 7259,
+                     "timestamp": 1726503094,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 7229,
+                     "timestamp": 1727714386,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 7244,
+                     "timestamp": 1727560749,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 7233,
+                     "timestamp": 1726504451,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 7238,
+                     "timestamp": 1726524310,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 7233,
+                     "timestamp": 1726504448,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 7238,
+                     "timestamp": 1726524307,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 7233,
+                     "timestamp": 1726497489,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 7238,
+                     "timestamp": 1726498157,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 7224,
+                     "timestamp": 1726108648,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 7255,
+                     "timestamp": 1726502204,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "stable",
+                     "revision": 7234,
+                     "timestamp": 1727719186,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "stable",
+                     "revision": 7242,
+                     "timestamp": 1727564337,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "candidate",
+                     "revision": 7234,
+                     "timestamp": 1727022235,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "candidate",
+                     "revision": 7242,
+                     "timestamp": 1727041489,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "beta",
+                     "revision": 7234,
+                     "timestamp": 1727022233,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "beta",
+                     "revision": 7242,
+                     "timestamp": 1727041486,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "edge",
+                     "revision": 7234,
+                     "timestamp": 1726497630,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "edge",
+                     "revision": 7242,
+                     "timestamp": 1726498682,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "edge",
+                     "revision": 7246,
+                     "timestamp": 1726499227,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31-strict",
+                     "channel": "edge",
+                     "revision": 7257,
+                     "timestamp": 1726502816,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "stable",
+                     "revision": 7229,
+                     "timestamp": 1727632698,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "stable",
+                     "revision": 7244,
+                     "timestamp": 1727477793,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "candidate",
+                     "revision": 7229,
+                     "timestamp": 1726853705,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "candidate",
+                     "revision": 7244,
+                     "timestamp": 1726958865,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "beta",
+                     "revision": 7229,
+                     "timestamp": 1726853702,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "beta",
+                     "revision": 7244,
+                     "timestamp": 1726958862,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "edge",
+                     "revision": 7229,
+                     "timestamp": 1726496921,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "edge",
+                     "revision": 7244,
+                     "timestamp": 1726498952,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "edge",
+                     "revision": 7251,
+                     "timestamp": 1726499987,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.31",
+                     "channel": "edge",
+                     "revision": 7260,
+                     "timestamp": 1726503296,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "stable",
+                     "revision": 7235,
+                     "timestamp": 1727627925,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "stable",
+                     "revision": 7236,
+                     "timestamp": 1727474055,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "candidate",
+                     "revision": 7235,
+                     "timestamp": 1726849382,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "candidate",
+                     "revision": 7236,
+                     "timestamp": 1726955135,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "beta",
+                     "revision": 7235,
+                     "timestamp": 1726849379,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "beta",
+                     "revision": 7236,
+                     "timestamp": 1726955132,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "edge",
+                     "revision": 7235,
+                     "timestamp": 1726497762,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "edge",
+                     "revision": 7236,
+                     "timestamp": 1726497911,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "edge",
+                     "revision": 7188,
+                     "timestamp": 1725387384,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.30-strict",
+                     "channel": "edge",
+                     "revision": 7258,
+                     "timestamp": 1726502945,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "stable",
+                     "revision": 7227,
+                     "timestamp": 1727370038,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "stable",
+                     "revision": 7237,
+                     "timestamp": 1727389654,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "candidate",
+                     "revision": 7227,
+                     "timestamp": 1726763655,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "candidate",
+                     "revision": 7237,
+                     "timestamp": 1726700005,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "beta",
+                     "revision": 7227,
+                     "timestamp": 1726763651,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "beta",
+                     "revision": 7237,
+                     "timestamp": 1726700003,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "edge",
+                     "revision": 7227,
+                     "timestamp": 1726496648,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "edge",
+                     "revision": 7237,
+                     "timestamp": 1726498036,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "edge",
+                     "revision": 7248,
+                     "timestamp": 1726499650,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29-strict",
+                     "channel": "edge",
+                     "revision": 7253,
+                     "timestamp": 1726501981,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "stable",
+                     "revision": 7230,
+                     "timestamp": 1727282461,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "stable",
+                     "revision": 7240,
+                     "timestamp": 1727302424,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "candidate",
+                     "revision": 7230,
+                     "timestamp": 1726680355,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "candidate",
+                     "revision": 7240,
+                     "timestamp": 1726696368,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "beta",
+                     "revision": 7230,
+                     "timestamp": 1726680353,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "beta",
+                     "revision": 7240,
+                     "timestamp": 1726696365,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "edge",
+                     "revision": 7230,
+                     "timestamp": 1726497035,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "edge",
+                     "revision": 7240,
+                     "timestamp": 1726498389,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "edge",
+                     "revision": 7250,
+                     "timestamp": 1726499871,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.29",
+                     "channel": "edge",
+                     "revision": 7254,
+                     "timestamp": 1726502089,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "stable",
+                     "revision": 7228,
+                     "timestamp": 1727201204,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "stable",
+                     "revision": 7241,
+                     "timestamp": 1727218127,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "candidate",
+                     "revision": 7228,
+                     "timestamp": 1726676128,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "candidate",
+                     "revision": 7241,
+                     "timestamp": 1726613250,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "beta",
+                     "revision": 7228,
+                     "timestamp": 1726676126,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "beta",
+                     "revision": 7241,
+                     "timestamp": 1726613247,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "edge",
+                     "revision": 7228,
+                     "timestamp": 1726496803,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "edge",
+                     "revision": 7241,
+                     "timestamp": 1726498558,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "edge",
+                     "revision": 7245,
+                     "timestamp": 1726499092,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28-strict",
+                     "channel": "edge",
+                     "revision": 7256,
+                     "timestamp": 1726502610,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "stable",
+                     "revision": 7231,
+                     "timestamp": 1727196599,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "stable",
+                     "revision": 7243,
+                     "timestamp": 1727214735,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "candidate",
+                     "revision": 7231,
+                     "timestamp": 1726591897,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "candidate",
+                     "revision": 7243,
+                     "timestamp": 1726609840,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "beta",
+                     "revision": 7231,
+                     "timestamp": 1726591895,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "beta",
+                     "revision": 7243,
+                     "timestamp": 1726609837,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "edge",
+                     "revision": 7231,
+                     "timestamp": 1726497239,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "edge",
+                     "revision": 7243,
+                     "timestamp": 1726498826,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "edge",
+                     "revision": 7247,
+                     "timestamp": 1726499491,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.28",
+                     "channel": "edge",
+                     "revision": 7252,
+                     "timestamp": 1726501873,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "stable",
+                     "revision": 7015,
+                     "timestamp": 1722970280,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "stable",
+                     "revision": 7072,
+                     "timestamp": 1723768091,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "candidate",
+                     "revision": 7015,
+                     "timestamp": 1722888403,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "candidate",
+                     "revision": 7072,
+                     "timestamp": 1723672186,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "beta",
+                     "revision": 7015,
+                     "timestamp": 1722888400,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "beta",
+                     "revision": 7072,
+                     "timestamp": 1723672183,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "edge",
+                     "revision": 7066,
+                     "timestamp": 1722889011,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "edge",
+                     "revision": 7072,
+                     "timestamp": 1722889758,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "edge",
+                     "revision": 7071,
+                     "timestamp": 1722889639,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27-strict",
+                     "channel": "edge",
+                     "revision": 7078,
+                     "timestamp": 1722890564,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "stable",
+                     "revision": 7016,
+                     "timestamp": 1722257655,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "stable",
+                     "revision": 7053,
+                     "timestamp": 1721952262,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "candidate",
+                     "revision": 7016,
+                     "timestamp": 1721319880,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "candidate",
+                     "revision": 7053,
+                     "timestamp": 1721254169,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "beta",
+                     "revision": 7016,
+                     "timestamp": 1721319877,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "beta",
+                     "revision": 7053,
+                     "timestamp": 1721254167,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "edge",
+                     "revision": 7016,
+                     "timestamp": 1721204772,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "edge",
+                     "revision": 7053,
+                     "timestamp": 1721227658,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "edge",
+                     "revision": 7019,
+                     "timestamp": 1721205408,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.27",
+                     "channel": "edge",
+                     "revision": 7022,
+                     "timestamp": 1721206065,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "stable",
+                     "revision": 6672,
+                     "timestamp": 1717095117,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "stable",
+                     "revision": 6679,
+                     "timestamp": 1713320542,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "candidate",
+                     "revision": 6672,
+                     "timestamp": 1712253387,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "candidate",
+                     "revision": 6679,
+                     "timestamp": 1712095108,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "beta",
+                     "revision": 6672,
+                     "timestamp": 1712253384,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "beta",
+                     "revision": 6679,
+                     "timestamp": 1712095106,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "edge",
+                     "revision": 6979,
+                     "timestamp": 1721135110,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "edge",
+                     "revision": 7014,
+                     "timestamp": 1721161464,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "edge",
+                     "revision": 6989,
+                     "timestamp": 1721136812,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26-strict",
+                     "channel": "edge",
+                     "revision": 6994,
+                     "timestamp": 1721137744,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "stable",
+                     "revision": 6673,
+                     "timestamp": 1713570376,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "stable",
+                     "revision": 6676,
+                     "timestamp": 1713316580,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "candidate",
+                     "revision": 6673,
+                     "timestamp": 1712164132,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "candidate",
+                     "revision": 6676,
+                     "timestamp": 1712010539,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "beta",
+                     "revision": 6673,
+                     "timestamp": 1712164129,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "beta",
+                     "revision": 6676,
+                     "timestamp": 1712010536,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "edge",
+                     "revision": 6980,
+                     "timestamp": 1721135302,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "edge",
+                     "revision": 7013,
+                     "timestamp": 1721161319,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "edge",
+                     "revision": 6988,
+                     "timestamp": 1721136632,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.26",
+                     "channel": "edge",
+                     "revision": 6990,
+                     "timestamp": 1721137003,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "stable",
+                     "revision": 6575,
+                     "timestamp": 1708507885,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "stable",
+                     "revision": 6589,
+                     "timestamp": 1708618994,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "candidate",
+                     "revision": 6575,
+                     "timestamp": 1708498760,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "candidate",
+                     "revision": 6589,
+                     "timestamp": 1708533526,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "beta",
+                     "revision": 6575,
+                     "timestamp": 1708498760,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "beta",
+                     "revision": 6589,
+                     "timestamp": 1708533526,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "edge",
+                     "revision": 6575,
+                     "timestamp": 1708451722,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "edge",
+                     "revision": 6589,
+                     "timestamp": 1708453304,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "edge",
+                     "revision": 6581,
+                     "timestamp": 1708452266,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-strict",
+                     "channel": "edge",
+                     "revision": 6584,
+                     "timestamp": 1708452587,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "stable",
+                     "revision": 5630,
+                     "timestamp": 1690825040,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "stable",
+                     "revision": 5632,
+                     "timestamp": 1690679798,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "candidate",
+                     "revision": 5630,
+                     "timestamp": 1689961653,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "candidate",
+                     "revision": 5632,
+                     "timestamp": 1690668377,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "beta",
+                     "revision": 5630,
+                     "timestamp": 1689961650,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "beta",
+                     "revision": 5632,
+                     "timestamp": 1690668369,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "edge",
+                     "revision": 5630,
+                     "timestamp": 1689813564,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25-eksd",
+                     "channel": "edge",
+                     "revision": 5632,
+                     "timestamp": 1689814793,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "stable",
+                     "revision": 6571,
+                     "timestamp": 1708496698,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "stable",
+                     "revision": 6556,
+                     "timestamp": 1708611683,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "candidate",
+                     "revision": 6571,
+                     "timestamp": 1708448798,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "candidate",
+                     "revision": 6556,
+                     "timestamp": 1708524005,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "beta",
+                     "revision": 6571,
+                     "timestamp": 1708448798,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "beta",
+                     "revision": 6556,
+                     "timestamp": 1708524005,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "edge",
+                     "revision": 6571,
+                     "timestamp": 1708439610,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "edge",
+                     "revision": 6556,
+                     "timestamp": 1708433961,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "edge",
+                     "revision": 6574,
+                     "timestamp": 1708440962,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.25",
+                     "channel": "edge",
+                     "revision": 6554,
+                     "timestamp": 1708433701,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "stable",
+                     "revision": 6213,
+                     "timestamp": 1700337326,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "stable",
+                     "revision": 6214,
+                     "timestamp": 1700367959,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "candidate",
+                     "revision": 6280,
+                     "timestamp": 1701190739,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "candidate",
+                     "revision": 6401,
+                     "timestamp": 1706264480,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "beta",
+                     "revision": 6479,
+                     "timestamp": 1707410456,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "beta",
+                     "revision": 6401,
+                     "timestamp": 1706264472,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "edge",
+                     "revision": 6479,
+                     "timestamp": 1706786795,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24-eksd",
+                     "channel": "edge",
+                     "revision": 6480,
+                     "timestamp": 1706787309,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "stable",
+                     "revision": 5872,
+                     "timestamp": 1693605287,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "stable",
+                     "revision": 5874,
+                     "timestamp": 1693613753,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "candidate",
+                     "revision": 5872,
+                     "timestamp": 1693151734,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "candidate",
+                     "revision": 5874,
+                     "timestamp": 1693004328,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "beta",
+                     "revision": 5872,
+                     "timestamp": 1693151732,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "beta",
+                     "revision": 5874,
+                     "timestamp": 1693004320,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "edge",
+                     "revision": 6153,
+                     "timestamp": 1698832367,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "edge",
+                     "revision": 6181,
+                     "timestamp": 1698851885,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.24",
+                     "channel": "edge",
+                     "revision": 6174,
+                     "timestamp": 1698834220,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.23-eksd",
+                     "channel": "stable",
+                     "revision": 6081,
+                     "timestamp": 1698004062,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.23-eksd",
+                     "channel": "stable",
+                     "revision": 6083,
+                     "timestamp": 1697937498,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.23",
+                     "channel": "stable",
+                     "revision": 4916,
+                     "timestamp": 1680177527,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.23",
+                     "channel": "stable",
+                     "revision": 4921,
+                     "timestamp": 1680184972,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.23",
+                     "channel": "edge",
+                     "revision": 5821,
+                     "timestamp": 1692256758,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.23",
+                     "channel": "edge",
+                     "revision": 5835,
+                     "timestamp": 1692259505,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.23",
+                     "channel": "edge",
+                     "revision": 5828,
+                     "timestamp": 1692257426,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.22-eksd",
+                     "channel": "stable",
+                     "revision": 5261,
+                     "timestamp": 1684442152,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.22-eksd",
+                     "channel": "stable",
+                     "revision": 5266,
+                     "timestamp": 1683851641,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.22",
+                     "channel": "stable",
+                     "revision": 4915,
+                     "timestamp": 1682755299,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.22",
+                     "channel": "stable",
+                     "revision": 4928,
+                     "timestamp": 1682663659,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.22",
+                     "channel": "edge",
+                     "revision": 4915,
+                     "timestamp": 1678987964,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.22",
+                     "channel": "edge",
+                     "revision": 4928,
+                     "timestamp": 1678989222,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.22",
+                     "channel": "edge",
+                     "revision": 4920,
+                     "timestamp": 1678988525,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.21",
+                     "channel": "stable",
+                     "revision": 3410,
+                     "timestamp": 1658329361,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.21",
+                     "channel": "stable",
+                     "revision": 3423,
+                     "timestamp": 1657319447,
+                     "base": "core18"
+                  },
+                  {
+                     "track": "1.20",
+                     "channel": "stable",
+                     "revision": 2760,
+                     "timestamp": 1638962576,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.20",
+                     "channel": "stable",
+                     "revision": 2762,
+                     "timestamp": 1638974611,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.19",
+                     "channel": "stable",
+                     "revision": 2530,
+                     "timestamp": 1632991708,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.19",
+                     "channel": "stable",
+                     "revision": 2535,
+                     "timestamp": 1632989996,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.18",
+                     "channel": "stable",
+                     "revision": 2271,
+                     "timestamp": 1626092382,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.18",
+                     "channel": "stable",
+                     "revision": 2272,
+                     "timestamp": 1626600754,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.17",
+                     "channel": "stable",
+                     "revision": 1916,
+                     "timestamp": 1610676738,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.17",
+                     "channel": "stable",
+                     "revision": 1923,
+                     "timestamp": 1617455698,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.16",
+                     "channel": "stable",
+                     "revision": 1671,
+                     "timestamp": 1599874545,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.16",
+                     "channel": "stable",
+                     "revision": 1672,
+                     "timestamp": 1599820125,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "stable",
+                     "revision": 1301,
+                     "timestamp": 1585335545,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "stable",
+                     "revision": 1305,
+                     "timestamp": 1585322395,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.14",
+                     "channel": "stable",
+                     "revision": 1120,
+                     "timestamp": 1578339910,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.14",
+                     "channel": "stable",
+                     "revision": 1121,
+                     "timestamp": 1576837799,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.13",
+                     "channel": "stable",
+                     "revision": 581,
+                     "timestamp": 1559819831,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.13",
+                     "channel": "stable",
+                     "revision": 580,
+                     "timestamp": 1558361936,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.12",
+                     "channel": "stable",
+                     "revision": 612,
+                     "timestamp": 1559799761,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.12",
+                     "channel": "stable",
+                     "revision": 613,
+                     "timestamp": 1559918908,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.11",
+                     "channel": "stable",
+                     "revision": 557,
+                     "timestamp": 1557494485,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.10",
+                     "channel": "stable",
+                     "revision": 546,
+                     "timestamp": 1555921159,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "1.30",
+                  "latest",
+                  "1.31-strict",
+                  "1.31",
+                  "1.30-strict",
+                  "1.29-strict",
+                  "1.29",
+                  "1.28-strict",
+                  "1.28",
+                  "1.27-strict",
+                  "1.27",
+                  "1.26-strict",
+                  "1.26",
+                  "1.25-strict",
+                  "1.25-eksd",
+                  "1.25",
+                  "1.24-eksd",
+                  "1.24",
+                  "1.23-eksd",
+                  "1.23",
+                  "1.22-eksd",
+                  "1.22",
+                  "1.21",
+                  "1.20",
+                  "1.19",
+                  "1.18",
+                  "1.17",
+                  "1.16",
+                  "1.15",
+                  "1.14",
+                  "1.13",
+                  "1.12",
+                  "1.11",
+                  "1.10"
+               ]
+            }
          },
          {
             "name": "microk8s-addons-repo-template",
@@ -13566,35 +15090,35 @@
          },
          {
             "name": "sdcore-ausf-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 90,
             "url": "https://github.com/canonical/sdcore-ausf-k8s-operator",
             "releases": [
                {
-                  "id": 179726048,
-                  "version": "rev579",
-                  "timestamp": 1728874681,
-                  "title": "Revision 579",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.2\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-pip-dependencies-3d66f54210&rsquo; at 03:40 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev575...rev579\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev575&hellip;rev579</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev579",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev579...main"
+                  "id": 179744354,
+                  "version": "rev582",
+                  "timestamp": 1728888731,
+                  "title": "Revision 582",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-6-3&rsquo; at 07:18 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev580...rev582\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev580&hellip;rev582</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev582",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev582...main"
                },
                {
-                  "id": 179721556,
-                  "version": "rev578",
-                  "timestamp": 1728873735,
-                  "title": "Revision 578",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-41&rsquo; at 03:08 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev564...rev578\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev564&hellip;rev578</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev578",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev578...main"
+                  "id": 179744304,
+                  "version": "rev581",
+                  "timestamp": 1728888726,
+                  "title": "Revision 581",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-operator-0-38-0&rsquo; at 07:17 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev580...rev581\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev580&hellip;rev581</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev581",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev581...main"
                },
                {
-                  "id": 179721502,
-                  "version": "rev577",
-                  "timestamp": 1728873709,
-                  "title": "Revision 577",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-operator-0-38-0&rsquo; at 03:08 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev564...rev577\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev564&hellip;rev577</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev577",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev577...main"
+                  "id": 179744203,
+                  "version": "rev580",
+                  "timestamp": 1728888634,
+                  "title": "Revision 580",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.4.0\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 07:17 UTC on 14 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.39 to 0.0.41 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/336\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/336\">#336</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev564...rev580\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev564&hellip;rev580</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev580",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev580...main"
                }
             ],
             "tags": null,
@@ -13614,8 +15138,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 564,
-                     "timestamp": 1728286937,
+                     "revision": 580,
+                     "timestamp": 1728890243,
                      "base": ""
                   },
                   {
@@ -14060,31 +15584,31 @@
             "url": "https://github.com/canonical/sdcore-nrf-k8s-operator",
             "releases": [
                {
-                  "id": 179716336,
-                  "version": "rev643",
-                  "timestamp": 1728868016,
-                  "title": "Revision 643",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-operator-0-38-0&rsquo; at 01:35 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628...rev643\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628&hellip;rev643</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev643",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev643...main"
+                  "id": 179745865,
+                  "version": "rev646",
+                  "timestamp": 1728889017,
+                  "title": "Revision 646",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-pytest-operator-0-38-0&rsquo; at 07:29 UTC on 14 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.6.1 to 7.6.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/387\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/387\">#387</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev643...rev646\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev643&hellip;rev646</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev646",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev646...main"
                },
                {
-                  "id": 179716334,
-                  "version": "rev642",
-                  "timestamp": 1728868072,
-                  "title": "Revision 642",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-6-3&rsquo; at 01:35 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628...rev642\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628&hellip;rev642</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev642",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev642...main"
+                  "id": 179745556,
+                  "version": "rev645",
+                  "timestamp": 1728889072,
+                  "title": "Revision 645",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-41&rsquo; at 07:26 UTC on 14 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.6.1 to 7.6.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/387\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/387\">#387</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev641...rev645\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev641&hellip;rev645</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev645",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev645...main"
                },
                {
-                  "id": 179716304,
-                  "version": "rev641",
-                  "timestamp": 1728867980,
-                  "title": "Revision 641",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-41&rsquo; at 01:34 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628...rev641\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628&hellip;rev641</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev641",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev641...main"
+                  "id": 179745305,
+                  "version": "rev644",
+                  "timestamp": 1728889000,
+                  "title": "Revision 644",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.4.0\n       resource-revision: 49</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 07:25 UTC on 14 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump coverage[toml] from 7.6.1 to 7.6.3 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/387\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/387\">#387</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628...rev644\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev628&hellip;rev644</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev644",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev644...main"
                }
             ],
             "tags": null,
@@ -14104,8 +15628,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 628,
-                     "timestamp": 1728287137,
+                     "revision": 644,
+                     "timestamp": 1728890710,
                      "base": ""
                   },
                   {
@@ -14439,9 +15963,27 @@
          },
          {
             "name": "sdcore-pcf-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 86,
             "url": "https://github.com/canonical/sdcore-pcf-k8s-operator",
             "releases": [
+               {
+                  "id": 179746392,
+                  "version": "rev576",
+                  "timestamp": 1728888576,
+                  "title": "Revision 576",
+                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.0\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge&rsquo; at 07:30 UTC on 14 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.39 to 0.0.41 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/341\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/341\">#341</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557...rev576\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557&hellip;rev576</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev576",
+                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev576...main"
+               },
+               {
+                  "id": 179744514,
+                  "version": "rev575",
+                  "timestamp": 1728888677,
+                  "title": "Revision 575",
+                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.0\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-6-3&rsquo; at 07:19 UTC on 14 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump cosl from 0.0.39 to 0.0.41 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/341\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/341\">#341</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557...rev575\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557&hellip;rev575</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev575",
+                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev575...main"
+               },
                {
                   "id": 179732928,
                   "version": "rev574",
@@ -14450,24 +15992,6 @@
                   "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.3\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-pip-dependencies-3d66f54210&rsquo; at 05:39 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev569...rev574\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev569&hellip;rev574</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev574",
                   "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev574...main"
-               },
-               {
-                  "id": 179732643,
-                  "version": "rev573",
-                  "timestamp": 1728882117,
-                  "title": "Revision 573",
-                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.0\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-coverage-toml&ndash;7-6-3&rsquo; at 05:35 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557...rev573\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557&hellip;rev573</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev573",
-                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev573...main"
-               },
-               {
-                  "id": 179732145,
-                  "version": "rev572",
-                  "timestamp": 1728882048,
-                  "title": "Revision 572",
-                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.4.0\n       resource-revision: 46</p>\n\n<p>Static resources:\n Released to &lsquo;1.4/edge/dependabot-pip-v1-4-cosl-0-0-41&rsquo; at 05:28 UTC on 14 Oct 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557...rev572\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev557&hellip;rev572</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev572",
-                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev572...main"
                }
             ],
             "tags": null,
@@ -14487,8 +16011,8 @@
                   {
                      "track": "1.4",
                      "channel": "edge",
-                     "revision": 557,
-                     "timestamp": 1728303429,
+                     "revision": 576,
+                     "timestamp": 1728891042,
                      "base": ""
                   },
                   {
@@ -23095,6 +24619,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "6fd7bcb36214c4a7e228f0ff451b9a89cfe37792",
+                  "author": "renovate[bot]",
+                  "timestamp": 1728892592,
+                  "message": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/226\">#226</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/6fd7bcb36214c4a7e228f0ff451b9a89cfe37792"
+               },
+               {
                   "sha": "008f6981f330244ad1d5b592b460e9511a1ba3f3",
                   "author": "Canonical Data Platform Bot",
                   "timestamp": 1728869814,
@@ -23107,13 +24638,6 @@
                   "timestamp": 1728647177,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/223\">#223</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/7a585fbe2a9697530702f9d090ab063aed71269f"
-               },
-               {
-                  "sha": "cb04d344473ba4c58003d86a3176d3c155bc8561",
-                  "author": "renovate[bot]",
-                  "timestamp": 1728553315,
-                  "message": "<p>Update data-platform-workflows to v23.0.2 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/221\">#221</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/cb04d344473ba4c58003d86a3176d3c155bc8561"
                }
             ],
             "ciActions": [
@@ -23128,8 +24652,8 @@
                   {
                      "track": "14",
                      "channel": "edge",
-                     "revision": 148,
-                     "timestamp": 1728647954,
+                     "revision": 149,
+                     "timestamp": 1728893378,
                      "base": ""
                   },
                   {
@@ -26050,33 +27574,19 @@
       "team": "IS",
       "repos": [
          {
-            "name": "netbox",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/netbox",
-            "releases": [
-               {
-                  "id": 179555313,
-                  "version": "rev21",
-                  "timestamp": 1728657718,
-                  "title": "Revision 21",
-                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 12</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:56 UTC on 11 Oct 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 15:18 UTC on 11 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Rebase stable netbox by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/32\">#32</a></a></li>\n<li>Fix github actions by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/33\">#33</a></a></li>\n<li>Fix django-debug env variable by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/34\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/34\">#34</a></a></li>\n<li>Add workflows for tracks support by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\">#36</a></a></li>\n<li>Adapt to paas-app-charmer 1.0.4 by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/35\">#35</a></a></li>\n<li>Adapt netbox to paas-app-charmer 1.3.1 by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/38\">#38</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\">#36</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/netbox/commits/rev21\">https://github.com/canonical/netbox/commits/rev21</a></p>\n",
-                  "url": "https://github.com/canonical/netbox/releases/tag/rev21",
-                  "compareUrl": "https://github.com/canonical/netbox/compare/rev21...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/netbox-community/netbox/workflows/CI"
-            ],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "synapse-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/synapse-operator",
             "releases": [
+               {
+                  "id": 179747471,
+                  "version": "rev445",
+                  "timestamp": 1728891292,
+                  "title": "Revision 445",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 426</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:39 UTC on 14 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.39 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/556\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/556\">#556</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev444...rev445\">https://github.com/canonical/synapse-operator/compare/rev444&hellip;rev445</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev445",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev445...main"
+               },
                {
                   "id": 179479554,
                   "version": "rev444",
@@ -26094,15 +27604,6 @@
                   "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 424</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:05 UTC on 10 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.37 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/552\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/552\">#552</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev442...rev443\">https://github.com/canonical/synapse-operator/compare/rev442&hellip;rev443</a></p>\n",
                   "url": "https://github.com/canonical/synapse-operator/releases/tag/rev443",
                   "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev443...main"
-               },
-               {
-                  "id": 178983495,
-                  "version": "rev442",
-                  "timestamp": 1728419166,
-                  "title": "Revision 442",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 423</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:31 UTC on 8 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.36 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/551\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/551\">#551</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev441...rev442\">https://github.com/canonical/synapse-operator/compare/rev441&hellip;rev442</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev442",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev442...main"
                }
             ],
             "tags": null,
@@ -26125,8 +27626,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 444,
-                     "timestamp": 1728631781,
+                     "revision": 445,
+                     "timestamp": 1728891547,
                      "base": ""
                   },
                   {
@@ -26153,6 +27654,29 @@
                   "1"
                ]
             },
+            "snap": null
+         },
+         {
+            "name": "netbox",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/netbox",
+            "releases": [
+               {
+                  "id": 179555313,
+                  "version": "rev21",
+                  "timestamp": 1728657718,
+                  "title": "Revision 21",
+                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 12</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:56 UTC on 11 Oct 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 15:18 UTC on 11 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Rebase stable netbox by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/32\">#32</a></a></li>\n<li>Fix github actions by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/33\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/33\">#33</a></a></li>\n<li>Fix django-debug env variable by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/34\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/34\">#34</a></a></li>\n<li>Add workflows for tracks support by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\">#36</a></a></li>\n<li>Adapt to paas-app-charmer 1.0.4 by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/35\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/35\">#35</a></a></li>\n<li>Adapt netbox to paas-app-charmer 1.3.1 by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/38\">#38</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/netbox/pull/36\">#36</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/netbox/commits/rev21\">https://github.com/canonical/netbox/commits/rev21</a></p>\n",
+                  "url": "https://github.com/canonical/netbox/releases/tag/rev21",
+                  "compareUrl": "https://github.com/canonical/netbox/compare/rev21...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/netbox-community/netbox/workflows/CI"
+            ],
+            "charm": null,
             "snap": null
          },
          {
