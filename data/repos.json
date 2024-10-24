@@ -6835,27 +6835,6 @@
                      "revision": 407,
                      "timestamp": 1698406949,
                      "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "stable",
-                     "revision": 329,
-                     "timestamp": 1662585927,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "beta",
-                     "revision": 326,
-                     "timestamp": 1661259096,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "edge",
-                     "revision": 328,
-                     "timestamp": 1662565286,
-                     "base": ""
                   }
                ],
                "channels": [
@@ -6868,8 +6847,7 @@
                   "1.9",
                   "latest",
                   "1.8",
-                  "1.7",
-                  "1.6"
+                  "1.7"
                ]
             },
             "snap": null
@@ -7675,27 +7653,6 @@
                      "revision": 407,
                      "timestamp": 1698406949,
                      "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "stable",
-                     "revision": 329,
-                     "timestamp": 1662585927,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "beta",
-                     "revision": 326,
-                     "timestamp": 1661259096,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "edge",
-                     "revision": 328,
-                     "timestamp": 1662565286,
-                     "base": ""
                   }
                ],
                "channels": [
@@ -7708,8 +7665,7 @@
                   "1.9",
                   "latest",
                   "1.8",
-                  "1.7",
-                  "1.6"
+                  "1.7"
                ]
             },
             "snap": null
@@ -11285,6 +11241,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "df7641f068e33ae94a914a0d3a8fb21bf9ddb1a6",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1729766176,
+                  "message": "<p>Adds falcosidekick-ui 2.2.0 rock (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/20\">#20</a>)</p>\n\n<p>Based on the Dockerfile: Based on: <a href=\"https://github.com/falcosecurity/falcosidekick-ui/blob/v2.2.0/Dockerfile\">https://github.com/falcosecurity/falcosidekick-ui/blob/v2.2.0/Dockerfile</a></p>\n\n<p>Added sanity test for the new rock image, and included it in the\nintegration test (deployed alongside falcosidekick).</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/df7641f068e33ae94a914a0d3a8fb21bf9ddb1a6"
+               },
+               {
                   "sha": "2685fcac0d2910889b5b306f145d12eea9ee3563",
                   "author": "Claudiu Belu",
                   "timestamp": 1729066647,
@@ -11297,13 +11260,6 @@
                   "timestamp": 1729066558,
                   "message": "<p>Adds k8s-metacollector integration test (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/18\">#18</a>)</p>\n\n<p>Adds simple integration test for the k8s-metacollector rock. Deploy the\nfalco helm chart for it, and expect the deployment to become active, and\nthat the /healthz endpoint responds correctly.</p>\n",
                   "url": "https://github.com/canonical/falco-rocks/commit/7ceaf9e76b74319002a46f79a471fc4e316fce1d"
-               },
-               {
-                  "sha": "ad978cb41622c0adc6afbf41ac354116dcd03462",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1728891063,
-                  "message": "<p>Adds falcosidekick to the integration test (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/17\">#17</a>)</p>\n\n<p>The falcosidekick helm chart doesn&rsquo;t pass any arguments to\nfalcosidekick, but we&rsquo;ve set the &ndash;help as the default argument, meaning\nthat it won&rsquo;t start up as intended.</p>\n\n<p>falcosidekick helm chart also creates a deployment with\nreadOnlyRootFilesystem=True set, which means that Pebble won&rsquo;t be able\nto copy its necessary files. We can use the Pebble mutating webhook to\nsolve this issue.</p>\n",
-                  "url": "https://github.com/canonical/falco-rocks/commit/ad978cb41622c0adc6afbf41ac354116dcd03462"
                }
             ],
             "ciActions": [],
@@ -12154,6 +12110,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "80f94fcb636694f5d86c7a3e104a59efb8e407a8",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1729766808,
+                  "message": "<p>Adds arm64 to rock images (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/36\">#36</a>)</p>\n\n<ul>\n<li>Adds arm64 to rock images</li>\n</ul>\n\n<p>Previously, we&rsquo;ve skipped adding support for arm64 since some of the\nrocks failed to build for arm64.</p>\n\n<ul>\n<li>Fixes longhorn-manager arm64 rocks</li>\n</ul>\n\n<p>The <code>iputils</code> snap does nto have an arm64 target, so we can&rsquo;t use that\nfor arm64.</p>\n\n<p>The iputils rpm  from suse (installed in the original Dockerfile) contains the\nfollowing binaries: arping, clockdiff, ping, tracepath.\nIt also contains symlinks for ping6 and tracepath6.</p>\n\n<p>We&rsquo;ll be installing equivalent apt packages for those binaries to keep\nparity.</p>\n\n<ul>\n<li>Fixes v1.7.0 longhorn-engine and longhorn-instance-manager arm64 rocks</li>\n</ul>\n\n<p>When building tgt, we&rsquo;re getting this error on arm64:</p>\n\n<pre><code>bs.c: In function ‘bs_sig_request_done’:\nbs.c:196:15: error: ‘read’ writing 1 byte into a region of size 0 overflows the destination [-Werror=stringop-overflow=]\n  196 |         ret = read(fd, (char *)siginfo, sizeof(siginfo));\n      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nbs.c:193:33: note: destination object ‘siginfo’ of size 0\n  193 |         struct signalfd_siginfo siginfo[16];\n      |                                 ^~~~~~~\nIn file included from /usr/include/unistd.h:1217,\n                 from bs.c:33:\n/usr/include/aarch64-linux-gnu/bits/unistd.h:26:1: note: in a call to function ‘read’ declared with attribute ‘access (write_only, 2)’\n   26 | read (int __fd, void *__buf, size_t __nbytes)\n      | ^~~~\ncc1: all warnings being treated as errors\nmake[1]: *** [Makefile:95: bs.o] Error 1\nmake[1]: Leaving directory '/root/parts/build-tgt/build/usr'\nmake: *** [Makefile:24: programs] Error 2\n'override-build' in part 'build-tgt' failed with code 2.\n</code></pre>\n\n<p>After some investigation, it seems that this Warning is not a false positive.\nBecause <code># if defined(__NR_signalfd)</code> is false, <code>signalfd_siginfo</code> is an empty structure,\nwhich means that siginfo is actually an array of elements that have 0 bytes in size.\nIt seems that on arm64, there&rsquo;s only <code>__NR_signalfd4</code>, not <code>__NR_signalfd</code>.</p>\n\n<p>Interestingly, this does not occur on ubuntu 22.04, which is why we&rsquo;re\nnot seeing this issue in the v1.6.2 rocks.</p>\n\n<p>xref: <a href=\"https://www.spinics.net/lists/linux-stgt/msg04783.html\">https://www.spinics.net/lists/linux-stgt/msg04783.html</a></p>\n\n<p>This patch is a cherry-pick of the following commit (+ resolved conflicts), which solves this issue:</p>\n\n<p><a href=\"https://github.com/fujita/tgt/commit/7ea559753e647e6a5fa5a0ca3c29ba417d9744b7\">https://github.com/fujita/tgt/commit/7ea559753e647e6a5fa5a0ca3c29ba417d9744b7</a></p>\n",
+                  "url": "https://github.com/canonical/longhorn-rocks/commit/80f94fcb636694f5d86c7a3e104a59efb8e407a8"
+               },
+               {
                   "sha": "c5f9bbb5ba9e0b7ea95f75a259fb5dea20718340",
                   "author": "Claudiu Belu",
                   "timestamp": 1727173193,
@@ -12166,13 +12129,6 @@
                   "timestamp": 1727164139,
                   "message": "<p>Fixes longhorn nfs-ganesha reference (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/35\">#35</a>)</p>\n\n<p>The original Dockerfiles reference a rancher fork of the\nnfs-ganesha repository, not the original repository. This\nfork contains various longhorn-related patches, so we should\nuse it as well.</p>\n",
                   "url": "https://github.com/canonical/longhorn-rocks/commit/62af0af196f364171231193f0faac3de33758290"
-               },
-               {
-                  "sha": "34a4bdf7559e279cd4f03331666f2eb7205fc4ca",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1727160621,
-                  "message": "<p>Updates Longhorn v1.6.2 rocks (<a target=\"_blank\" href=\"https://github.com/canonical/longhorn-rocks/pull/31\">#31</a>)</p>\n\n<p>The v1.6.2 Longhorn images are based on the Suse Linux Enterprise\nBase Container Image (SLE BCE) Service Pack 5 which ships with Linux 5.14,\nand is thus most comparable to 22.04.</p>\n\n<p>Adds liburcu8 to the longhorn-share-manager rock. It is required in order to\navoid the following error:</p>\n\n<p>ganesha.nfsd: error while loading shared libraries: liburcu-bp.so.8: cannot open shared object file: No such file or directory</p>\n",
-                  "url": "https://github.com/canonical/longhorn-rocks/commit/34a4bdf7559e279cd4f03331666f2eb7205fc4ca"
                }
             ],
             "ciActions": [],
@@ -14845,7 +14801,7 @@
          },
          {
             "name": "oai-ran-ue-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/oai-ran-ue-k8s-operator",
             "releases": [
                {
@@ -22737,6 +22693,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "61b52f634e57e313d24bdb95bc96c78a3ec48f5c",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1729768019,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/240\">#240</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/61b52f634e57e313d24bdb95bc96c78a3ec48f5c"
+               },
+               {
                   "sha": "aeb6dab1831dd349e642ae4107ee60bcd2d656b9",
                   "author": "Canonical Data Platform Bot",
                   "timestamp": 1729681332,
@@ -22749,13 +22712,6 @@
                   "timestamp": 1729681309,
                   "message": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/239\">#239</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/aa7fc8e06aa8c26c33513f2acbee16b9ec0c2a0e"
-               },
-               {
-                  "sha": "799b1d47eb789d392cbc0321e879bb09ca2b6815",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1729590955,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/237\">#237</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/799b1d47eb789d392cbc0321e879bb09ca2b6815"
                }
             ],
             "ciActions": [
@@ -22800,6 +22756,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "1b06804e3c0dac973c0fb298e086fc86c94d226d",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1729768046,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/232\">#232</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/1b06804e3c0dac973c0fb298e086fc86c94d226d"
+               },
+               {
                   "sha": "8f03a30a058d3413fc6c8c250bbfeda1d24fc9ee",
                   "author": "renovate[bot]",
                   "timestamp": 1729690429,
@@ -22812,13 +22775,6 @@
                   "timestamp": 1729681359,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/230\">#230</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-bundle/commit/889899c02fc318bce71a04f2fc030178d1d4851f"
-               },
-               {
-                  "sha": "f844a7632b1c653136d124236f2d9ecc8fa2771b",
-                  "author": "Canonical Data Platform Bot",
-                  "timestamp": 1729590983,
-                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/229\">#229</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/f844a7632b1c653136d124236f2d9ecc8fa2771b"
                }
             ],
             "ciActions": [
@@ -23336,7 +23292,7 @@
          },
          {
             "name": "postgresql-test-app",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/postgresql-test-app",
             "releases": [
                {
