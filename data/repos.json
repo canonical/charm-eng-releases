@@ -12200,6 +12200,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "38abc22e38745c480e63095070062af2fad111be",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1731048330,
+                  "message": "<p>Add metallb v0.14.8 rock image (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/8\">#8</a>)</p>\n",
+                  "url": "https://github.com/canonical/metallb-rocks/commit/38abc22e38745c480e63095070062af2fad111be"
+               },
+               {
                   "sha": "aa2062930d5d7e01bd29dba31be7210aad6f4034",
                   "author": "Claudiu Belu",
                   "timestamp": 1730806382,
@@ -12212,13 +12219,6 @@
                   "timestamp": 1723102450,
                   "message": "<p>Update pull_request.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/5\">#5</a>)</p>\n",
                   "url": "https://github.com/canonical/metallb-rocks/commit/e12003914345725800a92c953621d73c622a0c80"
-               },
-               {
-                  "sha": "a2704876be2aead2f5178e743a54026c9aec8dc7",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1722598457,
-                  "message": "<p>Update integration test (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/3\">#3</a>)</p>\n\n<p>At the moment, the integration test is deploying the metallb\nchart without actually ensuring that the deployment succeeded.</p>\n\n<p>We&rsquo;ll add the appropriate assertions, as well as some necessary\nhelm settings:</p>\n\n<ul>\n<li>we&rsquo;ll explicitly pass the container commands, bypassing Pebble.\n\n<ul>\n<li>Pebble cannot handle read-only filesystems. It attempts to\nwrite a file before starting the services and it hangs for 5\nminutes before entering a restart loop if it doesn&rsquo;t have\nwrite permissions.</li>\n</ul></li>\n<li>we have to run the container processes as root\n\n<ul>\n<li>frr bug: <a href=\"https://bugzilla.redhat.com/show_bug.cgi?id=2147522\">https://bugzilla.redhat.com/show_bug.cgi?id=2147522</a></li>\n</ul></li>\n<li>the chart version needs to be pinned, newer chart versions are\nnot compatible with this image</li>\n</ul>\n\n<p>While at it, we&rsquo;ll set CGO_ENABLED=0 when building the metallb\nspeaker as per the reference image, thus linking it statically.</p>\n",
-                  "url": "https://github.com/canonical/metallb-rocks/commit/a2704876be2aead2f5178e743a54026c9aec8dc7"
                }
             ],
             "ciActions": [],
