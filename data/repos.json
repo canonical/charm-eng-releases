@@ -11768,6 +11768,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "232faf6d3ec5e32b0970e02bf3fe3d1f5c21b37f",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1731398591,
+                  "message": "<p>Update trivy job, using alternate registry (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/26\">#26</a>)</p>\n\n<p>We&rsquo;ve just updated the Trivy job to use an alternate image registry.\nHowever, it looks like there&rsquo;s one other step that needs to be\nupdated.</p>\n",
+                  "url": "https://github.com/canonical/k8s-workflows/commit/232faf6d3ec5e32b0970e02bf3fe3d1f5c21b37f"
+               },
+               {
                   "sha": "c1715b8314effc0e94fb41c62b189bf78133a06d",
                   "author": "Lucian Petrut",
                   "timestamp": 1730992462,
@@ -11780,13 +11787,6 @@
                   "timestamp": 1728231260,
                   "message": "<p>Adds additional tag without -ckN suffix (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/23\">#23</a>)</p>\n\n<p>Currently, we publish manifest lists for each image and version with the\n-ckN suffix, where N is the number of versions we have published for\nthat rock.</p>\n\n<p>This commit also publishes the same manifest lists without the -ckN\nsuffix. This will help in 2 regards:</p>\n\n<ul>\n<li>We typically want to deploy the latest version of a published rock.\nWhen it comes to user experience, it&rsquo;s a lot easier to just use the\nghcr.io/canonical/foo:1.0.0 rock, rather than ghcr.io/canonical/foo:1.0.0-ckN,\nwhere a user would have too manually check what is the latest N\nrevision of that rock. This issue is even more egregious in cases in\nwhich we&rsquo;d need multiple rocks for the same application deployment\n(e.g.: Longhorn).</li>\n<li>The documentation where these rocks are referenced with the -ckN\nsuffix will get outdated over time, referencing an out-of-date revision.\nInstead, the manifest list without the -ckN suffix will always point\ntowards the latest revision.</li>\n</ul>\n\n<p>The -ckN manifest lists are still published, so a user may still be able\nto pick a previous revision if needed.</p>\n",
                   "url": "https://github.com/canonical/k8s-workflows/commit/7b677a9a5ae283dd7ba786062abc8438bb353716"
-               },
-               {
-                  "sha": "e516d3a022bee944a87d65fbf436c950ff0c6a31",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1727160720,
-                  "message": "<p>Conditionally send updates to Jira (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/22\">#22</a>)</p>\n\n<p>We shouldn&rsquo;t send updates to Jira if we don&rsquo;t have the URL configured.\nThis will prevent the scan_images to fail if the secret is not set\n(typical for forks).</p>\n\n<p>Signed-off-by: Claudiu Belu <a href=\"mailto:claudiu.belu@canonical.com\">claudiu.belu@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-workflows/commit/e516d3a022bee944a87d65fbf436c950ff0c6a31"
                }
             ],
             "ciActions": null,
@@ -17547,7 +17547,7 @@
       "repos": [
          {
             "name": "vault-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/vault-operator",
             "releases": [
                {
@@ -29998,6 +29998,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "2fffb890e385d3edd5e1bc8ef86c60c190caf4f6",
+                  "author": "renovate[bot]",
+                  "timestamp": 1731398800,
+                  "message": "<p>chore(deps): update canonical/setup-lxd action to v0.1.2 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/464\">#464</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/2fffb890e385d3edd5e1bc8ef86c60c190caf4f6"
+               },
+               {
                   "sha": "92c65b3f4f7a526ef7bdac01ef5457f7fc375a31",
                   "author": "arturo-seijas",
                   "timestamp": 1731345830,
@@ -30010,13 +30017,6 @@
                   "timestamp": 1730807008,
                   "message": "<p>Skip documentation jobs if discourse credentials are not defined (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/463\">#463</a>)</p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/bf83e417b7893bc28d0ba6e752dd02d03dceac00"
-               },
-               {
-                  "sha": "f37e30d85a971f469099e11d21f318e5102c506e",
-                  "author": "renovate[bot]",
-                  "timestamp": 1730710342,
-                  "message": "<p>fix(deps): update dependency <a target=\"_blank\" href=\"https://github.com/actions\">@actions</a>/cache to v3.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/462\">#462</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/f37e30d85a971f469099e11d21f318e5102c506e"
                }
             ],
             "ciActions": [],
