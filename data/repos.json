@@ -446,29 +446,29 @@
                   {
                      "track": "3.5",
                      "channel": "edge",
-                     "revision": 29046,
-                     "timestamp": 1732023222,
+                     "revision": 29050,
+                     "timestamp": 1732039215,
                      "base": "core20"
                   },
                   {
                      "track": "3.5",
                      "channel": "edge",
-                     "revision": 29047,
-                     "timestamp": 1732023301,
+                     "revision": 29051,
+                     "timestamp": 1732039295,
                      "base": "core20"
                   },
                   {
                      "track": "3.5",
                      "channel": "edge",
-                     "revision": 29048,
-                     "timestamp": 1732023386,
+                     "revision": 29052,
+                     "timestamp": 1732039403,
                      "base": "core20"
                   },
                   {
                      "track": "3.5",
                      "channel": "edge",
-                     "revision": 29049,
-                     "timestamp": 1732023701,
+                     "revision": 29053,
+                     "timestamp": 1732039518,
                      "base": "core20"
                   },
                   {
@@ -3826,7 +3826,7 @@
          },
          {
             "name": "grafana-agent-snap",
-            "newCommits": 60,
+            "newCommits": 61,
             "url": "https://github.com/canonical/grafana-agent-snap",
             "releases": [
                {
@@ -3875,15 +3875,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 88,
-                     "timestamp": 1731684266,
+                     "revision": 92,
+                     "timestamp": 1732038626,
                      "base": "core22"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1731684351,
+                     "revision": 93,
+                     "timestamp": 1732038707,
                      "base": "core22"
                   },
                   {
@@ -5976,15 +5976,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 88,
-                     "timestamp": 1731684266,
+                     "revision": 92,
+                     "timestamp": 1732038626,
                      "base": "core22"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1731684351,
+                     "revision": 93,
+                     "timestamp": 1732038707,
                      "base": "core22"
                   },
                   {
@@ -11634,6 +11634,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "00ea9026d085a380bb83cc333bc45fa4088ba2ff",
+                  "author": "Berkay Tekin Öz",
+                  "timestamp": 1732039347,
+                  "message": "<p>Update Cilium to 1.16.3 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/803\">#803</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Benjamin Schimke <a href=\"mailto:benjamin.schimke@canonical.com\">benjamin.schimke@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/00ea9026d085a380bb83cc333bc45fa4088ba2ff"
+               },
+               {
                   "sha": "19b99578262cb834194730bd7787f0d60db629bc",
                   "author": "Berkay Tekin Öz",
                   "timestamp": 1732008777,
@@ -11646,13 +11653,6 @@
                   "timestamp": 1731942271,
                   "message": "<p>fix: ensure nf_conntrack module loaded for kube-proxy. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/743\">#743</a>)</p>\n\n<ul>\n<li>fix: ensure nf_conntrack module loaded for kube-proxy.</li>\n</ul>\n\n<p>This patch ensures that the <code>nf_conntrack</code> kernel module is loaded\nbefore the <code>kube-proxy</code> service is started so it can read some\nnecessary conntrack module-related params from procfs.</p>\n\n<p>Previously, although the <code>kube-proxy</code> service always crashed if the module\nwasn&rsquo;t loaded, this wasn&rsquo;t that common of an occurrence in practice as\nthere are quite a few ways <code>nf_conntrack</code> gets loaded transparently:\n* Cilium <a href=\"https://github.com/cilium/cilium/blob/63cd391f93b4e2c865268241d384504348672042/pkg/datapath/iptables/iptables.go#L367-L368\">automatically loads <code>iptable_nat</code></a>\nafter a small startup delay, whose dependency tree includes <code>nf_conntrack</code>\n* starting firewalld/ufw/most other firewall services\n* setting iptables/nftables rules which imply session tracking</p>\n\n<p>By explicitly loading <code>nf_conntrack</code> from the <code>kube-proxy</code> service\nwrapper directly, it should ensure the procfs values kube-proxy reads\nare always present on startup.</p>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n\n<ul>\n<li>ci: install nf_conntrack module in integration test base LXC image.</li>\n</ul>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n\n<hr>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/99e7a5e0630f14602a690760588cd53e53379b4c"
-               },
-               {
-                  "sha": "eb633229237cbecaf2b7151d8055f434df4fafdc",
-                  "author": "eaudetcobello",
-                  "timestamp": 1731941416,
-                  "message": "<p>revert spelling change (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/809\">#809</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/eb633229237cbecaf2b7151d8055f434df4fafdc"
                }
             ],
             "ciActions": [
@@ -15613,7 +15613,7 @@
          },
          {
             "name": "sdcore-nms-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
                {
@@ -16166,6 +16166,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "e2750dc959a407e36b31468211ce911281ed407c",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1732038169,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 1.0.0 to 2.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/474\">#474</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 1.0.0 to 2.1.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v1.0.0...v2.1.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/e2750dc959a407e36b31468211ce911281ed407c"
+               },
+               {
                   "sha": "c5f9db910d6c3bf239089d33a6ed14a57fb13b06",
                   "author": "Ghislain Bourgeois",
                   "timestamp": 1732034600,
@@ -16178,13 +16185,6 @@
                   "timestamp": 1732016290,
                   "message": "<p>Merge branch &lsquo;main&rsquo; into update-juju-3.5</p>\n",
                   "url": "https://github.com/canonical/sdcore-tests/commit/723dca952c8f4592599a175f82df01061ee7d07e"
-               },
-               {
-                  "sha": "5aae648755b881cc281650b0a51b39e86c7d1e03",
-                  "author": "Patricia Reinoso",
-                  "timestamp": 1732016222,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/467\">#467</a> from canonical/TELCO-1408-add-tls-integration-nms</p>\n\n<p>feat: add TLS integration to the NMS</p>\n",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/5aae648755b881cc281650b0a51b39e86c7d1e03"
                }
             ],
             "ciActions": [],
