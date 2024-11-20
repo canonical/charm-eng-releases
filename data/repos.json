@@ -11662,25 +11662,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8d20f342e4237be9ba261cc11911c5f77bc91c00",
+                  "author": "eaudetcobello",
+                  "timestamp": 1732092492,
+                  "message": "<p>Update coredns to 1.11.3 and coredns chart to 1.36.0 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/806\">#806</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Benjamin Schimke <a href=\"mailto:benjamin.schimke@canonical.com\">benjamin.schimke@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/8d20f342e4237be9ba261cc11911c5f77bc91c00"
+               },
+               {
+                  "sha": "83c1ffb97d2e8f323de0073d882e15314bb1c8ae",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1732092146,
+                  "message": "<p>Add containerd path marker file (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/813\">#813</a>)</p>\n\n<p>We need to properly clean up the containerd path on snap removal.\nFor that, the path needs to be stored in a file.\nThis serves two purposes:\n1. The existence of the file indicates that the cluster was already bootstrapped\n   and the containerd directory is not created by some other service.\n2. The containerd path is configurable, having this information in a file makes it easy\n   to access even after the k8sd service is already stopped.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/83c1ffb97d2e8f323de0073d882e15314bb1c8ae"
+               },
+               {
                   "sha": "00236be70308dc70d7d78b4d7e4d7c7811e8afe9",
                   "author": "Benjamin Schimke",
                   "timestamp": 1732049716,
                   "message": "<p>Update cilium version in sync-images.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/812\">#812</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/00236be70308dc70d7d78b4d7e4d7c7811e8afe9"
-               },
-               {
-                  "sha": "db581acd0f008d37e5a11fa33c3dacbb2748b45b",
-                  "author": "eaudetcobello",
-                  "timestamp": 1732049384,
-                  "message": "<p>Update metallb version to 0.14.8 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/805\">#805</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/db581acd0f008d37e5a11fa33c3dacbb2748b45b"
-               },
-               {
-                  "sha": "c17d3cfe5a0d549a30e95fbea134d36c33428428",
-                  "author": "eaudetcobello",
-                  "timestamp": 1732049316,
-                  "message": "<p>Update metrics-server to 0.7.2 and chart to 3.12.2 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/804\">#804</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/c17d3cfe5a0d549a30e95fbea134d36c33428428"
                }
             ],
             "ciActions": [
@@ -15533,6 +15533,15 @@
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
                {
+                  "id": 186357726,
+                  "version": "rev714",
+                  "timestamp": 1732089257,
+                  "title": "Revision 714",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 86</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/update-docs&rsquo; at 08:28 UTC on 20 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev713...rev714\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev713&hellip;rev714</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev714",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev714...main"
+               },
+               {
                   "id": 186301536,
                   "version": "rev713",
                   "timestamp": 1732038938,
@@ -15549,15 +15558,6 @@
                   "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 85</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-github-actions-github-actions-dd9674dbac&rsquo; at 01:54 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 4 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/387\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/387\">#387</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev706...rev712\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev706&hellip;rev712</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev712",
                   "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev712...main"
-               },
-               {
-                  "id": 186083821,
-                  "version": "rev711",
-                  "timestamp": 1731974325,
-                  "title": "Revision 711",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 85</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-github-actions-github-actions-dd9674dbac&rsquo; at 00:58 UTC on 19 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev706...rev711\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev706&hellip;rev711</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev711",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev711...main"
                }
             ],
             "tags": null,
@@ -20423,7 +20423,7 @@
          },
          {
             "name": "postgresql-k8s-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/postgresql-k8s-operator",
             "releases": [
                {
@@ -20635,7 +20635,7 @@
          },
          {
             "name": "pgbouncer-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/pgbouncer-operator",
             "releases": [
                {
@@ -20938,7 +20938,7 @@
          },
          {
             "name": "pgbouncer-k8s-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -24628,6 +24628,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "687b4452cd59efdc968901ac8963053a3bc5379c",
+                  "author": "Sinclert Pérez",
+                  "timestamp": 1732091408,
+                  "message": "<p>[DPE-6042] Quote tox.ini repository paths (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/256\">#256</a>)</p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/687b4452cd59efdc968901ac8963053a3bc5379c"
+               },
+               {
                   "sha": "c5c00ca355098ec3a41d68b090b206ba2e0bcf7d",
                   "author": "Canonical Data Platform Bot",
                   "timestamp": 1732001295,
@@ -24640,13 +24647,6 @@
                   "timestamp": 1731937504,
                   "message": "<p>Lock file maintenance Python dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/254\">#254</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-bundle/commit/1b6c2e70c781a176cc531fc9ff8ff314b3582c20"
-               },
-               {
-                  "sha": "a7de1a9a1412db1244c4fb11b3578bcefdf9ae54",
-                  "author": "renovate[bot]",
-                  "timestamp": 1731936173,
-                  "message": "<p>Migrate config .github/renovate.json5 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/252\">#252</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/a7de1a9a1412db1244c4fb11b3578bcefdf9ae54"
                }
             ],
             "ciActions": [
@@ -24682,6 +24682,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "dc4571b567503b6805ef566a334671a988a3adca",
+                  "author": "Sinclert Pérez",
+                  "timestamp": 1732091413,
+                  "message": "<p>[DPE-6042] Quote tox.ini repository paths (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/263\">#263</a>)</p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/dc4571b567503b6805ef566a334671a988a3adca"
+               },
+               {
                   "sha": "2f8d7ac0fbb8b01ae34f63430ea9da221c2af3cc",
                   "author": "renovate[bot]",
                   "timestamp": 1732013180,
@@ -24694,13 +24701,6 @@
                   "timestamp": 1732008777,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/260\">#260</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/45e5479f92a752cdf5b28ead95324c88e9854753"
-               },
-               {
-                  "sha": "97e6843bfa6f635e9f0ef8cc11fa215fc86c1d55",
-                  "author": "renovate[bot]",
-                  "timestamp": 1732001376,
-                  "message": "<p>Update data-platform-workflows to v23.0.5 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/261\">#261</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/97e6843bfa6f635e9f0ef8cc11fa215fc86c1d55"
                }
             ],
             "ciActions": [
@@ -24715,8 +24715,8 @@
                   {
                      "track": "14",
                      "channel": "edge",
-                     "revision": 175,
-                     "timestamp": 1732013939,
+                     "revision": 176,
+                     "timestamp": 1732092233,
                      "base": ""
                   },
                   {
