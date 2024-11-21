@@ -22477,6 +22477,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7316a0c4274be8572457fcc5b692dffc6f0ef03d",
+                  "author": "Smail KOURTA",
+                  "timestamp": 1732186915,
+                  "message": "<p>feat(DPE-5767): Add CI workflows (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-etcd-snap/pull/4\">#4</a>)</p>\n\n<p>I rebased the CI PR and opened it against the build branch.\nThis pull request includes several changes to the repository, focusing\non configuration updates, workflow enhancements, and documentation\nimprovements. The most important changes are listed below:</p>\n\n<h3>Workflow Enhancements:</h3>\n\n<ul>\n<li>Introduced a new GitHub Actions workflow in\n<code>.github/workflows/ci.yaml</code> for building and testing the snap package,\nincluding steps for downloading, installing, and running tests on the\nsnap package.</li>\n<li>Added a configuration file for syncing GitHub issues to Jira in\n<code>.github/workflows/.jira_sync_config.yaml</code>, specifying settings like\ncomponents, label mapping, and status mapping.</li>\n</ul>\n\n<h3>Documentation Improvements:</h3>\n\n<ul>\n<li>Created a new bug report issue template in\n<code>.github/workflows/ISSUE_TEMPLATE/bug_report.md</code> to standardize bug\nreporting with sections for steps to reproduce, expected behavior,\nactual behavior, versions, log output, and additional context.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-etcd-snap/commit/7316a0c4274be8572457fcc5b692dffc6f0ef03d"
+               },
+               {
                   "sha": "a4020e6613ebf15b369f8f46a96298c604049a80",
                   "author": "Smail KOURTA",
                   "timestamp": 1732173498,
@@ -22489,13 +22496,6 @@
                   "timestamp": 1732005550,
                   "message": "<p>feat: [DPE-5769] - build snap from launchpad source on 24 04 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-etcd-snap/pull/3\">#3</a>)</p>\n\n<p>This pull request introduces several significant changes to the <code>etcd</code>\nconfiguration and setup process. The most important changes include the\naddition of a configuration file, a license file, an install hook\nscript, and a Snapcraft configuration file.</p>\n\n<h3>Configuration and Setup Changes:</h3>\n\n<ul>\n<li><p>Added a Snapcraft configuration file <code>snap/snapcraft.yaml</code> to define\nthe Snap package for <code>etcd</code>, including details such as name, version,\nsummary, description, confinement, and parts for building the Snap.</p></li>\n\n<li><p>Added a default <code>etcd</code> configuration file to <code>config/etcd.conf.yml</code>,\nwhich includes settings for data directories, snapshot counts, peer and\nclient URLs, security settings, and logging configurations.</p></li>\n\n<li><p>Added an install hook script <code>snap/hooks/install</code> to copy the <code>etcd</code>\nconfiguration file to the Snap&rsquo;s data directory during installation.</p></li>\n\n<li><p>Added an Apache License 2.0 file to <code>licenses/LICENSE-snap</code> to define\nthe terms and conditions for using, reproducing, and distributing the\nsoftware.</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/charmed-etcd-snap/commit/1be4c775fa4073c274de4475db1b22094c1c13cd"
-               },
-               {
-                  "sha": "b1f25c60e317908397f308fc6bfddebb903cd576",
-                  "author": "Smail KOURTA",
-                  "timestamp": 1731567720,
-                  "message": "<p>init</p>\n",
-                  "url": "https://github.com/canonical/charmed-etcd-snap/commit/b1f25c60e317908397f308fc6bfddebb903cd576"
                }
             ],
             "ciActions": [
@@ -26498,7 +26498,7 @@
          },
          {
             "name": "oci-factory",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/oci-factory",
             "releases": [
                {
@@ -26511,22 +26511,22 @@
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
                },
                {
-                  "id": 186581761,
-                  "version": "mock-rock_test_beta",
-                  "timestamp": 1732178985,
-                  "title": "mock-rock_test_beta",
+                  "id": 186596061,
+                  "version": "mock-rock_test_edge",
+                  "timestamp": 1732183237,
+                  "title": "mock-rock_test_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-ca20c5841a948ccadf31",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_beta...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-1eba8a32515e56370860",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
                },
                {
-                  "id": 186581775,
-                  "version": "mock-rock_edge",
-                  "timestamp": 1732178988,
-                  "title": "mock-rock_edge",
+                  "id": 186596057,
+                  "version": "mock-rock_test_beta",
+                  "timestamp": 1732183237,
+                  "title": "mock-rock_test_beta",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-379e23ea5aec41571d00",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_edge...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-a1b9dedee30d36397f16",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_beta...main"
                }
             ],
             "tags": null,
@@ -27283,6 +27283,87 @@
       "team": "IS",
       "repos": [
          {
+            "name": "github-runner-image-builder-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/github-runner-image-builder-operator",
+            "releases": [
+               {
+                  "id": 186601827,
+                  "version": "rev35",
+                  "timestamp": 1732184805,
+                  "title": "Revision 35",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:28 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev34...rev35\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev34&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev35...main"
+               },
+               {
+                  "id": 185145382,
+                  "version": "rev34",
+                  "timestamp": 1731493659,
+                  "title": "Revision 34",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:28 UTC on 13 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: cron newline by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev33...rev34\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev33&hellip;rev34</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev34",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev34...main"
+               },
+               {
+                  "id": 185088536,
+                  "version": "rev33",
+                  "timestamp": 1731475145,
+                  "title": "Revision 33",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:20 UTC on 13 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: script url config by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/45\">#45</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev31...rev33\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev31&hellip;rev33</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev33",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev33...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "github-runner-image-builder",
+               "url": "https://charmhub.io/github-runner-image-builder",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 4,
+                     "timestamp": 1723514256,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 1,
+                     "timestamp": 1715278229,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 33,
+                     "timestamp": 1731475201,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 35,
+                     "timestamp": 1732184886,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "gateway-api-integrator-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/gateway-api-integrator-operator",
@@ -27904,87 +27985,6 @@
             "commits": null,
             "ciActions": [],
             "charm": null,
-            "snap": null
-         },
-         {
-            "name": "github-runner-image-builder-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/github-runner-image-builder-operator",
-            "releases": [
-               {
-                  "id": 185145382,
-                  "version": "rev34",
-                  "timestamp": 1731493659,
-                  "title": "Revision 34",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:28 UTC on 13 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: cron newline by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev33...rev34\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev33&hellip;rev34</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev34",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev34...main"
-               },
-               {
-                  "id": 185088536,
-                  "version": "rev33",
-                  "timestamp": 1731475145,
-                  "title": "Revision 33",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:20 UTC on 13 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: script url config by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/45\">#45</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev31...rev33\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev31&hellip;rev33</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev33",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev33...main"
-               },
-               {
-                  "id": 183386634,
-                  "version": "rev31",
-                  "timestamp": 1730730896,
-                  "title": "Revision 31",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:36 UTC on 4 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.9.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/29\">#29</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev30...rev31\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev30&hellip;rev31</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev31",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev31...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "github-runner-image-builder",
-               "url": "https://charmhub.io/github-runner-image-builder",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 4,
-                     "timestamp": 1723514256,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 1,
-                     "timestamp": 1715278229,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 33,
-                     "timestamp": 1731475201,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 34,
-                     "timestamp": 1731493728,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
             "snap": null
          },
          {
