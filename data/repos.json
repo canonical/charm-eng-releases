@@ -9212,7 +9212,7 @@
          },
          {
             "name": "identity-platform-admin-ui-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/identity-platform-admin-ui-operator",
             "releases": [
                {
@@ -9488,7 +9488,7 @@
          },
          {
             "name": "oathkeeper-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/oathkeeper-operator",
             "releases": [
                {
@@ -9578,7 +9578,7 @@
          },
          {
             "name": "identity-platform-login-ui-operator",
-            "newCommits": 2,
+            "newCommits": 4,
             "url": "https://github.com/canonical/identity-platform-login-ui-operator",
             "releases": [
                {
@@ -9628,8 +9628,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 139,
-                     "timestamp": 1731939158,
+                     "revision": 140,
+                     "timestamp": 1732273838,
                      "base": ""
                   },
                   {
@@ -22322,6 +22322,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7115f787d83de4232195ca512c32a0e14884814c",
+                  "author": "Smail KOURTA",
+                  "timestamp": 1732271798,
+                  "message": "<p>feat(DPE-5768): - add release workflow (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-etcd-snap/pull/8\">#8</a>)</p>\n\n<p>This pull request introduces a new GitHub Actions workflow to automate\nthe release process to the Snap Store. The most important changes\ninclude adding licensing details, defining the workflow name and\nconcurrency settings, specifying the trigger conditions, and setting up\nthe build and release jobs.</p>\n\n<p>New GitHub Actions workflow:</p>\n\n<p>*\n<a href=\"diffhunk://#diff-e426ed45842837026e10e66af23d9c7077e89eacbe6958ce7cb991130ad05adaR1-R30\"><code>.github/workflows/release.yaml</code></a>:\n* Added licensing details, defined the workflow name as &ldquo;Release to Snap\nStore&rdquo;, and set concurrency settings to cancel in-progress runs for the\nsame workflow and branch.\n* Specified the workflow trigger to run on pushes to the <code>3.5/edge</code>\nbranch.\n* Added a build job using the\n<code>canonical/data-platform-workflows/.github/workflows/build_snap.yaml@v23.0.4</code>\nworkflow.\n* Added a release job that depends on the build job, using the\n<code>canonical/data-platform-workflows/.github/workflows/release_snap.yaml@v23.0.4</code>\nworkflow, and configured it with the necessary channel, artifact prefix,\nand secrets.</p>\n",
+                  "url": "https://github.com/canonical/charmed-etcd-snap/commit/7115f787d83de4232195ca512c32a0e14884814c"
+               },
+               {
                   "sha": "7316a0c4274be8572457fcc5b692dffc6f0ef03d",
                   "author": "Smail KOURTA",
                   "timestamp": 1732186915,
@@ -22334,13 +22341,6 @@
                   "timestamp": 1732173498,
                   "message": "<p>feat(DPE-6043): Add wrappers and rename daemon (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-etcd-snap/pull/6\">#6</a>)</p>\n\n<p>This pull request includes several changes to improve the configuration\nand security of the <code>etcd</code> snap package. The most important changes\ninvolve updating configuration paths, adding scripts for privilege\ndropping, and modifying the <code>snapcraft.yaml</code> file to enhance security\nand functionality.</p>\n\n<p>Configuration updates:</p>\n\n<p>*\n<a href=\"diffhunk://#diff-11b9dce02506e4a04e90ec8fd6ae5a1303c63b6d2f598c27a38c614233945022L7-R7\"><code>config/etcd.conf.yml</code></a>:\nUpdated the <code>data-dir</code> path to use the snap&rsquo;s common directory.</p>\n\n<p>Security enhancements:</p>\n\n<p>*\n<a href=\"diffhunk://#diff-e58b9a041906b37e03356984486699655b2d559fa8dc4d95b340a3b5be7a9a42R6-R18\"><code>snap/hooks/install</code></a>:\nAdded commands to set up permissions and ownership for the snap&rsquo;s data\ndirectory.\n*\n<a href=\"diffhunk://#diff-73c43d081f46ddf34bf5af53db6b4768c0218d4fad21def464618f5b757a7821R1-R17\"><code>snap/local/drop_priv.sh</code></a>:\nAdded a new script to run applications with restricted privileges using\n<code>setpriv</code>.\n*\n<a href=\"diffhunk://#diff-6d0a469ae28efb2b2496d4c03e9e615ceb759f1895d764e17c0aced349ddfcb2R1-R4\"><code>snap/local/start-etcd.sh</code></a>:\nAdded a new script to run <code>etcd</code> as a non-sudo user for security\nreasons.</p>\n\n<p>Functionality improvements:</p>\n\n<p>*\n<a href=\"diffhunk://#diff-56759910381a014fecfd7556dd72ddd68c747d922a5b7df2044b9ce7c552f5f5R12-R42\"><code>snap/snapcraft.yaml</code></a>:\nUpdated the <code>apps</code> section to use the new <code>start-etcd.sh</code> script for the\n<code>etcd</code> command, added <code>system-usernames</code>, and modified the <code>etcdctl</code> and\n<code>etcdutl</code> commands to use the <code>drop_priv.sh</code> script.\n<a href=\"diffhunk://#diff-56759910381a014fecfd7556dd72ddd68c747d922a5b7df2044b9ce7c552f5f5R12-R42\">[1]</a>\n<a href=\"diffhunk://#diff-56759910381a014fecfd7556dd72ddd68c747d922a5b7df2044b9ce7c552f5f5R55-R57\">[2]</a></p>\n",
                   "url": "https://github.com/canonical/charmed-etcd-snap/commit/a4020e6613ebf15b369f8f46a96298c604049a80"
-               },
-               {
-                  "sha": "1be4c775fa4073c274de4475db1b22094c1c13cd",
-                  "author": "Smail KOURTA",
-                  "timestamp": 1732005550,
-                  "message": "<p>feat: [DPE-5769] - build snap from launchpad source on 24 04 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-etcd-snap/pull/3\">#3</a>)</p>\n\n<p>This pull request introduces several significant changes to the <code>etcd</code>\nconfiguration and setup process. The most important changes include the\naddition of a configuration file, a license file, an install hook\nscript, and a Snapcraft configuration file.</p>\n\n<h3>Configuration and Setup Changes:</h3>\n\n<ul>\n<li><p>Added a Snapcraft configuration file <code>snap/snapcraft.yaml</code> to define\nthe Snap package for <code>etcd</code>, including details such as name, version,\nsummary, description, confinement, and parts for building the Snap.</p></li>\n\n<li><p>Added a default <code>etcd</code> configuration file to <code>config/etcd.conf.yml</code>,\nwhich includes settings for data directories, snapshot counts, peer and\nclient URLs, security settings, and logging configurations.</p></li>\n\n<li><p>Added an install hook script <code>snap/hooks/install</code> to copy the <code>etcd</code>\nconfiguration file to the Snap&rsquo;s data directory during installation.</p></li>\n\n<li><p>Added an Apache License 2.0 file to <code>licenses/LICENSE-snap</code> to define\nthe terms and conditions for using, reproducing, and distributing the\nsoftware.</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charmed-etcd-snap/commit/1be4c775fa4073c274de4475db1b22094c1c13cd"
                }
             ],
             "ciActions": [
@@ -24426,6 +24426,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "32f53d30f94f9efc1af8ec71a2de02f7f55d2636",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1732274046,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/259\">#259</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-bundle/commit/32f53d30f94f9efc1af8ec71a2de02f7f55d2636"
+               },
+               {
                   "sha": "21d7f81c7cdc6c87bfc2d88cbd04e8510b82a02a",
                   "author": "renovate[bot]",
                   "timestamp": 1732191487,
@@ -24438,13 +24445,6 @@
                   "timestamp": 1732191287,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/257\">#257</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-bundle/commit/e251883798b46507fccee241a191fb6853346439"
-               },
-               {
-                  "sha": "687b4452cd59efdc968901ac8963053a3bc5379c",
-                  "author": "Sinclert Pérez",
-                  "timestamp": 1732091408,
-                  "message": "<p>[DPE-6042] Quote tox.ini repository paths (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-bundle/pull/256\">#256</a>)</p>\n",
-                  "url": "https://github.com/canonical/postgresql-bundle/commit/687b4452cd59efdc968901ac8963053a3bc5379c"
                }
             ],
             "ciActions": [
@@ -24480,6 +24480,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "2ff7294db6ab2af84f4b601ffd4fdae8ebd7638a",
+                  "author": "Canonical Data Platform Bot",
+                  "timestamp": 1732273940,
+                  "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/266\">#266</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/2ff7294db6ab2af84f4b601ffd4fdae8ebd7638a"
+               },
+               {
                   "sha": "6c86c4dfb187d71619a5b5b749146cc3640a0f59",
                   "author": "renovate[bot]",
                   "timestamp": 1732191449,
@@ -24492,13 +24499,6 @@
                   "timestamp": 1732191314,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/264\">#264</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/77af6d8938ca12a3be32869416e5a3a14276e7ae"
-               },
-               {
-                  "sha": "dc4571b567503b6805ef566a334671a988a3adca",
-                  "author": "Sinclert Pérez",
-                  "timestamp": 1732091413,
-                  "message": "<p>[DPE-6042] Quote tox.ini repository paths (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/263\">#263</a>)</p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/dc4571b567503b6805ef566a334671a988a3adca"
                }
             ],
             "ciActions": [
@@ -26146,7 +26146,7 @@
       "repos": [
          {
             "name": "chisel",
-            "newCommits": 5,
+            "newCommits": 6,
             "url": "https://github.com/canonical/chisel",
             "releases": [
                {
@@ -26512,35 +26512,35 @@
          },
          {
             "name": "oci-factory",
-            "newCommits": 0,
+            "newCommits": 4,
             "url": "https://github.com/canonical/oci-factory",
             "releases": [
                {
-                  "id": 186581753,
+                  "id": 186828602,
                   "version": "mock-rock_test_edge",
-                  "timestamp": 1732178984,
+                  "timestamp": 1732270326,
                   "title": "mock-rock_test_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-000b6e347e38e309ea3d",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-28de3a4e59e3efd5fb2f",
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
                },
                {
-                  "id": 186739162,
+                  "id": 186832075,
                   "version": "mock-rock_test_edge",
-                  "timestamp": 1732222475,
+                  "timestamp": 1732271553,
                   "title": "mock-rock_test_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-872af850eb332301ee0d",
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-d279cabaa3aa0acdf40b",
                   "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
                },
                {
-                  "id": 186723255,
-                  "version": "mock-rock_test_edge",
-                  "timestamp": 1732217082,
-                  "title": "mock-rock_test_edge",
+                  "id": 186828605,
+                  "version": "mock-rock_test_beta",
+                  "timestamp": 1732270327,
+                  "title": "mock-rock_test_beta",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-949c1573b9f964ae95d7",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_edge...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-92a61a0e9f7b5b848542",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/mock-rock_test_beta...main"
                }
             ],
             "tags": null,
@@ -29980,6 +29980,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "b3a2359afe1d23cf12600e5a67b8ef7e0404756c",
+                  "author": "renovate[bot]",
+                  "timestamp": 1732270801,
+                  "message": "<p>chore(deps): update aquasecurity/trivy-action action to v0.29.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/466\">#466</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/b3a2359afe1d23cf12600e5a67b8ef7e0404756c"
+               },
+               {
                   "sha": "f07ec80c7517d9a648e00a6b560d340fb0a0f6a9",
                   "author": "renovate[bot]",
                   "timestamp": 1732267801,
@@ -29992,13 +29999,6 @@
                   "timestamp": 1732265903,
                   "message": "<p>chore(deps): update dependency <a target=\"_blank\" href=\"https://github.com/github\">@github</a>/local-action to v2.2.1 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/473\">#473</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/3efe75eb2291a165630d5264ec49d55791c9c018"
-               },
-               {
-                  "sha": "52b5f6b34e554b89b987112a78f012d04c0a54ec",
-                  "author": "renovate[bot]",
-                  "timestamp": 1732240204,
-                  "message": "<p>chore(deps): update actions/checkout action to v4.2.2 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/474\">#474</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/52b5f6b34e554b89b987112a78f012d04c0a54ec"
                }
             ],
             "ciActions": [],
@@ -31878,6 +31878,26 @@
                   "timestamp": 1575653072,
                   "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev1",
                   "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=172ff9f7f03a0dca96c633912081204ca911d30e&id2=master"
+               }
+            ],
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "postgresql-charm",
+            "newCommits": 28,
+            "url": "https://git.launchpad.net/postgresql-charm",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "rev241",
+                  "sha": "f4424fed30c56ca52a65b749b7a29ab4303d3c49",
+                  "body": "",
+                  "timestamp": 1655891323,
+                  "url": "https://git.launchpad.net/postgresql-charm/tag/?h=rev241",
+                  "compareUrl": "https://git.launchpad.net/postgresql-charm/diff/?id=f4424fed30c56ca52a65b749b7a29ab4303d3c49&id2=master"
                }
             ],
             "commits": null,
