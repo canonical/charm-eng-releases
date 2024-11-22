@@ -2921,7 +2921,7 @@
          },
          {
             "name": "cos-lib",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/cos-lib",
             "releases": [
                {
@@ -11662,6 +11662,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "376da2ba90578a0513e71e88bb10e4fa627557a6",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1732264699,
+                  "message": "<p>Cleans up all containerd-related resources on snap removal (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/827\">#827</a>)</p>\n\n<p>Currently, when removing the snap, the /var/run/containerd folder is not\nproperly removed, as it is a folder. This fixes this issue.</p>\n\n<p>Additionally removes other containerd-related folders: /etc/containerd\nand /var/lib/containerd.</p>\n\n<p>We&rsquo;re also removing /opt/cni/bin on snap removal, which is created when\nbootstrapping the node. As we&rsquo;re removing the k8s snap, we no longer\nneed this folder either.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/376da2ba90578a0513e71e88bb10e4fa627557a6"
+               },
+               {
                   "sha": "7f732c9bcabdab4ac9b661c3e95a432a549aad7f",
                   "author": "github-actions[bot]",
                   "timestamp": 1732215331,
@@ -11674,13 +11681,6 @@
                   "timestamp": 1732195669,
                   "message": "<p>Add security.md with policy (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/822\">#822</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/c648d828a4d8722e32c7ba3e2fb0cf40215e0072"
-               },
-               {
-                  "sha": "29feb03907a07cd5c5c6f92e5a770ee3fcc0e9d0",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1732175106,
-                  "message": "<p>Remove obsolete sync-images scripts (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/818\">#818</a>)</p>\n\n<p>We now use the our own Rocks everywhere, so syncing\nis not required anymore.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/29feb03907a07cd5c5c6f92e5a770ee3fcc0e9d0"
                }
             ],
             "ciActions": [
@@ -15059,6 +15059,24 @@
             "url": "https://github.com/canonical/sdcore-ausf-k8s-operator",
             "releases": [
                {
+                  "id": 186814024,
+                  "version": "rev638",
+                  "timestamp": 1732263093,
+                  "title": "Revision 638",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.5.1\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/build-charm-on-24-04&rsquo; at 08:38 UTC on 22 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev636...rev638\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev636&hellip;rev638</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev638",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev638...main"
+               },
+               {
+                  "id": 186813878,
+                  "version": "rev637",
+                  "timestamp": 1732262981,
+                  "title": "Revision 637",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.5.1\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/build-charm-on-24-04&rsquo; at 08:38 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Use uv for dependency management by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/365\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/365\">#365</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633...rev637\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633&hellip;rev637</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev637",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev637...main"
+               },
+               {
                   "id": 186442724,
                   "version": "rev636",
                   "timestamp": 1732112572,
@@ -15066,24 +15084,6 @@
                   "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.5.1\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 15:23 UTC on 20 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Use uv for dependency management by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/365\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/365\">#365</a></a></li>\n<li>chore: add nms webui_database integration in integration tests by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/367\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/367\">#367</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633...rev636\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633&hellip;rev636</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev636",
                   "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev636...main"
-               },
-               {
-                  "id": 186426451,
-                  "version": "rev635",
-                  "timestamp": 1732109649,
-                  "title": "Revision 635",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.5.1\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-nms-db&rsquo; at 14:14 UTC on 20 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Use uv for dependency management by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/365\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/365\">#365</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633...rev635\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633&hellip;rev635</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev635",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev635...main"
-               },
-               {
-                  "id": 186296139,
-                  "version": "rev634",
-                  "timestamp": 1732049725,
-                  "title": "Revision 634",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.5.1\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-cc005&rsquo; at 22:20 UTC on 19 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633...rev634\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev633&hellip;rev634</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev634",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev634...main"
                }
             ],
             "tags": null,
@@ -15298,9 +15298,18 @@
          },
          {
             "name": "sdcore-gnbsim-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator",
             "releases": [
+               {
+                  "id": 186809204,
+                  "version": "rev602",
+                  "timestamp": 1732262194,
+                  "title": "Revision 602",
+                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.5\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/use-ubuntu-24-04&rsquo; at 08:20 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump canonical/sdcore-github-workflows from 1.0.0 to 2.0.0 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/356\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/356\">#356</a></a></li>\n<li>chore: bump the pip_dependencies group with 4 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/355\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/355\">#355</a></a></li>\n<li>chore: Use uv for dependency management by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/357\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/357\">#357</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev596...rev602\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev596&hellip;rev602</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev602",
+                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev602...main"
+               },
                {
                   "id": 186694477,
                   "version": "rev601",
@@ -15318,15 +15327,6 @@
                   "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-cc005&rsquo; at 20:33 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump canonical/sdcore-github-workflows from 1.0.0 to 2.0.0 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/356\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/356\">#356</a></a></li>\n<li>chore: bump the pip_dependencies group with 4 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/355\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/355\">#355</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev596...rev600\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev596&hellip;rev600</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev600",
                   "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev600...main"
-               },
-               {
-                  "id": 186066044,
-                  "version": "rev599",
-                  "timestamp": 1731966592,
-                  "title": "Revision 599",
-                  "body": "<p>resources:\n    -  gnbsim-image: ghcr.io/canonical/sdcore-gnbsim:1.4.3\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-pip-dependencies-f7eb5e2a4a&rsquo; at 22:17 UTC on 18 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump canonical/sdcore-github-workflows from 1.0.0 to 2.0.0 in the github_actions group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/356\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/pull/356\">#356</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev596...rev599\">https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev596&hellip;rev599</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/releases/tag/rev599",
-                  "compareUrl": "https://github.com/canonical/sdcore-gnbsim-k8s-operator/compare/rev599...main"
                }
             ],
             "tags": null,
@@ -19798,6 +19798,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4c3b41f51edde54b93eaebd1d78b6581496fbfde",
+                  "author": "Kayra",
+                  "timestamp": 1732265897,
+                  "message": "<p>feat: replace pure SQL strings with SQLair (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/122\">#122</a>)</p>\n",
+                  "url": "https://github.com/canonical/notary/commit/4c3b41f51edde54b93eaebd1d78b6581496fbfde"
+               },
+               {
                   "sha": "3dbd63ae81556995a73d01cccd9e1f5170717ac0",
                   "author": "dependabot[bot]",
                   "timestamp": 1731918652,
@@ -19810,13 +19817,6 @@
                   "timestamp": 1731423116,
                   "message": "<p>feat: implement response controller for logging middleware (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/101\">#101</a>)</p>\n",
                   "url": "https://github.com/canonical/notary/commit/536aaaab142ddde2fe3569a504434c3738835d51"
-               },
-               {
-                  "sha": "d5ba34eaaadc4e1eaa14d9bd6cb464fb3928c96b",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1731314377,
-                  "message": "<p>chore: bump the npm_dependencies group in /ui with 4 updates (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/120\">#120</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/notary/commit/d5ba34eaaadc4e1eaa14d9bd6cb464fb3928c96b"
                }
             ],
             "ciActions": [],
@@ -21645,7 +21645,7 @@
          },
          {
             "name": "data-integrator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/data-integrator",
             "releases": [
                {
@@ -25064,7 +25064,7 @@
          },
          {
             "name": "s3-integrator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/s3-integrator",
             "releases": [
                {
@@ -27297,6 +27297,309 @@
       "team": "IS",
       "repos": [
          {
+            "name": "gateway-api-integrator-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/gateway-api-integrator-operator",
+            "releases": [
+               {
+                  "id": 186819487,
+                  "version": "rev51",
+                  "timestamp": 1732266821,
+                  "title": "Revision 51",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:14 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/76\">#76</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.10.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev49...rev51\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev49&hellip;rev51</a></p>\n",
+                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev51",
+                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev51...main"
+               },
+               {
+                  "id": 186594747,
+                  "version": "rev50",
+                  "timestamp": 1732183081,
+                  "title": "Revision 50",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:59 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ISD-2548 update README by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\">#74</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/76\">#76</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev48...rev50\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev48&hellip;rev50</a></p>\n",
+                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev50",
+                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev50...main"
+               },
+               {
+                  "id": 186481904,
+                  "version": "rev49",
+                  "timestamp": 1732125176,
+                  "title": "Revision 49",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:53 UTC on 20 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.17.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/71\">#71</a></a></li>\n<li>ISD-2548 update README by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\">#74</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev47...rev49\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev47&hellip;rev49</a></p>\n",
+                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev49",
+                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev49...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/gateway-api-integrator-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/gateway-api-integrator-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "gateway-api-integrator",
+               "url": "https://charmhub.io/gateway-api-integrator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 14,
+                     "timestamp": 1719876558,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 14,
+                     "timestamp": 1719876558,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 14,
+                     "timestamp": 1719464123,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 51,
+                     "timestamp": 1732266898,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "repo-policy-compliance",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/repo-policy-compliance",
+            "releases": [
+               {
+                  "id": 186818218,
+                  "version": "rev89",
+                  "timestamp": 1732266281,
+                  "title": "Revision 89",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:06 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency wrapt to v1.17.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1886\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1886\">#1886</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev88...rev89\">https://github.com/canonical/repo-policy-compliance/compare/rev88&hellip;rev89</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev89",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev89...main"
+               },
+               {
+                  "id": 186123645,
+                  "version": "rev88",
+                  "timestamp": 1732003423,
+                  "title": "Revision 88",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 79</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:05 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency deprecated to v1.2.15 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1882\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1882\">#1882</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev87...rev88\">https://github.com/canonical/repo-policy-compliance/compare/rev87&hellip;rev88</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev88",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev88...main"
+               },
+               {
+                  "id": 186119092,
+                  "version": "rev87",
+                  "timestamp": 1732001751,
+                  "title": "Revision 87",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 78</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:37 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pyjwt to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1883\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1883\">#1883</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev86...rev87\">https://github.com/canonical/repo-policy-compliance/compare/rev86&hellip;rev87</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev87",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev87...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "chrony-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/chrony-operator",
+            "releases": [
+               {
+                  "id": 186817800,
+                  "version": "rev45",
+                  "timestamp": 1732266179,
+                  "title": "Revision 45",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:04 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.45 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/53\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/53\">#53</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev44...rev45\">https://github.com/canonical/chrony-operator/compare/rev44&hellip;rev45</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev45",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev45...main"
+               },
+               {
+                  "id": 186621661,
+                  "version": "rev44",
+                  "timestamp": 1732191254,
+                  "title": "Revision 44",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:15 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/52\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/52\">#52</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev43...rev44\">https://github.com/canonical/chrony-operator/compare/rev43&hellip;rev44</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev44",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev44...main"
+               },
+               {
+                  "id": 186260112,
+                  "version": "rev43",
+                  "timestamp": 1732040685,
+                  "title": "Revision 43",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:25 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update README.md by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/51\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/51\">#51</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev42...rev43\">https://github.com/canonical/chrony-operator/compare/rev42&hellip;rev43</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev43",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev43...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/chrony-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/chrony-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "chrony",
+               "url": "https://charmhub.io/chrony",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 45,
+                     "timestamp": 1732266257,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "github-runner-webhook-router",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/github-runner-webhook-router",
+            "releases": [
+               {
+                  "id": 186817847,
+                  "version": "rev35",
+                  "timestamp": 1732266155,
+                  "title": "Revision 35",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:04 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency pydantic to v2.10.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/38\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/38\">#38</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev34...rev35\">https://github.com/canonical/github-runner-webhook-router/compare/rev34&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev35...main"
+               },
+               {
+                  "id": 186558400,
+                  "version": "rev34",
+                  "timestamp": 1732167338,
+                  "title": "Revision 34",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:37 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/37\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/37\">#37</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev33...rev34\">https://github.com/canonical/github-runner-webhook-router/compare/rev33&hellip;rev34</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev34",
+                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev34...main"
+               },
+               {
+                  "id": 186425893,
+                  "version": "rev33",
+                  "timestamp": 1732111818,
+                  "title": "Revision 33",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:12 UTC on 20 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency paas-app-charmer to ~=1.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/36\">#36</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev32...rev33\">https://github.com/canonical/github-runner-webhook-router/compare/rev32&hellip;rev33</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev33",
+                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev33...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "synapse-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/synapse-operator",
+            "releases": [
+               {
+                  "id": 186817831,
+                  "version": "rev485",
+                  "timestamp": 1732266031,
+                  "title": "Revision 485",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 466</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:04 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.67 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/599\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/599\">#599</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev484...rev485\">https://github.com/canonical/synapse-operator/compare/rev484&hellip;rev485</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev485",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev485...main"
+               },
+               {
+                  "id": 186745009,
+                  "version": "rev484",
+                  "timestamp": 1732223939,
+                  "title": "Revision 484",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 465</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:24 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.66 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/596\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/596\">#596</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev483...rev484\">https://github.com/canonical/synapse-operator/compare/rev483&hellip;rev484</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev484",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev484...main"
+               },
+               {
+                  "id": 186702543,
+                  "version": "rev483",
+                  "timestamp": 1732210201,
+                  "title": "Revision 483",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 464</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:33 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/597\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/597\">#597</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev482...rev483\">https://github.com/canonical/synapse-operator/compare/rev482&hellip;rev483</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev483",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev483...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "synapse",
+               "url": "https://charmhub.io/synapse",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 426,
+                     "timestamp": 1726836298,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 485,
+                     "timestamp": 1732266267,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "stable",
+                     "revision": 303,
+                     "timestamp": 1722344909,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "edge",
+                     "revision": 345,
+                     "timestamp": 1722416578,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "1"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "github-runner-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/github-runner-operator",
@@ -27497,149 +27800,6 @@
             "snap": null
          },
          {
-            "name": "synapse-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/synapse-operator",
-            "releases": [
-               {
-                  "id": 186745009,
-                  "version": "rev484",
-                  "timestamp": 1732223939,
-                  "title": "Revision 484",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 465</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:24 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.35.66 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/596\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/596\">#596</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev483...rev484\">https://github.com/canonical/synapse-operator/compare/rev483&hellip;rev484</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev484",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev484...main"
-               },
-               {
-                  "id": 186702543,
-                  "version": "rev483",
-                  "timestamp": 1732210201,
-                  "title": "Revision 483",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 464</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:33 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/597\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/597\">#597</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev482...rev483\">https://github.com/canonical/synapse-operator/compare/rev482&hellip;rev483</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev483",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev483...main"
-               },
-               {
-                  "id": 186663919,
-                  "version": "rev482",
-                  "timestamp": 1732200553,
-                  "title": "Revision 482",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 463</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:53 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.45 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/598\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/598\">#598</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev481...rev482\">https://github.com/canonical/synapse-operator/compare/rev481&hellip;rev482</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev482",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev482...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/synapse-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/synapse-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "synapse",
-               "url": "https://charmhub.io/synapse",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 426,
-                     "timestamp": 1726836298,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 484,
-                     "timestamp": 1732224241,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "stable",
-                     "revision": 303,
-                     "timestamp": 1722344909,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 345,
-                     "timestamp": 1722416578,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "1"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "chrony-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/chrony-operator",
-            "releases": [
-               {
-                  "id": 186621661,
-                  "version": "rev44",
-                  "timestamp": 1732191254,
-                  "title": "Revision 44",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:15 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/52\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/52\">#52</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev43...rev44\">https://github.com/canonical/chrony-operator/compare/rev43&hellip;rev44</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev44",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev44...main"
-               },
-               {
-                  "id": 186260112,
-                  "version": "rev43",
-                  "timestamp": 1732040685,
-                  "title": "Revision 43",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:25 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update README.md by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/51\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/51\">#51</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev42...rev43\">https://github.com/canonical/chrony-operator/compare/rev42&hellip;rev43</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev43",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev43...main"
-               },
-               {
-                  "id": 185380084,
-                  "version": "rev42",
-                  "timestamp": 1731577677,
-                  "title": "Revision 42",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:48 UTC on 14 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.43 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev41...rev42\">https://github.com/canonical/chrony-operator/compare/rev41&hellip;rev42</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev42",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev42...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/chrony-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/chrony-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "chrony",
-               "url": "https://charmhub.io/chrony",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 44,
-                     "timestamp": 1732191310,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "github-runner-image-builder-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/github-runner-image-builder-operator",
@@ -27721,127 +27881,6 @@
             "snap": null
          },
          {
-            "name": "gateway-api-integrator-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/gateway-api-integrator-operator",
-            "releases": [
-               {
-                  "id": 186594747,
-                  "version": "rev50",
-                  "timestamp": 1732183081,
-                  "title": "Revision 50",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:59 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ISD-2548 update README by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\">#74</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/76\">#76</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev48...rev50\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev48&hellip;rev50</a></p>\n",
-                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev50",
-                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev50...main"
-               },
-               {
-                  "id": 186481904,
-                  "version": "rev49",
-                  "timestamp": 1732125176,
-                  "title": "Revision 49",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:53 UTC on 20 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.17.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/71\">#71</a></a></li>\n<li>ISD-2548 update README by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/74\">#74</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev47...rev49\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev47&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev49",
-                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev49...main"
-               },
-               {
-                  "id": 177772647,
-                  "version": "rev48",
-                  "timestamp": 1727779840,
-                  "title": "Revision 48",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:51 UTC on 1 Oct 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.9.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/70\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/70\">#70</a></a></li>\n<li>chore(deps): update dependency ops to v2.17.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/gateway-api-integrator-operator/pull/71\">#71</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/gateway-api-integrator-operator/compare/rev46...rev48\">https://github.com/canonical/gateway-api-integrator-operator/compare/rev46&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/gateway-api-integrator-operator/releases/tag/rev48",
-                  "compareUrl": "https://github.com/canonical/gateway-api-integrator-operator/compare/rev48...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/gateway-api-integrator-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/gateway-api-integrator-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "gateway-api-integrator",
-               "url": "https://charmhub.io/gateway-api-integrator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 14,
-                     "timestamp": 1719876558,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 14,
-                     "timestamp": 1719876558,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 14,
-                     "timestamp": 1719464123,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 50,
-                     "timestamp": 1732183142,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "github-runner-webhook-router",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/github-runner-webhook-router",
-            "releases": [
-               {
-                  "id": 186558400,
-                  "version": "rev34",
-                  "timestamp": 1732167338,
-                  "title": "Revision 34",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:37 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/37\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/37\">#37</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev33...rev34\">https://github.com/canonical/github-runner-webhook-router/compare/rev33&hellip;rev34</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev34",
-                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev34...main"
-               },
-               {
-                  "id": 186425893,
-                  "version": "rev33",
-                  "timestamp": 1732111818,
-                  "title": "Revision 33",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:12 UTC on 20 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency paas-app-charmer to ~=1.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/36\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/36\">#36</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev32...rev33\">https://github.com/canonical/github-runner-webhook-router/compare/rev32&hellip;rev33</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev33",
-                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev33...main"
-               },
-               {
-                  "id": 186378703,
-                  "version": "rev32",
-                  "timestamp": 1732097879,
-                  "title": "Revision 32",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:19 UTC on 20 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update dependency paas-app-charmer to ~=1.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev31...rev32\">https://github.com/canonical/github-runner-webhook-router/compare/rev31&hellip;rev32</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev32",
-                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev32...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "saml-integrator-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/saml-integrator-operator",
@@ -27914,45 +27953,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "repo-policy-compliance",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/repo-policy-compliance",
-            "releases": [
-               {
-                  "id": 186123645,
-                  "version": "rev88",
-                  "timestamp": 1732003423,
-                  "title": "Revision 88",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 79</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:05 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency deprecated to v1.2.15 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1882\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1882\">#1882</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev87...rev88\">https://github.com/canonical/repo-policy-compliance/compare/rev87&hellip;rev88</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev88",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev88...main"
-               },
-               {
-                  "id": 186119092,
-                  "version": "rev87",
-                  "timestamp": 1732001751,
-                  "title": "Revision 87",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 78</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:37 UTC on 19 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pyjwt to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1883\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1883\">#1883</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev86...rev87\">https://github.com/canonical/repo-policy-compliance/compare/rev86&hellip;rev87</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev87",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev87...main"
-               },
-               {
-                  "id": 186029125,
-                  "version": "rev86",
-                  "timestamp": 1731954622,
-                  "title": "Revision 86",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 77</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:32 UTC on 18 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: export requirements.txt without hashes by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1881\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1881\">#1881</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev85...rev86\">https://github.com/canonical/repo-policy-compliance/compare/rev85&hellip;rev86</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev86",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev86...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
             "snap": null
          },
          {
@@ -29347,7 +29347,7 @@
          },
          {
             "name": "haproxy-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/haproxy-operator",
             "releases": [
                {
@@ -29980,6 +29980,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "3efe75eb2291a165630d5264ec49d55791c9c018",
+                  "author": "renovate[bot]",
+                  "timestamp": 1732265903,
+                  "message": "<p>chore(deps): update dependency <a target=\"_blank\" href=\"https://github.com/github\">@github</a>/local-action to v2.2.1 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/473\">#473</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/3efe75eb2291a165630d5264ec49d55791c9c018"
+               },
+               {
                   "sha": "52b5f6b34e554b89b987112a78f012d04c0a54ec",
                   "author": "renovate[bot]",
                   "timestamp": 1732240204,
@@ -29992,13 +29999,6 @@
                   "timestamp": 1732214657,
                   "message": "<p>feat(docs): Add vale style checker (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/419\">#419</a>)</p>\n\n<ul>\n<li><p>feat(docs): Add vale style checker</p></li>\n\n<li><p>chore(): Use pinned checkout</p></li>\n\n<li><p>chore(): Install tree for github runners</p></li>\n\n<li><p>chore(): Run forrest run</p></li>\n\n<li><p>chore(): Sudo make me a sandwich</p></li>\n\n<li><p>chore(): ¯_(ツ)_/¯</p></li>\n\n<li><p>chore(): Needs rubygems</p></li>\n\n<li><p>Update test.yaml</p></li>\n</ul>\n\n<p>Co-authored-by: Christopher Bartz <a href=\"mailto:christopher.bartz@canonical.com\">christopher.bartz@canonical.com</a>\nSigned-off-by: Mariyan Dimitrov <a href=\"mailto:mariyan.dimitrov@gmail.com\">mariyan.dimitrov@gmail.com</a></p>\n\n<hr>\n\n<p>Signed-off-by: Mariyan Dimitrov <a href=\"mailto:mariyan.dimitrov@gmail.com\">mariyan.dimitrov@gmail.com</a>\nCo-authored-by: Christopher Bartz <a href=\"mailto:christopher.bartz@canonical.com\">christopher.bartz@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/e61bc10a19a075f10ef382f00557406d20fdf0d8"
-               },
-               {
-                  "sha": "f776f16001e3d135683e1dd00c3a36b19a31bfe4",
-                  "author": "renovate[bot]",
-                  "timestamp": 1732209016,
-                  "message": "<p>chore(deps): update dependency eslint to v9 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/468\">#468</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/f776f16001e3d135683e1dd00c3a36b19a31bfe4"
                }
             ],
             "ciActions": [],
@@ -33733,6 +33733,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "bb42ed32eafc2f958b82e126c4592390736eb3dc",
+                  "author": "soleng-terraform[bot]",
+                  "timestamp": 1732266146,
+                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/16\">#16</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/tailscale-snap/commit/bb42ed32eafc2f958b82e126c4592390736eb3dc"
+               },
+               {
                   "sha": "ea09c6782def8ea7d78f0b6c86b74adc6c76e1b3",
                   "author": "soleng-terraform[bot]",
                   "timestamp": 1728428557,
@@ -33745,13 +33752,6 @@
                   "timestamp": 1727822916,
                   "message": "<p>update .github/workflows/release.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/13\">#13</a>)</p>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/tailscale-snap/commit/140366153b091f02ef3cb0181afb14d538267034"
-               },
-               {
-                  "sha": "1e55f27ee9001dcc91706487e0439deecc414de4",
-                  "author": "soleng-terraform[bot]",
-                  "timestamp": 1727216453,
-                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/12\">#12</a>)</p>\n\n<ul>\n<li><p>update .gitignore</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .gitignore</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com>\nCo-authored-by: Samuel Allan <a href=\"mailto:samuel.allan@canonical.com\">samuel.allan@canonical.com</a>\nCo-authored-by: Gabriel Cocenza <a href=\"mailto:gabrielcocenza@gmail.com\">gabrielcocenza@gmail.com</a></p>\n",
-                  "url": "https://github.com/canonical/tailscale-snap/commit/1e55f27ee9001dcc91706487e0439deecc414de4"
                }
             ],
             "ciActions": [],
