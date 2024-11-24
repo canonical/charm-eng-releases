@@ -11669,25 +11669,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "946a94b9f953add2edee23485f8cdd19b2f57006",
+                  "author": "Nick Veitch",
+                  "timestamp": 1732476914,
+                  "message": "<p>Add release notes section (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/833\">#833</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/946a94b9f953add2edee23485f8cdd19b2f57006"
+               },
+               {
+                  "sha": "2de1a9aa87196f3e7f60b9eaef1e84cd251fc13a",
+                  "author": "Nashwan Azhari",
+                  "timestamp": 1732476890,
+                  "message": "<p>fix: remove <code>--containerd</code> Kubelet cAdvisor arg. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/835\">#835</a>)</p>\n\n<p>This patch removes the passing of the <code>--containerd</code> argument\n(value should be path to containerd socket) to <code>kubelet</code>.</p>\n\n<p>This argument is actually not a kubelet argument per se, but instead it\nis a cAdvisor argument (1) which was accidentally transparently declared\nand shipped in kubelet a very long time ago, but had been explicitly\ndeclared within kubelet and marked deprecated since 2017 (2).</p>\n\n<p>[1] <a href=\"https://github.com/google/cadvisor/blob/3888dda254a8fa12f1c96be24ffdc33288ea9071/container/containerd/factory.go#L34\">https://github.com/google/cadvisor/blob/3888dda254a8fa12f1c96be24ffdc33288ea9071/container/containerd/factory.go#L34</a>\n[2] <a href=\"https://github.com/kubernetes/kubernetes/pull/57613/files#diff-fecc7baa0b61f11d37dfc453aef25acca98866e1924f7765ba5592ca58fc3045R143\">https://github.com/kubernetes/kubernetes/pull/57613/files#diff-fecc7baa0b61f11d37dfc453aef25acca98866e1924f7765ba5592ca58fc3045R143</a></p>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/2de1a9aa87196f3e7f60b9eaef1e84cd251fc13a"
+               },
+               {
                   "sha": "17491b44a5b747e456253254e7d6d89ff350a9c4",
                   "author": "Maciek Gołaszewski",
                   "timestamp": 1732282116,
                   "message": "<p>Update offline.md side-load instructions (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/831\">#831</a>)</p>\n\n<p>KU-2094</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/17491b44a5b747e456253254e7d6d89ff350a9c4"
-               },
-               {
-                  "sha": "376da2ba90578a0513e71e88bb10e4fa627557a6",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1732264699,
-                  "message": "<p>Cleans up all containerd-related resources on snap removal (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/827\">#827</a>)</p>\n\n<p>Currently, when removing the snap, the /var/run/containerd folder is not\nproperly removed, as it is a folder. This fixes this issue.</p>\n\n<p>Additionally removes other containerd-related folders: /etc/containerd\nand /var/lib/containerd.</p>\n\n<p>We&rsquo;re also removing /opt/cni/bin on snap removal, which is created when\nbootstrapping the node. As we&rsquo;re removing the k8s snap, we no longer\nneed this folder either.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/376da2ba90578a0513e71e88bb10e4fa627557a6"
-               },
-               {
-                  "sha": "7f732c9bcabdab4ac9b661c3e95a432a549aad7f",
-                  "author": "github-actions[bot]",
-                  "timestamp": 1732215331,
-                  "message": "<p>[main] Update component versions (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/825\">#825</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/7f732c9bcabdab4ac9b661c3e95a432a549aad7f"
                }
             ],
             "ciActions": [
