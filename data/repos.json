@@ -11669,6 +11669,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8e6ef1f5636bb5638c5ea986a496e9a3a150fa61",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1732548165,
+                  "message": "<p>Ensure that the snap can be reinstalled after cleanup (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/823\">#823</a>)</p>\n\n<p>By removing and reinstalling the snap, we ensure that the snap cleans\nup all relevant directories and does not stand in its own way.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/8e6ef1f5636bb5638c5ea986a496e9a3a150fa61"
+               },
+               {
                   "sha": "ec2081ebd87113bd4fa045546beb848b7b04323d",
                   "author": "Maciek Gołaszewski",
                   "timestamp": 1732544569,
@@ -11681,13 +11688,6 @@
                   "timestamp": 1732476914,
                   "message": "<p>Add release notes section (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/833\">#833</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/946a94b9f953add2edee23485f8cdd19b2f57006"
-               },
-               {
-                  "sha": "2de1a9aa87196f3e7f60b9eaef1e84cd251fc13a",
-                  "author": "Nashwan Azhari",
-                  "timestamp": 1732476890,
-                  "message": "<p>fix: remove <code>--containerd</code> Kubelet cAdvisor arg. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/835\">#835</a>)</p>\n\n<p>This patch removes the passing of the <code>--containerd</code> argument\n(value should be path to containerd socket) to <code>kubelet</code>.</p>\n\n<p>This argument is actually not a kubelet argument per se, but instead it\nis a cAdvisor argument (1) which was accidentally transparently declared\nand shipped in kubelet a very long time ago, but had been explicitly\ndeclared within kubelet and marked deprecated since 2017 (2).</p>\n\n<p>[1] <a href=\"https://github.com/google/cadvisor/blob/3888dda254a8fa12f1c96be24ffdc33288ea9071/container/containerd/factory.go#L34\">https://github.com/google/cadvisor/blob/3888dda254a8fa12f1c96be24ffdc33288ea9071/container/containerd/factory.go#L34</a>\n[2] <a href=\"https://github.com/kubernetes/kubernetes/pull/57613/files#diff-fecc7baa0b61f11d37dfc453aef25acca98866e1924f7765ba5592ca58fc3045R143\">https://github.com/kubernetes/kubernetes/pull/57613/files#diff-fecc7baa0b61f11d37dfc453aef25acca98866e1924f7765ba5592ca58fc3045R143</a></p>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/2de1a9aa87196f3e7f60b9eaef1e84cd251fc13a"
                }
             ],
             "ciActions": [
@@ -14714,7 +14714,7 @@
          },
          {
             "name": "oai-ran-du-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/oai-ran-du-k8s-operator",
             "releases": [
                {
@@ -16404,9 +16404,18 @@
          },
          {
             "name": "sdcore-udr-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
+               {
+                  "id": 187324888,
+                  "version": "rev594",
+                  "timestamp": 1732546249,
+                  "title": "Revision 594",
+                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.6.1\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dependabot-pip-pip-dependencies-8ff392fc5a&rsquo; at 15:24 UTC on 25 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev592...rev594\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev592&hellip;rev594</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev594",
+                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev594...main"
+               },
                {
                   "id": 187149555,
                   "version": "rev593",
@@ -16424,15 +16433,6 @@
                   "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.6.1\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 16:36 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: move to channel 6/stable in mongodb by <a target=\"_blank\" href=\"https://github.com/patriciareinoso\">@patriciareinoso</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/372\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/372\">#372</a></a></li>\n<li>chore: Bump workflow version to stabilize CI by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/373\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/373\">#373</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev589...rev592\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev589&hellip;rev592</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev592",
                   "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev592...main"
-               },
-               {
-                  "id": 186963275,
-                  "version": "rev591",
-                  "timestamp": 1732289253,
-                  "title": "Revision 591",
-                  "body": "<p>resources:\n    -  udr-image: ghcr.io/canonical/sdcore-udr:1.6.1\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/chore-bump-workflow&rsquo; at 16:01 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: move to channel 6/stable in mongodb by <a target=\"_blank\" href=\"https://github.com/patriciareinoso\">@patriciareinoso</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/372\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udr-k8s-operator/pull/372\">#372</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev589...rev591\">https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev589&hellip;rev591</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udr-k8s-operator/releases/tag/rev591",
-                  "compareUrl": "https://github.com/canonical/sdcore-udr-k8s-operator/compare/rev591...main"
                }
             ],
             "tags": null,
@@ -27584,6 +27584,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "eefa37c5e2b19d0ab7fe6812da4e412430d30720",
+                  "author": "renovate[bot]",
+                  "timestamp": 1732548490,
+                  "message": "<p>chore(deps): update dependency pydantic to v2.10.1 (<a target=\"_blank\" href=\"https://github.com/canonical/irc-bridge-operator/pull/10\">#10</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/irc-bridge-operator/commit/eefa37c5e2b19d0ab7fe6812da4e412430d30720"
+               },
+               {
                   "sha": "4ea03495bad9068d332995c5aa8cc778315c2a1e",
                   "author": "renovate[bot]",
                   "timestamp": 1732546909,
@@ -27596,13 +27603,6 @@
                   "timestamp": 1732308077,
                   "message": "<p>chore(deps): update dependency ops to v2.17.0 (<a target=\"_blank\" href=\"https://github.com/canonical/irc-bridge-operator/pull/9\">#9</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>\nCo-authored-by: Amanda H. L. de Andrade Katz <a href=\"mailto:amandahla@gmail.com\">amandahla@gmail.com</a></p>\n",
                   "url": "https://github.com/canonical/irc-bridge-operator/commit/19bbb6d21ea122a38572e64a6a5282c1f169d053"
-               },
-               {
-                  "sha": "fdbf43eb6125c8f58a55e6a339f87337eea7c55a",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1732299553,
-                  "message": "<p>feat(plugins): Initial plugins support (<a target=\"_blank\" href=\"https://github.com/canonical/irc-bridge-operator/pull/7\">#7</a>)</p>\n",
-                  "url": "https://github.com/canonical/irc-bridge-operator/commit/fdbf43eb6125c8f58a55e6a339f87337eea7c55a"
                }
             ],
             "ciActions": [],
@@ -28837,9 +28837,9 @@
             "tags": [
                {
                   "name": "discourse-gatekeeper/base-content",
-                  "sha": "0496eef015825a753dca176622484e4dfea47592",
+                  "sha": "41453ec74a5286d71e455720d4d891fccc91bf01",
                   "body": "<p>Use charmcraft.yaml instead of metadata.yaml</p>\n",
-                  "timestamp": 1732464394,
+                  "timestamp": 1732550744,
                   "url": "https://github.com/canonical/gatekeeper-repo-test/releases/tag/discourse-gatekeeper%2Fbase-content",
                   "compareUrl": "https://github.com/canonical/gatekeeper-repo-test/compare/main...discourse-gatekeeper%2Fbase-content"
                }
