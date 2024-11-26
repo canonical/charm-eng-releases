@@ -11641,6 +11641,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "a6d3bfd014b8c412aeba55abdb43c22362e41fce",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1732607067,
+                  "message": "<p>Add ceph-csi how-to (Juju) (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/819\">#819</a>)</p>\n\n<ul>\n<li>Add ceph-csi how-to (Juju)</li>\n</ul>\n\n<p>We&rsquo;re adding a guide that describes the steps to deploy Ceph and the\nCeph CSI plugin using Juju.</p>\n\n<p>It mostly follows the steps outlined in the ceph-csi readme:\n<a href=\"https://github.com/charmed-kubernetes/ceph-csi-operator/blob/main/README.md\">https://github.com/charmed-kubernetes/ceph-csi-operator/blob/main/README.md</a></p>\n\n<ul>\n<li><p>Update index.md</p></li>\n\n<li><p>Update ceph-csi.md</p></li>\n</ul>\n\n<p>edited the language to be more in line with a how-to guide rather than tutorial. Also changes to layout and heading</p>\n\n<ul>\n<li>Readd &ldquo;juju k8s deploy&rdquo; example and a note on k8s resources</li>\n</ul>\n\n<p>VM containers will default to 1 vcpu, which isn&rsquo;t enough for K8s.\nK8s services and pods will hang unless we allocate enough resources.</p>\n\n<p>We&rsquo;ll readd the &ldquo;juju k8s deploy&rdquo; example and an explicit note\non resource requirements.</p>\n\n<hr>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/a6d3bfd014b8c412aeba55abdb43c22362e41fce"
+               },
+               {
                   "sha": "49ed829b0a2313fef42bb2b9172d10e9d5b4a691",
                   "author": "Niamh Hennigan",
                   "timestamp": 1732563971,
@@ -11653,13 +11660,6 @@
                   "timestamp": 1732563900,
                   "message": "<p>Update docs for cis hardening (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/802\">#802</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/e58390577d4098bca5fe7179c5b05d2f407a9916"
-               },
-               {
-                  "sha": "15ca44631db3ae15e299e1f4c8c651b9857c88de",
-                  "author": "eaudetcobello",
-                  "timestamp": 1732563866,
-                  "message": "<p>Add containerd warning to getting-started.md (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/828\">#828</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/15ca44631db3ae15e299e1f4c8c651b9857c88de"
                }
             ],
             "ciActions": [
@@ -15528,6 +15528,116 @@
             "snap": null
          },
          {
+            "name": "sdcore-nrf-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-nrf-k8s-operator",
+            "releases": [
+               {
+                  "id": 187472477,
+                  "version": "rev718",
+                  "timestamp": 1732605691,
+                  "title": "Revision 718",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.5.2\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 07:53 UTC on 26 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Use UV and bump base to 24.04 by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/420\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/420\">#420</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev715...rev718\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev715&hellip;rev718</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev718",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev718...main"
+               },
+               {
+                  "id": 187357036,
+                  "version": "rev717",
+                  "timestamp": 1732555295,
+                  "title": "Revision 717",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.5.2\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-use-uv-and-24-04-base&rsquo; at 17:47 UTC on 25 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev716...rev717\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev716&hellip;rev717</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev717",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev717...main"
+               },
+               {
+                  "id": 187356154,
+                  "version": "rev716",
+                  "timestamp": 1732555037,
+                  "title": "Revision 716",
+                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.5.2\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-use-uv-and-24-04-base&rsquo; at 17:42 UTC on 25 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev715...rev716\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev715&hellip;rev716</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev716",
+                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev716...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "sdcore-nrf-k8s",
+               "url": "https://charmhub.io/sdcore-nrf-k8s",
+               "releases": [
+                  {
+                     "track": "1.4",
+                     "channel": "beta",
+                     "revision": 142,
+                     "timestamp": 1714129355,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "edge",
+                     "revision": 688,
+                     "timestamp": 1730209849,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 10,
+                     "timestamp": 1704285638,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 16,
+                     "timestamp": 1705820596,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "edge",
+                     "revision": 714,
+                     "timestamp": 1732524855,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "edge",
+                     "revision": 718,
+                     "timestamp": 1732607621,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "beta",
+                     "revision": 10,
+                     "timestamp": 1705952844,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "edge",
+                     "revision": 94,
+                     "timestamp": 1712321475,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "1.4",
+                  "latest",
+                  "1.5",
+                  "1.3"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "sdcore-nms-k8s-operator",
             "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
@@ -15641,109 +15751,6 @@
                   "1.5",
                   "1.3",
                   "0.2"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "sdcore-nrf-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-nrf-k8s-operator",
-            "releases": [
-               {
-                  "id": 187357036,
-                  "version": "rev717",
-                  "timestamp": 1732555295,
-                  "title": "Revision 717",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.5.2\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-use-uv-and-24-04-base&rsquo; at 17:47 UTC on 25 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev716...rev717\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev716&hellip;rev717</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev717",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev717...main"
-               },
-               {
-                  "id": 187356154,
-                  "version": "rev716",
-                  "timestamp": 1732555037,
-                  "title": "Revision 716",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.5.2\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/dev-use-uv-and-24-04-base&rsquo; at 17:42 UTC on 25 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev715...rev716\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev715&hellip;rev716</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev716",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev716...main"
-               },
-               {
-                  "id": 187237469,
-                  "version": "rev715",
-                  "timestamp": 1732495699,
-                  "title": "Revision 715",
-                  "body": "<p>resources:\n    -  nrf-image: ghcr.io/canonical/sdcore-nrf:1.5.2\n       resource-revision: 53</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/v1-5&rsquo; at 08:55 UTC on 25 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump the pip_dependencies group with 5 updates by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/419\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/pull/419\">#419</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev711...rev715\">https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev711&hellip;rev715</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nrf-k8s-operator/releases/tag/rev715",
-                  "compareUrl": "https://github.com/canonical/sdcore-nrf-k8s-operator/compare/rev715...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "sdcore-nrf-k8s",
-               "url": "https://charmhub.io/sdcore-nrf-k8s",
-               "releases": [
-                  {
-                     "track": "1.4",
-                     "channel": "beta",
-                     "revision": 142,
-                     "timestamp": 1714129355,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.4",
-                     "channel": "edge",
-                     "revision": 688,
-                     "timestamp": 1730209849,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 10,
-                     "timestamp": 1704285638,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 16,
-                     "timestamp": 1705820596,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "edge",
-                     "revision": 714,
-                     "timestamp": 1732524855,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "beta",
-                     "revision": 10,
-                     "timestamp": 1705952844,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "edge",
-                     "revision": 94,
-                     "timestamp": 1712321475,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "1.4",
-                  "latest",
-                  "1.5",
-                  "1.3"
                ]
             },
             "snap": null
@@ -17103,36 +17110,6 @@
             "snap": null
          },
          {
-            "name": "terraform-juju-sdcore-smf-k8s",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s",
-            "releases": [
-               {
-                  "id": 138667894,
-                  "version": "v1.0.4",
-                  "timestamp": 1706273191,
-                  "title": "",
-                  "body": "<p>v1.0.4</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/releases/tag/v1.0.4",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/compare/v1.0.4...main"
-               },
-               {
-                  "id": 138131441,
-                  "version": "v1.0.0",
-                  "timestamp": 1706010236,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "terraform-juju-sdcore",
             "newCommits": 0,
             "url": "https://github.com/canonical/terraform-juju-sdcore",
@@ -17166,6 +17143,57 @@
                   "body": "<p>v1.0.0</p>\n",
                   "url": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s/releases/tag/v1.0.0",
                   "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s/compare/v1.0.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "terraform-juju-sdcore-pcf-k8s",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s",
+            "releases": [
+               {
+                  "id": 138132270,
+                  "version": "v1.0.0",
+                  "timestamp": 1706010669,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/compare/v1.0.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "terraform-juju-sdcore-smf-k8s",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s",
+            "releases": [
+               {
+                  "id": 138667894,
+                  "version": "v1.0.4",
+                  "timestamp": 1706273191,
+                  "title": "",
+                  "body": "<p>v1.0.4</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/releases/tag/v1.0.4",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/compare/v1.0.4...main"
+               },
+               {
+                  "id": 138131441,
+                  "version": "v1.0.0",
+                  "timestamp": 1706010236,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s/compare/v1.0.0...main"
                }
             ],
             "tags": null,
@@ -17298,27 +17326,6 @@
                   "body": "<p>v1.0.0</p>\n",
                   "url": "https://github.com/canonical/terraform-juju-traefik-k8s/releases/tag/v1.0.0",
                   "compareUrl": "https://github.com/canonical/terraform-juju-traefik-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "terraform-juju-sdcore-pcf-k8s",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s",
-            "releases": [
-               {
-                  "id": 138132270,
-                  "version": "v1.0.0",
-                  "timestamp": 1706010669,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/compare/v1.0.0...main"
                }
             ],
             "tags": null,
@@ -29388,6 +29395,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "d85e7ab9e0521a814af86ff17a644978212dd2a4",
+                  "author": "renovate[bot]",
+                  "timestamp": 1732606810,
+                  "message": "<p>chore(deps): update dependency <a target=\"_blank\" href=\"https://github.com/types\">@types</a>/node to v22.10.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/483\">#483</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/d85e7ab9e0521a814af86ff17a644978212dd2a4"
+               },
+               {
                   "sha": "781fdd1fbf25ac7d15cf6bd02142e126a81f17fd",
                   "author": "renovate[bot]",
                   "timestamp": 1732588920,
@@ -29400,13 +29414,6 @@
                   "timestamp": 1732555470,
                   "message": "<p>Allow <code>continue-on-error</code> in <code>select-charm</code> (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/480\">#480</a>)</p>\n\n<ul>\n<li><p>Allow <code>continue-on-error</code> in <code>select-charm</code></p></li>\n\n<li><p>Set <code>continue-on-error: true</code> by default</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/e6fde476c7f8c3e7f2b4ba74375f1badee9b5711"
-               },
-               {
-                  "sha": "81c67435e29b68685a68a4756580b478987285bb",
-                  "author": "renovate[bot]",
-                  "timestamp": 1732525408,
-                  "message": "<p>chore(deps): update dependency typescript to v5.7.2 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/478\">#478</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>\nCo-authored-by: javierdelapuente <a href=\"mailto:javier.delapuente@canonical.com\">javier.delapuente@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/81c67435e29b68685a68a4756580b478987285bb"
                }
             ],
             "ciActions": [],
@@ -32148,6 +32155,45 @@
       "team": "Solutions Engineering",
       "repos": [
          {
+            "name": "charm-juju-backup-all",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charm-juju-backup-all",
+            "releases": [
+               {
+                  "id": 187469813,
+                  "version": "rev36",
+                  "timestamp": 1732603133,
+                  "title": "Revision 36",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:33 UTC on 26 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build(promote): Change to use promote-charm action by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/58\">#58</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev33...rev36\">https://github.com/canonical/charm-juju-backup-all/compare/rev33&hellip;rev36</a></p>\n",
+                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev36",
+                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev36...main"
+               },
+               {
+                  "id": 187469794,
+                  "version": "rev35",
+                  "timestamp": 1732603133,
+                  "title": "Revision 35",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:33 UTC on 26 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build(promote): Change to use promote-charm action by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/58\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/58\">#58</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev33...rev35\">https://github.com/canonical/charm-juju-backup-all/compare/rev33&hellip;rev35</a></p>\n",
+                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev35...main"
+               },
+               {
+                  "id": 187221778,
+                  "version": "rev34",
+                  "timestamp": 1732515574,
+                  "title": "Revision 34",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:01 UTC on 25 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/49\">#49</a></a></li>\n<li>build: Pin juju-backup-all version to 1.1.1 by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev27...rev34\">https://github.com/canonical/charm-juju-backup-all/compare/rev27&hellip;rev34</a></p>\n",
+                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev34",
+                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev34...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "charm-prometheus-juju-exporter",
             "newCommits": 0,
             "url": "https://github.com/canonical/charm-prometheus-juju-exporter",
@@ -32262,45 +32308,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "charm-juju-backup-all",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/charm-juju-backup-all",
-            "releases": [
-               {
-                  "id": 187221778,
-                  "version": "rev34",
-                  "timestamp": 1732515574,
-                  "title": "Revision 34",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:01 UTC on 25 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/49\">#49</a></a></li>\n<li>build: Pin juju-backup-all version to 1.1.1 by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev27...rev34\">https://github.com/canonical/charm-juju-backup-all/compare/rev27&hellip;rev34</a></p>\n",
-                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev34",
-                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev34...main"
-               },
-               {
-                  "id": 187221766,
-                  "version": "rev33",
-                  "timestamp": 1732515574,
-                  "title": "Revision 33",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:01 UTC on 25 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/49\">#49</a></a></li>\n<li>build: Pin juju-backup-all version to 1.1.1 by <a target=\"_blank\" href=\"https://github.com/jneo8\">@jneo8</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev27...rev33\">https://github.com/canonical/charm-juju-backup-all/compare/rev27&hellip;rev33</a></p>\n",
-                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev33",
-                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev33...main"
-               },
-               {
-                  "id": 184200688,
-                  "version": "rev32",
-                  "timestamp": 1730970474,
-                  "title": "Revision 32",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge/2.9&rsquo; at 16:58 UTC on 7 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Using tmp branch of j-b-a for support 2.9 by <a target=\"_blank\" href=\"https://github.com/rgildein\">@rgildein</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/54\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/54\">#54</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev29...rev32\">https://github.com/canonical/charm-juju-backup-all/compare/rev29&hellip;rev32</a></p>\n",
-                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev32",
-                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev32...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
             "snap": null
          },
          {
