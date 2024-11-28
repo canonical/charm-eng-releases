@@ -4,7 +4,7 @@
       "repos": [
          {
             "name": "python-libjuju",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/juju/python-libjuju",
             "releases": [
                {
@@ -2173,9 +2173,18 @@
       "repos": [
          {
             "name": "operator",
-            "newCommits": 734,
+            "newCommits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 187949463,
+                  "version": "2.17.1",
+                  "timestamp": 1732768402,
+                  "title": "2.17.1 Container.push_path() supports non-text files",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release fixes a bug with <code>Container.push_path()</code>. Previously, <code>Container.push_path()</code> required local files to be valid UTF-8 files. <code>Container.push_path()</code> now works on non-text files too.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Make <code>push_path</code> open in binary mode so it works on non-text files (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1458\">#1458</a>)</li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Use <code>MaintenanceStatus</code> for local issues (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1397\">#1397</a>)</li>\n<li>Explicitly document that <code>collect-status</code> is is run on every hook (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1399\">#1399</a>)</li>\n<li>Use our docs URL for the <code>ogp:url</code> properties Sphinx generates (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1411\">#1411</a>)</li>\n<li>Set the <code>READTHEDOCS</code> context variable (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1410\">#1410</a>)</li>\n<li>Fix Read the Docs ad placement (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1414\">#1414</a>)</li>\n<li>Clarify where <code>StoredState</code> is stored, and the upgrade behaviour (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1416\">#1416</a>)</li>\n<li>Fix copy &lsquo;n&rsquo; paste error in <code>stop_services</code> docstring (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1457\">#1457</a>)</li>\n</ul>\n\n<h2>Continuous Integration</h2>\n\n<ul>\n<li>Configure the labels for dependabot PRs (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1407\">#1407</a>)</li>\n<li>Disable the automatic ops[testing] releasing (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1415\">#1415</a>)</li>\n<li>Use the actual poetry command, rather than manually tweaking the file (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1443\">#1443</a>)</li>\n<li>Fix broken GitHub variable expansion (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1446\">#1446</a>)</li>\n<li>Coverage report generation should also include testing/src/scenario (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1453\">#1453</a>)</li>\n<li>Fix PR title CI job concurrency (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1451\">#1451</a>)</li>\n<li>Adjust the release process to handle publishing ops and ops<a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1432&quot;&gt;#1432&lt;/a\">testing</a></li>\n<li>A better way than commenting out external repos (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1463\">#1463</a>)</li>\n<li>Use more descriptive names for the publish workflows (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1464\">#1464</a>)</li>\n<li>Move the XML coverage report to .report (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1465\">#1465</a>)</li>\n</ul>\n\n<h2>Refactoring</h2>\n\n<ul>\n<li>Import the ops[testing] repository (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1406\">#1406</a>)</li>\n<li>Update linting with the latest ruff (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1441\">#1441</a>)</li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.17.0...2.17.1\">https://github.com/canonical/operator/compare/2.17.0&hellip;2.17.1</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/untagged-104c6181022c3f2fb481",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.17.1...main"
+               },
                {
                   "id": 176978086,
                   "version": "2.17.0",
@@ -2193,23 +2202,11 @@
                   "body": "<p>This is a small bug-fix release to address a regression in ops 2.16.0 where creating a <code>Harness</code> object would add a <code>JUJU_VERSION</code> to <code>os.environ</code>.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Don&rsquo;t alter os.environ in Harness in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1359\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1359\">#1359</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.16.0...2.16.1\">https://github.com/canonical/operator/compare/2.16.0&hellip;2.16.1</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.16.1",
                   "compareUrl": "https://github.com/canonical/operator/compare/2.16.1...main"
-               },
-               {
-                  "id": 172490784,
-                  "version": "2.16.0",
-                  "timestamp": 1724912029,
-                  "title": "2.16.0",
-                  "body": "<p>This release adds a private <a href=\"https://github.com/canonical/operator/blob/main/ops/jujucontext.py#L25\"><code>_JujuContext</code></a> dataclass used to parse all <code>JUJU_*</code>` environment variables in one place; besides, a significant amount of work has been done on tests, continuous integration and documentation.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Add the description field to SecretInfo in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1338\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1338\">#1338</a></a></li>\n</ul>\n\n<h2>Refactor</h2>\n\n<ul>\n<li>Parse JUJU_* env in one place in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1313\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1313\">#1313</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Juju passes the expiry in a field &lsquo;expiry&rsquo;, not &lsquo;expires&rsquo; in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1317\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1317\">#1317</a></a></li>\n<li>Correct the signature of .events() in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1342\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1342\">#1342</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Security policy change to only support each active major release in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1297\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1297\">#1297</a></a></li>\n<li>Add example Juju version markers in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1311\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1311\">#1311</a></a></li>\n<li>Use Sphinx 8 in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1303\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1303\">#1303</a></a></li>\n<li>Live reload with sphinx-autobuild in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1323\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1323\">#1323</a></a></li>\n</ul>\n\n<h2>Tests</h2>\n\n<ul>\n<li>Update the smoke test series/bases in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1318\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1318\">#1318</a></a></li>\n<li>Run pytest in parallel with pytest xdist in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1319\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1319\">#1319</a></a></li>\n<li>Bump pyright to 1.1.377 in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1332\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1332\">#1332</a></a></li>\n<li>Run tests on Py 3.12 and install test on Py 3.13 in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1315\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1315\">#1315</a></a></li>\n</ul>\n\n<h2>CI</h2>\n\n<ul>\n<li>Add a workflow that runs the TIOBE quality checks in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1301\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1301\">#1301</a></a></li>\n<li>Allow executing the TIOBE workflow manually in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1321\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1321\">#1321</a></a></li>\n<li>Make Pyright report unnecessary type ignore comments in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1333\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1333\">#1333</a></a></li>\n<li>Enable linting of docs/custom_conf.py in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1330\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1330\">#1330</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<p>Thanks <a target=\"_blank\" href=\"https://github.com/james-garner-canonical\">@james-garner-canonical</a> for your first contributions, and welcome to the team!</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.15.0...2.16.0\">https://github.com/canonical/operator/compare/2.15.0&hellip;2.16.0</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.16.0",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.16.0...main"
                }
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/operator/actions/workflows/framework-tests.yaml",
-               "https://github.com/canonical/operator/actions/workflows/publish.yml"
-            ],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -2251,7 +2248,7 @@
          },
          {
             "name": "pebble",
-            "newCommits": 20,
+            "newCommits": 21,
             "url": "https://github.com/canonical/pebble",
             "releases": [
                {
@@ -2374,15 +2371,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1018,
-                     "timestamp": 1732759985,
+                     "revision": 1019,
+                     "timestamp": 1732768511,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1017,
-                     "timestamp": 1732759976,
+                     "revision": 1020,
+                     "timestamp": 1732768601,
                      "base": "bare"
                   },
                   {
