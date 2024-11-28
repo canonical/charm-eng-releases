@@ -4,7 +4,7 @@
       "repos": [
          {
             "name": "python-libjuju",
-            "newCommits": 2,
+            "newCommits": 4,
             "url": "https://github.com/juju/python-libjuju",
             "releases": [
                {
@@ -2179,10 +2179,10 @@
                {
                   "id": 187949463,
                   "version": "2.17.1",
-                  "timestamp": 1732768402,
+                  "timestamp": 1732774626,
                   "title": "2.17.1 Container.push_path() supports non-text files",
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release fixes a bug with <code>Container.push_path()</code>. Previously, <code>Container.push_path()</code> required local files to be valid UTF-8 files. <code>Container.push_path()</code> now works on non-text files too.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Make <code>push_path</code> open in binary mode so it works on non-text files (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1458\">#1458</a>)</li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Use <code>MaintenanceStatus</code> for local issues (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1397\">#1397</a>)</li>\n<li>Explicitly document that <code>collect-status</code> is is run on every hook (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1399\">#1399</a>)</li>\n<li>Use our docs URL for the <code>ogp:url</code> properties Sphinx generates (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1411\">#1411</a>)</li>\n<li>Set the <code>READTHEDOCS</code> context variable (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1410\">#1410</a>)</li>\n<li>Fix Read the Docs ad placement (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1414\">#1414</a>)</li>\n<li>Clarify where <code>StoredState</code> is stored, and the upgrade behaviour (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1416\">#1416</a>)</li>\n<li>Fix copy &lsquo;n&rsquo; paste error in <code>stop_services</code> docstring (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1457\">#1457</a>)</li>\n</ul>\n\n<h2>Continuous Integration</h2>\n\n<ul>\n<li>Configure the labels for dependabot PRs (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1407\">#1407</a>)</li>\n<li>Disable the automatic ops[testing] releasing (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1415\">#1415</a>)</li>\n<li>Use the actual poetry command, rather than manually tweaking the file (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1443\">#1443</a>)</li>\n<li>Fix broken GitHub variable expansion (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1446\">#1446</a>)</li>\n<li>Coverage report generation should also include testing/src/scenario (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1453\">#1453</a>)</li>\n<li>Fix PR title CI job concurrency (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1451\">#1451</a>)</li>\n<li>Adjust the release process to handle publishing ops and ops<a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1432&quot;&gt;#1432&lt;/a\">testing</a></li>\n<li>A better way than commenting out external repos (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1463\">#1463</a>)</li>\n<li>Use more descriptive names for the publish workflows (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1464\">#1464</a>)</li>\n<li>Move the XML coverage report to .report (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1465\">#1465</a>)</li>\n</ul>\n\n<h2>Refactoring</h2>\n\n<ul>\n<li>Import the ops[testing] repository (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1406\">#1406</a>)</li>\n<li>Update linting with the latest ruff (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1441\">#1441</a>)</li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.17.0...2.17.1\">https://github.com/canonical/operator/compare/2.17.0&hellip;2.17.1</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/untagged-104c6181022c3f2fb481",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.17.1",
                   "compareUrl": "https://github.com/canonical/operator/compare/2.17.1...main"
                },
                {
@@ -2206,7 +2206,10 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": null,
+            "ciActions": [
+               "https://github.com/canonical/operator/actions/workflows/framework-tests.yaml",
+               "https://github.com/canonical/operator/actions/workflows/publish.yml"
+            ],
             "charm": null,
             "snap": null
          },
@@ -9103,6 +9106,15 @@
             "url": "https://github.com/canonical/oathkeeper-operator",
             "releases": [
                {
+                  "id": 187961023,
+                  "version": "rev68",
+                  "timestamp": 1732775107,
+                  "title": "Revision 68",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:55 UTC on 28 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency juju to v3.6.0.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/121\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/121\">#121</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev67...rev68\">https://github.com/canonical/oathkeeper-operator/compare/rev67&hellip;rev68</a></p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev68",
+                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev68...main"
+               },
+               {
                   "id": 187921280,
                   "version": "rev67",
                   "timestamp": 1732745598,
@@ -9119,15 +9131,6 @@
                   "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:53 UTC on 23 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.43.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/119\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/119\">#119</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev65...rev66\">https://github.com/canonical/oathkeeper-operator/compare/rev65&hellip;rev66</a></p>\n",
                   "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev66",
                   "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev66...main"
-               },
-               {
-                  "id": 186857318,
-                  "version": "rev65",
-                  "timestamp": 1732273289,
-                  "title": "Revision 65",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:31 UTC on 22 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.8.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/118\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/118\">#118</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev64...rev65\">https://github.com/canonical/oathkeeper-operator/compare/rev64&hellip;rev65</a></p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev65",
-                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev65...main"
                }
             ],
             "tags": null,
@@ -9149,8 +9152,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 67,
-                     "timestamp": 1732747447,
+                     "revision": 68,
+                     "timestamp": 1732776956,
                      "base": ""
                   },
                   {
@@ -15678,6 +15681,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "55c5c8a3363e3e161a20f34f92c24796611992b2",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1732777114,
+                  "message": "<p>chore: Bump rock to v1.5.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/31\">#31</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/55c5c8a3363e3e161a20f34f92c24796611992b2"
+               },
+               {
                   "sha": "9264926609d60507d7b3edeb8a97c72d0092be0d",
                   "author": "dependabot[bot]",
                   "timestamp": 1732309646,
@@ -15690,13 +15700,6 @@
                   "timestamp": 1731964992,
                   "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.0.0 to 2.1.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/29\">#29</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/ba201d7ed82ad11cc759697252e472d153c32e3f"
-               },
-               {
-                  "sha": "a0b8e862a5522c68ab8213afca659f15bc5c901e",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1731705184,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 1.0.0 to 2.0.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/28\">#28</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/a0b8e862a5522c68ab8213afca659f15bc5c901e"
                }
             ],
             "ciActions": [],
@@ -16954,9 +16957,18 @@
          },
          {
             "name": "sdcore-upf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 4,
             "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
             "releases": [
+               {
+                  "id": 187962775,
+                  "version": "rev691",
+                  "timestamp": 1732776573,
+                  "title": "Revision 691",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.5.0\n       resource-revision: 46\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.5.0\n       resource-revision: 52</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 07:12 UTC on 28 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Use 1.5.0 version of rocks by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/435\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/435\">#435</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev688...rev691\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev688&hellip;rev691</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev691",
+                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev691...main"
+               },
                {
                   "id": 187918358,
                   "version": "rev690",
@@ -16974,15 +16986,6 @@
                   "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.5.0\n       resource-revision: 46\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.5.0\n       resource-revision: 52</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/fix-rock-versions&rsquo; at 22:05 UTC on 27 Nov 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev687...rev689\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev687&hellip;rev689</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev689",
                   "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev689...main"
-               },
-               {
-                  "id": 187818475,
-                  "version": "rev688",
-                  "timestamp": 1732711667,
-                  "title": "Revision 688",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.4.0\n       resource-revision: 45\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.4.0\n       resource-revision: 51</p>\n\n<p>Static resources:\n Released to &lsquo;1.5/edge/&rsquo; at 13:11 UTC on 27 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Uses UV for dependency management by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/430\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/430\">#430</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev685...rev688\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev685&hellip;rev688</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev688",
-                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev688...main"
                }
             ],
             "tags": null,
@@ -17065,8 +17068,8 @@
                   {
                      "track": "1.5",
                      "channel": "edge",
-                     "revision": 688,
-                     "timestamp": 1732713075,
+                     "revision": 691,
+                     "timestamp": 1732777946,
                      "base": ""
                   },
                   {
@@ -27792,6 +27795,87 @@
       "team": "IS",
       "repos": [
          {
+            "name": "github-runner-image-builder-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/github-runner-image-builder-operator",
+            "releases": [
+               {
+                  "id": 187960429,
+                  "version": "rev38",
+                  "timestamp": 1732776490,
+                  "title": "Revision 38",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:49 UTC on 28 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: external script secrets by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/51\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/51\">#51</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev37...rev38\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev37&hellip;rev38</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev38",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev38...main"
+               },
+               {
+                  "id": 187458160,
+                  "version": "rev37",
+                  "timestamp": 1732600092,
+                  "title": "Revision 37",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:49 UTC on 26 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev36...rev37\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev36&hellip;rev37</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev37",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev37...main"
+               },
+               {
+                  "id": 187204832,
+                  "version": "rev36",
+                  "timestamp": 1732507584,
+                  "title": "Revision 36",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 04:07 UTC on 25 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: refactor datastructs  by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/46\">#46</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev35...rev36\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev35&hellip;rev36</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev36",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev36...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "github-runner-image-builder",
+               "url": "https://charmhub.io/github-runner-image-builder",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 4,
+                     "timestamp": 1723514256,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 1,
+                     "timestamp": 1715278229,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 33,
+                     "timestamp": 1731475201,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 38,
+                     "timestamp": 1732776581,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "github-runner-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/github-runner-operator",
@@ -28257,87 +28341,6 @@
             "snap": null
          },
          {
-            "name": "github-runner-image-builder-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/github-runner-image-builder-operator",
-            "releases": [
-               {
-                  "id": 187458160,
-                  "version": "rev37",
-                  "timestamp": 1732600092,
-                  "title": "Revision 37",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:49 UTC on 26 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev36...rev37\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev36&hellip;rev37</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev37",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev37...main"
-               },
-               {
-                  "id": 187204832,
-                  "version": "rev36",
-                  "timestamp": 1732507584,
-                  "title": "Revision 36",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 04:07 UTC on 25 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: refactor datastructs  by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/46\">#46</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev35...rev36\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev35&hellip;rev36</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev36",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev36...main"
-               },
-               {
-                  "id": 186601827,
-                  "version": "rev35",
-                  "timestamp": 1732184805,
-                  "title": "Revision 35",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:28 UTC on 21 Nov 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev34...rev35\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev34&hellip;rev35</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev35",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev35...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "github-runner-image-builder",
-               "url": "https://charmhub.io/github-runner-image-builder",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 4,
-                     "timestamp": 1723514256,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 1,
-                     "timestamp": 1715278229,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 33,
-                     "timestamp": 1731475201,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 37,
-                     "timestamp": 1732600156,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "saml-integrator-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/saml-integrator-operator",
@@ -28666,7 +28669,7 @@
          },
          {
             "name": "content-cache-backends-config-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/content-cache-backends-config-operator",
             "releases": null,
             "tags": [
