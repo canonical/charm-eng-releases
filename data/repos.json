@@ -2221,6 +2221,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8e034ef7561f48c25d369550bc7c3727014b8efa",
+                  "author": "Weii Wang",
+                  "timestamp": 1733095360,
+                  "message": "<p>Use snapd REST api to change snap config (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/138\">#138</a>)</p>\n\n<p>Use the snapd REST API to change snap configurations instead of using the snap command.</p>\n\n<p>This improves security in case a secret in command line arguments are logged.</p>\n",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/8e034ef7561f48c25d369550bc7c3727014b8efa"
+               },
+               {
                   "sha": "a1aaa35135220d564f7a63854388b38752de09c4",
                   "author": "James Garner",
                   "timestamp": 1726618668,
@@ -2233,13 +2240,6 @@
                   "timestamp": 1724283059,
                   "message": "<p>Fail and retry on &ldquo;Some index files failed to download&rdquo; (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/130\">#130</a>)</p>\n\n<ul>\n<li>Fail and retry on &ldquo;Some index files failed to download&rdquo;</li>\n</ul>\n\n<p>In scripting apt operations, adding <code>--error-on=any</code> to <code>apt-get update</code>\nis necessary to capture erros like &ldquo;Some index files failed to\ndownload&rdquo;. Otherwise, charms move onto package installations with a\nstale index.</p>\n\n<p>equivalent to: <a href=\"https://github.com/juju/charm-helpers/pull/911\">https://github.com/juju/charm-helpers/pull/911</a>\nref: <a href=\"https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1693900\">https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1693900</a></p>\n\n<ul>\n<li>Bump the patch version</li>\n</ul>\n",
                   "url": "https://github.com/canonical/operator-libs-linux/commit/30ea2e7b21a413ff0cf884c6395da5f7d411efa3"
-               },
-               {
-                  "sha": "9c7f6175e7d6a24796227e293ab0071cd5cb97af",
-                  "author": "Jason Nucciarone",
-                  "timestamp": 1721595299,
-                  "message": "<p>feat: enable juju-systemd-notices to observe snap services (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/128\">#128</a>)</p>\n\n<ul>\n<li>fix: <code>ruff</code> -&gt; <code>ruff check</code></li>\n</ul>\n\n<p>Original <code>ruff $@</code> is no longer supported by latest versions of ruff</p>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>fix!: add support for observing snap services</li>\n</ul>\n\n<p>Adds the <code>watch.yaml</code> file for configuring how the notices\ndaemon observes services. The daemon will get the service\nalias from this file and use the alias to determine the\nproper hook to fire when the observed service is started or stopped.</p>\n\n<p>BREAKING CHANGES: <strong>init</strong> for SystemdNotices now takes the Service\ndata class instead of a generic list. The Service dataclass was added\nso that it would be easier to specify an alias for an observed service.</p>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>tests: update unit tests to reflect new notices API</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>tests: update integration tests</p></li>\n\n<li><p>Consolidates metadata.yaml and actions.yaml into charmcraft.yaml\nfor test charm. Less files to worry about.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>docs: update lib documentation</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>chore(fmt): apply formatting rules</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>chore(lint): update copyright year</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>refactor: <code>open</code> -&gt; <code>write_text</code></li>\n</ul>\n\n<p><code>yaml.dump()</code> returns a string if steam is none, so it\nis easier to just pass the content off to <code>write_text</code> instead\nof opening the file with a context manager.</p>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>fix(tests): correctly patch filesystem on python 3.8</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>reactor: remove watch.yaml mechanism</p></li>\n\n<li><p>Switch to passing the service names and aliases\nvia argparse rather than using the pyyaml external\ndependency to create the watch.yaml file.</p></li>\n\n<li><p>Use global map to track the observed service rather than\ncaching the output of a watch.yaml read.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>tests: update tests to not use watch.yaml</p></li>\n\n<li><p>Reverted SystemdNotices in test charm back to the\noriginal constructor API.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li><p>fix(tests): remove pyfakefs as test dependency</p></li>\n\n<li><p>Fixes unit tests failing on Python 3.10 due to incorrect patching.</p></li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>refactor: remove explicit global references</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>docs: update example to use correct constructor arguments</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<ul>\n<li>chore: bump libpatch version</li>\n</ul>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n\n<hr>\n\n<p>Signed-off-by: Jason C. Nucciarone <a href=\"mailto:nuccitheboss@ubuntu.com\">nuccitheboss@ubuntu.com</a></p>\n",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/9c7f6175e7d6a24796227e293ab0071cd5cb97af"
                }
             ],
             "ciActions": [
@@ -2251,9 +2251,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 21,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 188373985,
+                  "version": "v1.17.0",
+                  "timestamp": 1733097146,
+                  "title": "v1.17.0: restart services that fail within 1s \"okay delay\", and more",
+                  "body": "<p>The main user-facing feature this release adds is that Pebble will now auto-restart services that fail to start within the 1-second &ldquo;okay delay&rdquo; time window. Previously the user would have to re-<code>start</code> these manually. The API (and CLI) still returns an error in this case, with a message indicating it will restart, for example &ldquo;service start attempt: exited quickly with code 1, will restart&rdquo;.</p>\n\n<p>The release also adds support for customisable plan sections (for projects that import and build on top of Pebble).</p>\n\n<p>It also fixes several bugs, including a <a href=\"https://github.com/canonical/pebble/issues/525\">panic during start</a> with certain configurations.</p>\n\n<h2>All changes:</h2>\n\n<ul>\n<li><p>feat(plan): add plan section support by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/488\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/488\">#488</a></a></p></li>\n\n<li><p>feat(planstate): add plan section support by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/489\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/489\">#489</a></a></p></li>\n\n<li><p>feat(plan): add plan sub-directory support by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/509\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/509\">#509</a></a></p></li>\n\n<li><p>feat: set home when user is set by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/521\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/521\">#521</a></a></p></li>\n\n<li><p>feat: restart services failed within okay delay by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/520\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/520\">#520</a></a></p></li>\n\n<li><p>fix: allow stopping services in &ldquo;starting&rdquo; state by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/503\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/503\">#503</a></a></p></li>\n\n<li><p>fix: ring buffer deadlock by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/511\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/511\">#511</a></a></p></li>\n\n<li><p>fix: allow stopping services in the starting state by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/512\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/512\">#512</a></a></p></li>\n\n<li><p>fix: mapping service to lanes when services are in random order by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/528\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/528\">#528</a></a></p></li>\n\n<li><p>test: make root tests easier to run by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/501\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/501\">#501</a></a></p></li>\n\n<li><p>test: add integration tests for &ldquo;pebble run&rdquo; by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/497\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/497\">#497</a></a></p></li>\n\n<li><p>chore: bump the snapcore/action-build action version by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/505\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/505\">#505</a></a></p></li>\n\n<li><p>chore: vuln scan failure workaround by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/507\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/507\">#507</a></a></p></li>\n\n<li><p>chore: revert changes introduced by allowing stopping services in starting state by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/510\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/510\">#510</a></a></p></li>\n\n<li><p>chore(client): fix typo in AutoStart doc comment by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/515\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/515\">#515</a></a></p></li>\n\n<li><p>docs: add a security policy document by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/504\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/504\">#504</a></a></p></li>\n\n<li><p>docs: remove reusable content from search result by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/516\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/516\">#516</a></a></p></li>\n\n<li><p>docs: fix tutorial by including a status check after stopping http-server by <a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\">#523</a></a></p></li>\n\n<li><p>docs: make landing pages more informative by <a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/524\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/524\">#524</a></a></p></li>\n\n<li><p>docs: add snap as an installation method by <a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/526\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/526\">#526</a></a></p></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\">#523</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.16.0...v1.17.0\">https://github.com/canonical/pebble/compare/v1.16.0&hellip;v1.17.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.17.0",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.17.0...master"
+               },
                {
                   "id": 172466488,
                   "version": "v1.16.0",
@@ -2271,15 +2280,6 @@
                   "body": "<p>This version adds support for the Pebble Identities features (described in <a href=\"https://docs.google.com/document/d/1nASgUt-piV94i1cpFsbEPRk_xFbZt8AskgL97gh1Dgg/edit\">OP043</a>), and updates the Go version when building binaries and Snaps from Go 1.20 to Go 1.22.</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat(state): core of reading/writing identities in state by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/428\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/428\">#428</a></a></li>\n<li>feat(daemon): identities API endpoints by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/429\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/429\">#429</a></a></li>\n<li>feat(client): Go client for identities by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/430\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/430\">#430</a></a></li>\n<li>feat(cli): identities CLI commands by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/431\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/431\">#431</a></a></li>\n<li>fix(snap): build snap with Go 1.22 to fix CVE-2024-24790 by <a target=\"_blank\" href=\"https://github.com/cjdcordeiro\">@cjdcordeiro</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/448\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/448\">#448</a></a></li>\n<li>feat(daemon): use identities to auth API requests by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/434\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/434\">#434</a></a></li>\n<li>chore: use Go 1.22 (supported), in go.mod and binary builds by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/449\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/449\">#449</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.14.0...v1.15.0\">https://github.com/canonical/pebble/compare/v1.14.0&hellip;v1.15.0</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.15.0",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.15.0...master"
-               },
-               {
-                  "id": 165540716,
-                  "version": "v1.14.1",
-                  "timestamp": 1721082924,
-                  "title": "v1.14.1: Snap fixes: build on Go 1.22 and fix version",
-                  "body": "<p>This is a patch release which includes two fixes:</p>\n\n<ul>\n<li><a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/448&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/pebble/pull/448&quot;&gt;#448&lt;/a&gt;&lt;/a\">Build the Snap on Go 1.22 to fix/silence CVE-2024-24790</a></li>\n<li><a href=\"https://github.com/canonical/pebble/commit/f976e505337af350e5f064b2522f71aecfb89e80\">Fix the Snap tagged version</a></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.14.1",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.14.1...master"
                }
             ],
             "tags": null,
@@ -2297,106 +2297,106 @@
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 932,
-                     "timestamp": 1724903277,
+                     "revision": 1029,
+                     "timestamp": 1733098991,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 931,
-                     "timestamp": 1724903276,
+                     "revision": 1026,
+                     "timestamp": 1733098986,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 933,
-                     "timestamp": 1724903328,
+                     "revision": 1028,
+                     "timestamp": 1733098989,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 929,
-                     "timestamp": 1724903272,
+                     "revision": 1027,
+                     "timestamp": 1733098987,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 930,
-                     "timestamp": 1724903274,
+                     "revision": 1030,
+                     "timestamp": 1733098993,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 932,
-                     "timestamp": 1724895136,
+                     "revision": 1029,
+                     "timestamp": 1733098641,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 931,
-                     "timestamp": 1724895146,
+                     "revision": 1026,
+                     "timestamp": 1733098644,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 933,
-                     "timestamp": 1724895138,
+                     "revision": 1028,
+                     "timestamp": 1733098642,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 929,
-                     "timestamp": 1724895140,
+                     "revision": 1027,
+                     "timestamp": 1733098642,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 930,
-                     "timestamp": 1724895136,
+                     "revision": 1030,
+                     "timestamp": 1733098634,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1016,
-                     "timestamp": 1732759966,
+                     "revision": 1034,
+                     "timestamp": 1733099207,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1019,
-                     "timestamp": 1732768511,
+                     "revision": 1033,
+                     "timestamp": 1733099203,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1020,
-                     "timestamp": 1732768601,
+                     "revision": 1031,
+                     "timestamp": 1733099196,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1015,
-                     "timestamp": 1732759954,
+                     "revision": 1032,
+                     "timestamp": 1733099200,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1014,
-                     "timestamp": 1732759949,
+                     "revision": 1035,
+                     "timestamp": 1733099211,
                      "base": "bare"
                   }
                ],
@@ -9929,7 +9929,7 @@
          },
          {
             "name": "identity-platform-admin-ui",
-            "newCommits": 59,
+            "newCommits": 62,
             "url": "https://github.com/canonical/identity-platform-admin-ui",
             "releases": [
                {
