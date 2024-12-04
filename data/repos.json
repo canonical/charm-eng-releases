@@ -1440,7 +1440,7 @@
          },
          {
             "name": "viddy",
-            "newCommits": 0,
+            "newCommits": 3,
             "url": "https://github.com/juju/viddy",
             "releases": [
                {
@@ -1473,7 +1473,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": null,
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -2965,7 +2965,7 @@
          },
          {
             "name": "mimir-coordinator-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mimir-coordinator-k8s-operator",
             "releases": [
                {
@@ -4128,7 +4128,7 @@
          },
          {
             "name": "mimir-worker-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mimir-worker-k8s-operator",
             "releases": [
                {
@@ -11825,6 +11825,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "bb2be373ed52000563f2a4827a851c2dc59f3d2a",
+                  "author": "Homayoon Alimohammadi",
+                  "timestamp": 1733327525,
+                  "message": "<p>endpoints: Add review kubernetes auth token RPC (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/854\">#854</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/bb2be373ed52000563f2a4827a851c2dc59f3d2a"
+               },
+               {
                   "sha": "a00846526c10cca25cfe54d2ad1685e558e7251a",
                   "author": "Niamh Hennigan",
                   "timestamp": 1733269166,
@@ -11837,13 +11844,6 @@
                   "timestamp": 1733259456,
                   "message": "<p>Fix install by revision in integration tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/865\">#865</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/4c721d43f24c6d37ded169c261a7da13e64664b4"
-               },
-               {
-                  "sha": "bb70203feff748282b0ca337a6e9204ed04d2fd7",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1733239018,
-                  "message": "<p>Fix microk8s snap check (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/861\">#861</a>)</p>\n\n<p>During bootstrap, we&rsquo;re checking if microk8s is installed. If so,\nwe&rsquo;re throwing an error, asking the user to uninstall microk8s first.</p>\n\n<p>The problem is that this check fails when running the CAPI tests under\nDocker.</p>\n\n<p>k8s bootstrap &ndash;name &ldquo; &ndash;address :2380 &ndash;file /capi/etc/config.yaml\n  Error: failed to check if microk8s is installed: %w failed to get\n  snapd snap info: Get &ldquo;<a href=\"http://localhost/v2/snaps/microk8s&quot;:\">http://localhost/v2/snaps/microk8s&rdquo;:</a> dial unix\n  /run/snapd.socket: connect: no such file or directory\n  : exited with status: 1,</p>\n\n<p>We&rsquo;ll change the code to log a warning instead of throwing an error\nwhen it&rsquo;s unable to check the microk8s snap status.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/bb70203feff748282b0ca337a6e9204ed04d2fd7"
                }
             ],
             "ciActions": [
@@ -21773,6 +21773,87 @@
       "team": "IS",
       "repos": [
          {
+            "name": "github-runner-image-builder-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/github-runner-image-builder-operator",
+            "releases": [
+               {
+                  "id": 188978476,
+                  "version": "rev45",
+                  "timestamp": 1733326778,
+                  "title": "Revision 45",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:40 UTC on 4 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/55\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/55\">#55</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev44...rev45\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev44&hellip;rev45</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev45",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev45...main"
+               },
+               {
+                  "id": 188833283,
+                  "version": "rev44",
+                  "timestamp": 1733276856,
+                  "title": "Revision 44",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:48 UTC on 4 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency openstacksdk to v4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/26\">#26</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev42...rev44\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev42&hellip;rev44</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev44",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev44...main"
+               },
+               {
+                  "id": 188446079,
+                  "version": "rev42",
+                  "timestamp": 1733135675,
+                  "title": "Revision 42",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:35 UTC on 2 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.45 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/54\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/54\">#54</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev41...rev42\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev41&hellip;rev42</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev42",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev42...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "github-runner-image-builder",
+               "url": "https://charmhub.io/github-runner-image-builder",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 4,
+                     "timestamp": 1723514256,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 1,
+                     "timestamp": 1715278229,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 45,
+                     "timestamp": 1733326842,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 44,
+                     "timestamp": 1733276925,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "irc-bridge-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/irc-bridge-operator",
@@ -21970,87 +22051,6 @@
                      "channel": "edge",
                      "revision": 120,
                      "timestamp": 1733294849,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "github-runner-image-builder-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/github-runner-image-builder-operator",
-            "releases": [
-               {
-                  "id": 188833283,
-                  "version": "rev44",
-                  "timestamp": 1733276856,
-                  "title": "Revision 44",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:48 UTC on 4 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency openstacksdk to v4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/26\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/26\">#26</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev42...rev44\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev42&hellip;rev44</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev44",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev44...main"
-               },
-               {
-                  "id": 188446079,
-                  "version": "rev42",
-                  "timestamp": 1733135675,
-                  "title": "Revision 42",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:35 UTC on 2 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.45 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/54\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/54\">#54</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev41...rev42\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev41&hellip;rev42</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev42",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev42...main"
-               },
-               {
-                  "id": 188408445,
-                  "version": "rev41",
-                  "timestamp": 1733123253,
-                  "title": "Revision 41",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:08 UTC on 2 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.45 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/48\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/48\">#48</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev40...rev41\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev40&hellip;rev41</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev41",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev41...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/github-runner-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "github-runner-image-builder",
-               "url": "https://charmhub.io/github-runner-image-builder",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 4,
-                     "timestamp": 1723514256,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 1,
-                     "timestamp": 1715278229,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 43,
-                     "timestamp": 1733218038,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 44,
-                     "timestamp": 1733276925,
                      "base": ""
                   }
                ],
@@ -23462,9 +23462,9 @@
             "tags": [
                {
                   "name": "discourse-gatekeeper/base-content",
-                  "sha": "860a5f7167803a021514d336bddb7d459da08827",
-                  "body": "<p>Test paas-app-charmer changes in discourse-gateway (<a target=\"_blank\" href=\"https://github.com/canonical/gatekeeper-repo-test/pull/501\">#501</a>)</p>\n",
-                  "timestamp": 1712928845,
+                  "sha": "1b74268e556b784a4007c5b97aba1da9696b8b7b",
+                  "body": "<p>Use charmcraft.yaml instead of metadata.yaml</p>\n",
+                  "timestamp": 1733328345,
                   "url": "https://github.com/canonical/gatekeeper-repo-test/releases/tag/discourse-gatekeeper%2Fbase-content",
                   "compareUrl": "https://github.com/canonical/gatekeeper-repo-test/compare/main...discourse-gatekeeper%2Fbase-content"
                }
