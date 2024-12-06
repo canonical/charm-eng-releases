@@ -761,22 +761,22 @@
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 29269,
-                     "timestamp": 1733447321,
+                     "revision": 29277,
+                     "timestamp": 1733461795,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 29270,
-                     "timestamp": 1733447409,
+                     "revision": 29278,
+                     "timestamp": 1733461902,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 29271,
-                     "timestamp": 1733447511,
+                     "revision": 29279,
+                     "timestamp": 1733462007,
                      "base": "core20"
                   },
                   {
@@ -24260,25 +24260,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "19d2f17b70fd0eec8d8715aa434dd585a804ae33",
+                  "sha": "ef6fd7657ef731f27940caebe75414583a06b8a5",
+                  "author": "Samuel Allan",
+                  "timestamp": 1733465555,
+                  "message": "<p>Move socket to SNAP_COMMON (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/28\">#28</a>)</p>\n\n<p>With the file in SNAP_DATA, refreshing the snap will automatically\ncause tailscaled to restart.\nThis is undesirable, as there may be cases where the user\nwishes to refresh the snap without restarting the service right away.</p>\n",
+                  "url": "https://github.com/canonical/tailscale-snap/commit/ef6fd7657ef731f27940caebe75414583a06b8a5"
+               },
+               {
+                  "sha": "d32b15433097da9247b3f6a8c3c759896473a6f5",
                   "author": "soleng-terraform[bot]",
-                  "timestamp": 1733457014,
-                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/29\">#29</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/tailscale-snap/commit/19d2f17b70fd0eec8d8715aa434dd585a804ae33"
+                  "timestamp": 1733464884,
+                  "message": "<p>update .github/workflows/release.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/31\">#31</a>)</p>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/tailscale-snap/commit/d32b15433097da9247b3f6a8c3c759896473a6f5"
                },
                {
-                  "sha": "e12f3ea72edcf0c94e6b05fffb19b7d27800150c",
+                  "sha": "7fd8872cbe958320205b4bb2ef7752c34756d891",
                   "author": "Samuel Allan",
-                  "timestamp": 1733456837,
-                  "message": "<p>Fix minor typos (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/26\">#26</a>)</p>\n\n<ul>\n<li>tailscaled -&gt; tailscale when talking about the client tool</li>\n<li>use <code>*</code> instead of <code>-</code> for lists to follow snap store markdown</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/tailscale-snap/commit/e12f3ea72edcf0c94e6b05fffb19b7d27800150c"
-               },
-               {
-                  "sha": "4a043edd5f2a48cfb54a6d7aed86b85211f3ad5c",
-                  "author": "Samuel Allan",
-                  "timestamp": 1733212229,
-                  "message": "<p>Add more docs (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/23\">#23</a>)</p>\n\n<ul>\n<li>add info for working with the snap locally to the readme</li>\n<li>improve user documentation (in snapcraft.yaml)</li>\n<li>add security docs</li>\n<li>move things around for a better split between dev docs (readme)\nand user docs (snap listing description in snapcraft.yaml)</li>\n<li>add more metadata to the snap</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/tailscale-snap/commit/4a043edd5f2a48cfb54a6d7aed86b85211f3ad5c"
+                  "timestamp": 1733464491,
+                  "message": "<p>Add arm64 support to the snap (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/30\">#30</a>)</p>\n\n<ul>\n<li>add arm64 to the snapcraft.yaml platforms</li>\n<li>include arm64 in the workflows</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/tailscale-snap/commit/7fd8872cbe958320205b4bb2ef7752c34756d891"
                }
             ],
             "ciActions": [],
@@ -24542,25 +24542,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4f7b3a5edf18ca0288ca691f23cf98a45e602cd4",
+                  "author": "Samuel Allan",
+                  "timestamp": 1733464551,
+                  "message": "<p>Tighten security of config files and db (<a target=\"_blank\" href=\"https://github.com/canonical/headscale-snap/pull/7\">#7</a>)</p>\n\n<p>Sensitive and secret information can be stored in these files,\nso we don&rsquo;t want them accessible to everyone on the machine.</p>\n\n<p>Here we move all file locations into a directory in snap_common\nthat only root has access to.\nThis means:\n- headscale can only be used and interacted with as root\n- the sensitive files can only be read by root</p>\n\n<p>This should be fine from a usability point of view,\nbecause the daemon is already a system service running as root,\nso only allowing root\nto use the admin commands via headscale seems reasonable.</p>\n",
+                  "url": "https://github.com/canonical/headscale-snap/commit/4f7b3a5edf18ca0288ca691f23cf98a45e602cd4"
+               },
+               {
+                  "sha": "e451e9f3a20d9c66b3d4c259d4f2c1e3bccaaf9b",
+                  "author": "soleng-terraform[bot]",
+                  "timestamp": 1733464515,
+                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/headscale-snap/pull/8\">#8</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/headscale-snap/commit/e451e9f3a20d9c66b3d4c259d4f2c1e3bccaaf9b"
+               },
+               {
                   "sha": "09a7cbf57bb4554cef6ed4cc576e0067855b8e5c",
                   "author": "Samuel Allan",
                   "timestamp": 1733354758,
                   "message": "<p>Warn about manually editing the config file (<a target=\"_blank\" href=\"https://github.com/canonical/headscale-snap/pull/6\">#6</a>)</p>\n\n<p>The file is managed by the snap,\nso manual edits would be overwritten when the configure hook runs.</p>\n",
                   "url": "https://github.com/canonical/headscale-snap/commit/09a7cbf57bb4554cef6ed4cc576e0067855b8e5c"
-               },
-               {
-                  "sha": "6c29cc4c7c7c7d29368250e9cd84d33bb98be56d",
-                  "author": "Samuel Allan",
-                  "timestamp": 1733122113,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/headscale-snap/pull/2\">#2</a> from canonical/config</p>\n\n<p>Add support for configuring headscale</p>\n",
-                  "url": "https://github.com/canonical/headscale-snap/commit/6c29cc4c7c7c7d29368250e9cd84d33bb98be56d"
-               },
-               {
-                  "sha": "079c2c03dd7697de3749092aff9724138590b91e",
-                  "author": "Samuel Allan",
-                  "timestamp": 1733104660,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/headscale-snap/pull/3\">#3</a> from canonical/arch</p>\n\n<p>Remove untested architectures</p>\n",
-                  "url": "https://github.com/canonical/headscale-snap/commit/079c2c03dd7697de3749092aff9724138590b91e"
                }
             ],
             "ciActions": [],
@@ -24612,6 +24612,15 @@
             "url": "https://github.com/canonical/hardware-observer-operator",
             "releases": [
                {
+                  "id": 189331613,
+                  "version": "rev133",
+                  "timestamp": 1733459602,
+                  "title": "Revision 133",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:20 UTC on 6 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix and restructure functional tests by <a target=\"_blank\" href=\"https://github.com/Deezzir\">@Deezzir</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/343\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/343\">#343</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev130...rev133\">https://github.com/canonical/hardware-observer-operator/compare/rev130&hellip;rev133</a></p>\n",
+                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev133",
+                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev133...main"
+               },
+               {
                   "id": 189331080,
                   "version": "rev132",
                   "timestamp": 1733459602,
@@ -24628,15 +24637,6 @@
                   "body": "<p>resources:</p>\n\n<pre><code>-  perccli-deb: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n-  storcli-deb: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:55 UTC on 3 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add nouveau check and modprobe to install by <a target=\"_blank\" href=\"https://github.com/Deezzir\">@Deezzir</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/359\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/359\">#359</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev128...rev131\">https://github.com/canonical/hardware-observer-operator/compare/rev128&hellip;rev131</a></p>\n",
                   "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev131",
                   "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev131...main"
-               },
-               {
-                  "id": 188756504,
-                  "version": "rev130",
-                  "timestamp": 1733242250,
-                  "title": "Revision 130",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  sas2ircu-bin: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:48 UTC on 3 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add nouveau check and modprobe to install by <a target=\"_blank\" href=\"https://github.com/Deezzir\">@Deezzir</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/359\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/359\">#359</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev128...rev130\">https://github.com/canonical/hardware-observer-operator/compare/rev128&hellip;rev130</a></p>\n",
-                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev130",
-                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev130...main"
                }
             ],
             "tags": null,
@@ -24742,8 +24742,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 131,
-                     "timestamp": 1733244947,
+                     "revision": 133,
+                     "timestamp": 1733462437,
                      "base": ""
                   },
                   {
@@ -24770,8 +24770,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 131,
-                     "timestamp": 1733244947,
+                     "revision": 133,
+                     "timestamp": 1733462437,
                      "base": ""
                   },
                   {
@@ -24798,8 +24798,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 131,
-                     "timestamp": 1733244947,
+                     "revision": 133,
+                     "timestamp": 1733462437,
                      "base": ""
                   },
                   {
@@ -24875,6 +24875,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7a8e07129563ac4979c07b8835085a28edbd7ce0",
+                  "author": "soleng-terraform[bot]",
+                  "timestamp": 1733464851,
+                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/derper-snap/pull/12\">#12</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/derper-snap/commit/7a8e07129563ac4979c07b8835085a28edbd7ce0"
+               },
+               {
                   "sha": "a285b844ee31173316ecfa49257b120074b3da10",
                   "author": "Samuel Allan",
                   "timestamp": 1733340624,
@@ -24887,13 +24894,6 @@
                   "timestamp": 1733340601,
                   "message": "<p>Document a security aspect of the secret key file (<a target=\"_blank\" href=\"https://github.com/canonical/derper-snap/pull/11\">#11</a>)</p>\n",
                   "url": "https://github.com/canonical/derper-snap/commit/2e784b7405c4bbc759add8ce1ee0a262037b09fa"
-               },
-               {
-                  "sha": "23fb7b31097afc65be7d6a934fdabd29e733df9b",
-                  "author": "Samuel Allan",
-                  "timestamp": 1733263081,
-                  "message": "<p>Add and organize docs (<a target=\"_blank\" href=\"https://github.com/canonical/derper-snap/pull/9\">#9</a>)</p>\n\n<ul>\n<li>move user documentation to snapcraft listing</li>\n<li>add security docs</li>\n<li>expand on user and developer docs</li>\n<li>add more snapcraft metadata</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/derper-snap/commit/23fb7b31097afc65be7d6a934fdabd29e733df9b"
                }
             ],
             "ciActions": [],
@@ -25589,7 +25589,7 @@
          },
          {
             "name": "prometheus-openstack-exporter",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/prometheus-openstack-exporter",
             "releases": [
                {
@@ -25613,7 +25613,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
