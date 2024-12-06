@@ -2445,7 +2445,7 @@
       "repos": [
          {
             "name": "grafana-agent-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/grafana-agent-operator",
             "releases": [
                {
@@ -9282,6 +9282,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "ea181743fe850152c2209cc74e6dcd8447a2c8eb",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1733472534,
+                  "message": "<p>Loosen pre-configured certificate checks (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/870\">#870</a>)</p>\n\n<p>We recently introduced strict checks for pre-configured certificates.\nHowever, this broke cluster-api-k8s.</p>\n\n<p>We&rsquo;ll loosen the checks, ignoring the certificate CN and O fields,\nchecking only:</p>\n\n<ul>\n<li>NotBefore/NotAfter</li>\n<li>CA</li>\n<li>DNS SANs (fewer checks though)</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/ea181743fe850152c2209cc74e6dcd8447a2c8eb"
+               },
+               {
                   "sha": "9825240ba899e2b015f08d99f26df90145ea88be",
                   "author": "Niamh Hennigan",
                   "timestamp": 1733425595,
@@ -9294,13 +9301,6 @@
                   "timestamp": 1733390084,
                   "message": "<p>use rock for metallb FRR instead of upstream (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/864\">#864</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/45db693e456d00598833502b726389eb906813fc"
-               },
-               {
-                  "sha": "bb2be373ed52000563f2a4827a851c2dc59f3d2a",
-                  "author": "Homayoon Alimohammadi",
-                  "timestamp": 1733327525,
-                  "message": "<p>endpoints: Add review kubernetes auth token RPC (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/854\">#854</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/bb2be373ed52000563f2a4827a851c2dc59f3d2a"
                }
             ],
             "ciActions": [
