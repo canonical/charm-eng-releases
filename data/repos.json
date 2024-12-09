@@ -278,29 +278,29 @@
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 29291,
-                     "timestamp": 1733736372,
+                     "revision": 29295,
+                     "timestamp": 1733750662,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 29292,
-                     "timestamp": 1733736453,
+                     "revision": 29296,
+                     "timestamp": 1733750744,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 29293,
-                     "timestamp": 1733736533,
+                     "revision": 29297,
+                     "timestamp": 1733750826,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 29294,
-                     "timestamp": 1733736616,
+                     "revision": 29298,
+                     "timestamp": 1733750922,
                      "base": "core24"
                   },
                   {
@@ -9323,6 +9323,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "aabe445a8f41689f5dad577e1ac1e7091778ad13",
+                  "author": "Mateo Florido",
+                  "timestamp": 1733751347,
+                  "message": "<p>Switch COS Lite How-To to use the <code>k8s-operator</code> charm (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/872\">#872</a>)</p>\n\n<p>Update COS Docs to Use the <code>k8s</code> charm instead of the <code>microk8s</code> charm</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/aabe445a8f41689f5dad577e1ac1e7091778ad13"
+               },
+               {
                   "sha": "60f92768b2dbcc5b736bf8640ad93aed1890ce35",
                   "author": "Benjamin Schimke",
                   "timestamp": 1733500268,
@@ -9335,13 +9342,6 @@
                   "timestamp": 1733491737,
                   "message": "<p>Adds configurable containerd base dir during bootstrap / join (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/817\">#817</a>)</p>\n\n<ul>\n<li>Adds configurable containerd base dir during bootstrap / join</li>\n</ul>\n\n<p>Currently, for the classic k8s snap, the default locations for the\ncontainerd-related files are:</p>\n\n<ul>\n<li>/etc/containerd/</li>\n<li>/run/containerd/</li>\n<li>/var/lib/containerd/</li>\n</ul>\n\n<p>These paths can conflict with other containerd installations on the host\n(e.g. from docker), meaning that the k8s snap cannot be installed. In a\ndeveloper&rsquo;s usecase, we shouldn&rsquo;t require the other services to be\ndisabled, but we can allow the k8s snap&rsquo;s containerd to be installed in\na different location during bootstrap / node join.</p>\n\n<p>Adds the &ndash;containerd-base-dir option for k8s bootstrap and join-cluster\ncommands. If not given, the snap&rsquo;s default paths will be used instead.\nAfter the node was initialized, save the containerd base location in a\nfile, so we can properly reference it later / on restart.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/173ba49d02ec4768970666bbcf22887cc2c0a530"
-               },
-               {
-                  "sha": "a181d4c0a6be41efc5608c6140bdf3d41c7e4890",
-                  "author": "Homayoon Alimohammadi",
-                  "timestamp": 1733489138,
-                  "message": "<p>Fix pebble Containerd path (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/874\">#874</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/a181d4c0a6be41efc5608c6140bdf3d41c7e4890"
                }
             ],
             "ciActions": [
@@ -13312,9 +13312,18 @@
          },
          {
             "name": "sdcore-nms-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
+               {
+                  "id": 189719631,
+                  "version": "rev767",
+                  "timestamp": 1733748768,
+                  "title": "Revision 767",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 90</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/TELCO-1450-add-fiveg-core-gnb-interface&rsquo; at 13:23 UTC on 9 Dec 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev763...rev767\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev763&hellip;rev767</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev767",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev767...main"
+               },
                {
                   "id": 189473876,
                   "version": "rev765",
@@ -13332,15 +13341,6 @@
                   "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 90</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/dev-logs&rsquo; at 19:40 UTC on 6 Dec 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev761...rev764\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev761&hellip;rev764</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev764",
                   "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev764...main"
-               },
-               {
-                  "id": 189450648,
-                  "version": "rev763",
-                  "timestamp": 1733504146,
-                  "title": "Revision 763",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.0.0\n       resource-revision: 90</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/TELCO-1450-add-fiveg-core-gnb-interface&rsquo; at 17:24 UTC on 6 Dec 2024</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev762...rev763\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev762&hellip;rev763</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev763",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev763...main"
                }
             ],
             "tags": null,
@@ -14705,7 +14705,7 @@
          },
          {
             "name": "sdcore-upf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
             "releases": [
                {
@@ -15669,56 +15669,7 @@
             "tags": null,
             "commits": null,
             "ciActions": [],
-            "charm": {
-               "name": "self-signed-certificates",
-               "url": "https://charmhub.io/self-signed-certificates",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 155,
-                     "timestamp": 1720107769,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 155,
-                     "timestamp": 1720107627,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 155,
-                     "timestamp": 1720107585,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 218,
-                     "timestamp": 1733435859,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 217,
-                     "timestamp": 1733435859,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
+            "charm": null,
             "snap": null
          },
          {
@@ -16411,49 +16362,7 @@
             "tags": null,
             "commits": null,
             "ciActions": [],
-            "charm": {
-               "name": "route53-lego-k8s",
-               "url": "https://charmhub.io/route53-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 90,
-                     "timestamp": 1720101672,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 90,
-                     "timestamp": 1720100369,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 90,
-                     "timestamp": 1720099793,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 105,
-                     "timestamp": 1733183622,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
+            "charm": null,
             "snap": null
          },
          {
@@ -21960,7 +21869,7 @@
          },
          {
             "name": "any-charm",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/any-charm",
             "releases": [
                {
@@ -25104,7 +25013,7 @@
          },
          {
             "name": "prometheus-openstack-exporter",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/prometheus-openstack-exporter",
             "releases": [
                {
@@ -25128,7 +25037,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
