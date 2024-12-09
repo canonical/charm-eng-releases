@@ -9323,6 +9323,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "e31c4aa2706c339e18d906d1f92b2ec93179fab4",
+                  "author": "eaudetcobello",
+                  "timestamp": 1733785276,
+                  "message": "<p>new hardening.md page (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/871\">#871</a>)</p>\n\n<ul>\n<li><p>new hardening.md page</p></li>\n\n<li><p>move the manual hardening steps from cis-hardening.md to hardening.md.</p></li>\n\n<li><p>adds disa stig findings that need manual intervention</p></li>\n\n<li><p>rename sections</p></li>\n\n<li><p>improve grammar</p></li>\n\n<li>\n<h2>restructure, improve wording, add links</h2></li>\n</ul>\n\n<p>Co-authored-by: nhennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/e31c4aa2706c339e18d906d1f92b2ec93179fab4"
+               },
+               {
                   "sha": "aabe445a8f41689f5dad577e1ac1e7091778ad13",
                   "author": "Mateo Florido",
                   "timestamp": 1733751347,
@@ -9335,13 +9342,6 @@
                   "timestamp": 1733500268,
                   "message": "<p>Add 1.32 fixes and updates (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/869\">#869</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/60f92768b2dbcc5b736bf8640ad93aed1890ce35"
-               },
-               {
-                  "sha": "173ba49d02ec4768970666bbcf22887cc2c0a530",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1733491737,
-                  "message": "<p>Adds configurable containerd base dir during bootstrap / join (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/817\">#817</a>)</p>\n\n<ul>\n<li>Adds configurable containerd base dir during bootstrap / join</li>\n</ul>\n\n<p>Currently, for the classic k8s snap, the default locations for the\ncontainerd-related files are:</p>\n\n<ul>\n<li>/etc/containerd/</li>\n<li>/run/containerd/</li>\n<li>/var/lib/containerd/</li>\n</ul>\n\n<p>These paths can conflict with other containerd installations on the host\n(e.g. from docker), meaning that the k8s snap cannot be installed. In a\ndeveloper&rsquo;s usecase, we shouldn&rsquo;t require the other services to be\ndisabled, but we can allow the k8s snap&rsquo;s containerd to be installed in\na different location during bootstrap / node join.</p>\n\n<p>Adds the &ndash;containerd-base-dir option for k8s bootstrap and join-cluster\ncommands. If not given, the snap&rsquo;s default paths will be used instead.\nAfter the node was initialized, save the containerd base location in a\nfile, so we can properly reference it later / on restart.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/173ba49d02ec4768970666bbcf22887cc2c0a530"
                }
             ],
             "ciActions": [
@@ -25104,7 +25104,7 @@
          },
          {
             "name": "prometheus-openstack-exporter",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/prometheus-openstack-exporter",
             "releases": [
                {
@@ -25128,7 +25128,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": null,
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
