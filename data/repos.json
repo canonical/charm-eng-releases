@@ -9273,6 +9273,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "50bc0b9baea9e7b52ac334e1e9c32e5b3d91cf57",
+                  "author": "Nashwan Azhari",
+                  "timestamp": 1733877692,
+                  "message": "<p>docs: minor amendments to the DISA doc. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/884\">#884</a>)</p>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/50bc0b9baea9e7b52ac334e1e9c32e5b3d91cf57"
+               },
+               {
                   "sha": "3768b2a3768836a5b2ad2d5f20e32bb5b7d9a87b",
                   "author": "Benjamin Schimke",
                   "timestamp": 1733841326,
@@ -9285,13 +9292,6 @@
                   "timestamp": 1733831470,
                   "message": "<p>Fix nightly tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/876\">#876</a>)</p>\n\n<ul>\n<li>Fix nightly job</li>\n</ul>\n\n<p>The runner labels used by the nightly job are not correctly\nevaluated.</p>\n\n<p>We&rsquo;ll fix this by switching to the newly added one-string node\nlabels.</p>\n\n<ul>\n<li><p>Apply Docker iptables workaround</p></li>\n\n<li><p>Fix test_node_cleanup_new_containerd_path test</p></li>\n</ul>\n\n<p>The containerd base dir setting is currently ignored when joining\nnodes. The reason is that yaml parser ignores a struct field which\nis marked as private. Making it public fixes the issue.</p>\n\n<p>At the same time, the test expects the default containerd folders\nto be missing when configured to use a different base dir.\nHowever, the tests are currently placing the registry settings\nin /etc/containerd. We also get an empty /run/containerd folder.\nFor now, we&rsquo;ll update the test to ignore these folders.</p>\n\n<p>There&rsquo;s also an os.path.join call that doesn&rsquo;t produce the expected\nresult if the last element is an absolute path, we&rsquo;ll need to remove\na slash when constructing the paths.</p>\n\n<ul>\n<li><p>Fix linter errors</p></li>\n\n<li><p>Run all tests for backports or when there are test changes</p></li>\n</ul>\n\n<p>We&rsquo;re adding a few checks to the integration tests workflow. We&rsquo;ll\nuse the &ldquo;weekly&rdquo; tag in case of backports (targeting the release-*\nbranches) and whenever there are test changes.</p>\n\n<ul>\n<li>tests: Add containerd cfg dir marker</li>\n</ul>\n\n<p>One of the tests uses a custom containerd base dir. We&rsquo;ll add a\nmarker so that the registry mirror settings can be applied to that\ncontainerd folder.</p>\n\n<ul>\n<li>Add yaml parser note</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/dd6b5e7075fe5d21df9698cd84eb2a369a446ae8"
-               },
-               {
-                  "sha": "e31c4aa2706c339e18d906d1f92b2ec93179fab4",
-                  "author": "eaudetcobello",
-                  "timestamp": 1733785276,
-                  "message": "<p>new hardening.md page (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/871\">#871</a>)</p>\n\n<ul>\n<li><p>new hardening.md page</p></li>\n\n<li><p>move the manual hardening steps from cis-hardening.md to hardening.md.</p></li>\n\n<li><p>adds disa stig findings that need manual intervention</p></li>\n\n<li><p>rename sections</p></li>\n\n<li><p>improve grammar</p></li>\n\n<li>\n<h2>restructure, improve wording, add links</h2></li>\n</ul>\n\n<p>Co-authored-by: nhennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/e31c4aa2706c339e18d906d1f92b2ec93179fab4"
                }
             ],
             "ciActions": [
@@ -25090,7 +25090,7 @@
          },
          {
             "name": "prometheus-openstack-exporter",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/prometheus-openstack-exporter",
             "releases": [
                {
@@ -25114,7 +25114,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
