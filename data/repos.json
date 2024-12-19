@@ -9339,6 +9339,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4e03dc8ec15293068def6badf729d9951e8a2175",
+                  "author": "Niamh Hennigan",
+                  "timestamp": 1734596872,
+                  "message": "<p>1.32 release docs (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/899\">#899</a>)</p>\n\n<ul>\n<li>1.32 release docs for snap</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/4e03dc8ec15293068def6badf729d9951e8a2175"
+               },
+               {
                   "sha": "120d1dba4c49fa9f5dbb294e510d7be3cd83e8f5",
                   "author": "Benjamin Schimke",
                   "timestamp": 1734527657,
@@ -9351,13 +9358,6 @@
                   "timestamp": 1734522317,
                   "message": "<p>integration: completely remove LocalHarness. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/912\">#912</a>)</p>\n\n<p>The LocalHarness is a harness used for running integration tests\non the local machine where the tests are directly invoked\n(be it via <code>tox</code>, <code>pytest</code>, etc).</p>\n\n<p>It presents numerous limitations (can&rsquo;t run any multi-node tests)\nand poses a lot of potential risks (cleanup failing in case of\nfatal errors in the test fixtures) which outweighs most of its\nconvenience benefits (especially when compared to the LXD\nsubstrate).</p>\n\n<p>This patch completely removes the LocalHarness and all references to it\nfrom the documentation, making LXD the new default.</p>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/e37327f62e1c82ff04ba3bfde2eb5bb3c0cb9f40"
-               },
-               {
-                  "sha": "5c3e5e04fd95b1ced26d702c9c66ab38bd1cbcf0",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1734514895,
-                  "message": "<p>Deduplicate github actions (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/892\">#892</a>)</p>\n\n<ul>\n<li>Deduplicate github actions</li>\n</ul>\n\n<p>We have multiple github actions that run e2e tests and share a\nsignificant amount of logic.</p>\n\n<p>We&rsquo;ll add reusable actions, making the workflows much easier to\nmaintain.</p>\n\n<ul>\n<li>Fix flaky microk8s test</li>\n</ul>\n\n<p>As part of the test cleanup, we&rsquo;re removing the k8s snap, ensuring\nthat its services and mounts go away.</p>\n\n<p>One of the tests installs microk8s, which interferes with the k8s\nsnap cleanup assertions.</p>\n\n<p>We&rsquo;ll fix this flaky test by removing the microk8s snap.</p>\n\n<ul>\n<li>Fix flaky ingress test</li>\n</ul>\n\n<p>get_external_service_ip returns an empty string, however\nthe test asserts that the ip is not None and proceeds with the\ncurl:</p>\n\n<p>2024-12-12 11:28:46 DEBUG Execute command [&lsquo;curl&rsquo;, &ldquo;, &lsquo;-H&rsquo;, &lsquo;Host: foo.bar.com&rsquo;]\n  in instance k8s-integration-530bc4-37</p>\n\n<p>We&rsquo;ll update the assertion and catch empty strings as well.</p>\n\n<p>At the same time, we&rsquo;ll increase the timeouts to reduce test\nflakiness.</p>\n\n<ul>\n<li>Merge nightly test and cron job</li>\n</ul>\n\n<p>The nightly job is also a cron job that executes daily, so it\nmakes sense to merge those two workflows.</p>\n\n<ul>\n<li><p>Fix nightly job tag</p></li>\n\n<li><p>Pass test flavor</p></li>\n\n<li><p>Include all namespaces in inspection reports</p></li>\n</ul>\n\n<p>The moonray job is failing, however we only have logs from the\n&ldquo;default&rdquo; and &ldquo;kube-system&rdquo; namespaces.</p>\n\n<p>This change will collect logs from all k8s namespaces.</p>\n\n<ul>\n<li>Apply flavor patches before running the tests</li>\n</ul>\n\n<p>We&rsquo;ll need to apply the strict/moonray patches not only when\nbuilding the snap, but also when running the tests.</p>\n\n<ul>\n<li>Skip broken test</li>\n</ul>\n\n<p>test_containerd_path_cleanup_on_failed_init holds an open port\nand expects the bootstrap to fail, however that won&rsquo;t be the case\nwhen using the lxd harness.</p>\n\n<p>We&rsquo;ll skip this test for now.</p>\n\n<ul>\n<li>Revert &ldquo;Include all namespaces in inspection reports&rdquo;</li>\n</ul>\n\n<p>This reverts commit 5020f3978648ad04cd989cf494ec77e938c4bc2a.</p>\n\n<ul>\n<li><p>Address PR feedback</p></li>\n\n<li><p>cover 1.32 as part of the nightly tests</p></li>\n\n<li><p>get go version from go.mod</p></li>\n\n<li><p>update step names</p></li>\n\n<li><p>add some TODOs</p></li>\n\n<li><p>make lxd channel configurable</p></li>\n\n<li><p>bump ubuntu versions</p></li>\n\n<li><p>add get-e2e-tags dependencies</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/5c3e5e04fd95b1ced26d702c9c66ab38bd1cbcf0"
                }
             ],
             "ciActions": [
@@ -13626,6 +13626,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "b7f883c6baa8defd74d3e3a14f19e6d64c70d962",
+                  "author": "Patricia Reinoso",
+                  "timestamp": 1734596513,
+                  "message": "<p>fix: fix typo (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/693\">#693</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms/commit/b7f883c6baa8defd74d3e3a14f19e6d64c70d962"
+               },
+               {
                   "sha": "369bc906937f408d3801686674e7dfb7e8348ead",
                   "author": "Dario Faccin",
                   "timestamp": 1734521278,
@@ -13638,13 +13645,6 @@
                   "timestamp": 1734346970,
                   "message": "<p>chore: Bump <a target=\"_blank\" href=\"https://github.com/canonical\">@canonical</a>/react-components from 1.7.2 to 1.7.3 in the npm_dependencies group (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/688\">#688</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms/commit/12c2f1be4927351e9558a8867d9590fc922a2b8b"
-               },
-               {
-                  "sha": "06472784278b1206eb84b079cdd76c5719bc4404",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1734345149,
-                  "message": "<p>chore: Bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 in the github_actions group (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/686\">#686</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms/commit/06472784278b1206eb84b079cdd76c5719bc4404"
                }
             ],
             "ciActions": [],
@@ -21376,7 +21376,7 @@
          },
          {
             "name": "mjolnir-snap",
-            "newCommits": 15,
+            "newCommits": 16,
             "url": "https://github.com/canonical/mjolnir-snap",
             "releases": null,
             "tags": [
@@ -21406,8 +21406,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 12,
-                     "timestamp": 1733909066,
+                     "revision": 13,
+                     "timestamp": 1734597458,
                      "base": "core22"
                   }
                ],
