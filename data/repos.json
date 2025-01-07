@@ -82,7 +82,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 5298,
+            "newCommits": 5300,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -9433,6 +9433,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "e706ed3622721eb4cdff0ff4d29b1dc391884bb5",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1736272753,
+                  "message": "<p>Ensure lxd is installed before attempting snap refresh (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/930\">#930</a>)</p>\n\n<ul>\n<li>Ensure lxd is installed before attempting snap refresh</li>\n</ul>\n\n<p>This change checks if the lxd snap is installed before running <code>snap refresh lxd</code>,\npreventing failures when lxd is missing. If lxd is not found,\nit installs the snap using the specified channel.\nThis is required because the LXD snap is not shipped by default in 24.04 anymore.</p>\n\n<ul>\n<li>use newgrp instead of sg, use sudo &ndash;user</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/e706ed3622721eb4cdff0ff4d29b1dc391884bb5"
+               },
+               {
                   "sha": "94d97dd234e47d4393401b208b6191b640e7f69e",
                   "author": "Benjamin Schimke",
                   "timestamp": 1736246605,
@@ -9445,13 +9452,6 @@
                   "timestamp": 1736177042,
                   "message": "<p>charms docs: Add 1.32 charms release notes (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/913\">#913</a>)</p>\n\n<ul>\n<li>Add 1.32 charms release notes</li>\n<li>Update navigation and channel</li>\n<li>Update charm channel to 1.32 stable</li>\n<li>Reorganize the navigation side bar to be able to see both snap and charm release notes</li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: nhennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/4cdc3cf26f863504c948e25ac0539bbe008bef78"
-               },
-               {
-                  "sha": "f155b8599a9cafbf9108dca814bb313bce561f5b",
-                  "author": "Niamh Hennigan",
-                  "timestamp": 1734714161,
-                  "message": "<p>fix broken links (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/924\">#924</a>)</p>\n\n<p>Fix broken links and add ignore links to custom_conf due to known sphinx issue with anchors causing false positives</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/f155b8599a9cafbf9108dca814bb313bce561f5b"
                }
             ],
             "ciActions": [
@@ -15681,9 +15681,18 @@
       "repos": [
          {
             "name": "vault-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/vault-operator",
             "releases": [
+               {
+                  "id": 193545116,
+                  "version": "rev406",
+                  "timestamp": 1736267869,
+                  "title": "Revision 406",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 17:25 UTC on 7 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>refactor: Remove PKI implementation, use manager by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/347\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/347\">#347</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev405...rev406\">https://github.com/canonical/vault-operator/compare/rev405&hellip;rev406</a></p>\n",
+                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev406",
+                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev406...main"
+               },
                {
                   "id": 193514011,
                   "version": "rev405",
@@ -15701,15 +15710,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 19:11 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build: Update charm libs and associated charm code by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/346\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/346\">#346</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev403...rev404\">https://github.com/canonical/vault-operator/compare/rev403&hellip;rev404</a></p>\n",
                   "url": "https://github.com/canonical/vault-operator/releases/tag/rev404",
                   "compareUrl": "https://github.com/canonical/vault-operator/compare/rev404...main"
-               },
-               {
-                  "id": 191411290,
-                  "version": "rev403",
-                  "timestamp": 1734517220,
-                  "title": "Revision 403",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 11:08 UTC on 18 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/343\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/343\">#343</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev402...rev403\">https://github.com/canonical/vault-operator/compare/rev402&hellip;rev403</a></p>\n",
-                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev403",
-                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev403...main"
                }
             ],
             "tags": null,
@@ -21650,6 +21650,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "78c7cb5f95d742a6a4a908099f316d080d843d5b",
+                  "author": "arturo-seijas",
+                  "timestamp": 1736270924,
+                  "message": "<p>Revert &ldquo;Update license headers&rsquo; year (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/512\">#512</a>)&rdquo; (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/514\">#514</a>)</p>\n\n<p>This reverts commit 4dd289da57435e6b5f70c2984f3e1221e4a376a4.</p>\n",
+                  "url": "https://github.com/canonical/operator-workflows/commit/78c7cb5f95d742a6a4a908099f316d080d843d5b"
+               },
+               {
                   "sha": "4dd289da57435e6b5f70c2984f3e1221e4a376a4",
                   "author": "arturo-seijas",
                   "timestamp": 1736261996,
@@ -21662,13 +21669,6 @@
                   "timestamp": 1734694739,
                   "message": "<p>chore(deps): update dependency eslint-plugin-jest to v28.10.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/509\">#509</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/operator-workflows/commit/904d82ac4f1591f08da5f3e00917c0ee41409444"
-               },
-               {
-                  "sha": "605a10832719de1fc1d8935559c6182b5b9b0ca9",
-                  "author": "renovate[bot]",
-                  "timestamp": 1734692410,
-                  "message": "<p>chore(deps): update dependency eslint to v9.17.0 (<a target=\"_blank\" href=\"https://github.com/canonical/operator-workflows/pull/504\">#504</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/operator-workflows/commit/605a10832719de1fc1d8935559c6182b5b9b0ca9"
                }
             ],
             "ciActions": [],
