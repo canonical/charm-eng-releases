@@ -9704,25 +9704,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "12e32f00aff6c6679c8e1e30fa6979e5ecd1a919",
-                  "author": "Mateo Florido",
-                  "timestamp": 1736459795,
-                  "message": "<p>Add Reference Docs for Charm Configurations (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/939\">#939</a>)</p>\n\n<ul>\n<li>Add Reference for charm configurations</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/12e32f00aff6c6679c8e1e30fa6979e5ecd1a919"
+                  "sha": "37d86c1ddf326b7a4014346d5c68a82e28e8ca4b",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1736503788,
+                  "message": "<p>docs: High availability explanation page (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/940\">#940</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/37d86c1ddf326b7a4014346d5c68a82e28e8ca4b"
                },
                {
-                  "sha": "909229d312e1fd50a1afb6d4f90d789133b0fe67",
-                  "author": "Homayoon Alimohammadi",
-                  "timestamp": 1736436685,
-                  "message": "<p>docs: Fix snap upgrade how to (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/942\">#942</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/909229d312e1fd50a1afb6d4f90d789133b0fe67"
+                  "sha": "608723143befd96018e342828eca9695491bfff8",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1736503707,
+                  "message": "<p>docs: Add how-to uninstall the snap section (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/941\">#941</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/608723143befd96018e342828eca9695491bfff8"
                },
                {
-                  "sha": "29b72ddf4b26d4f4e8a964362376a701445c89f2",
-                  "author": "Louise K. Schmidtgen",
-                  "timestamp": 1736435124,
-                  "message": "<p>Choosing an installation method documentation (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/933\">#933</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/29b72ddf4b26d4f4e8a964362376a701445c89f2"
+                  "sha": "91f29ec9cd17f7eb21842663956d6b12946afc59",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1736503291,
+                  "message": "<p>Cleans up k8s-dqlite state dir and stops it on remove hook (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/908\">#908</a>)</p>\n\n<p>cfg.Datastore.GetType() may return an empty string if the bootstrap\naction failed before database.SetClusterConfig has been called. Because\nof this, we&rsquo;re not removing the state dir for k8s-dqlite, which will be\nwrongfully removed by setup.K8sDqlite on the next bootstrap attempt.</p>\n\n<p>We&rsquo;re now opportunistically cleaning up the k8s-dqlite related state\ndirectory.</p>\n\n<p>If a bootstrap attempt fails, the k8s-dqlite service will still be\nrunning, which will cause the next bootstrap attempt to fail, as the\nk8s-dqlite port will be currently in use.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/91f29ec9cd17f7eb21842663956d6b12946afc59"
                }
             ],
             "ciActions": [
@@ -13761,7 +13761,7 @@
          },
          {
             "name": "sdcore-upf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
             "releases": [
                {
@@ -19663,6 +19663,15 @@
             "url": "https://github.com/canonical/chrony-operator",
             "releases": [
                {
+                  "id": 194073691,
+                  "version": "rev57",
+                  "timestamp": 1736502191,
+                  "title": "Revision 57",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:44 UTC on 10 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.50 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/65\">#65</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev56...rev57\">https://github.com/canonical/chrony-operator/compare/rev56&hellip;rev57</a></p>\n",
+                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev57",
+                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev57...main"
+               },
+               {
                   "id": 194062640,
                   "version": "rev56",
                   "timestamp": 1736498092,
@@ -19679,15 +19688,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:49 UTC on 17 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/62\">#62</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev54...rev55\">https://github.com/canonical/chrony-operator/compare/rev54&hellip;rev55</a></p>\n",
                   "url": "https://github.com/canonical/chrony-operator/releases/tag/rev55",
                   "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev55...main"
-               },
-               {
-                  "id": 190886280,
-                  "version": "rev54",
-                  "timestamp": 1734333933,
-                  "title": "Revision 54",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:26 UTC on 16 Dec 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/chrony-operator/pull/60\">#60</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/chrony-operator/compare/rev53...rev54\">https://github.com/canonical/chrony-operator/compare/rev53&hellip;rev54</a></p>\n",
-                  "url": "https://github.com/canonical/chrony-operator/releases/tag/rev54",
-                  "compareUrl": "https://github.com/canonical/chrony-operator/compare/rev54...main"
                }
             ],
             "tags": null,
@@ -19703,8 +19703,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 56,
-                     "timestamp": 1736498185,
+                     "revision": 57,
+                     "timestamp": 1736502267,
                      "base": ""
                   }
                ],
