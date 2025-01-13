@@ -2445,7 +2445,7 @@
       "repos": [
          {
             "name": "o11y-tester-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/o11y-tester-operator",
             "releases": [
                {
@@ -2646,7 +2646,7 @@
          },
          {
             "name": "tempo-coordinator-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/tempo-coordinator-k8s-operator",
             "releases": [
                {
@@ -8475,6 +8475,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c3193793bdc01ac0ad4aade07b4017f67bf519e9",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1736782900,
+                  "message": "<p>Increase test timeouts (<a target=\"_blank\" href=\"https://github.com/canonical/canonical-kubernetes-release-ci/pull/19\">#19</a>)</p>\n\n<p>Update test timeouts</p>\n\n<p>The upgrate tests time out while waiting for the cilium image\nto be downloaded.</p>\n\n<p>Note that we have a large amount of parallel tests (~100) that\ndo not share the same env and cannot benefit from the image\nproxy, leading to a large number of image downloads.</p>\n\n<p>For now, we&rsquo;ll increase the test timeouts.</p>\n",
+                  "url": "https://github.com/canonical/canonical-kubernetes-release-ci/commit/c3193793bdc01ac0ad4aade07b4017f67bf519e9"
+               },
+               {
                   "sha": "f41f8e7a3b5adb3d825542d3e62962408e13524b",
                   "author": "Lucian Petrut",
                   "timestamp": 1736436109,
@@ -8487,13 +8494,6 @@
                   "timestamp": 1734433592,
                   "message": "<p>Use regexp to ignore tracks (<a target=\"_blank\" href=\"https://github.com/canonical/canonical-kubernetes-release-ci/pull/17\">#17</a>)</p>\n",
                   "url": "https://github.com/canonical/canonical-kubernetes-release-ci/commit/a83cf814a1af6e07f7ae844b7525d59553db468a"
-               },
-               {
-                  "sha": "e8f4357240fa9868776bdd06679d101b3fe11d35",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1733921132,
-                  "message": "<p>Don&rsquo;t fail workflow if no revision needs promotion (<a target=\"_blank\" href=\"https://github.com/canonical/canonical-kubernetes-release-ci/pull/16\">#16</a>)</p>\n",
-                  "url": "https://github.com/canonical/canonical-kubernetes-release-ci/commit/e8f4357240fa9868776bdd06679d101b3fe11d35"
                }
             ],
             "ciActions": [],
@@ -9721,6 +9721,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "f8e6934870c64f5535d925c597c6d1ce3c90bb9c",
+                  "author": "Mateo Florido",
+                  "timestamp": 1736783493,
+                  "message": "<p>Add Basic Operations with the Charm (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/947\">#947</a>)</p>\n\n<p>Add a Tutorial for Basic Operations with the Canonical Kubernetes charm</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/f8e6934870c64f5535d925c597c6d1ce3c90bb9c"
+               },
+               {
                   "sha": "6b3136f8a661d5361d01384509136e29735a54ba",
                   "author": "Lucian Petrut",
                   "timestamp": 1736779282,
@@ -9733,13 +9740,6 @@
                   "timestamp": 1736761212,
                   "message": "<p>Updates the rawfile-localpv rock to 0.8.1 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/952\">#952</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/c90aeac5b2a5dda6f1b73bfd53917d68c6e81dff"
-               },
-               {
-                  "sha": "2ce686533740b920058ba3679fe9c731ded3db29",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1736752970,
-                  "message": "<p>docs: Add ports and services reference (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/945\">#945</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/2ce686533740b920058ba3679fe9c731ded3db29"
                }
             ],
             "ciActions": [
@@ -15968,121 +15968,34 @@
       "team": "TLS",
       "repos": [
          {
-            "name": "route53-lego-k8s-operator",
+            "name": "pylego",
             "newCommits": 0,
-            "url": "https://github.com/canonical/route53-lego-k8s-operator",
-            "releases": [
+            "url": "https://github.com/canonical/pylego",
+            "releases": null,
+            "tags": null,
+            "commits": [
                {
-                  "id": 194445224,
-                  "version": "rev113",
-                  "timestamp": 1736778430,
-                  "title": "Revision 113",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:45 UTC on 13 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update peter-evans/create-pull-request action to v7.0.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/222\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/222\">#222</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev112...rev113\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev112&hellip;rev113</a></p>\n",
-                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev113",
-                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev113...main"
+                  "sha": "57054ad29ef20cab0c4f073f3133f406aeea0662",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1734530532,
+                  "message": "<p>chore: Use uv for python dependency management (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/27\">#27</a>)</p>\n",
+                  "url": "https://github.com/canonical/pylego/commit/57054ad29ef20cab0c4f073f3133f406aeea0662"
                },
                {
-                  "id": 193710674,
-                  "version": "rev112",
-                  "timestamp": 1736344910,
-                  "title": "Revision 112",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:20 UTC on 8 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/221\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/221\">#221</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev111...rev112\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev111&hellip;rev112</a></p>\n",
-                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev112",
-                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev112...main"
+                  "sha": "5d7b9c2cc41e9d4a2b707823230eb51eac0c61eb",
+                  "author": "saltiyazan",
+                  "timestamp": 1734452001,
+                  "message": "<p>chore: Uses renovate instead of dependabot (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/25\">#25</a>)</p>\n",
+                  "url": "https://github.com/canonical/pylego/commit/5d7b9c2cc41e9d4a2b707823230eb51eac0c61eb"
                },
                {
-                  "id": 193337940,
-                  "version": "rev111",
-                  "timestamp": 1736178999,
-                  "title": "Revision 111",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:14 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ubuntu to v24 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/219\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/219\">#219</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev110...rev111\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev110&hellip;rev111</a></p>\n",
-                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev111",
-                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev111...main"
+                  "sha": "01cc436b6a7186f7a04b80ccf92487b10b58a6c0",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1733957835,
+                  "message": "<p>build: Add logging lint checks to ruff (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/22\">#22</a>)</p>\n",
+                  "url": "https://github.com/canonical/pylego/commit/01cc436b6a7186f7a04b80ccf92487b10b58a6c0"
                }
             ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "route53-lego-k8s",
-               "url": "https://charmhub.io/route53-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 90,
-                     "timestamp": 1720101672,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 90,
-                     "timestamp": 1720100369,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 90,
-                     "timestamp": 1720099793,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 113,
-                     "timestamp": 1736779535,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "vault-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/vault-operator",
-            "releases": [
-               {
-                  "id": 194154919,
-                  "version": "rev408",
-                  "timestamp": 1736519800,
-                  "title": "Revision 408",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 16:52 UTC on 10 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update peter-evans/create-pull-request action to v7.0.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/344\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/344\">#344</a></a></li>\n<li>fix: Use locked dependencies when running tox by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/350\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/350\">#350</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev407...rev408\">https://github.com/canonical/vault-operator/compare/rev407&hellip;rev408</a></p>\n",
-                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev408",
-                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev408...main"
-               },
-               {
-                  "id": 193727158,
-                  "version": "rev407",
-                  "timestamp": 1736347666,
-                  "title": "Revision 407",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 15:33 UTC on 8 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>refactor: Remove KV implementation and use manager instead by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/348\">#348</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev406...rev407\">https://github.com/canonical/vault-operator/compare/rev406&hellip;rev407</a></p>\n",
-                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev407",
-                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev407...main"
-               },
-               {
-                  "id": 193545116,
-                  "version": "rev406",
-                  "timestamp": 1736267869,
-                  "title": "Revision 406",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 17:25 UTC on 7 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>refactor: Remove PKI implementation, use manager by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/347\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/347\">#347</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev405...rev406\">https://github.com/canonical/vault-operator/compare/rev405&hellip;rev406</a></p>\n",
-                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev406",
-                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev406...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -16210,6 +16123,258 @@
                   "1.15"
                ]
             },
+            "snap": null
+         },
+         {
+            "name": "identity-credentials-workflows",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/identity-credentials-workflows",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "7d99d4eb6ef563377ae92e0b3eff2d5ea9a6dcfc",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1736555553,
+                  "message": "<p>Add grafana-dashboard-lint-report</p>\n",
+                  "url": "https://github.com/canonical/identity-credentials-workflows/commit/7d99d4eb6ef563377ae92e0b3eff2d5ea9a6dcfc"
+               },
+               {
+                  "sha": "1ea2adea2522e58b06eb35e232dd09ae768d80d9",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1736554940,
+                  "message": "<p>Add lint-report workflow</p>\n",
+                  "url": "https://github.com/canonical/identity-credentials-workflows/commit/1ea2adea2522e58b06eb35e232dd09ae768d80d9"
+               },
+               {
+                  "sha": "e688d5ddbc4eb189f04b0e62bdba5b4d120b125e",
+                  "author": "Daniel Arndt",
+                  "timestamp": 1736554614,
+                  "message": "<p>Add lint-pr workflow</p>\n",
+                  "url": "https://github.com/canonical/identity-credentials-workflows/commit/e688d5ddbc4eb189f04b0e62bdba5b4d120b125e"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "notary",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/notary",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "3417800f002923e645a47994bc05b986fe91c175",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1736779015,
+                  "message": "<p>chore: bump golang.org/x/crypto from 0.31.0 to 0.32.0 in the go_dependencies group (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/142\">#142</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/notary/commit/3417800f002923e645a47994bc05b986fe91c175"
+               },
+               {
+                  "sha": "508b3175f8b08e7690cf5d1b988b5029f9eecf0c",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1736758215,
+                  "message": "<p>chore: bump the npm_dependencies group in /ui with 6 updates (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/143\">#143</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/notary/commit/508b3175f8b08e7690cf5d1b988b5029f9eecf0c"
+               },
+               {
+                  "sha": "1dce9948c4215cb99b4d56ad37764f2f66bd730c",
+                  "author": "Kayra",
+                  "timestamp": 1736246039,
+                  "message": "<p>feat: certificates table migration (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/132\">#132</a>)</p>\n",
+                  "url": "https://github.com/canonical/notary/commit/1dce9948c4215cb99b4d56ad37764f2f66bd730c"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "vault-operator",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/vault-operator",
+            "releases": [
+               {
+                  "id": 194154919,
+                  "version": "rev408",
+                  "timestamp": 1736519800,
+                  "title": "Revision 408",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 16:52 UTC on 10 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update peter-evans/create-pull-request action to v7.0.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/344\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/344\">#344</a></a></li>\n<li>fix: Use locked dependencies when running tox by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/350\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/350\">#350</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev407...rev408\">https://github.com/canonical/vault-operator/compare/rev407&hellip;rev408</a></p>\n",
+                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev408",
+                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev408...main"
+               },
+               {
+                  "id": 193727158,
+                  "version": "rev407",
+                  "timestamp": 1736347666,
+                  "title": "Revision 407",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 15:33 UTC on 8 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>refactor: Remove KV implementation and use manager instead by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/348\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/348\">#348</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev406...rev407\">https://github.com/canonical/vault-operator/compare/rev406&hellip;rev407</a></p>\n",
+                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev407",
+                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev407...main"
+               },
+               {
+                  "id": 193545116,
+                  "version": "rev406",
+                  "timestamp": 1736267869,
+                  "title": "Revision 406",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 17:25 UTC on 7 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>refactor: Remove PKI implementation, use manager by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/347\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-operator/pull/347\">#347</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-operator/compare/rev405...rev406\">https://github.com/canonical/vault-operator/compare/rev405&hellip;rev406</a></p>\n",
+                  "url": "https://github.com/canonical/vault-operator/releases/tag/rev406",
+                  "compareUrl": "https://github.com/canonical/vault-operator/compare/rev406...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "lego-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/lego-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "d21a95666d43f38494796ce480c2577253dd62f2",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1722225042,
+                  "message": "<p>chore: bump docker/login-action from 3.2.0 to 3.3.0 in the github_actions group (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/43\">#43</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/d21a95666d43f38494796ce480c2577253dd62f2"
+               },
+               {
+                  "sha": "9b0e8dc53960d8c62488a7f706e0ad38ecbb073d",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1717385596,
+                  "message": "<p>chore: bump docker/login-action from 3.1.0 to 3.2.0 in the github_actions group (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/42\">#42</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/9b0e8dc53960d8c62488a7f706e0ad38ecbb073d"
+               },
+               {
+                  "sha": "56f89cbea7b990be1362528ad2a4701f501245ab",
+                  "author": "saltiyazan",
+                  "timestamp": 1714116056,
+                  "message": "<p>chore: Adds dependency grouping and uses weekly schedule in dependabot (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/41\">#41</a>)</p>\n",
+                  "url": "https://github.com/canonical/lego-rock/commit/56f89cbea7b990be1362528ad2a4701f501245ab"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "route53-lego-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/route53-lego-k8s-operator",
+            "releases": [
+               {
+                  "id": 194445224,
+                  "version": "rev113",
+                  "timestamp": 1736778430,
+                  "title": "Revision 113",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:45 UTC on 13 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update peter-evans/create-pull-request action to v7.0.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/222\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/222\">#222</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev112...rev113\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev112&hellip;rev113</a></p>\n",
+                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev113",
+                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev113...main"
+               },
+               {
+                  "id": 193710674,
+                  "version": "rev112",
+                  "timestamp": 1736344910,
+                  "title": "Revision 112",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:20 UTC on 8 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/221\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/221\">#221</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev111...rev112\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev111&hellip;rev112</a></p>\n",
+                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev112",
+                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev112...main"
+               },
+               {
+                  "id": 193337940,
+                  "version": "rev111",
+                  "timestamp": 1736178999,
+                  "title": "Revision 111",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:14 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ubuntu to v24 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/219\"><a target=\"_blank\" href=\"https://github.com/canonical/route53-lego-k8s-operator/pull/219\">#219</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/route53-lego-k8s-operator/compare/rev110...rev111\">https://github.com/canonical/route53-lego-k8s-operator/compare/rev110&hellip;rev111</a></p>\n",
+                  "url": "https://github.com/canonical/route53-lego-k8s-operator/releases/tag/rev111",
+                  "compareUrl": "https://github.com/canonical/route53-lego-k8s-operator/compare/rev111...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "route53-lego-k8s",
+               "url": "https://charmhub.io/route53-lego-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 90,
+                     "timestamp": 1720101672,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 90,
+                     "timestamp": 1720100369,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 90,
+                     "timestamp": 1720099793,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 113,
+                     "timestamp": 1736779535,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "vault-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/vault-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "b8cb5d46c53205784d3ef03586ae15e4fa913000",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1727866184,
+                  "message": "<p>chore: add security policy (<a target=\"_blank\" href=\"https://github.com/canonical/vault-rock/pull/54\">#54</a>)</p>\n\n<p>Signed-off-by: guillaume <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
+                  "url": "https://github.com/canonical/vault-rock/commit/b8cb5d46c53205784d3ef03586ae15e4fa913000"
+               },
+               {
+                  "sha": "9bfc5db4abde1c5db113ca9ee0d30cf395a11508",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1727865003,
+                  "message": "<p>chore: bump vault to v1.17.6 (<a target=\"_blank\" href=\"https://github.com/canonical/vault-rock/pull/55\">#55</a>)</p>\n\n<p>Signed-off-by: guillaume <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
+                  "url": "https://github.com/canonical/vault-rock/commit/9bfc5db4abde1c5db113ca9ee0d30cf395a11508"
+               },
+               {
+                  "sha": "639239b4999c91e4bd0b3dd1d344e1d5a93535c8",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1725299474,
+                  "message": "<p>chore: bump vault to v1.17.5 (<a target=\"_blank\" href=\"https://github.com/canonical/vault-rock/pull/53\">#53</a>)</p>\n\n<p>Signed-off-by: guillaume <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
+                  "url": "https://github.com/canonical/vault-rock/commit/639239b4999c91e4bd0b3dd1d344e1d5a93535c8"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
             "snap": null
          },
          {
@@ -16516,243 +16681,6 @@
             "snap": null
          },
          {
-            "name": "notary",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/notary",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "3417800f002923e645a47994bc05b986fe91c175",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1736779015,
-                  "message": "<p>chore: bump golang.org/x/crypto from 0.31.0 to 0.32.0 in the go_dependencies group (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/142\">#142</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/notary/commit/3417800f002923e645a47994bc05b986fe91c175"
-               },
-               {
-                  "sha": "508b3175f8b08e7690cf5d1b988b5029f9eecf0c",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1736758215,
-                  "message": "<p>chore: bump the npm_dependencies group in /ui with 6 updates (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/143\">#143</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/notary/commit/508b3175f8b08e7690cf5d1b988b5029f9eecf0c"
-               },
-               {
-                  "sha": "1dce9948c4215cb99b4d56ad37764f2f66bd730c",
-                  "author": "Kayra",
-                  "timestamp": 1736246039,
-                  "message": "<p>feat: certificates table migration (<a target=\"_blank\" href=\"https://github.com/canonical/notary/pull/132\">#132</a>)</p>\n",
-                  "url": "https://github.com/canonical/notary/commit/1dce9948c4215cb99b4d56ad37764f2f66bd730c"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "certificate-transfer-interface",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/certificate-transfer-interface",
-            "releases": [
-               {
-                  "id": 193298908,
-                  "version": "rev94",
-                  "timestamp": 1736165326,
-                  "title": "Revision 94",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:27 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): lock file maintenance python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/131\">#131</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev93...rev94\">https://github.com/canonical/certificate-transfer-interface/compare/rev93&hellip;rev94</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev94",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev94...main"
-               },
-               {
-                  "id": 193296911,
-                  "version": "rev93",
-                  "timestamp": 1736164549,
-                  "title": "Revision 93",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:14 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout digest to 11bd719 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/132\">#132</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev89...rev93\">https://github.com/canonical/certificate-transfer-interface/compare/rev89&hellip;rev93</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev93",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev93...main"
-               },
-               {
-                  "id": 193182325,
-                  "version": "rev92",
-                  "timestamp": 1734530490,
-                  "title": "Revision 92",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:22 UTC on 5 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.8.2 to 0.8.3 in the pip_dependencies group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/129\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/129\">#129</a></a></li>\n<li>chore: Use uv for Python dependencies management by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/130\">#130</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev87...rev92\">https://github.com/canonical/certificate-transfer-interface/compare/rev87&hellip;rev92</a></p>\n",
-                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev92",
-                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev92...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "certificate-transfer-interface",
-               "url": "https://charmhub.io/certificate-transfer-interface",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 94,
-                     "timestamp": 1736166450,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "pylego",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/pylego",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "57054ad29ef20cab0c4f073f3133f406aeea0662",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1734530532,
-                  "message": "<p>chore: Use uv for python dependency management (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/27\">#27</a>)</p>\n",
-                  "url": "https://github.com/canonical/pylego/commit/57054ad29ef20cab0c4f073f3133f406aeea0662"
-               },
-               {
-                  "sha": "5d7b9c2cc41e9d4a2b707823230eb51eac0c61eb",
-                  "author": "saltiyazan",
-                  "timestamp": 1734452001,
-                  "message": "<p>chore: Uses renovate instead of dependabot (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/25\">#25</a>)</p>\n",
-                  "url": "https://github.com/canonical/pylego/commit/5d7b9c2cc41e9d4a2b707823230eb51eac0c61eb"
-               },
-               {
-                  "sha": "01cc436b6a7186f7a04b80ccf92487b10b58a6c0",
-                  "author": "Daniel Arndt",
-                  "timestamp": 1733957835,
-                  "message": "<p>build: Add logging lint checks to ruff (<a target=\"_blank\" href=\"https://github.com/canonical/pylego/pull/22\">#22</a>)</p>\n",
-                  "url": "https://github.com/canonical/pylego/commit/01cc436b6a7186f7a04b80ccf92487b10b58a6c0"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "namecheap-lego-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/namecheap-lego-k8s-operator",
-            "releases": [
-               {
-                  "id": 193334384,
-                  "version": "rev108",
-                  "timestamp": 1736177705,
-                  "title": "Revision 108",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:53 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ubuntu to v24 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/210\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/210\">#210</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev107...rev108\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev107&hellip;rev108</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev108",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev108...main"
-               },
-               {
-                  "id": 193296578,
-                  "version": "rev107",
-                  "timestamp": 1736164390,
-                  "title": "Revision 107",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:12 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/211\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/211\">#211</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev106...rev107\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev106&hellip;rev107</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev107",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev107...main"
-               },
-               {
-                  "id": 193262635,
-                  "version": "rev106",
-                  "timestamp": 1736149097,
-                  "title": "Revision 106",
-                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:57 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update peter-evans/create-pull-request action to v7.0.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/212\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/212\">#212</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev105...rev106\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev105&hellip;rev106</a></p>\n",
-                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev106",
-                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev106...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "namecheap-lego-k8s",
-               "url": "https://charmhub.io/namecheap-lego-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 87,
-                     "timestamp": 1720101675,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 87,
-                     "timestamp": 1720100357,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 87,
-                     "timestamp": 1720099804,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 108,
-                     "timestamp": 1736178825,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "lego-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/lego-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "d21a95666d43f38494796ce480c2577253dd62f2",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1722225042,
-                  "message": "<p>chore: bump docker/login-action from 3.2.0 to 3.3.0 in the github_actions group (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/43\">#43</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/d21a95666d43f38494796ce480c2577253dd62f2"
-               },
-               {
-                  "sha": "9b0e8dc53960d8c62488a7f706e0ad38ecbb073d",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1717385596,
-                  "message": "<p>chore: bump docker/login-action from 3.1.0 to 3.2.0 in the github_actions group (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/42\">#42</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/9b0e8dc53960d8c62488a7f706e0ad38ecbb073d"
-               },
-               {
-                  "sha": "56f89cbea7b990be1362528ad2a4701f501245ab",
-                  "author": "saltiyazan",
-                  "timestamp": 1714116056,
-                  "message": "<p>chore: Adds dependency grouping and uses weekly schedule in dependabot (<a target=\"_blank\" href=\"https://github.com/canonical/lego-rock/pull/41\">#41</a>)</p>\n",
-                  "url": "https://github.com/canonical/lego-rock/commit/56f89cbea7b990be1362528ad2a4701f501245ab"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "tls-certificates-requirer-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/tls-certificates-requirer-operator",
@@ -16839,6 +16767,144 @@
                   "stable",
                   "candidate",
                   "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "namecheap-lego-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/namecheap-lego-k8s-operator",
+            "releases": [
+               {
+                  "id": 193334384,
+                  "version": "rev108",
+                  "timestamp": 1736177705,
+                  "title": "Revision 108",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:53 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ubuntu to v24 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/210\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/210\">#210</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev107...rev108\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev107&hellip;rev108</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev108",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev108...main"
+               },
+               {
+                  "id": 193296578,
+                  "version": "rev107",
+                  "timestamp": 1736164390,
+                  "title": "Revision 107",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:12 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/211\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/211\">#211</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev106...rev107\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev106&hellip;rev107</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev107",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev107...main"
+               },
+               {
+                  "id": 193262635,
+                  "version": "rev106",
+                  "timestamp": 1736149097,
+                  "title": "Revision 106",
+                  "body": "<p>resources:\n    -  lego-image: ghcr.io/canonical/lego:4.16.1\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:57 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update peter-evans/create-pull-request action to v7.0.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/212\"><a target=\"_blank\" href=\"https://github.com/canonical/namecheap-lego-k8s-operator/pull/212\">#212</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev105...rev106\">https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev105&hellip;rev106</a></p>\n",
+                  "url": "https://github.com/canonical/namecheap-lego-k8s-operator/releases/tag/rev106",
+                  "compareUrl": "https://github.com/canonical/namecheap-lego-k8s-operator/compare/rev106...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "namecheap-lego-k8s",
+               "url": "https://charmhub.io/namecheap-lego-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 87,
+                     "timestamp": 1720101675,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "candidate",
+                     "revision": 87,
+                     "timestamp": 1720100357,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 87,
+                     "timestamp": 1720099804,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 108,
+                     "timestamp": 1736178825,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "certificate-transfer-interface",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/certificate-transfer-interface",
+            "releases": [
+               {
+                  "id": 193298908,
+                  "version": "rev94",
+                  "timestamp": 1736165326,
+                  "title": "Revision 94",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:27 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): lock file maintenance python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/131\">#131</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev93...rev94\">https://github.com/canonical/certificate-transfer-interface/compare/rev93&hellip;rev94</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev94",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev94...main"
+               },
+               {
+                  "id": 193296911,
+                  "version": "rev93",
+                  "timestamp": 1736164549,
+                  "title": "Revision 93",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:14 UTC on 6 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout digest to 11bd719 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/132\">#132</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev89...rev93\">https://github.com/canonical/certificate-transfer-interface/compare/rev89&hellip;rev93</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev93",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev93...main"
+               },
+               {
+                  "id": 193182325,
+                  "version": "rev92",
+                  "timestamp": 1734530490,
+                  "title": "Revision 92",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:22 UTC on 5 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ruff from 0.8.2 to 0.8.3 in the pip_dependencies group by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/129\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/129\">#129</a></a></li>\n<li>chore: Use uv for Python dependencies management by <a target=\"_blank\" href=\"https://github.com/ghislainbourgeois\">@ghislainbourgeois</a> in <a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/certificate-transfer-interface/pull/130\">#130</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/certificate-transfer-interface/compare/rev87...rev92\">https://github.com/canonical/certificate-transfer-interface/compare/rev87&hellip;rev92</a></p>\n",
+                  "url": "https://github.com/canonical/certificate-transfer-interface/releases/tag/rev92",
+                  "compareUrl": "https://github.com/canonical/certificate-transfer-interface/compare/rev92...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "certificate-transfer-interface",
+               "url": "https://charmhub.io/certificate-transfer-interface",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 94,
+                     "timestamp": 1736166450,
+                     "base": ""
+                  }
+               ],
+               "channels": [
                   "edge"
                ],
                "tracks": [
@@ -18452,39 +18518,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "vault-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/vault-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "b8cb5d46c53205784d3ef03586ae15e4fa913000",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1727866184,
-                  "message": "<p>chore: add security policy (<a target=\"_blank\" href=\"https://github.com/canonical/vault-rock/pull/54\">#54</a>)</p>\n\n<p>Signed-off-by: guillaume <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
-                  "url": "https://github.com/canonical/vault-rock/commit/b8cb5d46c53205784d3ef03586ae15e4fa913000"
-               },
-               {
-                  "sha": "9bfc5db4abde1c5db113ca9ee0d30cf395a11508",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1727865003,
-                  "message": "<p>chore: bump vault to v1.17.6 (<a target=\"_blank\" href=\"https://github.com/canonical/vault-rock/pull/55\">#55</a>)</p>\n\n<p>Signed-off-by: guillaume <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
-                  "url": "https://github.com/canonical/vault-rock/commit/9bfc5db4abde1c5db113ca9ee0d30cf395a11508"
-               },
-               {
-                  "sha": "639239b4999c91e4bd0b3dd1d344e1d5a93535c8",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1725299474,
-                  "message": "<p>chore: bump vault to v1.17.5 (<a target=\"_blank\" href=\"https://github.com/canonical/vault-rock/pull/53\">#53</a>)</p>\n\n<p>Signed-off-by: guillaume <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
-                  "url": "https://github.com/canonical/vault-rock/commit/639239b4999c91e4bd0b3dd1d344e1d5a93535c8"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
             "snap": null
          }
       ]
@@ -22119,9 +22152,9 @@
             "tags": [
                {
                   "name": "discourse-gatekeeper/base-content",
-                  "sha": "418cb260a2054f1fbee9f35bc792342b6ed514df",
-                  "body": "<p>Use charmcraft.yaml instead of metadata.yaml</p>\n",
-                  "timestamp": 1736758315,
+                  "sha": "860a5f7167803a021514d336bddb7d459da08827",
+                  "body": "<p>Test paas-app-charmer changes in discourse-gateway (<a target=\"_blank\" href=\"https://github.com/canonical/gatekeeper-repo-test/pull/501\">#501</a>)</p>\n",
+                  "timestamp": 1712928845,
                   "url": "https://github.com/canonical/gatekeeper-repo-test/releases/tag/discourse-gatekeeper%2Fbase-content",
                   "compareUrl": "https://github.com/canonical/gatekeeper-repo-test/compare/main...discourse-gatekeeper%2Fbase-content"
                }
