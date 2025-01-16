@@ -2249,6 +2249,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "0b9b41e6dd1c85f15ccc059e0454271cb08cfc7b",
+                  "author": "James Garner",
+                  "timestamp": 1736992441,
+                  "message": "<p>ci: use ubuntu-latest; bump checkout and python versions (following ops) (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/142\">#142</a>)</p>\n\n<p>This PR updates the <code>build-and-test</code> workflow to run on <code>ubuntu-latest</code> instead of <code>ubuntu-22.04</code>, following <code>ops</code>.</p>\n\n<p>It also bumps the versions on the <code>checkout</code> and <code>setup-python</code> actions accordingly, and pins the <code>tox</code> version following <code>ops</code>.</p>\n\n<p>For the integration tests, which require running <code>tox</code> as <code>root</code>, we install <code>tox</code> via <code>apt</code>.</p>\n\n<p>Also bump the <code>juju</code> version from <code>3.1</code> to <code>3.6</code> since it&rsquo;s the LTS release.</p>\n",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/0b9b41e6dd1c85f15ccc059e0454271cb08cfc7b"
+               },
+               {
                   "sha": "e20e313772228e0f2fe7090f07b89c6f589e8772",
                   "author": "James Garner",
                   "timestamp": 1736377440,
@@ -2261,13 +2268,6 @@
                   "timestamp": 1734295253,
                   "message": "<p>fix: Task status can be <code>Do</code> and should not raise an error. (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/140\">#140</a>)</p>\n\n<p>Resolves <a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/139\">#139</a></p>\n\n<ul>\n<li>fix: Task status can be Do.</li>\n</ul>\n\n<p>The task status can be <code>Do</code> and should not be considered an error.\nThis status means that the task is ready to start but hasn&rsquo;t started yet.</p>\n\n<ul>\n<li>chore: Bump libpatch</li>\n</ul>\n",
                   "url": "https://github.com/canonical/operator-libs-linux/commit/d58ccedb1aef66eee55f7008dcc5bebabf94e7e1"
-               },
-               {
-                  "sha": "f1952df48509dcdd51753eaa4a8ac7bb0357b27c",
-                  "author": "James Garner",
-                  "timestamp": 1733431344,
-                  "message": "<p>feat: load deb822 sources; use add-apt-repository to add (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/137\">#137</a>)</p>\n\n<p>Ubuntu 24.04 uses <a href=\"https://manpages.ubuntu.com/manpages/noble/en/man5/sources.list.5.html\">deb288 format</a> sources, which python-libjuju does not currently support (as pointed out by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> and <a target=\"_blank\" href=\"https://github.com/NucciTheBoss\">@NucciTheBoss</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/135\">#135</a>). This merge commit adds support for reading <code>*sources</code> files.</p>\n\n<p><code>RepositoryMapping</code> now automatically findes them in <code>/etc/apt/sources.list.d</code> when initialised. Additionally, to avoid an <code>InvalidSourceError</code> if <code>/etc/apt/sources.list</code> exists but only includes a comment about the new sources location (as it does on noble), we ignore this error if <code>/etc/apt/sources.list.d/ubuntu.sources</code> exists.</p>\n\n<p>This merge commit also cleans up the <code>add</code> method by calling <code>add-apt-repository</code> internally instead of writing directly to a file. Note that this means that adding a disabled repository no longer has any effect (previously it would write a a file containing a single, commented-out one-line repository definition).</p>\n\n<p>Original commit messages below.</p>\n\n<hr>\n\n<ul>\n<li>feat: support deb822 style source specification</li>\n</ul>\n\n<p>Ubuntu 24.04 adopts the deb822 style source specification. Such files\nare listed in /etc/apt/sources.list.d/*sources, and allow the\nspecification of sources in a multi-line format</p>\n\n<ul>\n<li><p>refactor: separate file reading and object updating from parsing lines</p></li>\n\n<li><p>refactor: preserve line nos when parsing deb822 lines into paragraphs</p></li>\n\n<li><p>refactor: move turning numbered lines into options dict to helper</p></li>\n\n<li><p>feat: support inline comments in deb822 source files</p></li>\n\n<li><p>tests: add some unit tests for _iter_deb822_paragraphs</p></li>\n\n<li><p>fix: raise an InvalidSourceError on missing required deb822 keys</p></li>\n\n<li><p>tests: add some unit tests for _get_deb822_options</p></li>\n\n<li><p>fix: correctly handle newline terminated lines in paragraph iteration</p></li>\n\n<li><p>tests: add some unit tests for _iter_deb822_paragraphs</p></li>\n\n<li><p>tests: add some tests for _parse_deb822_lines</p></li>\n\n<li><p>feat: add the number of errors to the debug output in load_deb822</p></li>\n\n<li><p>tests: add some unit tests for load_deb822</p></li>\n\n<li><p>tests: add a unit test for initialiasing RepositoryMapping with deb822</p></li>\n\n<li><p>style: tox -e fmt tests/unit/test_apt.py</p></li>\n\n<li><p>fix: correct docstring</p></li>\n\n<li><p>fix: python3.8 context managers and clean up linter directives</p></li>\n\n<li><p>feat: make DebianRepository aware of deb822 format for some operations</p></li>\n</ul>\n\n<p>add: add ability to write a deb822 format file\ndisable: raise NotImplementedError for deb822 format files\ngpg_key: use existing import_key functionality to provide keys specified\n    in the stanza itself as a file for compatibility\nAlso refactor Deb822 functionality to a separate class.\nAlso move deb822 unit tests to the more appropriate test_repo.py</p>\n\n<ul>\n<li><p>fix: remove extraneous information from docstring</p></li>\n\n<li><p>feat: use apt-add-repository for RepositoryMapping.add</p></li>\n\n<li><p>refactor: logic and testing cleanup</p></li>\n\n<li><p>style: type annotate integration test helper function</p></li>\n\n<li><p>feat: support apt autoremove in remove_package</p></li>\n\n<li><p>feat: debug useful information on error in apt.update</p></li>\n\n<li><p>feat: log when writing to a sources file in from_repo_line</p></li>\n\n<li><p>feat: make the apt directories (private) attributes (for testing)</p></li>\n\n<li><p>style: correct RepositoryMapping.<strong>iter</strong> annotation and add FIXME</p></li>\n\n<li><p>feat: log the filename as well as the number of repos when parsing</p></li>\n\n<li><p>feat: refactor RepositoryMapping.add to possible support remove as well</p></li>\n\n<li><p>feat: allow _Deb822Stanza from an empty set of lines</p></li>\n\n<li><p>tests: add unit tests that use files on disk</p></li>\n\n<li><p>tests: update integration tests</p></li>\n\n<li><p>feat: use sourceslist (one-per-line) format for add-apt-repository</p></li>\n\n<li><p>feat: call _add_apt_repository in from_repo_line (don&rsquo;t reimplement logic)</p></li>\n\n<li><p>tests: re-enable package cleanup in integration tests</p></li>\n\n<li><p>tests: add test case from hardware-observer charm and cleanup keys</p></li>\n\n<li><p>tests: refactor deb822 unit tests</p></li>\n\n<li><p>tests: iterate on deb822 tests</p></li>\n\n<li><p>tests: fully refactor and expand deb822 unit tests</p></li>\n\n<li><p>style: make linting happy</p></li>\n\n<li><p>test: fix an erroneous assert in integration tests</p></li>\n\n<li><p>refactor: clean up diff, signatures, etc</p></li>\n\n<li><p>refactor: move keys to files</p></li>\n\n<li><p>fix: don&rsquo;t warn about key file on remove</p></li>\n\n<li><p>style: use tuple for endswith</p></li>\n\n<li><p>style: paragraph -&gt; stanza, repositories -&gt; repos</p></li>\n\n<li><p>test: switch from inkscape to terminator ppa for ci</p></li>\n\n<li><p>test: switch from terminator to fish ppa for ci</p></li>\n\n<li><p>chore: remove ValueError from RepositoryMapping.add</p></li>\n\n<li><p>test: remove old tests from test_repo.py</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/f1952df48509dcdd51753eaa4a8ac7bb0357b27c"
                }
             ],
             "ciActions": [
@@ -25022,6 +25022,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c8d4160f942924006f00d7ff64e0b282d3c3ee2b",
+                  "author": "Samuel Allan",
+                  "timestamp": 1736994352,
+                  "message": "<p>Revert &ldquo;Add warning when refreshing the snap (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/45\">#45</a>)&rdquo; (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/46\">#46</a>)</p>\n\n<p>This message actually is never shown to users,\nbecause snapd hides output from this hook.</p>\n\n<p>This reverts commit 88160f63584bcba15a3c8aac1634e029b0b68399.</p>\n",
+                  "url": "https://github.com/canonical/tailscale-snap/commit/c8d4160f942924006f00d7ff64e0b282d3c3ee2b"
+               },
+               {
                   "sha": "2b4e3f5c347cc69fb9cf02e58944ca3a4ea8d07e",
                   "author": "Samuel Allan",
                   "timestamp": 1736850093,
@@ -25034,13 +25041,6 @@
                   "timestamp": 1736749531,
                   "message": "<p>Add warning when refreshing the snap (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/45\">#45</a>)</p>\n\n<p>The snap service is not restarted automatically.</p>\n",
                   "url": "https://github.com/canonical/tailscale-snap/commit/88160f63584bcba15a3c8aac1634e029b0b68399"
-               },
-               {
-                  "sha": "05df0fa0a6d9b21ba1d94175fef79081fda86920",
-                  "author": "Samuel Allan",
-                  "timestamp": 1736741969,
-                  "message": "<p>Don&rsquo;t restart service on snap refresh (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/44\">#44</a>)</p>\n\n<p>Restarting the tailscaled service could cause network interruption,\nso provide the user the flexibility and control to choose when\nto restart the service.</p>\n",
-                  "url": "https://github.com/canonical/tailscale-snap/commit/05df0fa0a6d9b21ba1d94175fef79081fda86920"
                }
             ],
             "ciActions": [],
