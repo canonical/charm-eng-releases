@@ -9747,6 +9747,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "90300ca2b80f032a00e16cd4f9ebf3398dbd2136",
+                  "author": "Louise K. Schmidtgen",
+                  "timestamp": 1737014850,
+                  "message": "<p>Load balancer explanation page (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/965\">#965</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/90300ca2b80f032a00e16cd4f9ebf3398dbd2136"
+               },
+               {
                   "sha": "3010afd07c4acc956c1e7d034d2ee87d0f8672a4",
                   "author": "Mateo Florido",
                   "timestamp": 1736996019,
@@ -9759,13 +9766,6 @@
                   "timestamp": 1736953101,
                   "message": "<p>test_ingress: fix service ip poller (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/956\">#956</a>)</p>\n\n<ul>\n<li>test_ingress: fix service ip poller</li>\n</ul>\n\n<p>get_external_service_ip repeatedly attempts to retrieve the\nspecified service ip.</p>\n\n<p>The problem is that it uses &ldquo;is None&rdquo; checks to determine if\nan ip was retrieved. This returns &ldquo;False&rdquo; for empty strings,\nso the loop exits prematurely.</p>\n\n<p>Note that &ldquo;is None&rdquo; checks are strongly discouraged in Python.</p>\n\n<p>While at it, we&rsquo;re bumpting the timeout as well.</p>\n\n<ul>\n<li>Apply auto-generated docs changes</li>\n</ul>\n\n<p>boostrap_config.md is auto-generated based on the k8s-snap-api\nstructures.</p>\n\n<p>There&rsquo;s a job which ensures that the in-tree docs contain the latest\nchanges.</p>\n\n<p>For now, we&rsquo;ll apply the expected changes. We should consider\nremoving the auto-generated docs from the git repo and add them to\n.gitignore.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/25826c07395ba54eef045d9ed90381fa53d74553"
-               },
-               {
-                  "sha": "6b51425fd7c0363f8a9cbabe25a8c45022e3c1e4",
-                  "author": "eaudetcobello",
-                  "timestamp": 1736950821,
-                  "message": "<p>docs: image management (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/954\">#954</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/6b51425fd7c0363f8a9cbabe25a8c45022e3c1e4"
                }
             ],
             "ciActions": [
@@ -12672,9 +12672,18 @@
       "repos": [
          {
             "name": "sdcore-upf-k8s-operator",
-            "newCommits": 21,
+            "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
             "releases": [
+               {
+                  "id": 195066050,
+                  "version": "rev735",
+                  "timestamp": 1737013701,
+                  "title": "Revision 735",
+                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.5.0\n       resource-revision: 49\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.5.0\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 08:10 UTC on 16 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/461\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/461\">#461</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev732...rev735\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev732&hellip;rev735</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev735",
+                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev735...main"
+               },
                {
                   "id": 194618349,
                   "version": "rev734",
@@ -12692,15 +12701,6 @@
                   "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.5.0\n       resource-revision: 49\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.5.0\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:47 UTC on 12 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Fixes Unauthorized error when listing K8s nodes by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/458\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/458\">#458</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev731...rev733\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev731&hellip;rev733</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev733",
                   "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev733...main"
-               },
-               {
-                  "id": 194080377,
-                  "version": "rev732",
-                  "timestamp": 1736503359,
-                  "title": "Revision 732",
-                  "body": "<p>resources:\n    -  pfcp-agent-image: ghcr.io/canonical/sdcore-upf-pfcpiface:1.5.0\n       resource-revision: 49\n    -  bessd-image: ghcr.io/canonical/sdcore-upf-bess:1.5.0\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 10:24 UTC on 10 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Fixes Unauthorized error when listing K8s nodes by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/458\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-k8s-operator/pull/458\">#458</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev731...rev732\">https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev731&hellip;rev732</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-k8s-operator/releases/tag/rev732",
-                  "compareUrl": "https://github.com/canonical/sdcore-upf-k8s-operator/compare/rev732...main"
                }
             ],
             "tags": null,
@@ -12769,8 +12769,8 @@
                   {
                      "track": "1.6",
                      "channel": "edge",
-                     "revision": 733,
-                     "timestamp": 1736668070,
+                     "revision": 735,
+                     "timestamp": 1737015030,
                      "base": ""
                   },
                   {
@@ -19767,10 +19767,58 @@
       "team": "IS",
       "repos": [
          {
+            "name": "tmate-ssh-server-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/tmate-ssh-server-operator",
+            "releases": [
+               {
+                  "id": 195065019,
+                  "version": "rev7",
+                  "timestamp": 1737014517,
+                  "title": "Revision 7",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:03 UTC on 16 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update copyright year by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tmate-ssh-server-operator/compare/rev6...rev7\">https://github.com/canonical/tmate-ssh-server-operator/compare/rev6&hellip;rev7</a></p>\n",
+                  "url": "https://github.com/canonical/tmate-ssh-server-operator/releases/tag/rev7",
+                  "compareUrl": "https://github.com/canonical/tmate-ssh-server-operator/compare/rev7...main"
+               },
+               {
+                  "id": 177274066,
+                  "version": "rev6",
+                  "timestamp": 1727437747,
+                  "title": "Revision 6",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:50 UTC on 27 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update tutorial by <a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tmate-ssh-server-operator/compare/rev5...rev6\">https://github.com/canonical/tmate-ssh-server-operator/compare/rev5&hellip;rev6</a></p>\n",
+                  "url": "https://github.com/canonical/tmate-ssh-server-operator/releases/tag/rev6",
+                  "compareUrl": "https://github.com/canonical/tmate-ssh-server-operator/compare/rev6...main"
+               },
+               {
+                  "id": 175814562,
+                  "version": "rev5",
+                  "timestamp": 1726582132,
+                  "title": "Revision 5",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:35 UTC on 19 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enable service and add health check by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\">#12</a></a></li>\n<li>Add workflows for tracks support by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\">#13</a></a></li>\n<li>Update docs by <a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\">#15</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\">#12</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\">#13</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\">#15</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tmate-ssh-server-operator/compare/rev3...rev5\">https://github.com/canonical/tmate-ssh-server-operator/compare/rev3&hellip;rev5</a></p>\n",
+                  "url": "https://github.com/canonical/tmate-ssh-server-operator/releases/tag/rev5",
+                  "compareUrl": "https://github.com/canonical/tmate-ssh-server-operator/compare/rev5...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "synapse-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/synapse-operator",
             "releases": [
+               {
+                  "id": 195061497,
+                  "version": "rev540",
+                  "timestamp": 1737012734,
+                  "title": "Revision 540",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 517</p>\n\n<p>Static resources:\n Released to &lsquo;2/edge&rsquo; at 07:35 UTC on 16 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.36.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/658\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/658\">#658</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev539...rev540\">https://github.com/canonical/synapse-operator/compare/rev539&hellip;rev540</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev540",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev540...2/main"
+               },
                {
                   "id": 194936637,
                   "version": "rev539",
@@ -19788,15 +19836,6 @@
                   "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 515</p>\n\n<p>Static resources:\n Released to &lsquo;2/edge&rsquo; at 13:11 UTC on 15 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update renovate.json by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/656\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/656\">#656</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev536...rev537\">https://github.com/canonical/synapse-operator/compare/rev536&hellip;rev537</a></p>\n",
                   "url": "https://github.com/canonical/synapse-operator/releases/tag/rev537",
                   "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev537...2/main"
-               },
-               {
-                  "id": 194805242,
-                  "version": "rev536",
-                  "timestamp": 1736903259,
-                  "title": "Revision 536",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 514</p>\n\n<p>Static resources:\n Released to &lsquo;2/edge&rsquo; at 01:11 UTC on 15 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>update codeowners to assigned team members by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/654\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/654\">#654</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev534...rev536\">https://github.com/canonical/synapse-operator/compare/rev534&hellip;rev536</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev536",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev536...2/main"
                }
             ],
             "tags": null,
@@ -19826,8 +19865,8 @@
                   {
                      "track": "2",
                      "channel": "edge",
-                     "revision": 539,
-                     "timestamp": 1736955283,
+                     "revision": 540,
+                     "timestamp": 1737012908,
                      "base": ""
                   },
                   {
@@ -20494,7 +20533,7 @@
          },
          {
             "name": "github-runner-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/github-runner-operator",
             "releases": [
                {
@@ -21727,36 +21766,181 @@
             "snap": null
          },
          {
-            "name": "charmed-bind",
+            "name": "test-runners-github-postgresql-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-bind",
+            "url": "https://github.com/canonical/test-runners-github-postgresql-operator",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "e167f467d0cdf7c2f8ce0a931bc438f8510842d8",
-                  "author": "Niels Robin-Aubertin",
-                  "timestamp": 1736894176,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-bind/pull/32\">#32</a> from canonical/renovate/pypi-django-vulnerability</p>\n\n<p>Update dependency Django to v5.1.5 [SECURITY]</p>\n",
-                  "url": "https://github.com/canonical/charmed-bind/commit/e167f467d0cdf7c2f8ce0a931bc438f8510842d8"
+                  "sha": "6da2c89898da20c8ddb3cff31306251090c891a1",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1712820865,
+                  "message": "<p>Remove concurrency group</p>\n",
+                  "url": "https://github.com/canonical/test-runners-github-postgresql-operator/commit/6da2c89898da20c8ddb3cff31306251090c891a1"
                },
                {
-                  "sha": "5664b237d4cc6ec6378c0838d1ece481606a7360",
-                  "author": "renovate[bot]",
-                  "timestamp": 1736893253,
-                  "message": "<p>Update dependency Django to v5.1.5 [SECURITY]</p>\n",
-                  "url": "https://github.com/canonical/charmed-bind/commit/5664b237d4cc6ec6378c0838d1ece481606a7360"
+                  "sha": "f99f4f9a40f089986faed4ff5a0c2f21f3db72e2",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1712820820,
+                  "message": "<p>Revert &ldquo;Update ci.yaml&rdquo;</p>\n\n<p>This reverts commit a0bb1811cd694de32c4d42bf2c55e468d1780a9e.</p>\n",
+                  "url": "https://github.com/canonical/test-runners-github-postgresql-operator/commit/f99f4f9a40f089986faed4ff5a0c2f21f3db72e2"
                },
                {
-                  "sha": "a1846780a0916f41e3dcecac8ce8ade376cb6b0b",
-                  "author": "Amanda H. L. de Andrade Katz",
-                  "timestamp": 1733421747,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-bind/pull/28\">#28</a> from canonical/renovate/canonical-data-platform-workflows-24.x</p>\n\n<p>Update canonical/data-platform-workflows action to v24</p>\n",
-                  "url": "https://github.com/canonical/charmed-bind/commit/a1846780a0916f41e3dcecac8ce8ade376cb6b0b"
+                  "sha": "7c985c9d1d6df456714cefe03f1494e301db74a9",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1712820072,
+                  "message": "<p>Disable GCP backup tests</p>\n",
+                  "url": "https://github.com/canonical/test-runners-github-postgresql-operator/commit/7c985c9d1d6df456714cefe03f1494e301db74a9"
                }
             ],
-            "ciActions": [],
-            "charm": null,
+            "ciActions": [
+               "https://github.com/canonical/postgresql-operator/actions/workflows/release.yaml",
+               "https://github.com/canonical/postgresql-operator/actions/workflows/ci.yaml"
+            ],
+            "charm": {
+               "name": "postgresql",
+               "url": "https://charmhub.io/postgresql",
+               "releases": [
+                  {
+                     "track": "14",
+                     "channel": "stable",
+                     "revision": 468,
+                     "timestamp": 1726068638,
+                     "base": ""
+                  },
+                  {
+                     "track": "14",
+                     "channel": "stable",
+                     "revision": 467,
+                     "timestamp": 1726068634,
+                     "base": ""
+                  },
+                  {
+                     "track": "14",
+                     "channel": "candidate",
+                     "revision": 528,
+                     "timestamp": 1732871403,
+                     "base": ""
+                  },
+                  {
+                     "track": "14",
+                     "channel": "candidate",
+                     "revision": 529,
+                     "timestamp": 1732871406,
+                     "base": ""
+                  },
+                  {
+                     "track": "14",
+                     "channel": "beta",
+                     "revision": 528,
+                     "timestamp": 1732833423,
+                     "base": ""
+                  },
+                  {
+                     "track": "14",
+                     "channel": "beta",
+                     "revision": 529,
+                     "timestamp": 1732833427,
+                     "base": ""
+                  },
+                  {
+                     "track": "14",
+                     "channel": "edge",
+                     "revision": 543,
+                     "timestamp": 1737003909,
+                     "base": ""
+                  },
+                  {
+                     "track": "14",
+                     "channel": "edge",
+                     "revision": 542,
+                     "timestamp": 1737003907,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 226,
+                     "timestamp": 1617294177,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 239,
+                     "timestamp": 1644408600,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 345,
+                     "timestamp": 1699537620,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 239,
+                     "timestamp": 1644408600,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 345,
+                     "timestamp": 1699537620,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 239,
+                     "timestamp": 1644408600,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 345,
+                     "timestamp": 1699537620,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 345,
+                     "timestamp": 1699537620,
+                     "base": ""
+                  },
+                  {
+                     "track": "16",
+                     "channel": "edge",
+                     "revision": 526,
+                     "timestamp": 1732739100,
+                     "base": ""
+                  },
+                  {
+                     "track": "16",
+                     "channel": "edge",
+                     "revision": 527,
+                     "timestamp": 1732739102,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "14",
+                  "latest",
+                  "16"
+               ]
+            },
             "snap": null
          },
          {
@@ -21807,42 +21991,6 @@
                   "url": "https://github.com/canonical/hockeypuck-k8s-operator/commit/f71c989fd8b1a13ae4ae0522f79d8396d1759cb7"
                }
             ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "github-runner-image-builder",
-            "newCommits": 17,
-            "url": "https://github.com/canonical/github-runner-image-builder",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "test",
-                  "sha": "7a72d383fbed07527acfa00744ae323c4a007ad0",
-                  "body": "<p>docs: update docs</p>\n",
-                  "timestamp": 1725253368,
-                  "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/test",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...test"
-               },
-               {
-                  "name": "stable",
-                  "sha": "ee9e24eb7ea2a99335cca576069f9b3f38455624",
-                  "body": "<p>hotfix: yq source build error (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder/pull/30\">#30</a>)</p>\n\n<ul>\n<li><p>fix: reset git state before source build</p></li>\n\n<li><p>chore: increment version</p></li>\n\n<li><p>fix: go mod tidy</p></li>\n\n<li><p>fix: str log levels</p></li>\n\n<li><p>fix: try adding ignore code</p></li>\n\n<li><p>fix: lint errors</p></li>\n\n<li><p>chore: refactor helper connection params</p></li>\n</ul>\n",
-                  "timestamp": 1727155419,
-                  "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/stable",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...stable"
-               },
-               {
-                  "name": "edge",
-                  "sha": "903829edab04098c043e280c699469eead67946d",
-                  "body": "<p>Decrease min ram requirements for openstack builder (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder/pull/41\">#41</a>)</p>\n",
-                  "timestamp": 1732820522,
-                  "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/edge",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...edge"
-               }
-            ],
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -21959,34 +22107,37 @@
             "snap": null
          },
          {
-            "name": ".github",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/.github",
+            "name": "github-runner-image-builder",
+            "newCommits": 17,
+            "url": "https://github.com/canonical/github-runner-image-builder",
             "releases": null,
-            "tags": null,
-            "commits": [
+            "tags": [
                {
-                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1668098113,
-                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
-                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
+                  "name": "test",
+                  "sha": "7a72d383fbed07527acfa00744ae323c4a007ad0",
+                  "body": "<p>docs: update docs</p>\n",
+                  "timestamp": 1725253368,
+                  "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/test",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...test"
                },
                {
-                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
-                  "author": "arturo-seijas",
-                  "timestamp": 1668092923,
-                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
+                  "name": "stable",
+                  "sha": "ee9e24eb7ea2a99335cca576069f9b3f38455624",
+                  "body": "<p>hotfix: yq source build error (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder/pull/30\">#30</a>)</p>\n\n<ul>\n<li><p>fix: reset git state before source build</p></li>\n\n<li><p>chore: increment version</p></li>\n\n<li><p>fix: go mod tidy</p></li>\n\n<li><p>fix: str log levels</p></li>\n\n<li><p>fix: try adding ignore code</p></li>\n\n<li><p>fix: lint errors</p></li>\n\n<li><p>chore: refactor helper connection params</p></li>\n</ul>\n",
+                  "timestamp": 1727155419,
+                  "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/stable",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...stable"
                },
                {
-                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
-                  "author": "arturo-seijas",
-                  "timestamp": 1668087850,
-                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
+                  "name": "edge",
+                  "sha": "903829edab04098c043e280c699469eead67946d",
+                  "body": "<p>Decrease min ram requirements for openstack builder (<a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder/pull/41\">#41</a>)</p>\n",
+                  "timestamp": 1732820522,
+                  "url": "https://github.com/canonical/github-runner-image-builder/releases/tag/edge",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder/compare/main...edge"
                }
             ],
+            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -22061,21 +22212,34 @@
             "snap": null
          },
          {
-            "name": "gatekeeper-repo-test",
+            "name": ".github",
             "newCommits": 0,
-            "url": "https://github.com/canonical/gatekeeper-repo-test",
+            "url": "https://github.com/canonical/.github",
             "releases": null,
-            "tags": [
+            "tags": null,
+            "commits": [
                {
-                  "name": "discourse-gatekeeper/base-content",
-                  "sha": "860a5f7167803a021514d336bddb7d459da08827",
-                  "body": "<p>Test paas-app-charmer changes in discourse-gateway (<a target=\"_blank\" href=\"https://github.com/canonical/gatekeeper-repo-test/pull/501\">#501</a>)</p>\n",
-                  "timestamp": 1712928845,
-                  "url": "https://github.com/canonical/gatekeeper-repo-test/releases/tag/discourse-gatekeeper%2Fbase-content",
-                  "compareUrl": "https://github.com/canonical/gatekeeper-repo-test/compare/main...discourse-gatekeeper%2Fbase-content"
+                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
+                  "author": "Mariyan Dimitrov",
+                  "timestamp": 1668098113,
+                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
+                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
+               },
+               {
+                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668092923,
+                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
+               },
+               {
+                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668087850,
+                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
                }
             ],
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -22168,6 +22332,26 @@
                   "url": "https://github.com/canonical/paas-charm/commit/cb380bd6b8606835a47e31c3041588380aea731c"
                }
             ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "gatekeeper-repo-test",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/gatekeeper-repo-test",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "discourse-gatekeeper/base-content",
+                  "sha": "860a5f7167803a021514d336bddb7d459da08827",
+                  "body": "<p>Test paas-app-charmer changes in discourse-gateway (<a target=\"_blank\" href=\"https://github.com/canonical/gatekeeper-repo-test/pull/501\">#501</a>)</p>\n",
+                  "timestamp": 1712928845,
+                  "url": "https://github.com/canonical/gatekeeper-repo-test/releases/tag/discourse-gatekeeper%2Fbase-content",
+                  "compareUrl": "https://github.com/canonical/gatekeeper-repo-test/compare/main...discourse-gatekeeper%2Fbase-content"
+               }
+            ],
+            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -22271,26 +22455,6 @@
                }
             ],
             "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "create-pull-request",
-            "newCommits": 34,
-            "url": "https://github.com/canonical/create-pull-request",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "v1",
-                  "sha": "0fda9252a2d57c62c86b8f062118f9de8678528a",
-                  "body": "<p>feat: support creating pull request for remote repository. (<a target=\"_blank\" href=\"https://github.com/canonical/create-pull-request/pull/215\">#215</a>)</p>\n\n<ul>\n<li><p>feat: support creating pull request for remote repository.</p></li>\n\n<li><p>fix: reword the documentation.</p></li>\n\n<li><p>fix: update description for &lsquo;repository&rsquo; in action.yml</p></li>\n</ul>\n",
-                  "timestamp": 1717763109,
-                  "url": "https://github.com/canonical/create-pull-request/releases/tag/v1",
-                  "compareUrl": "https://github.com/canonical/create-pull-request/compare/main...v1"
-               }
-            ],
             "commits": null,
             "ciActions": [],
             "charm": null,
@@ -22409,34 +22573,21 @@
             "snap": null
          },
          {
-            "name": "charmed-cloudflared-snap",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-cloudflared-snap",
+            "name": "create-pull-request",
+            "newCommits": 34,
+            "url": "https://github.com/canonical/create-pull-request",
             "releases": null,
-            "tags": null,
-            "commits": [
+            "tags": [
                {
-                  "sha": "d37e81b5f1b9d15916c23e19219e3ea8adef149d",
-                  "author": "Sébastien Georget",
-                  "timestamp": 1736756115,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/9\">#9</a> from canonical/chore/missing_codeowners</p>\n\n<p>Add missing CODEOWNERS file</p>\n",
-                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/d37e81b5f1b9d15916c23e19219e3ea8adef149d"
-               },
-               {
-                  "sha": "56beb5e61f73d478fe0fefa4c8d26ba0b7abfee2",
-                  "author": "Sebastien Georget",
-                  "timestamp": 1736755597,
-                  "message": "<p>Add missing CODEOWNERS</p>\n",
-                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/56beb5e61f73d478fe0fefa4c8d26ba0b7abfee2"
-               },
-               {
-                  "sha": "6ed55ea6d21bf65fb16a5cb78da88474152d6260",
-                  "author": "Weii Wang",
-                  "timestamp": 1734328004,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/7\">#7</a> from canonical/renovate/canonical-data-platform-workflows-24.x</p>\n\n<p>Update canonical/data-platform-workflows action to v24</p>\n",
-                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/6ed55ea6d21bf65fb16a5cb78da88474152d6260"
+                  "name": "v1",
+                  "sha": "0fda9252a2d57c62c86b8f062118f9de8678528a",
+                  "body": "<p>feat: support creating pull request for remote repository. (<a target=\"_blank\" href=\"https://github.com/canonical/create-pull-request/pull/215\">#215</a>)</p>\n\n<ul>\n<li><p>feat: support creating pull request for remote repository.</p></li>\n\n<li><p>fix: reword the documentation.</p></li>\n\n<li><p>fix: update description for &lsquo;repository&rsquo; in action.yml</p></li>\n</ul>\n",
+                  "timestamp": 1717763109,
+                  "url": "https://github.com/canonical/create-pull-request/releases/tag/v1",
+                  "compareUrl": "https://github.com/canonical/create-pull-request/compare/main...v1"
                }
             ],
+            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -22640,6 +22791,39 @@
             "snap": null
          },
          {
+            "name": "charmed-cloudflared-snap",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-cloudflared-snap",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "d37e81b5f1b9d15916c23e19219e3ea8adef149d",
+                  "author": "Sébastien Georget",
+                  "timestamp": 1736756115,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/9\">#9</a> from canonical/chore/missing_codeowners</p>\n\n<p>Add missing CODEOWNERS file</p>\n",
+                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/d37e81b5f1b9d15916c23e19219e3ea8adef149d"
+               },
+               {
+                  "sha": "56beb5e61f73d478fe0fefa4c8d26ba0b7abfee2",
+                  "author": "Sebastien Georget",
+                  "timestamp": 1736755597,
+                  "message": "<p>Add missing CODEOWNERS</p>\n",
+                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/56beb5e61f73d478fe0fefa4c8d26ba0b7abfee2"
+               },
+               {
+                  "sha": "6ed55ea6d21bf65fb16a5cb78da88474152d6260",
+                  "author": "Weii Wang",
+                  "timestamp": 1734328004,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/7\">#7</a> from canonical/renovate/canonical-data-platform-workflows-24.x</p>\n\n<p>Update canonical/data-platform-workflows action to v24</p>\n",
+                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/6ed55ea6d21bf65fb16a5cb78da88474152d6260"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "is-charms-template-repo",
             "newCommits": 0,
             "url": "https://github.com/canonical/is-charms-template-repo",
@@ -22670,184 +22854,6 @@
             ],
             "ciActions": [],
             "charm": null,
-            "snap": null
-         },
-         {
-            "name": "test-runners-github-postgresql-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/test-runners-github-postgresql-operator",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "6da2c89898da20c8ddb3cff31306251090c891a1",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1712820865,
-                  "message": "<p>Remove concurrency group</p>\n",
-                  "url": "https://github.com/canonical/test-runners-github-postgresql-operator/commit/6da2c89898da20c8ddb3cff31306251090c891a1"
-               },
-               {
-                  "sha": "f99f4f9a40f089986faed4ff5a0c2f21f3db72e2",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1712820820,
-                  "message": "<p>Revert &ldquo;Update ci.yaml&rdquo;</p>\n\n<p>This reverts commit a0bb1811cd694de32c4d42bf2c55e468d1780a9e.</p>\n",
-                  "url": "https://github.com/canonical/test-runners-github-postgresql-operator/commit/f99f4f9a40f089986faed4ff5a0c2f21f3db72e2"
-               },
-               {
-                  "sha": "7c985c9d1d6df456714cefe03f1494e301db74a9",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1712820072,
-                  "message": "<p>Disable GCP backup tests</p>\n",
-                  "url": "https://github.com/canonical/test-runners-github-postgresql-operator/commit/7c985c9d1d6df456714cefe03f1494e301db74a9"
-               }
-            ],
-            "ciActions": [
-               "https://github.com/canonical/postgresql-operator/actions/workflows/release.yaml",
-               "https://github.com/canonical/postgresql-operator/actions/workflows/ci.yaml"
-            ],
-            "charm": {
-               "name": "postgresql",
-               "url": "https://charmhub.io/postgresql",
-               "releases": [
-                  {
-                     "track": "14",
-                     "channel": "stable",
-                     "revision": 468,
-                     "timestamp": 1726068638,
-                     "base": ""
-                  },
-                  {
-                     "track": "14",
-                     "channel": "stable",
-                     "revision": 467,
-                     "timestamp": 1726068634,
-                     "base": ""
-                  },
-                  {
-                     "track": "14",
-                     "channel": "candidate",
-                     "revision": 528,
-                     "timestamp": 1732871403,
-                     "base": ""
-                  },
-                  {
-                     "track": "14",
-                     "channel": "candidate",
-                     "revision": 529,
-                     "timestamp": 1732871406,
-                     "base": ""
-                  },
-                  {
-                     "track": "14",
-                     "channel": "beta",
-                     "revision": 528,
-                     "timestamp": 1732833423,
-                     "base": ""
-                  },
-                  {
-                     "track": "14",
-                     "channel": "beta",
-                     "revision": 529,
-                     "timestamp": 1732833427,
-                     "base": ""
-                  },
-                  {
-                     "track": "14",
-                     "channel": "edge",
-                     "revision": 543,
-                     "timestamp": 1737003909,
-                     "base": ""
-                  },
-                  {
-                     "track": "14",
-                     "channel": "edge",
-                     "revision": 542,
-                     "timestamp": 1737003907,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 226,
-                     "timestamp": 1617294177,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 239,
-                     "timestamp": 1644408600,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 345,
-                     "timestamp": 1699537620,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 239,
-                     "timestamp": 1644408600,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 345,
-                     "timestamp": 1699537620,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 239,
-                     "timestamp": 1644408600,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 345,
-                     "timestamp": 1699537620,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 345,
-                     "timestamp": 1699537620,
-                     "base": ""
-                  },
-                  {
-                     "track": "16",
-                     "channel": "edge",
-                     "revision": 526,
-                     "timestamp": 1732739100,
-                     "base": ""
-                  },
-                  {
-                     "track": "16",
-                     "channel": "edge",
-                     "revision": 527,
-                     "timestamp": 1732739102,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "14",
-                  "latest",
-                  "16"
-               ]
-            },
             "snap": null
          },
          {
@@ -23029,40 +23035,34 @@
             "snap": null
          },
          {
-            "name": "tmate-ssh-server-operator",
+            "name": "charmed-bind",
             "newCommits": 0,
-            "url": "https://github.com/canonical/tmate-ssh-server-operator",
-            "releases": [
+            "url": "https://github.com/canonical/charmed-bind",
+            "releases": null,
+            "tags": null,
+            "commits": [
                {
-                  "id": 177274066,
-                  "version": "rev6",
-                  "timestamp": 1727437747,
-                  "title": "Revision 6",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:50 UTC on 27 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update tutorial by <a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tmate-ssh-server-operator/compare/rev5...rev6\">https://github.com/canonical/tmate-ssh-server-operator/compare/rev5&hellip;rev6</a></p>\n",
-                  "url": "https://github.com/canonical/tmate-ssh-server-operator/releases/tag/rev6",
-                  "compareUrl": "https://github.com/canonical/tmate-ssh-server-operator/compare/rev6...main"
+                  "sha": "e167f467d0cdf7c2f8ce0a931bc438f8510842d8",
+                  "author": "Niels Robin-Aubertin",
+                  "timestamp": 1736894176,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-bind/pull/32\">#32</a> from canonical/renovate/pypi-django-vulnerability</p>\n\n<p>Update dependency Django to v5.1.5 [SECURITY]</p>\n",
+                  "url": "https://github.com/canonical/charmed-bind/commit/e167f467d0cdf7c2f8ce0a931bc438f8510842d8"
                },
                {
-                  "id": 175814562,
-                  "version": "rev5",
-                  "timestamp": 1726582132,
-                  "title": "Revision 5",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:35 UTC on 19 Sep 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enable service and add health check by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\">#12</a></a></li>\n<li>Add workflows for tracks support by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\">#13</a></a></li>\n<li>Update docs by <a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\">#15</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\">#12</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/13\">#13</a></a></li>\n<li><a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/15\">#15</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tmate-ssh-server-operator/compare/rev3...rev5\">https://github.com/canonical/tmate-ssh-server-operator/compare/rev3&hellip;rev5</a></p>\n",
-                  "url": "https://github.com/canonical/tmate-ssh-server-operator/releases/tag/rev5",
-                  "compareUrl": "https://github.com/canonical/tmate-ssh-server-operator/compare/rev5...main"
+                  "sha": "5664b237d4cc6ec6378c0838d1ece481606a7360",
+                  "author": "renovate[bot]",
+                  "timestamp": 1736893253,
+                  "message": "<p>Update dependency Django to v5.1.5 [SECURITY]</p>\n",
+                  "url": "https://github.com/canonical/charmed-bind/commit/5664b237d4cc6ec6378c0838d1ece481606a7360"
                },
                {
-                  "id": 140782003,
-                  "version": "rev4",
-                  "timestamp": 1707475560,
-                  "title": "Revision 4",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:48 UTC on 9 Feb 2024</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 07:15 UTC on 13 Feb 2024</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: expose port 10022, wait for service before ActiveStatus by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/11\">#11</a></a></li>\n<li>Enable service and add health check by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\">#12</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/tmate-ssh-server-operator/pull/12\">#12</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/tmate-ssh-server-operator/compare/rev2...rev4\">https://github.com/canonical/tmate-ssh-server-operator/compare/rev2&hellip;rev4</a></p>\n",
-                  "url": "https://github.com/canonical/tmate-ssh-server-operator/releases/tag/rev4",
-                  "compareUrl": "https://github.com/canonical/tmate-ssh-server-operator/compare/rev4...main"
+                  "sha": "a1846780a0916f41e3dcecac8ce8ade376cb6b0b",
+                  "author": "Amanda H. L. de Andrade Katz",
+                  "timestamp": 1733421747,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-bind/pull/28\">#28</a> from canonical/renovate/canonical-data-platform-workflows-24.x</p>\n\n<p>Update canonical/data-platform-workflows action to v24</p>\n",
+                  "url": "https://github.com/canonical/charmed-bind/commit/a1846780a0916f41e3dcecac8ce8ade376cb6b0b"
                }
             ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
