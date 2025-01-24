@@ -2191,6 +2191,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "2bb6362ec5f273399f20673285b13966974554b9",
+                  "author": "James Garner",
+                  "timestamp": 1737684767,
+                  "message": "<p>ci: add static type checking (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/144\">#144</a>)</p>\n\n<p>This PR adds the <code>static</code> <code>tox</code> environment, and runs this static type checking in CI. It uses <code>pyright</code> to type check\nselect libraries that have been updated to pass static type checking &ndash; currently only <code>snap.py</code>, which is updated in\nthis PR. A subsequent PR will update <code>snap.py</code> to pass other linting checks and bump <code>LIBPATCH</code>.</p>\n",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/2bb6362ec5f273399f20673285b13966974554b9"
+               },
+               {
                   "sha": "51fa361cf2abbff203e536c99927aaa06d536b1e",
                   "author": "James Garner",
                   "timestamp": 1737499737,
@@ -2203,13 +2210,6 @@
                   "timestamp": 1737061508,
                   "message": "<p>ci: update linting (following ops) (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/143\">#143</a>)</p>\n\n<p>This PR updates <code>tox.ini</code> to use <code>ruff --preview</code> for all linting and formatting (dropping <code>black</code>), and have <code>codespell</code> run correctly, updating <code>pyproject.toml</code> accordingly.</p>\n\n<p>The core of the PR is the changes to <code>tox.ini</code> and <code>pyproject.toml</code>. The linting rules for <code>ruff</code> have been updated to include all the rules that <code>ops</code> uses. To allow linting to continue to pass, any rules that are currently broken in a single file are ignored for that file, while rules that are broken in multiple files are ignored globally. These ignores are marked with a <code>FIXME</code> to distinguish them from intentional ignores that are copied from <code>ops</code>.</p>\n\n<p>Changes to other files are either from <code>ruff format</code> or from <code>codespell</code>. There are typo corrections and a couple of small formatting changes to libraries, which are not significant enough to warrant bumping <code>LIB_PATCH</code> and triggering a release. There are also some bigger formatting changes for large dictionaries in tests.</p>\n\n<p>Subsequent PRs will fix the ignored linting issues in individual libraries.</p>\n",
                   "url": "https://github.com/canonical/operator-libs-linux/commit/fd5a7638af1bd9a796817246a12b204cf54f6b13"
-               },
-               {
-                  "sha": "0b9b41e6dd1c85f15ccc059e0454271cb08cfc7b",
-                  "author": "James Garner",
-                  "timestamp": 1736992441,
-                  "message": "<p>ci: use ubuntu-latest; bump checkout and python versions (following ops) (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/142\">#142</a>)</p>\n\n<p>This PR updates the <code>build-and-test</code> workflow to run on <code>ubuntu-latest</code> instead of <code>ubuntu-22.04</code>, following <code>ops</code>.</p>\n\n<p>It also bumps the versions on the <code>checkout</code> and <code>setup-python</code> actions accordingly, and pins the <code>tox</code> version following <code>ops</code>.</p>\n\n<p>For the integration tests, which require running <code>tox</code> as <code>root</code>, we install <code>tox</code> via <code>apt</code>.</p>\n\n<p>Also bump the <code>juju</code> version from <code>3.1</code> to <code>3.6</code> since it&rsquo;s the LTS release.</p>\n",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/0b9b41e6dd1c85f15ccc059e0454271cb08cfc7b"
                }
             ],
             "ciActions": [
@@ -2221,7 +2221,7 @@
          },
          {
             "name": "pebble",
-            "newCommits": 25,
+            "newCommits": 26,
             "url": "https://github.com/canonical/pebble",
             "releases": [
                {
