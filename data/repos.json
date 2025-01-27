@@ -82,7 +82,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 5584,
+            "newCommits": 5588,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -1983,34 +1983,6 @@
                   "url": "https://github.com/juju/charm-base-images/commit/dd31409873a84634a9dfaadf124ca60991afbc9e"
                }
             ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "usso",
-            "newCommits": 12,
-            "url": "https://github.com/juju/usso",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "v1.0.1",
-                  "sha": "59a49c9c4963581a0b8048792673364a6e54de50",
-                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/juju/usso/pull/9\">#9</a> from mhilton/004-update-dependencies</p>\n\n<p>update dependencies</p>\n",
-                  "timestamp": 1570004376,
-                  "url": "https://github.com/juju/usso/releases/tag/v1.0.1",
-                  "compareUrl": "https://github.com/juju/usso/compare/master...v1.0.1"
-               },
-               {
-                  "name": "v1.0.0",
-                  "sha": "0218c5ffe6105c10a9e46d036bcdb0abd58efbea",
-                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/juju/usso/pull/8\">#8</a> from mhilton/003-support-openid-macaroon-extension</p>\n\n<p>openid: support macaroon discharge extension</p>\n",
-                  "timestamp": 1549880289,
-                  "url": "https://github.com/juju/usso/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/juju/usso/compare/master...v1.0.0"
-               }
-            ],
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -8455,6 +8427,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "930f4cebc79ef1f9b76e0543645e8bd77ca11124",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1737992256,
+                  "message": "<p>Create missing snap tracks if necessary (<a target=\"_blank\" href=\"https://github.com/canonical/canonical-kubernetes-release-ci/pull/24\">#24</a>)</p>\n\n<p>This commit ensures the creation of snap tracks for a release if they do not already exist.\nIt interacts directly with the charmhub.io API (not snapstore.io) to create any missing tracks.\nOnly new tracks that conform to the naming guard-rails (1.XX[-classic|strict|moonray]) will be automatically created.</p>\n",
+                  "url": "https://github.com/canonical/canonical-kubernetes-release-ci/commit/930f4cebc79ef1f9b76e0543645e8bd77ca11124"
+               },
+               {
                   "sha": "a0d7aaabc9b094847996fabf82edbd48a3f7b4ff",
                   "author": "Lucian Petrut",
                   "timestamp": 1736948551,
@@ -8467,13 +8446,6 @@
                   "timestamp": 1736941997,
                   "message": "<p>Avoid promoting pre-releases (<a target=\"_blank\" href=\"https://github.com/canonical/canonical-kubernetes-release-ci/pull/21\">#21</a>)</p>\n\n<p>We&rsquo;ll add a check to avoid automatically promoting pre-releases\nto tracks such as beta, candidate or stable.</p>\n",
                   "url": "https://github.com/canonical/canonical-kubernetes-release-ci/commit/d8655387c3b1ef77445a9aafcab79037102e0e2d"
-               },
-               {
-                  "sha": "f578219a1e599c3d626fac121a213ecee76b7399",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1736932767,
-                  "message": "<p>Directly promote snaps containing stable upstream releases (<a target=\"_blank\" href=\"https://github.com/canonical/canonical-kubernetes-release-ci/pull/20\">#20</a>)</p>\n",
-                  "url": "https://github.com/canonical/canonical-kubernetes-release-ci/commit/f578219a1e599c3d626fac121a213ecee76b7399"
                }
             ],
             "ciActions": [],
@@ -9701,6 +9673,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "220b339d987238534dfa6ca111455dda8ef93f97",
+                  "author": "Brandon Castillo",
+                  "timestamp": 1737992275,
+                  "message": "<p>Fix config &ldquo;show&rdquo; command (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1012\">#1012</a>)</p>\n\n<p>The command &ldquo;kubectl config show&rdquo; does not exist and is &ldquo;kubectl config view&rdquo;.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/220b339d987238534dfa6ca111455dda8ef93f97"
+               },
+               {
                   "sha": "33adb06d9c91bf74c7b2ef01ea7f515acacf95ca",
                   "author": "Konstantinos Tsakalozos",
                   "timestamp": 1737986341,
@@ -9713,13 +9692,6 @@
                   "timestamp": 1737985950,
                   "message": "<p>Retry Temporary API Failures in Microcluster (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/992\">#992</a>)</p>\n\n<p>When bootstrapping or starting a cluster, we wait for the k8sd server to be fully ready before interacting with it.\nHowever, there are edge cases—such as during a snap refresh—where the snap attempts to interact with the CLI\n(e.g., to configure snap settings) while the database is still initializing.</p>\n\n<p>In these scenarios, immediate failure is unnecessary.\nThe k8sd client now retries such requests, ensuring smoother operation.</p>\n\n<p>This behavior applies only to specific edge cases where it is known that the microcluster database will eventually become available.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/283da96eeaabdcdef78e9121c93742a1b56e6bda"
-               },
-               {
-                  "sha": "e7a7e085ea5535922e994badeaa963ad95b62ac0",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1737985917,
-                  "message": "<p>Bump microcluster version (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1010\">#1010</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/e7a7e085ea5535922e994badeaa963ad95b62ac0"
                }
             ],
             "ciActions": [
@@ -15135,6 +15107,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "3f6bb501038c4749593111435193f9ee7fcff220",
+                  "author": "Patricia Reinoso",
+                  "timestamp": 1737991033,
+                  "message": "<p>fix: handle create/edit subscriber when target DG does not exist (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/716\">#716</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms/commit/3f6bb501038c4749593111435193f9ee7fcff220"
+               },
+               {
                   "sha": "e51146f7f07a77388292d858d0bb66b62485a00d",
                   "author": "Gulsum Atici",
                   "timestamp": 1737661677,
@@ -15147,13 +15126,6 @@
                   "timestamp": 1737371239,
                   "message": "<p>chore: Bump the npm_dependencies group with 10 updates (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/710\">#710</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms/commit/7e2c7ed7b9d210207f5867c23493b0c725a8af29"
-               },
-               {
-                  "sha": "988d35d693006bdd2a01ee5984646c0fa3cb0f67",
-                  "author": "Patricia Reinoso",
-                  "timestamp": 1737016986,
-                  "message": "<p>feat: locally deploy MongoDB as replica set (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms/pull/706\">#706</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms/commit/988d35d693006bdd2a01ee5984646c0fa3cb0f67"
                }
             ],
             "ciActions": [],
@@ -19954,8 +19926,8 @@
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 317,
-                     "timestamp": 1737117652,
+                     "revision": 322,
+                     "timestamp": 1737994507,
                      "base": ""
                   },
                   {
