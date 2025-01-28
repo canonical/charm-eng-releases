@@ -2191,6 +2191,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "80ef665fab1a525605e5f1dfc816b8dfe7f91af7",
+                  "author": "James Garner",
+                  "timestamp": 1738023685,
+                  "message": "<p>ci: remove linting ignores for snap.py (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/146\">#146</a>)</p>\n\n<p>This PR disables all the &ldquo;FIXME&rdquo; linting rules affecting snap.py, updating snap.py to pass linting. One change required an update to test_snap.py as well. Globally disabled &ldquo;FIXME&rdquo; linting rules have all been moved to per-file ignores to make it easy to see what needs fixing for each individual lib or test suite. The ruff linting config now also selects flake8-logging-format (G) to ensure that calls to logging use deferred message evaluation.</p>\n",
+                  "url": "https://github.com/canonical/operator-libs-linux/commit/80ef665fab1a525605e5f1dfc816b8dfe7f91af7"
+               },
+               {
                   "sha": "2bb6362ec5f273399f20673285b13966974554b9",
                   "author": "James Garner",
                   "timestamp": 1737684767,
@@ -2203,13 +2210,6 @@
                   "timestamp": 1737499737,
                   "message": "<p>style: use annotations from the future (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/145\">#145</a>)</p>\n\n<p>Mechanically translate annotations using symbols like Union, List, and Dict to the newer type annotation syntax, and unquote forward references, in the snap library. This should have no runtime effects aside from making all type annotations strings at runtime, and removing some imported typing symbols from the module namespace.</p>\n",
                   "url": "https://github.com/canonical/operator-libs-linux/commit/51fa361cf2abbff203e536c99927aaa06d536b1e"
-               },
-               {
-                  "sha": "fd5a7638af1bd9a796817246a12b204cf54f6b13",
-                  "author": "James Garner",
-                  "timestamp": 1737061508,
-                  "message": "<p>ci: update linting (following ops) (<a target=\"_blank\" href=\"https://github.com/canonical/operator-libs-linux/pull/143\">#143</a>)</p>\n\n<p>This PR updates <code>tox.ini</code> to use <code>ruff --preview</code> for all linting and formatting (dropping <code>black</code>), and have <code>codespell</code> run correctly, updating <code>pyproject.toml</code> accordingly.</p>\n\n<p>The core of the PR is the changes to <code>tox.ini</code> and <code>pyproject.toml</code>. The linting rules for <code>ruff</code> have been updated to include all the rules that <code>ops</code> uses. To allow linting to continue to pass, any rules that are currently broken in a single file are ignored for that file, while rules that are broken in multiple files are ignored globally. These ignores are marked with a <code>FIXME</code> to distinguish them from intentional ignores that are copied from <code>ops</code>.</p>\n\n<p>Changes to other files are either from <code>ruff format</code> or from <code>codespell</code>. There are typo corrections and a couple of small formatting changes to libraries, which are not significant enough to warrant bumping <code>LIB_PATCH</code> and triggering a release. There are also some bigger formatting changes for large dictionaries in tests.</p>\n\n<p>Subsequent PRs will fix the ignored linting issues in individual libraries.</p>\n",
-                  "url": "https://github.com/canonical/operator-libs-linux/commit/fd5a7638af1bd9a796817246a12b204cf54f6b13"
                }
             ],
             "ciActions": [
@@ -6926,8 +6926,393 @@
       "team": "Identity",
       "repos": [
          {
-            "name": "identity-platform-admin-ui-operator",
+            "name": "oathkeeper-operator",
             "newCommits": 0,
+            "url": "https://github.com/canonical/oathkeeper-operator",
+            "releases": [
+               {
+                  "id": 197045862,
+                  "version": "rev77",
+                  "timestamp": 1738021424,
+                  "title": "Revision 77",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 35</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:14 UTC on 28 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook pycqa/isort to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/134\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/134\">#134</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev76...rev77\">https://github.com/canonical/oathkeeper-operator/compare/rev76&hellip;rev77</a></p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev77",
+                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev77...main"
+               },
+               {
+                  "id": 196747538,
+                  "version": "rev76",
+                  "timestamp": 1737773521,
+                  "title": "Revision 76",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:23 UTC on 25 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/133\">#133</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev75...rev76\">https://github.com/canonical/oathkeeper-operator/compare/rev75&hellip;rev76</a></p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev76",
+                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev76...main"
+               },
+               {
+                  "id": 196559547,
+                  "version": "rev75",
+                  "timestamp": 1737686851,
+                  "title": "Revision 75",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:18 UTC on 24 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev74...rev75\">https://github.com/canonical/oathkeeper-operator/compare/rev74&hellip;rev75</a></p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev75",
+                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev75...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/oathkeeper-operator/actions/workflows/on_push.yaml"
+            ],
+            "charm": {
+               "name": "oathkeeper",
+               "url": "https://charmhub.io/oathkeeper",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 39,
+                     "timestamp": 1713973603,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 77,
+                     "timestamp": 1738023275,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.3",
+                     "channel": "edge",
+                     "revision": 63,
+                     "timestamp": 1730975738,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "stable",
+                     "revision": 41,
+                     "timestamp": 1714032952,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "edge",
+                     "revision": 41,
+                     "timestamp": 1714032904,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "0.3",
+                  "0.2"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "kratos-external-idp-integrator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/kratos-external-idp-integrator",
+            "releases": [
+               {
+                  "id": 197043933,
+                  "version": "rev278",
+                  "timestamp": 1738021038,
+                  "title": "Revision 278",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:53 UTC on 27 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook pycqa/isort to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/167\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/167\">#167</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev277...rev278\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev277&hellip;rev278</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev278",
+                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev278...main"
+               },
+               {
+                  "id": 196745376,
+                  "version": "rev277",
+                  "timestamp": 1737770866,
+                  "title": "Revision 277",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:23 UTC on 25 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/166\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/166\">#166</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev276...rev277\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev276&hellip;rev277</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev277",
+                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev277...main"
+               },
+               {
+                  "id": 196507893,
+                  "version": "rev276",
+                  "timestamp": 1737662470,
+                  "title": "Revision 276",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:16 UTC on 23 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/165\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/165\">#165</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev275...rev276\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev275&hellip;rev276</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev276",
+                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev276...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/kratos-external-idp-integrator/actions/workflows/on_push.yaml"
+            ],
+            "charm": {
+               "name": "kratos-external-idp-integrator",
+               "url": "https://charmhub.io/kratos-external-idp-integrator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 278,
+                     "timestamp": 1738022003,
+                     "base": ""
+                  },
+                  {
+                     "track": "istio",
+                     "channel": "edge",
+                     "revision": 273,
+                     "timestamp": 1736801763,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "stable",
+                     "revision": 192,
+                     "timestamp": 1719402415,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "edge",
+                     "revision": 192,
+                     "timestamp": 1714555895,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.1",
+                     "channel": "edge",
+                     "revision": 182,
+                     "timestamp": 1694777824,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge",
+                  "stable"
+               ],
+               "tracks": [
+                  "latest",
+                  "istio",
+                  "0.2",
+                  "0.1"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "identity-platform-login-ui-operator",
+            "newCommits": 2,
+            "url": "https://github.com/canonical/identity-platform-login-ui-operator",
+            "releases": [
+               {
+                  "id": 197043353,
+                  "version": "rev169",
+                  "timestamp": 1738019798,
+                  "title": "Revision 169",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:46 UTC on 27 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook pycqa/isort to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/182\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/182\">#182</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev168...rev169\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev168&hellip;rev169</a></p>\n",
+                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev169",
+                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev169...main"
+               },
+               {
+                  "id": 196542063,
+                  "version": "rev168",
+                  "timestamp": 1737675736,
+                  "title": "Revision 168",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:22 UTC on 24 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/180\">#180</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev167...rev168\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev167&hellip;rev168</a></p>\n",
+                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev168",
+                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev168...main"
+               },
+               {
+                  "id": 195929308,
+                  "version": "rev167",
+                  "timestamp": 1737488671,
+                  "title": "Revision 167",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:12 UTC on 21 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook codespell-project/codespell to v2.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/179\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/179\">#179</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev166...rev167\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev166&hellip;rev167</a></p>\n",
+                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev167",
+                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev167...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/identity-platform-login-ui-operator/actions/workflows/on_push.yaml"
+            ],
+            "charm": {
+               "name": "identity-platform-login-ui-operator",
+               "url": "https://charmhub.io/identity-platform-login-ui-operator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 166,
+                     "timestamp": 1737412061,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 169,
+                     "timestamp": 1738021604,
+                     "base": ""
+                  },
+                  {
+                     "track": "istio",
+                     "channel": "edge",
+                     "revision": 150,
+                     "timestamp": 1734024165,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.999",
+                     "channel": "edge",
+                     "revision": 47,
+                     "timestamp": 1694022949,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.3",
+                     "channel": "edge",
+                     "revision": 135,
+                     "timestamp": 1730976263,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "stable",
+                     "revision": 90,
+                     "timestamp": 1719401916,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "edge",
+                     "revision": 90,
+                     "timestamp": 1717487394,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.1",
+                     "channel": "edge",
+                     "revision": 78,
+                     "timestamp": 1701432527,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "istio",
+                  "0.999",
+                  "0.3",
+                  "0.2",
+                  "0.1"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "openfga-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/openfga-operator",
+            "releases": [
+               {
+                  "id": 197042707,
+                  "version": "rev99",
+                  "timestamp": 1738019280,
+                  "title": "Revision 99",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/openfga:1.8.4\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:39 UTC on 27 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook pycqa/isort to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/150\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/150\">#150</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openfga-operator/compare/rev98...rev99\">https://github.com/canonical/openfga-operator/compare/rev98&hellip;rev99</a></p>\n",
+                  "url": "https://github.com/canonical/openfga-operator/releases/tag/rev99",
+                  "compareUrl": "https://github.com/canonical/openfga-operator/compare/rev99...main"
+               },
+               {
+                  "id": 196746659,
+                  "version": "rev98",
+                  "timestamp": 1737772195,
+                  "title": "Revision 98",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/openfga:1.8.4\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:59 UTC on 25 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/149\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/149\">#149</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openfga-operator/compare/rev97...rev98\">https://github.com/canonical/openfga-operator/compare/rev97&hellip;rev98</a></p>\n",
+                  "url": "https://github.com/canonical/openfga-operator/releases/tag/rev98",
+                  "compareUrl": "https://github.com/canonical/openfga-operator/compare/rev98...main"
+               },
+               {
+                  "id": 196513689,
+                  "version": "rev97",
+                  "timestamp": 1737663479,
+                  "title": "Revision 97",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/openfga:1.8.4\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:49 UTC on 23 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook compilerla/conventional-pre-commit to v4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/144\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/144\">#144</a></a></li>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.8.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/143\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/143\">#143</a></a></li>\n<li>chore(deps): update pre-commit hooks (minor) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/145\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/145\">#145</a></a></li>\n<li>chore(deps): update pre-commit hook codespell-project/codespell to v2.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/147\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/147\">#147</a></a></li>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/148\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/148\">#148</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openfga-operator/compare/rev96...rev97\">https://github.com/canonical/openfga-operator/compare/rev96&hellip;rev97</a></p>\n",
+                  "url": "https://github.com/canonical/openfga-operator/releases/tag/rev97",
+                  "compareUrl": "https://github.com/canonical/openfga-operator/compare/rev97...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/openfga-operator/actions/workflows/on_push.yaml"
+            ],
+            "charm": {
+               "name": "openfga-k8s",
+               "url": "https://charmhub.io/openfga-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 27,
+                     "timestamp": 1712848409,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 99,
+                     "timestamp": 1738021181,
+                     "base": ""
+                  },
+                  {
+                     "track": "2.0",
+                     "channel": "stable",
+                     "revision": 26,
+                     "timestamp": 1712847533,
+                     "base": ""
+                  },
+                  {
+                     "track": "2.0",
+                     "channel": "edge",
+                     "revision": 81,
+                     "timestamp": 1728582790,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.0",
+                     "channel": "edge",
+                     "revision": 12,
+                     "timestamp": 1697556133,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "2.0",
+                  "1.0"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "identity-platform-admin-ui-operator",
+            "newCommits": 2,
             "url": "https://github.com/canonical/identity-platform-admin-ui-operator",
             "releases": [
                {
@@ -7001,96 +7386,6 @@
             "snap": null
          },
          {
-            "name": "oathkeeper-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/oathkeeper-operator",
-            "releases": [
-               {
-                  "id": 196747538,
-                  "version": "rev76",
-                  "timestamp": 1737773521,
-                  "title": "Revision 76",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:23 UTC on 25 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/133\">#133</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev75...rev76\">https://github.com/canonical/oathkeeper-operator/compare/rev75&hellip;rev76</a></p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev76",
-                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev76...main"
-               },
-               {
-                  "id": 196559547,
-                  "version": "rev75",
-                  "timestamp": 1737686851,
-                  "title": "Revision 75",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:18 UTC on 24 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev74...rev75\">https://github.com/canonical/oathkeeper-operator/compare/rev74&hellip;rev75</a></p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev75",
-                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev75...main"
-               },
-               {
-                  "id": 195930048,
-                  "version": "rev74",
-                  "timestamp": 1737488791,
-                  "title": "Revision 74",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/oathkeeper:0.40.6\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:16 UTC on 21 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hooks (minor) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/128\">#128</a></a></li>\n<li>chore(deps): update pre-commit hook codespell-project/codespell to v2.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-operator/pull/132\">#132</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/oathkeeper-operator/compare/rev73...rev74\">https://github.com/canonical/oathkeeper-operator/compare/rev73&hellip;rev74</a></p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-operator/releases/tag/rev74",
-                  "compareUrl": "https://github.com/canonical/oathkeeper-operator/compare/rev74...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/oathkeeper-operator/actions/workflows/on_push.yaml"
-            ],
-            "charm": {
-               "name": "oathkeeper",
-               "url": "https://charmhub.io/oathkeeper",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 39,
-                     "timestamp": 1713973603,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 76,
-                     "timestamp": 1737775399,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.3",
-                     "channel": "edge",
-                     "revision": 63,
-                     "timestamp": 1730975738,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "stable",
-                     "revision": 41,
-                     "timestamp": 1714032952,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "edge",
-                     "revision": 41,
-                     "timestamp": 1714032904,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "0.3",
-                  "0.2"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "glauth-utils",
             "newCommits": 0,
             "url": "https://github.com/canonical/glauth-utils",
@@ -7151,7 +7446,7 @@
          },
          {
             "name": "hydra-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/hydra-operator",
             "releases": [
                {
@@ -7256,96 +7551,6 @@
             "snap": null
          },
          {
-            "name": "openfga-operator",
-            "newCommits": 2,
-            "url": "https://github.com/canonical/openfga-operator",
-            "releases": [
-               {
-                  "id": 196746659,
-                  "version": "rev98",
-                  "timestamp": 1737772195,
-                  "title": "Revision 98",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/openfga:1.8.4\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:59 UTC on 25 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/149\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/149\">#149</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openfga-operator/compare/rev97...rev98\">https://github.com/canonical/openfga-operator/compare/rev97&hellip;rev98</a></p>\n",
-                  "url": "https://github.com/canonical/openfga-operator/releases/tag/rev98",
-                  "compareUrl": "https://github.com/canonical/openfga-operator/compare/rev98...main"
-               },
-               {
-                  "id": 196513689,
-                  "version": "rev97",
-                  "timestamp": 1737663479,
-                  "title": "Revision 97",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/openfga:1.8.4\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:49 UTC on 23 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook compilerla/conventional-pre-commit to v4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/144\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/144\">#144</a></a></li>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.8.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/143\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/143\">#143</a></a></li>\n<li>chore(deps): update pre-commit hooks (minor) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/145\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/145\">#145</a></a></li>\n<li>chore(deps): update pre-commit hook codespell-project/codespell to v2.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/147\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/147\">#147</a></a></li>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/148\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/148\">#148</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openfga-operator/compare/rev96...rev97\">https://github.com/canonical/openfga-operator/compare/rev96&hellip;rev97</a></p>\n",
-                  "url": "https://github.com/canonical/openfga-operator/releases/tag/rev97",
-                  "compareUrl": "https://github.com/canonical/openfga-operator/compare/rev97...main"
-               },
-               {
-                  "id": 196094552,
-                  "version": "rev96",
-                  "timestamp": 1737385979,
-                  "title": "Revision 96",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/openfga:1.8.4\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:58 UTC on 22 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Upgrade openfga dependency from v1.5.2 to v1.8.4 to support ListUsers API by <a target=\"_blank\" href=\"https://github.com/BarcoMasile\">@BarcoMasile</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/146\"><a target=\"_blank\" href=\"https://github.com/canonical/openfga-operator/pull/146\">#146</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openfga-operator/compare/rev95...rev96\">https://github.com/canonical/openfga-operator/compare/rev95&hellip;rev96</a></p>\n",
-                  "url": "https://github.com/canonical/openfga-operator/releases/tag/rev96",
-                  "compareUrl": "https://github.com/canonical/openfga-operator/compare/rev96...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/openfga-operator/actions/workflows/on_push.yaml"
-            ],
-            "charm": {
-               "name": "openfga-k8s",
-               "url": "https://charmhub.io/openfga-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 27,
-                     "timestamp": 1712848409,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 98,
-                     "timestamp": 1737773993,
-                     "base": ""
-                  },
-                  {
-                     "track": "2.0",
-                     "channel": "stable",
-                     "revision": 26,
-                     "timestamp": 1712847533,
-                     "base": ""
-                  },
-                  {
-                     "track": "2.0",
-                     "channel": "edge",
-                     "revision": 81,
-                     "timestamp": 1728582790,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.0",
-                     "channel": "edge",
-                     "revision": 12,
-                     "timestamp": 1697556133,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "2.0",
-                  "1.0"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "ldap-integrator",
             "newCommits": 0,
             "url": "https://github.com/canonical/ldap-integrator",
@@ -7400,97 +7605,6 @@
                ],
                "tracks": [
                   "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "kratos-external-idp-integrator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/kratos-external-idp-integrator",
-            "releases": [
-               {
-                  "id": 196745376,
-                  "version": "rev277",
-                  "timestamp": 1737770866,
-                  "title": "Revision 277",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:23 UTC on 25 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/166\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/166\">#166</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev276...rev277\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev276&hellip;rev277</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev277",
-                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev277...main"
-               },
-               {
-                  "id": 196507893,
-                  "version": "rev276",
-                  "timestamp": 1737662470,
-                  "title": "Revision 276",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:16 UTC on 23 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/165\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/165\">#165</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev275...rev276\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev275&hellip;rev276</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev276",
-                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev276...main"
-               },
-               {
-                  "id": 195956644,
-                  "version": "rev275",
-                  "timestamp": 1737501340,
-                  "title": "Revision 275",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:31 UTC on 21 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook codespell-project/codespell to v2.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/164\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-external-idp-integrator/pull/164\">#164</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-external-idp-integrator/compare/rev274...rev275\">https://github.com/canonical/kratos-external-idp-integrator/compare/rev274&hellip;rev275</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-external-idp-integrator/releases/tag/rev275",
-                  "compareUrl": "https://github.com/canonical/kratos-external-idp-integrator/compare/rev275...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/kratos-external-idp-integrator/actions/workflows/on_push.yaml"
-            ],
-            "charm": {
-               "name": "kratos-external-idp-integrator",
-               "url": "https://charmhub.io/kratos-external-idp-integrator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 277,
-                     "timestamp": 1737771813,
-                     "base": ""
-                  },
-                  {
-                     "track": "istio",
-                     "channel": "edge",
-                     "revision": 273,
-                     "timestamp": 1736801763,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "stable",
-                     "revision": 192,
-                     "timestamp": 1719402415,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "edge",
-                     "revision": 192,
-                     "timestamp": 1714555895,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.1",
-                     "channel": "edge",
-                     "revision": 182,
-                     "timestamp": 1694777824,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "edge",
-                  "stable"
-               ],
-               "tracks": [
-                  "latest",
-                  "istio",
-                  "0.2",
-                  "0.1"
                ]
             },
             "snap": null
@@ -7602,120 +7716,6 @@
                   "latest",
                   "istio",
                   "0.4",
-                  "0.3",
-                  "0.2",
-                  "0.1"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "identity-platform-login-ui-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/identity-platform-login-ui-operator",
-            "releases": [
-               {
-                  "id": 196542063,
-                  "version": "rev168",
-                  "timestamp": 1737675736,
-                  "title": "Revision 168",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:22 UTC on 24 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/180\">#180</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev167...rev168\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev167&hellip;rev168</a></p>\n",
-                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev168",
-                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev168...main"
-               },
-               {
-                  "id": 195929308,
-                  "version": "rev167",
-                  "timestamp": 1737488671,
-                  "title": "Revision 167",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:12 UTC on 21 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pre-commit hook codespell-project/codespell to v2.4.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/179\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/179\">#179</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev166...rev167\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev166&hellip;rev167</a></p>\n",
-                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev167",
-                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev167...main"
-               },
-               {
-                  "id": 195725544,
-                  "version": "rev166",
-                  "timestamp": 1737408706,
-                  "title": "Revision 166",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:00 UTC on 20 Jan 2025</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 22:27 UTC on 20 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: add remote deployment by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/178\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/178\">#178</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev153...rev166\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev153&hellip;rev166</a></p>\n",
-                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev166",
-                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev166...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/identity-platform-login-ui-operator/actions/workflows/on_push.yaml"
-            ],
-            "charm": {
-               "name": "identity-platform-login-ui-operator",
-               "url": "https://charmhub.io/identity-platform-login-ui-operator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 166,
-                     "timestamp": 1737412061,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 168,
-                     "timestamp": 1737678179,
-                     "base": ""
-                  },
-                  {
-                     "track": "istio",
-                     "channel": "edge",
-                     "revision": 150,
-                     "timestamp": 1734024165,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.999",
-                     "channel": "edge",
-                     "revision": 47,
-                     "timestamp": 1694022949,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.3",
-                     "channel": "edge",
-                     "revision": 135,
-                     "timestamp": 1730976263,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "stable",
-                     "revision": 90,
-                     "timestamp": 1719401916,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "edge",
-                     "revision": 90,
-                     "timestamp": 1717487394,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.1",
-                     "channel": "edge",
-                     "revision": 78,
-                     "timestamp": 1701432527,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "istio",
-                  "0.999",
                   "0.3",
                   "0.2",
                   "0.1"
@@ -7946,7 +7946,7 @@
          },
          {
             "name": "iam-bundle",
-            "newCommits": 39,
+            "newCommits": 41,
             "url": "https://github.com/canonical/iam-bundle",
             "releases": [
                {
@@ -8037,7 +8037,7 @@
          },
          {
             "name": "hydra-rock",
-            "newCommits": 46,
+            "newCommits": 48,
             "url": "https://github.com/canonical/hydra-rock",
             "releases": [
                {
@@ -8137,25 +8137,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "3a072498f14e3fb45e8cbc78d0bf8f6a5bdfcb21",
+                  "author": "canonical-iam",
+                  "timestamp": 1738020023,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/160\">#160</a> from canonical/renovate/auto-github-actions</p>\n\n<p>chore(deps): update github/codeql-action digest to 17a820b</p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/3a072498f14e3fb45e8cbc78d0bf8f6a5bdfcb21"
+               },
+               {
+                  "sha": "557181a0ae9c7d7d987b1f0a6a7fb65317570748",
+                  "author": "renovate[bot]",
+                  "timestamp": 1738019786,
+                  "message": "<p>chore(deps): update github/codeql-action digest to 17a820b</p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/557181a0ae9c7d7d987b1f0a6a7fb65317570748"
+               },
+               {
                   "sha": "c37cfd2066ca9861623f1f08373a449a80234552",
                   "author": "canonical-iam",
                   "timestamp": 1737771165,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/159\">#159</a> from canonical/renovate/auto-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0</p>\n",
                   "url": "https://github.com/canonical/kratos-rock/commit/c37cfd2066ca9861623f1f08373a449a80234552"
-               },
-               {
-                  "sha": "49f3301a007042ac2c219d717d71a9abdafb8de1",
-                  "author": "renovate[bot]",
-                  "timestamp": 1737770930,
-                  "message": "<p>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0</p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/49f3301a007042ac2c219d717d71a9abdafb8de1"
-               },
-               {
-                  "sha": "116f653372c784953da012f9bdf9243923b4f01f",
-                  "author": "canonical-iam",
-                  "timestamp": 1737745750,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/105\">#105</a> from canonical/renovate/auto-major-github-actions</p>\n\n<p>chore(deps): update dependency ubuntu to v24</p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/116f653372c784953da012f9bdf9243923b4f01f"
                }
             ],
             "ciActions": [
@@ -8242,25 +8242,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "8cfc5f19fbd1a65445aa37fb9dc3afba15906150",
+                  "author": "canonical-iam",
+                  "timestamp": 1738020754,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-rock/pull/112\">#112</a> from canonical/renovate/auto-github-actions</p>\n\n<p>chore(deps): update github/codeql-action digest to 17a820b</p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-rock/commit/8cfc5f19fbd1a65445aa37fb9dc3afba15906150"
+               },
+               {
+                  "sha": "e55c38e2a0b8d1c3702c6336fa3d451205624208",
+                  "author": "renovate[bot]",
+                  "timestamp": 1738020496,
+                  "message": "<p>chore(deps): update github/codeql-action digest to 17a820b</p>\n",
+                  "url": "https://github.com/canonical/oathkeeper-rock/commit/e55c38e2a0b8d1c3702c6336fa3d451205624208"
+               },
+               {
                   "sha": "b699f712459f0da68adb6700a7fb2f376f419e3d",
                   "author": "canonical-iam",
                   "timestamp": 1737770552,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-rock/pull/111\">#111</a> from canonical/renovate/auto-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0</p>\n",
                   "url": "https://github.com/canonical/oathkeeper-rock/commit/b699f712459f0da68adb6700a7fb2f376f419e3d"
-               },
-               {
-                  "sha": "78287f608e7243f0fcc89d99b85aa0729ed1ff01",
-                  "author": "renovate[bot]",
-                  "timestamp": 1737770243,
-                  "message": "<p>chore(deps): update pre-commit hook igorshubovych/markdownlint-cli to v0.44.0</p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-rock/commit/78287f608e7243f0fcc89d99b85aa0729ed1ff01"
-               },
-               {
-                  "sha": "4f0311fe5cfef973e521988bde27aab937d15cb4",
-                  "author": "canonical-iam",
-                  "timestamp": 1737745822,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/oathkeeper-rock/pull/73\">#73</a> from canonical/renovate/auto-major-github-actions</p>\n\n<p>chore(deps): update dependency ubuntu to v24</p>\n",
-                  "url": "https://github.com/canonical/oathkeeper-rock/commit/4f0311fe5cfef973e521988bde27aab937d15cb4"
                }
             ],
             "ciActions": [
