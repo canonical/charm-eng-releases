@@ -121,7 +121,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 5704,
+            "newCommits": 5707,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -2416,7 +2416,7 @@
       "repos": [
          {
             "name": "parca-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/parca-k8s-operator",
             "releases": [
                {
@@ -4121,7 +4121,7 @@
          },
          {
             "name": "loki-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/loki-k8s-operator",
             "releases": [
                {
@@ -8711,7 +8711,7 @@
          },
          {
             "name": "cluster-api-k8s",
-            "newCommits": 13,
+            "newCommits": 15,
             "url": "https://github.com/canonical/cluster-api-k8s",
             "releases": [
                {
@@ -9738,6 +9738,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c24d8205afb99e8056d8dfd35ca7afa8ad59eeda",
+                  "author": "eaudetcobello",
+                  "timestamp": 1738319764,
+                  "message": "<p>Fix typo in setup-image.sh (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1024\">#1024</a>)</p>\n\n<p>Fix typo that causes the script to fail</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/c24d8205afb99e8056d8dfd35ca7afa8ad59eeda"
+               },
+               {
                   "sha": "5bca3433dea3dce7168ba3acf84a0473e729d5c2",
                   "author": "Berkay Tekin Öz",
                   "timestamp": 1738309711,
@@ -9750,13 +9757,6 @@
                   "timestamp": 1738213106,
                   "message": "<p>node labels: clean up log messages (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1020\">#1020</a>)</p>\n\n<p>The node label controller is triggered for every node change\nevent and is currently more verbose than it should.</p>\n\n<p>We&rsquo;ll update it so that it logs a message only if there are\nactual configuration changes.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/ea5f8853818984a7a0d766155b744e846d704653"
-               },
-               {
-                  "sha": "1c6739a7bf3ac151ddb246c8c38a5636b10b0086",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1738161027,
-                  "message": "<p>Log a message if the cluster is unitialized (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1015\">#1015</a>)</p>\n\n<ul>\n<li>Log a message if the cluster is unitialized</li>\n</ul>\n\n<p>Users coming from microk8s may not be used to having to bootstrap\nthe cluster.</p>\n\n<p>We&rsquo;ll check k8sd errors and if the message contains &ldquo;Database is\nnot yet initialized&rdquo;, we&rsquo;ll ask the users to either bootstrap\na new cluster or join an existing one.</p>\n\n<p>We&rsquo;re adding this check to the query function of the k8sd client\nso that all the k8s commands may benefit from it.</p>\n\n<p>Implements: KU-2481</p>\n\n<ul>\n<li><p>Clean up the log messages</p></li>\n\n<li><p>Copy the &ldquo;bootstrapped&rdquo; checked to each individual command</p></li>\n</ul>\n\n<p>To improve the error messages and avoid having too many nested\nerrors, we&rsquo;ll have each individual command check if the cluster\nwas initialized.</p>\n\n<p>That being considered, we&rsquo;ll make the k8sd client error less verbose.</p>\n\n<ul>\n<li>Fix unit tests, updating k8sd mock</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/1c6739a7bf3ac151ddb246c8c38a5636b10b0086"
                }
             ],
             "ciActions": [
@@ -10941,8 +10941,8 @@
                   {
                      "track": "1.29",
                      "channel": "stable",
-                     "revision": 7598,
-                     "timestamp": 1737736783,
+                     "revision": 7663,
+                     "timestamp": 1738318968,
                      "base": "core20"
                   },
                   {
@@ -19900,6 +19900,15 @@
             "url": "https://github.com/canonical/repo-policy-compliance",
             "releases": [
                {
+                  "id": 197757481,
+                  "version": "rev117",
+                  "timestamp": 1738320813,
+                  "title": "Revision 117",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 108</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:56 UTC on 31 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency attrs to v25 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1914\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1914\">#1914</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev116...rev117\">https://github.com/canonical/repo-policy-compliance/compare/rev116&hellip;rev117</a></p>\n",
+                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev117",
+                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev117...main"
+               },
+               {
                   "id": 197748479,
                   "version": "rev116",
                   "timestamp": 1738317709,
@@ -19916,15 +19925,6 @@
                   "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 106</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:36 UTC on 31 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency deprecated to v1.2.18 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1912\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1912\">#1912</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev114...rev115\">https://github.com/canonical/repo-policy-compliance/compare/rev114&hellip;rev115</a></p>\n",
                   "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev115",
                   "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev115...main"
-               },
-               {
-                  "id": 197736350,
-                  "version": "rev114",
-                  "timestamp": 1738313587,
-                  "title": "Revision 114",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 105</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:54 UTC on 31 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency referencing to v0.36.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1913\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1913\">#1913</a></a></li>\n<li>chore(deps): update dependency certifi to v2025 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1916\"><a target=\"_blank\" href=\"https://github.com/canonical/repo-policy-compliance/pull/1916\">#1916</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/repo-policy-compliance/compare/rev112...rev114\">https://github.com/canonical/repo-policy-compliance/compare/rev112&hellip;rev114</a></p>\n",
-                  "url": "https://github.com/canonical/repo-policy-compliance/releases/tag/rev114",
-                  "compareUrl": "https://github.com/canonical/repo-policy-compliance/compare/rev114...main"
                }
             ],
             "tags": null,
