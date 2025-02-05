@@ -2173,9 +2173,18 @@
       "repos": [
          {
             "name": "operator",
-            "newCommits": 8,
+            "newCommits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 198482160,
+                  "version": "2.18.1",
+                  "timestamp": 1738724185,
+                  "title": "ops 2.18.1 and ops-scenario 7.1.1 fixes for deferring and getting the Juju version in tests",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>Fixes an issue where deferring an event handler could cause another handler of the same event to fail, and one where reading the Juju version in unit tests would incorrectly result in <code>0.0.0</code> rather than the version set.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Ensure that the event snapshot is available when one observer defers and another does not in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1562\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1562\">#1562</a></a></li>\n<li>Put the Juju version in the environment as well as the JujuContext in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1559\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1559\">#1559</a></a></li>\n<li>Maintain transaction integrity on first run in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1558\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1558\">#1558</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Set up intersphinx and add links by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1546\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1546\">#1546</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.18.0...2.18.1\">https://github.com/canonical/operator/compare/2.18.0&hellip;2.18.1</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/untagged-fd83b5dbad7336fe6769",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.18.1...main"
+               },
                {
                   "id": 197495278,
                   "version": "2.18.0",
@@ -2193,22 +2202,11 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release fixes a bug with <code>Container.push_path()</code>. Previously, <code>Container.push_path()</code> required local files to be valid UTF-8 files. <code>Container.push_path()</code> now works on non-text files too.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Make <code>push_path</code> open in binary mode so it works on non-text files (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1458\">#1458</a>)</li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Use <code>MaintenanceStatus</code> for local issues (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1397\">#1397</a>)</li>\n<li>Explicitly document that <code>collect-status</code> is is run on every hook (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1399\">#1399</a>)</li>\n<li>Use our docs URL for the <code>ogp:url</code> properties Sphinx generates (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1411\">#1411</a>)</li>\n<li>Set the <code>READTHEDOCS</code> context variable (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1410\">#1410</a>)</li>\n<li>Fix Read the Docs ad placement (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1414\">#1414</a>)</li>\n<li>Clarify where <code>StoredState</code> is stored, and the upgrade behaviour (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1416\">#1416</a>)</li>\n<li>Fix copy &lsquo;n&rsquo; paste error in <code>stop_services</code> docstring (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1457\">#1457</a>)</li>\n</ul>\n\n<h2>Continuous Integration</h2>\n\n<ul>\n<li>Configure the labels for dependabot PRs (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1407\">#1407</a>)</li>\n<li>Disable the automatic ops[testing] releasing (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1415\">#1415</a>)</li>\n<li>Use the actual poetry command, rather than manually tweaking the file (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1443\">#1443</a>)</li>\n<li>Fix broken GitHub variable expansion (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1446\">#1446</a>)</li>\n<li>Coverage report generation should also include testing/src/scenario (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1453\">#1453</a>)</li>\n<li>Fix PR title CI job concurrency (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1451\">#1451</a>)</li>\n<li>Adjust the release process to handle publishing ops and ops<a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/operator/pull/1432&quot;&gt;#1432&lt;/a\">testing</a></li>\n<li>A better way than commenting out external repos (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1463\">#1463</a>)</li>\n<li>Use more descriptive names for the publish workflows (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1464\">#1464</a>)</li>\n<li>Move the XML coverage report to .report (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1465\">#1465</a>)</li>\n</ul>\n\n<h2>Refactoring</h2>\n\n<ul>\n<li>Import the ops[testing] repository (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1406\">#1406</a>)</li>\n<li>Update linting with the latest ruff (<a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1441\">#1441</a>)</li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.17.0...2.17.1\">https://github.com/canonical/operator/compare/2.17.0&hellip;2.17.1</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.17.1",
                   "compareUrl": "https://github.com/canonical/operator/compare/2.17.1...main"
-               },
-               {
-                  "id": 176978086,
-                  "version": "2.17.0",
-                  "timestamp": 1727327513,
-                  "title": "2.17.0: new unit testing API, and Secret fixes",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release adds a state-transition testing API for unit tests, formerly known as Scenario (many thanks to <a target=\"_blank\" href=\"https://github.com/PietroPasotti\">@PietroPasotti</a> for his work developing and maintaining the library). Harness is still available, but we encourage all charmers to use the new API for unit tests going forward. The API is an optional install, for example: <code>pip install ops[testing]</code>, so that the test API code does not get bundled into the charms. All of the classes that you would previously find when using <code>ops-scenario</code> in the <code>scenario</code> namespace can then be found in <code>ops.testing</code>. For example:</p>\n\n<pre><code class=\"language-python\">from ops import testing\n\nctx = testing.Context(MyCharm)\nstate = ctx.run(ctx.on.start(), testing.State(leader=True))\nassert state.unit_status == testing.ActiveStatus()\n</code></pre>\n\n<p>There are also two improvements to Juju Secrets: firstly, the <code>.id</code> of a <code>Secret</code> will always include the model UUID, so it can be reliably used for cross-model relations. A more significant change is that, previously, if a charm called <code>set_contents()</code> and <code>set_info()</code> in the same hook (even if not the same event handler, or in a deferred event handler) only the last call would have any effect. This is now changed so that the calls accumulate - you can set both content and metadata in the same hook, and also if you <code>set_contents()</code> twice the contents will be combined. The Juju team intend to make this the <code>secret-set</code> behaviour in the future as well.</p>\n\n<p>Additionally, <code>ops.main</code> is now type hinted correctly and will no longer require a <code>type: ignore</code> directive from users!</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Optionally install Scenario with <code>ops[testing]</code> and expose the names in ops.testing in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1381\">#1381</a></li>\n<li>Change ops.main() so that you don&rsquo;t need to <code>type: ignore</code> it in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1345\">#1345</a></li>\n<li>Expand the secret ID out to the full URI when only given the ID in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1358\">#1358</a></li>\n<li>Add a JujuVersion property for Pebble log forwarding to Loki in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1370\">#1370</a></li>\n<li>Pre-emptively raise <code>InvalidStatusError</code> instead of waiting for Juju:\n\n<ul>\n<li>Make it an error to call <code>CollectStatusEvent.add_status</code> with error or unknown in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1386\">#1386</a></li>\n<li>Document and validate settable status values in <code>_ModelBackend.set_status</code> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1354\">#1354</a></li>\n</ul></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Fix type of <code>StatusBase</code> subclasses by calling <code>StatusBase.register</code> in <code>__init_subclass__</code> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1383\">#1383</a></li>\n<li><code>Secret.set_info</code> and <code>Secret.set_content</code> can be called in the same hook in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1373\">#1373</a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Add top-level intro and module-level intros in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1320\">#1320</a></li>\n<li>Update the links to the Pebble docs in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1362\">#1362</a></li>\n<li>Note about repeatedly setting secret value in Juju 3.6 in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1366\">#1366</a></li>\n<li><code>config-changed</code> is triggered by Juju trust in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1357\">#1357</a></li>\n<li>Typo on <code>CharmBase</code> inheritance example by <a target=\"_blank\" href=\"https://github.com/theofpa\">@theofpa</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1349\">#1349</a></li>\n<li>Docs: move Pebble to a separate page in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1392\">#1392</a></li>\n</ul>\n\n<h2>Continuous Integration</h2>\n\n<ul>\n<li>Periodically run the unit tests of all GitHub-hosted published charms in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1365\">#1365</a></li>\n<li>Update the TIOBE reporting for the changes in coverage calculation in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1367\">#1367</a></li>\n<li>Spell-check the code as part of linting in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1388\">#1388</a></li>\n<li>Run the smoke tests on a schedule in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1387\">#1387</a></li>\n</ul>\n\n<h2>Testing</h2>\n\n<ul>\n<li>Fix tests that leaked environment variables in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1385\">#1385</a></li>\n</ul>\n\n<h2>Refactoring</h2>\n\n<ul>\n<li>Move the content of <code>ops.testing</code> to <code>ops._private.harness</code> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1369\">#1369</a></li>\n<li>Keep the <code>unittest.mock</code> names in the &lsquo;mock&rsquo; namespace in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1379\">#1379</a></li>\n<li>Deprecate <code>StatusBase.register</code> decorator in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1384\">#1384</a></li>\n</ul>\n\n<h2>Chores</h2>\n\n<ul>\n<li>Note Juju version on legacy workaround in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1355\">#1355</a></li>\n<li>Re-enable test now that Pebble directory permissions are fixed in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1363\">#1363</a></li>\n<li>Generate warnings for events that will be removed in Juju 4.0 in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1374\">#1374</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/theofpa\">@theofpa</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1349\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1349\">#1349</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.16.1...2.17.0\">https://github.com/canonical/operator/compare/2.16.1&hellip;2.17.0</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.17.0",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.17.0...main"
                }
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/operator/actions/workflows/framework-tests.yaml"
-            ],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -12692,6 +12690,295 @@
       "team": "Telco",
       "repos": [
          {
+            "name": "sdcore-router-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-router-k8s-operator",
+            "releases": [
+               {
+                  "id": 198483530,
+                  "version": "rev454",
+                  "timestamp": 1738724018,
+                  "title": "Revision 454",
+                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 03:10 UTC on 5 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/289\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/289\">#289</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev452...rev454\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev452&hellip;rev454</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev454",
+                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev454...main"
+               },
+               {
+                  "id": 197949640,
+                  "version": "rev453",
+                  "timestamp": 1738118656,
+                  "title": "Revision 453",
+                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 01:48 UTC on 2 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\">#288</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450...rev453\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450&hellip;rev453</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev453",
+                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev453...main"
+               },
+               {
+                  "id": 197275971,
+                  "version": "rev452",
+                  "timestamp": 1738118656,
+                  "title": "Revision 452",
+                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 03:01 UTC on 29 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\">#288</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450...rev452\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450&hellip;rev452</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev452",
+                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev452...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "sdcore-router-k8s",
+               "url": "https://charmhub.io/sdcore-router-k8s",
+               "releases": [
+                  {
+                     "track": "1.5",
+                     "channel": "stable",
+                     "revision": 441,
+                     "timestamp": 1734702687,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "candidate",
+                     "revision": 441,
+                     "timestamp": 1734702560,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "beta",
+                     "revision": 441,
+                     "timestamp": 1734702467,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "edge",
+                     "revision": 420,
+                     "timestamp": 1732625751,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "edge",
+                     "revision": 441,
+                     "timestamp": 1734518456,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 6,
+                     "timestamp": 1704297196,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 11,
+                     "timestamp": 1705801245,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.6",
+                     "channel": "edge",
+                     "revision": 454,
+                     "timestamp": 1738725049,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "beta",
+                     "revision": 109,
+                     "timestamp": 1714130180,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "edge",
+                     "revision": 405,
+                     "timestamp": 1730388885,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "beta",
+                     "revision": 6,
+                     "timestamp": 1705952849,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "edge",
+                     "revision": 100,
+                     "timestamp": 1713968762,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "1.5",
+                  "latest",
+                  "1.6",
+                  "1.4",
+                  "1.3"
+               ]
+            },
+            "snap": null
+         },
+         {
+            "name": "sdcore-amf-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
+            "releases": [
+               {
+                  "id": 198483496,
+                  "version": "rev888",
+                  "timestamp": 1738723443,
+                  "title": "Revision 888",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.6.1\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 03:10 UTC on 5 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/504\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/504\">#504</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev886...rev888\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev886&hellip;rev888</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev888",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev888...main"
+               },
+               {
+                  "id": 197959858,
+                  "version": "rev887",
+                  "timestamp": 1738152071,
+                  "title": "Revision 887",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.6.1\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 06:29 UTC on 2 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\">#502</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885...rev887\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885&hellip;rev887</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev887",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev887...main"
+               },
+               {
+                  "id": 197347299,
+                  "version": "rev886",
+                  "timestamp": 1738152071,
+                  "title": "Revision 886",
+                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.6.1\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 12:28 UTC on 29 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\">#502</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885...rev886\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885&hellip;rev886</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev886",
+                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev886...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "sdcore-amf-k8s",
+               "url": "https://charmhub.io/sdcore-amf-k8s",
+               "releases": [
+                  {
+                     "track": "1.5",
+                     "channel": "stable",
+                     "revision": 871,
+                     "timestamp": 1734702286,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "candidate",
+                     "revision": 871,
+                     "timestamp": 1734702233,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "beta",
+                     "revision": 821,
+                     "timestamp": 1732634114,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "beta",
+                     "revision": 871,
+                     "timestamp": 1734702137,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "edge",
+                     "revision": 821,
+                     "timestamp": 1732198693,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.5",
+                     "channel": "edge",
+                     "revision": 871,
+                     "timestamp": 1734536947,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "beta",
+                     "revision": 11,
+                     "timestamp": 1704285083,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 15,
+                     "timestamp": 1705818353,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.6",
+                     "channel": "edge",
+                     "revision": 888,
+                     "timestamp": 1738725025,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "beta",
+                     "revision": 160,
+                     "timestamp": 1714122185,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.4",
+                     "channel": "edge",
+                     "revision": 796,
+                     "timestamp": 1729547196,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "beta",
+                     "revision": 11,
+                     "timestamp": 1705952838,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.3",
+                     "channel": "edge",
+                     "revision": 103,
+                     "timestamp": 1712324285,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "1.5",
+                  "latest",
+                  "1.6",
+                  "1.4",
+                  "1.3"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "sdcore-nms-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
@@ -12983,7 +13270,7 @@
          },
          {
             "name": "sdcore-udr-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
                {
@@ -13103,154 +13390,6 @@
                      "channel": "edge",
                      "revision": 74,
                      "timestamp": 1712324171,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "1.5",
-                  "latest",
-                  "1.6",
-                  "1.4",
-                  "1.3"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "sdcore-amf-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-amf-k8s-operator",
-            "releases": [
-               {
-                  "id": 197959858,
-                  "version": "rev887",
-                  "timestamp": 1738152071,
-                  "title": "Revision 887",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.6.1\n       resource-revision: 63</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 06:29 UTC on 2 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\">#502</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885...rev887\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885&hellip;rev887</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev887",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev887...main"
-               },
-               {
-                  "id": 197347299,
-                  "version": "rev886",
-                  "timestamp": 1738152071,
-                  "title": "Revision 886",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.6.1\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 12:28 UTC on 29 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/502\">#502</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885...rev886\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885&hellip;rev886</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev886",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev886...main"
-               },
-               {
-                  "id": 197341197,
-                  "version": "rev885",
-                  "timestamp": 1738150160,
-                  "title": "Revision 885",
-                  "body": "<p>resources:\n    -  amf-image: ghcr.io/canonical/sdcore-amf:1.6.1\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 11:56 UTC on 29 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Fixes lint report by <a target=\"_blank\" href=\"https://github.com/Gmerold\">@Gmerold</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/503\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-k8s-operator/pull/503\">#503</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev883...rev885\">https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev883&hellip;rev885</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-k8s-operator/releases/tag/rev885",
-                  "compareUrl": "https://github.com/canonical/sdcore-amf-k8s-operator/compare/rev885...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "sdcore-amf-k8s",
-               "url": "https://charmhub.io/sdcore-amf-k8s",
-               "releases": [
-                  {
-                     "track": "1.5",
-                     "channel": "stable",
-                     "revision": 871,
-                     "timestamp": 1734702286,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "candidate",
-                     "revision": 871,
-                     "timestamp": 1734702233,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "beta",
-                     "revision": 821,
-                     "timestamp": 1732634114,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "beta",
-                     "revision": 871,
-                     "timestamp": 1734702137,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "edge",
-                     "revision": 821,
-                     "timestamp": 1732198693,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "edge",
-                     "revision": 871,
-                     "timestamp": 1734536947,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 11,
-                     "timestamp": 1704285083,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 15,
-                     "timestamp": 1705818353,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "edge",
-                     "revision": 887,
-                     "timestamp": 1738477790,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.4",
-                     "channel": "beta",
-                     "revision": 160,
-                     "timestamp": 1714122185,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.4",
-                     "channel": "edge",
-                     "revision": 796,
-                     "timestamp": 1729547196,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "beta",
-                     "revision": 11,
-                     "timestamp": 1705952838,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "edge",
-                     "revision": 103,
-                     "timestamp": 1712324285,
                      "base": ""
                   }
                ],
@@ -13485,7 +13624,7 @@
          },
          {
             "name": "sdcore-smf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-smf-k8s-operator",
             "releases": [
                {
@@ -13626,7 +13765,7 @@
          },
          {
             "name": "sdcore-upf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-upf-k8s-operator",
             "releases": [
                {
@@ -13774,7 +13913,7 @@
          },
          {
             "name": "sdcore-udm-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-udm-k8s-operator",
             "releases": [
                {
@@ -13915,7 +14054,7 @@
          },
          {
             "name": "sdcore-ausf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-ausf-k8s-operator",
             "releases": [
                {
@@ -14055,147 +14194,6 @@
             "snap": null
          },
          {
-            "name": "sdcore-router-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-router-k8s-operator",
-            "releases": [
-               {
-                  "id": 197949640,
-                  "version": "rev453",
-                  "timestamp": 1738118656,
-                  "title": "Revision 453",
-                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 01:48 UTC on 2 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\">#288</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450...rev453\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450&hellip;rev453</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev453",
-                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev453...main"
-               },
-               {
-                  "id": 197275971,
-                  "version": "rev452",
-                  "timestamp": 1738118656,
-                  "title": "Revision 452",
-                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 03:01 UTC on 29 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/288\">#288</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450...rev452\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev450&hellip;rev452</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev452",
-                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev452...main"
-               },
-               {
-                  "id": 196797809,
-                  "version": "rev451",
-                  "timestamp": 1737515126,
-                  "title": "Revision 451",
-                  "body": "<p>resources:\n    -  router-image: ghcr.io/canonical/ubuntu-router:0.1\n       resource-revision: 25</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 01:49 UTC on 26 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/287\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-router-k8s-operator/pull/287\">#287</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-router-k8s-operator/compare/rev447...rev451\">https://github.com/canonical/sdcore-router-k8s-operator/compare/rev447&hellip;rev451</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-router-k8s-operator/releases/tag/rev451",
-                  "compareUrl": "https://github.com/canonical/sdcore-router-k8s-operator/compare/rev451...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "sdcore-router-k8s",
-               "url": "https://charmhub.io/sdcore-router-k8s",
-               "releases": [
-                  {
-                     "track": "1.5",
-                     "channel": "stable",
-                     "revision": 441,
-                     "timestamp": 1734702687,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "candidate",
-                     "revision": 441,
-                     "timestamp": 1734702560,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "beta",
-                     "revision": 441,
-                     "timestamp": 1734702467,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "edge",
-                     "revision": 420,
-                     "timestamp": 1732625751,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.5",
-                     "channel": "edge",
-                     "revision": 441,
-                     "timestamp": 1734518456,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 6,
-                     "timestamp": 1704297196,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 11,
-                     "timestamp": 1705801245,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.6",
-                     "channel": "edge",
-                     "revision": 453,
-                     "timestamp": 1738460926,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.4",
-                     "channel": "beta",
-                     "revision": 109,
-                     "timestamp": 1714130180,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.4",
-                     "channel": "edge",
-                     "revision": 405,
-                     "timestamp": 1730388885,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "beta",
-                     "revision": 6,
-                     "timestamp": 1705952849,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.3",
-                     "channel": "edge",
-                     "revision": 100,
-                     "timestamp": 1713968762,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "1.5",
-                  "latest",
-                  "1.6",
-                  "1.4",
-                  "1.3"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "oai-ran-ue-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/oai-ran-ue-k8s-operator",
@@ -14270,7 +14268,7 @@
          },
          {
             "name": "sdcore-nssf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-nssf-k8s-operator",
             "releases": [
                {
@@ -14736,6 +14734,39 @@
             "snap": null
          },
          {
+            "name": "sdcore-gnbsim-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-gnbsim-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "3762c28e55f6945995973fff72929d83df2b6f59",
+                  "author": "Gulsum Atici",
+                  "timestamp": 1734092334,
+                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/3762c28e55f6945995973fff72929d83df2b6f59"
+               },
+               {
+                  "sha": "6a2ca7ecb9adc17f8720ffdfbb2d36fcf32325fe",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1734027534,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/34\">#34</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/6a2ca7ecb9adc17f8720ffdfbb2d36fcf32325fe"
+               },
+               {
+                  "sha": "f4fda6e6ec09a64da198f8c51ef5f3affa5edd68",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1733484875,
+                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/33\">#33</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/f4fda6e6ec09a64da198f8c51ef5f3affa5edd68"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "sdcore-github-workflows",
             "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-github-workflows",
@@ -14775,62 +14806,32 @@
             "snap": null
          },
          {
-            "name": "terraform-juju-sdcore-udr-k8s",
+            "name": "sdcore-cos-configuration",
             "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s",
-            "releases": [
-               {
-                  "id": 138668106,
-                  "version": "v1.0.3",
-                  "timestamp": 1706273303,
-                  "title": "",
-                  "body": "<p>v1.0.3</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/releases/tag/v1.0.3",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/compare/v1.0.3...main"
-               },
-               {
-                  "id": 138146181,
-                  "version": "v1.0.0",
-                  "timestamp": 1706015827,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "sdcore-upf-snap",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-upf-snap",
+            "url": "https://github.com/canonical/sdcore-cos-configuration",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "7764a9a98f042c2b30dbeffaac982c68b2e8614f",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733882624,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-snap/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-snap/commit/7764a9a98f042c2b30dbeffaac982c68b2e8614f"
+                  "sha": "c0b1e510834129a719f7321524197cbcdc68851d",
+                  "author": "Gulsum Atici",
+                  "timestamp": 1726051419,
+                  "message": "<p>fix: remove pre-assigned uid&rsquo;s to be created automatically on deploy (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-cos-configuration/pull/17\">#17</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-cos-configuration/commit/c0b1e510834129a719f7321524197cbcdc68851d"
                },
                {
-                  "sha": "dc5f82a4af7b838937201f6d11dced06bd12b8e1",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733104319,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-snap/pull/34\">#34</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-snap/commit/dc5f82a4af7b838937201f6d11dced06bd12b8e1"
+                  "sha": "07f1c4be090a665cda36492ffb467616f0f476ee",
+                  "author": "Gulsum Atici",
+                  "timestamp": 1725913249,
+                  "message": "<p>feat: adding a logging dashboard for 5G network functions (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-cos-configuration/pull/16\">#16</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-cos-configuration/commit/07f1c4be090a665cda36492ffb467616f0f476ee"
                },
                {
-                  "sha": "d56ac223d468776155eee62bc8bbcf0f0ecf92b5",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1732501119,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.1.0 to 2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-snap/pull/33\">#33</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-snap/commit/d56ac223d468776155eee62bc8bbcf0f0ecf92b5"
+                  "sha": "6d50873fd4ecd9398d8f3402d04e517897d57eec",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1710511189,
+                  "message": "<p>chore: automatically merge dependabot PRs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-cos-configuration/pull/15\">#15</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-cos-configuration/commit/6d50873fd4ecd9398d8f3402d04e517897d57eec"
                }
             ],
             "ciActions": [],
@@ -14871,32 +14872,32 @@
             "snap": null
          },
          {
-            "name": "oai-ran-cu-rock",
+            "name": "sdcore-amf-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/oai-ran-cu-rock",
+            "url": "https://github.com/canonical/sdcore-amf-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "e9b5de727d4209d46054cbad8b3ff41746b2ef67",
+                  "sha": "3bc423b016dadc18505d4965814084088a416920",
                   "author": "Ghislain Bourgeois",
-                  "timestamp": 1737413526,
-                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-rock/pull/10\">#10</a>)</p>\n",
-                  "url": "https://github.com/canonical/oai-ran-cu-rock/commit/e9b5de727d4209d46054cbad8b3ff41746b2ef67"
+                  "timestamp": 1734012840,
+                  "message": "<p>fix: Trigger actions on PR merges and release branches (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/46\">#46</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/3bc423b016dadc18505d4965814084088a416920"
                },
                {
-                  "sha": "d45b20260e4128496f688de94d22d186bf589c74",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733919122,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-rock/pull/9\">#9</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/oai-ran-cu-rock/commit/d45b20260e4128496f688de94d22d186bf589c74"
+                  "sha": "785c9e6b2eb7cd42640bdc267a2e4ffc9377e383",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1733961598,
+                  "message": "<p>fix: Fix workflows trigger only on PR events, and not on push (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/45\">#45</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/785c9e6b2eb7cd42640bdc267a2e4ffc9377e383"
                },
                {
-                  "sha": "ff7994aec1f501594f21fee7d179b06b366e35f6",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733145228,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-rock/pull/8\">#8</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.2.0 to 2.3.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.2.0...v2.3.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/oai-ran-cu-rock/commit/ff7994aec1f501594f21fee7d179b06b366e35f6"
+                  "sha": "879f0c78280adf1a455a19bc94e8fef9ed37bfd3",
+                  "author": "Gulsum Atici",
+                  "timestamp": 1733927370,
+                  "message": "<p>chore: use AMF version 1.6.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/44\">#44</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/879f0c78280adf1a455a19bc94e8fef9ed37bfd3"
                }
             ],
             "ciActions": [],
@@ -14904,32 +14905,32 @@
             "snap": null
          },
          {
-            "name": "nginx-rock",
+            "name": "oai-ran-ue-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/nginx-rock",
+            "url": "https://github.com/canonical/oai-ran-ue-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "1ca8899a2c9de4c84e4f879a22fb708f64e36861",
+                  "sha": "35b45f9f14cea0c1b9f2b1e2a7c10c1ebf96a523",
                   "author": "Ghislain Bourgeois",
-                  "timestamp": 1698067428,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/nginx-rock/pull/4\">#4</a> from canonical/trivy-scan</p>\n\n<p>Add Trivy scan to CI</p>\n",
-                  "url": "https://github.com/canonical/nginx-rock/commit/1ca8899a2c9de4c84e4f879a22fb708f64e36861"
+                  "timestamp": 1737413560,
+                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/oai-ran-ue-rock/commit/35b45f9f14cea0c1b9f2b1e2a7c10c1ebf96a523"
                },
                {
-                  "sha": "4569fa99846101dcb8c8a0fd9f143594a6d96883",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1676572787,
-                  "message": "<p>Add scheduled scan</p>\n",
-                  "url": "https://github.com/canonical/nginx-rock/commit/4569fa99846101dcb8c8a0fd9f143594a6d96883"
+                  "sha": "1a49c9602ad0a4987d75cd11ab701aba95ed09b1",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1733916253,
+                  "message": "<p>chore: Bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-rock/pull/10\">#10</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-ue-rock/commit/1a49c9602ad0a4987d75cd11ab701aba95ed09b1"
                },
                {
-                  "sha": "0ff96fe560a8a202f50e65c4f56029f1c9d0e328",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1676566572,
-                  "message": "<p>Add Trivy scan to CI</p>\n",
-                  "url": "https://github.com/canonical/nginx-rock/commit/0ff96fe560a8a202f50e65c4f56029f1c9d0e328"
+                  "sha": "8ee871e51617f0a7c7a852dcc1ec6b56dcf118c0",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1733169931,
+                  "message": "<p>chore: Bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-rock/pull/9\">#9</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-ue-rock/commit/8ee871e51617f0a7c7a852dcc1ec6b56dcf118c0"
                }
             ],
             "ciActions": [],
@@ -14970,32 +14971,197 @@
             "snap": null
          },
          {
-            "name": "sdcore-cos-configuration",
+            "name": "oai-ran-du-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-cos-configuration",
+            "url": "https://github.com/canonical/oai-ran-du-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "c0b1e510834129a719f7321524197cbcdc68851d",
-                  "author": "Gulsum Atici",
-                  "timestamp": 1726051419,
-                  "message": "<p>fix: remove pre-assigned uid&rsquo;s to be created automatically on deploy (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-cos-configuration/pull/17\">#17</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-cos-configuration/commit/c0b1e510834129a719f7321524197cbcdc68851d"
+                  "sha": "38d20b8e8e5937b253d6ec669c9af0289ca3c4d1",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1737413534,
+                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-du-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/oai-ran-du-rock/commit/38d20b8e8e5937b253d6ec669c9af0289ca3c4d1"
                },
                {
-                  "sha": "07f1c4be090a665cda36492ffb467616f0f476ee",
-                  "author": "Gulsum Atici",
-                  "timestamp": 1725913249,
-                  "message": "<p>feat: adding a logging dashboard for 5G network functions (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-cos-configuration/pull/16\">#16</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-cos-configuration/commit/07f1c4be090a665cda36492ffb467616f0f476ee"
+                  "sha": "8050715b3b874ba7dbb0f8731ef2d17873638058",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1733933253,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-du-rock/pull/11\">#11</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-du-rock/commit/8050715b3b874ba7dbb0f8731ef2d17873638058"
                },
                {
-                  "sha": "6d50873fd4ecd9398d8f3402d04e517897d57eec",
+                  "sha": "ff6fa515bee4ed748907b7ed7c862e4b55b43366",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1732895412,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-du-rock/pull/10\">#10</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.2.0 to 2.3.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.2.0...v2.3.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-du-rock/commit/ff6fa515bee4ed748907b7ed7c862e4b55b43366"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "sdcore-smf-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-smf-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "d35e253821bff7489c07abdfbfe43f5d1af5e443",
+                  "author": "Gulsum Atici",
+                  "timestamp": 1734092370,
+                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/37\">#37</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/d35e253821bff7489c07abdfbfe43f5d1af5e443"
+               },
+               {
+                  "sha": "b4e70f00faf9f7dea7b9245b4d5b5db3d57e847e",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1733916107,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/36\">#36</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/b4e70f00faf9f7dea7b9245b4d5b5db3d57e847e"
+               },
+               {
+                  "sha": "ef286e9946f9fd7d83f4efeb164274927b417017",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1733484895,
+                  "message": "<p>chore: Bumps project version to 2.0.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/35\">#35</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/ef286e9946f9fd7d83f4efeb164274927b417017"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charmed-aether-sd-core",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-aether-sd-core",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "a7157971f36856bcc2be12c0fad52ecac333d72b",
                   "author": "Guillaume Belanger",
-                  "timestamp": 1710511189,
-                  "message": "<p>chore: automatically merge dependabot PRs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-cos-configuration/pull/15\">#15</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-cos-configuration/commit/6d50873fd4ecd9398d8f3402d04e517897d57eec"
+                  "timestamp": 1737755562,
+                  "message": "<p>docs: add af_packet performance results (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-aether-sd-core/pull/91\">#91</a>)</p>\n\n<p>Signed-off-by: Guillaume Belanger <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a>\nCo-authored-by: Ghislain Bourgeois <a href=\"mailto:ghislain.bourgeois@canonical.com\">ghislain.bourgeois@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-aether-sd-core/commit/a7157971f36856bcc2be12c0fad52ecac333d72b"
+               },
+               {
+                  "sha": "f922db4f25d9d3cd991adbb24bfc243b75ec8a8d",
+                  "author": "Gulsum Atici",
+                  "timestamp": 1737729141,
+                  "message": "<p>chore: add juju and K8s versions (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-aether-sd-core/pull/90\">#90</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-aether-sd-core/commit/f922db4f25d9d3cd991adbb24bfc243b75ec8a8d"
+               },
+               {
+                  "sha": "2dafdf2e1d6745c0264ce9fff177d325ef8706fc",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1737469362,
+                  "message": "<p>feat: Add performance reference page with UPF throughput test results (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-aether-sd-core/pull/82\">#82</a>)</p>\n\n<p>Co-authored-by: Gulsum Atici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-aether-sd-core/commit/2dafdf2e1d6745c0264ce9fff177d325ef8706fc"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "sdcore-pcf-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-pcf-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "43f292ab9bbbdda3bb8122c7cb017519886cb55d",
+                  "author": "Gulsum Atici",
+                  "timestamp": 1734092380,
+                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/36\">#36</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/43f292ab9bbbdda3bb8122c7cb017519886cb55d"
+               },
+               {
+                  "sha": "1436cca6052267dbc857df3236251c17c2c44bce",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1734027460,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/1436cca6052267dbc857df3236251c17c2c44bce"
+               },
+               {
+                  "sha": "698162e85c4d7a66cd8752a5a09292d3452e72cc",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1733484891,
+                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/34\">#34</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/698162e85c4d7a66cd8752a5a09292d3452e72cc"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "oai-ran-cu-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/oai-ran-cu-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "e9b5de727d4209d46054cbad8b3ff41746b2ef67",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1737413526,
+                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-rock/pull/10\">#10</a>)</p>\n",
+                  "url": "https://github.com/canonical/oai-ran-cu-rock/commit/e9b5de727d4209d46054cbad8b3ff41746b2ef67"
+               },
+               {
+                  "sha": "d45b20260e4128496f688de94d22d186bf589c74",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1733919122,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-rock/pull/9\">#9</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-cu-rock/commit/d45b20260e4128496f688de94d22d186bf589c74"
+               },
+               {
+                  "sha": "ff7994aec1f501594f21fee7d179b06b366e35f6",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1733145228,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-cu-rock/pull/8\">#8</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.2.0 to 2.3.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.2.0...v2.3.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/oai-ran-cu-rock/commit/ff7994aec1f501594f21fee7d179b06b366e35f6"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "charmed-oai-ran",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/charmed-oai-ran",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "1cbc2f0f2d273793fc7ade360250853b1a066c64",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1738077212,
+                  "message": "<p>fix: Update documentation to follow CC006 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-oai-ran/pull/24\">#24</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-oai-ran/commit/1cbc2f0f2d273793fc7ade360250853b1a066c64"
+               },
+               {
+                  "sha": "91d94948773ce47b7dca0340f8bab58539ba34a2",
+                  "author": "Ghislain Bourgeois",
+                  "timestamp": 1737554129,
+                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-oai-ran/pull/23\">#23</a>)</p>\n",
+                  "url": "https://github.com/canonical/charmed-oai-ran/commit/91d94948773ce47b7dca0340f8bab58539ba34a2"
+               },
+               {
+                  "sha": "7c834483578e0f4178fe9a2e52bbaa37ea1c9259",
+                  "author": "Guillaume Belanger",
+                  "timestamp": 1737044327,
+                  "message": "<p>docs: add how-to guides and explanation (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-oai-ran/pull/22\">#22</a>)</p>\n\n<p>Signed-off-by: Guillaume Belanger <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-oai-ran/commit/7c834483578e0f4178fe9a2e52bbaa37ea1c9259"
                }
             ],
             "ciActions": [],
@@ -15029,6 +15195,39 @@
                   "timestamp": 1733485306,
                   "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-rock/pull/32\">#32</a>)</p>\n",
                   "url": "https://github.com/canonical/sdcore-nssf-rock/commit/92adda5720ccd8641f338bfdebbf4a21d379212b"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "sdcore-upf-pfcpiface-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "35dae8f17d79d2424ca651114405bea7b94e4c45",
+                  "author": "Patricia Reinoso",
+                  "timestamp": 1734444135,
+                  "message": "<p>remove duplicate ci jobs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/31\">#31</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/35dae8f17d79d2424ca651114405bea7b94e4c45"
+               },
+               {
+                  "sha": "90f83d78b54dcf99241a7d3781466daba768b599",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1734027496,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/28\">#28</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/90f83d78b54dcf99241a7d3781466daba768b599"
+               },
+               {
+                  "sha": "ac109cb1cfa417c6f1bdd63e4873821089ceb07d",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1733485313,
+                  "message": "<p>Bumps project version after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/27\">#27</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/ac109cb1cfa417c6f1bdd63e4873821089ceb07d"
                }
             ],
             "ciActions": [],
@@ -15110,32 +15309,32 @@
             "snap": null
          },
          {
-            "name": "sdcore-pcf-rock",
+            "name": "sdcore-udm-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-pcf-rock",
+            "url": "https://github.com/canonical/sdcore-udm-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "43f292ab9bbbdda3bb8122c7cb017519886cb55d",
+                  "sha": "4f60f65d5b7f612c9f88549e77c1059649158efe",
                   "author": "Gulsum Atici",
-                  "timestamp": 1734092380,
-                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/36\">#36</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/43f292ab9bbbdda3bb8122c7cb017519886cb55d"
+                  "timestamp": 1734092357,
+                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/4f60f65d5b7f612c9f88549e77c1059649158efe"
                },
                {
-                  "sha": "1436cca6052267dbc857df3236251c17c2c44bce",
+                  "sha": "2e3099792f4c5dced120eafd6a63b5a4138b8540",
                   "author": "dependabot[bot]",
-                  "timestamp": 1734027460,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/1436cca6052267dbc857df3236251c17c2c44bce"
+                  "timestamp": 1734027440,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-rock/pull/34\">#34</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/2e3099792f4c5dced120eafd6a63b5a4138b8540"
                },
                {
-                  "sha": "698162e85c4d7a66cd8752a5a09292d3452e72cc",
+                  "sha": "330b283948f946ed76e8159c2329a22bea68abd1",
                   "author": "Bartlomiej Gmerek",
-                  "timestamp": 1733484891,
-                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-rock/pull/34\">#34</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-rock/commit/698162e85c4d7a66cd8752a5a09292d3452e72cc"
+                  "timestamp": 1733484899,
+                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-rock/pull/33\">#33</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/330b283948f946ed76e8159c2329a22bea68abd1"
                }
             ],
             "ciActions": [],
@@ -15143,227 +15342,32 @@
             "snap": null
          },
          {
-            "name": "sdcore-ausf-rock",
+            "name": "nginx-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-ausf-rock",
+            "url": "https://github.com/canonical/nginx-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "35171ea7e1bb2ec71d8ff7f7f46482290b32b66b",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1734077846,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: Gulsum Atici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/35171ea7e1bb2ec71d8ff7f7f46482290b32b66b"
-               },
-               {
-                  "sha": "2ee2a468a5f17edbc655a923950b9c16a30dcbe3",
+                  "sha": "1ca8899a2c9de4c84e4f879a22fb708f64e36861",
                   "author": "Ghislain Bourgeois",
-                  "timestamp": 1734077502,
-                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/36\">#36</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/2ee2a468a5f17edbc655a923950b9c16a30dcbe3"
+                  "timestamp": 1698067428,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/nginx-rock/pull/4\">#4</a> from canonical/trivy-scan</p>\n\n<p>Add Trivy scan to CI</p>\n",
+                  "url": "https://github.com/canonical/nginx-rock/commit/1ca8899a2c9de4c84e4f879a22fb708f64e36861"
                },
                {
-                  "sha": "ced61cf14ab81174f1144f1f1697a7571b32ede1",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1733484870,
-                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/34\">#34</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/ced61cf14ab81174f1144f1f1697a7571b32ede1"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "charmed-aether-sd-core",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-aether-sd-core",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "a7157971f36856bcc2be12c0fad52ecac333d72b",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1737755562,
-                  "message": "<p>docs: add af_packet performance results (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-aether-sd-core/pull/91\">#91</a>)</p>\n\n<p>Signed-off-by: Guillaume Belanger <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a>\nCo-authored-by: Ghislain Bourgeois <a href=\"mailto:ghislain.bourgeois@canonical.com\">ghislain.bourgeois@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-aether-sd-core/commit/a7157971f36856bcc2be12c0fad52ecac333d72b"
-               },
-               {
-                  "sha": "f922db4f25d9d3cd991adbb24bfc243b75ec8a8d",
-                  "author": "Gulsum Atici",
-                  "timestamp": 1737729141,
-                  "message": "<p>chore: add juju and K8s versions (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-aether-sd-core/pull/90\">#90</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-aether-sd-core/commit/f922db4f25d9d3cd991adbb24bfc243b75ec8a8d"
-               },
-               {
-                  "sha": "2dafdf2e1d6745c0264ce9fff177d325ef8706fc",
+                  "sha": "4569fa99846101dcb8c8a0fd9f143594a6d96883",
                   "author": "Ghislain Bourgeois",
-                  "timestamp": 1737469362,
-                  "message": "<p>feat: Add performance reference page with UPF throughput test results (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-aether-sd-core/pull/82\">#82</a>)</p>\n\n<p>Co-authored-by: Gulsum Atici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-aether-sd-core/commit/2dafdf2e1d6745c0264ce9fff177d325ef8706fc"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "sdcore-amf-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-amf-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
+                  "timestamp": 1676572787,
+                  "message": "<p>Add scheduled scan</p>\n",
+                  "url": "https://github.com/canonical/nginx-rock/commit/4569fa99846101dcb8c8a0fd9f143594a6d96883"
+               },
                {
-                  "sha": "3bc423b016dadc18505d4965814084088a416920",
+                  "sha": "0ff96fe560a8a202f50e65c4f56029f1c9d0e328",
                   "author": "Ghislain Bourgeois",
-                  "timestamp": 1734012840,
-                  "message": "<p>fix: Trigger actions on PR merges and release branches (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/46\">#46</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/3bc423b016dadc18505d4965814084088a416920"
-               },
-               {
-                  "sha": "785c9e6b2eb7cd42640bdc267a2e4ffc9377e383",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1733961598,
-                  "message": "<p>fix: Fix workflows trigger only on PR events, and not on push (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/45\">#45</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/785c9e6b2eb7cd42640bdc267a2e4ffc9377e383"
-               },
-               {
-                  "sha": "879f0c78280adf1a455a19bc94e8fef9ed37bfd3",
-                  "author": "Gulsum Atici",
-                  "timestamp": 1733927370,
-                  "message": "<p>chore: use AMF version 1.6.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-amf-rock/pull/44\">#44</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-amf-rock/commit/879f0c78280adf1a455a19bc94e8fef9ed37bfd3"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "sdcore-tests",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-tests",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "87b3c626ffd08b37f65efe11caf40addafe7f808",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1738140000,
-                  "message": "<p>Adds UV and installs tox with it (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/511\">#511</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/87b3c626ffd08b37f65efe11caf40addafe7f808"
-               },
-               {
-                  "sha": "4b978db809495343012e4933096a4693359ff31d",
-                  "author": "renovate[bot]",
-                  "timestamp": 1738118874,
-                  "message": "<p>chore(deps): lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/512\">#512</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/4b978db809495343012e4933096a4693359ff31d"
-               },
-               {
-                  "sha": "2fd889b9e8d44f93d823d31d43ba3eface6fa6ee",
-                  "author": "renovate[bot]",
-                  "timestamp": 1737514013,
-                  "message": "<p>chore(deps): lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/510\">#510</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-tests/commit/2fd889b9e8d44f93d823d31d43ba3eface6fa6ee"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "sdcore-smf-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-smf-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "d35e253821bff7489c07abdfbfe43f5d1af5e443",
-                  "author": "Gulsum Atici",
-                  "timestamp": 1734092370,
-                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/37\">#37</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/d35e253821bff7489c07abdfbfe43f5d1af5e443"
-               },
-               {
-                  "sha": "b4e70f00faf9f7dea7b9245b4d5b5db3d57e847e",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733916107,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/36\">#36</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/b4e70f00faf9f7dea7b9245b4d5b5db3d57e847e"
-               },
-               {
-                  "sha": "ef286e9946f9fd7d83f4efeb164274927b417017",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1733484895,
-                  "message": "<p>chore: Bumps project version to 2.0.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-smf-rock/pull/35\">#35</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-smf-rock/commit/ef286e9946f9fd7d83f4efeb164274927b417017"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "terraform-juju-traefik-k8s",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-traefik-k8s",
-            "releases": [
-               {
-                  "id": 138626733,
-                  "version": "v1.0.1",
-                  "timestamp": 1706257187,
-                  "title": "",
-                  "body": "<p>v1.0.1</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-traefik-k8s/releases/tag/v1.0.1",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-traefik-k8s/compare/v1.0.1...main"
-               },
-               {
-                  "id": 138469242,
-                  "version": "v1.0.0",
-                  "timestamp": 1706170248,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-traefik-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-traefik-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "oai-ran-du-rock",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/oai-ran-du-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
-               {
-                  "sha": "38d20b8e8e5937b253d6ec669c9af0289ca3c4d1",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1737413534,
-                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-du-rock/pull/12\">#12</a>)</p>\n",
-                  "url": "https://github.com/canonical/oai-ran-du-rock/commit/38d20b8e8e5937b253d6ec669c9af0289ca3c4d1"
-               },
-               {
-                  "sha": "8050715b3b874ba7dbb0f8731ef2d17873638058",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733933253,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-du-rock/pull/11\">#11</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/oai-ran-du-rock/commit/8050715b3b874ba7dbb0f8731ef2d17873638058"
-               },
-               {
-                  "sha": "ff6fa515bee4ed748907b7ed7c862e4b55b43366",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1732895412,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-du-rock/pull/10\">#10</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.2.0 to 2.3.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.2.0...v2.3.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/oai-ran-du-rock/commit/ff6fa515bee4ed748907b7ed7c862e4b55b43366"
+                  "timestamp": 1676566572,
+                  "message": "<p>Add Trivy scan to CI</p>\n",
+                  "url": "https://github.com/canonical/nginx-rock/commit/0ff96fe560a8a202f50e65c4f56029f1c9d0e328"
                }
             ],
             "ciActions": [],
@@ -15404,32 +15408,32 @@
             "snap": null
          },
          {
-            "name": "sdcore-upf-bess-rock",
+            "name": "ubuntu-router-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-upf-bess-rock",
+            "url": "https://github.com/canonical/ubuntu-router-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "c834825bb378d9aa0098257f748b43b40147f51a",
-                  "author": "Patricia Reinoso",
-                  "timestamp": 1734429152,
-                  "message": "<p>chore: workflows trigger only on PR events, and not on push (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/41\">#41</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/c834825bb378d9aa0098257f748b43b40147f51a"
-               },
-               {
-                  "sha": "9c894e036d6989e0c48bbb7b8c6f3411393941bd",
+                  "sha": "55a20f983706d7d1099f2fc3a40e88c35f270771",
                   "author": "dependabot[bot]",
-                  "timestamp": 1733906290,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/39\">#39</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/9c894e036d6989e0c48bbb7b8c6f3411393941bd"
+                  "timestamp": 1733872863,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/ubuntu-router-rock/pull/16\">#16</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/55a20f983706d7d1099f2fc3a40e88c35f270771"
                },
                {
-                  "sha": "9feb05a401f42107516d1c641053596cca4113cb",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1733485309,
-                  "message": "<p>chore: Bumps project version to 2.0.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/38\">#38</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/9feb05a401f42107516d1c641053596cca4113cb"
+                  "sha": "6ea8f44c8559df5d59e94d93da16b7f5e022bc9a",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1732923707,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/ubuntu-router-rock/pull/15\">#15</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.2.0 to 2.3.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.2.0...v2.3.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/6ea8f44c8559df5d59e94d93da16b7f5e022bc9a"
+               },
+               {
+                  "sha": "117549f478e56c4e0569c9ff88315b7849ca8335",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1732319390,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.1.0 to 2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/ubuntu-router-rock/pull/14\">#14</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.1.0 to 2.2.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.1.0...v2.2.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/117549f478e56c4e0569c9ff88315b7849ca8335"
                }
             ],
             "ciActions": [],
@@ -15437,32 +15441,32 @@
             "snap": null
          },
          {
-            "name": "oai-ran-ue-rock",
+            "name": "sdcore-ausf-rock",
             "newCommits": 0,
-            "url": "https://github.com/canonical/oai-ran-ue-rock",
+            "url": "https://github.com/canonical/sdcore-ausf-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "35b45f9f14cea0c1b9f2b1e2a7c10c1ebf96a523",
+                  "sha": "35171ea7e1bb2ec71d8ff7f7f46482290b32b66b",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1734077846,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: Gulsum Atici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/35171ea7e1bb2ec71d8ff7f7f46482290b32b66b"
+               },
+               {
+                  "sha": "2ee2a468a5f17edbc655a923950b9c16a30dcbe3",
                   "author": "Ghislain Bourgeois",
-                  "timestamp": 1737413560,
-                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-rock/pull/12\">#12</a>)</p>\n",
-                  "url": "https://github.com/canonical/oai-ran-ue-rock/commit/35b45f9f14cea0c1b9f2b1e2a7c10c1ebf96a523"
+                  "timestamp": 1734077502,
+                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/36\">#36</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/2ee2a468a5f17edbc655a923950b9c16a30dcbe3"
                },
                {
-                  "sha": "1a49c9602ad0a4987d75cd11ab701aba95ed09b1",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733916253,
-                  "message": "<p>chore: Bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-rock/pull/10\">#10</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/oai-ran-ue-rock/commit/1a49c9602ad0a4987d75cd11ab701aba95ed09b1"
-               },
-               {
-                  "sha": "8ee871e51617f0a7c7a852dcc1ec6b56dcf118c0",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733169931,
-                  "message": "<p>chore: Bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/oai-ran-ue-rock/pull/9\">#9</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/oai-ran-ue-rock/commit/8ee871e51617f0a7c7a852dcc1ec6b56dcf118c0"
+                  "sha": "ced61cf14ab81174f1144f1f1697a7571b32ede1",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1733484870,
+                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-rock/pull/34\">#34</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-rock/commit/ced61cf14ab81174f1144f1f1697a7571b32ede1"
                }
             ],
             "ciActions": [],
@@ -15470,32 +15474,32 @@
             "snap": null
          },
          {
-            "name": "sdcore-upf-pfcpiface-rock",
+            "name": "sdcore-tests",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock",
+            "url": "https://github.com/canonical/sdcore-tests",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "35dae8f17d79d2424ca651114405bea7b94e4c45",
-                  "author": "Patricia Reinoso",
-                  "timestamp": 1734444135,
-                  "message": "<p>remove duplicate ci jobs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/31\">#31</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/35dae8f17d79d2424ca651114405bea7b94e4c45"
-               },
-               {
-                  "sha": "90f83d78b54dcf99241a7d3781466daba768b599",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1734027496,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/28\">#28</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/90f83d78b54dcf99241a7d3781466daba768b599"
-               },
-               {
-                  "sha": "ac109cb1cfa417c6f1bdd63e4873821089ceb07d",
+                  "sha": "87b3c626ffd08b37f65efe11caf40addafe7f808",
                   "author": "Bartlomiej Gmerek",
-                  "timestamp": 1733485313,
-                  "message": "<p>Bumps project version after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-pfcpiface-rock/pull/27\">#27</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-upf-pfcpiface-rock/commit/ac109cb1cfa417c6f1bdd63e4873821089ceb07d"
+                  "timestamp": 1738140000,
+                  "message": "<p>Adds UV and installs tox with it (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/511\">#511</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/87b3c626ffd08b37f65efe11caf40addafe7f808"
+               },
+               {
+                  "sha": "4b978db809495343012e4933096a4693359ff31d",
+                  "author": "renovate[bot]",
+                  "timestamp": 1738118874,
+                  "message": "<p>chore(deps): lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/512\">#512</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/4b978db809495343012e4933096a4693359ff31d"
+               },
+               {
+                  "sha": "2fd889b9e8d44f93d823d31d43ba3eface6fa6ee",
+                  "author": "renovate[bot]",
+                  "timestamp": 1737514013,
+                  "message": "<p>chore(deps): lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-tests/pull/510\">#510</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-tests/commit/2fd889b9e8d44f93d823d31d43ba3eface6fa6ee"
                }
             ],
             "ciActions": [],
@@ -15503,32 +15507,32 @@
             "snap": null
          },
          {
-            "name": "sdcore-gnbsim-rock",
+            "name": "sdcore-upf-snap",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-gnbsim-rock",
+            "url": "https://github.com/canonical/sdcore-upf-snap",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "3762c28e55f6945995973fff72929d83df2b6f59",
-                  "author": "Gulsum Atici",
-                  "timestamp": 1734092334,
-                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/3762c28e55f6945995973fff72929d83df2b6f59"
-               },
-               {
-                  "sha": "6a2ca7ecb9adc17f8720ffdfbb2d36fcf32325fe",
+                  "sha": "7764a9a98f042c2b30dbeffaac982c68b2e8614f",
                   "author": "dependabot[bot]",
-                  "timestamp": 1734027534,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/34\">#34</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/6a2ca7ecb9adc17f8720ffdfbb2d36fcf32325fe"
+                  "timestamp": 1733882624,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-snap/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-snap/commit/7764a9a98f042c2b30dbeffaac982c68b2e8614f"
                },
                {
-                  "sha": "f4fda6e6ec09a64da198f8c51ef5f3affa5edd68",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1733484875,
-                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-gnbsim-rock/pull/33\">#33</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-gnbsim-rock/commit/f4fda6e6ec09a64da198f8c51ef5f3affa5edd68"
+                  "sha": "dc5f82a4af7b838937201f6d11dced06bd12b8e1",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1733104319,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-snap/pull/34\">#34</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-snap/commit/dc5f82a4af7b838937201f6d11dced06bd12b8e1"
+               },
+               {
+                  "sha": "d56ac223d468776155eee62bc8bbcf0f0ecf92b5",
+                  "author": "dependabot[bot]",
+                  "timestamp": 1732501119,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.1.0 to 2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-snap/pull/33\">#33</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-snap/commit/d56ac223d468776155eee62bc8bbcf0f0ecf92b5"
                }
             ],
             "ciActions": [],
@@ -15728,111 +15732,6 @@
             "snap": null
          },
          {
-            "name": "terraform-juju-sdcore",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore",
-            "releases": [
-               {
-                  "id": 138508200,
-                  "version": "v1.0.0",
-                  "timestamp": 1706186822,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "terraform-juju-sdcore-amf-k8s",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore-amf-k8s",
-            "releases": [
-               {
-                  "id": 138125116,
-                  "version": "v1.0.0",
-                  "timestamp": 1706007504,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-amf-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-amf-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "terraform-juju-sdcore-nrf-k8s",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore-nrf-k8s",
-            "releases": [
-               {
-                  "id": 138112661,
-                  "version": "v1.0.0",
-                  "timestamp": 1706002466,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-nrf-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-nrf-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "terraform-juju-sdcore-nssf-k8s",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s",
-            "releases": [
-               {
-                  "id": 138138189,
-                  "version": "v1.0.0",
-                  "timestamp": 1706012938,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "terraform-juju-sdcore-pcf-k8s",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s",
-            "releases": [
-               {
-                  "id": 138132270,
-                  "version": "v1.0.0",
-                  "timestamp": 1706010669,
-                  "title": "",
-                  "body": "<p>v1.0.0</p>\n",
-                  "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/releases/tag/v1.0.0",
-                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/compare/v1.0.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "terraform-juju-sdcore-smf-k8s",
             "newCommits": 0,
             "url": "https://github.com/canonical/terraform-juju-sdcore-smf-k8s",
@@ -15863,6 +15762,27 @@
             "snap": null
          },
          {
+            "name": "terraform-juju-sdcore",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/terraform-juju-sdcore",
+            "releases": [
+               {
+                  "id": 138508200,
+                  "version": "v1.0.0",
+                  "timestamp": 1706186822,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore/compare/v1.0.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "terraform-juju-sdcore-udm-k8s",
             "newCommits": 0,
             "url": "https://github.com/canonical/terraform-juju-sdcore-udm-k8s",
@@ -15884,35 +15804,32 @@
             "snap": null
          },
          {
-            "name": "charmed-oai-ran",
+            "name": "terraform-juju-sdcore-udr-k8s",
             "newCommits": 0,
-            "url": "https://github.com/canonical/charmed-oai-ran",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "url": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s",
+            "releases": [
                {
-                  "sha": "1cbc2f0f2d273793fc7ade360250853b1a066c64",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1738077212,
-                  "message": "<p>fix: Update documentation to follow CC006 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-oai-ran/pull/24\">#24</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-oai-ran/commit/1cbc2f0f2d273793fc7ade360250853b1a066c64"
+                  "id": 138668106,
+                  "version": "v1.0.3",
+                  "timestamp": 1706273303,
+                  "title": "",
+                  "body": "<p>v1.0.3</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/releases/tag/v1.0.3",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/compare/v1.0.3...main"
                },
                {
-                  "sha": "91d94948773ce47b7dca0340f8bab58539ba34a2",
-                  "author": "Ghislain Bourgeois",
-                  "timestamp": 1737554129,
-                  "message": "<p>feat: Bump version to official release v2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-oai-ran/pull/23\">#23</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-oai-ran/commit/91d94948773ce47b7dca0340f8bab58539ba34a2"
-               },
-               {
-                  "sha": "7c834483578e0f4178fe9a2e52bbaa37ea1c9259",
-                  "author": "Guillaume Belanger",
-                  "timestamp": 1737044327,
-                  "message": "<p>docs: add how-to guides and explanation (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-oai-ran/pull/22\">#22</a>)</p>\n\n<p>Signed-off-by: Guillaume Belanger <a href=\"mailto:guillaume.belanger27@gmail.com\">guillaume.belanger27@gmail.com</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-oai-ran/commit/7c834483578e0f4178fe9a2e52bbaa37ea1c9259"
+                  "id": 138146181,
+                  "version": "v1.0.0",
+                  "timestamp": 1706015827,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-udr-k8s/compare/v1.0.0...main"
                }
             ],
-            "ciActions": [],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -15968,65 +15885,146 @@
             "snap": null
          },
          {
-            "name": "sdcore-udm-rock",
+            "name": "terraform-juju-traefik-k8s",
             "newCommits": 0,
-            "url": "https://github.com/canonical/sdcore-udm-rock",
-            "releases": null,
-            "tags": null,
-            "commits": [
+            "url": "https://github.com/canonical/terraform-juju-traefik-k8s",
+            "releases": [
                {
-                  "sha": "4f60f65d5b7f612c9f88549e77c1059649158efe",
-                  "author": "Gulsum Atici",
-                  "timestamp": 1734092357,
-                  "message": "<p>chore: Update CI triggers to not duplicate CI runs (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-rock/pull/35\">#35</a>)</p>\n\n<p>Signed-off-by: gatici <a href=\"mailto:gulsum.atici@canonical.com\">gulsum.atici@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/4f60f65d5b7f612c9f88549e77c1059649158efe"
+                  "id": 138626733,
+                  "version": "v1.0.1",
+                  "timestamp": 1706257187,
+                  "title": "",
+                  "body": "<p>v1.0.1</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-traefik-k8s/releases/tag/v1.0.1",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-traefik-k8s/compare/v1.0.1...main"
                },
                {
-                  "sha": "2e3099792f4c5dced120eafd6a63b5a4138b8540",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1734027440,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-rock/pull/34\">#34</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/2e3099792f4c5dced120eafd6a63b5a4138b8540"
-               },
-               {
-                  "sha": "330b283948f946ed76e8159c2329a22bea68abd1",
-                  "author": "Bartlomiej Gmerek",
-                  "timestamp": 1733484899,
-                  "message": "<p>chore: Bumps project version to 1.6.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-rock/pull/33\">#33</a>)</p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-rock/commit/330b283948f946ed76e8159c2329a22bea68abd1"
+                  "id": 138469242,
+                  "version": "v1.0.0",
+                  "timestamp": 1706170248,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-traefik-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-traefik-k8s/compare/v1.0.0...main"
                }
             ],
-            "ciActions": [],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
          {
-            "name": "ubuntu-router-rock",
+            "name": "terraform-juju-sdcore-nssf-k8s",
             "newCommits": 0,
-            "url": "https://github.com/canonical/ubuntu-router-rock",
+            "url": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s",
+            "releases": [
+               {
+                  "id": 138138189,
+                  "version": "v1.0.0",
+                  "timestamp": 1706012938,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-nssf-k8s/compare/v1.0.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "terraform-juju-sdcore-pcf-k8s",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s",
+            "releases": [
+               {
+                  "id": 138132270,
+                  "version": "v1.0.0",
+                  "timestamp": 1706010669,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-pcf-k8s/compare/v1.0.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "terraform-juju-sdcore-amf-k8s",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/terraform-juju-sdcore-amf-k8s",
+            "releases": [
+               {
+                  "id": 138125116,
+                  "version": "v1.0.0",
+                  "timestamp": 1706007504,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-amf-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-amf-k8s/compare/v1.0.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "terraform-juju-sdcore-nrf-k8s",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/terraform-juju-sdcore-nrf-k8s",
+            "releases": [
+               {
+                  "id": 138112661,
+                  "version": "v1.0.0",
+                  "timestamp": 1706002466,
+                  "title": "",
+                  "body": "<p>v1.0.0</p>\n",
+                  "url": "https://github.com/canonical/terraform-juju-sdcore-nrf-k8s/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/canonical/terraform-juju-sdcore-nrf-k8s/compare/v1.0.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "sdcore-upf-bess-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sdcore-upf-bess-rock",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "55a20f983706d7d1099f2fc3a40e88c35f270771",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1733872863,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/ubuntu-router-rock/pull/16\">#16</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.3.0 to 2.3.1.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.3.0...v2.3.1\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/55a20f983706d7d1099f2fc3a40e88c35f270771"
+                  "sha": "c834825bb378d9aa0098257f748b43b40147f51a",
+                  "author": "Patricia Reinoso",
+                  "timestamp": 1734429152,
+                  "message": "<p>chore: workflows trigger only on PR events, and not on push (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/41\">#41</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/c834825bb378d9aa0098257f748b43b40147f51a"
                },
                {
-                  "sha": "6ea8f44c8559df5d59e94d93da16b7f5e022bc9a",
+                  "sha": "9c894e036d6989e0c48bbb7b8c6f3411393941bd",
                   "author": "dependabot[bot]",
-                  "timestamp": 1732923707,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.2.0 to 2.3.0 (<a target=\"_blank\" href=\"https://github.com/canonical/ubuntu-router-rock/pull/15\">#15</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.2.0 to 2.3.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.2.0...v2.3.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/6ea8f44c8559df5d59e94d93da16b7f5e022bc9a"
+                  "timestamp": 1733906290,
+                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.3.0 to 2.3.1 (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/39\">#39</a>)</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/9c894e036d6989e0c48bbb7b8c6f3411393941bd"
                },
                {
-                  "sha": "117549f478e56c4e0569c9ff88315b7849ca8335",
-                  "author": "dependabot[bot]",
-                  "timestamp": 1732319390,
-                  "message": "<p>chore: bump canonical/sdcore-github-workflows from 2.1.0 to 2.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/ubuntu-router-rock/pull/14\">#14</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/canonical/sdcore-github-workflows\">canonical/sdcore-github-workflows</a> from 2.1.0 to 2.2.0.\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/releases\">Release notes</a>\n- <a href=\"https://github.com/canonical/sdcore-github-workflows/compare/v2.1.0...v2.2.0\">Commits</a></p>\n\n<hr>\n\n<p>updated-dependencies:\n- dependency-name: canonical/sdcore-github-workflows\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n&hellip;</p>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/ubuntu-router-rock/commit/117549f478e56c4e0569c9ff88315b7849ca8335"
+                  "sha": "9feb05a401f42107516d1c641053596cca4113cb",
+                  "author": "Bartlomiej Gmerek",
+                  "timestamp": 1733485309,
+                  "message": "<p>chore: Bumps project version to 2.0.0 after branching (<a target=\"_blank\" href=\"https://github.com/canonical/sdcore-upf-bess-rock/pull/38\">#38</a>)</p>\n",
+                  "url": "https://github.com/canonical/sdcore-upf-bess-rock/commit/9feb05a401f42107516d1c641053596cca4113cb"
                }
             ],
             "ciActions": [],
