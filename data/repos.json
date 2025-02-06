@@ -121,7 +121,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 5857,
+            "newCommits": 5859,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -8920,7 +8920,373 @@
                   "url": "https://github.com/canonical/coredns-rock/commit/f3cfe29475e00b7fbf7f47f8b5077b9cc9deb03a"
                }
             ],
-            "ciActions": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "cri-o-snap",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/cri-o-snap",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "1f3bd40042ca7e36129b8c1b762b2ffa824230fc",
+                  "author": "Stefan Hammer",
+                  "timestamp": 1696255669,
+                  "message": "<p>Add basic README documentation (<a target=\"_blank\" href=\"https://github.com/canonical/cri-o-snap/pull/5\">#5</a>)</p>\n",
+                  "url": "https://github.com/canonical/cri-o-snap/commit/1f3bd40042ca7e36129b8c1b762b2ffa824230fc"
+               },
+               {
+                  "sha": "d95b20ab7267db3c0d9d1663142cfbff4a9567f3",
+                  "author": "Stefan Hammer",
+                  "timestamp": 1696255627,
+                  "message": "<p>Add testing (<a target=\"_blank\" href=\"https://github.com/canonical/cri-o-snap/pull/4\">#4</a>)</p>\n\n<ul>\n<li>Add cri-o snap integration testing</li>\n</ul>\n\n<p>Testing cri-o snap service integrated with microk8s. Basic integration\ntests configures microk8s to use crio container runtime, and then\nlaunches the nginx app. Running pod is verified to be using cri-o.</p>\n",
+                  "url": "https://github.com/canonical/cri-o-snap/commit/d95b20ab7267db3c0d9d1663142cfbff4a9567f3"
+               },
+               {
+                  "sha": "2bc913a6db5a20b1e1cbfda54051204f7da73845",
+                  "author": "Stefan Hammer",
+                  "timestamp": 1695750502,
+                  "message": "<p>Add cri-o and it&rsquo;s dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/cri-o-snap/pull/3\">#3</a>)</p>\n\n<ul>\n<li><p>Add cri-o and it&rsquo;s dependencies</p></li>\n\n<li><p>fix: cri-o daemon service</p></li>\n</ul>\n\n<p>Added an app wrapper to handle correctly setting up PATH and\nLD_LIBRARY_PATH, as well as creating required directories.</p>\n",
+                  "url": "https://github.com/canonical/cri-o-snap/commit/2bc913a6db5a20b1e1cbfda54051204f7da73845"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "csi-driver-nfs-rocks",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/csi-driver-nfs-rocks",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "6292e06237939a0fe7cc1886c1ef86827ee63e4b",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1724055631,
+                  "message": "<p>Adds NFS CSI plugin integration test (<a target=\"_blank\" href=\"https://github.com/canonical/csi-driver-nfs-rocks/pull/7\">#7</a>)</p>\n\n<p>The Helm chart depends on a few other CSI components. We have rocks for\nthese, and we&rsquo;ll be using them in the helm chart as well.</p>\n\n<p>The test will also check the Pod probes to make sure that the service is\nup, without waiting for Kubernetes to do the check.</p>\n\n<p>The test will also spawn a NFS server, and create an NGINX Pod requiring\na NFS volume.</p>\n",
+                  "url": "https://github.com/canonical/csi-driver-nfs-rocks/commit/6292e06237939a0fe7cc1886c1ef86827ee63e4b"
+               },
+               {
+                  "sha": "1a520e26f86d508253c95e16b013821e05bf6155",
+                  "author": "Maciek Gołaszewski",
+                  "timestamp": 1723103158,
+                  "message": "<p>Update pull_request.yaml after KU-1195 (<a target=\"_blank\" href=\"https://github.com/canonical/csi-driver-nfs-rocks/pull/9\">#9</a>)</p>\n",
+                  "url": "https://github.com/canonical/csi-driver-nfs-rocks/commit/1a520e26f86d508253c95e16b013821e05bf6155"
+               },
+               {
+                  "sha": "6e2e270e20462d801caa2893c817f24b1e80517a",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1722924308,
+                  "message": "<p>Updates the nfsplugin rock (<a target=\"_blank\" href=\"https://github.com/canonical/csi-driver-nfs-rocks/pull/8\">#8</a>)</p>\n\n<p>The nfsplugin executable currently fails because it has no /tmp folder.\nAdditionally, it fails when it tries to open files in the mentioned\nfolder, or when trying to listen to unix:///csi/csi.sock.</p>\n",
+                  "url": "https://github.com/canonical/csi-driver-nfs-rocks/commit/6e2e270e20462d801caa2893c817f24b1e80517a"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "csi-rocks",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/csi-rocks",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "f730c40d87df69d20ddb60c57e2297027329e6c7",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1726126031,
+                  "message": "<p>Adds csi-provisioner 3.6.4 rock (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/22\">#22</a>)</p>\n\n<p>Based on the 4.0.0 rock and upstream Dockerfile. Note that longhornio/csi-provisioner:v3.6.4\nis only a retag of the Kubernetes official image.</p>\n\n<p>Updates unit test to also test the new image.</p>\n",
+                  "url": "https://github.com/canonical/csi-rocks/commit/f730c40d87df69d20ddb60c57e2297027329e6c7"
+               },
+               {
+                  "sha": "d0c27ce139b2ed8674603693529df2e2f3af3ed0",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1726125972,
+                  "message": "<p>Adds csi-node-driver-registrar 2.9.2 rock (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/21\">#21</a>)</p>\n\n<p>Based on the 2.10.0 rock and upstream Dockerfile. The golang version was\nupdated. Note that longhornio/csi-node-driver-registrar:v2.9.2 is only a\nretag of the Kubernetes official image.</p>\n\n<p>Updates unit test to also test the new image.</p>\n",
+                  "url": "https://github.com/canonical/csi-rocks/commit/d0c27ce139b2ed8674603693529df2e2f3af3ed0"
+               },
+               {
+                  "sha": "40959d10f6305340421b6bf8c21ed0c101b1e1c3",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1726125931,
+                  "message": "<p>Adds csi-snapshotter 6.3.4 rock (<a target=\"_blank\" href=\"https://github.com/canonical/csi-rocks/pull/20\">#20</a>)</p>\n\n<p>Based on the 6.3.3 rock and upstream Dockerfile. Note that\nlonghornio/csi-snapshotter:v6.3.4 is only a retag of the Kubernetes official image.</p>\n\n<p>Updates unit test to also test the new image.</p>\n",
+                  "url": "https://github.com/canonical/csi-rocks/commit/40959d10f6305340421b6bf8c21ed0c101b1e1c3"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "docker-registry-charm",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/docker-registry-charm",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "9323361fb116cf99910651e7ee53f9081158f0e4",
+                  "author": "Adam Dyess",
+                  "timestamp": 1726232533,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/docker-registry-charm/pull/71\">#71</a> from alex-ramanau/add_redirect_option</p>\n\n<p>Added explicit configuration option <code>storage-redirect-disable</code></p>\n",
+                  "url": "https://github.com/canonical/docker-registry-charm/commit/9323361fb116cf99910651e7ee53f9081158f0e4"
+               },
+               {
+                  "sha": "330e42324277e06d6cbcdf50920e7006f9b9437d",
+                  "author": "Alex Ramanau",
+                  "timestamp": 1726126407,
+                  "message": "<p>Fixed broken GH workflow</p>\n",
+                  "url": "https://github.com/canonical/docker-registry-charm/commit/330e42324277e06d6cbcdf50920e7006f9b9437d"
+               },
+               {
+                  "sha": "8c6967beef21dc5cc1f159e4a3f13a89bfa21856",
+                  "author": "Alex Ramanau",
+                  "timestamp": 1726045099,
+                  "message": "<p>Added explicit configuration option <code>storage-redirect-disable</code> + fix linter issues</p>\n",
+                  "url": "https://github.com/canonical/docker-registry-charm/commit/8c6967beef21dc5cc1f159e4a3f13a89bfa21856"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "envoy-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/envoy-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "1bce7579f11884d489ae4926a82f30a77c9b8261",
+                  "author": "Adam Dyess",
+                  "timestamp": 1729104498,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/envoy-rock/pull/18\">#18</a> from claudiubelu/fixes-envoy-arm64</p>\n\n<p>Fixes and enables arm64 build</p>\n",
+                  "url": "https://github.com/canonical/envoy-rock/commit/1bce7579f11884d489ae4926a82f30a77c9b8261"
+               },
+               {
+                  "sha": "26164e9f553217430dc363f26a6915d030897b1e",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1729089692,
+                  "message": "<p>Fixes and enables arm64 build</p>\n\n<p>It seems that the the libxml2 build package is missing for the arm64\nbuild, while it is not missing for the amd64 one.</p>\n",
+                  "url": "https://github.com/canonical/envoy-rock/commit/26164e9f553217430dc363f26a6915d030897b1e"
+               },
+               {
+                  "sha": "94d0c2fe8626ef2a86a7f03ec3048d0958198692",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1729083328,
+                  "message": "<p>Fixes envoy rock build (<a target=\"_blank\" href=\"https://github.com/canonical/envoy-rock/pull/17\">#17</a>)</p>\n\n<p>The checksum of quiche-envoy-integration changed, causing the envoy build to fail.</p>\n",
+                  "url": "https://github.com/canonical/envoy-rock/commit/94d0c2fe8626ef2a86a7f03ec3048d0958198692"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "etcd-operator",
+            "newCommits": 49,
+            "url": "https://github.com/canonical/etcd-operator",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "v0.9.4",
+                  "sha": "c8a1c646f3a944a8173653c77dfcff38904ba2ff",
+                  "body": "<p>release: bump version to v0.9.4 and update changelog (<a target=\"_blank\" href=\"https://github.com/canonical/etcd-operator/pull/2060\">#2060</a>)</p>\n\n<p>Signed-off-by: Sam Batschelet <a href=\"mailto:sbatsche@redhat.com\">sbatsche@redhat.com</a></p>\n",
+                  "timestamp": 1551313429,
+                  "url": "https://github.com/canonical/etcd-operator/releases/tag/v0.9.4",
+                  "compareUrl": "https://github.com/canonical/etcd-operator/compare/master...v0.9.4"
+               },
+               {
+                  "name": "v0.9.3",
+                  "sha": "44f2671c8d74cad373282a6ba714071336a69452",
+                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/etcd-operator/pull/2014\">#2014</a> from hexfusion/release-v0.9.3</p>\n\n<p>release: bump version to v0.9.3 and update changelog</p>\n",
+                  "timestamp": 1542830875,
+                  "url": "https://github.com/canonical/etcd-operator/releases/tag/v0.9.3",
+                  "compareUrl": "https://github.com/canonical/etcd-operator/compare/master...v0.9.3"
+               },
+               {
+                  "name": "v0.9.2",
+                  "sha": "a0032c1f9a708d2164f3f03109ece06c5439df80",
+                  "body": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/etcd-operator/pull/1951\">#1951</a> from hasbro17/haseeb/release-v0.9.2</p>\n\n<p>release: bump version to v0.9.2 and update changelog</p>\n",
+                  "timestamp": 1523562322,
+                  "url": "https://github.com/canonical/etcd-operator/releases/tag/v0.9.2",
+                  "compareUrl": "https://github.com/canonical/etcd-operator/compare/master...v0.9.2"
+               }
+            ],
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "etcd-snaps",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/etcd-snaps",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "3fa8df6aaacb32add9fb40ac297894765f6b0746",
+                  "author": "Tim Van Steenburgh",
+                  "timestamp": 1585254247,
+                  "message": "<p>Bring snapcraft.yaml up-to-date for master/edge builds. (<a target=\"_blank\" href=\"https://github.com/canonical/etcd-snaps/pull/21\">#21</a>)</p>\n\n<p>Also add Github Action for building/testing the snap.</p>\n",
+                  "url": "https://github.com/canonical/etcd-snaps/commit/3fa8df6aaacb32add9fb40ac297894765f6b0746"
+               },
+               {
+                  "sha": "ae2e58b60a6ee70b17dec9fa3ca231d2ebcbae31",
+                  "author": "George Kraft",
+                  "timestamp": 1531952556,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/etcd-snaps/pull/13\">#13</a> from juju-solutions/bug/moved</p>\n\n<p>etcd and etcdctl changed paths</p>\n",
+                  "url": "https://github.com/canonical/etcd-snaps/commit/ae2e58b60a6ee70b17dec9fa3ca231d2ebcbae31"
+               },
+               {
+                  "sha": "5075911913cfdb07f6fefa5841f9d20a1798198a",
+                  "author": "Konstantinos Tsakalozos",
+                  "timestamp": 1531390398,
+                  "message": "<p>etcd and etcdctl changed paths</p>\n",
+                  "url": "https://github.com/canonical/etcd-snaps/commit/5075911913cfdb07f6fefa5841f9d20a1798198a"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "falco-rocks",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/falco-rocks",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "2aff97780a4d9bb368b59f695c9fbadba25bc196",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1730806458,
+                  "message": "<p>Changes falcosidekick and falcosidekick-ui rock bases to bare (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/21\">#21</a>)</p>\n\n<p>Switching to a bare-based image will reduce the overall image size\nand reduces attack surface area.</p>\n\n<p>We can no longer use ensure_image_contains_paths to check if files exist\nin the rock images, since they are now bare-based. Instead, we can use\nensure_image_contains_paths_bare, which checks the image layers instead.\nBecause of this, we need sufficient permissions to check the\n/var/lib/docker folder.</p>\n\n<p>Adds additional check for falcosidekick-ui during the integration test.</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/2aff97780a4d9bb368b59f695c9fbadba25bc196"
+               },
+               {
+                  "sha": "df7641f068e33ae94a914a0d3a8fb21bf9ddb1a6",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1729766176,
+                  "message": "<p>Adds falcosidekick-ui 2.2.0 rock (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/20\">#20</a>)</p>\n\n<p>Based on the Dockerfile: Based on: <a href=\"https://github.com/falcosecurity/falcosidekick-ui/blob/v2.2.0/Dockerfile\">https://github.com/falcosecurity/falcosidekick-ui/blob/v2.2.0/Dockerfile</a></p>\n\n<p>Added sanity test for the new rock image, and included it in the\nintegration test (deployed alongside falcosidekick).</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/df7641f068e33ae94a914a0d3a8fb21bf9ddb1a6"
+               },
+               {
+                  "sha": "2685fcac0d2910889b5b306f145d12eea9ee3563",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1729066647,
+                  "message": "<p>Adds falco-exporter to the integration test (<a target=\"_blank\" href=\"https://github.com/canonical/falco-rocks/pull/19\">#19</a>)</p>\n\n<p>falco-exporter requires falco to have grpc enabled, according to the\nHelm chart documentation.</p>\n",
+                  "url": "https://github.com/canonical/falco-rocks/commit/2685fcac0d2910889b5b306f145d12eea9ee3563"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "fluent-bit-rock",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/fluent-bit-rock",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "a4d277281e210f8b944ee361f046656ddf630b12",
+                  "author": "Maciek Gołaszewski",
+                  "timestamp": 1724072235,
+                  "message": "<p>Update pull_request.yaml after KU-1195 (<a target=\"_blank\" href=\"https://github.com/canonical/fluent-bit-rock/pull/11\">#11</a>)</p>\n",
+                  "url": "https://github.com/canonical/fluent-bit-rock/commit/a4d277281e210f8b944ee361f046656ddf630b12"
+               },
+               {
+                  "sha": "09c889d9f79338a0d9b5ff806aec904f623fee5c",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1721812033,
+                  "message": "<p>Tests all the fluent-bit versions (<a target=\"_blank\" href=\"https://github.com/canonical/fluent-bit-rock/pull/8\">#8</a>)</p>\n\n<p>Adds integration tests for all the currently supported fluent-bit\nversions.</p>\n",
+                  "url": "https://github.com/canonical/fluent-bit-rock/commit/09c889d9f79338a0d9b5ff806aec904f623fee5c"
+               },
+               {
+                  "sha": "ad44c165c710375484e85b9755f1573927bbd15f",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1721722335,
+                  "message": "<p>sanity: Uses k8s_test_harness utils (<a target=\"_blank\" href=\"https://github.com/canonical/fluent-bit-rock/pull/7\">#7</a>)</p>\n\n<p>The k8s_test_harness contains commonly used util functions. This\nwill simplify the tests.</p>\n",
+                  "url": "https://github.com/canonical/fluent-bit-rock/commit/ad44c165c710375484e85b9755f1573927bbd15f"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "go-migrator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/go-migrator",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "359c134a461da7cd447bbaeea1064218dcb857c7",
+                  "author": "Angelos Kolaitis",
+                  "timestamp": 1684770838,
+                  "message": "<p>List response already lists all data (<a target=\"_blank\" href=\"https://github.com/canonical/go-migrator/pull/4\">#4</a>)</p>\n",
+                  "url": "https://github.com/canonical/go-migrator/commit/359c134a461da7cd447bbaeea1064218dcb857c7"
+               },
+               {
+                  "sha": "3ca9d3f9cfdc4326e4a2f131776253797913943f",
+                  "author": "Angelos Kolaitis",
+                  "timestamp": 1667397977,
+                  "message": "<p>do not defer closing files until the end of the loop (<a target=\"_blank\" href=\"https://github.com/canonical/go-migrator/pull/2\">#2</a>)</p>\n",
+                  "url": "https://github.com/canonical/go-migrator/commit/3ca9d3f9cfdc4326e4a2f131776253797913943f"
+               },
+               {
+                  "sha": "6347e23bd73902835f053cd928f2bb0e73f1524f",
+                  "author": "Angelos Kolaitis",
+                  "timestamp": 1658903503,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/go-migrator/pull/1\">#1</a> from canonical/MK-303/code-cleanup</p>\n\n<p>Code clean-up and improvements to error checking</p>\n",
+                  "url": "https://github.com/canonical/go-migrator/commit/6347e23bd73902835f053cd928f2bb0e73f1524f"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "harbor-rocks",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/harbor-rocks",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "3370593d6b5ce3d6f1b9db26035489fc4ce94703",
+                  "author": "Maciek Gołaszewski",
+                  "timestamp": 1723796503,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/harbor-rocks/pull/24\">#24</a> from canonical/story/KU-1195/update-workflow-after-changes</p>\n\n<p>Update pull_request.yaml after KU-1195</p>\n",
+                  "url": "https://github.com/canonical/harbor-rocks/commit/3370593d6b5ce3d6f1b9db26035489fc4ce94703"
+               },
+               {
+                  "sha": "03638d07db4410632916859eb88cafe306becf17",
+                  "author": "Maciek Gołaszewski",
+                  "timestamp": 1723645090,
+                  "message": "<p>Update .github/workflows/pull_request.yaml</p>\n",
+                  "url": "https://github.com/canonical/harbor-rocks/commit/03638d07db4410632916859eb88cafe306becf17"
+               },
+               {
+                  "sha": "a0ef320f2b0574a94aa1ac90cf928390280e7eb2",
+                  "author": "Maciek Gołaszewski",
+                  "timestamp": 1723185567,
+                  "message": "<p>Update .github/workflows/pull_request.yaml</p>\n",
+                  "url": "https://github.com/canonical/harbor-rocks/commit/a0ef320f2b0574a94aa1ac90cf928390280e7eb2"
+               }
+            ],
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -12604,8 +12970,8 @@
                   {
                      "track": "1.6",
                      "channel": "edge",
-                     "revision": 773,
-                     "timestamp": 1738727439,
+                     "revision": 774,
+                     "timestamp": 1738834092,
                      "base": ""
                   },
                   {
