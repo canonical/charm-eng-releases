@@ -9776,6 +9776,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "d5f52206bcee1b2a61d8d6bc507cf3a881954c2a",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1738847631,
+                  "message": "<p>Fix custom containerd paths (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1046\">#1046</a>)</p>\n\n<ul>\n<li>Fix custom containerd paths</li>\n</ul>\n\n<p>For some reason, there are two almost identical kubelet containerd\nflags and we have to set both:</p>\n\n<pre><code>$ snap logs k8s.kubelet -n 30000 | grep FLAG | grep containerd\n      FLAG: --container-runtime-endpoint=&quot;/home/ubuntu/containerd/k8s-containerd/run/containerd/containerd.sock&quot;\n      FLAG: --containerd=&quot;/run/containerd/containerd.sock&quot;\n      FLAG: --containerd-namespace=&quot;k8s.io&quot;\n</code></pre>\n\n<pre><code>$ kubelet -h | grep containerd\n      --container-runtime-endpoint string    The endpoint of container runtime service.\n      --containerd string                    containerd endpoint\n</code></pre>\n\n<p>This change will:</p>\n\n<ul>\n<li><p>pass the missing containerd flag</p></li>\n\n<li><p>update the e2e test for custom containerd paths to check if the cluster\nactually becomes available after bootstrap</p></li>\n\n<li><p>update the dev doc to enable the net, dns and local storage features</p>\n\n<ul>\n<li>do the same for the e2e test</li>\n</ul></li>\n\n<li><p>Update unit tests</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/d5f52206bcee1b2a61d8d6bc507cf3a881954c2a"
+               },
+               {
                   "sha": "eec9f7223e1f8a3eb2ed0ffc4ca0b920629883f4",
                   "author": "Lucian Petrut",
                   "timestamp": 1738749403,
@@ -9788,13 +9795,6 @@
                   "timestamp": 1738702555,
                   "message": "<p>Remove obsolete loadbalancer feature check (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1037\">#1037</a>)</p>\n\n<p>Historically, we used the Cilium loadbalancer for the loadbalancer\nfeature. With the move to Metallb, the dependency to the network feature\nis no longer required.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/6c332dcbe1bf16b22a4da82497f3eb839b6c0aca"
-               },
-               {
-                  "sha": "391e8cd17745de15b9fb8f0f56c5585b482672df",
-                  "author": "Mateo Florido",
-                  "timestamp": 1738598035,
-                  "message": "<p>fix: Use <code>ControlPlaneJoinConfig</code> certificates during Control Plane Join (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1029\">#1029</a>)</p>\n\n<p>Use certificates from join config while a new control plane is joining.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/391e8cd17745de15b9fb8f0f56c5585b482672df"
                }
             ],
             "ciActions": [
@@ -19930,6 +19930,74 @@
       "team": "IS",
       "repos": [
          {
+            "name": "discourse-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/discourse-k8s-operator",
+            "releases": [
+               {
+                  "id": 198817496,
+                  "version": "rev183",
+                  "timestamp": 1738846467,
+                  "title": "Revision 183",
+                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 172</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:02 UTC on 6 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/312\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/312\">#312</a></a></li>\n<li>Use latest version supporting 3.3 by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/317\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/317\">#317</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/317\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/317\">#317</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev181...rev183\">https://github.com/canonical/discourse-k8s-operator/compare/rev181&hellip;rev183</a></p>\n",
+                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev183",
+                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev183...main"
+               },
+               {
+                  "id": 197558223,
+                  "version": "rev182",
+                  "timestamp": 1738238323,
+                  "title": "Revision 182",
+                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 171</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:07 UTC on 30 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/312\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/312\">#312</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev181...rev182\">https://github.com/canonical/discourse-k8s-operator/compare/rev181&hellip;rev182</a></p>\n",
+                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev182",
+                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev182...main"
+               },
+               {
+                  "id": 197541376,
+                  "version": "rev181",
+                  "timestamp": 1738232687,
+                  "title": "Revision 181",
+                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 170</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:32 UTC on 30 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.18.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/313\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/313\">#313</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev180...rev181\">https://github.com/canonical/discourse-k8s-operator/compare/rev180&hellip;rev181</a></p>\n",
+                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev181",
+                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev181...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/discourse-k8s-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/discourse-k8s-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "discourse-k8s",
+               "url": "https://charmhub.io/discourse-k8s",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 179,
+                     "timestamp": 1737082893,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 183,
+                     "timestamp": 1738846975,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "synapse-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/synapse-operator",
@@ -20892,74 +20960,6 @@
             "commits": null,
             "ciActions": [],
             "charm": null,
-            "snap": null
-         },
-         {
-            "name": "discourse-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/discourse-k8s-operator",
-            "releases": [
-               {
-                  "id": 197558223,
-                  "version": "rev182",
-                  "timestamp": 1738238323,
-                  "title": "Revision 182",
-                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 171</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:07 UTC on 30 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.10.6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/312\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/312\">#312</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev181...rev182\">https://github.com/canonical/discourse-k8s-operator/compare/rev181&hellip;rev182</a></p>\n",
-                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev182",
-                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev182...main"
-               },
-               {
-                  "id": 197541376,
-                  "version": "rev181",
-                  "timestamp": 1738232687,
-                  "title": "Revision 181",
-                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 170</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:32 UTC on 30 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.18.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/313\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/313\">#313</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev180...rev181\">https://github.com/canonical/discourse-k8s-operator/compare/rev180&hellip;rev181</a></p>\n",
-                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev181",
-                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev181...main"
-               },
-               {
-                  "id": 195746853,
-                  "version": "rev180",
-                  "timestamp": 1737428693,
-                  "title": "Revision 180",
-                  "body": "<p>resources:\n    -  discourse-image: undefined\n       resource-revision: 169</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:12 UTC on 21 Jan 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Feat(): Set <code>UNICORN_SIDEKIQ_MAX_RSS</code> env variable by <a target=\"_blank\" href=\"https://github.com/alithethird\">@alithethird</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/307\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/307\">#307</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.10.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/308\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/308\">#308</a></a></li>\n<li>chore(licence): Update licence years. by <a target=\"_blank\" href=\"https://github.com/alithethird\">@alithethird</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/309\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/309\">#309</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.10.5 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/310\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/310\">#310</a></a></li>\n<li>Add changelog by <a target=\"_blank\" href=\"https://github.com/alithethird\">@alithethird</a> in <a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/311\"><a target=\"_blank\" href=\"https://github.com/canonical/discourse-k8s-operator/pull/311\">#311</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/discourse-k8s-operator/compare/rev179...rev180\">https://github.com/canonical/discourse-k8s-operator/compare/rev179&hellip;rev180</a></p>\n",
-                  "url": "https://github.com/canonical/discourse-k8s-operator/releases/tag/rev180",
-                  "compareUrl": "https://github.com/canonical/discourse-k8s-operator/compare/rev180...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/discourse-k8s-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/discourse-k8s-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "discourse-k8s",
-               "url": "https://charmhub.io/discourse-k8s",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 179,
-                     "timestamp": 1737082893,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 182,
-                     "timestamp": 1738238841,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
             "snap": null
          },
          {
@@ -22204,6 +22204,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "caac1811c7a65f2ab5b453c98a6bef0ec63c061a",
+                  "author": "David Andersson",
+                  "timestamp": 1738846888,
+                  "message": "<p>add changelog entry and update version (<a target=\"_blank\" href=\"https://github.com/canonical/paas-charm/pull/37\">#37</a>)</p>\n",
+                  "url": "https://github.com/canonical/paas-charm/commit/caac1811c7a65f2ab5b453c98a6bef0ec63c061a"
+               },
+               {
                   "sha": "5aeb3223f848378b2efbe32317bddf9d81f24fa5",
                   "author": "Ali UĞUR",
                   "timestamp": 1738840597,
@@ -22216,13 +22223,6 @@
                   "timestamp": 1738743473,
                   "message": "<p>Relation parameter refactor (<a target=\"_blank\" href=\"https://github.com/canonical/paas-charm/pull/36\">#36</a>)</p>\n\n<ul>\n<li><p>Chore(Refactor): Refactor relation parameter generation.</p></li>\n\n<li><p>Chore(doc): Update tutorial link</p></li>\n\n<li><p>Chore(): Remove collector function and generate parameters explicitly</p></li>\n\n<li><p>Chore(): Unify generate function,</p></li>\n\n<li><p>Chore(): Update relation type</p></li>\n\n<li><p>Chore(): Remove &ldquo;</p></li>\n\n<li><p>Chore(fmt): Remove typcasting</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/paas-charm/commit/872cac05bfae06caab4c14b71813b099b517df1c"
-               },
-               {
-                  "sha": "7985e3b66f66999239c70ea11303ffdd657a4212",
-                  "author": "Ali UĞUR",
-                  "timestamp": 1738649891,
-                  "message": "<p>Libs(Update): Update all libs to the latest version (<a target=\"_blank\" href=\"https://github.com/canonical/paas-charm/pull/31\">#31</a>)</p>\n\n<ul>\n<li><p>Libs(Update): Update all libs to the latest version</p></li>\n\n<li><p>Lint(): Format code to make linter happy</p></li>\n\n<li><p>Chore(fmt): Format example code</p></li>\n\n<li><p>Doc(): Fix broken link</p></li>\n\n<li><p>Doc(): Fix broken link</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/paas-charm/commit/7985e3b66f66999239c70ea11303ffdd657a4212"
                }
             ],
             "ciActions": [],
