@@ -9579,6 +9579,27 @@
                "releases": [
                   {
                      "track": "1.32",
+                     "channel": "stable",
+                     "revision": 342,
+                     "timestamp": 1739225449,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.32",
+                     "channel": "stable",
+                     "revision": 343,
+                     "timestamp": 1739225452,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.32",
+                     "channel": "stable",
+                     "revision": 344,
+                     "timestamp": 1739225454,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.32",
                      "channel": "candidate",
                      "revision": 179,
                      "timestamp": 1734639286,
@@ -9768,6 +9789,7 @@
                   }
                ],
                "channels": [
+                  "stable",
                   "candidate",
                   "beta",
                   "edge"
@@ -25005,6 +25027,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "19e09bc616cf6a7e919fd63bba760598f7cdabd1",
+                  "author": "Samuel Allan",
+                  "timestamp": 1739225191,
+                  "message": "<p>Build for prod to improve tailscale version (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/52\">#52</a>)</p>\n\n<p>By using the upstream production build script,\nwe get a neater version output from <code>tailscale version</code>.</p>\n\n<p>Before (note the <code>-dev20241211</code> postfix):</p>\n\n<pre><code>$ tailscale version --daemon --upstream\nClient: 1.78.3-dev20241211\n  tailscale commit: 1b41fdeddb6598b35ba15cc6b07740e0cc0e8411\n  go version: go1.23.4\nDaemon: 1.78.3-dev20241211-t1b41fdedd\nUpstream: 1.80.0\n</code></pre>\n\n<p>Now with this patch:</p>\n\n<pre><code>$ tailscale version --daemon --upstream\nClient: 1.78.3\n  tailscale commit: 1b41fdeddb6598b35ba15cc6b07740e0cc0e8411\n  go version: go1.23.5\nDaemon: 1.78.3-t1b41fdedd\nUpstream: 1.80.0\n</code></pre>\n\n<p>Fixes: <a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/51\">#51</a></p>\n",
+                  "url": "https://github.com/canonical/tailscale-snap/commit/19e09bc616cf6a7e919fd63bba760598f7cdabd1"
+               },
+               {
                   "sha": "292e03b8ee2485280a8422ccb429b80358ac7845",
                   "author": "Samuel Allan",
                   "timestamp": 1739159859,
@@ -25017,13 +25046,6 @@
                   "timestamp": 1739153640,
                   "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/55\">#55</a>)</p>\n\n<ul>\n<li><p>update pyproject.toml</p></li>\n\n<li><p>update pyproject.toml</p></li>\n\n<li><p>update pyproject.toml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/tailscale-snap/commit/74a240038c66b4e3a3531bbd50016f338b92272f"
-               },
-               {
-                  "sha": "7aa926c5785420cd5da63522afed63616fc6167b",
-                  "author": "Samuel Allan",
-                  "timestamp": 1737005203,
-                  "message": "<p>Revert &ldquo;Don&rsquo;t restart service on snap refresh (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/44\">#44</a>)&rdquo; (<a target=\"_blank\" href=\"https://github.com/canonical/tailscale-snap/pull/47\">#47</a>)</p>\n\n<p>This reverts commit 05df0fa0a6d9b21ba1d94175fef79081fda86920.</p>\n",
-                  "url": "https://github.com/canonical/tailscale-snap/commit/7aa926c5785420cd5da63522afed63616fc6167b"
                }
             ],
             "ciActions": [],
