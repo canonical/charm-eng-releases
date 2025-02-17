@@ -9881,6 +9881,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "f4b8f70b740683d622b3a96c480ce16d1ab6a37b",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1739821409,
+                  "message": "<p>Fix test_gateway retries (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1080\">#1080</a>)</p>\n\n<p>test_gateway performs a few retries, waiting for the service IPs\nto be set.</p>\n\n<p>The problem is that the checks use &ldquo;is None&rdquo; syntax, which won&rsquo;t\nproperly handle empty strings. For this reason, the retry loop\nstops prematurely, causing test flakiness.</p>\n\n<p>Execute command [&lsquo;curl&rsquo;, &ldquo;, &lsquo;-H&rsquo;, &lsquo;Host: foo.bar.com&rsquo;]\n   in instance k8s-integration-a6f840-37</p>\n\n<p>In general &ldquo;is None&rdquo; / &ldquo;is not None&rdquo; checks should be avoided.\nWe&rsquo;ll update the k8s-snap tests accordingly.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/f4b8f70b740683d622b3a96c480ce16d1ab6a37b"
+               },
+               {
                   "sha": "e52ee58bd6b2008a9d53263e36e16f0b76f10798",
                   "author": "Berkay Tekin Öz",
                   "timestamp": 1739793006,
@@ -9893,13 +9900,6 @@
                   "timestamp": 1739787394,
                   "message": "<p>Adds non-default coredns ServiceAccount (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1070\">#1070</a>)</p>\n\n<p>The CIS 5.1.5 rule specifies: &ldquo;Ensure that default service accounts are not actively used.&rdquo;</p>\n\n<p>Currently, coredns is using the default service account. If this rule is\nbeing enforced, coredns will no longer be able to function properly, as\nit won&rsquo;t have the expected service account token mounted.</p>\n\n<p>Adds an assertion that the coredns deployment is using the appropriate\nservice account in the integration tests.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/f7f009ba144f959a9445d75a5a09d41b12695c3c"
-               },
-               {
-                  "sha": "121ddbda5c22aeeafbdb932da93c27854508f91f",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1739784499,
-                  "message": "<p>actions: Adds backport github action (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1058\">#1058</a>)</p>\n\n<p>Sets default action parameters explicitly.</p>\n\n<p>In order to backport a PR, the PR should have the an appropriate label:\n&ldquo;backport branch-name&rdquo; (e.g.: &ldquo;backport 1.32&rdquo;). When the PR merges, the\ngithub action will automatically backport it. The label can also be\nadded after the PR merges, after which a user should comment /backport\nin order to trigger the action.</p>\n\n<p>The github-actions bot does not trigger any other CI workflows, but we&rsquo;d\nlike to have tests running for the backports as well. Which is why the\nbackports will be made with a different account.</p>\n\n<p>Additionally, we&rsquo;re now adding the &ldquo;automerge&rdquo; label to the new backports,\nallowing the automerger action to merge the PR once the tests pass.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/121ddbda5c22aeeafbdb932da93c27854508f91f"
                }
             ],
             "ciActions": [
