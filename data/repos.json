@@ -2311,7 +2311,7 @@
          },
          {
             "name": "pebble",
-            "newCommits": 9,
+            "newCommits": 10,
             "url": "https://github.com/canonical/pebble",
             "releases": [
                {
@@ -7488,13 +7488,13 @@
                   "compareUrl": "https://github.com/canonical/central-uploader/compare/opensearch-2.18.0-ubuntu0...main"
                },
                {
-                  "id": 198224795,
-                  "version": "spark-metrics-assembly-3.4-1.0.4",
-                  "timestamp": 1738314361,
-                  "title": "Release spark-metrics-assembly-3.4-1.0.4",
+                  "id": 202408007,
+                  "version": "hadoop-3.3.6-ubuntu5",
+                  "timestamp": 1739298147,
+                  "title": "Release hadoop-3.3.6-ubuntu5",
                   "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/spark-metrics-assembly-3.4-1.0.4",
-                  "compareUrl": "https://github.com/canonical/central-uploader/compare/spark-metrics-assembly-3.4-1.0.4...main"
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/hadoop-3.3.6-ubuntu5",
+                  "compareUrl": "https://github.com/canonical/central-uploader/compare/hadoop-3.3.6-ubuntu5...main"
                }
             ],
             "tags": null,
@@ -12666,6 +12666,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "dc77f4dfeb356a4684f974bc8774635da903bfb6",
+                  "author": "eaudetcobello",
+                  "timestamp": 1740515943,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/cilium-rocks/pull/17\">#17</a> from canonical/KU-2759/cilium-rocks</p>\n\n<p>Add cilium v1.16.7 rock</p>\n",
+                  "url": "https://github.com/canonical/cilium-rocks/commit/dc77f4dfeb356a4684f974bc8774635da903bfb6"
+               },
+               {
                   "sha": "957a14d4e7e6e8782e3a44a7bff49fb016434a91",
                   "author": "Claudiu Belu",
                   "timestamp": 1740128571,
@@ -12673,18 +12680,11 @@
                   "url": "https://github.com/canonical/cilium-rocks/commit/957a14d4e7e6e8782e3a44a7bff49fb016434a91"
                },
                {
-                  "sha": "ae6816cdd91ca0328631087a661eddf40261c603",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1739956484,
-                  "message": "<p>Adds cilium 1.17.1 rocks (<a target=\"_blank\" href=\"https://github.com/canonical/cilium-rocks/pull/16\">#16</a>)</p>\n\n<p>rockcraft.yaml files adapted from the previous releases.</p>\n\n<p>envoy-fixes.patch has been updated to reflect the current state of the\nrepository. It also contains one less patch file, which wasn&rsquo;t used and\nwasn&rsquo;t needed.</p>\n",
-                  "url": "https://github.com/canonical/cilium-rocks/commit/ae6816cdd91ca0328631087a661eddf40261c603"
-               },
-               {
-                  "sha": "9f15d98edd64c239297a19e6b5889873fba878ee",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1737359320,
-                  "message": "<p>Add cilium 1.16.5 rock (<a target=\"_blank\" href=\"https://github.com/canonical/cilium-rocks/pull/15\">#15</a>)</p>\n\n<ul>\n<li>Intial 1:1 copy of 1.16.3 rockcraft specs to 1.16.5.</li>\n</ul>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n\n<ul>\n<li>cilium:1.16.5: adapt rockcraft definition with new params.</li>\n</ul>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n\n<ul>\n<li>cilium-operator-generic:1.16.5: adapt rockcraft definition with new params.</li>\n</ul>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n\n<ul>\n<li>cilium-operator-generic:1.16.5: hack envoy dependency version.</li>\n</ul>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n\n<ul>\n<li>Patch cel-cpp, fixing cilium-proxy build</li>\n</ul>\n\n<p>We&rsquo;re hitting this cel-cpp issue while buildig cilium-proxy:</p>\n\n<ul>\n<li><a href=\"https://github.com/envoyproxy/envoy/issues/34368\">https://github.com/envoyproxy/envoy/issues/34368</a></li>\n</ul>\n\n<p>Bumping cel-cpp to 0.10.0 has been suggested, however that would\nrequire bumping other dependencies as well (e.g. com_google_absl).</p>\n\n<p>Instead, we&rsquo;ll apply the fix that moves the offending cel-cpp\nheader definitions:</p>\n\n<p><a href=\"https://github.com/google/cel-cpp/commit/18cf5685e93fb8c07c807d913fabe9d1b54db87f\">https://github.com/google/cel-cpp/commit/18cf5685e93fb8c07c807d913fabe9d1b54db87f</a></p>\n\n<p>Applying this patch is not straight forward because the build\nprocess is based on bazel and heavily nested: the rockcraft\nscript will patch the cilium-proxy build scripts, which in turn\nneed to patch the envoy proxy build scripts to patch the cel-cpp\ndependency.</p>\n\n<hr>\n\n<p>Signed-off-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a>\nCo-authored-by: Nashwan Azhari <a href=\"mailto:nazhari@cloudbasesolutions.com\">nazhari@cloudbasesolutions.com</a>\nCo-authored-by: Nashwan Azhari <a href=\"mailto:nashwan.azhari@canonical.com\">nashwan.azhari@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/cilium-rocks/commit/9f15d98edd64c239297a19e6b5889873fba878ee"
+                  "sha": "95a2d22d69eebc63b34582001e776cb3dd675825",
+                  "author": "Etienne Audet-Cobello",
+                  "timestamp": 1740078449,
+                  "message": "<p>review comments</p>\n",
+                  "url": "https://github.com/canonical/cilium-rocks/commit/95a2d22d69eebc63b34582001e776cb3dd675825"
                }
             ],
             "ciActions": [],
@@ -13465,31 +13465,31 @@
             "url": "https://github.com/canonical/k8s-operator",
             "releases": [
                {
-                  "id": 202161164,
-                  "version": "k8s-worker-rev500",
-                  "timestamp": 1740439632,
-                  "title": "Revision 500",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:29 UTC on 24 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: change subprocess calls for cryptography by <a target=\"_blank\" href=\"https://github.com/mateoflorido\">@mateoflorido</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/352\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/352\">#352</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev492...k8s-worker-rev500\">https://github.com/canonical/k8s-operator/compare/k8s-rev492&hellip;k8s-worker-rev500</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev500",
-                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev500...main"
+                  "id": 202401207,
+                  "version": "k8s-worker-rev506",
+                  "timestamp": 1740514591,
+                  "title": "Revision 506",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:18 UTC on 25 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Allow renovate to update uv.lock by <a target=\"_blank\" href=\"https://github.com/addyess\">@addyess</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/353\">#353</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev498...k8s-worker-rev506\">https://github.com/canonical/k8s-operator/compare/k8s-rev498&hellip;k8s-worker-rev506</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev506",
+                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev506...main"
                },
                {
-                  "id": 202161147,
-                  "version": "k8s-worker-rev499",
-                  "timestamp": 1740439632,
-                  "title": "Revision 499",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:29 UTC on 24 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: change subprocess calls for cryptography by <a target=\"_blank\" href=\"https://github.com/mateoflorido\">@mateoflorido</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/352\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/352\">#352</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev492...k8s-worker-rev499\">https://github.com/canonical/k8s-operator/compare/k8s-rev492&hellip;k8s-worker-rev499</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev499",
-                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev499...main"
+                  "id": 202401183,
+                  "version": "k8s-worker-rev505",
+                  "timestamp": 1740514591,
+                  "title": "Revision 505",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:18 UTC on 25 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Allow renovate to update uv.lock by <a target=\"_blank\" href=\"https://github.com/addyess\">@addyess</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/353\">#353</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev498...k8s-worker-rev505\">https://github.com/canonical/k8s-operator/compare/k8s-rev498&hellip;k8s-worker-rev505</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev505",
+                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev505...main"
                },
                {
-                  "id": 202161143,
-                  "version": "k8s-worker-rev498",
-                  "timestamp": 1740439632,
-                  "title": "Revision 498",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:29 UTC on 24 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: change subprocess calls for cryptography by <a target=\"_blank\" href=\"https://github.com/mateoflorido\">@mateoflorido</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/352\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/352\">#352</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev492...k8s-worker-rev498\">https://github.com/canonical/k8s-operator/compare/k8s-rev492&hellip;k8s-worker-rev498</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev498",
-                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev498...main"
+                  "id": 202401162,
+                  "version": "k8s-worker-rev504",
+                  "timestamp": 1740514591,
+                  "title": "Revision 504",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:18 UTC on 25 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Allow renovate to update uv.lock by <a target=\"_blank\" href=\"https://github.com/addyess\">@addyess</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/353\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/353\">#353</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev498...k8s-worker-rev504\">https://github.com/canonical/k8s-operator/compare/k8s-rev498&hellip;k8s-worker-rev504</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev504",
+                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev504...main"
                }
             ],
             "tags": null,
@@ -13589,43 +13589,43 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 501,
-                     "timestamp": 1740439738,
+                     "revision": 507,
+                     "timestamp": 1740514700,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 498,
-                     "timestamp": 1740439719,
+                     "revision": 504,
+                     "timestamp": 1740514680,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 502,
-                     "timestamp": 1740439746,
+                     "revision": 508,
+                     "timestamp": 1740514707,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 499,
-                     "timestamp": 1740439725,
+                     "revision": 505,
+                     "timestamp": 1740514686,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 503,
-                     "timestamp": 1740439753,
+                     "revision": 509,
+                     "timestamp": 1740514715,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 500,
-                     "timestamp": 1740439731,
+                     "revision": 506,
+                     "timestamp": 1740514692,
                      "base": ""
                   },
                   {
@@ -23105,13 +23105,13 @@
                   "compareUrl": "https://github.com/canonical/central-uploader/compare/opensearch-2.18.0-ubuntu0...main"
                },
                {
-                  "id": 198224795,
-                  "version": "spark-metrics-assembly-3.4-1.0.4",
-                  "timestamp": 1738314361,
-                  "title": "Release spark-metrics-assembly-3.4-1.0.4",
+                  "id": 202408007,
+                  "version": "hadoop-3.3.6-ubuntu5",
+                  "timestamp": 1739298147,
+                  "title": "Release hadoop-3.3.6-ubuntu5",
                   "body": "",
-                  "url": "https://github.com/canonical/central-uploader/releases/tag/spark-metrics-assembly-3.4-1.0.4",
-                  "compareUrl": "https://github.com/canonical/central-uploader/compare/spark-metrics-assembly-3.4-1.0.4...main"
+                  "url": "https://github.com/canonical/central-uploader/releases/tag/hadoop-3.3.6-ubuntu5",
+                  "compareUrl": "https://github.com/canonical/central-uploader/compare/hadoop-3.3.6-ubuntu5...main"
                }
             ],
             "tags": null,
