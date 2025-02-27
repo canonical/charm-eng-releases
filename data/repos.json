@@ -903,29 +903,29 @@
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30078,
-                     "timestamp": 1740598239,
+                     "revision": 30088,
+                     "timestamp": 1740626987,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30079,
-                     "timestamp": 1740598342,
+                     "revision": 30089,
+                     "timestamp": 1740627070,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30080,
-                     "timestamp": 1740598424,
+                     "revision": 30090,
+                     "timestamp": 1740627205,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30081,
-                     "timestamp": 1740598680,
+                     "revision": 30091,
+                     "timestamp": 1740627294,
                      "base": "core24"
                   },
                   {
@@ -2234,9 +2234,18 @@
       "repos": [
          {
             "name": "operator",
-            "newCommits": 12,
+            "newCommits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 202699374,
+                  "version": "2.19.0",
+                  "timestamp": 1740627132,
+                  "title": "ops 2.19.0 and ops-scenario 7.2.0 Enhanced Pebble checks, Juju version exposure, and improved documentation",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release of the Operator Framework introduces new features for managing Juju environments, including exposing the Juju version as <code>Model.juju_version</code> and enhanced control over Pebble checks. Several fixes address environment variables and improve the mocking capabilities. Extensive documentation updates provide clearer guidance on various topics, such as setting open ports and using Charmcraft. A special thanks to <a target=\"_blank\" href=\"https://github.com/medubelko\">@medubelko</a> for their first contribution to the project!</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Expose the Juju version via Model objects in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1563\">#1563</a></li>\n<li>Support starting and stopping Pebble checks, and the checks enabled field in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1560\">#1560</a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Update logo and readme by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1571\">#1571</a></li>\n<li>Fill out remaining external link placeholders in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1564\">#1564</a></li>\n<li>Use noun relation and verb integrate in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1574\">#1574</a></li>\n<li>Update ref to charmcraft.yaml reference by <a target=\"_blank\" href=\"https://github.com/medubelko\">@medubelko</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1580\">#1580</a></li>\n<li>Add a how-to for setting open ports in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1579\">#1579</a></li>\n<li>Fix links that pointed to earlier Juju docs in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1575\">#1575</a></li>\n<li>Update links to Charmcraft docs in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1582\">#1582</a></li>\n<li>Small updates to machine charm tutorial in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1583\">#1583</a></li>\n</ul>\n\n<h2>CI</h2>\n\n<ul>\n<li>Update list of charms and handle increasing uv usage in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1588\">#1588</a></li>\n<li>Handle presence/absence of &ldquo;static&rdquo; and &ldquo;static-charm&rdquo; envs in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1590\">#1590</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/medubelko\">@medubelko</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1580\">#1580</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.18.1...2.19.0\">https://github.com/canonical/operator/compare/2.18.1&hellip;2.19.0</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.19.0",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.19.0...main"
+               },
                {
                   "id": 200002677,
                   "version": "scenario-7.1.3",
@@ -2254,15 +2263,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>Fixes an issue where deferring an event handler could cause another handler of the same event to fail, and one where reading the Juju version in unit tests would incorrectly result in <code>0.0.0</code> rather than the version set.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Ensure that the event snapshot is available when one observer defers and another does not in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1562\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1562\">#1562</a></a></li>\n<li>Put the Juju version in the environment as well as the JujuContext in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1559\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1559\">#1559</a></a></li>\n<li>Maintain transaction integrity on first run in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1558\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1558\">#1558</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Set up intersphinx and add links by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1546\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1546\">#1546</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.18.0...2.18.1\">https://github.com/canonical/operator/compare/2.18.0&hellip;2.18.1</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.18.1",
                   "compareUrl": "https://github.com/canonical/operator/compare/2.18.1...main"
-               },
-               {
-                  "id": 197495278,
-                  "version": "2.18.0",
-                  "timestamp": 1738213087,
-                  "title": "ops 2.18.0 and ops-scenario 7.1.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>The <a href=\"https://ops.readthedocs.io/en/latest/\">Ops documentation</a> has been dramatically revamped, with tutorials and how-to guides moved from Juju documentation to Ops where they belong, among with a myriad of other improvements.</p>\n\n<p>The deferred event queue is now deduplicated, which should make charms feel more responsive.</p>\n\n<p>Unit testing has been made faster by using an in-memory state database and a few other tricks.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Use :memory: as the unit state storage location for ops.testing in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1494\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1494\">#1494</a></a></li>\n<li>Don&rsquo;t store duplicate events in the notice queue in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1372\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1372\">#1372</a></a></li>\n<li>Make Context and Manager variadic types in testing by <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1445\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1445\">#1445</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Remove ops.main.main deprecation warning, and avoid warnings in action output in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1496\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1496\">#1496</a></a></li>\n<li>Require the same object to be in the testing state as in the event in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1468\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1468\">#1468</a></a></li>\n<li>Raise ModelError on unknown/error status set in Scenario in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1417\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1417\">#1417</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Use the right ops-scenario for building the docs in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1470\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1470\">#1470</a></a></li>\n<li>Go full Diátaxis, ingesting the relevant juju.is/docs/sdk documentation by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1481\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1481\">#1481</a></a></li>\n<li>Update how-to guides to use the new unit testing framework in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1507\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1507\">#1507</a></a></li>\n<li>Clearly deprecate Harness in the testing how-tos in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1508\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1508\">#1508</a></a></li>\n<li>Update boilerplate links in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1515\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1515\">#1515</a></a></li>\n<li>Fix Markdown syntax in ops.testing readme in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1502\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1502\">#1502</a></a></li>\n<li>Fix broken links and use cross references instead of absolute links in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1519\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1519\">#1519</a></a></li>\n<li>Use explicit framework param instead of *args in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1523\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1523\">#1523</a></a></li>\n<li>Add doc style tips to HACKING.md in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1528\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1528\">#1528</a></a></li>\n<li>Fix link to Juju docs in Kubernetes charm tutorial in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1529\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1529\">#1529</a></a></li>\n<li>Remove the publish badge from the README in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1505\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1505\">#1505</a></a></li>\n<li>Add how-to for storing state in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1534\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1534\">#1534</a></a></li>\n<li>Improve info about contributing to docs in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1533\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1533\">#1533</a></a></li>\n<li>Fix formatting errors in HACKING.md in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1539\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1539\">#1539</a></a></li>\n</ul>\n\n<h2>Continuous Integration</h2>\n\n<ul>\n<li>All the ops-scenario publish actions need to be done in testing/ in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1479\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1479\">#1479</a></a></li>\n<li>Add support for injecting the latest ops when uv is used in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1477\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1477\">#1477</a></a></li>\n<li>Don&rsquo;t cancel other unit tests when one fails in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1471\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1471\">#1471</a></a></li>\n<li>Correctly point PyPI publishing to the ops-scenario packages in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1514\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1514\">#1514</a></a></li>\n<li>Use Concierge to set up the smoke test environments in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1541\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1541\">#1541</a></a></li>\n<li>Bump poetry to 2.0 to match downstream in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1542\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1542\">#1542</a></a></li>\n<li>Enable the prometheus-k8s revision updates again in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1544\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1544\">#1544</a></a></li>\n<li>Include Juju 2.9 in the smoke tests in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1545\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1545\">#1545</a></a></li>\n</ul>\n\n<h2>Testing</h2>\n\n<ul>\n<li>Handle warnings generated by our own tests in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1469\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1469\">#1469</a></a></li>\n<li>Allow check to fail an additional time when running the test in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1531\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1531\">#1531</a></a></li>\n<li>Add a small set of ops.testing benchmark tests in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1504\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1504\">#1504</a></a></li>\n</ul>\n\n<h2>Refactoring</h2>\n\n<ul>\n<li>Use ops._main._Manager in Scenario in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1491\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1491\">#1491</a></a></li>\n<li>Don&rsquo;t use the max-positional-args parent class for JujuLogLine in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1495\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1495\">#1495</a></a></li>\n<li>Cache signature structure in ops.testing state classes in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1499\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1499\">#1499</a></a></li>\n<li>Use _JujuContext in Scenario in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1459\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1459\">#1459</a></a></li>\n<li>Fix the testing src-layout structure and use relative imports in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1431\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1431\">#1431</a></a></li>\n</ul>\n\n<h2>Chores</h2>\n\n<ul>\n<li>Bump version number for next ops release in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1476\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1476\">#1476</a></a></li>\n<li>Update and clarify release process in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1478\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1478\">#1478</a></a></li>\n<li>Temporarily disable TIOBE reporting in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1510\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1510\">#1510</a></a></li>\n<li>Remove file that seems to be accidentally committed in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1509\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1509\">#1509</a></a></li>\n<li>Update charm pins in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1517\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1517\">#1517</a></a></li>\n<li>Bump CI dependencies in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1535\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1535\">#1535</a></a></li>\n<li>Update documentation dependencies in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1526\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1526\">#1526</a></a></li>\n<li>Fix compatibility with ops-scenario 7.0.5 in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1543\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1543\">#1543</a></a></li>\n<li>Enable the scheduled TIOBE reporting again in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1537\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1537\">#1537</a></a></li>\n<li>Update charm pins in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1540\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1540\">#1540</a></a></li>\n<li>Bump actions/attest-build-provenance from 1.4.3 to 2.1.0 in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1518\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1518\">#1518</a></a></li>\n<li>Minor linting improvements to testing/src/scenario <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1456\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1456\">#1456</a></a></li>\n<li>Remove compatibility code with older ops in testing in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1418\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1418\">#1418</a></a></li>\n<li>Use annotations from the <code>__future__</code> in testing in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1433\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1433\">#1433</a></a></li>\n</ul>\n\n<h2>New Contributor</h2>\n\n<ul>\n<li>Thank you, <a target=\"_blank\" href=\"https://github.com/Batalex\">@Batalex</a> for your first contribution!</li>\n<li>Thank you, <a href=\"https://github.com/prints-charming-bot\">Prints Charming (bot)</a> for your contributions, and welcome to the team!</li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.17.1...2.18.0\">https://github.com/canonical/operator/compare/2.17.1&hellip;2.18.0</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.18.0",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.18.0...main"
                }
             ],
             "tags": null,
@@ -2311,7 +2311,7 @@
          },
          {
             "name": "pebble",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pebble",
             "releases": [
                {
@@ -2427,36 +2427,36 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1202,
-                     "timestamp": 1740605213,
+                     "revision": 1207,
+                     "timestamp": 1740628903,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1203,
-                     "timestamp": 1740605220,
+                     "revision": 1206,
+                     "timestamp": 1740628899,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1204,
-                     "timestamp": 1740605225,
+                     "revision": 1209,
+                     "timestamp": 1740628912,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1201,
-                     "timestamp": 1740605207,
+                     "revision": 1210,
+                     "timestamp": 1740628917,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1205,
-                     "timestamp": 1740605229,
+                     "revision": 1208,
+                     "timestamp": 1740628907,
                      "base": "bare"
                   }
                ],
