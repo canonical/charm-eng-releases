@@ -606,7 +606,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 6177,
+            "newCommits": 6181,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -8721,6 +8721,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7d0642f11ca6b5d568fffcf2499bec7f83cb01e5",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1741098589,
+                  "message": "<p>Run renovate once per week (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/36\">#36</a>)</p>\n\n<p>for vulnerability updates to get a PR immediately (instead of once a week), these steps must be followed: <a href=\"https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts\">https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts</a></p>\n\n<p>notably:\n- on forks and private repos, the dependency graph needs to be enabled: <a href=\"https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#enabling-the-dependency-graph\">https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#enabling-the-dependency-graph</a>\n- on all repos, Dependabot alerts need to be enabled: <a href=\"https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository\">https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository</a>\n- the GitHub Renovate app must be installed with read permissions for dependabot alerts</p>\n\n<p>from testing, it appears the <a href=\"https://github.blog/changelog/2025-02-05-dependabot-no-longer-supports-python-3-8/\">removal of support for python 3.8</a> only applies to &ldquo;Dependabot security updates&rdquo;, not &ldquo;Dependabot alerts&rdquo;\nthe closing of this issue (<a href=\"https://github.com/dependabot/dependabot-core/issues/10817\">https://github.com/dependabot/dependabot-core/issues/10817</a>) happening on the same day day as this blog post (<a href=\"https://github.blog/changelog/2025-01-06-closing-down-notice-dependabot-will-no-longer-support-python-version-3-8/\">https://github.blog/changelog/2025-01-06-closing-down-notice-dependabot-will-no-longer-support-python-version-3-8/</a>) appears to confirm that it applies to &ldquo;Dependabot security updates&rdquo;</p>\n",
+                  "url": "https://github.com/canonical/data-platform/commit/7d0642f11ca6b5d568fffcf2499bec7f83cb01e5"
+               },
+               {
                   "sha": "1159e0cf6c94f5812de2686427e88900df665718",
                   "author": "Carl Csaposs",
                   "timestamp": 1739443576,
@@ -8733,13 +8740,6 @@
                   "timestamp": 1736425610,
                   "message": "<p>Add renovate config for rust version (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/34\">#34</a>)</p>\n\n<p>Example charmcraft.yaml excerpt</p>\n\n<pre><code class=\"language-yaml\">    override-build: |\n      # If Ubuntu version &lt; 24.04, rustup was installed from snap instead of from the Ubuntu\n      # archive—which means the rustup version could be updated at any time. Print rustup version\n      # to build log to make changes to the snap's rustup version easier to track\n      rustup --version\n\n      # rpds-py (Python package) &gt;=0.19.0 requires rustc &gt;=1.76, which is not available in the\n      # Ubuntu 22.04 archive. Install rustc and cargo using rustup instead of the Ubuntu archive\n      rustup set profile minimal\n      rustup default 1.83.0  # renovate: charmcraft-rust-latest\n\n      craftctl default\n      # Include requirements.txt in *.charm artifact for easier debugging\n      cp requirements.txt &quot;$CRAFT_PART_INSTALL/requirements.txt&quot;\n</code></pre>\n",
                   "url": "https://github.com/canonical/data-platform/commit/9e1b7c3f6c0c18b0d91f5a3ba04dd3c2e84f9722"
-               },
-               {
-                  "sha": "afa6b34e040273694669fe8b0c9e8f03f60c608b",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1736338938,
-                  "message": "<p>Update renovate config for charmcraft.yaml build tools (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/33\">#33</a>)</p>\n\n<p>Example charmcraft.yaml excerpt</p>\n\n<pre><code class=\"language-yaml\">  poetry-deps:\n    plugin: nil\n    build-packages:\n      - curl\n    override-build: |\n      # Use environment variable instead of `--break-system-packages` to avoid failing on older\n      # versions of pip that do not recognize `--break-system-packages`\n      PIP_BREAK_SYSTEM_PACKAGES=true python3 -m pip install --user --upgrade pip==24.3.1  # renovate: charmcraft-pip-latest\n\n      # Use uv to install poetry so that a newer version of Python can be installed if needed by poetry\n      curl --proto '=https' --tlsv1.2 -LsSf https://github.com/astral-sh/uv/releases/download/0.5.15/uv-installer.sh | sh  # renovate: charmcraft-uv-latest\n      # poetry 2.0.0 requires Python &gt;=3.9\n      if ! &quot;$HOME/.local/bin/uv&quot; python find '&gt;=3.9'\n      then\n        # Use first Python version that is &gt;=3.9 and available in an Ubuntu LTS\n        # (to reduce number of Python versions we use)\n        &quot;$HOME/.local/bin/uv&quot; python install 3.10.12  # renovate: charmcraft-python-ubuntu-22.04\n      fi\n      &quot;$HOME/.local/bin/uv&quot; tool install --no-python-downloads --python '&gt;=3.9' poetry==2.0.0 --with poetry-plugin-export==1.8.0  # renovate: charmcraft-poetry-latest\n\n      ln -sf &quot;$HOME/.local/bin/poetry&quot; /usr/local/bin/poetry\n</code></pre>\n",
-                  "url": "https://github.com/canonical/data-platform/commit/afa6b34e040273694669fe8b0c9e8f03f60c608b"
                }
             ],
             "ciActions": [],
@@ -8931,6 +8931,15 @@
             "url": "https://github.com/canonical/data-platform-workflows",
             "releases": [
                {
+                  "id": 203613493,
+                  "version": "v30.2.0",
+                  "timestamp": 1741098576,
+                  "title": "v30.2.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>compatible: Add approve_renovate_pr.yaml by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/289\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/289\">#289</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.3...v30.2.0\">https://github.com/canonical/data-platform-workflows/compare/v30.1.3&hellip;v30.2.0</a></p>\n",
+                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.2.0",
+                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.2.0...main"
+               },
+               {
                   "id": 201231291,
                   "version": "v30.1.3",
                   "timestamp": 1739982020,
@@ -8947,15 +8956,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch(_promote_charm.yaml): Fix OCI image digests by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/287\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/287\">#287</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.1...v30.1.2\">https://github.com/canonical/data-platform-workflows/compare/v30.1.1&hellip;v30.1.2</a></p>\n",
                   "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.1.2",
                   "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.1.2...main"
-               },
-               {
-                  "id": 200961207,
-                  "version": "v30.1.1",
-                  "timestamp": 1739894599,
-                  "title": "v30.1.1",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch(_promote_charm.yaml): Add OCI image sha256 digests by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/286\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/286\">#286</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.0...v30.1.1\">https://github.com/canonical/data-platform-workflows/compare/v30.1.0&hellip;v30.1.1</a></p>\n",
-                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.1.1",
-                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.1.1...main"
                }
             ],
             "tags": null,
@@ -11374,35 +11374,35 @@
          },
          {
             "name": "identity-platform-login-ui-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/identity-platform-login-ui-operator",
             "releases": [
                {
-                  "id": 203550753,
+                  "id": 203612432,
                   "version": "v1.0.0",
-                  "timestamp": 1741083695,
+                  "timestamp": 1741098302,
                   "title": "v1.0.0",
                   "body": "<h2>1.0.0 (2025-03-04)</h2>\n\n<h3>Features</h3>\n\n<ul>\n<li>Added publish and release workflows to .github/workflows. Modified on_push.yaml to incorporate publishing. Modified on_schedule, renovate, and update_libs yaml files to be consistent with the other identity stack repositories. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/7876a7e0af9431fbb0a0e067c035bce72066e498\">7876a7e</a>)</li>\n<li>Added workflow to unit test charm on PR (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/d31326035971c014a2208d27e540e2ae069f2c7c\">d313260</a>)</li>\n<li>implement tempo integration and feed it to otel env vars (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/9bcfdffcd10901a20bd407fd307f4c74503a4b06\">9bcfdff</a>)</li>\n<li>install tempo-k8s lib (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/3c9ae85feb4955bf706045b7555a88b171c5f0d5\">3c9ae85</a>)</li>\n<li>send webauthn settings url in databag (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/184\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/184\">#184</a></a>) (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/0940ffbe1ebb9a43f5466cfecd15cb49bd30c856\">0940ffb</a>)</li>\n<li>support oidc webauthn sequencing mode (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/177\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/177\">#177</a></a>) (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/9cc4f74b03ac1764eb4036d5bd84264bcf443549\">9cc4f74</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add cert transfer integration (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/6b784469dabb42b5fd006d5302dd724347edee4a\">6b78446</a>)</li>\n<li>add constants file (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/df7c0587e8de00ffed9bc0199a914fc799671cf3\">df7c058</a>)</li>\n<li>add on_install for log dir creation (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/aaf49dfa8826ec3dfc99dd4500b1d821b859d622\">aaf49df</a>)</li>\n<li>Added configuration files renovate.json and renovate-config.js for renovate.yaml github action. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/0e732fd0865a478fd969561779a149a08341291e\">0e732fd</a>)</li>\n<li>Added fixes to metadata.yaml and charm.py (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/c33baba0fbc098f5656bde74825d2d73b4889304\">c33baba</a>)</li>\n<li>Added workflows from Hydra Operator. Publishing workflows will be added when the operator is approved for publishing. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/e4ae3106c4b5673e59957c5f958755e0f030c9ab\">e4ae310</a>)</li>\n<li>Applied fixes to unit tests (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/7c388ed595682ce86b9986d1107216f71492f529\">7c388ed</a>)</li>\n<li>change command binary (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/545e3959dd7f8d66800966ffb63778d1bc587a75\">545e395</a>)</li>\n<li>change prometheus endpoint and add extra env vars for tracing and logging (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/e2c9bbda9226128c81b32830874c3d86a82fb9be\">e2c9bbd</a>)</li>\n<li>Changed charming-actions to current latest release (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/5c0598c3082d5682741deb320ea541ec0f286f58\">5c0598c</a>)</li>\n<li>Fixed comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a>. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/315cbb3892e12468f69a407e102dd1462f5452c5\">315cbb3</a>)</li>\n<li>Fixed image uploading issue (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/2d5105a353d12a4f8a7b4b31aaa3394b41cc01e3\">2d5105a</a>)</li>\n<li>fixed linting on tests/unit/conftest.py (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/59917a67b2cdf7c2c15f3597d0c1c9f76c574246\">59917a6</a>)</li>\n<li>Fixed release versions in invocations of canonical/charming-actions (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/40f5176dcb6e9b5af77bd59c19b950d10083338d\">40f5176</a>)</li>\n<li>Fixed the last unresolved comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a>. Took out unused functions from charm.py. Changed Usage section in README.md (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/9022fac1a79e61e1405c1281028be7d3372a20cf\">9022fac</a>)</li>\n<li>Fixes according to requests on PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a> (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/6030d7105f875a57c3ae921f577a43c38f80f20f\">6030d71</a>)</li>\n<li>Fixes for comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a> (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/58d6403434f33a0be635fb389092419a95bff169\">58d6403</a>)</li>\n<li>Fixing comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a>. Change method name, and correct comment in charm.py. Corrected documentation in CONTRIBUTING.md (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/fc8dcfe6b15b85e5c4dee78d154c66a472a4c3f0\">fc8dcfe</a>)</li>\n<li>Fixing linting issues (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/ec8bc9d2b50ee8fce596c574e9be6eb6a2509f8d\">ec8bc9d</a>)</li>\n<li>Fixing naming and network bugs in charm (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/0aa50d637a809fdaad37ae2ec4256e640bb5ea78\">0aa50d6</a>)</li>\n<li>Fixing PR based on comments (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/dd44224b69a35d09b212ba02d2ab4f0c5b72d0f7\">dd44224</a>)</li>\n<li>introduce tracing_enabled config var (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/94b9b011fa37a3d11463576a22dc18a9e3f8ed86\">94b9b01</a>)</li>\n<li>Last minute change for deployment section in CONTRIBUTING.md. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/500edc3e4d26aa430de20b1d675a856babdeee84\">500edc3</a>)</li>\n<li>Linting fix for charm.py and test_charm.py (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/53e74510dd50e264e00ee8f35091681c020fded7\">53e7451</a>)</li>\n<li><strong>loki-rule:</strong> improve error handling in json parsing (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/99\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/99\">#99</a></a>) (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/cd8a5e062c32f63530540027d756e4a43eb35029\">cd8a5e0</a>)</li>\n<li>pin container image (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/16d92176fcde75caa90bc3afbbbd27116558ed65\">16d9217</a>)</li>\n<li>pin image version to stable (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/879dbfcd5778aba8d4d7e928bd6ccc05060e962c\">879dbfc</a>)</li>\n<li>Possible fix for the problem with the publish workflow. This is for a draft PR (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/8644dc2df35e67ae8b06d2e146c5710c92ece8a8\">8644dc2</a>)</li>\n<li>PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/1\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/1\">#1</a></a> fixes (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/2c1f2cdc3fca016f6da84a73b8be22a85a9ea650\">2c1f2cd</a>)</li>\n<li>swap healthcheck endpoint (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/7fdb79b310b5d1b940e9646b3714f3def620a3de\">7fdb79b</a>)</li>\n<li>update integration-requirements.txt (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/efc2155ddd79877d8a0dcfefa652004a92457e16\">efc2155</a>)</li>\n<li>use strings for paths (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/2341d0f11036fdfa1f8997a87a1b63f8081b6d28\">2341d0f</a>)</li>\n</ul>\n",
                   "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/v1.0.0",
                   "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/v1.0.0...main"
                },
                {
-                  "id": 203550768,
+                  "id": 203616979,
                   "version": "track/0.3-v1.0.0",
-                  "timestamp": 1741083700,
+                  "timestamp": 1741099394,
                   "title": "track/0.3: v1.0.0",
                   "body": "<h2>1.0.0 (2025-03-04)</h2>\n\n<h3>Features</h3>\n\n<ul>\n<li>Added publish and release workflows to .github/workflows. Modified on_push.yaml to incorporate publishing. Modified on_schedule, renovate, and update_libs yaml files to be consistent with the other identity stack repositories. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/7876a7e0af9431fbb0a0e067c035bce72066e498\">7876a7e</a>)</li>\n<li>Added workflow to unit test charm on PR (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/d31326035971c014a2208d27e540e2ae069f2c7c\">d313260</a>)</li>\n<li>implement tempo integration and feed it to otel env vars (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/9bcfdffcd10901a20bd407fd307f4c74503a4b06\">9bcfdff</a>)</li>\n<li>install tempo-k8s lib (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/3c9ae85feb4955bf706045b7555a88b171c5f0d5\">3c9ae85</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add cert transfer integration (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/6b784469dabb42b5fd006d5302dd724347edee4a\">6b78446</a>)</li>\n<li>add constants file (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/df7c0587e8de00ffed9bc0199a914fc799671cf3\">df7c058</a>)</li>\n<li>add on_install for log dir creation (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/aaf49dfa8826ec3dfc99dd4500b1d821b859d622\">aaf49df</a>)</li>\n<li>Added configuration files renovate.json and renovate-config.js for renovate.yaml github action. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/0e732fd0865a478fd969561779a149a08341291e\">0e732fd</a>)</li>\n<li>Added fixes to metadata.yaml and charm.py (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/c33baba0fbc098f5656bde74825d2d73b4889304\">c33baba</a>)</li>\n<li>Added workflows from Hydra Operator. Publishing workflows will be added when the operator is approved for publishing. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/e4ae3106c4b5673e59957c5f958755e0f030c9ab\">e4ae310</a>)</li>\n<li>Applied fixes to unit tests (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/7c388ed595682ce86b9986d1107216f71492f529\">7c388ed</a>)</li>\n<li>change command binary (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/545e3959dd7f8d66800966ffb63778d1bc587a75\">545e395</a>)</li>\n<li>change prometheus endpoint and add extra env vars for tracing and logging (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/e2c9bbda9226128c81b32830874c3d86a82fb9be\">e2c9bbd</a>)</li>\n<li>Changed charming-actions to current latest release (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/5c0598c3082d5682741deb320ea541ec0f286f58\">5c0598c</a>)</li>\n<li>Fixed comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a>. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/315cbb3892e12468f69a407e102dd1462f5452c5\">315cbb3</a>)</li>\n<li>Fixed image uploading issue (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/2d5105a353d12a4f8a7b4b31aaa3394b41cc01e3\">2d5105a</a>)</li>\n<li>fixed linting on tests/unit/conftest.py (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/59917a67b2cdf7c2c15f3597d0c1c9f76c574246\">59917a6</a>)</li>\n<li>Fixed release versions in invocations of canonical/charming-actions (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/40f5176dcb6e9b5af77bd59c19b950d10083338d\">40f5176</a>)</li>\n<li>Fixed the last unresolved comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a>. Took out unused functions from charm.py. Changed Usage section in README.md (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/9022fac1a79e61e1405c1281028be7d3372a20cf\">9022fac</a>)</li>\n<li>Fixes according to requests on PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a> (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/6030d7105f875a57c3ae921f577a43c38f80f20f\">6030d71</a>)</li>\n<li>Fixes for comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a> (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/58d6403434f33a0be635fb389092419a95bff169\">58d6403</a>)</li>\n<li>Fixing comments in PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/2\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/2\">#2</a></a>. Change method name, and correct comment in charm.py. Corrected documentation in CONTRIBUTING.md (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/fc8dcfe6b15b85e5c4dee78d154c66a472a4c3f0\">fc8dcfe</a>)</li>\n<li>Fixing linting issues (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/ec8bc9d2b50ee8fce596c574e9be6eb6a2509f8d\">ec8bc9d</a>)</li>\n<li>Fixing naming and network bugs in charm (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/0aa50d637a809fdaad37ae2ec4256e640bb5ea78\">0aa50d6</a>)</li>\n<li>Fixing PR based on comments (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/dd44224b69a35d09b212ba02d2ab4f0c5b72d0f7\">dd44224</a>)</li>\n<li>introduce tracing_enabled config var (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/94b9b011fa37a3d11463576a22dc18a9e3f8ed86\">94b9b01</a>)</li>\n<li>Last minute change for deployment section in CONTRIBUTING.md. (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/500edc3e4d26aa430de20b1d675a856babdeee84\">500edc3</a>)</li>\n<li>Linting fix for charm.py and test_charm.py (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/53e74510dd50e264e00ee8f35091681c020fded7\">53e7451</a>)</li>\n<li><strong>loki-rule:</strong> improve error handling in json parsing (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/99\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/99\">#99</a></a>) (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/cd8a5e062c32f63530540027d756e4a43eb35029\">cd8a5e0</a>)</li>\n<li>pin container image (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/16d92176fcde75caa90bc3afbbbd27116558ed65\">16d9217</a>)</li>\n<li>pin image version to stable (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/879dbfcd5778aba8d4d7e928bd6ccc05060e962c\">879dbfc</a>)</li>\n<li>Possible fix for the problem with the publish workflow. This is for a draft PR (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/8644dc2df35e67ae8b06d2e146c5710c92ece8a8\">8644dc2</a>)</li>\n<li>PR <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/issues/1\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/1\">#1</a></a> fixes (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/2c1f2cdc3fca016f6da84a73b8be22a85a9ea650\">2c1f2cd</a>)</li>\n<li>swap healthcheck endpoint (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/7fdb79b310b5d1b940e9646b3714f3def620a3de\">7fdb79b</a>)</li>\n<li>update integration-requirements.txt (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/efc2155ddd79877d8a0dcfefa652004a92457e16\">efc2155</a>)</li>\n<li>use strings for paths (<a href=\"https://github.com/canonical/identity-platform-login-ui-operator/commit/2341d0f11036fdfa1f8997a87a1b63f8081b6d28\">2341d0f</a>)</li>\n</ul>\n",
                   "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/track/0.3-v1.0.0",
                   "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/track/0.3-v1.0.0...main"
                },
                {
-                  "id": 203546112,
-                  "version": "rev174",
-                  "timestamp": 1741081617,
-                  "title": "Revision 174",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:04 UTC on 4 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: add tiobe integration by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/189\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/189\">#189</a></a></li>\n<li>IAM-1342: use google-release-please for charm releases by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/191\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/191\">#191</a></a></li>\n<li>ci: release 1.0.0 by <a target=\"_blank\" href=\"https://github.com/canonical-iam\">@canonical-iam</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/192\">#192</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev173...rev174\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev173&hellip;rev174</a></p>\n",
-                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev174",
-                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev174...main"
+                  "id": 203616551,
+                  "version": "rev175",
+                  "timestamp": 1741098302,
+                  "title": "Revision 175",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/identity-platform-login-ui:v0.20.0\n       resource-revision: 91</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:41 UTC on 4 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: add tiobe integration by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/189\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/189\">#189</a></a></li>\n<li>ci: release 1.0.0 by <a target=\"_blank\" href=\"https://github.com/canonical-iam\">@canonical-iam</a> in <a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/identity-platform-login-ui-operator/pull/197\">#197</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/identity-platform-login-ui-operator/compare/rev173...rev175\">https://github.com/canonical/identity-platform-login-ui-operator/compare/rev173&hellip;rev175</a></p>\n",
+                  "url": "https://github.com/canonical/identity-platform-login-ui-operator/releases/tag/rev175",
+                  "compareUrl": "https://github.com/canonical/identity-platform-login-ui-operator/compare/rev175...main"
                }
             ],
             "tags": null,
@@ -11424,8 +11424,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 174,
-                     "timestamp": 1741082691,
+                     "revision": 175,
+                     "timestamp": 1741099293,
                      "base": ""
                   },
                   {
@@ -11837,9 +11837,18 @@
          },
          {
             "name": "kratos-operator",
-            "newCommits": 6,
+            "newCommits": 0,
             "url": "https://github.com/canonical/kratos-operator",
             "releases": [
+               {
+                  "id": 203622327,
+                  "version": "rev543",
+                  "timestamp": 1741097274,
+                  "title": "Revision 543",
+                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.3.1\n       resource-revision: 425</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:05 UTC on 4 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ci: add tiobe integration by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/343\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/343\">#343</a></a></li>\n<li>ci: add tests for coverage in tiobe by <a target=\"_blank\" href=\"https://github.com/shipperizer\">@shipperizer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/344\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/344\">#344</a></a></li>\n<li>chore(deps): update dependency jinja2 to v3.1.5 [security] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/345\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/345\">#345</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev542...rev543\">https://github.com/canonical/kratos-operator/compare/rev542&hellip;rev543</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev543",
+                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev543...main"
+               },
                {
                   "id": 203047395,
                   "version": "rev542",
@@ -11857,15 +11866,6 @@
                   "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.3.1\n       resource-revision: 425</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:42 UTC on 28 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency bcrypt to v4.3.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/341\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/341\">#341</a></a></li>\n<li>chore(deps): update pre-commit hook astral-sh/ruff-pre-commit to v0.9.8 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/340\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/340\">#340</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev540...rev541\">https://github.com/canonical/kratos-operator/compare/rev540&hellip;rev541</a></p>\n",
                   "url": "https://github.com/canonical/kratos-operator/releases/tag/rev541",
                   "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev541...main"
-               },
-               {
-                  "id": 202715060,
-                  "version": "rev540",
-                  "timestamp": 1740633350,
-                  "title": "Revision 540",
-                  "body": "<p>resources:\n    -  oci-image: ghcr.io/canonical/kratos:1.3.1\n       resource-revision: 425</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:11 UTC on 27 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pytest-operator to v0.40.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/335\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/335\">#335</a></a></li>\n<li>chore(deps): update pre-commit hook pycqa/isort to v6.0.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/338\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/338\">#338</a></a></li>\n<li>chore(deps): update dependency ops to v2.19.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/339\"><a target=\"_blank\" href=\"https://github.com/canonical/kratos-operator/pull/339\">#339</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/kratos-operator/compare/rev539...rev540\">https://github.com/canonical/kratos-operator/compare/rev539&hellip;rev540</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-operator/releases/tag/rev540",
-                  "compareUrl": "https://github.com/canonical/kratos-operator/compare/rev540...main"
                }
             ],
             "tags": null,
@@ -11887,8 +11887,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 542,
-                     "timestamp": 1740755434,
+                     "revision": 543,
+                     "timestamp": 1741100714,
                      "base": ""
                   },
                   {
@@ -20548,7 +20548,7 @@
          },
          {
             "name": "vault-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
                {
@@ -21058,9 +21058,27 @@
          },
          {
             "name": "self-signed-certificates-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/self-signed-certificates-operator",
             "releases": [
+               {
+                  "id": 203618314,
+                  "version": "rev251",
+                  "timestamp": 1741094349,
+                  "title": "Revision 251",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1/edge&rsquo; at 14:49 UTC on 4 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/307\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/307\">#307</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev248...rev251\">https://github.com/canonical/self-signed-certificates-operator/compare/rev248&hellip;rev251</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev251",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev251...main"
+               },
+               {
+                  "id": 203618293,
+                  "version": "rev250",
+                  "timestamp": 1741094349,
+                  "title": "Revision 250",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1/edge&rsquo; at 14:49 UTC on 4 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/307\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/307\">#307</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev248...rev250\">https://github.com/canonical/self-signed-certificates-operator/compare/rev248&hellip;rev250</a></p>\n",
+                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev250",
+                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev250...main"
+               },
                {
                   "id": 203454340,
                   "version": "rev249",
@@ -21069,24 +21087,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1/edge&rsquo; at 22:35 UTC on 3 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build: update track-name in publish workflow to version 1 by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/305\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/305\">#305</a></a></li>\n<li>build: Update from Ubuntu 24.04 and shorthand charmcraft.yaml format by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/301\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/301\">#301</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev245...rev249\">https://github.com/canonical/self-signed-certificates-operator/compare/rev245&hellip;rev249</a></p>\n",
                   "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev249",
                   "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev249...main"
-               },
-               {
-                  "id": 203454337,
-                  "version": "rev248",
-                  "timestamp": 1741039142,
-                  "title": "Revision 248",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1/edge&rsquo; at 22:35 UTC on 3 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>build: update track-name in publish workflow to version 1 by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/305\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/305\">#305</a></a></li>\n<li>build: Update from Ubuntu 24.04 and shorthand charmcraft.yaml format by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/301\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/301\">#301</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev245...rev248\">https://github.com/canonical/self-signed-certificates-operator/compare/rev245&hellip;rev248</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev248",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev248...main"
-               },
-               {
-                  "id": 203377284,
-                  "version": "rev246",
-                  "timestamp": 1741013596,
-                  "title": "Revision 246",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:26 UTC on 3 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update peter-evans/create-pull-request action to v7.0.7 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/304\"><a target=\"_blank\" href=\"https://github.com/canonical/self-signed-certificates-operator/pull/304\">#304</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/self-signed-certificates-operator/compare/rev243...rev246\">https://github.com/canonical/self-signed-certificates-operator/compare/rev243&hellip;rev246</a></p>\n",
-                  "url": "https://github.com/canonical/self-signed-certificates-operator/releases/tag/rev246",
-                  "compareUrl": "https://github.com/canonical/self-signed-certificates-operator/compare/rev246...main"
                }
             ],
             "tags": null,
@@ -21150,15 +21150,15 @@
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 249,
-                     "timestamp": 1741041350,
+                     "revision": 251,
+                     "timestamp": 1741099754,
                      "base": ""
                   },
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 248,
-                     "timestamp": 1741041348,
+                     "revision": 250,
+                     "timestamp": 1741099749,
                      "base": ""
                   }
                ],
@@ -23173,6 +23173,45 @@
       "team": "Data",
       "repos": [
          {
+            "name": "data-platform-workflows",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/data-platform-workflows",
+            "releases": [
+               {
+                  "id": 203613493,
+                  "version": "v30.2.0",
+                  "timestamp": 1741098576,
+                  "title": "v30.2.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>compatible: Add approve_renovate_pr.yaml by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/289\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/289\">#289</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.3...v30.2.0\">https://github.com/canonical/data-platform-workflows/compare/v30.1.3&hellip;v30.2.0</a></p>\n",
+                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.2.0",
+                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.2.0...main"
+               },
+               {
+                  "id": 201231291,
+                  "version": "v30.1.3",
+                  "timestamp": 1739982020,
+                  "title": "v30.1.3",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch(_promote_charm.yaml): Remove unused <code>--target</code> argument by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/288\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/288\">#288</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.2...v30.1.3\">https://github.com/canonical/data-platform-workflows/compare/v30.1.2&hellip;v30.1.3</a></p>\n",
+                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.1.3",
+                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.1.3...main"
+               },
+               {
+                  "id": 201231099,
+                  "version": "v30.1.2",
+                  "timestamp": 1739981958,
+                  "title": "v30.1.2",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch(_promote_charm.yaml): Fix OCI image digests by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/287\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/287\">#287</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.1...v30.1.2\">https://github.com/canonical/data-platform-workflows/compare/v30.1.1&hellip;v30.1.2</a></p>\n",
+                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.1.2",
+                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.1.2...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "spark-k8s-bundle",
             "newCommits": 0,
             "url": "https://github.com/canonical/spark-k8s-bundle",
@@ -23275,7 +23314,7 @@
          },
          {
             "name": "mysql-router-k8s-operator",
-            "newCommits": 4,
+            "newCommits": 5,
             "url": "https://github.com/canonical/mysql-router-k8s-operator",
             "releases": [
                {
@@ -23537,45 +23576,6 @@
             "ciActions": [
                "https://github.com/canonical/charmed-mysql-snap/actions/workflows/release.yaml"
             ],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "data-platform-workflows",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/data-platform-workflows",
-            "releases": [
-               {
-                  "id": 201231291,
-                  "version": "v30.1.3",
-                  "timestamp": 1739982020,
-                  "title": "v30.1.3",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch(_promote_charm.yaml): Remove unused <code>--target</code> argument by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/288\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/288\">#288</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.2...v30.1.3\">https://github.com/canonical/data-platform-workflows/compare/v30.1.2&hellip;v30.1.3</a></p>\n",
-                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.1.3",
-                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.1.3...main"
-               },
-               {
-                  "id": 201231099,
-                  "version": "v30.1.2",
-                  "timestamp": 1739981958,
-                  "title": "v30.1.2",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch(_promote_charm.yaml): Fix OCI image digests by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/287\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/287\">#287</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.1...v30.1.2\">https://github.com/canonical/data-platform-workflows/compare/v30.1.1&hellip;v30.1.2</a></p>\n",
-                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.1.2",
-                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.1.2...main"
-               },
-               {
-                  "id": 200961207,
-                  "version": "v30.1.1",
-                  "timestamp": 1739894599,
-                  "title": "v30.1.1",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch(_promote_charm.yaml): Add OCI image sha256 digests by <a target=\"_blank\" href=\"https://github.com/carlcsaposs-canonical\">@carlcsaposs-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/286\"><a target=\"_blank\" href=\"https://github.com/canonical/data-platform-workflows/pull/286\">#286</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/data-platform-workflows/compare/v30.1.0...v30.1.1\">https://github.com/canonical/data-platform-workflows/compare/v30.1.0&hellip;v30.1.1</a></p>\n",
-                  "url": "https://github.com/canonical/data-platform-workflows/releases/tag/v30.1.1",
-                  "compareUrl": "https://github.com/canonical/data-platform-workflows/compare/v30.1.1...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -25232,6 +25232,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7d0642f11ca6b5d568fffcf2499bec7f83cb01e5",
+                  "author": "Carl Csaposs",
+                  "timestamp": 1741098589,
+                  "message": "<p>Run renovate once per week (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/36\">#36</a>)</p>\n\n<p>for vulnerability updates to get a PR immediately (instead of once a week), these steps must be followed: <a href=\"https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts\">https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts</a></p>\n\n<p>notably:\n- on forks and private repos, the dependency graph needs to be enabled: <a href=\"https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#enabling-the-dependency-graph\">https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#enabling-the-dependency-graph</a>\n- on all repos, Dependabot alerts need to be enabled: <a href=\"https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository\">https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository</a>\n- the GitHub Renovate app must be installed with read permissions for dependabot alerts</p>\n\n<p>from testing, it appears the <a href=\"https://github.blog/changelog/2025-02-05-dependabot-no-longer-supports-python-3-8/\">removal of support for python 3.8</a> only applies to &ldquo;Dependabot security updates&rdquo;, not &ldquo;Dependabot alerts&rdquo;\nthe closing of this issue (<a href=\"https://github.com/dependabot/dependabot-core/issues/10817\">https://github.com/dependabot/dependabot-core/issues/10817</a>) happening on the same day day as this blog post (<a href=\"https://github.blog/changelog/2025-01-06-closing-down-notice-dependabot-will-no-longer-support-python-version-3-8/\">https://github.blog/changelog/2025-01-06-closing-down-notice-dependabot-will-no-longer-support-python-version-3-8/</a>) appears to confirm that it applies to &ldquo;Dependabot security updates&rdquo;</p>\n",
+                  "url": "https://github.com/canonical/data-platform/commit/7d0642f11ca6b5d568fffcf2499bec7f83cb01e5"
+               },
+               {
                   "sha": "1159e0cf6c94f5812de2686427e88900df665718",
                   "author": "Carl Csaposs",
                   "timestamp": 1739443576,
@@ -25244,13 +25251,6 @@
                   "timestamp": 1736425610,
                   "message": "<p>Add renovate config for rust version (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/34\">#34</a>)</p>\n\n<p>Example charmcraft.yaml excerpt</p>\n\n<pre><code class=\"language-yaml\">    override-build: |\n      # If Ubuntu version &lt; 24.04, rustup was installed from snap instead of from the Ubuntu\n      # archive—which means the rustup version could be updated at any time. Print rustup version\n      # to build log to make changes to the snap's rustup version easier to track\n      rustup --version\n\n      # rpds-py (Python package) &gt;=0.19.0 requires rustc &gt;=1.76, which is not available in the\n      # Ubuntu 22.04 archive. Install rustc and cargo using rustup instead of the Ubuntu archive\n      rustup set profile minimal\n      rustup default 1.83.0  # renovate: charmcraft-rust-latest\n\n      craftctl default\n      # Include requirements.txt in *.charm artifact for easier debugging\n      cp requirements.txt &quot;$CRAFT_PART_INSTALL/requirements.txt&quot;\n</code></pre>\n",
                   "url": "https://github.com/canonical/data-platform/commit/9e1b7c3f6c0c18b0d91f5a3ba04dd3c2e84f9722"
-               },
-               {
-                  "sha": "afa6b34e040273694669fe8b0c9e8f03f60c608b",
-                  "author": "Carl Csaposs",
-                  "timestamp": 1736338938,
-                  "message": "<p>Update renovate config for charmcraft.yaml build tools (<a target=\"_blank\" href=\"https://github.com/canonical/data-platform/pull/33\">#33</a>)</p>\n\n<p>Example charmcraft.yaml excerpt</p>\n\n<pre><code class=\"language-yaml\">  poetry-deps:\n    plugin: nil\n    build-packages:\n      - curl\n    override-build: |\n      # Use environment variable instead of `--break-system-packages` to avoid failing on older\n      # versions of pip that do not recognize `--break-system-packages`\n      PIP_BREAK_SYSTEM_PACKAGES=true python3 -m pip install --user --upgrade pip==24.3.1  # renovate: charmcraft-pip-latest\n\n      # Use uv to install poetry so that a newer version of Python can be installed if needed by poetry\n      curl --proto '=https' --tlsv1.2 -LsSf https://github.com/astral-sh/uv/releases/download/0.5.15/uv-installer.sh | sh  # renovate: charmcraft-uv-latest\n      # poetry 2.0.0 requires Python &gt;=3.9\n      if ! &quot;$HOME/.local/bin/uv&quot; python find '&gt;=3.9'\n      then\n        # Use first Python version that is &gt;=3.9 and available in an Ubuntu LTS\n        # (to reduce number of Python versions we use)\n        &quot;$HOME/.local/bin/uv&quot; python install 3.10.12  # renovate: charmcraft-python-ubuntu-22.04\n      fi\n      &quot;$HOME/.local/bin/uv&quot; tool install --no-python-downloads --python '&gt;=3.9' poetry==2.0.0 --with poetry-plugin-export==1.8.0  # renovate: charmcraft-poetry-latest\n\n      ln -sf &quot;$HOME/.local/bin/poetry&quot; /usr/local/bin/poetry\n</code></pre>\n",
-                  "url": "https://github.com/canonical/data-platform/commit/afa6b34e040273694669fe8b0c9e8f03f60c608b"
                }
             ],
             "ciActions": [],
@@ -28275,28 +28275,28 @@
             "releases": null,
             "tags": [
                {
-                  "name": "rev56",
-                  "sha": "4bd0b584c9438c5ff5d471773fc5c32209f7c09f",
-                  "body": "<p>[DPE-6749] Postgresql 16 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-snap/pull/4\">#4</a>)</p>\n\n<ul>\n<li><p>Postgresql 16</p></li>\n\n<li><p>Switch to platforms</p></li>\n\n<li><p>Refs to pg14</p></li>\n\n<li><p>Missing perl</p></li>\n</ul>\n",
-                  "timestamp": 1740943884,
-                  "url": "https://github.com/canonical/postgresql-snap/releases/tag/rev56",
-                  "compareUrl": "https://github.com/canonical/postgresql-snap/compare/14/edge...rev56"
+                  "name": "rev60",
+                  "sha": "a90eb79277f5898593a56b80957775850bb38456",
+                  "body": "<p>[MISC] Update PG version and dual branch configurations (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-snap/pull/5\">#5</a>)</p>\n\n<ul>\n<li><p>Dual branch configurations</p></li>\n\n<li><p>PG version bump</p></li>\n</ul>\n",
+                  "timestamp": 1741099119,
+                  "url": "https://github.com/canonical/postgresql-snap/releases/tag/rev60",
+                  "compareUrl": "https://github.com/canonical/postgresql-snap/compare/14/edge...rev60"
                },
                {
-                  "name": "rev55",
-                  "sha": "4bd0b584c9438c5ff5d471773fc5c32209f7c09f",
-                  "body": "<p>[DPE-6749] Postgresql 16 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-snap/pull/4\">#4</a>)</p>\n\n<ul>\n<li><p>Postgresql 16</p></li>\n\n<li><p>Switch to platforms</p></li>\n\n<li><p>Refs to pg14</p></li>\n\n<li><p>Missing perl</p></li>\n</ul>\n",
-                  "timestamp": 1740943884,
-                  "url": "https://github.com/canonical/postgresql-snap/releases/tag/rev55",
-                  "compareUrl": "https://github.com/canonical/postgresql-snap/compare/14/edge...rev55"
+                  "name": "rev59",
+                  "sha": "a0d666e3ec88f37c40b131edd62805c3e8d26752",
+                  "body": "<p>[MISC] Update PG version and dual branch configuration (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-snap/pull/6\">#6</a>)</p>\n\n<ul>\n<li><p>Dual branch configuration</p></li>\n\n<li><p>PG version bump</p></li>\n</ul>\n",
+                  "timestamp": 1741099106,
+                  "url": "https://github.com/canonical/postgresql-snap/releases/tag/rev59",
+                  "compareUrl": "https://github.com/canonical/postgresql-snap/compare/14/edge...rev59"
                },
                {
-                  "name": "rev54",
-                  "sha": "d02dccc376d906d0c90a2dc8f6a326bc9ab6eb1b",
-                  "body": "<p>[DPE-6749] Initial standalone snap (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-snap/pull/1\">#1</a>)</p>\n\n<ul>\n<li><p>Initial standalone snap</p></li>\n\n<li><p>Removed charmed reference from readme</p></li>\n\n<li><p>Jira components</p></li>\n\n<li><p>Bump lock format</p></li>\n\n<li><p>Wrong link</p></li>\n\n<li><p>Fix license location</p></li>\n\n<li><p>Third time&rsquo;s the charm</p></li>\n\n<li><p>Cleanup tests</p></li>\n\n<li><p>Bump dpw</p></li>\n\n<li><p>Update snap/local/start-postgresql.sh</p></li>\n</ul>\n\n<p>Co-authored-by: Alex Lutay <a href=\"mailto:1928266+taurus-forever@users.noreply.github.com\">1928266+taurus-forever@users.noreply.github.com</a></p>\n\n<ul>\n<li><p>Add custom marker</p></li>\n\n<li><p>Don&rsquo;t print command output</p></li>\n\n<li><p>Check output tests</p></li>\n\n<li><p>Remove cfg hook</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Alex Lutay <a href=\"mailto:1928266+taurus-forever@users.noreply.github.com\">1928266+taurus-forever@users.noreply.github.com</a></p>\n",
-                  "timestamp": 1740761661,
-                  "url": "https://github.com/canonical/postgresql-snap/releases/tag/rev54",
-                  "compareUrl": "https://github.com/canonical/postgresql-snap/compare/14/edge...rev54"
+                  "name": "rev58",
+                  "sha": "a90eb79277f5898593a56b80957775850bb38456",
+                  "body": "<p>[MISC] Update PG version and dual branch configurations (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-snap/pull/5\">#5</a>)</p>\n\n<ul>\n<li><p>Dual branch configurations</p></li>\n\n<li><p>PG version bump</p></li>\n</ul>\n",
+                  "timestamp": 1741099119,
+                  "url": "https://github.com/canonical/postgresql-snap/releases/tag/rev58",
+                  "compareUrl": "https://github.com/canonical/postgresql-snap/compare/14/edge...rev58"
                }
             ],
             "commits": null,
