@@ -2206,9 +2206,18 @@
       "repos": [
          {
             "name": "operator",
-            "newCommits": 10,
+            "newCommits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 203765574,
+                  "version": "2.19.1",
+                  "timestamp": 1741147999,
+                  "title": "ops 2.19.1 and ops-scenario 7.19.1 Synchronise ops and ops-scenario versions",
+                  "body": "<p>The only change in this release is that <code>ops[testing]</code> is set to install exactly <code>ops-scenario</code> 7.19.1, and <code>ops-scenario</code> requires exactly <code>ops</code> 2.19.1.</p>\n\n<p>There are no <code>ops-scenario</code> releases 7.3 through 7.18. These version numbers were skipped to have <code>ops</code> and <code>ops-scenario</code> in sync for minor and bugfix numbers.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.19.0...2.19.1\">https://github.com/canonical/operator/compare/2.19.0&hellip;2.19.1</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/untagged-672f82c54237c3d59fb8",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.19.1...main"
+               },
                {
                   "id": 202699374,
                   "version": "2.19.0",
@@ -2226,22 +2235,11 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>In ops-scenario 7.1, the mocked Juju environment variables were placed directly in the <code>_JujuContext</code> object, rather than in <code>os.environ</code> as previously. We didn&rsquo;t announce this well, and agree that it&rsquo;s too significant a change to make in a minor release, so have reverted that change.</p>\n\n<h3>Fixes</h3>\n\n<ul>\n<li>Expose the mocked Juju environment variables via os.environ again in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1573\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1573\">#1573</a></a></li>\n</ul>\n\n<h3>Documentation</h3>\n\n<ul>\n<li>Update logo and readme by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1571\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1571\">#1571</a></a></li>\n<li>Fill out remaining external link placeholders in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1564\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1564\">#1564</a></a></li>\n<li>Consistently use relation as the noun and integrate as the verb in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1574\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1574\">#1574</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.18.1...scenario-7.1.3\">https://github.com/canonical/operator/compare/2.18.1&hellip;scenario-7.1.3</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/scenario-7.1.3",
                   "compareUrl": "https://github.com/canonical/operator/compare/scenario-7.1.3...main"
-               },
-               {
-                  "id": 198482160,
-                  "version": "2.18.1",
-                  "timestamp": 1738727098,
-                  "title": "ops 2.18.1 and ops-scenario 7.1.2 fixes for deferring and getting the Juju version in tests",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>Fixes an issue where deferring an event handler could cause another handler of the same event to fail, and one where reading the Juju version in unit tests would incorrectly result in <code>0.0.0</code> rather than the version set.</p>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Ensure that the event snapshot is available when one observer defers and another does not in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1562\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1562\">#1562</a></a></li>\n<li>Put the Juju version in the environment as well as the JujuContext in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1559\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1559\">#1559</a></a></li>\n<li>Maintain transaction integrity on first run in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1558\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1558\">#1558</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Set up intersphinx and add links by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1546\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1546\">#1546</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.18.0...2.18.1\">https://github.com/canonical/operator/compare/2.18.0&hellip;2.18.1</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.18.1",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.18.1...main"
                }
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/operator/actions/workflows/framework-tests.yaml"
-            ],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -2283,7 +2281,7 @@
          },
          {
             "name": "pebble",
-            "newCommits": 6,
+            "newCommits": 7,
             "url": "https://github.com/canonical/pebble",
             "releases": [
                {
@@ -2399,36 +2397,36 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1233,
-                     "timestamp": 1741143275,
+                     "revision": 1238,
+                     "timestamp": 1741149244,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1235,
-                     "timestamp": 1741143289,
+                     "revision": 1240,
+                     "timestamp": 1741149251,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1232,
-                     "timestamp": 1741143270,
+                     "revision": 1237,
+                     "timestamp": 1741149239,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1231,
-                     "timestamp": 1741143261,
+                     "revision": 1236,
+                     "timestamp": 1741149236,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1234,
-                     "timestamp": 1741143279,
+                     "revision": 1239,
+                     "timestamp": 1741149247,
                      "base": "bare"
                   }
                ],
