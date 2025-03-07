@@ -903,29 +903,29 @@
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30255,
-                     "timestamp": 1741347091,
+                     "revision": 30267,
+                     "timestamp": 1741375958,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30256,
-                     "timestamp": 1741347187,
+                     "revision": 30268,
+                     "timestamp": 1741376039,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30257,
-                     "timestamp": 1741347267,
+                     "revision": 30269,
+                     "timestamp": 1741376117,
                      "base": "core24"
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 30258,
-                     "timestamp": 1741347354,
+                     "revision": 30270,
+                     "timestamp": 1741376215,
                      "base": "core24"
                   },
                   {
@@ -3210,7 +3210,7 @@
          },
          {
             "name": "grafana-agent-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/grafana-agent-operator",
             "releases": [
                {
@@ -13955,6 +13955,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "0ad9507bb5af86e006f1eacc77e13a1575ee878a",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1741374780,
+                  "message": "<p>Fix: Temporarily disable snap/k8sd config sync during snap upgrade (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1164\">#1164</a>)</p>\n\n<p>The snap and k8sd configurations are synchronized via k8s x-snapd-config in the configure hook. However, this process requires access to the k8sd API, which may be unavailable during an upgrade. For instance, in a clustered setup with microcluster, the upgrade process can be blocked until all nodes are on the same version, causing the reconciliation to time out.</p>\n\n<p>We now explicitly disable the config sync during the snap upgrade to\navoid such scenarios.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/0ad9507bb5af86e006f1eacc77e13a1575ee878a"
+               },
+               {
                   "sha": "63009fb41119e83f4aa8ecd5c19d1ed4e5994574",
                   "author": "eaudetcobello",
                   "timestamp": 1741358945,
@@ -13967,13 +13974,6 @@
                   "timestamp": 1741358723,
                   "message": "<p>remove airgapped test filter (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1166\">#1166</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/37e6bc13c26c20a104d09ce45d19a76a54726ab3"
-               },
-               {
-                  "sha": "0a5edd2129ef94fc8ddf4f9fcb63ebe37a9ecdb1",
-                  "author": "Mateo Florido",
-                  "timestamp": 1741355982,
-                  "message": "<p>feat: add <code>certs-status</code> command (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1159\">#1159</a>)</p>\n\n<p>Add the certs-status command to display a detailed view of the certificates status on a node.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/0a5edd2129ef94fc8ddf4f9fcb63ebe37a9ecdb1"
                }
             ],
             "ciActions": [
@@ -14043,29 +14043,29 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 2741,
-                     "timestamp": 1741360356,
+                     "revision": 2743,
+                     "timestamp": 1741376209,
                      "base": "core20"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 2740,
-                     "timestamp": 1741360205,
+                     "revision": 2747,
+                     "timestamp": 1741376559,
                      "base": "core20"
                   },
                   {
                      "track": "1.33-classic",
                      "channel": "edge",
-                     "revision": 2738,
-                     "timestamp": 1741360080,
+                     "revision": 2744,
+                     "timestamp": 1741376326,
                      "base": "core20"
                   },
                   {
                      "track": "1.33-classic",
                      "channel": "edge",
-                     "revision": 2742,
-                     "timestamp": 1741360423,
+                     "revision": 2745,
+                     "timestamp": 1741376384,
                      "base": "core20"
                   },
                   {
@@ -35592,7 +35592,7 @@
          },
          {
             "name": "hardware-observer-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/hardware-observer-operator",
             "releases": [
                {
