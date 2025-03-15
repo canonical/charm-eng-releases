@@ -13985,6 +13985,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "524df5fff42bf35a6fce39ff9547d2adaa7e2295",
+                  "author": "eaudetcobello",
+                  "timestamp": 1742011651,
+                  "message": "<p>Remove compromised dependency (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1189\">#1189</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/524df5fff42bf35a6fce39ff9547d2adaa7e2295"
+               },
+               {
                   "sha": "cf3baed4424bfbe1707194372d8eeb3e674354b5",
                   "author": "Benjamin Schimke",
                   "timestamp": 1741965550,
@@ -13997,13 +14004,6 @@
                   "timestamp": 1741965493,
                   "message": "<p>fix: Use function-scoped registry for airgapped tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1180\">#1180</a>)</p>\n\n<p>The airgapped tests used and modified the global registry which caused\nconnectivity issues in in follow-up test-cases.\nThe test now creates a separate registry instead.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/0f240ab1e55b3820725fed62c13a46309b2c79cb"
-               },
-               {
-                  "sha": "faab3a1042c1af5f49c170979ff88f4c35436485",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1741945520,
-                  "message": "<p>feat: Enables cilium protocol differentiation (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1170\">#1170</a>)</p>\n\n<p>Starting with cilium 1.17 [1][2], it now supports protocol\ndifferentiation. Setting the loadBalancer.protocolDifferentiation.enabled\nwill result in <code>bpf-lb-proto-diff</code> being set in cilium&rsquo;s configmap,\nwhich corresponds to this feature. We need this feature in order for the\nfollowing Conformance test to pass:</p>\n\n<pre><code>[sig-network] HostPort validates that there is no conflict between pods with same hostPort but different hostIP and protocol [LinuxOnly] [Conformance] [sig-network, Conformance]\n</code></pre>\n\n<p>However, that is not enough for the test to pass. We also need to\nsupport <code>HostPort</code>s. According to the documentation [3], because we&rsquo;re\nthe standard kube-proxy and not cilium&rsquo;s replacement (<code>kubeProxyReplacement=false</code>),\nwe need to also set the Helm chart option <code>cni.chainingMode=portmap</code>.</p>\n\n<p>[1] <a href=\"https://github.com/cilium/cilium/issues/9207\">https://github.com/cilium/cilium/issues/9207</a>\n[2] <a href=\"https://github.com/cilium/cilium/pull/33434\">https://github.com/cilium/cilium/pull/33434</a>\n[3] <a href=\"https://github.com/cilium/cilium/blob/v1.17.1/Documentation/installation/cni-chaining-portmap.rst#portmap-hostport\">https://github.com/cilium/cilium/blob/v1.17.1/Documentation/installation/cni-chaining-portmap.rst#portmap-hostport</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/faab3a1042c1af5f49c170979ff88f4c35436485"
                }
             ],
             "ciActions": [
@@ -30582,32 +30582,32 @@
             "snap": null
          },
          {
-            "name": ".github",
+            "name": "atlantis-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/.github",
+            "url": "https://github.com/canonical/atlantis-operator",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
-                  "author": "Mariyan Dimitrov",
-                  "timestamp": 1668098113,
-                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
-                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
+                  "sha": "d702848509aaeffead327dea0ae6e65038a6c974",
+                  "author": "Weii Wang",
+                  "timestamp": 1737711942,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/atlantis-operator/pull/18\">#18</a> from canonical/renovate/pydantic-2.x</p>\n\n<p>Update dependency pydantic to v2.10.6</p>\n",
+                  "url": "https://github.com/canonical/atlantis-operator/commit/d702848509aaeffead327dea0ae6e65038a6c974"
                },
                {
-                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
-                  "author": "arturo-seijas",
-                  "timestamp": 1668092923,
-                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
+                  "sha": "bfef573c8220889717008e687cff9bc4fc162566",
+                  "author": "renovate[bot]",
+                  "timestamp": 1737685277,
+                  "message": "<p>Update dependency pydantic to v2.10.6</p>\n",
+                  "url": "https://github.com/canonical/atlantis-operator/commit/bfef573c8220889717008e687cff9bc4fc162566"
                },
                {
-                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
+                  "sha": "8ecbb1c762ccc03111e19a4e86b6bda618b739a5",
                   "author": "arturo-seijas",
-                  "timestamp": 1668087850,
-                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
-                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
+                  "timestamp": 1737645146,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/atlantis-operator/pull/19\">#19</a> from canonical/renovate/ops-2.x</p>\n\n<p>Update dependency ops to v2.17.1</p>\n",
+                  "url": "https://github.com/canonical/atlantis-operator/commit/8ecbb1c762ccc03111e19a4e86b6bda618b739a5"
                }
             ],
             "ciActions": [],
@@ -30896,63 +30896,39 @@
             "snap": null
          },
          {
-            "name": "penpot-operator",
+            "name": "autocert-charm",
             "newCommits": 0,
-            "url": "https://github.com/canonical/penpot-operator",
-            "releases": [
+            "url": "https://git.launchpad.net/autocert-charm",
+            "releases": null,
+            "tags": [
                {
-                  "id": 205325341,
-                  "version": "rev18",
-                  "timestamp": 1741792479,
-                  "title": "Revision 18",
-                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:19 UTC on 12 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\">#22</a></a></li>\n<li>chore(deps): update dependency ops to v2.19.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/25\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/25\">#25</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\">#22</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev17...rev18\">https://github.com/canonical/penpot-operator/compare/rev17&hellip;rev18</a></p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev18",
-                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev18...main"
+                  "name": "rev79",
+                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
+                  "body": "",
+                  "timestamp": 1666143335,
+                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev79",
+                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
                },
                {
-                  "id": 204269003,
-                  "version": "rev17",
-                  "timestamp": 1741318109,
-                  "title": "Revision 17",
-                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:33 UTC on 7 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/23\">#23</a></a></li>\n<li>chore: ignore cves by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\">#24</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\">#24</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev16...rev17\">https://github.com/canonical/penpot-operator/compare/rev16&hellip;rev17</a></p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev17",
-                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev17...main"
+                  "name": "rev82",
+                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
+                  "body": "",
+                  "timestamp": 1666143335,
+                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev82",
+                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
                },
                {
-                  "id": 198517716,
-                  "version": "rev16",
-                  "timestamp": 1738743396,
-                  "title": "Revision 16",
-                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:21 UTC on 5 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.18.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/21\">#21</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev15...rev16\">https://github.com/canonical/penpot-operator/compare/rev15&hellip;rev16</a></p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev16",
-                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev16...main"
+                  "name": "rev83",
+                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
+                  "body": "",
+                  "timestamp": 1666143335,
+                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev83",
+                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
                }
             ],
-            "tags": null,
             "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/penpot-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/penpot-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "penpot",
-               "url": "https://charmhub.io/penpot",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 18,
-                     "timestamp": 1741792745,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
+            "ciActions": null,
+            "charm": null,
             "snap": null
          },
          {
@@ -30972,42 +30948,6 @@
             ],
             "commits": null,
             "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "autocert-charm",
-            "newCommits": 19,
-            "url": "https://git.launchpad.net/autocert-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev79",
-                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
-                  "body": "",
-                  "timestamp": 1666143335,
-                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev79",
-                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
-               },
-               {
-                  "name": "rev80",
-                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
-                  "body": "",
-                  "timestamp": 1666143335,
-                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev80",
-                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
-               },
-               {
-                  "name": "rev81",
-                  "sha": "1729e13611b9266ad16f51ced9173593813316dc",
-                  "body": "",
-                  "timestamp": 1666143335,
-                  "url": "https://git.launchpad.net/autocert-charm/tag/?h=rev81",
-                  "compareUrl": "https://git.launchpad.net/autocert-charm/diff/?id=1729e13611b9266ad16f51ced9173593813316dc&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -31060,6 +31000,34 @@
                   "timestamp": 1664154920,
                   "url": "https://git.launchpad.net/ubuntu-repository-cache/tag/?h=rev57",
                   "compareUrl": "https://git.launchpad.net/ubuntu-repository-cache/diff/?id=b411991e3fb4c9dbff9a2cb2ec075218f46d11af&id2=master"
+               }
+            ],
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "ubuntu-mirror-charm",
+            "newCommits": 50,
+            "url": "https://git.launchpad.net/ubuntu-mirror-charm",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "rev17",
+                  "sha": "1c93562e9ab5a033fafe7a43fde4feca75acc122",
+                  "body": "",
+                  "timestamp": 1659597733,
+                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev17",
+                  "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=1c93562e9ab5a033fafe7a43fde4feca75acc122&id2=master"
+               },
+               {
+                  "name": "rev10",
+                  "sha": "f32f68414d12ccf92341c00762a5bf03243468bd",
+                  "body": "",
+                  "timestamp": 1636424958,
+                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev10",
+                  "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=f32f68414d12ccf92341c00762a5bf03243468bd&id2=master"
                }
             ],
             "commits": null,
@@ -31187,26 +31155,18 @@
             "snap": null
          },
          {
-            "name": "ubuntu-mirror-charm",
-            "newCommits": 50,
-            "url": "https://git.launchpad.net/ubuntu-mirror-charm",
+            "name": "stunnel-charm",
+            "newCommits": 2,
+            "url": "https://git.launchpad.net/stunnel-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev17",
-                  "sha": "1c93562e9ab5a033fafe7a43fde4feca75acc122",
+                  "name": "rev1",
+                  "sha": "6fbfb1d7ea7d73640b20aeb875d2d45b4148c04d",
                   "body": "",
-                  "timestamp": 1659597733,
-                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev17",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=1c93562e9ab5a033fafe7a43fde4feca75acc122&id2=master"
-               },
-               {
-                  "name": "rev10",
-                  "sha": "f32f68414d12ccf92341c00762a5bf03243468bd",
-                  "body": "",
-                  "timestamp": 1636424958,
-                  "url": "https://git.launchpad.net/ubuntu-mirror-charm/tag/?h=rev10",
-                  "compareUrl": "https://git.launchpad.net/ubuntu-mirror-charm/diff/?id=f32f68414d12ccf92341c00762a5bf03243468bd&id2=master"
+                  "timestamp": 1665645551,
+                  "url": "https://git.launchpad.net/stunnel-charm/tag/?h=rev1",
+                  "compareUrl": "https://git.launchpad.net/stunnel-charm/diff/?id=6fbfb1d7ea7d73640b20aeb875d2d45b4148c04d&id2=master"
                }
             ],
             "commits": null,
@@ -31235,18 +31195,34 @@
             "snap": null
          },
          {
-            "name": "stunnel-charm",
-            "newCommits": 2,
-            "url": "https://git.launchpad.net/stunnel-charm",
+            "name": "smtp-relay-charm",
+            "newCommits": 22,
+            "url": "https://git.launchpad.net/smtp-relay-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev1",
-                  "sha": "6fbfb1d7ea7d73640b20aeb875d2d45b4148c04d",
+                  "name": "rev7",
+                  "sha": "634b08502fee446ddce8da6d35e80e32be58cb80",
                   "body": "",
-                  "timestamp": 1665645551,
-                  "url": "https://git.launchpad.net/stunnel-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/stunnel-charm/diff/?id=6fbfb1d7ea7d73640b20aeb875d2d45b4148c04d&id2=master"
+                  "timestamp": 1665609954,
+                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev7",
+                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=634b08502fee446ddce8da6d35e80e32be58cb80&id2=master"
+               },
+               {
+                  "name": "rev6",
+                  "sha": "49f39ebcc5c9446de655a55c85a790cbf6b73110",
+                  "body": "",
+                  "timestamp": 1665533235,
+                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev6",
+                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=49f39ebcc5c9446de655a55c85a790cbf6b73110&id2=master"
+               },
+               {
+                  "name": "rev5",
+                  "sha": "4cc60e3f11cb7cca6adbb15a05aa92b5ee1698b8",
+                  "body": "",
+                  "timestamp": 1662000660,
+                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev5",
+                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=4cc60e3f11cb7cca6adbb15a05aa92b5ee1698b8&id2=master"
                }
             ],
             "commits": null,
@@ -31294,6 +31270,39 @@
             "snap": null
          },
          {
+            "name": "action-tmate",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/action-tmate",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "90eab9c01031165cdd6450f1ab97369a72c4d24d",
+                  "author": "Yanks Yoon",
+                  "timestamp": 1723179621,
+                  "message": "<p>do not overwrite authorized keys (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/10\">#10</a>)</p>\n",
+                  "url": "https://github.com/canonical/action-tmate/commit/90eab9c01031165cdd6450f1ab97369a72c4d24d"
+               },
+               {
+                  "sha": "0e16e80531da2280538c0d62f2632fa96bb98316",
+                  "author": "Christopher Bartz",
+                  "timestamp": 1706769831,
+                  "message": "<p>Use canonical/action-tmate@main (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/8\">#8</a>)</p>\n",
+                  "url": "https://github.com/canonical/action-tmate/commit/0e16e80531da2280538c0d62f2632fa96bb98316"
+               },
+               {
+                  "sha": "6b5e6d88d607e0abee2d44173d2db2f3f750435b",
+                  "author": "Yanks Yoon",
+                  "timestamp": 1706616315,
+                  "message": "<p>docs: update branch ref &amp; remove registered public ssh key section (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/6\">#6</a>)</p>\n",
+                  "url": "https://github.com/canonical/action-tmate/commit/6b5e6d88d607e0abee2d44173d2db2f3f750435b"
+               }
+            ],
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "paas-charm",
             "newCommits": 0,
             "url": "https://github.com/canonical/paas-charm",
@@ -31322,45 +31331,6 @@
                   "url": "https://github.com/canonical/paas-charm/commit/9e59b5cf5cbf795af62c645c4234a6653ed349dd"
                }
             ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "github-runner-image-builder-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/github-runner-image-builder-operator",
-            "releases": [
-               {
-                  "id": 205377116,
-                  "version": "rev65",
-                  "timestamp": 1741802687,
-                  "title": "Revision 65",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:06 UTC on 12 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/92\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/92\">#92</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev64...rev65\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev64&hellip;rev65</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev65",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev65...main"
-               },
-               {
-                  "id": 204401087,
-                  "version": "rev64",
-                  "timestamp": 1741360209,
-                  "title": "Revision 64",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:11 UTC on 7 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/89\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/89\">#89</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev63...rev64\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev63&hellip;rev64</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev64",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev64...main"
-               },
-               {
-                  "id": 204374594,
-                  "version": "rev63",
-                  "timestamp": 1741355307,
-                  "title": "Revision 63",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:49 UTC on 7 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: s390x images by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/83\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/83\">#83</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev62...rev63\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev62&hellip;rev63</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev63",
-                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev63...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
             "ciActions": [],
             "charm": null,
             "snap": null
@@ -32217,32 +32187,32 @@
             "snap": null
          },
          {
-            "name": "mattermost-k8s-operator",
+            "name": ".github",
             "newCommits": 0,
-            "url": "https://github.com/canonical/mattermost-k8s-operator",
+            "url": "https://github.com/canonical/.github",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "df50456c72064d4ef201edf9e4dd3ae5b19742e2",
-                  "author": "Phan Trung Thanh",
-                  "timestamp": 1738939869,
-                  "message": "<p>Update CODEOWNERS to relevant team members (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/32\">#32</a>)</p>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/df50456c72064d4ef201edf9e4dd3ae5b19742e2"
+                  "sha": "83d5571299343b2a03309665c8988f7a0c09af1d",
+                  "author": "Mariyan Dimitrov",
+                  "timestamp": 1668098113,
+                  "message": "<p>fix(starter): Rename JSON metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/4\">#4</a>)</p>\n\n<p>The JSON metadata files require an <code>.properties.json</code> extension,\nso this commit renames the .json files to .properties.json.</p>\n\n<p>In addition, I&rsquo;ve moved the icons from a dedicated icons/ folder\nin the workflow-templates/ folder, as they need to be present here\naccording to the doc at <a href=\"https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization\">https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization</a></p>\n",
+                  "url": "https://github.com/canonical/.github/commit/83d5571299343b2a03309665c8988f7a0c09af1d"
                },
                {
-                  "sha": "59447fb3eb2bcf070353c0da503706c7d28f8e6d",
-                  "author": "Amanda H. L. de Andrade Katz",
-                  "timestamp": 1733232477,
-                  "message": "<p>Update README (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/31\">#31</a>)</p>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/59447fb3eb2bcf070353c0da503706c7d28f8e6d"
+                  "sha": "c3d8d3dde03740e325adb43c40158134eb1e7ebb",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668092923,
+                  "message": "<p>Move metadata files (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/3\">#3</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/c3d8d3dde03740e325adb43c40158134eb1e7ebb"
                },
                {
-                  "sha": "217e4bfbe06a1d588d95be5f19d55576c23c8f12",
-                  "author": "swetha1654",
-                  "timestamp": 1731405981,
-                  "message": "<p>Update source link and fix CI issues (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/29\">#29</a>)</p>\n\n<ul>\n<li><p>Update metadata.yaml to have the right source link</p></li>\n\n<li><p>Update tox.ini</p></li>\n\n<li><p>Update tox.ini</p></li>\n\n<li><p>Update tox.ini</p></li>\n\n<li><p>removed if conditions</p></li>\n\n<li><p>Dockerfile update</p></li>\n\n<li><p>removed image-build-args</p></li>\n\n<li><p>Dockerfile added missing RUN</p></li>\n\n<li><p>Fix linting issues</p></li>\n\n<li><p>Fix linting issues</p></li>\n\n<li><p>Added vulnerabilities</p></li>\n\n<li><p>Added vulnerabilities</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/217e4bfbe06a1d588d95be5f19d55576c23c8f12"
+                  "sha": "7388ead75408c32df3be4c04bddba82bb81142ae",
+                  "author": "arturo-seijas",
+                  "timestamp": 1668087850,
+                  "message": "<p>Rename workflows directory (<a target=\"_blank\" href=\"https://github.com/canonical/.github/pull/2\">#2</a>)</p>\n",
+                  "url": "https://github.com/canonical/.github/commit/7388ead75408c32df3be4c04bddba82bb81142ae"
                }
             ],
             "ciActions": [],
@@ -32250,60 +32220,53 @@
             "snap": null
          },
          {
-            "name": "maubot-operator",
+            "name": "penpot-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/maubot-operator",
+            "url": "https://github.com/canonical/penpot-operator",
             "releases": [
                {
-                  "id": 205256248,
-                  "version": "rev28",
-                  "timestamp": 1741777837,
-                  "title": "Revision 28",
-                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:12 UTC on 12 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.57 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev27...rev28\">https://github.com/canonical/maubot-operator/compare/rev27&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev28",
-                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev28...main"
+                  "id": 205325341,
+                  "version": "rev18",
+                  "timestamp": 1741792479,
+                  "title": "Revision 18",
+                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 17</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:19 UTC on 12 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\">#22</a></a></li>\n<li>chore(deps): update dependency ops to v2.19.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/25\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/25\">#25</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/22\">#22</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev17...rev18\">https://github.com/canonical/penpot-operator/compare/rev17&hellip;rev18</a></p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev18",
+                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev18...main"
                },
                {
-                  "id": 205092178,
-                  "version": "rev27",
-                  "timestamp": 1741714877,
-                  "title": "Revision 27",
-                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:43 UTC on 11 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev26...rev27\">https://github.com/canonical/maubot-operator/compare/rev26&hellip;rev27</a></p>\n",
-                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev27",
-                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev27...main"
+                  "id": 204269003,
+                  "version": "rev17",
+                  "timestamp": 1741318109,
+                  "title": "Revision 17",
+                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 16</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:33 UTC on 7 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/23\">#23</a></a></li>\n<li>chore: ignore cves by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\">#24</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/24\">#24</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev16...rev17\">https://github.com/canonical/penpot-operator/compare/rev16&hellip;rev17</a></p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev17",
+                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev17...main"
                },
                {
-                  "id": 204221550,
-                  "version": "rev26",
-                  "timestamp": 1741294865,
-                  "title": "Revision 26",
-                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:03 UTC on 6 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\">#45</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\">#45</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev25...rev26\">https://github.com/canonical/maubot-operator/compare/rev25&hellip;rev26</a></p>\n",
-                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev26",
-                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev26...main"
+                  "id": 198517716,
+                  "version": "rev16",
+                  "timestamp": 1738743396,
+                  "title": "Revision 16",
+                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 15</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:21 UTC on 5 Feb 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.18.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/21\">#21</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev15...rev16\">https://github.com/canonical/penpot-operator/compare/rev15&hellip;rev16</a></p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev16",
+                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev16...main"
                }
             ],
             "tags": null,
             "commits": null,
             "ciActions": [
-               "https://github.com/canonical/maubot-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/maubot-operator/actions/workflows/promote_charm.yaml"
+               "https://github.com/canonical/penpot-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/penpot-operator/actions/workflows/promote_charm.yaml"
             ],
             "charm": {
-               "name": "maubot",
-               "url": "https://charmhub.io/maubot",
+               "name": "penpot",
+               "url": "https://charmhub.io/penpot",
                "releases": [
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 28,
-                     "timestamp": 1741777955,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 16,
-                     "timestamp": 1739199358,
+                     "revision": 18,
+                     "timestamp": 1741792745,
                      "base": ""
                   }
                ],
@@ -32363,34 +32326,26 @@
             }
          },
          {
-            "name": "smtp-relay-charm",
-            "newCommits": 22,
-            "url": "https://git.launchpad.net/smtp-relay-charm",
+            "name": "smtp-dkim-signing-charm",
+            "newCommits": 2,
+            "url": "https://git.launchpad.net/smtp-dkim-signing-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev7",
-                  "sha": "634b08502fee446ddce8da6d35e80e32be58cb80",
+                  "name": "rev3",
+                  "sha": "756dd7be811f6cda7cea0e9cc2b7e365dd452b3a",
                   "body": "",
-                  "timestamp": 1665609954,
-                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev7",
-                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=634b08502fee446ddce8da6d35e80e32be58cb80&id2=master"
+                  "timestamp": 1665609391,
+                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev3",
+                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=756dd7be811f6cda7cea0e9cc2b7e365dd452b3a&id2=master"
                },
                {
-                  "name": "rev6",
-                  "sha": "49f39ebcc5c9446de655a55c85a790cbf6b73110",
+                  "name": "rev1",
+                  "sha": "f3187b0a79b8101fe683882414717895e9aa0012",
                   "body": "",
-                  "timestamp": 1665533235,
-                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev6",
-                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=49f39ebcc5c9446de655a55c85a790cbf6b73110&id2=master"
-               },
-               {
-                  "name": "rev5",
-                  "sha": "4cc60e3f11cb7cca6adbb15a05aa92b5ee1698b8",
-                  "body": "",
-                  "timestamp": 1662000660,
-                  "url": "https://git.launchpad.net/smtp-relay-charm/tag/?h=rev5",
-                  "compareUrl": "https://git.launchpad.net/smtp-relay-charm/diff/?id=4cc60e3f11cb7cca6adbb15a05aa92b5ee1698b8&id2=master"
+                  "timestamp": 1661755189,
+                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev1",
+                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=f3187b0a79b8101fe683882414717895e9aa0012&id2=master"
                }
             ],
             "commits": null,
@@ -32506,32 +32461,32 @@
             "snap": null
          },
          {
-            "name": "atlantis-operator",
+            "name": "mattermost-k8s-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/atlantis-operator",
+            "url": "https://github.com/canonical/mattermost-k8s-operator",
             "releases": null,
             "tags": null,
             "commits": [
                {
-                  "sha": "d702848509aaeffead327dea0ae6e65038a6c974",
-                  "author": "Weii Wang",
-                  "timestamp": 1737711942,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/atlantis-operator/pull/18\">#18</a> from canonical/renovate/pydantic-2.x</p>\n\n<p>Update dependency pydantic to v2.10.6</p>\n",
-                  "url": "https://github.com/canonical/atlantis-operator/commit/d702848509aaeffead327dea0ae6e65038a6c974"
+                  "sha": "df50456c72064d4ef201edf9e4dd3ae5b19742e2",
+                  "author": "Phan Trung Thanh",
+                  "timestamp": 1738939869,
+                  "message": "<p>Update CODEOWNERS to relevant team members (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/32\">#32</a>)</p>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/df50456c72064d4ef201edf9e4dd3ae5b19742e2"
                },
                {
-                  "sha": "bfef573c8220889717008e687cff9bc4fc162566",
-                  "author": "renovate[bot]",
-                  "timestamp": 1737685277,
-                  "message": "<p>Update dependency pydantic to v2.10.6</p>\n",
-                  "url": "https://github.com/canonical/atlantis-operator/commit/bfef573c8220889717008e687cff9bc4fc162566"
+                  "sha": "59447fb3eb2bcf070353c0da503706c7d28f8e6d",
+                  "author": "Amanda H. L. de Andrade Katz",
+                  "timestamp": 1733232477,
+                  "message": "<p>Update README (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/31\">#31</a>)</p>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/59447fb3eb2bcf070353c0da503706c7d28f8e6d"
                },
                {
-                  "sha": "8ecbb1c762ccc03111e19a4e86b6bda618b739a5",
-                  "author": "arturo-seijas",
-                  "timestamp": 1737645146,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/atlantis-operator/pull/19\">#19</a> from canonical/renovate/ops-2.x</p>\n\n<p>Update dependency ops to v2.17.1</p>\n",
-                  "url": "https://github.com/canonical/atlantis-operator/commit/8ecbb1c762ccc03111e19a4e86b6bda618b739a5"
+                  "sha": "217e4bfbe06a1d588d95be5f19d55576c23c8f12",
+                  "author": "swetha1654",
+                  "timestamp": 1731405981,
+                  "message": "<p>Update source link and fix CI issues (<a target=\"_blank\" href=\"https://github.com/canonical/mattermost-k8s-operator/pull/29\">#29</a>)</p>\n\n<ul>\n<li><p>Update metadata.yaml to have the right source link</p></li>\n\n<li><p>Update tox.ini</p></li>\n\n<li><p>Update tox.ini</p></li>\n\n<li><p>Update tox.ini</p></li>\n\n<li><p>removed if conditions</p></li>\n\n<li><p>Dockerfile update</p></li>\n\n<li><p>removed image-build-args</p></li>\n\n<li><p>Dockerfile added missing RUN</p></li>\n\n<li><p>Fix linting issues</p></li>\n\n<li><p>Fix linting issues</p></li>\n\n<li><p>Added vulnerabilities</p></li>\n\n<li><p>Added vulnerabilities</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/mattermost-k8s-operator/commit/217e4bfbe06a1d588d95be5f19d55576c23c8f12"
                }
             ],
             "ciActions": [],
@@ -32539,72 +32494,109 @@
             "snap": null
          },
          {
-            "name": "action-tmate",
+            "name": "github-runner-image-builder-operator",
             "newCommits": 0,
-            "url": "https://github.com/canonical/action-tmate",
-            "releases": null,
+            "url": "https://github.com/canonical/github-runner-image-builder-operator",
+            "releases": [
+               {
+                  "id": 205377116,
+                  "version": "rev65",
+                  "timestamp": 1741802687,
+                  "title": "Revision 65",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:06 UTC on 12 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/92\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/92\">#92</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev64...rev65\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev64&hellip;rev65</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev65",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev65...main"
+               },
+               {
+                  "id": 204401087,
+                  "version": "rev64",
+                  "timestamp": 1741360209,
+                  "title": "Revision 64",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 15:11 UTC on 7 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/89\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/89\">#89</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev63...rev64\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev63&hellip;rev64</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev64",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev64...main"
+               },
+               {
+                  "id": 204374594,
+                  "version": "rev63",
+                  "timestamp": 1741355307,
+                  "title": "Revision 63",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:49 UTC on 7 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: s390x images by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/83\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-image-builder-operator/pull/83\">#83</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-image-builder-operator/compare/rev62...rev63\">https://github.com/canonical/github-runner-image-builder-operator/compare/rev62&hellip;rev63</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-image-builder-operator/releases/tag/rev63",
+                  "compareUrl": "https://github.com/canonical/github-runner-image-builder-operator/compare/rev63...main"
+               }
+            ],
             "tags": null,
-            "commits": [
-               {
-                  "sha": "90eab9c01031165cdd6450f1ab97369a72c4d24d",
-                  "author": "Yanks Yoon",
-                  "timestamp": 1723179621,
-                  "message": "<p>do not overwrite authorized keys (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/10\">#10</a>)</p>\n",
-                  "url": "https://github.com/canonical/action-tmate/commit/90eab9c01031165cdd6450f1ab97369a72c4d24d"
-               },
-               {
-                  "sha": "0e16e80531da2280538c0d62f2632fa96bb98316",
-                  "author": "Christopher Bartz",
-                  "timestamp": 1706769831,
-                  "message": "<p>Use canonical/action-tmate@main (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/8\">#8</a>)</p>\n",
-                  "url": "https://github.com/canonical/action-tmate/commit/0e16e80531da2280538c0d62f2632fa96bb98316"
-               },
-               {
-                  "sha": "6b5e6d88d607e0abee2d44173d2db2f3f750435b",
-                  "author": "Yanks Yoon",
-                  "timestamp": 1706616315,
-                  "message": "<p>docs: update branch ref &amp; remove registered public ssh key section (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/6\">#6</a>)</p>\n",
-                  "url": "https://github.com/canonical/action-tmate/commit/6b5e6d88d607e0abee2d44173d2db2f3f750435b"
-               }
-            ],
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "smtp-dkim-signing-charm",
-            "newCommits": 2,
-            "url": "https://git.launchpad.net/smtp-dkim-signing-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev3",
-                  "sha": "756dd7be811f6cda7cea0e9cc2b7e365dd452b3a",
-                  "body": "",
-                  "timestamp": 1665609391,
-                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev3",
-                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=756dd7be811f6cda7cea0e9cc2b7e365dd452b3a&id2=master"
-               },
-               {
-                  "name": "rev2",
-                  "sha": "772e48fc1a99c67171bd98b0fc11abb867d602ac",
-                  "body": "",
-                  "timestamp": 1665529709,
-                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=772e48fc1a99c67171bd98b0fc11abb867d602ac&id2=master"
-               },
-               {
-                  "name": "rev1",
-                  "sha": "f3187b0a79b8101fe683882414717895e9aa0012",
-                  "body": "",
-                  "timestamp": 1661755189,
-                  "url": "https://git.launchpad.net/smtp-dkim-signing-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/smtp-dkim-signing-charm/diff/?id=f3187b0a79b8101fe683882414717895e9aa0012&id2=master"
-               }
-            ],
             "commits": null,
-            "ciActions": null,
+            "ciActions": [],
             "charm": null,
+            "snap": null
+         },
+         {
+            "name": "maubot-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/maubot-operator",
+            "releases": [
+               {
+                  "id": 205256248,
+                  "version": "rev28",
+                  "timestamp": 1741777837,
+                  "title": "Revision 28",
+                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:12 UTC on 12 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.57 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev27...rev28\">https://github.com/canonical/maubot-operator/compare/rev27&hellip;rev28</a></p>\n",
+                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev28",
+                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev28...main"
+               },
+               {
+                  "id": 205092178,
+                  "version": "rev27",
+                  "timestamp": 1741714877,
+                  "title": "Revision 27",
+                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 27</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 17:43 UTC on 11 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v2.19.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev26...rev27\">https://github.com/canonical/maubot-operator/compare/rev26&hellip;rev27</a></p>\n",
+                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev27",
+                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev27...main"
+               },
+               {
+                  "id": 204221550,
+                  "version": "rev26",
+                  "timestamp": 1741294865,
+                  "title": "Revision 26",
+                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 26</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:03 UTC on 6 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\">#45</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/45\">#45</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev25...rev26\">https://github.com/canonical/maubot-operator/compare/rev25&hellip;rev26</a></p>\n",
+                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev26",
+                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev26...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/maubot-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/maubot-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "maubot",
+               "url": "https://charmhub.io/maubot",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 28,
+                     "timestamp": 1741777955,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 16,
+                     "timestamp": 1739199358,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
@@ -33447,18 +33439,26 @@
             "snap": null
          },
          {
-            "name": "postgresql-charm",
-            "newCommits": 28,
-            "url": "https://git.launchpad.net/postgresql-charm",
+            "name": "openvpn-server-charm",
+            "newCommits": 0,
+            "url": "https://git.launchpad.net/openvpn-server-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev241",
-                  "sha": "f4424fed30c56ca52a65b749b7a29ab4303d3c49",
+                  "name": "rev2",
+                  "sha": "815c065cf9845673880fc12238c69075bb26d4af",
                   "body": "",
-                  "timestamp": 1655891323,
-                  "url": "https://git.launchpad.net/postgresql-charm/tag/?h=rev241",
-                  "compareUrl": "https://git.launchpad.net/postgresql-charm/diff/?id=f4424fed30c56ca52a65b749b7a29ab4303d3c49&id2=master"
+                  "timestamp": 1653883439,
+                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev2",
+                  "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=815c065cf9845673880fc12238c69075bb26d4af&id2=master"
+               },
+               {
+                  "name": "rev1",
+                  "sha": "172ff9f7f03a0dca96c633912081204ca911d30e",
+                  "body": "",
+                  "timestamp": 1575653072,
+                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev1",
+                  "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=172ff9f7f03a0dca96c633912081204ca911d30e&id2=master"
                }
             ],
             "commits": null,
@@ -33503,26 +33503,26 @@
             "snap": null
          },
          {
-            "name": "openvpn-server-charm",
-            "newCommits": 0,
-            "url": "https://git.launchpad.net/openvpn-server-charm",
+            "name": "ntp-charm",
+            "newCommits": 6,
+            "url": "https://git.launchpad.net/ntp-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev2",
-                  "sha": "815c065cf9845673880fc12238c69075bb26d4af",
+                  "name": "rev50",
+                  "sha": "669ff5972f115c782095dbfc2872f4f39ee92209",
                   "body": "",
-                  "timestamp": 1653883439,
-                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=815c065cf9845673880fc12238c69075bb26d4af&id2=master"
+                  "timestamp": 1661753169,
+                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev50",
+                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=669ff5972f115c782095dbfc2872f4f39ee92209&id2=master"
                },
                {
-                  "name": "rev1",
-                  "sha": "172ff9f7f03a0dca96c633912081204ca911d30e",
+                  "name": "rev49",
+                  "sha": "84ee0663302ec12a592adc7e105d6b17d65b8cf3",
                   "body": "",
-                  "timestamp": 1575653072,
-                  "url": "https://git.launchpad.net/openvpn-server-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/openvpn-server-charm/diff/?id=172ff9f7f03a0dca96c633912081204ca911d30e&id2=master"
+                  "timestamp": 1660612253,
+                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev49",
+                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=84ee0663302ec12a592adc7e105d6b17d65b8cf3&id2=master"
                }
             ],
             "commits": null,
@@ -33817,7 +33817,7 @@
          },
          {
             "name": "content-cache-charm",
-            "newCommits": 50,
+            "newCommits": 0,
             "url": "https://git.launchpad.net/content-cache-charm",
             "releases": null,
             "tags": [
@@ -33848,533 +33848,7 @@
             ],
             "commits": null,
             "ciActions": null,
-            "charm": {
-               "name": "content-cache",
-               "url": "https://charmhub.io/content-cache",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 91,
-                     "timestamp": 1643727028,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 453,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 453,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 340,
-                     "timestamp": 1710420035,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 453,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 345,
-                     "timestamp": 1710423396,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 453,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 91,
-                     "timestamp": 1643727028,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 452,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 452,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 334,
-                     "timestamp": 1710419907,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 452,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 346,
-                     "timestamp": 1710423452,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 452,
-                     "timestamp": 1740362555,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 454,
-                     "timestamp": 1740362645,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 454,
-                     "timestamp": 1740362645,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 341,
-                     "timestamp": 1710420036,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 454,
-                     "timestamp": 1740362645,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 344,
-                     "timestamp": 1710423342,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 454,
-                     "timestamp": 1740362645,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 23,
-                     "timestamp": 1617897784,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 384,
-                     "timestamp": 1726026831,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 384,
-                     "timestamp": 1726026831,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 384,
-                     "timestamp": 1726026831,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 345,
-                     "timestamp": 1710423530,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 384,
-                     "timestamp": 1726026831,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 385,
-                     "timestamp": 1726027194,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 385,
-                     "timestamp": 1726027194,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 385,
-                     "timestamp": 1726027194,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 346,
-                     "timestamp": 1710423536,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 385,
-                     "timestamp": 1726027194,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 383,
-                     "timestamp": 1726026820,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 383,
-                     "timestamp": 1726026820,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 383,
-                     "timestamp": 1726026820,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 344,
-                     "timestamp": 1710423523,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "candidate",
-                     "revision": 383,
-                     "timestamp": 1726026820,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 435,
-                     "timestamp": 1733539304,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 435,
-                     "timestamp": 1733539304,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 435,
-                     "timestamp": 1733539304,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 345,
-                     "timestamp": 1710423575,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 435,
-                     "timestamp": 1733539304,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 437,
-                     "timestamp": 1733539365,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 437,
-                     "timestamp": 1733539365,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 437,
-                     "timestamp": 1733539365,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 346,
-                     "timestamp": 1710423582,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 437,
-                     "timestamp": 1733539365,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 436,
-                     "timestamp": 1733539311,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 436,
-                     "timestamp": 1733539311,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 436,
-                     "timestamp": 1733539311,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 344,
-                     "timestamp": 1710423568,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "beta",
-                     "revision": 436,
-                     "timestamp": 1733539311,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1642085321,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 384,
-                     "timestamp": 1726026834,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 384,
-                     "timestamp": 1726026834,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 384,
-                     "timestamp": 1726026834,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 345,
-                     "timestamp": 1710423499,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 384,
-                     "timestamp": 1726026834,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1642085321,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 385,
-                     "timestamp": 1726027196,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 385,
-                     "timestamp": 1726027196,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 385,
-                     "timestamp": 1726027196,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 346,
-                     "timestamp": 1710423506,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 385,
-                     "timestamp": 1726027196,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 383,
-                     "timestamp": 1726026823,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 383,
-                     "timestamp": 1726026823,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 383,
-                     "timestamp": 1726026823,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 344,
-                     "timestamp": 1710423460,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 383,
-                     "timestamp": 1726026823,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 423,
-                     "timestamp": 1733107530,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 426,
-                     "timestamp": 1733107856,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 425,
-                     "timestamp": 1733107723,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 424,
-                     "timestamp": 1733107531,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 451,
-                     "timestamp": 1738242010,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "1"
-               ]
-            },
+            "charm": null,
             "snap": null
          },
          {
@@ -34439,7 +33913,7 @@
          },
          {
             "name": "mailman3-web-charm",
-            "newCommits": 6,
+            "newCommits": 0,
             "url": "https://git.launchpad.net/mailman3-web-charm",
             "releases": null,
             "tags": [
@@ -34458,34 +33932,6 @@
                   "timestamp": 1631627191,
                   "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev1",
                   "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=3f5ac5471ba7295afabfcf5335690c7d80add166&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "ntp-charm",
-            "newCommits": 6,
-            "url": "https://git.launchpad.net/ntp-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev50",
-                  "sha": "669ff5972f115c782095dbfc2872f4f39ee92209",
-                  "body": "",
-                  "timestamp": 1661753169,
-                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev50",
-                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=669ff5972f115c782095dbfc2872f4f39ee92209&id2=master"
-               },
-               {
-                  "name": "rev49",
-                  "sha": "84ee0663302ec12a592adc7e105d6b17d65b8cf3",
-                  "body": "",
-                  "timestamp": 1660612253,
-                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev49",
-                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=84ee0663302ec12a592adc7e105d6b17d65b8cf3&id2=master"
                }
             ],
             "commits": null,
