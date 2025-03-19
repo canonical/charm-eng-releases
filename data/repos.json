@@ -11217,7 +11217,7 @@
          },
          {
             "name": "oauth2-proxy-k8s-operator",
-            "newCommits": 4,
+            "newCommits": 6,
             "url": "https://github.com/canonical/oauth2-proxy-k8s-operator",
             "releases": [
                {
@@ -12627,28 +12627,30 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "7399b2f3cd3a40069aacb857ccb50e14b8a0212c",
+                  "sha": "c0975c6b697da6ee23623f4913600f41d06c75c6",
+                  "author": "canonical-iam",
+                  "timestamp": 1742378460,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service/pull/3\">#3</a> from canonical/renovate/auto-github-actions</p>\n\n<p>chore(deps): update github actions</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service/commit/c0975c6b697da6ee23623f4913600f41d06c75c6"
+               },
+               {
+                  "sha": "5be6091f0b0f01ba835c3703ba395922b27db728",
+                  "author": "renovate[bot]",
+                  "timestamp": 1742378251,
+                  "message": "<p>chore(deps): update github actions</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service/commit/5be6091f0b0f01ba835c3703ba395922b27db728"
+               },
+               {
+                  "sha": "65e35ff6ada1ea37e825f47eb651d4010556771c",
                   "author": "Nikos Sklikas",
-                  "timestamp": 1742201419,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service/pull/1\">#1</a> from canonical/IAM-1351</p>\n\n<p>Add initial go project structure</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service/commit/7399b2f3cd3a40069aacb857ccb50e14b8a0212c"
-               },
-               {
-                  "sha": "9ea27510539be7bbd82822c991f4d78af4f670a9",
-                  "author": "Nikos",
-                  "timestamp": 1741954162,
-                  "message": "<p>chore: update github workflows</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service/commit/9ea27510539be7bbd82822c991f4d78af4f670a9"
-               },
-               {
-                  "sha": "763b4a04802e3608990147008fa373fbd151e7bb",
-                  "author": "Nikos",
-                  "timestamp": 1741863174,
-                  "message": "<p>feat: add initial go project structure</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service/commit/763b4a04802e3608990147008fa373fbd151e7bb"
+                  "timestamp": 1742378224,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service/pull/5\">#5</a> from canonical/IAM-1356</p>\n\n<p>Add webhook handler</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service/commit/65e35ff6ada1ea37e825f47eb651d4010556771c"
                }
             ],
-            "ciActions": null,
+            "ciActions": [
+               "https://github.com/canonical/user-verification-service/actions/workflows/ci.yaml"
+            ],
             "charm": null,
             "snap": null
          },
@@ -14507,6 +14509,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "eba352ae90ae7ff864a9fc8d92bbfdfea56d1927",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1742376731,
+                  "message": "<p>Adopt scripts/cve-reports in the k8s-workflows repository (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/31\">#31</a>)</p>\n\n<p>Currently, in the scan_images.yaml workflow, we&rsquo;re cloning the\n<a href=\"https://github.com/canonical/kubeflow-ci.git\">https://github.com/canonical/kubeflow-ci.git</a> repository and run\nthe ./scripts/cve-reports/send-scan.py script from it. We should move\nthe script to this repository instead, as that script may be removed\nin the future.</p>\n\n<p>This commit copies as-is the ./scipts/cve-reports/* files and a few\nother auxiliary required to maintain it. The copied tox.ini and\non_pull_request.yaml have been have been simplified to only contain\nwhat is relevant.</p>\n\n<p>The scan_images.yaml action has been updated to use the local script\ninstead.</p>\n\n<p>Signed-off-by: Claudiu Belu <a href=\"mailto:claudiu.belu@canonical.com\">claudiu.belu@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-workflows/commit/eba352ae90ae7ff864a9fc8d92bbfdfea56d1927"
+               },
+               {
                   "sha": "a748a66a60f1c816096eef04b5f3d659f4e04ac9",
                   "author": "eaudetcobello",
                   "timestamp": 1740511629,
@@ -14519,13 +14528,6 @@
                   "timestamp": 1739902044,
                   "message": "<p>bump actions/cache to v4.2.0 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/29\">#29</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-workflows/commit/7b2e52dd8bf633de0b6455230df773c4f067224b"
-               },
-               {
-                  "sha": "ff94e5052cc52f39a3f370e4d351aa887784f4d3",
-                  "author": "Adam Dyess",
-                  "timestamp": 1739886450,
-                  "message": "<p>github labels are a list of objects with names (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-workflows/pull/28\">#28</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-workflows/commit/ff94e5052cc52f39a3f370e4d351aa887784f4d3"
                }
             ],
             "ciActions": null,
@@ -30465,6 +30467,45 @@
       "team": "IS",
       "repos": [
          {
+            "name": "nginx-ingress-integrator-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/nginx-ingress-integrator-operator",
+            "releases": [
+               {
+                  "id": 206782160,
+                  "version": "rev149",
+                  "timestamp": 1742375976,
+                  "title": "Revision 149",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:21 UTC on 19 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cryptography to v44.0.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/191\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/191\">#191</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev146...rev149\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev146&hellip;rev149</a></p>\n",
+                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev149",
+                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev149...main"
+               },
+               {
+                  "id": 206782104,
+                  "version": "rev148",
+                  "timestamp": 1742375976,
+                  "title": "Revision 148",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:20 UTC on 19 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cryptography to v44.0.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/191\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/191\">#191</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev146...rev148\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev146&hellip;rev148</a></p>\n",
+                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev148",
+                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev148...main"
+               },
+               {
+                  "id": 206770206,
+                  "version": "rev147",
+                  "timestamp": 1742372591,
+                  "title": "Revision 147",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:24 UTC on 19 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Upgrade charm base and restore Juju 2 compatibility by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/192\">#192</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev144...rev147\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev144&hellip;rev147</a></p>\n",
+                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev147",
+                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev147...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "wordpress-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/wordpress-k8s-operator",
@@ -30544,45 +30585,6 @@
                   "latest"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "nginx-ingress-integrator-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/nginx-ingress-integrator-operator",
-            "releases": [
-               {
-                  "id": 206770206,
-                  "version": "rev147",
-                  "timestamp": 1742372591,
-                  "title": "Revision 147",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:24 UTC on 19 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Upgrade charm base and restore Juju 2 compatibility by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/192\">#192</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev144...rev147\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev144&hellip;rev147</a></p>\n",
-                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev147",
-                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev147...main"
-               },
-               {
-                  "id": 206770187,
-                  "version": "rev146",
-                  "timestamp": 1742372591,
-                  "title": "Revision 146",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:24 UTC on 19 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Upgrade charm base and restore Juju 2 compatibility by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/192\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/192\">#192</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev144...rev146\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev144&hellip;rev146</a></p>\n",
-                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev146",
-                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev146...main"
-               },
-               {
-                  "id": 205580230,
-                  "version": "rev145",
-                  "timestamp": 1741872816,
-                  "title": "Revision 145",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:34 UTC on 13 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Docs: Update how-to and explanation docs by <a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/197\">#197</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/erinecon\">@erinecon</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/197\"><a target=\"_blank\" href=\"https://github.com/canonical/nginx-ingress-integrator-operator/pull/197\">#197</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev142...rev145\">https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev142&hellip;rev145</a></p>\n",
-                  "url": "https://github.com/canonical/nginx-ingress-integrator-operator/releases/tag/rev145",
-                  "compareUrl": "https://github.com/canonical/nginx-ingress-integrator-operator/compare/rev145...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
             "snap": null
          },
          {
