@@ -606,7 +606,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 6755,
+            "newCommits": 6759,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -735,29 +735,29 @@
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30564,
-                     "timestamp": 1743053156,
+                     "revision": 30573,
+                     "timestamp": 1743096684,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30565,
-                     "timestamp": 1743053244,
+                     "revision": 30574,
+                     "timestamp": 1743096773,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30566,
-                     "timestamp": 1743053327,
+                     "revision": 30575,
+                     "timestamp": 1743096868,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30567,
-                     "timestamp": 1743053421,
+                     "revision": 30576,
+                     "timestamp": 1743096968,
                      "base": "core24"
                   },
                   {
@@ -4925,6 +4925,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4410259672587af6c9160e2320b4c32c1e68c986",
+                  "author": "Andrew Scribner",
+                  "timestamp": 1743097683,
+                  "message": "<p>feat: use a context manager to compute status from charm reconciliation (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/40\">#40</a>)</p>\n\n<ul>\n<li>feat: use a context manager to compute status from charm reconciliation</li>\n</ul>\n\n<p>Previously, every step in <code>reconcile</code> captured the errors emitted and generated charm statuses for the different parts.  The charm status was then computed as the worst of these statuses.</p>\n\n<p>This commit refactors that to use a context manager (StatusManager) to offload this work of catching known errors and mapping them to charm statuses. This reduces the boilerplate code in <code>reconcile</code>.</p>\n\n<ul>\n<li>fix: remove unnecessary status emission</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/kiali-k8s-operator/commit/4410259672587af6c9160e2320b4c32c1e68c986"
+               },
+               {
                   "sha": "d123043c5dbb80457c3ac16120b2e20b74f524ea",
                   "author": "Andrew Scribner",
                   "timestamp": 1743010611,
@@ -4937,13 +4944,6 @@
                   "timestamp": 1743008972,
                   "message": "<p>feat: use prometheus-api to relate to prometheus (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/35\">#35</a>)</p>\n\n<p>Previously, we used the grafana-source lib/interface to relate to Prometheus.  This had a few drawbacks, mainly that GrafanaSource needed a peer relation and did a lot of grafana-specific stuff that we didn&rsquo;t need.</p>\n\n<p>This commit removes the grafana-source integration, replacing it with the prometheus-api integration.  Kiali still works the same as always, the only change here is how it receives the url for prometheus.</p>\n\n<p>Note that this is a breaking change in that previously kiali&rsquo;s <code>prometheus</code> relation supported grafana_source as the interface, and now it supports prometheus_api.</p>\n",
                   "url": "https://github.com/canonical/kiali-k8s-operator/commit/510e2f895c10c79f5291757981df3406109b22c0"
-               },
-               {
-                  "sha": "006b5c22afed6ee186c09a616865b294868d6657",
-                  "author": "Michael Dmitry",
-                  "timestamp": 1742981070,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/38\">#38</a> from canonical/TAP-340</p>\n\n<p>Add Tiobe TiCS to the CI</p>\n",
-                  "url": "https://github.com/canonical/kiali-k8s-operator/commit/006b5c22afed6ee186c09a616865b294868d6657"
                }
             ],
             "ciActions": [],
@@ -20896,6 +20896,15 @@
                   "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev445...main"
                },
                {
+                  "id": 208754550,
+                  "version": "rev356",
+                  "timestamp": 1743070260,
+                  "title": "Revision 356",
+                  "body": "<p>resources:\n    -  vault-image: ghcr.io/canonical/vault:1.17.6\n       resource-revision: 85</p>\n\n<p>Static resources:\n Released to &lsquo;1.17/edge&rsquo; at 17:33 UTC on 27 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/621\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/621\">#621</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev444...rev356\">https://github.com/canonical/vault-k8s-operator/compare/rev444&hellip;rev356</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev356",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev356...main"
+               },
+               {
                   "id": 208507994,
                   "version": "rev444",
                   "timestamp": 1743016982,
@@ -20903,15 +20912,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.17/edge&rsquo; at 19:55 UTC on 26 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: update libs for individual charms by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/620\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/620\">#620</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev354...rev444\">https://github.com/canonical/vault-k8s-operator/compare/rev354&hellip;rev444</a></p>\n",
                   "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev444",
                   "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev444...main"
-               },
-               {
-                  "id": 208232979,
-                  "version": "rev443",
-                  "timestamp": 1742931903,
-                  "title": "Revision 443",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.16/edge&rsquo; at 20:18 UTC on 25 Mar 2025</p>\n\n<p>Released to &lsquo;1.16/beta&rsquo; at 20:33 UTC on 25 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: charm selection in promote action by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/619\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/619\">#619</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev350...rev443\">https://github.com/canonical/vault-k8s-operator/compare/rev350&hellip;rev443</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev443",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev443...main"
                }
             ],
             "tags": null,
@@ -20973,8 +20973,8 @@
                   {
                      "track": "1.17",
                      "channel": "edge",
-                     "revision": 354,
-                     "timestamp": 1742918095,
+                     "revision": 356,
+                     "timestamp": 1743096828,
                      "base": ""
                   },
                   {
@@ -33928,7 +33928,7 @@
          },
          {
             "name": "wazuh-server-operator",
-            "newCommits": 31,
+            "newCommits": 32,
             "url": "https://github.com/canonical/wazuh-server-operator",
             "releases": [
                {
