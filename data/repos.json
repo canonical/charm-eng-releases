@@ -2254,9 +2254,18 @@
          },
          {
             "name": "pebble",
-            "newCommits": 13,
+            "newCommits": 1,
             "url": "https://github.com/canonical/pebble",
             "releases": [
+               {
+                  "id": 209230257,
+                  "version": "v1.20.0",
+                  "timestamp": 1743373312,
+                  "title": "v1.20.0: PEBBLE_VERBOSE, pebble check --refresh, Go 1.24",
+                  "body": "<p>This release adds several new features:</p>\n\n<ul>\n<li><code>PEBBLE_VERBOSE</code> to enable <code>pebble run</code> or <code>pebble enter</code>&rsquo;s verbose mode with an environment variable instead of only the command-line option. This is equivalent to <code>--verbose</code>, but for when you don&rsquo;t have the ability to modify the command line. <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/576\">#576</a></li>\n<li>The <code>pebble check</code> command, with a <code>--refresh</code> option to run a health check immediately. This is useful for diagnosing an individual check. <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/574\">#574</a> and <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/577\">#577</a></li>\n<li>A new plan section called <code>workloads</code>, primarily for projects that import Pebble. <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/571\">#571</a></li>\n</ul>\n\n<p>The release also fixes a panic in HTTP-based health checks with invalid URLs (<a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/580\">#580</a>), and adds several documentation and testing improvements.</p>\n\n<p>This release also updates the Go version to Go 1.24 now that 1.22 is end-of-life. <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/585\">#585</a></p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.19.0...v1.20.0\">https://github.com/canonical/pebble/compare/v1.19.0&hellip;v1.20.0</a></p>\n",
+                  "url": "https://github.com/canonical/pebble/releases/tag/v1.20.0",
+                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.20.0...master"
+               },
                {
                   "id": 202656932,
                   "version": "v1.19.0",
@@ -2274,15 +2283,6 @@
                   "body": "<p>This release adds a few minor features:</p>\n\n<ul>\n<li><code>ExternalMode</code> reboot, added by <a target=\"_blank\" href=\"https://github.com/anpep\">@anpep</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/529\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/529\">#529</a></a>.</li>\n<li>Support UID-only form in <code>NormalizeUidGid</code> for services and exec, added by <a target=\"_blank\" href=\"https://github.com/james-garner-canonical\">@james-garner-canonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/553\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/553\">#553</a></a>. This was James&rsquo; first contribution to Pebble &ndash; thanks!</li>\n</ul>\n\n<p>In addition, <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> refactored client code and tests to use the <code>Requester</code> interface in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/549\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/549\">#549</a></a></p>\n\n<p>This release also includes many documentation improvements from <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> and <a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a>. See our <a href=\"https://canonical-pebble.readthedocs-hosted.com/en/latest/\">documentation site</a>.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.17.0...v1.18.0\">https://github.com/canonical/pebble/compare/v1.17.0&hellip;v1.18.0</a></p>\n",
                   "url": "https://github.com/canonical/pebble/releases/tag/v1.18.0",
                   "compareUrl": "https://github.com/canonical/pebble/compare/v1.18.0...master"
-               },
-               {
-                  "id": 188373985,
-                  "version": "v1.17.0",
-                  "timestamp": 1733097146,
-                  "title": "v1.17.0: restart services that fail within 1s \"okay delay\", and more",
-                  "body": "<p>The main user-facing feature this release adds is that Pebble will now auto-restart services that fail to start within the 1-second &ldquo;okay delay&rdquo; time window. Previously the user would have to re-<code>start</code> these manually. The API (and CLI) still returns an error in this case, with a message indicating it will restart, for example &ldquo;service start attempt: exited quickly with code 1, will restart&rdquo;.</p>\n\n<p>The release also adds support for customisable plan sections (for projects that import and build on top of Pebble).</p>\n\n<p>It also fixes several bugs, including a <a href=\"https://github.com/canonical/pebble/issues/525\">panic during start</a> with certain configurations.</p>\n\n<h2>All changes:</h2>\n\n<ul>\n<li><p>feat(plan): add plan section support by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/488\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/488\">#488</a></a></p></li>\n\n<li><p>feat(planstate): add plan section support by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/489\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/489\">#489</a></a></p></li>\n\n<li><p>feat(plan): add plan sub-directory support by <a target=\"_blank\" href=\"https://github.com/flotter\">@flotter</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/509\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/509\">#509</a></a></p></li>\n\n<li><p>feat: set home when user is set by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/521\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/521\">#521</a></a></p></li>\n\n<li><p>feat: restart services failed within okay delay by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/520\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/520\">#520</a></a></p></li>\n\n<li><p>fix: allow stopping services in &ldquo;starting&rdquo; state by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/503\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/503\">#503</a></a></p></li>\n\n<li><p>fix: ring buffer deadlock by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/511\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/511\">#511</a></a></p></li>\n\n<li><p>fix: allow stopping services in the starting state by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/512\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/512\">#512</a></a></p></li>\n\n<li><p>fix: mapping service to lanes when services are in random order by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/528\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/528\">#528</a></a></p></li>\n\n<li><p>test: make root tests easier to run by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/501\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/501\">#501</a></a></p></li>\n\n<li><p>test: add integration tests for &ldquo;pebble run&rdquo; by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/497\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/497\">#497</a></a></p></li>\n\n<li><p>chore: bump the snapcore/action-build action version by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/505\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/505\">#505</a></a></p></li>\n\n<li><p>chore: vuln scan failure workaround by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/507\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/507\">#507</a></a></p></li>\n\n<li><p>chore: revert changes introduced by allowing stopping services in starting state by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/510\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/510\">#510</a></a></p></li>\n\n<li><p>chore(client): fix typo in AutoStart doc comment by <a target=\"_blank\" href=\"https://github.com/benhoyt\">@benhoyt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/515\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/515\">#515</a></a></p></li>\n\n<li><p>docs: add a security policy document by <a target=\"_blank\" href=\"https://github.com/tonyandrewmeyer\">@tonyandrewmeyer</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/504\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/504\">#504</a></a></p></li>\n\n<li><p>docs: remove reusable content from search result by <a target=\"_blank\" href=\"https://github.com/IronCore864\">@IronCore864</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/516\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/516\">#516</a></a></p></li>\n\n<li><p>docs: fix tutorial by including a status check after stopping http-server by <a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\">#523</a></a></p></li>\n\n<li><p>docs: make landing pages more informative by <a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/524\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/524\">#524</a></a></p></li>\n\n<li><p>docs: add snap as an installation method by <a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/526\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/526\">#526</a></a></p></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/dwilding\">@dwilding</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\"><a target=\"_blank\" href=\"https://github.com/canonical/pebble/pull/523\">#523</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/pebble/compare/v1.16.0...v1.17.0\">https://github.com/canonical/pebble/compare/v1.16.0&hellip;v1.17.0</a></p>\n",
-                  "url": "https://github.com/canonical/pebble/releases/tag/v1.17.0",
-                  "compareUrl": "https://github.com/canonical/pebble/compare/v1.17.0...master"
                }
             ],
             "tags": null,
@@ -2335,71 +2335,71 @@
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 1202,
-                     "timestamp": 1740605269,
+                     "revision": 1279,
+                     "timestamp": 1743375646,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 1203,
-                     "timestamp": 1740605267,
+                     "revision": 1277,
+                     "timestamp": 1743375638,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 1204,
-                     "timestamp": 1740605270,
+                     "revision": 1278,
+                     "timestamp": 1743375644,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 1201,
-                     "timestamp": 1740605266,
+                     "revision": 1280,
+                     "timestamp": 1743375654,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "candidate",
-                     "revision": 1205,
-                     "timestamp": 1740605275,
+                     "revision": 1276,
+                     "timestamp": 1743375642,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1263,
-                     "timestamp": 1741917172,
+                     "revision": 1279,
+                     "timestamp": 1743375596,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1262,
-                     "timestamp": 1741917165,
+                     "revision": 1277,
+                     "timestamp": 1743375588,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1264,
-                     "timestamp": 1741917184,
+                     "revision": 1278,
+                     "timestamp": 1743375592,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1261,
-                     "timestamp": 1741917157,
+                     "revision": 1280,
+                     "timestamp": 1743375600,
                      "base": "bare"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 1265,
-                     "timestamp": 1741917189,
+                     "revision": 1276,
+                     "timestamp": 1743375580,
                      "base": "bare"
                   }
                ],
@@ -7561,6 +7561,15 @@
             "url": "https://github.com/canonical/charmcraftcache-hub",
             "releases": [
                {
+                  "id": 209229680,
+                  "version": "build-1743373010-v5",
+                  "timestamp": 1743083113,
+                  "title": "build-1743373010-v5",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1743373010-v5",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1743373010-v5...main"
+               },
+               {
                   "id": 209175743,
                   "version": "build-1743286526-v5",
                   "timestamp": 1743083113,
@@ -7577,15 +7586,6 @@
                   "body": "",
                   "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1743200212-v5",
                   "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1743200212-v5...main"
-               },
-               {
-                  "id": 208817511,
-                  "version": "build-1743114061-v5",
-                  "timestamp": 1743083113,
-                  "title": "build-1743114061-v5",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1743114061-v5",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1743114061-v5...main"
                }
             ],
             "tags": null,
@@ -23812,6 +23812,15 @@
             "url": "https://github.com/canonical/charmcraftcache-hub",
             "releases": [
                {
+                  "id": 209229680,
+                  "version": "build-1743373010-v5",
+                  "timestamp": 1743083113,
+                  "title": "build-1743373010-v5",
+                  "body": "",
+                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1743373010-v5",
+                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1743373010-v5...main"
+               },
+               {
                   "id": 209175743,
                   "version": "build-1743286526-v5",
                   "timestamp": 1743083113,
@@ -23828,15 +23837,6 @@
                   "body": "",
                   "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1743200212-v5",
                   "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1743200212-v5...main"
-               },
-               {
-                  "id": 208817511,
-                  "version": "build-1743114061-v5",
-                  "timestamp": 1743083113,
-                  "title": "build-1743114061-v5",
-                  "body": "",
-                  "url": "https://github.com/canonical/charmcraftcache-hub/releases/tag/build-1743114061-v5",
-                  "compareUrl": "https://github.com/canonical/charmcraftcache-hub/compare/build-1743114061-v5...main"
                }
             ],
             "tags": null,
