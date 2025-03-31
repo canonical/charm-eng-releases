@@ -10345,8 +10345,8 @@
                   {
                      "track": "3",
                      "channel": "edge",
-                     "revision": 79,
-                     "timestamp": 1742505325,
+                     "revision": 82,
+                     "timestamp": 1743427101,
                      "base": ""
                   },
                   {
@@ -12433,7 +12433,7 @@
          },
          {
             "name": "oauth2-proxy-k8s-operator",
-            "newCommits": 32,
+            "newCommits": 34,
             "url": "https://github.com/canonical/oauth2-proxy-k8s-operator",
             "releases": [
                {
@@ -12733,25 +12733,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "fb6e70a03b25d790e4bdd6abe2963b3eecea3c11",
+                  "author": "canonical-iam",
+                  "timestamp": 1743427186,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service-operator/pull/11\">#11</a> from canonical/renovate/auto-patch-github-actions</p>\n\n<p>chore(deps): update canonical/identity-team action to v1.7.6</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service-operator/commit/fb6e70a03b25d790e4bdd6abe2963b3eecea3c11"
+               },
+               {
+                  "sha": "ee41d5006c4e0ee84890593959f63d9ebdf353b8",
+                  "author": "renovate[bot]",
+                  "timestamp": 1743426550,
+                  "message": "<p>chore(deps): update canonical/identity-team action to v1.7.6</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service-operator/commit/ee41d5006c4e0ee84890593959f63d9ebdf353b8"
+               },
+               {
                   "sha": "fcd4877aa11d7129ab08e792bb901a6fb65de53c",
                   "author": "canonical-iam",
                   "timestamp": 1743177535,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service-operator/pull/9\">#9</a> from canonical/renovate/auto-major-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hooks (major)</p>\n",
                   "url": "https://github.com/canonical/user-verification-service-operator/commit/fcd4877aa11d7129ab08e792bb901a6fb65de53c"
-               },
-               {
-                  "sha": "e48be7f5a57f60e5b67d7cf11665705c74a994c4",
-                  "author": "renovate[bot]",
-                  "timestamp": 1743176847,
-                  "message": "<p>chore(deps): update pre-commit hooks</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service-operator/commit/e48be7f5a57f60e5b67d7cf11665705c74a994c4"
-               },
-               {
-                  "sha": "242b7ba329bb8a430e970b905c1a17161cdfd744",
-                  "author": "canonical-iam",
-                  "timestamp": 1743176821,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service-operator/pull/8\">#8</a> from canonical/renovate/auto-pre-commit-hooks</p>\n\n<p>chore(deps): update pre-commit hooks (minor)</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service-operator/commit/242b7ba329bb8a430e970b905c1a17161cdfd744"
                }
             ],
             "ciActions": [
@@ -12986,7 +12986,7 @@
          },
          {
             "name": "cluster-api-k8s",
-            "newCommits": 3,
+            "newCommits": 5,
             "url": "https://github.com/canonical/cluster-api-k8s",
             "releases": [
                {
@@ -14011,7 +14011,7 @@
          },
          {
             "name": "k8s-dqlite",
-            "newCommits": 9,
+            "newCommits": 10,
             "url": "https://github.com/canonical/k8s-dqlite",
             "releases": [
                {
@@ -14095,6 +14095,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7f64888fca1e6fca1d38492d91bd7f48d00a6207",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1743425011,
+                  "message": "<p>ci: Send trivy vulnerability records to Jira (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1124\">#1124</a>)</p>\n\n<p>Uses the send-scan.py script from the k8s-workflows repository to send\ncards to Jira. These are generated from the Trivy scan results.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/7f64888fca1e6fca1d38492d91bd7f48d00a6207"
+               },
+               {
                   "sha": "c51fe1347c9747f1ca6cdf771a9ac51d7b83303a",
                   "author": "Claudiu Belu",
                   "timestamp": 1743409764,
@@ -14107,13 +14114,6 @@
                   "timestamp": 1743407565,
                   "message": "<p>test: Use multi-node cluster as part of upgrade/rollback tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1233\">#1233</a>)</p>\n\n<p>At the moment, we have two almost identical checks that are usually\nperformed one after the other</p>\n\n<ul>\n<li>wait_until_k8s_ready\n\n<ul>\n<li>ensures that each instance node has &ldquo;Ready&rdquo; status</li>\n</ul></li>\n<li>ready_nodes followed by an assertion count\n\n<ul>\n<li>check each individual condition, expecting the the ones other than\n&ldquo;Ready&rdquo; to be &ldquo;False&rdquo;</li>\n</ul></li>\n</ul>\n\n<p>This is redundant and we should merge those two checks. Furthermore,\nit sometimes causes test flakiness as the first poller reports the\ncluster as ready and then the second one fails.</p>\n\n<p>Another problem is that &ldquo;ready_nodes&rdquo; doesn&rsquo;t log which condition\nwas not ready.</p>\n\n<p>We&rsquo;ll improve those checks by:\n* adding another helper called &ldquo;is_node_ready&rdquo;, accepting either\n  a node name or a node dict\n* update wait_until_k8s_ready and ready_nodes to use the new helper\n* drop unnecessary &ldquo;ready_nodes&rdquo; assertions after &ldquo;wait_until_k8s_ready&rdquo;\n  since they&rsquo;re now redundant\n  * the ready_nodes check is still useful when removing nodes</p>\n\n<ul>\n<li>Log disk usage and lxc containers before and after each test</li>\n</ul>\n\n<p>We&rsquo;re currently running out disk space. To identify leaked\nresources more easily, we&rsquo;ll log the disk usage and lxc containers\nbefore and after each test.</p>\n\n<ul>\n<li>Ensure that we clean up even if we fail to collect insp reports</li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/64c6c18180bd8c6db3f9b3711e3e802886e6f3cc"
-               },
-               {
-                  "sha": "2e66470f27eb1fcb414d672da3aebdeaa6421507",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1743407036,
-                  "message": "<p>fix: snap refreshes on worker nodes (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1239\">#1239</a>)</p>\n\n<p>Refreshing the k8s snap on worker nodes currently fails as it\ntries to reconcile the k8s configuration as part of the &ldquo;configure&rdquo;\nhook, which is only allowed on control plane nodes.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/2e66470f27eb1fcb414d672da3aebdeaa6421507"
                }
             ],
             "ciActions": [
@@ -14522,6 +14522,15 @@
             "url": "https://github.com/canonical/k8s-snap-api",
             "releases": [
                {
+                  "id": 209335226,
+                  "version": "v1.0.23",
+                  "timestamp": 1743423807,
+                  "title": "v1.0.23",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: Update GetClusterConfig and GetNodeStatus RPCs by <a target=\"_blank\" href=\"https://github.com/HomayoonAlimohammadi\">@HomayoonAlimohammadi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/24\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/24\">#24</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-snap-api/compare/v1.0.22...v1.0.23\">https://github.com/canonical/k8s-snap-api/compare/v1.0.22&hellip;v1.0.23</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap-api/releases/tag/v1.0.23",
+                  "compareUrl": "https://github.com/canonical/k8s-snap-api/compare/v1.0.23...main"
+               },
+               {
                   "id": 208586267,
                   "version": "v1.0.22",
                   "timestamp": 1743057037,
@@ -14538,15 +14547,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add annotation: k8sd/v1alpha1/cilium/tunnel-port by <a target=\"_blank\" href=\"https://github.com/rapour\">@rapour</a>  in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/32\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/32\">#32</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-snap-api/compare/v1.0.20...v1.0.21\">https://github.com/canonical/k8s-snap-api/compare/v1.0.20&hellip;v1.0.21</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap-api/releases/tag/v1.0.21",
                   "compareUrl": "https://github.com/canonical/k8s-snap-api/compare/v1.0.21...main"
-               },
-               {
-                  "id": 204211912,
-                  "version": "v1.0.20",
-                  "timestamp": 1741291723,
-                  "title": "v1.0.20",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add certs-status structs by <a target=\"_blank\" href=\"https://github.com/mateoflorido\">@mateoflorido</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/29\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap-api/pull/29\">#29</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-snap-api/compare/v1.0.19...v1.0.20\">https://github.com/canonical/k8s-snap-api/compare/v1.0.19&hellip;v1.0.20</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap-api/releases/tag/v1.0.20",
-                  "compareUrl": "https://github.com/canonical/k8s-snap-api/compare/v1.0.20...main"
                }
             ],
             "tags": null,
@@ -15139,8 +15139,8 @@
                   {
                      "track": "1.32",
                      "channel": "stable",
-                     "revision": 7734,
-                     "timestamp": 1741607716,
+                     "revision": 7977,
+                     "timestamp": 1743424151,
                      "base": "core20"
                   },
                   {
@@ -15195,8 +15195,8 @@
                   {
                      "track": "1.32",
                      "channel": "edge",
-                     "revision": 7991,
-                     "timestamp": 1743185692,
+                     "revision": 8035,
+                     "timestamp": 1743425340,
                      "base": "core20"
                   },
                   {
@@ -15258,15 +15258,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 7957,
-                     "timestamp": 1743086379,
+                     "revision": 8025,
+                     "timestamp": 1743424157,
                      "base": "core20"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 7958,
-                     "timestamp": 1743087060,
+                     "revision": 8031,
+                     "timestamp": 1743424811,
                      "base": "core20"
                   },
                   {
@@ -15328,15 +15328,15 @@
                   {
                      "track": "1.32-strict",
                      "channel": "edge",
-                     "revision": 7985,
-                     "timestamp": 1743184919,
+                     "revision": 8022,
+                     "timestamp": 1743423774,
                      "base": "core20"
                   },
                   {
                      "track": "1.32-strict",
                      "channel": "edge",
-                     "revision": 7994,
-                     "timestamp": 1743186024,
+                     "revision": 8036,
+                     "timestamp": 1743425527,
                      "base": "core20"
                   },
                   {
@@ -15398,15 +15398,15 @@
                   {
                      "track": "1.31-strict",
                      "channel": "edge",
-                     "revision": 7945,
-                     "timestamp": 1743065160,
+                     "revision": 8021,
+                     "timestamp": 1743423652,
                      "base": "core20"
                   },
                   {
                      "track": "1.31-strict",
                      "channel": "edge",
-                     "revision": 7995,
-                     "timestamp": 1743186174,
+                     "revision": 8030,
+                     "timestamp": 1743424709,
                      "base": "core20"
                   },
                   {
@@ -15475,8 +15475,8 @@
                   {
                      "track": "1.31",
                      "channel": "edge",
-                     "revision": 7993,
-                     "timestamp": 1743185909,
+                     "revision": 8032,
+                     "timestamp": 1743424912,
                      "base": "core20"
                   },
                   {
@@ -15531,22 +15531,22 @@
                   {
                      "track": "1.30-strict",
                      "channel": "edge",
-                     "revision": 7973,
-                     "timestamp": 1743183403,
+                     "revision": 8027,
+                     "timestamp": 1743424351,
                      "base": "core20"
                   },
                   {
                      "track": "1.30-strict",
                      "channel": "edge",
-                     "revision": 7983,
-                     "timestamp": 1743184556,
+                     "revision": 8023,
+                     "timestamp": 1743423896,
                      "base": "core20"
                   },
                   {
                      "track": "1.30-strict",
                      "channel": "edge",
-                     "revision": 7998,
-                     "timestamp": 1743186845,
+                     "revision": 8028,
+                     "timestamp": 1743424487,
                      "base": "core20"
                   },
                   {
@@ -15608,15 +15608,15 @@
                   {
                      "track": "1.30",
                      "channel": "edge",
-                     "revision": 7984,
-                     "timestamp": 1743184821,
+                     "revision": 8026,
+                     "timestamp": 1743424257,
                      "base": "core20"
                   },
                   {
                      "track": "1.30",
                      "channel": "edge",
-                     "revision": 7996,
-                     "timestamp": 1743186462,
+                     "revision": 8033,
+                     "timestamp": 1743425052,
                      "base": "core20"
                   },
                   {
@@ -15671,8 +15671,8 @@
                   {
                      "track": "1.29-strict",
                      "channel": "edge",
-                     "revision": 7974,
-                     "timestamp": 1743183525,
+                     "revision": 8024,
+                     "timestamp": 1743424020,
                      "base": "core20"
                   },
                   {
@@ -15685,8 +15685,8 @@
                   {
                      "track": "1.29-strict",
                      "channel": "edge",
-                     "revision": 7997,
-                     "timestamp": 1743186724,
+                     "revision": 8034,
+                     "timestamp": 1743425185,
                      "base": "core20"
                   },
                   {
@@ -15755,8 +15755,8 @@
                   {
                      "track": "1.29",
                      "channel": "edge",
-                     "revision": 7992,
-                     "timestamp": 1743185802,
+                     "revision": 8029,
+                     "timestamp": 1743424610,
                      "base": "core20"
                   },
                   {
@@ -28796,8 +28796,8 @@
                   {
                      "track": "3",
                      "channel": "edge",
-                     "revision": 79,
-                     "timestamp": 1742505325,
+                     "revision": 82,
+                     "timestamp": 1743427101,
                      "base": ""
                   },
                   {
@@ -32584,9 +32584,18 @@
          },
          {
             "name": "maubot-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/maubot-operator",
             "releases": [
+               {
+                  "id": 209330090,
+                  "version": "rev31",
+                  "timestamp": 1743424556,
+                  "title": "Revision 31",
+                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:38 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add Maubot Service Health dashboard by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/53\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/53\">#53</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev30...rev31\">https://github.com/canonical/maubot-operator/compare/rev30&hellip;rev31</a></p>\n",
+                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev31",
+                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev31...main"
+               },
                {
                   "id": 208575100,
                   "version": "rev30",
@@ -32604,15 +32613,6 @@
                   "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 29</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:22 UTC on 24 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add NSFW bot python deps by <a target=\"_blank\" href=\"https://github.com/amandahla\">@amandahla</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/52\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/52\">#52</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev28...rev29\">https://github.com/canonical/maubot-operator/compare/rev28&hellip;rev29</a></p>\n",
                   "url": "https://github.com/canonical/maubot-operator/releases/tag/rev29",
                   "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev29...main"
-               },
-               {
-                  "id": 205256248,
-                  "version": "rev28",
-                  "timestamp": 1741777837,
-                  "title": "Revision 28",
-                  "body": "<p>resources:\n    -  maubot-image: undefined\n       resource-revision: 28</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:12 UTC on 12 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v0.0.57 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/maubot-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/maubot-operator/compare/rev27...rev28\">https://github.com/canonical/maubot-operator/compare/rev27&hellip;rev28</a></p>\n",
-                  "url": "https://github.com/canonical/maubot-operator/releases/tag/rev28",
-                  "compareUrl": "https://github.com/canonical/maubot-operator/compare/rev28...main"
                }
             ],
             "tags": null,
@@ -32628,8 +32628,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 30,
-                     "timestamp": 1743051240,
+                     "revision": 31,
+                     "timestamp": 1743424728,
                      "base": ""
                   },
                   {
