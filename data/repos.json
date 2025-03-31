@@ -8291,6 +8291,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "ef1fc67f6c19fbde5e8be82c37281cf53a5e8b4f",
+                  "author": "Noha Ihab",
+                  "timestamp": 1743440801,
+                  "message": "<p>chore: upgrade notebook rocks to v1.10.0 (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-rocks/pull/198\">#198</a>)</p>\n\n<ul>\n<li><p>chore: upgrade notebook rocks to v1.10.0</p></li>\n\n<li><p>nit: use lowercase for rock in CONTRIBUTING.md</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/kubeflow-rocks/commit/ef1fc67f6c19fbde5e8be82c37281cf53a5e8b4f"
+               },
+               {
                   "sha": "8dd1032d113c6a9eb4859d10cf0b495be631ee32",
                   "author": "Michal Hucko",
                   "timestamp": 1743161529,
@@ -8303,13 +8310,6 @@
                   "timestamp": 1743154724,
                   "message": "<p>chore: update profile-controller and kfam to v1.10.0 (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-rocks/pull/203\">#203</a>)</p>\n",
                   "url": "https://github.com/canonical/kubeflow-rocks/commit/7fcf726033489cb2b745524bf9da0f4071eb5c73"
-               },
-               {
-                  "sha": "43d993e7ae776b621c51914da92792a880805d87",
-                  "author": "Noha Ihab",
-                  "timestamp": 1743077023,
-                  "message": "<p>chore: upgrade tensorboards rocks to v1.10.0 (<a target=\"_blank\" href=\"https://github.com/canonical/kubeflow-rocks/pull/202\">#202</a>)</p>\n\n<p>updates rock version from <code>1.10.0-rc.1</code> to <code>1.10.0</code></p>\n",
-                  "url": "https://github.com/canonical/kubeflow-rocks/commit/43d993e7ae776b621c51914da92792a880805d87"
                }
             ],
             "ciActions": [],
@@ -9786,7 +9786,7 @@
          },
          {
             "name": "katib-operators",
-            "newCommits": 10,
+            "newCommits": 11,
             "url": "https://github.com/canonical/katib-operators",
             "releases": [
                {
@@ -10007,7 +10007,7 @@
          },
          {
             "name": "admission-webhook-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/admission-webhook-operator",
             "releases": [
                {
@@ -14095,6 +14095,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "912de540142d180daa2506de62cdb0099809bc39",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1743439677,
+                  "message": "<p>ci: re-add TICS job but only run it nightly (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1256\">#1256</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/912de540142d180daa2506de62cdb0099809bc39"
+               },
+               {
                   "sha": "7f64888fca1e6fca1d38492d91bd7f48d00a6207",
                   "author": "Claudiu Belu",
                   "timestamp": 1743425011,
@@ -14107,13 +14114,6 @@
                   "timestamp": 1743409764,
                   "message": "<p>Sonobuoy Nightly Tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1125\">#1125</a>)</p>\n\n<p>Adds the <code>test_cncf_conformance</code> test. It has the <code>conformance_tests</code>\ntag, preventing it from being run, unless specifically included through\nthe tag. This test is only meant to be run on the Nightly job.</p>\n\n<p>Co-authored-by: Maciej Golaszewski <a href=\"mailto:maciej.golaszewski@canonical.com\">maciej.golaszewski@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/c51fe1347c9747f1ca6cdf771a9ac51d7b83303a"
-               },
-               {
-                  "sha": "64c6c18180bd8c6db3f9b3711e3e802886e6f3cc",
-                  "author": "Lucian Petrut",
-                  "timestamp": 1743407565,
-                  "message": "<p>test: Use multi-node cluster as part of upgrade/rollback tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1233\">#1233</a>)</p>\n\n<p>At the moment, we have two almost identical checks that are usually\nperformed one after the other</p>\n\n<ul>\n<li>wait_until_k8s_ready\n\n<ul>\n<li>ensures that each instance node has &ldquo;Ready&rdquo; status</li>\n</ul></li>\n<li>ready_nodes followed by an assertion count\n\n<ul>\n<li>check each individual condition, expecting the the ones other than\n&ldquo;Ready&rdquo; to be &ldquo;False&rdquo;</li>\n</ul></li>\n</ul>\n\n<p>This is redundant and we should merge those two checks. Furthermore,\nit sometimes causes test flakiness as the first poller reports the\ncluster as ready and then the second one fails.</p>\n\n<p>Another problem is that &ldquo;ready_nodes&rdquo; doesn&rsquo;t log which condition\nwas not ready.</p>\n\n<p>We&rsquo;ll improve those checks by:\n* adding another helper called &ldquo;is_node_ready&rdquo;, accepting either\n  a node name or a node dict\n* update wait_until_k8s_ready and ready_nodes to use the new helper\n* drop unnecessary &ldquo;ready_nodes&rdquo; assertions after &ldquo;wait_until_k8s_ready&rdquo;\n  since they&rsquo;re now redundant\n  * the ready_nodes check is still useful when removing nodes</p>\n\n<ul>\n<li>Log disk usage and lxc containers before and after each test</li>\n</ul>\n\n<p>We&rsquo;re currently running out disk space. To identify leaked\nresources more easily, we&rsquo;ll log the disk usage and lxc containers\nbefore and after each test.</p>\n\n<ul>\n<li>Ensure that we clean up even if we fail to collect insp reports</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/64c6c18180bd8c6db3f9b3711e3e802886e6f3cc"
                }
             ],
             "ciActions": [
@@ -15419,8 +15419,8 @@
                   {
                      "track": "1.31",
                      "channel": "stable",
-                     "revision": 7760,
-                     "timestamp": 1741619455,
+                     "revision": 7979,
+                     "timestamp": 1743439243,
                      "base": "core20"
                   },
                   {
@@ -35258,35 +35258,35 @@
          },
          {
             "name": "charm-juju-backup-all",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/charm-juju-backup-all",
             "releases": [
                {
-                  "id": 206709372,
-                  "version": "rev68",
-                  "timestamp": 1742338838,
-                  "title": "Revision 68",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:53 UTC on 18 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev63...rev68\">https://github.com/canonical/charm-juju-backup-all/compare/rev63&hellip;rev68</a></p>\n",
-                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev68",
-                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev68...main"
+                  "id": 209399550,
+                  "version": "rev71",
+                  "timestamp": 1743436090,
+                  "title": "Revision 71",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:50 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev66...rev71\">https://github.com/canonical/charm-juju-backup-all/compare/rev66&hellip;rev71</a></p>\n",
+                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev71",
+                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev71...main"
                },
                {
-                  "id": 206709364,
-                  "version": "rev67",
-                  "timestamp": 1742338838,
-                  "title": "Revision 67",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:53 UTC on 18 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev63...rev67\">https://github.com/canonical/charm-juju-backup-all/compare/rev63&hellip;rev67</a></p>\n",
-                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev67",
-                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev67...main"
+                  "id": 209399519,
+                  "version": "rev70",
+                  "timestamp": 1743436090,
+                  "title": "Revision 70",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:50 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev66...rev70\">https://github.com/canonical/charm-juju-backup-all/compare/rev66&hellip;rev70</a></p>\n",
+                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev70",
+                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev70...main"
                },
                {
-                  "id": 206709357,
-                  "version": "rev66",
-                  "timestamp": 1742338838,
-                  "title": "Revision 66",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:53 UTC on 18 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/77\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/77\">#77</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev63...rev66\">https://github.com/canonical/charm-juju-backup-all/compare/rev63&hellip;rev66</a></p>\n",
-                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev66",
-                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev66...main"
+                  "id": 209399483,
+                  "version": "rev69",
+                  "timestamp": 1743436090,
+                  "title": "Revision 69",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  exporter-snap: \n   resource-revision: 2\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:50 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-juju-backup-all/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-juju-backup-all/compare/rev66...rev69\">https://github.com/canonical/charm-juju-backup-all/compare/rev66&hellip;rev69</a></p>\n",
+                  "url": "https://github.com/canonical/charm-juju-backup-all/releases/tag/rev69",
+                  "compareUrl": "https://github.com/canonical/charm-juju-backup-all/compare/rev69...main"
                }
             ],
             "tags": null,
@@ -35921,9 +35921,27 @@
          },
          {
             "name": "charm-apt-mirror",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/charm-apt-mirror",
             "releases": [
+               {
+                  "id": 209398892,
+                  "version": "rev51",
+                  "timestamp": 1743436654,
+                  "title": "Revision 51",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:46 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/62\">#62</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/63\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/63\">#63</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev48...rev51\">https://github.com/canonical/charm-apt-mirror/compare/rev48&hellip;rev51</a></p>\n",
+                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev51",
+                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev51...main"
+               },
+               {
+                  "id": 209398865,
+                  "version": "rev50",
+                  "timestamp": 1743436654,
+                  "title": "Revision 50",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:46 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/62\">#62</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/63\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/63\">#63</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev48...rev50\">https://github.com/canonical/charm-apt-mirror/compare/rev48&hellip;rev50</a></p>\n",
+                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev50",
+                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev50...main"
+               },
                {
                   "id": 204871385,
                   "version": "rev49",
@@ -35932,24 +35950,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:18 UTC on 11 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev46...rev49\">https://github.com/canonical/charm-apt-mirror/compare/rev46&hellip;rev49</a></p>\n",
                   "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev49",
                   "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev49...main"
-               },
-               {
-                  "id": 204871369,
-                  "version": "rev48",
-                  "timestamp": 1741156197,
-                  "title": "Revision 48",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 00:18 UTC on 11 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/61\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/61\">#61</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev46...rev48\">https://github.com/canonical/charm-apt-mirror/compare/rev46&hellip;rev48</a></p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev48",
-                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev48...main"
-               },
-               {
-                  "id": 203458495,
-                  "version": "rev47",
-                  "timestamp": 1741039611,
-                  "title": "Revision 47",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:15 UTC on 3 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/60\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/60\">#60</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev44...rev47\">https://github.com/canonical/charm-apt-mirror/compare/rev44&hellip;rev47</a></p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev47",
-                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev47...main"
                }
             ],
             "tags": null,
@@ -36026,35 +36026,35 @@
          },
          {
             "name": "hardware-observer-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/hardware-observer-operator",
             "releases": [
                {
-                  "id": 209268569,
-                  "version": "rev240",
-                  "timestamp": 1743403422,
-                  "title": "Revision 240",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  sas3ircu-bin: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n-  storcli-deb: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:28 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add manual deployment quick start guide by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/410\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/410\">#410</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev229...rev240\">https://github.com/canonical/hardware-observer-operator/compare/rev229&hellip;rev240</a></p>\n",
-                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev240",
-                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev240...main"
+                  "id": 209396010,
+                  "version": "rev246",
+                  "timestamp": 1743435918,
+                  "title": "Revision 246",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:31 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/413\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/413\">#413</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev235...rev246\">https://github.com/canonical/hardware-observer-operator/compare/rev235&hellip;rev246</a></p>\n",
+                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev246",
+                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev246...main"
                },
                {
-                  "id": 209268558,
-                  "version": "rev239",
-                  "timestamp": 1743403422,
-                  "title": "Revision 239",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  sas3ircu-bin: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n-  storcli-deb: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:28 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add manual deployment quick start guide by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/410\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/410\">#410</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev229...rev239\">https://github.com/canonical/hardware-observer-operator/compare/rev229&hellip;rev239</a></p>\n",
-                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev239",
-                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev239...main"
+                  "id": 209395986,
+                  "version": "rev245",
+                  "timestamp": 1743435918,
+                  "title": "Revision 245",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:31 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/413\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/413\">#413</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev235...rev245\">https://github.com/canonical/hardware-observer-operator/compare/rev235&hellip;rev245</a></p>\n",
+                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev245",
+                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev245...main"
                },
                {
-                  "id": 209268542,
-                  "version": "rev238",
-                  "timestamp": 1743403422,
-                  "title": "Revision 238",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  sas3ircu-bin: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n-  storcli-deb: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:28 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add manual deployment quick start guide by <a target=\"_blank\" href=\"https://github.com/chanchiwai-ray\">@chanchiwai-ray</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/410\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/410\">#410</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev229...rev238\">https://github.com/canonical/hardware-observer-operator/compare/rev229&hellip;rev238</a></p>\n",
-                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev238",
-                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev238...main"
+                  "id": 209395959,
+                  "version": "rev244",
+                  "timestamp": 1743435918,
+                  "title": "Revision 244",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  storcli-deb: \n   resource-revision: 1\n-  perccli-deb: \n   resource-revision: 1\n-  sas3ircu-bin: \n   resource-revision: 1\n-  sas2ircu-bin: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:31 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/413\"><a target=\"_blank\" href=\"https://github.com/canonical/hardware-observer-operator/pull/413\">#413</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/hardware-observer-operator/compare/rev235...rev244\">https://github.com/canonical/hardware-observer-operator/compare/rev235&hellip;rev244</a></p>\n",
+                  "url": "https://github.com/canonical/hardware-observer-operator/releases/tag/rev244",
+                  "compareUrl": "https://github.com/canonical/hardware-observer-operator/compare/rev244...main"
                }
             ],
             "tags": null,
@@ -36258,43 +36258,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 235,
-                     "timestamp": 1743406070,
+                     "revision": 241,
+                     "timestamp": 1743438640,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 236,
-                     "timestamp": 1743406076,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 119,
-                     "timestamp": 1731306392,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 118,
-                     "timestamp": 1731306215,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 237,
-                     "timestamp": 1743406084,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 238,
-                     "timestamp": 1743406091,
+                     "revision": 242,
+                     "timestamp": 1743438646,
                      "base": ""
                   },
                   {
@@ -36314,15 +36286,43 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 239,
-                     "timestamp": 1743406099,
+                     "revision": 243,
+                     "timestamp": 1743438653,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 240,
-                     "timestamp": 1743406106,
+                     "revision": 244,
+                     "timestamp": 1743438659,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 119,
+                     "timestamp": 1731306392,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 118,
+                     "timestamp": 1731306215,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 245,
+                     "timestamp": 1743438667,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 246,
+                     "timestamp": 1743438674,
                      "base": ""
                   },
                   {
@@ -36470,35 +36470,35 @@
          },
          {
             "name": "layer-filebeat",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/layer-filebeat",
             "releases": [
                {
-                  "id": 203277768,
-                  "version": "rev64",
-                  "timestamp": 1740982967,
-                  "title": "Revision 64",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:55 UTC on 3 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/layer-filebeat/compare/rev59...rev64\">https://github.com/canonical/layer-filebeat/compare/rev59&hellip;rev64</a></p>\n",
-                  "url": "https://github.com/canonical/layer-filebeat/releases/tag/rev64",
-                  "compareUrl": "https://github.com/canonical/layer-filebeat/compare/rev64...main"
+                  "id": 209395070,
+                  "version": "rev67",
+                  "timestamp": 1743436480,
+                  "title": "Revision 67",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:26 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/127\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/127\">#127</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/128\">#128</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/layer-filebeat/compare/rev62...rev67\">https://github.com/canonical/layer-filebeat/compare/rev62&hellip;rev67</a></p>\n",
+                  "url": "https://github.com/canonical/layer-filebeat/releases/tag/rev67",
+                  "compareUrl": "https://github.com/canonical/layer-filebeat/compare/rev67...main"
                },
                {
-                  "id": 203277756,
-                  "version": "rev63",
-                  "timestamp": 1740982967,
-                  "title": "Revision 63",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:54 UTC on 3 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/layer-filebeat/compare/rev59...rev63\">https://github.com/canonical/layer-filebeat/compare/rev59&hellip;rev63</a></p>\n",
-                  "url": "https://github.com/canonical/layer-filebeat/releases/tag/rev63",
-                  "compareUrl": "https://github.com/canonical/layer-filebeat/compare/rev63...main"
+                  "id": 209395041,
+                  "version": "rev66",
+                  "timestamp": 1743436480,
+                  "title": "Revision 66",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:26 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/127\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/127\">#127</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/128\">#128</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/layer-filebeat/compare/rev62...rev66\">https://github.com/canonical/layer-filebeat/compare/rev62&hellip;rev66</a></p>\n",
+                  "url": "https://github.com/canonical/layer-filebeat/releases/tag/rev66",
+                  "compareUrl": "https://github.com/canonical/layer-filebeat/compare/rev66...main"
                },
                {
-                  "id": 203277737,
-                  "version": "rev62",
-                  "timestamp": 1740982967,
-                  "title": "Revision 62",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:54 UTC on 3 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/layer-filebeat/compare/rev59...rev62\">https://github.com/canonical/layer-filebeat/compare/rev59&hellip;rev62</a></p>\n",
-                  "url": "https://github.com/canonical/layer-filebeat/releases/tag/rev62",
-                  "compareUrl": "https://github.com/canonical/layer-filebeat/compare/rev62...main"
+                  "id": 209395019,
+                  "version": "rev65",
+                  "timestamp": 1743436480,
+                  "title": "Revision 65",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:26 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/127\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/127\">#127</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/layer-filebeat/pull/128\">#128</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/layer-filebeat/compare/rev62...rev65\">https://github.com/canonical/layer-filebeat/compare/rev62&hellip;rev65</a></p>\n",
+                  "url": "https://github.com/canonical/layer-filebeat/releases/tag/rev65",
+                  "compareUrl": "https://github.com/canonical/layer-filebeat/compare/rev65...main"
                }
             ],
             "tags": null,
@@ -36509,9 +36509,18 @@
          },
          {
             "name": "openstack-exporter-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/openstack-exporter-operator",
             "releases": [
+               {
+                  "id": 209400145,
+                  "version": "rev48",
+                  "timestamp": 1743436270,
+                  "title": "Revision 48",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  openstack-exporter: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:54 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/144\"><a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/144\">#144</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openstack-exporter-operator/compare/rev47...rev48\">https://github.com/canonical/openstack-exporter-operator/compare/rev47&hellip;rev48</a></p>\n",
+                  "url": "https://github.com/canonical/openstack-exporter-operator/releases/tag/rev48",
+                  "compareUrl": "https://github.com/canonical/openstack-exporter-operator/compare/rev48...main"
+               },
                {
                   "id": 208297341,
                   "version": "rev47",
@@ -36529,15 +36538,6 @@
                   "body": "<p>resources:</p>\n\n<pre><code>-  openstack-exporter: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 02:57 UTC on 25 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Soleng 576 Improve test coverage to 100% by <a target=\"_blank\" href=\"https://github.com/H-M-Quang-Ngo\">@H-M-Quang-Ngo</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/142\"><a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/142\">#142</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/H-M-Quang-Ngo\">@H-M-Quang-Ngo</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/142\"><a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/142\">#142</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openstack-exporter-operator/compare/rev45...rev46\">https://github.com/canonical/openstack-exporter-operator/compare/rev45&hellip;rev46</a></p>\n",
                   "url": "https://github.com/canonical/openstack-exporter-operator/releases/tag/rev46",
                   "compareUrl": "https://github.com/canonical/openstack-exporter-operator/compare/rev46...main"
-               },
-               {
-                  "id": 206709717,
-                  "version": "rev45",
-                  "timestamp": 1742339305,
-                  "title": "Revision 45",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  openstack-exporter: \n   resource-revision: 1\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 23:58 UTC on 18 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/143\"><a target=\"_blank\" href=\"https://github.com/canonical/openstack-exporter-operator/pull/143\">#143</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/openstack-exporter-operator/compare/rev44...rev45\">https://github.com/canonical/openstack-exporter-operator/compare/rev44&hellip;rev45</a></p>\n",
-                  "url": "https://github.com/canonical/openstack-exporter-operator/releases/tag/rev45",
-                  "compareUrl": "https://github.com/canonical/openstack-exporter-operator/compare/rev45...main"
                }
             ],
             "tags": null,
@@ -36692,8 +36692,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 78,
-                     "timestamp": 1742528121,
+                     "revision": 79,
+                     "timestamp": 1743438015,
                      "base": "core22"
                   },
                   {
@@ -36720,8 +36720,8 @@
                   {
                      "track": "3",
                      "channel": "edge",
-                     "revision": 78,
-                     "timestamp": 1742528121,
+                     "revision": 79,
+                     "timestamp": 1743438015,
                      "base": "core22"
                   },
                   {
