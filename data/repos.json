@@ -2177,9 +2177,18 @@
       "repos": [
          {
             "name": "operator",
-            "newCommits": 41,
+            "newCommits": 0,
             "url": "https://github.com/canonical/operator",
             "releases": [
+               {
+                  "id": 209446498,
+                  "version": "2.20.0",
+                  "timestamp": 1743453151,
+                  "title": "ops 2.20.0 and ops-scenario 7.20.0 remove_revision, remote_model, config metadata, custom events in testing, pebble layer merging fixes in testing, and docs improvements",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<p>This release of <code>ops</code> features a new <code>remove_revision()</code> convenience method to avoid working directly with revision numbers in <code>secret-remove</code> and <code>secret-expired</code> events. A new <code>remote_model</code> property has been added for <code>Relation</code>. The efficiency of <code>RelationData.Content.update</code> has also been improved, and the config metadata is now exposed in <code>CharmMeta</code>.</p>\n\n<p>This <code>ops-scenario</code> release features the ability to emit custom events, as well as additional data verification and stronger immutability. Additionally, Pebble layer merging has been fixed, both in this package and in Harness.</p>\n\n<p>Our documentation continues to improve. We migrated best practices from the Juju docs and made the Kubernetes charm tutorial shorter and more focused. We also reorganised the testing docs into a single how-to guide about unit testing and a more accessible explanation about testing in general.</p>\n\n<h2>Features</h2>\n\n<ul>\n<li>Add a <code>remove_revision()</code> method to <code>SecretRemoveEvent</code> and <code>SecretExpiredEvent</code> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1624\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1624\">#1624</a></a></li>\n<li>Add <code>Relation.remote_model</code> property in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1610\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1610\">#1610</a></a></li>\n<li>Efficient implementation of <code>RelationDataContent.update</code> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1586\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1586\">#1586</a></a></li>\n<li>Expose the config metadata in <code>CharmMeta</code> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1648\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1648\">#1648</a></a></li>\n<li>Add the ability to emit custom events in unit tests in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1589\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1589\">#1589</a></a></li>\n<li>Check that the check-infos in <code>testing.Container</code> match the plan in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1630\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1630\">#1630</a></a></li>\n<li><code>ops.testing.State</code> components are less mutable in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1617\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1617\">#1617</a></a></li>\n</ul>\n\n<h2>Fixes</h2>\n\n<ul>\n<li>Assorted fixes for Pebble layer merging in Harness and Scenario in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1627\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1627\">#1627</a></a></li>\n</ul>\n\n<h2>Documentation</h2>\n\n<ul>\n<li>Add a docs link to the Harness deprecation warning in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1513\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1513\">#1513</a></a></li>\n<li>Add best practices and a &ldquo;manage charms&rdquo; how-to in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1615\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1615\">#1615</a></a></li>\n<li>Add section about services with long startup time in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1604\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1604\">#1604</a></a></li>\n<li>Clarify how to use mounts in <code>ops.testing.Container</code> in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1637\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1637\">#1637</a></a></li>\n<li>Fix code snippet indentation in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1649\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1649\">#1649</a></a></li>\n<li>Fix Scenario example in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1616\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1616\">#1616</a></a></li>\n<li>Move hooks-based charm migration guide in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1636\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1636\">#1636</a></a></li>\n<li>Putting test into each chapter of the tutorial in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1647\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1647\">#1647</a></a></li>\n<li>Refactor how-to unit test according to comments in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1642\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1642\">#1642</a></a></li>\n<li>Refactor test docs to 1 explanation and 2 how-tos in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1628\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1628\">#1628</a></a></li>\n<li>Remove the charm-tech@lists.launchpad.net email address in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1632\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1632\">#1632</a></a></li>\n<li>Remove tutorial chapters that are covered by the how-to guide in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1511\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1511\">#1511</a></a></li>\n<li>Stack args vertically for long signature lines in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1641\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1641\">#1641</a></a></li>\n<li>Testing explanation in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1635\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1635\">#1635</a></a></li>\n<li>Unify charm test docs how to in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1639\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1639\">#1639</a></a></li>\n</ul>\n\n<h2>CI</h2>\n\n<ul>\n<li>Exclude vault-k8s-operator until the system can handle monorepos in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1650\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1650\">#1650</a></a></li>\n<li>Use the latest version of ops-scenario in the compatibility tests in <a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1608\"><a target=\"_blank\" href=\"https://github.com/canonical/operator/pull/1608\">#1608</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.19.2...2.20.0\">https://github.com/canonical/operator/compare/2.19.2&hellip;2.20.0</a></p>\n",
+                  "url": "https://github.com/canonical/operator/releases/tag/2.20.0",
+                  "compareUrl": "https://github.com/canonical/operator/compare/2.20.0...main"
+               },
                {
                   "id": 204877410,
                   "version": "2.19.4",
@@ -2197,15 +2206,6 @@
                   "body": "<p>There are no changes from the previous release: this release is only to push the packages to PyPI, avoiding previous CI (and user-error) issues.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.19.2...2.19.3\">https://github.com/canonical/operator/compare/2.19.2&hellip;2.19.3</a></p>\n",
                   "url": "https://github.com/canonical/operator/releases/tag/2.19.3",
                   "compareUrl": "https://github.com/canonical/operator/compare/2.19.3...main"
-               },
-               {
-                  "id": 203765574,
-                  "version": "2.19.1",
-                  "timestamp": 1741560506,
-                  "title": "ops 2.19.1 and ops-scenario 7.19.1 Synchronise ops and ops-scenario versions",
-                  "body": "<p>The only change in this release is that <code>ops[testing]</code> is set to install exactly <code>ops-scenario</code> 7.19.1, and <code>ops-scenario</code> requires exactly <code>ops</code> 2.19.1.</p>\n\n<p>There are no <code>ops-scenario</code> releases 7.3 through 7.18. These version numbers were skipped to have <code>ops</code> and <code>ops-scenario</code> in sync for minor and bugfix numbers.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/operator/compare/2.19.0...2.19.1\">https://github.com/canonical/operator/compare/2.19.0&hellip;2.19.1</a></p>\n",
-                  "url": "https://github.com/canonical/operator/releases/tag/2.19.1",
-                  "compareUrl": "https://github.com/canonical/operator/compare/2.19.1...main"
                }
             ],
             "tags": null,
@@ -8248,6 +8248,15 @@
             "url": "https://github.com/canonical/charmed-mysql-snap",
             "releases": [
                {
+                  "id": 209445160,
+                  "version": "rev141",
+                  "timestamp": 1743452597,
+                  "title": "Revisions 140, 141",
+                  "body": "<p>Released to 8.0/edge\n- arm64: revision 140\n- amd64: revision 141</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>doc: DPE-6312 security policy by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/67\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/67\">#67</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-mysql-snap/compare/rev139...rev141\">https://github.com/canonical/charmed-mysql-snap/compare/rev139&hellip;rev141</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-mysql-snap/releases/tag/rev141",
+                  "compareUrl": "https://github.com/canonical/charmed-mysql-snap/compare/rev141...8.0/edge"
+               },
+               {
                   "id": 202042509,
                   "version": "rev139",
                   "timestamp": 1740405202,
@@ -8264,15 +8273,6 @@
                   "body": "<p>Released to 8.0/edge\n- amd64: revision 134\n- arm64: revision 135</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update mysql-shell to v8.0.41 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/65\">#65</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-mysql-snap/compare/rev133...rev135\">https://github.com/canonical/charmed-mysql-snap/compare/rev133&hellip;rev135</a></p>\n",
                   "url": "https://github.com/canonical/charmed-mysql-snap/releases/tag/rev135",
                   "compareUrl": "https://github.com/canonical/charmed-mysql-snap/compare/rev135...8.0/edge"
-               },
-               {
-                  "id": 198561500,
-                  "version": "rev133",
-                  "timestamp": 1738756685,
-                  "title": "Revisions 132, 133",
-                  "body": "<p>Released to 8.0/edge\n- amd64: revision 132\n- arm64: revision 133</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Env config for mysql-pitr-helper-collector by <a target=\"_blank\" href=\"https://github.com/Zvirovyi\">@Zvirovyi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/63\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/63\">#63</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-mysql-snap/compare/rev131...rev133\">https://github.com/canonical/charmed-mysql-snap/compare/rev131&hellip;rev133</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-snap/releases/tag/rev133",
-                  "compareUrl": "https://github.com/canonical/charmed-mysql-snap/compare/rev133...8.0/edge"
                }
             ],
             "tags": null,
@@ -13720,75 +13720,36 @@
             "snap": null
          },
          {
-            "name": "k8s-dqlite",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/k8s-dqlite",
-            "releases": [
-               {
-                  "id": 209343165,
-                  "version": "v1.6.0",
-                  "timestamp": 1743426333,
-                  "title": "v1.6.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>perf: add query batching by <a target=\"_blank\" href=\"https://github.com/marco6\">@marco6</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/180\">#180</a></a></li>\n<li>workflows: remove wait time from perfromance test by <a target=\"_blank\" href=\"https://github.com/marco6\">@marco6</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/252\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/252\">#252</a></a></li>\n<li>CI: Initialize harness instances in parallel by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/257\">#257</a></a></li>\n<li>CI: run all k8s-snap tests by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/259\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/259\">#259</a></a></li>\n<li>refactor: remove k8s-dqlite dir by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/260\">#260</a></a></li>\n<li>Bump ossf/scorecard-action from 2.4.0 to 2.4.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/256\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/256\">#256</a></a></li>\n<li>CI: cache R dependencies by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/261\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/261\">#261</a></a></li>\n<li>CI: performance test improvements (RSS plot, fixed scale, retry kube-burner download) by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/262\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/262\">#262</a></a></li>\n<li>bump etcd server and client packages by <a target=\"_blank\" href=\"https://github.com/eaudetcobello\">@eaudetcobello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/269\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/269\">#269</a></a></li>\n<li>bug: fix missing event by rm broadcaster and implementing WatchGroups by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/264\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/264\">#264</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-dqlite/compare/v1.5.0...v1.6.0\">https://github.com/canonical/k8s-dqlite/compare/v1.5.0&hellip;v1.6.0</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-dqlite/releases/tag/v1.6.0",
-                  "compareUrl": "https://github.com/canonical/k8s-dqlite/compare/v1.6.0...master"
-               },
-               {
-                  "id": 201664155,
-                  "version": "v1.5.0",
-                  "timestamp": 1740133827,
-                  "title": "v1.5.0",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: make token permissions compatible with POLP by <a target=\"_blank\" href=\"https://github.com/rapour\">@rapour</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/244\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/244\">#244</a></a></li>\n<li>Collect inspection reports before deleting the instances by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/247\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/247\">#247</a></a></li>\n<li>Collect pprof cpu time data by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/239\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/239\">#239</a></a></li>\n<li>Perf test improvements by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/249\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/249\">#249</a></a></li>\n<li>CI: Fix performance test reports path unblocking the CI by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/251\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/251\">#251</a></a></li>\n<li>Use list ranges instead of prefixes by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/246\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/246\">#246</a></a></li>\n<li>allow compactions only on leader nodes by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/235\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/235\">#235</a></a></li>\n<li>feat: enable snapshot dynamic trailing by <a target=\"_blank\" href=\"https://github.com/marco6\">@marco6</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/248\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/248\">#248</a></a></li>\n<li>Bump canonical/has-signed-canonical-cla from 1 to 2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/250\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/250\">#250</a></a></li>\n<li>CI: Automatically close inactive PRs and issues by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/253\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/253\">#253</a></a></li>\n<li>ci: add top level permissions to the stale job by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/255\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/255\">#255</a></a></li>\n<li>refactor: Rename kine to k8s-dqlite by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/254\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/254\">#254</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-dqlite/compare/v1.4.1...v1.5.0\">https://github.com/canonical/k8s-dqlite/compare/v1.4.1&hellip;v1.5.0</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-dqlite/releases/tag/v1.5.0",
-                  "compareUrl": "https://github.com/canonical/k8s-dqlite/compare/v1.5.0...master"
-               },
-               {
-                  "id": 201979076,
-                  "version": "v1.3.1",
-                  "timestamp": 1739366654,
-                  "title": "v1.3.1",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>back-port: [v1.3] Fix memory leak watch context cancel (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/240\">#240</a>) by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/241\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/241\">#241</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-dqlite/compare/v1.3.0...v1.3.1\">https://github.com/canonical/k8s-dqlite/compare/v1.3.0&hellip;v1.3.1</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-dqlite/releases/tag/v1.3.1",
-                  "compareUrl": "https://github.com/canonical/k8s-dqlite/compare/v1.3.1...master"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/k8s-operator",
             "releases": [
                {
-                  "id": 209118134,
-                  "version": "k8s-worker-rev660",
-                  "timestamp": 1743212602,
-                  "title": "Revision 660",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:44 UTC on 29 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: use UV in TICS jobs by <a target=\"_blank\" href=\"https://github.com/mateoflorido\">@mateoflorido</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/417\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/417\">#417</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev656...k8s-worker-rev660\">https://github.com/canonical/k8s-operator/compare/k8s-rev656&hellip;k8s-worker-rev660</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev660",
-                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev660...main"
+                  "id": 209449109,
+                  "version": "k8s-worker-rev664",
+                  "timestamp": 1743454397,
+                  "title": "Revision 664",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:55 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/415\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/415\">#415</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev660...k8s-worker-rev664\">https://github.com/canonical/k8s-operator/compare/k8s-rev660&hellip;k8s-worker-rev664</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev664",
+                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev664...main"
                },
                {
-                  "id": 209118131,
-                  "version": "k8s-worker-rev659",
-                  "timestamp": 1743212602,
-                  "title": "Revision 659",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:44 UTC on 29 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: use UV in TICS jobs by <a target=\"_blank\" href=\"https://github.com/mateoflorido\">@mateoflorido</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/417\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/417\">#417</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev656...k8s-worker-rev659\">https://github.com/canonical/k8s-operator/compare/k8s-rev656&hellip;k8s-worker-rev659</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev659",
-                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev659...main"
+                  "id": 209449091,
+                  "version": "k8s-worker-rev663",
+                  "timestamp": 1743454397,
+                  "title": "Revision 663",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:55 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/415\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/415\">#415</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev660...k8s-worker-rev663\">https://github.com/canonical/k8s-operator/compare/k8s-rev660&hellip;k8s-worker-rev663</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev663",
+                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev663...main"
                },
                {
-                  "id": 209118124,
-                  "version": "k8s-worker-rev658",
-                  "timestamp": 1743212602,
-                  "title": "Revision 658",
-                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 01:44 UTC on 29 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: use UV in TICS jobs by <a target=\"_blank\" href=\"https://github.com/mateoflorido\">@mateoflorido</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/417\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/417\">#417</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev656...k8s-worker-rev658\">https://github.com/canonical/k8s-operator/compare/k8s-rev656&hellip;k8s-worker-rev658</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev658",
-                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev658...main"
+                  "id": 209449066,
+                  "version": "k8s-worker-rev662",
+                  "timestamp": 1743454397,
+                  "title": "Revision 662",
+                  "body": "<p>resources:</p>\n\n<pre><code>-  snap-installation: \n   resource-revision: 6\n</code></pre>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:54 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/415\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-operator/pull/415\">#415</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-operator/compare/k8s-rev660...k8s-worker-rev662\">https://github.com/canonical/k8s-operator/compare/k8s-rev660&hellip;k8s-worker-rev662</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-operator/releases/tag/k8s-worker-rev662",
+                  "compareUrl": "https://github.com/canonical/k8s-operator/compare/k8s-worker-rev662...main"
                }
             ],
             "tags": null,
@@ -13944,29 +13905,29 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 660,
-                     "timestamp": 1743212684,
+                     "revision": 666,
+                     "timestamp": 1743454487,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 661,
-                     "timestamp": 1743212684,
+                     "revision": 664,
+                     "timestamp": 1743454479,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 663,
-                     "timestamp": 1743212691,
+                     "revision": 667,
+                     "timestamp": 1743454494,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 662,
-                     "timestamp": 1743212690,
+                     "revision": 665,
+                     "timestamp": 1743454485,
                      "base": ""
                   },
                   {
@@ -14046,6 +14007,45 @@
                   "1.30"
                ]
             },
+            "snap": null
+         },
+         {
+            "name": "k8s-dqlite",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/k8s-dqlite",
+            "releases": [
+               {
+                  "id": 209343165,
+                  "version": "v1.6.0",
+                  "timestamp": 1743426333,
+                  "title": "v1.6.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>perf: add query batching by <a target=\"_blank\" href=\"https://github.com/marco6\">@marco6</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/180\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/180\">#180</a></a></li>\n<li>workflows: remove wait time from perfromance test by <a target=\"_blank\" href=\"https://github.com/marco6\">@marco6</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/252\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/252\">#252</a></a></li>\n<li>CI: Initialize harness instances in parallel by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/257\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/257\">#257</a></a></li>\n<li>CI: run all k8s-snap tests by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/259\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/259\">#259</a></a></li>\n<li>refactor: remove k8s-dqlite dir by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/260\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/260\">#260</a></a></li>\n<li>Bump ossf/scorecard-action from 2.4.0 to 2.4.1 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/256\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/256\">#256</a></a></li>\n<li>CI: cache R dependencies by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/261\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/261\">#261</a></a></li>\n<li>CI: performance test improvements (RSS plot, fixed scale, retry kube-burner download) by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/262\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/262\">#262</a></a></li>\n<li>bump etcd server and client packages by <a target=\"_blank\" href=\"https://github.com/eaudetcobello\">@eaudetcobello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/269\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/269\">#269</a></a></li>\n<li>bug: fix missing event by rm broadcaster and implementing WatchGroups by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/264\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/264\">#264</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-dqlite/compare/v1.5.0...v1.6.0\">https://github.com/canonical/k8s-dqlite/compare/v1.5.0&hellip;v1.6.0</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-dqlite/releases/tag/v1.6.0",
+                  "compareUrl": "https://github.com/canonical/k8s-dqlite/compare/v1.6.0...master"
+               },
+               {
+                  "id": 201664155,
+                  "version": "v1.5.0",
+                  "timestamp": 1740133827,
+                  "title": "v1.5.0",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: make token permissions compatible with POLP by <a target=\"_blank\" href=\"https://github.com/rapour\">@rapour</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/244\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/244\">#244</a></a></li>\n<li>Collect inspection reports before deleting the instances by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/247\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/247\">#247</a></a></li>\n<li>Collect pprof cpu time data by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/239\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/239\">#239</a></a></li>\n<li>Perf test improvements by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/249\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/249\">#249</a></a></li>\n<li>CI: Fix performance test reports path unblocking the CI by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/251\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/251\">#251</a></a></li>\n<li>Use list ranges instead of prefixes by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/246\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/246\">#246</a></a></li>\n<li>allow compactions only on leader nodes by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/235\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/235\">#235</a></a></li>\n<li>feat: enable snapshot dynamic trailing by <a target=\"_blank\" href=\"https://github.com/marco6\">@marco6</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/248\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/248\">#248</a></a></li>\n<li>Bump canonical/has-signed-canonical-cla from 1 to 2 by <a target=\"_blank\" href=\"https://github.com/dependabot\">@dependabot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/250\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/250\">#250</a></a></li>\n<li>CI: Automatically close inactive PRs and issues by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/253\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/253\">#253</a></a></li>\n<li>ci: add top level permissions to the stale job by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/255\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/255\">#255</a></a></li>\n<li>refactor: Rename kine to k8s-dqlite by <a target=\"_blank\" href=\"https://github.com/petrutlucian94\">@petrutlucian94</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/254\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/254\">#254</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-dqlite/compare/v1.4.1...v1.5.0\">https://github.com/canonical/k8s-dqlite/compare/v1.4.1&hellip;v1.5.0</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-dqlite/releases/tag/v1.5.0",
+                  "compareUrl": "https://github.com/canonical/k8s-dqlite/compare/v1.5.0...master"
+               },
+               {
+                  "id": 201979076,
+                  "version": "v1.3.1",
+                  "timestamp": 1739366654,
+                  "title": "v1.3.1",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>back-port: [v1.3] Fix memory leak watch context cancel (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/240\">#240</a>) by <a target=\"_blank\" href=\"https://github.com/louiseschmidtgen\">@louiseschmidtgen</a> in <a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/241\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-dqlite/pull/241\">#241</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/k8s-dqlite/compare/v1.3.0...v1.3.1\">https://github.com/canonical/k8s-dqlite/compare/v1.3.0&hellip;v1.3.1</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-dqlite/releases/tag/v1.3.1",
+                  "compareUrl": "https://github.com/canonical/k8s-dqlite/compare/v1.3.1...master"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
             "snap": null
          },
          {
@@ -14183,15 +14183,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 3053,
-                     "timestamp": 1743433763,
+                     "revision": 3062,
+                     "timestamp": 1743455204,
                      "base": "core20"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 3056,
-                     "timestamp": 1743433999,
+                     "revision": 3064,
+                     "timestamp": 1743455508,
                      "base": "core20"
                   },
                   {
@@ -14662,25 +14662,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "b0382ffed95a52974303c0a1c4205f48710a9895",
-                  "author": "Adam Dyess",
-                  "timestamp": 1740670772,
-                  "message": "<p>Pin python deps (<a target=\"_blank\" href=\"https://github.com/canonical/keystone-k8s-auth-operator/pull/22\">#22</a>)</p>\n",
-                  "url": "https://github.com/canonical/keystone-k8s-auth-operator/commit/b0382ffed95a52974303c0a1c4205f48710a9895"
+                  "sha": "389efcfdba556e9e9d3cce74b5560956e693d543",
+                  "author": "renovate[bot]",
+                  "timestamp": 1743454293,
+                  "message": "<p>Update dependency ops to v2.19.4 (<a target=\"_blank\" href=\"https://github.com/canonical/keystone-k8s-auth-operator/pull/24\">#24</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/keystone-k8s-auth-operator/commit/389efcfdba556e9e9d3cce74b5560956e693d543"
                },
                {
-                  "sha": "7b1c6efb95872d6a24347ec5b6f086b93102ac18",
+                  "sha": "2d4bd06dfdcac4b1145147440e2af7ffc6c38153",
                   "author": "renovate[bot]",
-                  "timestamp": 1738765681,
-                  "message": "<p>Update dependency ops to v2.18.1 (<a target=\"_blank\" href=\"https://github.com/canonical/keystone-k8s-auth-operator/pull/20\">#20</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/keystone-k8s-auth-operator/commit/7b1c6efb95872d6a24347ec5b6f086b93102ac18"
+                  "timestamp": 1743454201,
+                  "message": "<p>Update dependency charms.contextual-status to v0.0.1 (<a target=\"_blank\" href=\"https://github.com/canonical/keystone-k8s-auth-operator/pull/25\">#25</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/keystone-k8s-auth-operator/commit/2d4bd06dfdcac4b1145147440e2af7ffc6c38153"
                },
                {
-                  "sha": "f8916180baf25725b2c48e3b151cc1fe87caccab",
+                  "sha": "dbed0e55d290bed9a3ccc76e14cebf331f90928d",
                   "author": "renovate[bot]",
-                  "timestamp": 1738765663,
-                  "message": "<p>Update dependency pydantic to v1.10.21 (<a target=\"_blank\" href=\"https://github.com/canonical/keystone-k8s-auth-operator/pull/19\">#19</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/keystone-k8s-auth-operator/commit/f8916180baf25725b2c48e3b151cc1fe87caccab"
+                  "timestamp": 1743454132,
+                  "message": "<p>Update dependency charms.reconciler to v0.0.1 (<a target=\"_blank\" href=\"https://github.com/canonical/keystone-k8s-auth-operator/pull/26\">#26</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/keystone-k8s-auth-operator/commit/dbed0e55d290bed9a3ccc76e14cebf331f90928d"
                }
             ],
             "ciActions": [],
@@ -24238,6 +24238,15 @@
             "url": "https://github.com/canonical/charmed-mysql-snap",
             "releases": [
                {
+                  "id": 209445160,
+                  "version": "rev141",
+                  "timestamp": 1743452597,
+                  "title": "Revisions 140, 141",
+                  "body": "<p>Released to 8.0/edge\n- arm64: revision 140\n- amd64: revision 141</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>doc: DPE-6312 security policy by <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/67\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/67\">#67</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-mysql-snap/compare/rev139...rev141\">https://github.com/canonical/charmed-mysql-snap/compare/rev139&hellip;rev141</a></p>\n",
+                  "url": "https://github.com/canonical/charmed-mysql-snap/releases/tag/rev141",
+                  "compareUrl": "https://github.com/canonical/charmed-mysql-snap/compare/rev141...8.0/edge"
+               },
+               {
                   "id": 202042509,
                   "version": "rev139",
                   "timestamp": 1740405202,
@@ -24254,15 +24263,6 @@
                   "body": "<p>Released to 8.0/edge\n- amd64: revision 134\n- arm64: revision 135</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update mysql-shell to v8.0.41 by <a target=\"_blank\" href=\"https://github.com/shayancanonical\">@shayancanonical</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/65\">#65</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-mysql-snap/compare/rev133...rev135\">https://github.com/canonical/charmed-mysql-snap/compare/rev133&hellip;rev135</a></p>\n",
                   "url": "https://github.com/canonical/charmed-mysql-snap/releases/tag/rev135",
                   "compareUrl": "https://github.com/canonical/charmed-mysql-snap/compare/rev135...8.0/edge"
-               },
-               {
-                  "id": 198561500,
-                  "version": "rev133",
-                  "timestamp": 1738756685,
-                  "title": "Revisions 132, 133",
-                  "body": "<p>Released to 8.0/edge\n- amd64: revision 132\n- arm64: revision 133</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Env config for mysql-pitr-helper-collector by <a target=\"_blank\" href=\"https://github.com/Zvirovyi\">@Zvirovyi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/63\"><a target=\"_blank\" href=\"https://github.com/canonical/charmed-mysql-snap/pull/63\">#63</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charmed-mysql-snap/compare/rev131...rev133\">https://github.com/canonical/charmed-mysql-snap/compare/rev131&hellip;rev133</a></p>\n",
-                  "url": "https://github.com/canonical/charmed-mysql-snap/releases/tag/rev133",
-                  "compareUrl": "https://github.com/canonical/charmed-mysql-snap/compare/rev133...8.0/edge"
                }
             ],
             "tags": null,
@@ -26824,6 +26824,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "ea1bee6f3e0f527e7af1440f47bdf99fba573880",
+                  "author": "renovate[bot]",
+                  "timestamp": 1743455231,
+                  "message": "<p>Update data-platform-workflows to v31 (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/106\">#106</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/mysql-bundle/commit/ea1bee6f3e0f527e7af1440f47bdf99fba573880"
+               },
+               {
                   "sha": "ff6ee974174d75ef779c362f53abdb5fce6c89da",
                   "author": "renovate[bot]",
                   "timestamp": 1741985243,
@@ -26836,13 +26843,6 @@
                   "timestamp": 1740481934,
                   "message": "<p>Update data-platform-workflows to v30 (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/104\">#104</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/mysql-bundle/commit/9a293c302c7fa0179b563ac2a5b4ed04d21a56db"
-               },
-               {
-                  "sha": "9208fee4b659ed4bf2489bfbe88bdf85550123da",
-                  "author": "renovate[bot]",
-                  "timestamp": 1738949059,
-                  "message": "<p>Update data-platform-workflows to v29 (<a target=\"_blank\" href=\"https://github.com/canonical/mysql-bundle/pull/97\">#97</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/mysql-bundle/commit/9208fee4b659ed4bf2489bfbe88bdf85550123da"
                }
             ],
             "ciActions": [
@@ -27048,7 +27048,7 @@
          },
          {
             "name": "mysql-operator",
-            "newCommits": 7,
+            "newCommits": 8,
             "url": "https://github.com/canonical/mysql-operator",
             "releases": [
                {
