@@ -4927,6 +4927,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "5495b21c996e048265c55003e7ee6bbc85359462",
+                  "author": "Andrew Scribner",
+                  "timestamp": 1743538128,
+                  "message": "<p>feat: integrate grafana (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/44\">#44</a>)</p>\n\n<ul>\n<li>feat: add grafana integration</li>\n</ul>\n\n<p>Adds integration to grafana using the grafana-metadata interface.</p>\n\n<p>Not included here is setting up authentication between Kiali and Grafana.  See <a href=\"https://github.com/canonical/kiali-k8s-operator/issues/43\">https://github.com/canonical/kiali-k8s-operator/issues/43</a> for more details.  This means that while the integration exists, it may not provide all functionality unless related to an unauthenticated Grafana.</p>\n",
+                  "url": "https://github.com/canonical/kiali-k8s-operator/commit/5495b21c996e048265c55003e7ee6bbc85359462"
+               },
+               {
                   "sha": "76cec10724e6817c45879bbbda22b39512891142",
                   "author": "Andrew Scribner",
                   "timestamp": 1743432387,
@@ -4939,13 +4946,6 @@
                   "timestamp": 1743097683,
                   "message": "<p>feat: use a context manager to compute status from charm reconciliation (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/40\">#40</a>)</p>\n\n<ul>\n<li>feat: use a context manager to compute status from charm reconciliation</li>\n</ul>\n\n<p>Previously, every step in <code>reconcile</code> captured the errors emitted and generated charm statuses for the different parts.  The charm status was then computed as the worst of these statuses.</p>\n\n<p>This commit refactors that to use a context manager (StatusManager) to offload this work of catching known errors and mapping them to charm statuses. This reduces the boilerplate code in <code>reconcile</code>.</p>\n\n<ul>\n<li>fix: remove unnecessary status emission</li>\n</ul>\n",
                   "url": "https://github.com/canonical/kiali-k8s-operator/commit/4410259672587af6c9160e2320b4c32c1e68c986"
-               },
-               {
-                  "sha": "d123043c5dbb80457c3ac16120b2e20b74f524ea",
-                  "author": "Andrew Scribner",
-                  "timestamp": 1743010611,
-                  "message": "<p>refactor: remove collect_status event handler, handle statuses in reconcile (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/39\">#39</a>)</p>\n\n<p>Previously, unit status was handled in a collect_status event handler.  This meant that as we increased complexity of the reconcile function a lot of logic would need to be duplicated in the collect_status handler in order to give users a nuanced view of the charm status.</p>\n\n<p>To address this issue, the current commit refactors status handling to occur completely in the reconcile function.  To achieve this, the helpers called in <code>reconcile</code> will all raise custom exceptions on known errors.  These exceptions can be mapped to the desired charm statuses.  The benefit of this pattern is that we can embed the logic of &ldquo;errorX should generate statusMessageY&rdquo; in helpers without having helpers directly setting charm status</p>\n",
-                  "url": "https://github.com/canonical/kiali-k8s-operator/commit/d123043c5dbb80457c3ac16120b2e20b74f524ea"
                }
             ],
             "ciActions": [],
