@@ -14191,6 +14191,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "2a3d7b1c810f3ca1d24a5ea4584b8008d016a553",
+                  "author": "Lucian Petrut",
+                  "timestamp": 1743664114,
+                  "message": "<p>test: enable worker refresh tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1255\">#1255</a>)</p>\n\n<p>We had to disable worker refresh tests due to a known issue.\nOnce the fix gets backported and promoted to all the tracks\ncovered by the refresh tests, we can test worker nodes as well.</p>\n\n<p>Follow-up of: <a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1233\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1233\">#1233</a></a>\nRequires the following backport to be merged and promoted:\n<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1239\"><a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1239\">#1239</a></a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/2a3d7b1c810f3ca1d24a5ea4584b8008d016a553"
+               },
+               {
                   "sha": "51dc12c586cdab266cfed91b5ed6507889f2ff9f",
                   "author": "Claudiu Belu",
                   "timestamp": 1743616481,
@@ -14203,13 +14210,6 @@
                   "timestamp": 1743616397,
                   "message": "<p>fix: Execute post-refresh hook after node is ready (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1228\">#1228</a>)</p>\n\n<p>Initially, the custom post-refresh hook was executed in the microcluster\n<code>onStart</code> hook. This hook is executed right after the microcluster\ndaemon started which could lead to &ldquo;Database not initialized&rdquo; error if\nthe node was not bootstrapped yet.</p>\n\n<p>By introducing a nodeReadyHook and execute the refresh from there, we\nensure that the refresh is only executed after a <code>snap refresh</code> but not\nafter a <code>snap install</code></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/5dd8550da70b3b665c092dafa17c05fd8b9cf917"
-               },
-               {
-                  "sha": "76f4e833478cdba3b08e708739a1a8ee50ed41ce",
-                  "author": "Mateo Florido",
-                  "timestamp": 1743615888,
-                  "message": "<p>fix: juju links in docs (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1265\">#1265</a>)</p>\n\n<p>Switch Juju docs to documentation.ubuntu.com</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/76f4e833478cdba3b08e708739a1a8ee50ed41ce"
                }
             ],
             "ciActions": [
@@ -18237,6 +18237,15 @@
             "url": "https://github.com/canonical/sdcore-ausf-k8s-operator",
             "releases": [
                {
+                  "id": 210016676,
+                  "version": "rev714",
+                  "timestamp": 1743662831,
+                  "title": "Revision 714",
+                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.6.2\n       resource-revision: 66</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:14 UTC on 3 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/413\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/413\">#413</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev713...rev714\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev713&hellip;rev714</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev714",
+                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev714...main"
+               },
+               {
                   "id": 209193979,
                   "version": "rev713",
                   "timestamp": 1742990711,
@@ -18253,15 +18262,6 @@
                   "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.6.2\n       resource-revision: 65</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 06:54 UTC on 23 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/411\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/411\">#411</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev711...rev712\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev711&hellip;rev712</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev712",
                   "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev712...main"
-               },
-               {
-                  "id": 205823849,
-                  "version": "rev711",
-                  "timestamp": 1741950739,
-                  "title": "Revision 711",
-                  "body": "<p>resources:\n    -  ausf-image: ghcr.io/canonical/sdcore-ausf:1.6.2\n       resource-revision: 64</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 11:39 UTC on 14 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump ausf rock to v1.6.2 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/410\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/pull/410\">#410</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev709...rev711\">https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev709&hellip;rev711</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-ausf-k8s-operator/releases/tag/rev711",
-                  "compareUrl": "https://github.com/canonical/sdcore-ausf-k8s-operator/compare/rev711...main"
                }
             ],
             "tags": null,
@@ -18323,8 +18323,8 @@
                   {
                      "track": "1.6",
                      "channel": "edge",
-                     "revision": 713,
-                     "timestamp": 1743317762,
+                     "revision": 714,
+                     "timestamp": 1743664459,
                      "base": ""
                   },
                   {
@@ -18727,7 +18727,7 @@
          },
          {
             "name": "sdcore-github-workflows",
-            "newCommits": 6,
+            "newCommits": 7,
             "url": "https://github.com/canonical/sdcore-github-workflows",
             "releases": [
                {
@@ -18836,6 +18836,15 @@
             "url": "https://github.com/canonical/sdcore-nms-k8s-operator",
             "releases": [
                {
+                  "id": 210015800,
+                  "version": "rev850",
+                  "timestamp": 1743662842,
+                  "title": "Revision 850",
+                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.1.0\n       resource-revision: 118</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:08 UTC on 3 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/460\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/460\">#460</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev849...rev850\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev849&hellip;rev850</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev850",
+                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev850...main"
+               },
+               {
                   "id": 209585237,
                   "version": "rev849",
                   "timestamp": 1743508655,
@@ -18852,15 +18861,6 @@
                   "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.1.0\n       resource-revision: 118</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:05 UTC on 30 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/458\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/458\">#458</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev846...rev848\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev846&hellip;rev848</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev848",
                   "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev848...main"
-               },
-               {
-                  "id": 208281964,
-                  "version": "rev847",
-                  "timestamp": 1742952645,
-                  "title": "Revision 847",
-                  "body": "<p>resources:\n    -  nms-image: ghcr.io/canonical/sdcore-nms:1.1.0\n       resource-revision: 117</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 02:01 UTC on 26 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/458\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nms-k8s-operator/pull/458\">#458</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev846...rev847\">https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev846&hellip;rev847</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nms-k8s-operator/releases/tag/rev847",
-                  "compareUrl": "https://github.com/canonical/sdcore-nms-k8s-operator/compare/rev847...main"
                }
             ],
             "tags": null,
@@ -18922,8 +18922,8 @@
                   {
                      "track": "1.6",
                      "channel": "edge",
-                     "revision": 849,
-                     "timestamp": 1743509852,
+                     "revision": 850,
+                     "timestamp": 1743664113,
                      "base": ""
                   },
                   {
@@ -18981,7 +18981,7 @@
          },
          {
             "name": "sdcore-nrf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-nrf-k8s-operator",
             "releases": [
                {
@@ -19159,6 +19159,15 @@
             "url": "https://github.com/canonical/sdcore-nssf-k8s-operator",
             "releases": [
                {
+                  "id": 210016723,
+                  "version": "rev670",
+                  "timestamp": 1743662835,
+                  "title": "Revision 670",
+                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.6.1\n       resource-revision: 61</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:14 UTC on 3 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/410\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/410\">#410</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev669...rev670\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev669&hellip;rev670</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev670",
+                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev670...main"
+               },
+               {
                   "id": 209194425,
                   "version": "rev669",
                   "timestamp": 1742990682,
@@ -19175,15 +19184,6 @@
                   "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.6.1\n       resource-revision: 60</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:10 UTC on 23 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/408\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/408\">#408</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev667...rev668\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev667&hellip;rev668</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev668",
                   "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev668...main"
-               },
-               {
-                  "id": 205823671,
-                  "version": "rev667",
-                  "timestamp": 1741950753,
-                  "title": "Revision 667",
-                  "body": "<p>resources:\n    -  nssf-image: ghcr.io/canonical/sdcore-nssf:1.6.1\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 11:38 UTC on 14 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: bump nssf rock to v1.6.1 by <a target=\"_blank\" href=\"https://github.com/gruyaume\">@gruyaume</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/407\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/pull/407\">#407</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev666...rev667\">https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev666&hellip;rev667</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-nssf-k8s-operator/releases/tag/rev667",
-                  "compareUrl": "https://github.com/canonical/sdcore-nssf-k8s-operator/compare/rev667...main"
                }
             ],
             "tags": null,
@@ -19245,8 +19245,8 @@
                   {
                      "track": "1.6",
                      "channel": "edge",
-                     "revision": 669,
-                     "timestamp": 1743318707,
+                     "revision": 670,
+                     "timestamp": 1743664477,
                      "base": ""
                   },
                   {
@@ -19333,6 +19333,15 @@
             "url": "https://github.com/canonical/sdcore-pcf-k8s-operator",
             "releases": [
                {
+                  "id": 210016586,
+                  "version": "rev711",
+                  "timestamp": 1743662826,
+                  "title": "Revision 711",
+                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.6.1\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:13 UTC on 3 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/418\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/418\">#418</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev709...rev711\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev709&hellip;rev711</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev711",
+                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev711...main"
+               },
+               {
                   "id": 209195050,
                   "version": "rev710",
                   "timestamp": 1743016896,
@@ -19349,15 +19358,6 @@
                   "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.6.1\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 19:46 UTC on 26 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/416\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/416\">#416</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev708...rev709\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev708&hellip;rev709</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev709",
                   "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev709...main"
-               },
-               {
-                  "id": 208282988,
-                  "version": "rev708",
-                  "timestamp": 1742953717,
-                  "title": "Revision 708",
-                  "body": "<p>resources:\n    -  pcf-image: ghcr.io/canonical/sdcore-pcf:1.6.1\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 02:14 UTC on 26 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/417\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/pull/417\">#417</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev707...rev708\">https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev707&hellip;rev708</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-pcf-k8s-operator/releases/tag/rev708",
-                  "compareUrl": "https://github.com/canonical/sdcore-pcf-k8s-operator/compare/rev708...main"
                }
             ],
             "tags": null,
@@ -19419,8 +19419,8 @@
                   {
                      "track": "1.6",
                      "channel": "edge",
-                     "revision": 710,
-                     "timestamp": 1743319928,
+                     "revision": 711,
+                     "timestamp": 1743664425,
                      "base": ""
                   },
                   {
@@ -19679,6 +19679,15 @@
             "url": "https://github.com/canonical/sdcore-udm-k8s-operator",
             "releases": [
                {
+                  "id": 210016818,
+                  "version": "rev665",
+                  "timestamp": 1743662838,
+                  "title": "Revision 665",
+                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.6.1\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:15 UTC on 3 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/402\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/402\">#402</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev664...rev665\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev664&hellip;rev665</a></p>\n",
+                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev665",
+                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev665...main"
+               },
+               {
                   "id": 208506645,
                   "version": "rev664",
                   "timestamp": 1743016878,
@@ -19695,15 +19704,6 @@
                   "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.6.1\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 02:14 UTC on 26 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance python dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/401\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/401\">#401</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev662...rev663\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev662&hellip;rev663</a></p>\n",
                   "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev663",
                   "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev663...main"
-               },
-               {
-                  "id": 207668378,
-                  "version": "rev662",
-                  "timestamp": 1742195836,
-                  "title": "Revision 662",
-                  "body": "<p>resources:\n    -  udm-image: ghcr.io/canonical/sdcore-udm:1.6.1\n       resource-revision: 54</p>\n\n<p>Static resources:\n Released to &lsquo;1.6/edge/&rsquo; at 07:27 UTC on 23 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/399\"><a target=\"_blank\" href=\"https://github.com/canonical/sdcore-udm-k8s-operator/pull/399\">#399</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev661...rev662\">https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev661&hellip;rev662</a></p>\n",
-                  "url": "https://github.com/canonical/sdcore-udm-k8s-operator/releases/tag/rev662",
-                  "compareUrl": "https://github.com/canonical/sdcore-udm-k8s-operator/compare/rev662...main"
                }
             ],
             "tags": null,
@@ -19765,8 +19765,8 @@
                   {
                      "track": "1.6",
                      "channel": "edge",
-                     "revision": 664,
-                     "timestamp": 1743018514,
+                     "revision": 665,
+                     "timestamp": 1743664512,
                      "base": ""
                   },
                   {
@@ -19849,7 +19849,7 @@
          },
          {
             "name": "sdcore-udr-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-udr-k8s-operator",
             "releases": [
                {
@@ -20734,7 +20734,7 @@
          },
          {
             "name": "sdcore-smf-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-smf-k8s-operator",
             "releases": [
                {
