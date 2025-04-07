@@ -606,7 +606,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 7128,
+            "newCommits": 7130,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -763,29 +763,29 @@
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30727,
-                     "timestamp": 1743791182,
+                     "revision": 30743,
+                     "timestamp": 1744032591,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30728,
-                     "timestamp": 1743791291,
+                     "revision": 30744,
+                     "timestamp": 1744032673,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30729,
-                     "timestamp": 1743791388,
+                     "revision": 30745,
+                     "timestamp": 1744032755,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 30730,
-                     "timestamp": 1743791495,
+                     "revision": 30746,
+                     "timestamp": 1744032924,
                      "base": "core24"
                   },
                   {
@@ -7140,6 +7140,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "f6125a39c9e5eabfb28b4c7581279c2c8f6ecd0f",
+                  "author": "Andrew Scribner",
+                  "timestamp": 1744032838,
+                  "message": "<p>feat: bump kiali to version 2.7.1 (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/45\">#45</a>)</p>\n",
+                  "url": "https://github.com/canonical/kiali-k8s-operator/commit/f6125a39c9e5eabfb28b4c7581279c2c8f6ecd0f"
+               },
+               {
                   "sha": "5495b21c996e048265c55003e7ee6bbc85359462",
                   "author": "Andrew Scribner",
                   "timestamp": 1743538128,
@@ -7152,13 +7159,6 @@
                   "timestamp": 1743432387,
                   "message": "<p>feat: add istio-metadata relation to define Istio&rsquo;s namespace (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/41\">#41</a>)</p>\n\n<p>Previously, we assumed istio was deployed in the same namespace as kiali.  This change removes that assumption, instead getting istio&rsquo;s namespace from a relation to the istio charm.</p>\n",
                   "url": "https://github.com/canonical/kiali-k8s-operator/commit/76cec10724e6817c45879bbbda22b39512891142"
-               },
-               {
-                  "sha": "4410259672587af6c9160e2320b4c32c1e68c986",
-                  "author": "Andrew Scribner",
-                  "timestamp": 1743097683,
-                  "message": "<p>feat: use a context manager to compute status from charm reconciliation (<a target=\"_blank\" href=\"https://github.com/canonical/kiali-k8s-operator/pull/40\">#40</a>)</p>\n\n<ul>\n<li>feat: use a context manager to compute status from charm reconciliation</li>\n</ul>\n\n<p>Previously, every step in <code>reconcile</code> captured the errors emitted and generated charm statuses for the different parts.  The charm status was then computed as the worst of these statuses.</p>\n\n<p>This commit refactors that to use a context manager (StatusManager) to offload this work of catching known errors and mapping them to charm statuses. This reduces the boilerplate code in <code>reconcile</code>.</p>\n\n<ul>\n<li>fix: remove unnecessary status emission</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/kiali-k8s-operator/commit/4410259672587af6c9160e2320b4c32c1e68c986"
                }
             ],
             "ciActions": [],
@@ -12585,25 +12585,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "6470782a0f271f7b0e2afd665c23f3432b09f130",
+                  "author": "canonical-iam",
+                  "timestamp": 1744034954,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/184\">#184</a> from canonical/renovate/auto-github-actions</p>\n\n<p>chore(deps): update github/codeql-action digest to fc7e4a0</p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/6470782a0f271f7b0e2afd665c23f3432b09f130"
+               },
+               {
+                  "sha": "fd6b47e3f14dde6f94f146ea974d83cbcb270a4c",
+                  "author": "renovate[bot]",
+                  "timestamp": 1744034703,
+                  "message": "<p>chore(deps): update github/codeql-action digest to fc7e4a0</p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/fd6b47e3f14dde6f94f146ea974d83cbcb270a4c"
+               },
+               {
                   "sha": "bf05c8f0260950f6500c4bfcc285cbf522f8a809",
                   "author": "canonical-iam",
                   "timestamp": 1744014322,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/183\">#183</a> from canonical/renovate/auto-patch-github-actions</p>\n\n<p>chore(deps): update canonical/identity-team action to v1.7.7</p>\n",
                   "url": "https://github.com/canonical/kratos-rock/commit/bf05c8f0260950f6500c4bfcc285cbf522f8a809"
-               },
-               {
-                  "sha": "1f64ae8b42bc3d9fe1f6773021944e8433a40533",
-                  "author": "renovate[bot]",
-                  "timestamp": 1744014081,
-                  "message": "<p>chore(deps): update canonical/identity-team action to v1.7.7</p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/1f64ae8b42bc3d9fe1f6773021944e8433a40533"
-               },
-               {
-                  "sha": "ad7a8098d05cf2791897599c362d3a2f55af60a0",
-                  "author": "Alessandro Cabbia",
-                  "timestamp": 1744014057,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/180\">#180</a> from canonical/IAM-1360</p>\n\n<p>IAM-1360: add cve labeller workflow</p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/ad7a8098d05cf2791897599c362d3a2f55af60a0"
                }
             ],
             "ciActions": [
@@ -13021,25 +13021,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "1d1b07bcbae412e59a266d2ddffcf3bbbf4ac1d3",
-                  "author": "Nikos Sklikas",
-                  "timestamp": 1743082487,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service/pull/18\">#18</a> from canonical/IAM-1413</p>\n\n<p>Add status API</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service/commit/1d1b07bcbae412e59a266d2ddffcf3bbbf4ac1d3"
+                  "sha": "bfecb998a98491fe74d7bb4f04ba8f3efa221384",
+                  "author": "canonical-iam",
+                  "timestamp": 1744035158,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service/pull/21\">#21</a> from canonical/renovate/auto-patch-github-actions</p>\n\n<p>chore(deps): update github/codeql-action action to v3.28.14</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service/commit/bfecb998a98491fe74d7bb4f04ba8f3efa221384"
                },
                {
-                  "sha": "1b2d5a4d3f6ff06ffcb62588855404ce23e2808a",
-                  "author": "Nikos",
-                  "timestamp": 1743071865,
-                  "message": "<p>fix: add status API</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service/commit/1b2d5a4d3f6ff06ffcb62588855404ce23e2808a"
+                  "sha": "1214aa1dbbcf489b245ff8dd3d37a9db883fa27c",
+                  "author": "renovate[bot]",
+                  "timestamp": 1744034945,
+                  "message": "<p>chore(deps): update github/codeql-action action to v3.28.14</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service/commit/1214aa1dbbcf489b245ff8dd3d37a9db883fa27c"
                },
                {
-                  "sha": "cd04eeed55a745ffa955a852131a1e072dc0562b",
-                  "author": "Nikos Sklikas",
-                  "timestamp": 1743071874,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service/pull/16\">#16</a> from canonical/IAM-1358</p>\n\n<p>Add release-please manifest</p>\n",
-                  "url": "https://github.com/canonical/user-verification-service/commit/cd04eeed55a745ffa955a852131a1e072dc0562b"
+                  "sha": "81270ef17dd82a2ec0786a3eafb225460ac32114",
+                  "author": "canonical-iam",
+                  "timestamp": 1744034924,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/user-verification-service/pull/20\">#20</a> from canonical/renovate/auto-github-actions</p>\n\n<p>chore(deps): update github/codeql-action digest to fc7e4a0</p>\n",
+                  "url": "https://github.com/canonical/user-verification-service/commit/81270ef17dd82a2ec0786a3eafb225460ac32114"
                }
             ],
             "ciActions": [
@@ -14418,6 +14418,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "ffff39c49bec8c1aec5a44a25bc67f73312a8001",
+                  "author": "Niamh Hennigan",
+                  "timestamp": 1744033391,
+                  "message": "<p>update LXD privileged container info (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1276\">#1276</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/ffff39c49bec8c1aec5a44a25bc67f73312a8001"
+               },
+               {
                   "sha": "431b6c9be293f50bce9ba925ff0293c52fc56642",
                   "author": "Benjamin Schimke",
                   "timestamp": 1744019009,
@@ -14430,13 +14437,6 @@
                   "timestamp": 1744004497,
                   "message": "<p>test: properly wait for k8sd controllers to finish reconciling (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1273\">#1273</a>)</p>\n\n<p>The k8sd controller unit tests will emit a fake event and wait\nfor the reconcile loop to handle it.</p>\n\n<p>UpdateNodeConfigurationController uses a channel to notify that\nthe reconciliation finished, however the other tests will just\nwait for about 100ms and expect the reconcile to finish.</p>\n\n<p>The 100ms sleep is flaky, sometimes it takes longer for the events\nto be processed.</p>\n\n<p>To address this, we&rsquo;ll use the same post-reconciliation notification\nin all k8sd controllers.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/e4036877f92a8ef9d7f3c43029e401ef01e5b77e"
-               },
-               {
-                  "sha": "550479dd1b86ba714756f6494e1ce2b75166e80a",
-                  "author": "Homayoon Alimohammadi",
-                  "timestamp": 1744004290,
-                  "message": "<p>fix: Reset reconciled state before reconciling (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1274\">#1274</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/550479dd1b86ba714756f6494e1ce2b75166e80a"
                }
             ],
             "ciActions": [
@@ -21419,9 +21419,27 @@
          },
          {
             "name": "lego-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/lego-operator",
             "releases": [
+               {
+                  "id": 210758662,
+                  "version": "rev59",
+                  "timestamp": 1744031946,
+                  "title": "Revision 59",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 13:44 UTC on 7 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Fix URL in README and add a logo by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/compare/rev56...rev59\">https://github.com/canonical/lego-operator/compare/rev56&hellip;rev59</a></p>\n",
+                  "url": "https://github.com/canonical/lego-operator/releases/tag/rev59",
+                  "compareUrl": "https://github.com/canonical/lego-operator/compare/rev59...main"
+               },
+               {
+                  "id": 210758657,
+                  "version": "rev58",
+                  "timestamp": 1744031946,
+                  "title": "Revision 58",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 13:44 UTC on 7 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: Fix URL in README and add a logo by <a target=\"_blank\" href=\"https://github.com/saltiyazan\">@saltiyazan</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/50\">#50</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/compare/rev56...rev58\">https://github.com/canonical/lego-operator/compare/rev56&hellip;rev58</a></p>\n",
+                  "url": "https://github.com/canonical/lego-operator/releases/tag/rev58",
+                  "compareUrl": "https://github.com/canonical/lego-operator/compare/rev58...main"
+               },
                {
                   "id": 210171481,
                   "version": "rev57",
@@ -21430,24 +21448,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 17:02 UTC on 3 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/compare/rev54...rev57\">https://github.com/canonical/lego-operator/compare/rev54&hellip;rev57</a></p>\n",
                   "url": "https://github.com/canonical/lego-operator/releases/tag/rev57",
                   "compareUrl": "https://github.com/canonical/lego-operator/compare/rev57...main"
-               },
-               {
-                  "id": 210171456,
-                  "version": "rev56",
-                  "timestamp": 1743698268,
-                  "title": "Revision 56",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 17:02 UTC on 3 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/49\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/49\">#49</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/compare/rev54...rev56\">https://github.com/canonical/lego-operator/compare/rev54&hellip;rev56</a></p>\n",
-                  "url": "https://github.com/canonical/lego-operator/releases/tag/rev56",
-                  "compareUrl": "https://github.com/canonical/lego-operator/compare/rev56...main"
-               },
-               {
-                  "id": 208342489,
-                  "version": "rev55",
-                  "timestamp": 1742979440,
-                  "title": "Revision 55",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;4/edge&rsquo; at 09:24 UTC on 26 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: Update charm libraries by <a target=\"_blank\" href=\"https://github.com/telcobot\">@telcobot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/46\"><a target=\"_blank\" href=\"https://github.com/canonical/lego-operator/pull/46\">#46</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/lego-operator/compare/rev52...rev55\">https://github.com/canonical/lego-operator/compare/rev52&hellip;rev55</a></p>\n",
-                  "url": "https://github.com/canonical/lego-operator/releases/tag/rev55",
-                  "compareUrl": "https://github.com/canonical/lego-operator/compare/rev55...main"
                }
             ],
             "tags": null,
@@ -31239,6 +31239,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "fe2fa92ae70af324c818a0b4ea4cb61f0423e028",
+                  "author": "renovate[bot]",
+                  "timestamp": 1744034961,
+                  "message": "<p>Update dependency cloudflare/cloudflared to v2025.4.0 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/15\">#15</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/fe2fa92ae70af324c818a0b4ea4cb61f0423e028"
+               },
+               {
                   "sha": "5b7590f1205d3f7836c252d3ac83842cc6566156",
                   "author": "renovate[bot]",
                   "timestamp": 1741936670,
@@ -31251,13 +31258,6 @@
                   "timestamp": 1741936084,
                   "message": "<p>Enable renovate for cloudflared (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/13\">#13</a>)</p>\n",
                   "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/80a8247e9233538cb33d5cae421a4fc0418ac140"
-               },
-               {
-                  "sha": "d37e81b5f1b9d15916c23e19219e3ea8adef149d",
-                  "author": "Sébastien Georget",
-                  "timestamp": 1736756115,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/9\">#9</a> from canonical/chore/missing_codeowners</p>\n\n<p>Add missing CODEOWNERS file</p>\n",
-                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/d37e81b5f1b9d15916c23e19219e3ea8adef149d"
                }
             ],
             "ciActions": [],
@@ -31266,7 +31266,7 @@
          },
          {
             "name": "chrony-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/chrony-operator",
             "releases": [
                {
@@ -32285,6 +32285,15 @@
             "url": "https://github.com/canonical/haproxy-operator",
             "releases": [
                {
+                  "id": 210755909,
+                  "version": "rev143",
+                  "timestamp": 1744032823,
+                  "title": "Revision 143",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 13:35 UTC on 7 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ISD-2944 Haproxy getting-started docs by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/76\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/76\">#76</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.11.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/91\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/91\">#91</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev141...rev143\">https://github.com/canonical/haproxy-operator/compare/rev141&hellip;rev143</a></p>\n",
+                  "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev143",
+                  "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev143...main"
+               },
+               {
                   "id": 210405015,
                   "version": "rev142",
                   "timestamp": 1743781576,
@@ -32301,15 +32310,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 16:09 UTC on 18 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>add missing print output to artifact script by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/89\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/89\">#89</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev140...rev141\">https://github.com/canonical/haproxy-operator/compare/rev140&hellip;rev141</a></p>\n",
                   "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev141",
                   "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev141...main"
-               },
-               {
-                  "id": 206483574,
-                  "version": "rev140",
-                  "timestamp": 1742288364,
-                  "title": "Revision 140",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 09:01 UTC on 18 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>ISD-3043 Render haproxy config for haproxy route by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/82\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/82\">#82</a></a></li>\n<li>chore(deps): update dependency cryptography to v44.0.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/79\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/79\">#79</a></a></li>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/81\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/81\">#81</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev139...rev140\">https://github.com/canonical/haproxy-operator/compare/rev139&hellip;rev140</a></p>\n",
-                  "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev140",
-                  "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev140...main"
                }
             ],
             "tags": null,
@@ -33931,6 +33931,15 @@
             "url": "https://github.com/canonical/synapse-operator",
             "releases": [
                {
+                  "id": 210758842,
+                  "version": "rev633",
+                  "timestamp": 1744033269,
+                  "title": "Revision 633",
+                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 610</p>\n\n<p>Static resources:\n Released to &lsquo;2/edge&rsquo; at 13:45 UTC on 7 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency boto3 to v1.37.28 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/755\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/755\">#755</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev632...rev633\">https://github.com/canonical/synapse-operator/compare/rev632&hellip;rev633</a></p>\n",
+                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev633",
+                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev633...2/main"
+               },
+               {
                   "id": 210657956,
                   "version": "rev632",
                   "timestamp": 1744006518,
@@ -33947,15 +33956,6 @@
                   "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 608</p>\n\n<p>Static resources:\n Released to &lsquo;2/edge&rsquo; at 03:39 UTC on 7 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.11.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/754\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/754\">#754</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev630...rev631\">https://github.com/canonical/synapse-operator/compare/rev630&hellip;rev631</a></p>\n",
                   "url": "https://github.com/canonical/synapse-operator/releases/tag/rev631",
                   "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev631...2/main"
-               },
-               {
-                  "id": 210554696,
-                  "version": "rev630",
-                  "timestamp": 1743858534,
-                  "title": "Revision 630",
-                  "body": "<p>resources:\n    -  synapse-image: undefined\n       resource-revision: 607</p>\n\n<p>Static resources:\n Released to &lsquo;2/edge&rsquo; at 13:12 UTC on 5 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add docs for upgrading from latest/edge to 2/edge. Add config option to allow changing the OIDC subject claim by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/748\"><a target=\"_blank\" href=\"https://github.com/canonical/synapse-operator/pull/748\">#748</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/synapse-operator/compare/rev629...rev630\">https://github.com/canonical/synapse-operator/compare/rev629&hellip;rev630</a></p>\n",
-                  "url": "https://github.com/canonical/synapse-operator/releases/tag/rev630",
-                  "compareUrl": "https://github.com/canonical/synapse-operator/compare/rev630...2/main"
                }
             ],
             "tags": null,
@@ -33985,8 +33985,8 @@
                   {
                      "track": "2",
                      "channel": "edge",
-                     "revision": 632,
-                     "timestamp": 1744006784,
+                     "revision": 633,
+                     "timestamp": 1744033504,
                      "base": ""
                   },
                   {
