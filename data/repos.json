@@ -75,7 +75,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": null,
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -606,7 +606,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 7204,
+            "newCommits": 7209,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -4120,7 +4120,7 @@
          },
          {
             "name": "prometheus-k8s-operator",
-            "newCommits": 3,
+            "newCommits": 4,
             "url": "https://github.com/canonical/prometheus-k8s-operator",
             "releases": [
                {
@@ -4709,7 +4709,7 @@
          },
          {
             "name": "parca-agent-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/parca-agent-operator",
             "releases": [
                {
@@ -4971,7 +4971,7 @@
          },
          {
             "name": "alertmanager-k8s-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/alertmanager-k8s-operator",
             "releases": [
                {
@@ -5122,7 +5122,7 @@
          },
          {
             "name": "loki-coordinator-k8s-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/loki-coordinator-k8s-operator",
             "releases": [
                {
@@ -5451,7 +5451,7 @@
          },
          {
             "name": "loki-worker-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/loki-worker-k8s-operator",
             "releases": [
                {
@@ -5510,7 +5510,7 @@
          },
          {
             "name": "mimir-worker-k8s-operator",
-            "newCommits": 3,
+            "newCommits": 4,
             "url": "https://github.com/canonical/mimir-worker-k8s-operator",
             "releases": [
                {
@@ -11188,7 +11188,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [],
+            "ciActions": null,
             "charm": null,
             "snap": null
          },
@@ -11452,7 +11452,7 @@
          },
          {
             "name": "identity-platform-login-ui-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/identity-platform-login-ui-operator",
             "releases": [
                {
@@ -11566,7 +11566,7 @@
          },
          {
             "name": "kratos-operator",
-            "newCommits": 4,
+            "newCommits": 6,
             "url": "https://github.com/canonical/kratos-operator",
             "releases": [
                {
@@ -11770,7 +11770,7 @@
          },
          {
             "name": "oathkeeper-operator",
-            "newCommits": 6,
+            "newCommits": 8,
             "url": "https://github.com/canonical/oathkeeper-operator",
             "releases": [
                {
@@ -11860,7 +11860,7 @@
          },
          {
             "name": "hydra-operator",
-            "newCommits": 6,
+            "newCommits": 10,
             "url": "https://github.com/canonical/hydra-operator",
             "releases": [
                {
@@ -11966,7 +11966,7 @@
          },
          {
             "name": "glauth-k8s-operator",
-            "newCommits": 11,
+            "newCommits": 13,
             "url": "https://github.com/canonical/glauth-k8s-operator",
             "releases": [
                {
@@ -12033,7 +12033,7 @@
          },
          {
             "name": "identity-platform-admin-ui-operator",
-            "newCommits": 2,
+            "newCommits": 7,
             "url": "https://github.com/canonical/identity-platform-admin-ui-operator",
             "releases": [
                {
@@ -14450,6 +14450,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "a7be4c309f0a0e936620aea2416e1f8bd28d7da0",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1744184487,
+                  "message": "<p>test: Adds test snap to test_version_upgrades (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1185\">#1185</a>)</p>\n\n<p>Currently, the test_version_upgrades test does not take into account the\nconfigured TEST_SNAP (the built snap for testing the PR) when testing upgrades.\nThis means that if there&rsquo;s a PR that breaks upgrades, we won&rsquo;t notice\nuntil the PR merges and gets published to the snap store, which is too\nlate.</p>\n\n<p>This commit addresses this issue by adding the TEST_SNAP to the upgrade\ntest, helping ensure that the PR doesn&rsquo;t break upgrades.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/a7be4c309f0a0e936620aea2416e1f8bd28d7da0"
+               },
+               {
                   "sha": "0e09acccee7c11c39509a852d561decc541cabef",
                   "author": "Niamh Hennigan",
                   "timestamp": 1744154648,
@@ -14462,13 +14469,6 @@
                   "timestamp": 1744133928,
                   "message": "<p>docs: Fix dqlite command (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1285\">#1285</a>)</p>\n\n<p>Minor typo caused this command to not be copy&amp;pasteable</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/5354e025750e7a2b806fa86083deef2a0e32b4ec"
-               },
-               {
-                  "sha": "4cd51e078368f41672d3ab8dbb9a29b55aebf28c",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1744127893,
-                  "message": "<p>fix: Don&rsquo;t wait for services to terminate on removed node (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1262\">#1262</a>)</p>\n\n<p>Some services (e.g. k8s-dqlite) take a considerable amount of time to\nshutdown in some cases. Microcluster has a fixed 30s timeout for the\nremove hook which caused removing a node to fail in some scenarios.</p>\n\n<p>With this commit, the remove hook will not wait anymore on services to\nterminate. The cleanup on a removed node is on a best-effort basis so in\nthat case we don&rsquo;t care when (and even if) a service is actually stopped.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/4cd51e078368f41672d3ab8dbb9a29b55aebf28c"
                }
             ],
             "ciActions": [
@@ -18884,7 +18884,7 @@
          },
          {
             "name": "sdcore-gnbsim-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/sdcore-gnbsim-k8s-operator",
             "releases": [
                {
@@ -34305,9 +34305,18 @@
          },
          {
             "name": "wazuh-server-operator",
-            "newCommits": 3,
+            "newCommits": 0,
             "url": "https://github.com/canonical/wazuh-server-operator",
             "releases": [
+               {
+                  "id": 211206129,
+                  "version": "rev101",
+                  "timestamp": 1744183740,
+                  "title": "Revision 101",
+                  "body": "<p>resources:\n    -  wazuh-server-image: undefined\n       resource-revision: 74</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:32 UTC on 9 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Bootstrap security documentation by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/145\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/145\">#145</a></a></li>\n<li>Increase timeout for cloning the configuration repository by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/144\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/144\">#144</a></a></li>\n<li>Add support for the new relation to terraform by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/143\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/143\">#143</a></a></li>\n<li>Update dependency ops to v2.20.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/136\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/136\">#136</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wazuh-server-operator/compare/rev99...rev101\">https://github.com/canonical/wazuh-server-operator/compare/rev99&hellip;rev101</a></p>\n",
+                  "url": "https://github.com/canonical/wazuh-server-operator/releases/tag/rev101",
+                  "compareUrl": "https://github.com/canonical/wazuh-server-operator/compare/rev101...main"
+               },
                {
                   "id": 210784293,
                   "version": "rev99",
@@ -34325,15 +34334,6 @@
                   "body": "<p>resources:\n    -  wazuh-server-image: undefined\n       resource-revision: 72</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:17 UTC on 4 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Delete everything, including .git by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/140\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/140\">#140</a></a></li>\n<li>Grant access to wazuh api secret by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/141\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/141\">#141</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wazuh-server-operator/compare/rev96...rev98\">https://github.com/canonical/wazuh-server-operator/compare/rev96&hellip;rev98</a></p>\n",
                   "url": "https://github.com/canonical/wazuh-server-operator/releases/tag/rev98",
                   "compareUrl": "https://github.com/canonical/wazuh-server-operator/compare/rev98...main"
-               },
-               {
-                  "id": 210293956,
-                  "version": "rev96",
-                  "timestamp": 1743751279,
-                  "title": "Revision 96",
-                  "body": "<p>resources:\n    -  wazuh-server-image: undefined\n       resource-revision: 70</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:25 UTC on 4 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>add white line at the end of the key file by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/97\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/97\">#97</a></a></li>\n<li>Fix filebeat configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/98\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/98\">#98</a></a></li>\n<li>Run rsyslog through pebble by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/99\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/99\">#99</a></a></li>\n<li>Enable mutual TLS by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/100\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/100\">#100</a></a></li>\n<li>Fix syslog group creation by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/102\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/102\">#102</a></a></li>\n<li>Fix filebeat execution by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/103\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/103\">#103</a></a></li>\n<li>Fix syntax of filebeat cmds by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/105\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/105\">#105</a></a></li>\n<li>Do not reload the wazuh service when reconciling by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/106\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/106\">#106</a></a></li>\n<li>Improve charm stability by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/104\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/104\">#104</a></a></li>\n<li>Tune cmd timeouts by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/107\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/107\">#107</a></a></li>\n<li>Improve integration test stability by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/108\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/108\">#108</a></a></li>\n<li>Fix readiness pebble check for wazuh by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/109\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/109\">#109</a></a></li>\n<li>Fix ryslog port configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/110\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/110\">#110</a></a></li>\n<li>Fix syslog configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/111\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/111\">#111</a></a></li>\n<li>Fix rsyslog permissions by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/112\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/112\">#112</a></a></li>\n<li>Fix file permissions for rsyslog by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/113\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/113\">#113</a></a></li>\n<li>Change rsync log path by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/114\">#114</a></a></li>\n<li>Change syslog file location by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/115\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/115\">#115</a></a></li>\n<li>Increase timeouts by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/116\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/116\">#116</a></a></li>\n<li>Remove termination delay from Traefik&rsquo;s configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/117\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/117\">#117</a></a></li>\n<li>Remove rediness checks by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/118\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/118\">#118</a></a></li>\n<li>Disable syslog imklog module by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/119\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/119\">#119</a></a></li>\n<li>Remove additional filebeat package by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/120\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/120\">#120</a></a></li>\n<li>Fix filebeat user permissions by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/121\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/121\">#121</a></a></li>\n<li>Fix filebeat executable by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/122\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/122\">#122</a></a></li>\n<li>Assign project to EMEA A by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/123\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/123\">#123</a></a></li>\n<li>Added changelog by <a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/101\">#101</a></a></li>\n<li>Add charm module and product terraform plans by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/124\">#124</a></a></li>\n<li>Doc/howto upgrade by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/129\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/129\">#129</a></a></li>\n<li>Bootstrap configuration documentation by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/130\">#130</a></a></li>\n<li>Describe how to configure the system to collect logs by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/131\">#131</a></a></li>\n<li>Enrich documentation by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/125\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/125\">#125</a></a></li>\n<li>Change TF default bases by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/135\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/135\">#135</a></a></li>\n<li>Feat/support local testing by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/133\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/133\">#133</a></a></li>\n<li>Explicit offer_url by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/137\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/137\">#137</a></a></li>\n<li>Add wazuh-api credentials relation by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/139\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/139\">#139</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/yhaliaw\">@yhaliaw</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/wazuh-server-operator/pull/101\">#101</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wazuh-server-operator/compare/rev72...rev96\">https://github.com/canonical/wazuh-server-operator/compare/rev72&hellip;rev96</a></p>\n",
-                  "url": "https://github.com/canonical/wazuh-server-operator/releases/tag/rev96",
-                  "compareUrl": "https://github.com/canonical/wazuh-server-operator/compare/rev96...main"
                }
             ],
             "tags": null,
