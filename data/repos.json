@@ -606,7 +606,7 @@
          },
          {
             "name": "juju",
-            "newCommits": 7191,
+            "newCommits": 7203,
             "url": "https://github.com/juju/juju",
             "releases": [
                {
@@ -12331,7 +12331,7 @@
          },
          {
             "name": "identity-platform-admin-ui",
-            "newCommits": 29,
+            "newCommits": 31,
             "url": "https://github.com/canonical/identity-platform-admin-ui",
             "releases": [
                {
@@ -14568,6 +14568,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "82544da004f5f942b2fbb391a66598b5a77d034d",
+                  "author": "Homayoon Alimohammadi",
+                  "timestamp": 1744696462,
+                  "message": "<p>feat: Feature Upgrade Phase 2 - Add Upgrade controller (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1297\">#1297</a>)</p>\n\n<h3>Overview</h3>\n\n<p>This PR adds an <code>upgrade</code> controller to implement phase 2 of the feature upgrades.\nThe Upgrade controller is responsible for reconciling the Upgrade custom resource.\nWhen the controller notices an &ldquo;in-progress&rdquo; upgrade, it performs one of the following:\n- If the phase is <code>NodeUpgrade</code>, it checks to see if all the nodes are upgraded. If so, it will change the phase to <code>FeatureUpgrade</code>. Otherwise, it requeues and waits for future triggers.\n- If the phase is <code>FeatureUpgrade</code>, it notifies the feature controller to trigger a feature reconciliation, and waits for the reconciliation to get finished. Finally, it will change the phase to <code>Completed</code>.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/82544da004f5f942b2fbb391a66598b5a77d034d"
+               },
+               {
                   "sha": "d10b65db5ad862f088e8b4f5b4a116574ab9f031",
                   "author": "Lucian Petrut",
                   "timestamp": 1744650948,
@@ -14580,13 +14587,6 @@
                   "timestamp": 1744650935,
                   "message": "<p>test: ensure that the containerd test uses local mirror (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1300\">#1300</a>)</p>\n\n<p>One of the tests uses a custom containerd base directory. The\nproblem is that it places the registry configuration at a wrong\nlocation that gets ignored.</p>\n\n<p>For this reason, this test will always try to pull the images\nfrom the upstream registry, which causes flakiness (timeouts\ndue to the image size and api rate limiting).</p>\n\n<p>We&rsquo;ll solve the issue by using the same directory that is\nspecified in the containerd config file:</p>\n\n<pre><code>[plugins.&quot;io.containerd.grpc.v1.cri&quot;.registry]\n  config_path = &quot;/home/ubuntu/k8s-containerd/etc/containerd/hosts.d&quot;\n</code></pre>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/fa0af41e791b905548302d2fa1f2885e2355be3e"
-               },
-               {
-                  "sha": "3b41ba9f26c91fd2483b6faf7478cdc237f8534d",
-                  "author": "Niamh Hennigan",
-                  "timestamp": 1744393567,
-                  "message": "<p>docs: Update architecture reference page (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1275\">#1275</a>)</p>\n\n<ul>\n<li>move arch to explanation</li>\n<li>refine reference page</li>\n<li>add charm exp page</li>\n<li>update diagrams</li>\n<li>drive by link fix</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/3b41ba9f26c91fd2483b6faf7478cdc237f8534d"
                }
             ],
             "ciActions": [
@@ -34510,7 +34510,7 @@
          },
          {
             "name": "wordpress-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/wordpress-k8s-operator",
             "releases": [
                {
@@ -35559,43 +35559,15 @@
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 218,
-                     "timestamp": 1742206155,
+                     "revision": 271,
+                     "timestamp": 1744696965,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 219,
-                     "timestamp": 1742206049,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 119,
-                     "timestamp": 1737102572,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 118,
-                     "timestamp": 1737102572,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 220,
-                     "timestamp": 1742206024,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 221,
-                     "timestamp": 1742206128,
+                     "revision": 272,
+                     "timestamp": 1744696971,
                      "base": ""
                   },
                   {
@@ -35615,15 +35587,43 @@
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 216,
-                     "timestamp": 1741919672,
+                     "revision": 273,
+                     "timestamp": 1744696977,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "stable",
-                     "revision": 217,
-                     "timestamp": 1741919672,
+                     "revision": 274,
+                     "timestamp": 1744696984,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 119,
+                     "timestamp": 1737102572,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 118,
+                     "timestamp": 1737102572,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 275,
+                     "timestamp": 1744696944,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 276,
+                     "timestamp": 1744696935,
                      "base": ""
                   },
                   {
