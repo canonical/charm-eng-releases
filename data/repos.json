@@ -15675,7 +15675,7 @@
          },
          {
             "name": "microk8s",
-            "newCommits": 59,
+            "newCommits": 60,
             "url": "https://github.com/canonical/microk8s",
             "releases": [
                {
@@ -15831,22 +15831,22 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 8101,
-                     "timestamp": 1744798702,
+                     "revision": 8137,
+                     "timestamp": 1744977555,
                      "base": "core20"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 8109,
-                     "timestamp": 1744807244,
+                     "revision": 8138,
+                     "timestamp": 1744977646,
                      "base": "core20"
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 8105,
-                     "timestamp": 1744799809,
+                     "revision": 8139,
+                     "timestamp": 1744978146,
                      "base": "core20"
                   },
                   {
@@ -15854,6 +15854,13 @@
                      "channel": "edge",
                      "revision": 8107,
                      "timestamp": 1744800341,
+                     "base": "core20"
+                  },
+                  {
+                     "track": "1.33",
+                     "channel": "candidate",
+                     "revision": 8140,
+                     "timestamp": 1744978601,
                      "base": "core20"
                   },
                   {
@@ -17343,6 +17350,7 @@
                "tracks": [
                   "1.32",
                   "latest",
+                  "1.33",
                   "1.32-strict",
                   "1.31-strict",
                   "1.31",
@@ -17586,6 +17594,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4399d84fa6a2332fdf8cb0c1e9132fa0c8f13e89",
+                  "author": "Berkay Tekin Öz",
+                  "timestamp": 1744975559,
+                  "message": "<p>feat: update addons versions and update list (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/344\">#344</a>)</p>\n",
+                  "url": "https://github.com/canonical/microk8s-core-addons/commit/4399d84fa6a2332fdf8cb0c1e9132fa0c8f13e89"
+               },
+               {
                   "sha": "91faf8522050101bf917f0e817cace45a719fff1",
                   "author": "Claudiu Belu",
                   "timestamp": 1744635022,
@@ -17598,13 +17613,6 @@
                   "timestamp": 1744358433,
                   "message": "<p>rook-ceph: Update addon to v1.16.6 (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/340\">#340</a>)</p>\n\n<p>Reviewer notes regarding this update:\n- .rook-create-external-cluster-resources.py: it now matches upstream&rsquo;s\n  v1.16.6 script (the &ndash;keyring PR merged upstream, as well as IPv6 support).\n- connect-external-ceph: if an error occurs while calling\n  .rook-create-external-cluster-resources.py, we now log its stdout and\n  stderr, which were not logged previously. This demystifies potentials\n  errors.\n- validators.py: in validate_rook_ceph_integration, we now enable\n  prometheus, which is now required, as noted below.</p>\n\n<p>Notable updates:\n- .rook-create-external-cluster-resources.py: If a &ndash;monitoring-endpoint\n  option is not given, the script will try to automatically find one. If\n  it is not found, an ExecutionFailureException is now raised (it was\n  not previously).</p>\n",
                   "url": "https://github.com/canonical/microk8s-core-addons/commit/22539cdb452f2984f978f9884343602db4bea2c3"
-               },
-               {
-                  "sha": "2bdc9277d84c790a3baac3a9d0313b646d131d1b",
-                  "author": "Claudiu Belu",
-                  "timestamp": 1744358398,
-                  "message": "<p>Update observability addon to the latest versions (<a target=\"_blank\" href=\"https://github.com/canonical/microk8s-core-addons/pull/339\">#339</a>)</p>\n\n<p>Updates the Prometheus, Loki, and Temp helm chart versions to the latest\nones available.</p>\n\n<p>Cleanup installed CRDs on disable.</p>\n",
-                  "url": "https://github.com/canonical/microk8s-core-addons/commit/2bdc9277d84c790a3baac3a9d0313b646d131d1b"
                }
             ],
             "ciActions": [],
@@ -35840,9 +35848,27 @@
          },
          {
             "name": "charm-advanced-routing",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/charm-advanced-routing",
             "releases": [
+               {
+                  "id": 213311346,
+                  "version": "rev64",
+                  "timestamp": 1744974691,
+                  "title": "Revision 64",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:47 UTC on 18 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/75\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/75\">#75</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev61...rev64\">https://github.com/canonical/charm-advanced-routing/compare/rev61&hellip;rev64</a></p>\n",
+                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev64",
+                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev64...main"
+               },
+               {
+                  "id": 213311333,
+                  "version": "rev63",
+                  "timestamp": 1744974691,
+                  "title": "Revision 63",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:47 UTC on 18 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/75\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/75\">#75</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev61...rev63\">https://github.com/canonical/charm-advanced-routing/compare/rev61&hellip;rev63</a></p>\n",
+                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev63",
+                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev63...main"
+               },
                {
                   "id": 211749686,
                   "version": "rev62",
@@ -35851,24 +35877,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:31 UTC on 11 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/74\">#74</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev59...rev62\">https://github.com/canonical/charm-advanced-routing/compare/rev59&hellip;rev62</a></p>\n",
                   "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev62",
                   "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev62...main"
-               },
-               {
-                  "id": 211749675,
-                  "version": "rev61",
-                  "timestamp": 1744350978,
-                  "title": "Revision 61",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:31 UTC on 11 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/74\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/74\">#74</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev59...rev61\">https://github.com/canonical/charm-advanced-routing/compare/rev59&hellip;rev61</a></p>\n",
-                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev61",
-                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev61...main"
-               },
-               {
-                  "id": 211400562,
-                  "version": "rev60",
-                  "timestamp": 1744236312,
-                  "title": "Revision 60",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 22:42 UTC on 9 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/73\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-advanced-routing/pull/73\">#73</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-advanced-routing/compare/rev57...rev60\">https://github.com/canonical/charm-advanced-routing/compare/rev57&hellip;rev60</a></p>\n",
-                  "url": "https://github.com/canonical/charm-advanced-routing/releases/tag/rev60",
-                  "compareUrl": "https://github.com/canonical/charm-advanced-routing/compare/rev60...main"
                }
             ],
             "tags": null,
@@ -36152,7 +36160,7 @@
          },
          {
             "name": "charm-prometheus-blackbox-exporter",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/charm-prometheus-blackbox-exporter",
             "releases": [
                {
@@ -36542,9 +36550,27 @@
          },
          {
             "name": "charm-apt-mirror",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/charm-apt-mirror",
             "releases": [
+               {
+                  "id": 213311371,
+                  "version": "rev55",
+                  "timestamp": 1744974243,
+                  "title": "Revision 55",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:47 UTC on 18 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/66\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/66\">#66</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev52...rev55\">https://github.com/canonical/charm-apt-mirror/compare/rev52&hellip;rev55</a></p>\n",
+                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev55",
+                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev55...main"
+               },
+               {
+                  "id": 213311362,
+                  "version": "rev54",
+                  "timestamp": 1744974243,
+                  "title": "Revision 54",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:47 UTC on 18 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/66\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/66\">#66</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev52...rev54\">https://github.com/canonical/charm-apt-mirror/compare/rev52&hellip;rev54</a></p>\n",
+                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev54",
+                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev54...main"
+               },
                {
                   "id": 211577512,
                   "version": "rev53",
@@ -36553,24 +36579,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:01 UTC on 10 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/64\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/64\">#64</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/65\">#65</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev50...rev53\">https://github.com/canonical/charm-apt-mirror/compare/rev50&hellip;rev53</a></p>\n",
                   "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev53",
                   "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev53...main"
-               },
-               {
-                  "id": 211577476,
-                  "version": "rev52",
-                  "timestamp": 1744290903,
-                  "title": "Revision 52",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:01 UTC on 10 Apr 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/64\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/64\">#64</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/65\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/65\">#65</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev50...rev52\">https://github.com/canonical/charm-apt-mirror/compare/rev50&hellip;rev52</a></p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev52",
-                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev52...main"
-               },
-               {
-                  "id": 209398892,
-                  "version": "rev51",
-                  "timestamp": 1743436654,
-                  "title": "Revision 51",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:46 UTC on 31 Mar 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/62\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/62\">#62</a></a></li>\n<li>Update centrally managed files by <a target=\"_blank\" href=\"https://github.com/soleng-terraform\">@soleng-terraform</a> in <a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/63\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-apt-mirror/pull/63\">#63</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/charm-apt-mirror/compare/rev48...rev51\">https://github.com/canonical/charm-apt-mirror/compare/rev48&hellip;rev51</a></p>\n",
-                  "url": "https://github.com/canonical/charm-apt-mirror/releases/tag/rev51",
-                  "compareUrl": "https://github.com/canonical/charm-apt-mirror/compare/rev51...main"
                }
             ],
             "tags": null,
