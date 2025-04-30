@@ -2258,6 +2258,15 @@
             "url": "https://github.com/canonical/jubilant",
             "releases": [
                {
+                  "id": 215885587,
+                  "version": "v1.0.1",
+                  "timestamp": 1746049665,
+                  "title": "v1.0.1: fix format of --bind arg for deploy",
+                  "body": "<p>This bug-fix release fixes the format of the <code>--bind</code> argument for <code>deploy()</code>. Thanks <a target=\"_blank\" href=\"https://github.com/paulomach\">@paulomach</a> for the report and initial fix in <a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/132\">#132</a></a>.</p>\n",
+                  "url": "https://github.com/canonical/jubilant/releases/tag/v1.0.1",
+                  "compareUrl": "https://github.com/canonical/jubilant/compare/v1.0.1...main"
+               },
+               {
                   "id": 215598084,
                   "version": "v1.0.0",
                   "timestamp": 1745961032,
@@ -2274,15 +2283,6 @@
                   "body": "<p>This release adds the <code>Juju.scp</code> method (<a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/109\">#109</a>), the <code>Juju.model_config</code> method (<a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/115\">#115</a>), and the <code>Juju.add_secret</code> method (<a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/112\">#112</a>).</p>\n\n<p>There are two <strong>breaking changes</strong> since v0.4.1:</p>\n\n<ol>\n<li><p>This one may affect you: we changed <code>all_*</code> and <code>any_*</code> to take <code>*apps</code> instead of a list (<a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/116\">#116</a>). If you&rsquo;re using helpers like <code>jubilant.all_active</code> and passing a list of apps, you&rsquo;ll need to change <code>jubilant.all_active(status, ['app1', 'app2'])</code> to <code>jubilant.all_active(status, 'app1', 'app2')</code> &ndash; in other words, drop the brackets.</p></li>\n\n<li><p>This one probably won&rsquo;t require any changes: instead of raising an exception when parsing a Juju status object with &ldquo;status-error&rdquo; values, we now return a special &ldquo;failed&rdquo; status (<a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/120\">#120</a>). This will prevent integration tests failing when Juju is setting up machines (and similar cases). Thanks <a target=\"_blank\" href=\"https://github.com/imanenami\">@imanenami</a> for the report in <a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/118\">#118</a>.</p></li>\n</ol>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jubilant/compare/v0.4.1...v0.5.0\">https://github.com/canonical/jubilant/compare/v0.4.1&hellip;v0.5.0</a></p>\n",
                   "url": "https://github.com/canonical/jubilant/releases/tag/v0.5.0",
                   "compareUrl": "https://github.com/canonical/jubilant/compare/v0.5.0...main"
-               },
-               {
-                  "id": 212641565,
-                  "version": "v0.4.1",
-                  "timestamp": 1744756043,
-                  "title": "v0.4.1: refresh, better TaskError.__str__",
-                  "body": "<p>Changes since 0.4.0:</p>\n\n<ul>\n<li>feat: add refresh command in <a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/93\"><a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/93\">#93</a></a></li>\n<li>docs: fix and-&gt;or in all_* docstrings in <a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/96\"><a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/96\">#96</a></a></li>\n<li>feat: slightly more helpful <code>TaskError.__str__</code> in <a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/99\"><a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/99\">#99</a></a></li>\n<li>docs: add &ldquo;How to migrate from pytest-operator to Jubilant&rdquo; in <a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/98\"><a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/98\">#98</a></a></li>\n<li>chore: fix &ldquo;make docs&rdquo;; bump up most dependencies in <a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/100\"><a target=\"_blank\" href=\"https://github.com/canonical/jubilant/pull/100\">#100</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/jubilant/compare/v0.4.0...v0.4.1\">https://github.com/canonical/jubilant/compare/v0.4.0&hellip;v0.4.1</a></p>\n",
-                  "url": "https://github.com/canonical/jubilant/releases/tag/v0.4.1",
-                  "compareUrl": "https://github.com/canonical/jubilant/compare/v0.4.1...main"
                }
             ],
             "tags": null,
@@ -11665,7 +11665,7 @@
          },
          {
             "name": "kubeflow-profiles-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/kubeflow-profiles-operator",
             "releases": [
                {
@@ -32164,7 +32164,7 @@
          },
          {
             "name": "postgresql-charm",
-            "newCommits": 0,
+            "newCommits": 30,
             "url": "https://git.launchpad.net/postgresql-charm",
             "releases": null,
             "tags": [
@@ -33665,6 +33665,14 @@
             "url": "https://git.launchpad.net/bind-resolver-charm",
             "releases": null,
             "tags": [
+               {
+                  "name": "rev2",
+                  "sha": "fff742df583089e6371afc733751e587bc1774fb",
+                  "body": "",
+                  "timestamp": 1653866749,
+                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev2",
+                  "compareUrl": "https://git.launchpad.net/bind-resolver-charm/diff/?id=fff742df583089e6371afc733751e587bc1774fb&id2=master"
+               },
                {
                   "name": "rev1",
                   "sha": "01e09d8b419b558724d7c2a22db54ce28dfa9612",
