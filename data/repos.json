@@ -15082,25 +15082,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7a6a2c379e7f3b58d8280114d9999906683e5c77",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1746471752,
+                  "message": "<p>test: Disable moonray testing for 1.33+ (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1395\">#1395</a>)</p>\n\n<ul>\n<li><p>test: Disable moonray testing for 1.33+</p></li>\n\n<li><p>remove informing integration test</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/7a6a2c379e7f3b58d8280114d9999906683e5c77"
+               },
+               {
+                  "sha": "f01ac6fc0a749ab1aaeeca0a77b80793988e8ffd",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1746471720,
+                  "message": "<p>fix: Make backport conventional commit conformant (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1398\">#1398</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/f01ac6fc0a749ab1aaeeca0a77b80793988e8ffd"
+               },
+               {
                   "sha": "9a9ebf5d950f8ff5e462570e756345e141cc10ef",
                   "author": "Claudiu Belu",
                   "timestamp": 1746456735,
                   "message": "<p>fix: Properly parse IPv6 endpoints for k8s-apiserver-proxy.json (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1370\">#1370</a>)</p>\n\n<p>Currently, in scenarios with clusters with IPv6, we will end up with\nimproper IPv6 addresses in the k8s-apiserver-proxy.json, causing the\nk8s-apiserver-proxy service to always fail with the following error:</p>\n\n<p>&ldquo;Failed to start&rdquo; err=&ldquo;failed to parse endpoint \\&ldquo;fd42:6db9:e49a:486b:216:3eff:fe48:5318:6443\\&rdquo;: address fd42:6db9:e49a:486b:216:3eff:fe48:5318:6443: too many colons in address&rdquo;</p>\n\n<p>According to the documentation [1], the expectation is that the IPv6\naddress to be enclosed in brackets ([IPv6]:port).</p>\n\n<p>We&rsquo;re writing the k8s-apiserver-proxy.json in 2 cases:\n- when joining a worker node.\n- when a new control plane node joined the cluster.</p>\n\n<p>In the first scenario, we are properly handling the IPv6 addresses,\nbut not in the second. This commit addresses this issue.</p>\n\n<p>[1] <a href=\"https://pkg.go.dev/net#SplitHostPort\">https://pkg.go.dev/net#SplitHostPort</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/9a9ebf5d950f8ff5e462570e756345e141cc10ef"
-               },
-               {
-                  "sha": "a565ccc06a6fb26132182304240db0ff72e43d34",
-                  "author": "Mateo Florido",
-                  "timestamp": 1746452278,
-                  "message": "<p>docs: improve flow of <code>refresh-certs</code> how-to. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1394\">#1394</a>)</p>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/a565ccc06a6fb26132182304240db0ff72e43d34"
-               },
-               {
-                  "sha": "a2f5de384e280aa204987431f23a5774f5a94010",
-                  "author": "Berkay Tekin Öz",
-                  "timestamp": 1746451367,
-                  "message": "<p>fix: remove gateway class auto created by cilium (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1382\">#1382</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/a2f5de384e280aa204987431f23a5774f5a94010"
                }
             ],
             "ciActions": [
@@ -35051,7 +35051,7 @@
          },
          {
             "name": "container-log-archive-charm",
-            "newCommits": 0,
+            "newCommits": 3,
             "url": "https://git.launchpad.net/container-log-archive-charm",
             "releases": null,
             "tags": [
@@ -35649,7 +35649,7 @@
          },
          {
             "name": "internal-proxy-charm",
-            "newCommits": 1,
+            "newCommits": 10,
             "url": "https://git.launchpad.net/internal-proxy-charm",
             "releases": null,
             "tags": [
