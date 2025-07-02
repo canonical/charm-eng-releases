@@ -11102,6 +11102,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "e91dafcd6da4a812f4cd5f79135492b909a963b1",
+                  "author": "Homayoon Alimohammadi",
+                  "timestamp": 1751457344,
+                  "message": "<p>fix: Introduce jitter to reconciliation retries (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1613\">#1613</a>)</p>\n\n<p>Helm <code>apply</code> of the feature reconciliations might get into a deadlock since feature controllers run independently.  For features that share the same underlying chart the situation is even more dire since there are <code>num_cp_nodes * num_sibling_features</code> goroutines that try to apply the same Helm chart. Applying the same Helm chart concurrently or in parallel might fail with <code>another operation is in progress</code>.\nThis PR introduces a jitter to the reconciliation retries in order to reduce the concurrent/parallel Helm operations.</p>\n\n<hr>\n\n<p>Signed-off-by: Homayoon (Hue) Alimohammadi <a href=\"mailto:homayoon.alimohammadi@canonical.com\">homayoon.alimohammadi@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/e91dafcd6da4a812f4cd5f79135492b909a963b1"
+               },
+               {
                   "sha": "58601e4f819e70e46be4150ddf241f4ac3c278af",
                   "author": "Louise K. Schmidtgen",
                   "timestamp": 1751352998,
@@ -11114,13 +11121,6 @@
                   "timestamp": 1750980696,
                   "message": "<p>docs: document Auto Namespace creation and RBD disable (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1603\">#1603</a>)</p>\n\n<ul>\n<li><p>Document Auto Namespace creation and RBD disable</p></li>\n\n<li><p>Add CephRBD to the custome-word list</p></li>\n\n<li><p>make cephrbd and cephfs code blocks</p></li>\n\n<li><p>Applied comments</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/f61ebfdc6f6ea3e6f2456ff320139280c01ad0d1"
-               },
-               {
-                  "sha": "827f20600684393b4e515ebe7cc16d98b37f4004",
-                  "author": "Niamh Hennigan",
-                  "timestamp": 1750827103,
-                  "message": "<p>docs: Update custom worker join how to guide (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1600\">#1600</a>)</p>\n\n<ul>\n<li>Update custom worker join how to</li>\n</ul>\n\n<p>the previous example where the &ndash;name should only be used when the hostname cannot be resolved and is not the default or recommended behaviour so replacing that example and reformatting the page</p>\n\n<ul>\n<li>Editing the linkcheck ignore</li>\n</ul>\n\n<p>There is a huge amount of links here for the same website that often flake and give a false positive in our tests. By only checking 3 of the links (ones starting with V-25*) we should still be altered to broken links but not have the same stability issues</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/827f20600684393b4e515ebe7cc16d98b37f4004"
                }
             ],
             "ciActions": [
