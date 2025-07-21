@@ -9632,7 +9632,7 @@
          },
          {
             "name": "cluster-api-k8s",
-            "newCommits": 2,
+            "newCommits": 4,
             "url": "https://github.com/canonical/cluster-api-k8s",
             "releases": [
                {
@@ -10918,6 +10918,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "70d07a0b322783828d1b05929723199700ee8f71",
+                  "author": "Louise K. Schmidtgen",
+                  "timestamp": 1753102624,
+                  "message": "<p>fix: update troubleshooting guide on Dqlite snapshotting (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1678\">#1678</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/70d07a0b322783828d1b05929723199700ee8f71"
+               },
+               {
                   "sha": "df139604699843c014046cd878e61c538896fac1",
                   "author": "Berkay Tekin Öz",
                   "timestamp": 1753099509,
@@ -10930,13 +10937,6 @@
                   "timestamp": 1753078213,
                   "message": "<p>build: Build etcd dynamically with cgo enabled (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1649\">#1649</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/30599414283a0c468b93b8e64ad74f1ecc4f92ae"
-               },
-               {
-                  "sha": "e20b572dee287ebc32ba8da913efa4ee97292f4e",
-                  "author": "Homayoon Alimohammadi",
-                  "timestamp": 1752841984,
-                  "message": "<p>feat(upgrade): Wait for worker nodes to get upgraded as well (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1643\">#1643</a>)</p>\n\n<p>This PR implements a way to wait for the worker nodes in the upgrade process as well, before triggering the feature controllers.</p>\n\n<p>We&rsquo;ve introduced a <code>version.Info</code> struct that contains all the necessary information about the current version of the installed k8s-snap. The node label controller is responsible for annotating the node with this struct.\nThe upgrade controller will watch for this annotation and add the node name to the list of <code>upgradedNodes</code>.\nOnce all the nodes (including workers) are available in the <code>upgradedNodes</code> list, the upgrade controller will transition the upgrade phase from <code>NodeUpgrade</code> to <code>FeatureUpgrade</code>, triggering the feature controllers and proceeding with the upgrade.</p>\n\n<hr>\n\n<p>Signed-off-by: Homayoon (Hue) Alimohammadi <a href=\"mailto:homayoon.alimohammadi@canonical.com\">homayoon.alimohammadi@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/e20b572dee287ebc32ba8da913efa4ee97292f4e"
                }
             ],
             "ciActions": [
@@ -21325,6 +21325,45 @@
       "team": "IS",
       "repos": [
          {
+            "name": "ingress-configurator-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/ingress-configurator-operator",
+            "releases": [
+               {
+                  "id": 233916392,
+                  "version": "rev9",
+                  "timestamp": 1753104222,
+                  "title": "Revision 9",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:24 UTC on 21 Jul 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Require interval, fall and rise health checks to either be all set or none by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/14\">#14</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/ingress-configurator-operator/compare/rev8...rev9\">https://github.com/canonical/ingress-configurator-operator/compare/rev8&hellip;rev9</a></p>\n",
+                  "url": "https://github.com/canonical/ingress-configurator-operator/releases/tag/rev9",
+                  "compareUrl": "https://github.com/canonical/ingress-configurator-operator/compare/rev9...main"
+               },
+               {
+                  "id": 233504528,
+                  "version": "rev8",
+                  "timestamp": 1752842430,
+                  "title": "Revision 8",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:41 UTC on 18 Jul 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add timeout configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/12\">#12</a></a></li>\n<li>ISD-3855 replace subdomains with hostname and additional-hostnames, update tests. by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/13\">#13</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/ingress-configurator-operator/compare/rev7...rev8\">https://github.com/canonical/ingress-configurator-operator/compare/rev7&hellip;rev8</a></p>\n",
+                  "url": "https://github.com/canonical/ingress-configurator-operator/releases/tag/rev8",
+                  "compareUrl": "https://github.com/canonical/ingress-configurator-operator/compare/rev8...main"
+               },
+               {
+                  "id": 232457558,
+                  "version": "rev7",
+                  "timestamp": 1752490518,
+                  "title": "Revision 7",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:17 UTC on 15 Jul 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add retry configurations by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\">#10</a></a></li>\n<li>Add health checks configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/11\">#11</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/ingress-configurator-operator/compare/rev5...rev7\">https://github.com/canonical/ingress-configurator-operator/compare/rev5&hellip;rev7</a></p>\n",
+                  "url": "https://github.com/canonical/ingress-configurator-operator/releases/tag/rev7",
+                  "compareUrl": "https://github.com/canonical/ingress-configurator-operator/compare/rev7...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "gateway-api-integrator-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/gateway-api-integrator-operator",
@@ -21749,45 +21788,6 @@
                   "1"
                ]
             },
-            "snap": null
-         },
-         {
-            "name": "ingress-configurator-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/ingress-configurator-operator",
-            "releases": [
-               {
-                  "id": 233504528,
-                  "version": "rev8",
-                  "timestamp": 1752842430,
-                  "title": "Revision 8",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 12:41 UTC on 18 Jul 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add timeout configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/12\">#12</a></a></li>\n<li>ISD-3855 replace subdomains with hostname and additional-hostnames, update tests. by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/13\">#13</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/ingress-configurator-operator/compare/rev7...rev8\">https://github.com/canonical/ingress-configurator-operator/compare/rev7&hellip;rev8</a></p>\n",
-                  "url": "https://github.com/canonical/ingress-configurator-operator/releases/tag/rev8",
-                  "compareUrl": "https://github.com/canonical/ingress-configurator-operator/compare/rev8...main"
-               },
-               {
-                  "id": 232457558,
-                  "version": "rev7",
-                  "timestamp": 1752490518,
-                  "title": "Revision 7",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:17 UTC on 15 Jul 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add retry configurations by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\">#10</a></a></li>\n<li>Add health checks configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/11\">#11</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/ingress-configurator-operator/compare/rev5...rev7\">https://github.com/canonical/ingress-configurator-operator/compare/rev5&hellip;rev7</a></p>\n",
-                  "url": "https://github.com/canonical/ingress-configurator-operator/releases/tag/rev7",
-                  "compareUrl": "https://github.com/canonical/ingress-configurator-operator/compare/rev7...main"
-               },
-               {
-                  "id": 232239748,
-                  "version": "rev6",
-                  "timestamp": 1752501915,
-                  "title": "Revision 6",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:06 UTC on 14 Jul 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add retry configurations by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\">#10</a></a></li>\n<li>Add health checks configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/11\">#11</a></a></li>\n<li>Add timeout configuration by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/12\">#12</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\"><a target=\"_blank\" href=\"https://github.com/canonical/ingress-configurator-operator/pull/10\">#10</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/ingress-configurator-operator/compare/rev5...rev6\">https://github.com/canonical/ingress-configurator-operator/compare/rev5&hellip;rev6</a></p>\n",
-                  "url": "https://github.com/canonical/ingress-configurator-operator/releases/tag/rev6",
-                  "compareUrl": "https://github.com/canonical/ingress-configurator-operator/compare/rev6...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
             "snap": null
          },
          {
