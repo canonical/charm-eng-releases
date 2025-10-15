@@ -744,29 +744,29 @@
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 32887,
-                     "timestamp": 1760450146,
+                     "revision": 32895,
+                     "timestamp": 1760522563,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 32888,
-                     "timestamp": 1760450221,
+                     "revision": 32896,
+                     "timestamp": 1760522622,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 32889,
-                     "timestamp": 1760450363,
+                     "revision": 32897,
+                     "timestamp": 1760522691,
                      "base": "core24"
                   },
                   {
                      "track": "4.0",
                      "channel": "edge",
-                     "revision": 32890,
-                     "timestamp": 1760450449,
+                     "revision": 32898,
+                     "timestamp": 1760522758,
                      "base": "core24"
                   },
                   {
@@ -5593,7 +5593,7 @@
          },
          {
             "name": "tempo-operators",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/tempo-operators",
             "releases": [
                {
@@ -13842,6 +13842,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "5ab6d91c47feb69a9c9a5e35b4e0314f0938cb21",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1760521830,
+                  "message": "<p>test: Collect instance name before deleting it. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1900\">#1900</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/5ab6d91c47feb69a9c9a5e35b4e0314f0938cb21"
+               },
+               {
                   "sha": "f7f18cbda0246cca0310ebac70b5ecb007855a74",
                   "author": "Benjamin Schimke",
                   "timestamp": 1760091123,
@@ -13854,13 +13861,6 @@
                   "timestamp": 1760090833,
                   "message": "<p>test: enable node_join_succeeds_when_original_control_plane_is_down</p>\n\n<p>The test logic/order was slightly modified. The dead node is now removed right\nafter the killing it instead of trying to join a new node first.\nThis is because microcluster fails joining a new node if the join token\ncontains an unavailble node. This is fixed in a separate commit to\nmicrocluster.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/02d8c63e017840d695ccfe86a4d40de8e83b8f65"
-               },
-               {
-                  "sha": "7e5a677d881f026c6f28ae4ce234d99ea16e9a05",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1760090780,
-                  "message": "<p>fix: Force removing lost nodes from cluster</p>\n\n<p>The <code>--force</code> flag for <code>k8s remove-node</code> did not work for lost nodes\nbecause it required a node to be available to remove it.</p>\n\n<p>This commit ensures that all mentions of the leaving node will be\nremoved (etcd, microcluster, k8s-dqlite, Kubernetes) and not fail if the\nnode does not exist already in one of them.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/7e5a677d881f026c6f28ae4ce234d99ea16e9a05"
                }
             ],
             "ciActions": [
@@ -17893,31 +17893,71 @@
             "snap": null
          },
          {
-            "name": "ntp-charm",
-            "newCommits": 8,
-            "url": "https://git.launchpad.net/ntp-charm",
-            "releases": null,
-            "tags": [
+            "name": "httprequest-lego-provider",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/httprequest-lego-provider",
+            "releases": [
                {
-                  "name": "rev50",
-                  "sha": "669ff5972f115c782095dbfc2872f4f39ee92209",
-                  "body": "",
-                  "timestamp": 1661753169,
-                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev50",
-                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=669ff5972f115c782095dbfc2872f4f39ee92209&id2=master"
+                  "id": 254629743,
+                  "version": "rev66",
+                  "timestamp": 1760521586,
+                  "title": "Revision 66",
+                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:48 UTC on 15 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Provide HTTP response when exception is raised by <a target=\"_blank\" href=\"https://github.com/swetha1654\">@swetha1654</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/131\">#131</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-provider/compare/rev65...rev66\">https://github.com/canonical/httprequest-lego-provider/compare/rev65&hellip;rev66</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-provider/releases/tag/rev66",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-provider/compare/rev66...main"
                },
                {
-                  "name": "rev49",
-                  "sha": "84ee0663302ec12a592adc7e105d6b17d65b8cf3",
-                  "body": "",
-                  "timestamp": 1660612253,
-                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev49",
-                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=84ee0663302ec12a592adc7e105d6b17d65b8cf3&id2=master"
+                  "id": 252353555,
+                  "version": "rev65",
+                  "timestamp": 1759742150,
+                  "title": "Revision 65",
+                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 61</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:18 UTC on 6 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency django to v5.2.7 [security] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/128\">#128</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-provider/compare/rev64...rev65\">https://github.com/canonical/httprequest-lego-provider/compare/rev64&hellip;rev65</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-provider/releases/tag/rev65",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-provider/compare/rev65...main"
+               },
+               {
+                  "id": 246546622,
+                  "version": "rev64",
+                  "timestamp": 1757607570,
+                  "title": "Revision 64",
+                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 60</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:21 UTC on 11 Sep 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add automerge to renovate by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\">#126</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-provider/compare/rev63...rev64\">https://github.com/canonical/httprequest-lego-provider/compare/rev63&hellip;rev64</a></p>\n",
+                  "url": "https://github.com/canonical/httprequest-lego-provider/releases/tag/rev64",
+                  "compareUrl": "https://github.com/canonical/httprequest-lego-provider/compare/rev64...main"
                }
             ],
+            "tags": null,
             "commits": null,
-            "ciActions": null,
-            "charm": null,
+            "ciActions": [
+               "https://github.com/canonical/httprequest-lego-provider/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/httprequest-lego-provider/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "httprequest-lego-provider",
+               "url": "https://charmhub.io/httprequest-lego-provider",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 51,
+                     "timestamp": 1748335429,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 66,
+                     "timestamp": 1760521719,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
@@ -18104,26 +18144,26 @@
             "snap": null
          },
          {
-            "name": "mailman3-web-charm",
-            "newCommits": 6,
-            "url": "https://git.launchpad.net/mailman3-web-charm",
+            "name": "ntp-charm",
+            "newCommits": 8,
+            "url": "https://git.launchpad.net/ntp-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev2",
-                  "sha": "765506056f23708471349fad0c553363e4438aeb",
+                  "name": "rev50",
+                  "sha": "669ff5972f115c782095dbfc2872f4f39ee92209",
                   "body": "",
-                  "timestamp": 1661837463,
-                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=765506056f23708471349fad0c553363e4438aeb&id2=master"
+                  "timestamp": 1661753169,
+                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev50",
+                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=669ff5972f115c782095dbfc2872f4f39ee92209&id2=master"
                },
                {
-                  "name": "rev1",
-                  "sha": "3f5ac5471ba7295afabfcf5335690c7d80add166",
+                  "name": "rev49",
+                  "sha": "84ee0663302ec12a592adc7e105d6b17d65b8cf3",
                   "body": "",
-                  "timestamp": 1631627191,
-                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=3f5ac5471ba7295afabfcf5335690c7d80add166&id2=master"
+                  "timestamp": 1660612253,
+                  "url": "https://git.launchpad.net/ntp-charm/tag/?h=rev49",
+                  "compareUrl": "https://git.launchpad.net/ntp-charm/diff/?id=84ee0663302ec12a592adc7e105d6b17d65b8cf3&id2=master"
                }
             ],
             "commits": null,
@@ -18165,18 +18205,26 @@
             "snap": null
          },
          {
-            "name": "mailman3-core-charm",
-            "newCommits": 5,
-            "url": "https://git.launchpad.net/mailman3-core-charm",
+            "name": "mailman3-web-charm",
+            "newCommits": 6,
+            "url": "https://git.launchpad.net/mailman3-web-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev4",
-                  "sha": "36f3623ef8edda6f6b547e4c6c425382a0ad5e6b",
+                  "name": "rev2",
+                  "sha": "765506056f23708471349fad0c553363e4438aeb",
                   "body": "",
-                  "timestamp": 1647477010,
-                  "url": "https://git.launchpad.net/mailman3-core-charm/tag/?h=rev4",
-                  "compareUrl": "https://git.launchpad.net/mailman3-core-charm/diff/?id=36f3623ef8edda6f6b547e4c6c425382a0ad5e6b&id2=master"
+                  "timestamp": 1661837463,
+                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev2",
+                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=765506056f23708471349fad0c553363e4438aeb&id2=master"
+               },
+               {
+                  "name": "rev1",
+                  "sha": "3f5ac5471ba7295afabfcf5335690c7d80add166",
+                  "body": "",
+                  "timestamp": 1631627191,
+                  "url": "https://git.launchpad.net/mailman3-web-charm/tag/?h=rev1",
+                  "compareUrl": "https://git.launchpad.net/mailman3-web-charm/diff/?id=3f5ac5471ba7295afabfcf5335690c7d80add166&id2=master"
                }
             ],
             "commits": null,
@@ -18604,6 +18652,26 @@
             }
          },
          {
+            "name": "mailman3-core-charm",
+            "newCommits": 5,
+            "url": "https://git.launchpad.net/mailman3-core-charm",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "rev4",
+                  "sha": "36f3623ef8edda6f6b547e4c6c425382a0ad5e6b",
+                  "body": "",
+                  "timestamp": 1647477010,
+                  "url": "https://git.launchpad.net/mailman3-core-charm/tag/?h=rev4",
+                  "compareUrl": "https://git.launchpad.net/mailman3-core-charm/diff/?id=36f3623ef8edda6f6b547e4c6c425382a0ad5e6b&id2=master"
+               }
+            ],
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
             "name": "juju-introspection-proxy-charm",
             "newCommits": 0,
             "url": "https://git.launchpad.net/juju-introspection-proxy-charm",
@@ -18616,26 +18684,6 @@
                   "timestamp": 1665149994,
                   "url": "https://git.launchpad.net/juju-introspection-proxy-charm/tag/?h=rev2",
                   "compareUrl": "https://git.launchpad.net/juju-introspection-proxy-charm/diff/?id=200a836f7656d60efb664a8a8096df1c251381c4&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "internal-proxy-charm",
-            "newCommits": 10,
-            "url": "https://git.launchpad.net/internal-proxy-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev1",
-                  "sha": "94f0040d8f2ef2186f70cbaf806ddb855492532b",
-                  "body": "",
-                  "timestamp": 1653437944,
-                  "url": "https://git.launchpad.net/internal-proxy-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/internal-proxy-charm/diff/?id=94f0040d8f2ef2186f70cbaf806ddb855492532b&id2=master"
                }
             ],
             "commits": null,
@@ -18902,6 +18950,46 @@
                   "timestamp": 1743010921,
                   "url": "https://github.com/canonical/paas-charm/releases/tag/discourse-gatekeeper%2Fbase-content",
                   "compareUrl": "https://github.com/canonical/paas-charm/compare/main...discourse-gatekeeper%2Fbase-content"
+               }
+            ],
+            "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "internal-proxy-charm",
+            "newCommits": 10,
+            "url": "https://git.launchpad.net/internal-proxy-charm",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "rev1",
+                  "sha": "94f0040d8f2ef2186f70cbaf806ddb855492532b",
+                  "body": "",
+                  "timestamp": 1653437944,
+                  "url": "https://git.launchpad.net/internal-proxy-charm/tag/?h=rev1",
+                  "compareUrl": "https://git.launchpad.net/internal-proxy-charm/diff/?id=94f0040d8f2ef2186f70cbaf806ddb855492532b&id2=master"
+               }
+            ],
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "platform-engineering-charm-template",
+            "newCommits": 28,
+            "url": "https://github.com/canonical/platform-engineering-charm-template",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "discourse-gatekeeper/base-content",
+                  "sha": "8e8db61eb71e30193018dcb3dfa2837a139973f3",
+                  "body": "<p>Migrate config renovate.json (<a target=\"_blank\" href=\"https://github.com/canonical/platform-engineering-charm-template/pull/38\">#38</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "timestamp": 1747726076,
+                  "url": "https://github.com/canonical/platform-engineering-charm-template/releases/tag/discourse-gatekeeper%2Fbase-content",
+                  "compareUrl": "https://github.com/canonical/platform-engineering-charm-template/compare/main...discourse-gatekeeper%2Fbase-content"
                }
             ],
             "commits": null,
@@ -19479,26 +19567,6 @@
             "snap": null
          },
          {
-            "name": "platform-engineering-charm-template",
-            "newCommits": 28,
-            "url": "https://github.com/canonical/platform-engineering-charm-template",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "discourse-gatekeeper/base-content",
-                  "sha": "8e8db61eb71e30193018dcb3dfa2837a139973f3",
-                  "body": "<p>Migrate config renovate.json (<a target=\"_blank\" href=\"https://github.com/canonical/platform-engineering-charm-template/pull/38\">#38</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "timestamp": 1747726076,
-                  "url": "https://github.com/canonical/platform-engineering-charm-template/releases/tag/discourse-gatekeeper%2Fbase-content",
-                  "compareUrl": "https://github.com/canonical/platform-engineering-charm-template/compare/main...discourse-gatekeeper%2Fbase-content"
-               }
-            ],
-            "commits": null,
-            "ciActions": [],
-            "charm": null,
-            "snap": null
-         },
-         {
             "name": "container-log-archive-charm",
             "newCommits": 3,
             "url": "https://git.launchpad.net/container-log-archive-charm",
@@ -19527,34 +19595,6 @@
                   "timestamp": 1642114498,
                   "url": "https://git.launchpad.net/container-log-archive-charm/tag/?h=rev16",
                   "compareUrl": "https://git.launchpad.net/container-log-archive-charm/diff/?id=66075535e5cde0e9b6b47eea6b9bd01392aaea89&id2=master"
-               }
-            ],
-            "commits": null,
-            "ciActions": null,
-            "charm": null,
-            "snap": null
-         },
-         {
-            "name": "bind-resolver-charm",
-            "newCommits": 0,
-            "url": "https://git.launchpad.net/bind-resolver-charm",
-            "releases": null,
-            "tags": [
-               {
-                  "name": "rev2",
-                  "sha": "fff742df583089e6371afc733751e587bc1774fb",
-                  "body": "",
-                  "timestamp": 1653866749,
-                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev2",
-                  "compareUrl": "https://git.launchpad.net/bind-resolver-charm/diff/?id=fff742df583089e6371afc733751e587bc1774fb&id2=master"
-               },
-               {
-                  "name": "rev1",
-                  "sha": "01e09d8b419b558724d7c2a22db54ce28dfa9612",
-                  "body": "",
-                  "timestamp": 1575653154,
-                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev1",
-                  "compareUrl": "https://git.launchpad.net/bind-resolver-charm/diff/?id=01e09d8b419b558724d7c2a22db54ce28dfa9612&id2=master"
                }
             ],
             "commits": null,
@@ -19694,26 +19734,26 @@
             "snap": null
          },
          {
-            "name": "apt-stresstest-charm",
-            "newCommits": 2,
-            "url": "https://git.launchpad.net/apt-stresstest-charm",
+            "name": "bind-resolver-charm",
+            "newCommits": 0,
+            "url": "https://git.launchpad.net/bind-resolver-charm",
             "releases": null,
             "tags": [
                {
-                  "name": "rev13",
-                  "sha": "39c0903719263deedf2a06362f33a3a27c482040",
+                  "name": "rev2",
+                  "sha": "fff742df583089e6371afc733751e587bc1774fb",
                   "body": "",
-                  "timestamp": 1661822528,
-                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev13",
-                  "compareUrl": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=39c0903719263deedf2a06362f33a3a27c482040&id2=master"
+                  "timestamp": 1653866749,
+                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev2",
+                  "compareUrl": "https://git.launchpad.net/bind-resolver-charm/diff/?id=fff742df583089e6371afc733751e587bc1774fb&id2=master"
                },
                {
-                  "name": "rev12",
-                  "sha": "5def53390850f0ee67464a64b34fbafde1d90e82",
+                  "name": "rev1",
+                  "sha": "01e09d8b419b558724d7c2a22db54ce28dfa9612",
                   "body": "",
-                  "timestamp": 1614650162,
-                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev12",
-                  "compareUrl": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=5def53390850f0ee67464a64b34fbafde1d90e82&id2=master"
+                  "timestamp": 1575653154,
+                  "url": "https://git.launchpad.net/bind-resolver-charm/tag/?h=rev1",
+                  "compareUrl": "https://git.launchpad.net/bind-resolver-charm/diff/?id=01e09d8b419b558724d7c2a22db54ce28dfa9612&id2=master"
                }
             ],
             "commits": null,
@@ -19752,6 +19792,102 @@
             ],
             "ciActions": null,
             "charm": null,
+            "snap": null
+         },
+         {
+            "name": "apt-stresstest-charm",
+            "newCommits": 2,
+            "url": "https://git.launchpad.net/apt-stresstest-charm",
+            "releases": null,
+            "tags": [
+               {
+                  "name": "rev13",
+                  "sha": "39c0903719263deedf2a06362f33a3a27c482040",
+                  "body": "",
+                  "timestamp": 1661822528,
+                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev13",
+                  "compareUrl": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=39c0903719263deedf2a06362f33a3a27c482040&id2=master"
+               },
+               {
+                  "name": "rev12",
+                  "sha": "5def53390850f0ee67464a64b34fbafde1d90e82",
+                  "body": "",
+                  "timestamp": 1614650162,
+                  "url": "https://git.launchpad.net/apt-stresstest-charm/tag/?h=rev12",
+                  "compareUrl": "https://git.launchpad.net/apt-stresstest-charm/diff/?id=5def53390850f0ee67464a64b34fbafde1d90e82&id2=master"
+               }
+            ],
+            "commits": null,
+            "ciActions": null,
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "smtp-integrator-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/smtp-integrator-operator",
+            "releases": [
+               {
+                  "id": 253688745,
+                  "version": "rev95",
+                  "timestamp": 1760112241,
+                  "title": "Revision 95",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:05 UTC on 10 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Refactor the smtp-integrator charm by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/132\">#132</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev94...rev95\">https://github.com/canonical/smtp-integrator-operator/compare/rev94&hellip;rev95</a></p>\n",
+                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev95",
+                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev95...main"
+               },
+               {
+                  "id": 252974721,
+                  "version": "rev94",
+                  "timestamp": 1759917630,
+                  "title": "Revision 94",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:01 UTC on 8 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add security policy by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/128\">#128</a></a></li>\n<li>chore(deps): update dependency ops to v3.3.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/130\">#130</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/127\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/127\">#127</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.12.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/131\">#131</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev93...rev94\">https://github.com/canonical/smtp-integrator-operator/compare/rev93&hellip;rev94</a></p>\n",
+                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev94",
+                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev94...main"
+               },
+               {
+                  "id": 248044807,
+                  "version": "rev93",
+                  "timestamp": 1758127407,
+                  "title": "Revision 93",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:44 UTC on 17 Sep 2025</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 12:32 UTC on 23 Sep 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Properly emit SmtpDataAvailableEvent during the secret-changed event by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/123\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/123\">#123</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.11.9 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/124\">#124</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev91...rev93\">https://github.com/canonical/smtp-integrator-operator/compare/rev91&hellip;rev93</a></p>\n",
+                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev93",
+                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev93...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/smtp-integrator-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/smtp-integrator-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "smtp-integrator",
+               "url": "https://charmhub.io/smtp-integrator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 93,
+                     "timestamp": 1758630753,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 95,
+                     "timestamp": 1760112323,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
@@ -19841,74 +19977,6 @@
                   "latest",
                   "2",
                   "1"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "smtp-integrator-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/smtp-integrator-operator",
-            "releases": [
-               {
-                  "id": 253688745,
-                  "version": "rev95",
-                  "timestamp": 1760112241,
-                  "title": "Revision 95",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:05 UTC on 10 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Refactor the smtp-integrator charm by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/132\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/132\">#132</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev94...rev95\">https://github.com/canonical/smtp-integrator-operator/compare/rev94&hellip;rev95</a></p>\n",
-                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev95",
-                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev95...main"
-               },
-               {
-                  "id": 252974721,
-                  "version": "rev94",
-                  "timestamp": 1759917630,
-                  "title": "Revision 94",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 10:01 UTC on 8 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add security policy by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/128\">#128</a></a></li>\n<li>chore(deps): update dependency ops to v3.3.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/130\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/130\">#130</a></a></li>\n<li>[discourse-gatekeeper] Migrate charm docs by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/127\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/127\">#127</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.12.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/131\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/131\">#131</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev93...rev94\">https://github.com/canonical/smtp-integrator-operator/compare/rev93&hellip;rev94</a></p>\n",
-                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev94",
-                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev94...main"
-               },
-               {
-                  "id": 248044807,
-                  "version": "rev93",
-                  "timestamp": 1758127407,
-                  "title": "Revision 93",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:44 UTC on 17 Sep 2025</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 12:32 UTC on 23 Sep 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Properly emit SmtpDataAvailableEvent during the secret-changed event by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/123\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/123\">#123</a></a></li>\n<li>chore(deps): update dependency pydantic to v2.11.9 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/124\">#124</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev91...rev93\">https://github.com/canonical/smtp-integrator-operator/compare/rev91&hellip;rev93</a></p>\n",
-                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev93",
-                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev93...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/smtp-integrator-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/smtp-integrator-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "smtp-integrator",
-               "url": "https://charmhub.io/smtp-integrator",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 93,
-                     "timestamp": 1758630753,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 95,
-                     "timestamp": 1760112323,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
                ]
             },
             "snap": null
@@ -20009,74 +20077,6 @@
             "commits": null,
             "ciActions": [],
             "charm": null,
-            "snap": null
-         },
-         {
-            "name": "httprequest-lego-provider",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/httprequest-lego-provider",
-            "releases": [
-               {
-                  "id": 252353555,
-                  "version": "rev65",
-                  "timestamp": 1759742150,
-                  "title": "Revision 65",
-                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 61</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:18 UTC on 6 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency django to v5.2.7 [security] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/128\">#128</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-provider/compare/rev64...rev65\">https://github.com/canonical/httprequest-lego-provider/compare/rev64&hellip;rev65</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-provider/releases/tag/rev65",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-provider/compare/rev65...main"
-               },
-               {
-                  "id": 246546622,
-                  "version": "rev64",
-                  "timestamp": 1757607570,
-                  "title": "Revision 64",
-                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 60</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:21 UTC on 11 Sep 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add automerge to renovate by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\">#126</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-provider/compare/rev63...rev64\">https://github.com/canonical/httprequest-lego-provider/compare/rev63&hellip;rev64</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-provider/releases/tag/rev64",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-provider/compare/rev64...main"
-               },
-               {
-                  "id": 246195422,
-                  "version": "rev63",
-                  "timestamp": 1757513892,
-                  "title": "Revision 63",
-                  "body": "<p>resources:\n    -  django-app-image: undefined\n       resource-revision: 59</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:20 UTC on 10 Sep 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency django to v5.2.6 [security] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/124\"><a target=\"_blank\" href=\"https://github.com/canonical/httprequest-lego-provider/pull/124\">#124</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/httprequest-lego-provider/compare/rev62...rev63\">https://github.com/canonical/httprequest-lego-provider/compare/rev62&hellip;rev63</a></p>\n",
-                  "url": "https://github.com/canonical/httprequest-lego-provider/releases/tag/rev63",
-                  "compareUrl": "https://github.com/canonical/httprequest-lego-provider/compare/rev63...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/httprequest-lego-provider/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/httprequest-lego-provider/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "httprequest-lego-provider",
-               "url": "https://charmhub.io/httprequest-lego-provider",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 51,
-                     "timestamp": 1748335429,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 65,
-                     "timestamp": 1759742290,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
             "snap": null
          },
          {
