@@ -1891,7 +1891,7 @@
                   "version": "v1.0.0",
                   "timestamp": 1760966141,
                   "title": "v1.0.0",
-                  "body": "<h2>NOTES:</h2>\n\n<ul>\n<li><strong>This release requires Juju controller version 2.9.49 or higher Juju.</strong></li>\n<li><strong>If using JAAS, this release requires Juju controller version 3.6.5 or higher.</strong></li>\n<li>This release uses Juju client api code from the Juju 3.6.4 release.</li>\n</ul>\n\n<h2>BREAKING CHANGES</h2>\n\n<ul>\n<li>The following resources have had the <code>model</code> field replaced with <code>model_uuid</code> <a href=\"https://github.com/juju/terraform-provider-juju/issues/791\">791</a>. Users will need to update their plans and modules to refer to models by UUID. Further details are available at the linked issue.\n\n<ul>\n<li>Application data source</li>\n<li>Offer data source</li>\n<li>Secret data source</li>\n<li>Machine data source</li>\n<li>Application resource</li>\n<li>Integration resource</li>\n<li>Machine resource</li>\n<li>Offer resource</li>\n<li>SSH Key resource</li>\n<li>Model Access resource</li>\n<li>Secret Access resource</li>\n<li>Secret resource</li>\n</ul></li>\n<li>The <code>model</code> data-source has a new <code>owner</code> field. The data-source requires the <code>owner</code> field\nis set in addition to the <code>name</code>. Alternatively you can lookup a model by UUID.\nNote that the <code>uuid</code> field cannot be set alongside <code>name</code>/<code>owner</code>.</li>\n<li>Related to the above, all resources that import a model-scoped resource have had their import\nsyntax changed to require a model UUID instead of a model name. This includes most of the resources\nin the above list with some exceptions (e.g. offer import requires the offer URL) and additionally\nincludes the model resource.</li>\n<li>The offer data source no longer contains the computed field <code>model</code>.</li>\n<li>The <code>placement</code> field has been removed from the application resource - use <code>machines</code> instead.</li>\n<li>The <code>principle</code> field has been removed from the application resource as it was unused.</li>\n<li>The <code>series</code> field has been removed from the application resource - use <code>base</code> instead.</li>\n<li>The <code>series</code> field has been removed from the machine resource - use <code>base</code> instead.</li>\n</ul>\n\n<h2>UPGRADING PLANS</h2>\n\n<p>We realize any breaking changes are painful, but a move from v0.23.0 to v1.0.0 is one of the few opportunities we have to do them. To make this transition easier we have developed an upgrader advisory tool that will take an existing tf file as input and replace references to model names with model uuids.\nThis tool is intended as an advisory tool, although we have extensively tested the tool, make sure to carefully review proposed changes before committing to them.</p>\n\n<p>The tool is located <a href=\"https://github.com/juju/terraform-provider-juju/tree/main/juju-tf-upgrader\">here</a> and to use it, one simply runs:</p>\n\n<pre><code>go run github.com/juju/terraform-provider-juju/juju-tf-upgrader path/to/file.tf\n</code></pre>\n\n<p>As always, please read the <a href=\"https://github.com/juju/terraform-provider-juju/blob/main/juju-tf-upgrader/README.md\">README.md</a> first and in case of any issues contact the team in our public <a href=\"https://matrix.to/#/#terraform-provider-juju:ubuntu.com\">Matrix channel</a>.</p>\n\n<h2>ENHANCEMENTS</h2>\n\n<ul>\n<li>Allow deploying OCI charm resources from private registries by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/924\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/924\">#924</a></a>.</li>\n<li>Handle partial app deployments by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/926\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/926\">#926</a></a>.</li>\n<li>Add a storage pool resource by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/908\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/908\">#908</a></a>.</li>\n<li>Add a storage pool data source by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/928\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/928\">#928</a></a></li>\n</ul>\n\n<h2>BUG FIXES</h2>\n\n<ul>\n<li>Fix for <a href=\"https://github.com/juju/terraform-provider-juju/issues/671\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/671\">#671</a></a> by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/925\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/925\">#925</a></a></li>\n<li>Making <code>storage</code> field in <code>juju_application</code> read only by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/943\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/943\">#943</a></a></li>\n<li>Fix for resource update in <code>juju_application</code> by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/947\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/947\">#947</a></a></li>\n</ul>\n\n<h2>DOCUMENTATION</h2>\n\n<ul>\n<li>Documentation on plan upgrade to provider v1.0.0 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/883\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/883\">#883</a></a></li>\n<li>Documentation on creating dependency in deployment by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/927\">#927</a></a></li>\n<li>Update to <code>juju_application</code> resource examples by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/939\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/939\">#939</a></a></li>\n<li>How to use Juju CLI in Terraform plans by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/949\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/949\">#949</a></a></li>\n<li>Examples for <code>juju_ssh_key</code> from Github and Launchpad by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/953\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/953\">#953</a></a></li>\n</ul>\n\n<h2>CI &amp; MAINTENANCE</h2>\n\n<ul>\n<li><p>SBOM generation in CI by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/919\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/919\">#919</a></a></p>\n\n<h2>New Contributors</h2></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> made their first contribution in <a href=\"https://github.com/juju/terraform-provider-juju/pull/908\">https://github.com/juju/terraform-provider-juju/pull/908</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> made their first contribution in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\">https://github.com/juju/terraform-provider-juju/pull/927</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v0.23.1...v1.0.0\">https://github.com/juju/terraform-provider-juju/compare/v0.23.1&hellip;v1.0.0</a></p>\n",
+                  "body": "<h2>NOTES:</h2>\n\n<ul>\n<li><strong>This release requires Juju controller version 2.9.49 or higher Juju.</strong></li>\n<li><strong>If using JAAS, this release requires Juju controller version 3.6.5 or higher.</strong></li>\n<li>This release uses Juju client api code from the Juju 3.6.4 release.</li>\n</ul>\n\n<h2>BREAKING CHANGES</h2>\n\n<ul>\n<li>The following resources have had the <code>model</code> field replaced with <code>model_uuid</code> <a href=\"https://github.com/juju/terraform-provider-juju/issues/791\">791</a>. Users will need to update their plans and modules to refer to models by UUID. Further details are available at the linked issue.\n\n<ul>\n<li>Application data source</li>\n<li>Offer data source</li>\n<li>Secret data source</li>\n<li>Machine data source</li>\n<li>Application resource</li>\n<li>Integration resource</li>\n<li>Machine resource</li>\n<li>Offer resource</li>\n<li>SSH Key resource</li>\n<li>Model Access resource</li>\n<li>Secret Access resource</li>\n<li>Secret resource</li>\n</ul></li>\n<li>The <code>model</code> data-source has a new <code>owner</code> field. The data-source requires the <code>owner</code> field\nis set in addition to the <code>name</code>. Alternatively you can lookup a model by UUID.\nNote that the <code>uuid</code> field cannot be set alongside <code>name</code>/<code>owner</code>.</li>\n<li>Related to the above, all resources that import a model-scoped resource have had their import\nsyntax changed to require a model UUID instead of a model name. This includes most of the resources\nin the above list with some exceptions (e.g. offer import requires the offer URL) and additionally\nincludes the model resource.</li>\n<li>The offer data source no longer contains the computed field <code>model</code>.</li>\n<li>The <code>placement</code> field has been removed from the application resource - use <code>machines</code> instead.</li>\n<li>The <code>principle</code> field has been removed from the application resource as it was unused.</li>\n<li>The <code>series</code> field has been removed from the application resource - use <code>base</code> instead.</li>\n<li>The <code>series</code> field has been removed from the machine resource - use <code>base</code> instead.</li>\n</ul>\n\n<h2>UPGRADING PLANS</h2>\n\n<p>We realize any breaking changes are painful, but a move from v0.23.0 to v1.0.0 is one of the few opportunities we have to do them. To make this transition easier we have developed an upgrader advisory tool that will take an existing tf file as input and replace references to model names with model uuids.\nThis tool is intended as an advisory tool, although we have extensively tested the tool, make sure to carefully review proposed changes before committing to them.</p>\n\n<p>The tool is located <a href=\"https://github.com/juju/terraform-provider-juju/tree/main/juju-tf-upgrader\">here</a> and to use it, one simply runs:</p>\n\n<pre><code>go run github.com/juju/terraform-provider-juju/juju-tf-upgrader@latest path/to/file.tf\n</code></pre>\n\n<p>As always, please read the <a href=\"https://github.com/juju/terraform-provider-juju/blob/main/juju-tf-upgrader/README.md\">README.md</a> first and in case of any issues contact the team in our public <a href=\"https://matrix.to/#/#terraform-provider-juju:ubuntu.com\">Matrix channel</a>.</p>\n\n<h2>ENHANCEMENTS</h2>\n\n<ul>\n<li>Allow deploying OCI charm resources from private registries by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/924\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/924\">#924</a></a>.</li>\n<li>Handle partial app deployments by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/926\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/926\">#926</a></a>.</li>\n<li>Add a storage pool resource by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/908\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/908\">#908</a></a>.</li>\n<li>Add a storage pool data source by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/928\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/928\">#928</a></a></li>\n</ul>\n\n<h2>BUG FIXES</h2>\n\n<ul>\n<li>Fix for <a href=\"https://github.com/juju/terraform-provider-juju/issues/671\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/671\">#671</a></a> by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/925\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/925\">#925</a></a></li>\n<li>Making <code>storage</code> field in <code>juju_application</code> read only by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/943\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/943\">#943</a></a></li>\n<li>Fix for resource update in <code>juju_application</code> by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/947\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/947\">#947</a></a></li>\n</ul>\n\n<h2>DOCUMENTATION</h2>\n\n<ul>\n<li>Documentation on plan upgrade to provider v1.0.0 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/883\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/883\">#883</a></a></li>\n<li>Documentation on creating dependency in deployment by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/927\">#927</a></a></li>\n<li>Update to <code>juju_application</code> resource examples by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/939\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/939\">#939</a></a></li>\n<li>How to use Juju CLI in Terraform plans by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/949\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/949\">#949</a></a></li>\n<li>Examples for <code>juju_ssh_key</code> from Github and Launchpad by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/953\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/953\">#953</a></a></li>\n</ul>\n\n<h2>CI &amp; MAINTENANCE</h2>\n\n<ul>\n<li><p>SBOM generation in CI by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/919\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/919\">#919</a></a></p>\n\n<h2>New Contributors</h2></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> made their first contribution in <a href=\"https://github.com/juju/terraform-provider-juju/pull/908\">https://github.com/juju/terraform-provider-juju/pull/908</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> made their first contribution in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\">https://github.com/juju/terraform-provider-juju/pull/927</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v0.23.1...v1.0.0\">https://github.com/juju/terraform-provider-juju/compare/v0.23.1&hellip;v1.0.0</a></p>\n",
                   "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v1.0.0",
                   "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v1.0.0...main"
                },
@@ -7850,6 +7850,189 @@
       "team": "Identity",
       "repos": [
          {
+            "name": "vault-k8s-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/vault-k8s-operator",
+            "releases": [
+               {
+                  "id": 257403342,
+                  "version": "rev574",
+                  "timestamp": 1761555014,
+                  "title": "Revision 574",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 09:10 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/811\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/811\">#811</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev573...rev574\">https://github.com/canonical/vault-k8s-operator/compare/rev573&hellip;rev574</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev574",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev574...main"
+               },
+               {
+                  "id": 257395427,
+                  "version": "rev573",
+                  "timestamp": 1761552935,
+                  "title": "Revision 573",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 08:35 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update terraform juju to v1 (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/814\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/814\">#814</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev572...rev573\">https://github.com/canonical/vault-k8s-operator/compare/rev572&hellip;rev573</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev573",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev573...main"
+               },
+               {
+                  "id": 257141085,
+                  "version": "rev572",
+                  "timestamp": 1761343281,
+                  "title": "Revision 572",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 22:21 UTC on 24 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update github actions (main) (major) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/813\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/813\">#813</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev571...rev572\">https://github.com/canonical/vault-k8s-operator/compare/rev571&hellip;rev572</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev572",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev572...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [],
+            "charm": {
+               "name": "vault-k8s",
+               "url": "https://charmhub.io/vault-k8s",
+               "releases": [
+                  {
+                     "track": "1.16",
+                     "channel": "stable",
+                     "revision": 323,
+                     "timestamp": 1737409456,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.16",
+                     "channel": "candidate",
+                     "revision": 323,
+                     "timestamp": 1737383104,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.16",
+                     "channel": "beta",
+                     "revision": 355,
+                     "timestamp": 1742934736,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.16",
+                     "channel": "edge",
+                     "revision": 402,
+                     "timestamp": 1755794026,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 9,
+                     "timestamp": 1674813528,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 89,
+                     "timestamp": 1706692944,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.18",
+                     "channel": "stable",
+                     "revision": 446,
+                     "timestamp": 1758871020,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.18",
+                     "channel": "candidate",
+                     "revision": 446,
+                     "timestamp": 1758870878,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.18",
+                     "channel": "beta",
+                     "revision": 459,
+                     "timestamp": 1760636113,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.18",
+                     "channel": "edge",
+                     "revision": 463,
+                     "timestamp": 1761345231,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.17",
+                     "channel": "stable",
+                     "revision": 354,
+                     "timestamp": 1744390964,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.17",
+                     "channel": "candidate",
+                     "revision": 354,
+                     "timestamp": 1744390908,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.17",
+                     "channel": "beta",
+                     "revision": 383,
+                     "timestamp": 1752504609,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.17",
+                     "channel": "edge",
+                     "revision": 450,
+                     "timestamp": 1759243380,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "stable",
+                     "revision": 248,
+                     "timestamp": 1721819271,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "candidate",
+                     "revision": 248,
+                     "timestamp": 1721819219,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "beta",
+                     "revision": 248,
+                     "timestamp": 1721819129,
+                     "base": ""
+                  },
+                  {
+                     "track": "1.15",
+                     "channel": "edge",
+                     "revision": 248,
+                     "timestamp": 1720601863,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "1.16",
+                  "latest",
+                  "1.18",
+                  "1.17",
+                  "1.15"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "tls-certificates-interface",
             "newCommits": 0,
             "url": "https://github.com/canonical/tls-certificates-interface",
@@ -8189,189 +8372,6 @@
                "tracks": [
                   "1",
                   "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "vault-k8s-operator",
-            "newCommits": 1,
-            "url": "https://github.com/canonical/vault-k8s-operator",
-            "releases": [
-               {
-                  "id": 257141085,
-                  "version": "rev572",
-                  "timestamp": 1761343281,
-                  "title": "Revision 572",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 22:21 UTC on 24 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update github actions (main) (major) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/813\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/813\">#813</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev571...rev572\">https://github.com/canonical/vault-k8s-operator/compare/rev571&hellip;rev572</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev572",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev572...main"
-               },
-               {
-                  "id": 256758871,
-                  "version": "rev571",
-                  "timestamp": 1761235204,
-                  "title": "Revision 571",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 16:21 UTC on 23 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/810\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/810\">#810</a></a></li>\n<li>ci: perform secscan on publish to candidate or stable by <a target=\"_blank\" href=\"https://github.com/DanielArndt\">@DanielArndt</a> in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/806\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/806\">#806</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev570...rev571\">https://github.com/canonical/vault-k8s-operator/compare/rev570&hellip;rev571</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev571",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev571...main"
-               },
-               {
-                  "id": 256166226,
-                  "version": "rev570",
-                  "timestamp": 1761081618,
-                  "title": "Revision 570",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 21:41 UTC on 21 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): lock file maintenance python dependencies (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/807\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/807\">#807</a></a></li>\n<li>chore(deps): lock file maintenance (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/809\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/809\">#809</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev569...rev570\">https://github.com/canonical/vault-k8s-operator/compare/rev569&hellip;rev570</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev570",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev570...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [],
-            "charm": {
-               "name": "vault-k8s",
-               "url": "https://charmhub.io/vault-k8s",
-               "releases": [
-                  {
-                     "track": "1.16",
-                     "channel": "stable",
-                     "revision": 323,
-                     "timestamp": 1737409456,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.16",
-                     "channel": "candidate",
-                     "revision": 323,
-                     "timestamp": 1737383104,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.16",
-                     "channel": "beta",
-                     "revision": 355,
-                     "timestamp": 1742934736,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.16",
-                     "channel": "edge",
-                     "revision": 402,
-                     "timestamp": 1755794026,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 9,
-                     "timestamp": 1674813528,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 89,
-                     "timestamp": 1706692944,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.18",
-                     "channel": "stable",
-                     "revision": 446,
-                     "timestamp": 1758871020,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.18",
-                     "channel": "candidate",
-                     "revision": 446,
-                     "timestamp": 1758870878,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.18",
-                     "channel": "beta",
-                     "revision": 459,
-                     "timestamp": 1760636113,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.18",
-                     "channel": "edge",
-                     "revision": 463,
-                     "timestamp": 1761345231,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.17",
-                     "channel": "stable",
-                     "revision": 354,
-                     "timestamp": 1744390964,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.17",
-                     "channel": "candidate",
-                     "revision": 354,
-                     "timestamp": 1744390908,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.17",
-                     "channel": "beta",
-                     "revision": 383,
-                     "timestamp": 1752504609,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.17",
-                     "channel": "edge",
-                     "revision": 450,
-                     "timestamp": 1759243380,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "stable",
-                     "revision": 248,
-                     "timestamp": 1721819271,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "candidate",
-                     "revision": 248,
-                     "timestamp": 1721819219,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "beta",
-                     "revision": 248,
-                     "timestamp": 1721819129,
-                     "base": ""
-                  },
-                  {
-                     "track": "1.15",
-                     "channel": "edge",
-                     "revision": 248,
-                     "timestamp": 1720601863,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "1.16",
-                  "latest",
-                  "1.18",
-                  "1.17",
-                  "1.15"
                ]
             },
             "snap": null
@@ -16778,9 +16778,27 @@
          },
          {
             "name": "aproxy-operator",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/aproxy-operator",
             "releases": [
+               {
+                  "id": 257393517,
+                  "version": "rev9",
+                  "timestamp": 1761553560,
+                  "title": "Revision 9",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:27 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: fix links by <a target=\"_blank\" href=\"https://github.com/florentianayuwono\">@florentianayuwono</a> in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/23\">#23</a></a></li>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\">#13</a></a></li>\n<li>chore(deps): update all non-major dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\">#13</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/aproxy-operator/compare/rev7...rev9\">https://github.com/canonical/aproxy-operator/compare/rev7&hellip;rev9</a></p>\n",
+                  "url": "https://github.com/canonical/aproxy-operator/releases/tag/rev9",
+                  "compareUrl": "https://github.com/canonical/aproxy-operator/compare/rev9...main"
+               },
+               {
+                  "id": 257393538,
+                  "version": "rev10",
+                  "timestamp": 1761553560,
+                  "title": "Revision 10",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:27 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: fix links by <a target=\"_blank\" href=\"https://github.com/florentianayuwono\">@florentianayuwono</a> in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/23\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/23\">#23</a></a></li>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\">#13</a></a></li>\n<li>chore(deps): update all non-major dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/18\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/18\">#18</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/13\">#13</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/aproxy-operator/compare/rev7...rev10\">https://github.com/canonical/aproxy-operator/compare/rev7&hellip;rev10</a></p>\n",
+                  "url": "https://github.com/canonical/aproxy-operator/releases/tag/rev10",
+                  "compareUrl": "https://github.com/canonical/aproxy-operator/compare/rev10...main"
+               },
                {
                   "id": 255329092,
                   "version": "rev8",
@@ -16789,24 +16807,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:07 UTC on 17 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: add tutorial, how to upgrade, release notes by <a target=\"_blank\" href=\"https://github.com/florentianayuwono\">@florentianayuwono</a> in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/20\">#20</a></a></li>\n<li>fix: trigger build of latest charm by <a target=\"_blank\" href=\"https://github.com/florentianayuwono\">@florentianayuwono</a> in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/22\">#22</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/aproxy-operator/compare/rev5...rev8\">https://github.com/canonical/aproxy-operator/compare/rev5&hellip;rev8</a></p>\n",
                   "url": "https://github.com/canonical/aproxy-operator/releases/tag/rev8",
                   "compareUrl": "https://github.com/canonical/aproxy-operator/compare/rev8...main"
-               },
-               {
-                  "id": 255329055,
-                  "version": "rev7",
-                  "timestamp": 1760709774,
-                  "title": "Revision 7",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:07 UTC on 17 Oct 2025</p>\n\n<p>Released to &lsquo;latest/stable&rsquo; at 14:14 UTC on 17 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: add tutorial, how to upgrade, release notes by <a target=\"_blank\" href=\"https://github.com/florentianayuwono\">@florentianayuwono</a> in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/20\">#20</a></a></li>\n<li>fix: trigger build of latest charm by <a target=\"_blank\" href=\"https://github.com/florentianayuwono\">@florentianayuwono</a> in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/22\">#22</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/aproxy-operator/compare/rev5...rev7\">https://github.com/canonical/aproxy-operator/compare/rev5&hellip;rev7</a></p>\n",
-                  "url": "https://github.com/canonical/aproxy-operator/releases/tag/rev7",
-                  "compareUrl": "https://github.com/canonical/aproxy-operator/compare/rev7...main"
-               },
-               {
-                  "id": 255075696,
-                  "version": "rev6",
-                  "timestamp": 1760632796,
-                  "title": "Revision 6",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:41 UTC on 16 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>feat: add 22.04 base by <a target=\"_blank\" href=\"https://github.com/florentianayuwono\">@florentianayuwono</a> in <a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/aproxy-operator/pull/21\">#21</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/aproxy-operator/compare/rev4...rev6\">https://github.com/canonical/aproxy-operator/compare/rev4&hellip;rev6</a></p>\n",
-                  "url": "https://github.com/canonical/aproxy-operator/releases/tag/rev6",
-                  "compareUrl": "https://github.com/canonical/aproxy-operator/compare/rev6...main"
                }
             ],
             "tags": null,
@@ -16836,15 +16836,15 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 7,
-                     "timestamp": 1760710024,
+                     "revision": 9,
+                     "timestamp": 1761553645,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 8,
-                     "timestamp": 1760710032,
+                     "revision": 10,
+                     "timestamp": 1761553651,
                      "base": ""
                   }
                ],
