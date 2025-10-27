@@ -1887,6 +1887,15 @@
                   "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v1.0.0-rc1...main"
                },
                {
+                  "id": 257379083,
+                  "version": "v1.0.0",
+                  "timestamp": 1760966141,
+                  "title": "v1.0.0",
+                  "body": "<h2>NOTES:</h2>\n\n<ul>\n<li><strong>This release requires Juju controller version 2.9.49 or higher Juju.</strong></li>\n<li><strong>If using JAAS, this release requires Juju controller version 3.6.5 or higher.</strong></li>\n<li>This release uses Juju client api code from the Juju 3.6.4 release.</li>\n</ul>\n\n<h2>BREAKING CHANGES</h2>\n\n<ul>\n<li>The following resources have had the <code>model</code> field replaced with <code>model_uuid</code> <a href=\"https://github.com/juju/terraform-provider-juju/issues/791\">791</a>. Users will need to update their plans and modules to refer to models by UUID. Further details are available at the linked issue.\n\n<ul>\n<li>Application data source</li>\n<li>Offer data source</li>\n<li>Secret data source</li>\n<li>Machine data source</li>\n<li>Application resource</li>\n<li>Integration resource</li>\n<li>Machine resource</li>\n<li>Offer resource</li>\n<li>SSH Key resource</li>\n<li>Model Access resource</li>\n<li>Secret Access resource</li>\n<li>Secret resource</li>\n</ul></li>\n<li>The <code>model</code> data-source has a new <code>owner</code> field. The data-source requires the <code>owner</code> field\nis set in addition to the <code>name</code>. Alternatively you can lookup a model by UUID.\nNote that the <code>uuid</code> field cannot be set alongside <code>name</code>/<code>owner</code>.</li>\n<li>Related to the above, all resources that import a model-scoped resource have had their import\nsyntax changed to require a model UUID instead of a model name. This includes most of the resources\nin the above list with some exceptions (e.g. offer import requires the offer URL) and additionally\nincludes the model resource.</li>\n<li>The offer data source no longer contains the computed field <code>model</code>.</li>\n<li>The <code>placement</code> field has been removed from the application resource - use <code>machines</code> instead.</li>\n<li>The <code>principle</code> field has been removed from the application resource as it was unused.</li>\n<li>The <code>series</code> field has been removed from the application resource - use <code>base</code> instead.</li>\n<li>The <code>series</code> field has been removed from the machine resource - use <code>base</code> instead.</li>\n</ul>\n\n<h2>UPGRADING PLANS</h2>\n\n<p>We realize any breaking changes are painful, but a move from v0.23.0 to v1.0.0 is one of the few opportunities we have to do them. To make this transition easier we have developed an upgrader advisory tool that will take an existing tf file as input and replace references to model names with model uuids.\nThis tool is intended as an advisory tool, although we have extensively tested the tool, make sure to carefully review proposed changes before committing to them.</p>\n\n<p>The tool is located <a href=\"https://github.com/juju/terraform-provider-juju/tree/main/juju-tf-upgrader\">here</a> and to use it, one simply runs:</p>\n\n<pre><code>go run github.com/juju/terraform-provider-juju/juju-tf-upgrader path/to/file.tf\n</code></pre>\n\n<p>As always, please read the <a href=\"https://github.com/juju/terraform-provider-juju/blob/main/juju-tf-upgrader/README.md\">README.md</a> first and in case of any issues contact the team in our public <a href=\"https://matrix.to/#/#terraform-provider-juju:ubuntu.com\">Matrix channel</a>.</p>\n\n<p>ENHANCEMENTS</p>\n\n<ul>\n<li>Allow deploying OCI charm resources from private registries by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/924\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/924\">#924</a></a>.</li>\n<li>Handle partial app deployments by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/926\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/926\">#926</a></a>.</li>\n<li>Add a storage pool resource by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/908\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/908\">#908</a></a>.</li>\n<li>Add a storage pool data source by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/928\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/928\">#928</a></a></li>\n</ul>\n\n<h2>BUG FIXES</h2>\n\n<ul>\n<li>Fix for <a href=\"https://github.com/juju/terraform-provider-juju/issues/671\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/671\">#671</a></a> by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/925\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/925\">#925</a></a></li>\n<li>Making <code>storage</code> field in <code>juju_application</code> read only by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/943\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/943\">#943</a></a></li>\n<li>Fix for resource update in <code>juju_application</code> by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/947\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/947\">#947</a></a></li>\n</ul>\n\n<h2>DOCUMENTATION</h2>\n\n<ul>\n<li>Documentation on plan upgrade to provider v1.0.0 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/883\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/883\">#883</a></a></li>\n<li>Documentation on creating dependency in deployment by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/927\">#927</a></a></li>\n<li>Update to <code>juju_application</code> resource examples by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/939\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/939\">#939</a></a></li>\n<li>How to use Juju CLI in Terraform plans by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/949\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/949\">#949</a></a></li>\n<li>Examples for <code>juju_ssh_key</code> from Github and Launchpad by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/953\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/953\">#953</a></a></li>\n</ul>\n\n<h2>CI &amp; MAINTENANCE</h2>\n\n<ul>\n<li><p>SBOM generation in CI by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/919\"><a target=\"_blank\" href=\"https://github.com/juju/terraform-provider-juju/pull/919\">#919</a></a></p>\n\n<h2>New Contributors</h2></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> made their first contribution in <a href=\"https://github.com/juju/terraform-provider-juju/pull/908\">https://github.com/juju/terraform-provider-juju/pull/908</a></li>\n<li><a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> made their first contribution in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\">https://github.com/juju/terraform-provider-juju/pull/927</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v0.23.1...v1.0.0\">https://github.com/juju/terraform-provider-juju/compare/v0.23.1&hellip;v1.0.0</a></p>\n",
+                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v1.0.0",
+                  "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v1.0.0...main"
+               },
+               {
                   "id": 254945186,
                   "version": "v1.0.0-beta4",
                   "timestamp": 1760605729,
@@ -1894,15 +1903,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(changelog): changelog for the 0.23.0 release by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/922\">https://github.com/juju/terraform-provider-juju/pull/922</a></li>\n<li>fix: revert offer behaviour change by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/938\">https://github.com/juju/terraform-provider-juju/pull/938</a></li>\n<li>chore(changelog): V0.23.1 release notes by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/940\">https://github.com/juju/terraform-provider-juju/pull/940</a></li>\n<li>docs: create dependency in deployment by <a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\">https://github.com/juju/terraform-provider-juju/pull/927</a></li>\n<li>fix: remove optional field from app storage attr by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/943\">https://github.com/juju/terraform-provider-juju/pull/943</a></li>\n<li>docs: update application resource examples by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/939\">https://github.com/juju/terraform-provider-juju/pull/939</a></li>\n<li>chore: merge v0 to main by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/942\">https://github.com/juju/terraform-provider-juju/pull/942</a></li>\n<li>fix: handle scenarios with missing resource map by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/947\">https://github.com/juju/terraform-provider-juju/pull/947</a></li>\n<li>feat: allow model data source to lookup by name+owner by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/948\">https://github.com/juju/terraform-provider-juju/pull/948</a></li>\n<li>fix(version-regex): fix version regex to make sure we don&rsquo;t replace the version if it&rsquo;s already 1.x by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/945\">https://github.com/juju/terraform-provider-juju/pull/945</a></li>\n<li>docs: describe how to use the Juju CLI in TF by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/949\">https://github.com/juju/terraform-provider-juju/pull/949</a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/yanksyoon\">@yanksyoon</a> made their first contribution in <a href=\"https://github.com/juju/terraform-provider-juju/pull/927\">https://github.com/juju/terraform-provider-juju/pull/927</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v1.0.0-beta3...v1.0.0-beta4\">https://github.com/juju/terraform-provider-juju/compare/v1.0.0-beta3&hellip;v1.0.0-beta4</a></p>\n",
                   "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v1.0.0-beta4",
                   "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v1.0.0-beta4...main"
-               },
-               {
-                  "id": 253369691,
-                  "version": "v0.23.1",
-                  "timestamp": 1760019367,
-                  "title": "v0.23.1",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: revert offer behaviour change by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/938\">https://github.com/juju/terraform-provider-juju/pull/938</a></li>\n<li>chore(changelog): V0.23.1 release notes by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/940\">https://github.com/juju/terraform-provider-juju/pull/940</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v0.23.0...v0.23.1\">https://github.com/juju/terraform-provider-juju/compare/v0.23.0&hellip;v0.23.1</a></p>\n",
-                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v0.23.1",
-                  "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v0.23.1...main"
                }
             ],
             "tags": null,
@@ -10657,7 +10657,7 @@
          },
          {
             "name": "snap-vault",
-            "newCommits": 18,
+            "newCommits": 19,
             "url": "https://github.com/canonical/snap-vault",
             "releases": [
                {
@@ -18812,7 +18812,7 @@
          },
          {
             "name": "aproxy-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/aproxy-operator",
             "releases": [
                {
@@ -18898,22 +18898,31 @@
             "url": "https://github.com/canonical/backup-operators",
             "releases": [
                {
-                  "id": 256937072,
-                  "version": "rev2",
-                  "timestamp": 1761295299,
-                  "title": "Revision 2",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:51 UTC on 24 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix schedule rendering in bacula-dir.conf by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/7\"><a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/7\">#7</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/backup-operators/compare/rev1...rev2\">https://github.com/canonical/backup-operators/compare/rev1&hellip;rev2</a></p>\n",
-                  "url": "https://github.com/canonical/backup-operators/releases/tag/rev2",
-                  "compareUrl": "https://github.com/canonical/backup-operators/compare/rev2...main"
+                  "id": 257375707,
+                  "version": "rev5",
+                  "timestamp": 1761546991,
+                  "title": "Revision 5",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:46 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/stale action to v10 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/1\"><a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/1\">#1</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/backup-operators/compare/rev4...rev5\">https://github.com/canonical/backup-operators/compare/rev4&hellip;rev5</a></p>\n",
+                  "url": "https://github.com/canonical/backup-operators/releases/tag/rev5",
+                  "compareUrl": "https://github.com/canonical/backup-operators/compare/rev5...main"
                },
                {
-                  "id": 256218178,
-                  "version": "rev1",
-                  "timestamp": 1761099987,
-                  "title": "Revision 1",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 03:10 UTC on 22 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Create the initial version of the charmed-bacula-server snap by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/3\"><a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/3\">#3</a></a></li>\n<li>Create the backup-integrator charm, bacula-fd charm and the bacula-server charm. by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/5\"><a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/5\">#5</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/3\"><a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/3\">#3</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/backup-operators/commits/rev1\">https://github.com/canonical/backup-operators/commits/rev1</a></p>\n",
-                  "url": "https://github.com/canonical/backup-operators/releases/tag/rev1",
-                  "compareUrl": "https://github.com/canonical/backup-operators/compare/rev1...main"
+                  "id": 257375668,
+                  "version": "rev4",
+                  "timestamp": 1761546976,
+                  "title": "Revision 4",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:46 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update terraform-linters/setup-tflint action to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/4\"><a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/4\">#4</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/backup-operators/compare/rev3...rev4\">https://github.com/canonical/backup-operators/compare/rev3&hellip;rev4</a></p>\n",
+                  "url": "https://github.com/canonical/backup-operators/releases/tag/rev4",
+                  "compareUrl": "https://github.com/canonical/backup-operators/compare/rev4...main"
+               },
+               {
+                  "id": 257375198,
+                  "version": "rev3",
+                  "timestamp": 1761546721,
+                  "title": "Revision 3",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:42 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update canonical/data-platform-workflows action to v36 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/8\"><a target=\"_blank\" href=\"https://github.com/canonical/backup-operators/pull/8\">#8</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/backup-operators/compare/rev2...rev3\">https://github.com/canonical/backup-operators/compare/rev2&hellip;rev3</a></p>\n",
+                  "url": "https://github.com/canonical/backup-operators/releases/tag/rev3",
+                  "compareUrl": "https://github.com/canonical/backup-operators/compare/rev3...main"
                }
             ],
             "tags": null,
@@ -18930,6 +18939,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "5dc084e0684cfde41678b06b2e8e7a7c4d07e2dd",
+                  "author": "renovate[bot]",
+                  "timestamp": 1761546664,
+                  "message": "<p>Update actions/upload-artifact action to v5 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/33\">#33</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/5dc084e0684cfde41678b06b2e8e7a7c4d07e2dd"
+               },
+               {
                   "sha": "a749f481e6e4da17a0bf627db324bc665bde1c57",
                   "author": "renovate[bot]",
                   "timestamp": 1760696402,
@@ -18942,13 +18958,6 @@
                   "timestamp": 1759913090,
                   "message": "<p>Update dependency python to 3.14 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/31\">#31</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/3e9fc9443b14647f31d4eb9457cdefb130ab8b9d"
-               },
-               {
-                  "sha": "1b9d51b851562391e61a2cd51feeb89264d25033",
-                  "author": "arturo-seijas",
-                  "timestamp": 1758727514,
-                  "message": "<p>Auto approve renovate PRs (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-cloudflared-snap/pull/30\">#30</a>)</p>\n",
-                  "url": "https://github.com/canonical/charmed-cloudflared-snap/commit/1b9d51b851562391e61a2cd51feeb89264d25033"
                }
             ],
             "ciActions": [],
@@ -18957,7 +18966,7 @@
          },
          {
             "name": "chrony-client-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/chrony-client-operator",
             "releases": [
                {
@@ -19024,7 +19033,7 @@
          },
          {
             "name": "chrony-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/chrony-operator",
             "releases": [
                {
@@ -19144,7 +19153,7 @@
          },
          {
             "name": "cloudflared-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/cloudflared-operator",
             "releases": [
                {
@@ -19216,6 +19225,15 @@
             "url": "https://github.com/canonical/content-cache-k8s-operator",
             "releases": [
                {
+                  "id": 257374043,
+                  "version": "rev78",
+                  "timestamp": 1761546674,
+                  "title": "Revision 78",
+                  "body": "<p>resources:\n    -  content-cache-image: undefined\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:32 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/upload-artifact action to v5 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/128\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/128\">#128</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev77...rev78\">https://github.com/canonical/content-cache-k8s-operator/compare/rev77&hellip;rev78</a></p>\n",
+                  "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev78",
+                  "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev78...main"
+               },
+               {
                   "id": 254874528,
                   "version": "rev77",
                   "timestamp": 1760585060,
@@ -19232,15 +19250,6 @@
                   "body": "<p>resources:\n    -  content-cache-image: undefined\n       resource-revision: 78</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:33 UTC on 10 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v1.3.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/126\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/126\">#126</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev75...rev76\">https://github.com/canonical/content-cache-k8s-operator/compare/rev75&hellip;rev76</a></p>\n",
                   "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev76",
                   "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev76...main"
-               },
-               {
-                  "id": 252955911,
-                  "version": "rev75",
-                  "timestamp": 1759913351,
-                  "title": "Revision 75",
-                  "body": "<p>resources:\n    -  content-cache-image: undefined\n       resource-revision: 77</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:51 UTC on 8 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v1.3.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/125\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/125\">#125</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev74...rev75\">https://github.com/canonical/content-cache-k8s-operator/compare/rev74&hellip;rev75</a></p>\n",
-                  "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev75",
-                  "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev75...main"
                }
             ],
             "tags": null,
@@ -19270,8 +19279,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 77,
-                     "timestamp": 1760585187,
+                     "revision": 78,
+                     "timestamp": 1761546775,
                      "base": ""
                   }
                ],
@@ -19994,6 +20003,15 @@
             "url": "https://github.com/canonical/github-runner-operators",
             "releases": [
                {
+                  "id": 257374120,
+                  "version": "rev8",
+                  "timestamp": 1761546700,
+                  "title": "Revision 8",
+                  "body": "<p>resources:\n    -  app-image: undefined\n       resource-revision: 8</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:33 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update rabbitmq docker tag to v4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/16\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/16\">#16</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operators/compare/rev7...rev8\">https://github.com/canonical/github-runner-operators/compare/rev7&hellip;rev8</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-operators/releases/tag/rev8",
+                  "compareUrl": "https://github.com/canonical/github-runner-operators/compare/rev8...main"
+               },
+               {
                   "id": 256602483,
                   "version": "rev7",
                   "timestamp": 1761208240,
@@ -20010,15 +20028,6 @@
                   "body": "<p>resources:\n    -  app-image: undefined\n       resource-revision: 6</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:21 UTC on 23 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Fix the conversion of the tracing environment in the charm. by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/15\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/15\">#15</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operators/compare/rev5...rev6\">https://github.com/canonical/github-runner-operators/compare/rev5&hellip;rev6</a></p>\n",
                   "url": "https://github.com/canonical/github-runner-operators/releases/tag/rev6",
                   "compareUrl": "https://github.com/canonical/github-runner-operators/compare/rev6...main"
-               },
-               {
-                  "id": 255970879,
-                  "version": "rev5",
-                  "timestamp": 1761044839,
-                  "title": "Revision 5",
-                  "body": "<p>resources:\n    -  app-image: undefined\n       resource-revision: 5</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:09 UTC on 21 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): update module github.com/prometheus/client_golang to v1.23.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/11\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/11\">#11</a></a></li>\n<li>add bot pr approval by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/12\">#12</a></a></li>\n<li>add tracing integration by <a target=\"_blank\" href=\"https://github.com/cbartz\">@cbartz</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/14\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-operators/pull/14\">#14</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-operators/compare/rev4...rev5\">https://github.com/canonical/github-runner-operators/compare/rev4&hellip;rev5</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-operators/releases/tag/rev5",
-                  "compareUrl": "https://github.com/canonical/github-runner-operators/compare/rev5...main"
                }
             ],
             "tags": null,
@@ -20223,6 +20232,15 @@
             "url": "https://github.com/canonical/http-proxy-operators",
             "releases": [
                {
+                  "id": 257373930,
+                  "version": "rev29",
+                  "timestamp": 1761546631,
+                  "title": "Revision 29",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:31 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/upload-artifact action to v5 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/57\"><a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/57\">#57</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/http-proxy-operators/compare/rev39...rev29\">https://github.com/canonical/http-proxy-operators/compare/rev39&hellip;rev29</a></p>\n",
+                  "url": "https://github.com/canonical/http-proxy-operators/releases/tag/rev29",
+                  "compareUrl": "https://github.com/canonical/http-proxy-operators/compare/rev29...main"
+               },
+               {
                   "id": 255864482,
                   "version": "rev39",
                   "timestamp": 1761002777,
@@ -20239,15 +20257,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:15 UTC on 14 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add adapter mode by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/50\">#50</a></a></li>\n<li>Fix: Update <code>http-proxy</code> library docstring by <a target=\"_blank\" href=\"https://github.com/swetha1654\">@swetha1654</a> in <a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/54\"><a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/54\">#54</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/http-proxy-operators/compare/rev27...rev38\">https://github.com/canonical/http-proxy-operators/compare/rev27&hellip;rev38</a></p>\n",
                   "url": "https://github.com/canonical/http-proxy-operators/releases/tag/rev38",
                   "compareUrl": "https://github.com/canonical/http-proxy-operators/compare/rev38...main"
-               },
-               {
-                  "id": 254272610,
-                  "version": "rev37",
-                  "timestamp": 1760426050,
-                  "title": "Revision 37",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:15 UTC on 14 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add adapter mode by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/50\"><a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/50\">#50</a></a></li>\n<li>Fix: Update <code>http-proxy</code> library docstring by <a target=\"_blank\" href=\"https://github.com/swetha1654\">@swetha1654</a> in <a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/54\"><a target=\"_blank\" href=\"https://github.com/canonical/http-proxy-operators/pull/54\">#54</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/http-proxy-operators/compare/rev27...rev37\">https://github.com/canonical/http-proxy-operators/compare/rev27&hellip;rev37</a></p>\n",
-                  "url": "https://github.com/canonical/http-proxy-operators/releases/tag/rev37",
-                  "compareUrl": "https://github.com/canonical/http-proxy-operators/compare/rev37...main"
                }
             ],
             "tags": null,
@@ -20629,7 +20638,7 @@
          },
          {
             "name": "jenkins-agent-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/jenkins-agent-operator",
             "releases": [
                {
@@ -20823,7 +20832,7 @@
          },
          {
             "name": "jenkins-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/jenkins-k8s-operator",
             "releases": [
                {
@@ -20944,7 +20953,7 @@
          },
          {
             "name": "any-charm",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/any-charm",
             "releases": [
                {
@@ -21268,31 +21277,31 @@
             "url": "https://github.com/canonical/opencti-operator",
             "releases": [
                {
-                  "id": 254604515,
-                  "version": "opencti-vxvault-connector-rev54",
-                  "timestamp": 1760515290,
-                  "title": "Revision 54",
-                  "body": "<p>resources:\n    -  opencti-vxvault-connector-image: localhost:5000/rock:latest\n       resource-revision: 56</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:18 UTC on 15 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>TF product: expose opensearch by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev52...opencti-vxvault-connector-rev54\">https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev52&hellip;opencti-vxvault-connector-rev54</a></p>\n",
-                  "url": "https://github.com/canonical/opencti-operator/releases/tag/opencti-vxvault-connector-rev54",
-                  "compareUrl": "https://github.com/canonical/opencti-operator/compare/opencti-vxvault-connector-rev54...main"
+                  "id": 257376258,
+                  "version": "opencti-vxvault-connector-rev56",
+                  "timestamp": 1761546889,
+                  "title": "Revision 56",
+                  "body": "<p>resources:\n    -  opencti-vxvault-connector-image: localhost:5000/rock:latest\n       resource-revision: 58</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:50 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/71\">#71</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev54...opencti-vxvault-connector-rev56\">https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev54&hellip;opencti-vxvault-connector-rev56</a></p>\n",
+                  "url": "https://github.com/canonical/opencti-operator/releases/tag/opencti-vxvault-connector-rev56",
+                  "compareUrl": "https://github.com/canonical/opencti-operator/compare/opencti-vxvault-connector-rev56...main"
                },
                {
-                  "id": 254604496,
-                  "version": "opencti-virustotal-livehunt-connector-rev53",
-                  "timestamp": 1760515290,
-                  "title": "Revision 53",
-                  "body": "<p>resources:\n    -  opencti-virustotal-livehunt-connector-image: localhost:5000/rock:latest\n       resource-revision: 56</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:18 UTC on 15 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>TF product: expose opensearch by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev52...opencti-virustotal-livehunt-connector-rev53\">https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev52&hellip;opencti-virustotal-livehunt-connector-rev53</a></p>\n",
-                  "url": "https://github.com/canonical/opencti-operator/releases/tag/opencti-virustotal-livehunt-connector-rev53",
-                  "compareUrl": "https://github.com/canonical/opencti-operator/compare/opencti-virustotal-livehunt-connector-rev53...main"
-               },
-               {
-                  "id": 254604511,
-                  "version": "opencti-urlscan-enrichment-connector-rev55",
-                  "timestamp": 1760515290,
+                  "id": 257376147,
+                  "version": "opencti-vxvault-connector-rev55",
+                  "timestamp": 1761546756,
                   "title": "Revision 55",
-                  "body": "<p>resources:\n    -  opencti-urlscan-enrichment-connector-image: localhost:5000/rock:latest\n       resource-revision: 55</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:18 UTC on 15 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>TF product: expose opensearch by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/78\"><a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/78\">#78</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev52...opencti-urlscan-enrichment-connector-rev55\">https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev52&hellip;opencti-urlscan-enrichment-connector-rev55</a></p>\n",
-                  "url": "https://github.com/canonical/opencti-operator/releases/tag/opencti-urlscan-enrichment-connector-rev55",
-                  "compareUrl": "https://github.com/canonical/opencti-operator/compare/opencti-urlscan-enrichment-connector-rev55...main"
+                  "body": "<p>resources:\n    -  opencti-vxvault-connector-image: localhost:5000/rock:latest\n       resource-revision: 57</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:49 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency ops to v3.3.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/79\"><a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/79\">#79</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev53...opencti-vxvault-connector-rev55\">https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev53&hellip;opencti-vxvault-connector-rev55</a></p>\n",
+                  "url": "https://github.com/canonical/opencti-operator/releases/tag/opencti-vxvault-connector-rev55",
+                  "compareUrl": "https://github.com/canonical/opencti-operator/compare/opencti-vxvault-connector-rev55...main"
+               },
+               {
+                  "id": 257376331,
+                  "version": "opencti-virustotal-livehunt-connector-rev55",
+                  "timestamp": 1761546889,
+                  "title": "Revision 55",
+                  "body": "<p>resources:\n    -  opencti-virustotal-livehunt-connector-image: localhost:5000/rock:latest\n       resource-revision: 58</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 06:51 UTC on 27 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/opencti-operator/pull/71\">#71</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev54...opencti-virustotal-livehunt-connector-rev55\">https://github.com/canonical/opencti-operator/compare/opencti-abuseipdb-ipblacklist-connector-rev54&hellip;opencti-virustotal-livehunt-connector-rev55</a></p>\n",
+                  "url": "https://github.com/canonical/opencti-operator/releases/tag/opencti-virustotal-livehunt-connector-rev55",
+                  "compareUrl": "https://github.com/canonical/opencti-operator/compare/opencti-virustotal-livehunt-connector-rev55...main"
                }
             ],
             "tags": null,
@@ -21315,8 +21324,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 57,
-                     "timestamp": 1760516969,
+                     "revision": 59,
+                     "timestamp": 1761548471,
                      "base": ""
                   }
                ],
@@ -21776,6 +21785,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "a87e8c763e26d45c95d68848bb8354e15f4b657e",
+                  "author": "renovate[bot]",
+                  "timestamp": 1761546685,
+                  "message": "<p>Update GitHub Artifact Actions (<a target=\"_blank\" href=\"https://github.com/canonical/self-hosted-runner-performance-benchmark/pull/32\">#32</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/self-hosted-runner-performance-benchmark/commit/a87e8c763e26d45c95d68848bb8354e15f4b657e"
+               },
+               {
                   "sha": "fc0fc84b2a1c7cfba9cfb65a24d1e5836c57ab6d",
                   "author": "javierdelapuente",
                   "timestamp": 1761049659,
@@ -21788,13 +21804,6 @@
                   "timestamp": 1756912996,
                   "message": "<p>Use new team name in CODEOWNERS (<a target=\"_blank\" href=\"https://github.com/canonical/self-hosted-runner-performance-benchmark/pull/29\">#29</a>)</p>\n",
                   "url": "https://github.com/canonical/self-hosted-runner-performance-benchmark/commit/550ca0e01bf965ff22d82ff64259bcaa4b576fa0"
-               },
-               {
-                  "sha": "f04db81a5fc286c8d8a5cbd0d889796001a2d9d1",
-                  "author": "renovate[bot]",
-                  "timestamp": 1755600764,
-                  "message": "<p>Update actions/download-artifact action to v5 (<a target=\"_blank\" href=\"https://github.com/canonical/self-hosted-runner-performance-benchmark/pull/25\">#25</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/self-hosted-runner-performance-benchmark/commit/f04db81a5fc286c8d8a5cbd0d889796001a2d9d1"
                }
             ],
             "ciActions": null,
