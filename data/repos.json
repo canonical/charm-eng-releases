@@ -7904,9 +7904,18 @@
       "repos": [
          {
             "name": "vault-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
+               {
+                  "id": 260836980,
+                  "version": "rev583",
+                  "timestamp": 1762603439,
+                  "title": "Revision 583",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 12:22 UTC on 8 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/829\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/829\">#829</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev582...rev583\">https://github.com/canonical/vault-k8s-operator/compare/rev582&hellip;rev583</a></p>\n",
+                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev583",
+                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev583...main"
+               },
                {
                   "id": 260797361,
                   "version": "rev582",
@@ -7924,15 +7933,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 01:29 UTC on 6 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): lock file maintenance (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/821\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/821\">#821</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev580...rev581\">https://github.com/canonical/vault-k8s-operator/compare/rev580&hellip;rev581</a></p>\n",
                   "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev581",
                   "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev581...main"
-               },
-               {
-                  "id": 259963145,
-                  "version": "rev580",
-                  "timestamp": 1762356379,
-                  "title": "Revision 580",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;1.18/edge&rsquo; at 15:47 UTC on 5 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): lock file maintenance python dependencies (main) by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/820\"><a target=\"_blank\" href=\"https://github.com/canonical/vault-k8s-operator/pull/820\">#820</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/vault-k8s-operator/compare/rev579...rev580\">https://github.com/canonical/vault-k8s-operator/compare/rev579&hellip;rev580</a></p>\n",
-                  "url": "https://github.com/canonical/vault-k8s-operator/releases/tag/rev580",
-                  "compareUrl": "https://github.com/canonical/vault-k8s-operator/compare/rev580...main"
                }
             ],
             "tags": null,
@@ -8008,8 +8008,8 @@
                   {
                      "track": "1.18",
                      "channel": "edge",
-                     "revision": 467,
-                     "timestamp": 1762393392,
+                     "revision": 468,
+                     "timestamp": 1762605396,
                      "base": ""
                   },
                   {
@@ -14046,8 +14046,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 4427,
-                     "timestamp": 1762485088,
+                     "revision": 4431,
+                     "timestamp": 1762604839,
                      "base": "core22"
                   },
                   {
@@ -14743,6 +14743,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "2ca242a1fa5d066252f7ba6f8f4b5d84c6e13191",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1762606374,
+                  "message": "<p>fix: pin FIPS Go toolchain in override-build step (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/18\">#18</a>)</p>\n\n<p>Rockcraft overrides the Go version during the Pebble build\nwhen <code>GOTOOLCHAIN</code> is set to <code>local</code>,\nwhich causes the binaries to be built with a non-FIPS\ntoolchain and breaks compliance.</p>\n\n<p>In addition, the Go FIPS tracks <code>1.22</code> and <code>1.23</code> appear to\ncontain a bug that prevents proper FIPS enforcement.\nTo ensure compliance, the build now explicitly uses the <code>1.24</code> FIPS Go version.</p>\n",
+                  "url": "https://github.com/canonical/metallb-rocks/commit/2ca242a1fa5d066252f7ba6f8f4b5d84c6e13191"
+               },
+               {
                   "sha": "2a7b77a2f37f0e718360ab48b3ae05b96e7d0582",
                   "author": "Homayoon Alimohammadi",
                   "timestamp": 1756193146,
@@ -14755,13 +14762,6 @@
                   "timestamp": 1753698177,
                   "message": "<p>build: pin rockcraft revision for amd (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/14\">#14</a>)</p>\n\n<p>Pins rockcraft revision to FIPS rockcraft build including pro-sources</p>\n",
                   "url": "https://github.com/canonical/metallb-rocks/commit/9aef01d4f1fa2d16050fcedde5d8e57eb92f825e"
-               },
-               {
-                  "sha": "54959dd0a50fd1fa5eac23414f255984acbee800",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1753346525,
-                  "message": "<p>feat: Enable FIPS-support for Metallb controller and speaker (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/12\">#12</a>)</p>\n",
-                  "url": "https://github.com/canonical/metallb-rocks/commit/54959dd0a50fd1fa5eac23414f255984acbee800"
                }
             ],
             "ciActions": [],
