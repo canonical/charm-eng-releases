@@ -9831,7 +9831,7 @@
          },
          {
             "name": "iam-bundle-integration",
-            "newCommits": 4,
+            "newCommits": 6,
             "url": "https://github.com/canonical/iam-bundle-integration",
             "releases": [
                {
@@ -14743,6 +14743,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c390a6d04339e7a9ae6054a70d9fb1bd3ae1ac90",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1762786744,
+                  "message": "<p>fix(v0.14.9): Set required build flags (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/19\">#19</a>)</p>\n\n<p>Otherwise, the binaries breaks on a FIPS machine:</p>\n\n<pre><code>panic: EVP_KDF_derive\nopenssl error(s):\nerror:1C800069:Provider routines::invalid key length\n../providers/implementations/kdfs/hkdf.c:163\n</code></pre>\n",
+                  "url": "https://github.com/canonical/metallb-rocks/commit/c390a6d04339e7a9ae6054a70d9fb1bd3ae1ac90"
+               },
+               {
                   "sha": "2ca242a1fa5d066252f7ba6f8f4b5d84c6e13191",
                   "author": "Benjamin Schimke",
                   "timestamp": 1762606374,
@@ -14755,13 +14762,6 @@
                   "timestamp": 1756193146,
                   "message": "<p>ci: Include FIPS openssl in rockcraft parts, Build ARM on LXD (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/15\">#15</a>)</p>\n\n<ul>\n<li><p>ci: Include FIPS openssl in rockcraft parts, Build ARM on LXD</p></li>\n\n<li><p>chore: Include OpenSSL in FRR as well</p></li>\n</ul>\n\n<hr>\n\n<p>Signed-off-by: Homayoon (Hue) Alimohammadi <a href=\"mailto:homayoon.alimohammadi@canonical.com\">homayoon.alimohammadi@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/metallb-rocks/commit/2a7b77a2f37f0e718360ab48b3ae05b96e7d0582"
-               },
-               {
-                  "sha": "9aef01d4f1fa2d16050fcedde5d8e57eb92f825e",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1753698177,
-                  "message": "<p>build: pin rockcraft revision for amd (<a target=\"_blank\" href=\"https://github.com/canonical/metallb-rocks/pull/14\">#14</a>)</p>\n\n<p>Pins rockcraft revision to FIPS rockcraft build including pro-sources</p>\n",
-                  "url": "https://github.com/canonical/metallb-rocks/commit/9aef01d4f1fa2d16050fcedde5d8e57eb92f825e"
                }
             ],
             "ciActions": [],
@@ -14776,6 +14776,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "ab9f488d5706f83c8ee4958b271f93a6d35ca437",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1762787596,
+                  "message": "<p>fix: Set required build flags (<a target=\"_blank\" href=\"https://github.com/canonical/metrics-server-rock/pull/15\">#15</a>)</p>\n\n<p>Otherwise, the binary breaks with on a FIPS machine:</p>\n\n<pre><code>panic: EVP_KDF_derive\nopenssl error(s):\nerror:1C800069:Provider routines::invalid key length\n../providers/implementations/kdfs/hkdf.c:163\n</code></pre>\n",
+                  "url": "https://github.com/canonical/metrics-server-rock/commit/ab9f488d5706f83c8ee4958b271f93a6d35ca437"
+               },
+               {
                   "sha": "b76e24e1be39cad9af4305ce32dbd969fe74f374",
                   "author": "Mateo Florido",
                   "timestamp": 1761791897,
@@ -14788,13 +14795,6 @@
                   "timestamp": 1761781972,
                   "message": "<p>chore: Modify metrics-server build command</p>\n",
                   "url": "https://github.com/canonical/metrics-server-rock/commit/4b367a952327d729bb9eec384cb82827cc75cccd"
-               },
-               {
-                  "sha": "977afe9a0d554d83c5385b91d50f518bfe190533",
-                  "author": "Mateo Florido",
-                  "timestamp": 1761764455,
-                  "message": "<p>chore: Use 1.22-fips toolchain</p>\n",
-                  "url": "https://github.com/canonical/metrics-server-rock/commit/977afe9a0d554d83c5385b91d50f518bfe190533"
                }
             ],
             "ciActions": [],
