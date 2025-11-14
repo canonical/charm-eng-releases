@@ -10482,7 +10482,7 @@
          },
          {
             "name": "notary-k8s-operator",
-            "newCommits": 34,
+            "newCommits": 35,
             "url": "https://github.com/canonical/notary-k8s-operator",
             "releases": [
                {
@@ -20439,7 +20439,7 @@
          },
          {
             "name": "github-runner-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/github-runner-operator",
             "releases": [
                {
@@ -23693,7 +23693,7 @@
          },
          {
             "name": "charm-nrpe",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/charm-nrpe",
             "releases": [
                {
@@ -23771,6 +23771,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c29bee7dd0309886c2ff0d80d51c69c66f4c17fb",
+                  "author": "soleng-terraform[bot]",
+                  "timestamp": 1763099590,
+                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/smartctl-exporter-snap/pull/52\">#52</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/smartctl-exporter-snap/commit/c29bee7dd0309886c2ff0d80d51c69c66f4c17fb"
+               },
+               {
                   "sha": "7085a2bfad79d0334497be257834d7eb7d156d61",
                   "author": "soleng-terraform[bot]",
                   "timestamp": 1762828452,
@@ -23783,13 +23790,6 @@
                   "timestamp": 1757340185,
                   "message": "<p>update .github/ISSUE_TEMPLATE/bug_report.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/smartctl-exporter-snap/pull/49\">#49</a>)</p>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/smartctl-exporter-snap/commit/22971a1d5ae7bce0d2dbc08122e64d2648970c8c"
-               },
-               {
-                  "sha": "04fb63f42e3422285fdde8bcec6fd2278fcf7382",
-                  "author": "Gabriel Cocenza",
-                  "timestamp": 1756815117,
-                  "message": "<p>Add missing interfaces (<a target=\"_blank\" href=\"https://github.com/canonical/smartctl-exporter-snap/pull/48\">#48</a>)</p>\n\n<ul>\n<li>Add missing interfaces</li>\n</ul>\n\n<p>Using the snappy-debug tool to check why metrics from megaraid\nare not being collected properly, the tool showed that the snap\nneeds hardware-observe and network-observe. However, even after\nadding those interfaces the pidfd_open syscall is not allowed.\nSecurity Engineering said that there is no interface allowing\nthe pidfd_open syscall ywt. They will either need to add it\nto a interface if it makes sense or create a support interface</p>\n\n<ul>\n<li>- add manual connection for func tests</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/smartctl-exporter-snap/commit/04fb63f42e3422285fdde8bcec6fd2278fcf7382"
                }
             ],
             "ciActions": [],
@@ -23966,6 +23966,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "42f32e933bcf512f17001180dcdba0f75a027ad3",
+                  "author": "soleng-terraform[bot]",
+                  "timestamp": 1763099291,
+                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/dcgm-snap/pull/77\">#77</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/dcgm-snap/commit/42f32e933bcf512f17001180dcdba0f75a027ad3"
+               },
+               {
                   "sha": "86abcca4ac7da76d1bc61ad36fbfd6ef2e3920e3",
                   "author": "soleng-terraform[bot]",
                   "timestamp": 1762936167,
@@ -23978,13 +23985,6 @@
                   "timestamp": 1762316389,
                   "message": "<p>feat: snap config validation (<a target=\"_blank\" href=\"https://github.com/canonical/dcgm-snap/pull/72\">#72</a>)</p>\n\n<ul>\n<li><p>feat: config validation</p></li>\n\n<li><p>test: update config testing</p></li>\n\n<li><p>chore: fallback to default if metrics file not valid</p></li>\n\n<li><p>chore: validate bind for the exporter</p></li>\n\n<li><p>chore: support ipv6 for <code>dcgm-exporter-address</code></p></li>\n\n<li><p>chore: use modern bash syntax in <code>configure</code> script</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/dcgm-snap/commit/ee2981903c06c55b1f413d84c152f4d21215e23c"
-               },
-               {
-                  "sha": "0836bc25ef5f19436209cf4415e5be8428342f79",
-                  "author": "Gabriel Cocenza",
-                  "timestamp": 1758888396,
-                  "message": "<p>Separate the snap by cuda version on v4 (<a target=\"_blank\" href=\"https://github.com/canonical/dcgm-snap/pull/67\">#67</a>)</p>\n\n<ul>\n<li><p>Change to use v4</p></li>\n\n<li><p>remove dcgmproftester10</p></li>\n\n<li><p>[POC] Separate the snap by cuda version on v4</p></li>\n</ul>\n\n<p>snapcraft.yaml.in acts like a template and the right values can\nbe added by running:</p>\n\n<p>CUDA_VERSION=13 envsubst &lsquo;$CUDA_VERSION&rsquo;  &lt; snap/snapcraft.yaml.in &gt; snap/snapcraft.yaml</p>\n\n<p>With this kind of approach it&rsquo;s possible to dinamically generate\nthe snap and dependencies to be build</p>\n\n<ul>\n<li>\n<ul>\n<li>build multiple snaps based on cuda version</li>\n</ul></li>\n\n<li>\n<ul>\n<li>use debian file for dcgm-exporter</li>\n</ul></li>\n\n<li><p>update documentation</p></li>\n\n<li>\n<ul>\n<li>change release process</li>\n</ul></li>\n\n<li>\n<ul>\n<li>change promote workflow</li>\n</ul></li>\n\n<li>\n<ul>\n<li>add comment about new argument</li>\n</ul></li>\n\n<li><p>fix doc indententation</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/dcgm-snap/commit/0836bc25ef5f19436209cf4415e5be8428342f79"
                }
             ],
             "ciActions": [],
@@ -24018,6 +24018,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4ef06ad25c6ce2cf7bdc4ed21742bc1e1e8cd330",
+                  "author": "soleng-terraform[bot]",
+                  "timestamp": 1763100064,
+                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/derper-snap/pull/36\">#36</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/derper-snap/commit/4ef06ad25c6ce2cf7bdc4ed21742bc1e1e8cd330"
+               },
+               {
                   "sha": "06637ddbe56aef4569f3b3d6adb25487d3018fa8",
                   "author": "soleng-terraform[bot]",
                   "timestamp": 1762828840,
@@ -24030,13 +24037,6 @@
                   "timestamp": 1757335445,
                   "message": "<p>update .github/ISSUE_TEMPLATE/bug_report.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/derper-snap/pull/33\">#33</a>)</p>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/derper-snap/commit/b32adddb89cd47cd929f6e6c0537eaefd75965d0"
-               },
-               {
-                  "sha": "12efbe24d013bad21a0f0a80cb4cf763c7b44f46",
-                  "author": "soleng-terraform[bot]",
-                  "timestamp": 1749820058,
-                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/derper-snap/pull/32\">#32</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/derper-snap/commit/12efbe24d013bad21a0f0a80cb4cf763c7b44f46"
                }
             ],
             "ciActions": [],
@@ -24051,6 +24051,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "cb3555a91b78fa69cfeabcbfa768a0f662e6ad52",
+                  "author": "soleng-terraform[bot]",
+                  "timestamp": 1763099724,
+                  "message": "<p>Update centrally managed files (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-openstack-exporter-snap/pull/41\">#41</a>)</p>\n\n<ul>\n<li><p>update .github/workflows/release.yaml</p></li>\n\n<li><p>update .github/workflows/promote.yaml</p></li>\n\n<li><p>update .github/workflows/check.yaml</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/charmed-openstack-exporter-snap/commit/cb3555a91b78fa69cfeabcbfa768a0f662e6ad52"
+               },
+               {
                   "sha": "63786b187ccd5db021b991b501b0298646656c9f",
                   "author": "soleng-terraform[bot]",
                   "timestamp": 1762828573,
@@ -24063,13 +24070,6 @@
                   "timestamp": 1762316395,
                   "message": "<p>chore: pin upstream to v1.7.0-39-g20f5bdd (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-openstack-exporter-snap/pull/39\">#39</a>)</p>\n",
                   "url": "https://github.com/canonical/charmed-openstack-exporter-snap/commit/7762184fbb2b195eb10499029350ef681eb0794d"
-               },
-               {
-                  "sha": "771ff29bdfe2ec3f472905f098808b1a57286923",
-                  "author": "soleng-terraform[bot]",
-                  "timestamp": 1757311941,
-                  "message": "<p>update .github/ISSUE_TEMPLATE/bug_report.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-openstack-exporter-snap/pull/35\">#35</a>)</p>\n\n<p>Co-authored-by: soleng-terraform[bot] <168111096+soleng-terraform[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/charmed-openstack-exporter-snap/commit/771ff29bdfe2ec3f472905f098808b1a57286923"
                }
             ],
             "ciActions": [],
@@ -24156,7 +24156,7 @@
          },
          {
             "name": "charmed-openstack-upgrader",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/charmed-openstack-upgrader",
             "releases": [
                {
@@ -24195,7 +24195,7 @@
          },
          {
             "name": "charm-local-users",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/charm-local-users",
             "releases": [
                {
@@ -24234,7 +24234,7 @@
          },
          {
             "name": "charm-advanced-routing",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/charm-advanced-routing",
             "releases": [
                {
@@ -24273,7 +24273,7 @@
          },
          {
             "name": "charm-userdir-ldap",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/charm-userdir-ldap",
             "releases": [
                {
@@ -24351,7 +24351,7 @@
          },
          {
             "name": "headscale-snap",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/headscale-snap",
             "releases": [
                {
@@ -24372,7 +24372,7 @@
          },
          {
             "name": "hardware-observer-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/hardware-observer-operator",
             "releases": [
                {
@@ -24858,7 +24858,7 @@
          },
          {
             "name": "tailscale-snap",
-            "newCommits": 3,
+            "newCommits": 4,
             "url": "https://github.com/canonical/tailscale-snap",
             "releases": [
                {
@@ -24879,7 +24879,7 @@
          },
          {
             "name": "openstack-exporter-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/openstack-exporter-operator",
             "releases": [
                {
@@ -24957,7 +24957,7 @@
          },
          {
             "name": "charm-juju-backup-all",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/charm-juju-backup-all",
             "releases": [
                {
@@ -24996,7 +24996,7 @@
          },
          {
             "name": "prometheus-juju-backup-all-exporter",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/prometheus-juju-backup-all-exporter",
             "releases": [
                {
