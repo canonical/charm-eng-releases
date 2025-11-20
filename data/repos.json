@@ -14246,6 +14246,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "76ad3a187e76b4189bfd5455d246b6e430da0881",
+                  "author": "Omar Abou Selo",
+                  "timestamp": 1763617115,
+                  "message": "<p>docs: review and restructure ports and services page (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2035\">#2035</a>)</p>\n\n<ul>\n<li><p>docs: review and restructure ports and services page</p></li>\n\n<li><p>Fix markdownlint issue</p></li>\n\n<li><p>Fix unnecessary capitalization</p></li>\n\n<li><p>Update docs/canonicalk8s/snap/reference/ports-and-services.md</p></li>\n</ul>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n\n<ul>\n<li>Update docs/canonicalk8s/snap/reference/ports-and-services.md</li>\n</ul>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n\n<ul>\n<li>Update docs/canonicalk8s/snap/reference/ports-and-services.md</li>\n</ul>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n\n<ul>\n<li>Update docs/canonicalk8s/snap/reference/ports-and-services.md</li>\n</ul>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n\n<ul>\n<li>Update docs/canonicalk8s/snap/reference/ports-and-services.md</li>\n</ul>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n\n<ul>\n<li>Remove unnecessary explanation</li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Niamh Hennigan <a href=\"mailto:niamh.hennigan@canonical.com\">niamh.hennigan@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/76ad3a187e76b4189bfd5455d246b6e430da0881"
+               },
+               {
                   "sha": "6f1adf57f26719573e92cf5074ac7d89d4e97203",
                   "author": "Benjamin Schimke",
                   "timestamp": 1763567548,
@@ -14258,13 +14265,6 @@
                   "timestamp": 1763562142,
                   "message": "<p>fix: explicitly set MTU in jumbo profile (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2039\">#2039</a>)</p>\n\n<p>In k8s-dqlite, the snap integration tests fail on test_jumbo in test_networking: <a href=\"https://github.com/canonical/k8s-dqlite/actions/runs/19368302433/job/55628973477?pr=338\">https://github.com/canonical/k8s-dqlite/actions/runs/19368302433/job/55628973477?pr=338</a></p>\n\n<p>The error logs indicate that the worker node fails to join the cluster, and I believe the reason for this is a mismatch in configurations for the MTU between the bridge (which is correctly set to 9000) and the containers, which are left as default (probably 1500). This causes packet drops that prevent cluster joining.</p>\n\n<p>This was fixed in k8s-dqlite by modifying the testing harness in that repo to include the necessary LXD bridges, but in general we shouldn&rsquo;t be assuming the guest OS happens to be correctly configured like that. Consequently, this commit adds a network config specification to explicitly tell the guest that it needs an MTU of 9000 when running this test instead of hoping that the container OS listens to the hint provided by the host.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/b07cc479223419a0cb47c0311636ccc6b750f354"
-               },
-               {
-                  "sha": "7c8dac43ac1429ce7ed83166e5149cfbc3156e8f",
-                  "author": "Reza Alipour",
-                  "timestamp": 1763497609,
-                  "message": "<p>chore: update cilium image tag (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2030\">#2030</a>)</p>\n\n<p>Signed-off-by: rapour <a href=\"mailto:reza.abbasalipour@canonical.com\">reza.abbasalipour@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/7c8dac43ac1429ce7ed83166e5149cfbc3156e8f"
                }
             ],
             "ciActions": [
@@ -19967,7 +19967,7 @@
          },
          {
             "name": "dns-operators",
-            "newCommits": 202,
+            "newCommits": 203,
             "url": "https://github.com/canonical/dns-operators",
             "releases": [
                {
