@@ -1673,7 +1673,7 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 19,
+            "newCommits": 22,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
                {
@@ -8157,6 +8157,120 @@
       "team": "Identity",
       "repos": [
          {
+            "name": "hydra-operator",
+            "newCommits": 12,
+            "url": "https://github.com/canonical/hydra-operator",
+            "releases": [
+               {
+                  "id": 264397289,
+                  "version": "track/0.5-v1.0.0",
+                  "timestamp": 1763744295,
+                  "title": "track/0.5: v1.0.0",
+                  "body": "<h2>1.0.0 (2025-11-21)</h2>\n\n<h3>⚠ BREAKING CHANGES</h3>\n\n<ul>\n<li>drop public and admin ingresses, rewrite internal ingress to internal route</li>\n</ul>\n\n<h3>Features</h3>\n\n<ul>\n<li>add name to the create and update actions (<a href=\"https://github.com/canonical/hydra-operator/commit/38f3b333b4f90a6209342308220e7451078ec636\">38f3b33</a>)</li>\n<li>add terraform module (<a href=\"https://github.com/canonical/hydra-operator/commit/531ded2679ca38bc3c18755feb21beb6d0003e59\">531ded2</a>)</li>\n<li>add the terraform module for the charm (<a href=\"https://github.com/canonical/hydra-operator/commit/d69a80662ae069732c3198b06d91b8cd037d94af\">d69a806</a>)</li>\n<li>expose client-uri via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/09e92b1e3ce5c4bd54c68fde06a421ec215f7475\">09e92b1</a>)</li>\n<li>expose contacts via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/8f007cc78d1a616590eeb28dd35798270ebdd504\">8f007cc</a>)</li>\n<li>introduce public-route relation (<a href=\"https://github.com/canonical/hydra-operator/commit/1c1f1bc8b06857b2ba12bc5ce0baa63cfc6cf060\">1c1f1bc</a>)</li>\n<li>List all details except secrets in <code>list-oauth-clients</code> output (<a href=\"https://github.com/canonical/hydra-operator/commit/e5fbd2a5127a844038657b6a53d04757709d0d28\">e5fbd2a</a>)</li>\n<li>List all details except secrets in <code>list-oauth-clients</code> output (<a href=\"https://github.com/canonical/hydra-operator/commit/3b105392f0338c044a34ac547c64eb75575e15c9\">3b10539</a>)</li>\n<li>update juju_application resource name (<a href=\"https://github.com/canonical/hydra-operator/commit/70a330f6b877830bf1b993c80862e98dfb243f5b\">70a330f</a>)</li>\n<li>upgrade to v2 tracing (<a href=\"https://github.com/canonical/hydra-operator/commit/45d570380eb3d3f14031049443b0fb3766f840f0\">45d5703</a>)</li>\n<li>use tracing v2 (<a href=\"https://github.com/canonical/hydra-operator/commit/f2a0250d25fcc5d3c913e97e512555b9ed035703\">f2a0250</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add collect_status handler (<a href=\"https://github.com/canonical/hydra-operator/commit/e76ba94956625ff15d8a6168d75b6cd87dfdbe9a\">e76ba94</a>)</li>\n<li>add config to prepopulate the hydra keys (<a href=\"https://github.com/canonical/hydra-operator/commit/3a9a45976e2a8f15c712292a0a4814f881e265f8\">3a9a459</a>)</li>\n<li>add health check handlers (<a href=\"https://github.com/canonical/hydra-operator/commit/ce8c7454d38821e4c456573c9c2df7188099f3c6\">ce8c745</a>)</li>\n<li>add pod constraints (<a href=\"https://github.com/canonical/hydra-operator/commit/f0b011c9243774a4c2baf9805e7fe0a727fd85a7\">f0b011c</a>)</li>\n<li>add reconcile-oauth-clients action (<a href=\"https://github.com/canonical/hydra-operator/commit/0789efc545516732c62c5ae4ae5f8ae685ba78b1\">0789efc</a>)</li>\n<li>add secret management actions (<a href=\"https://github.com/canonical/hydra-operator/commit/0449395efd3b7f44a3e630f0c44e8c68fb800ad5\">0449395</a>)</li>\n<li>add serializer for metadata (<a href=\"https://github.com/canonical/hydra-operator/commit/f10cf758b62ab5914cfb82e51349f5bb58c730d1\">f10cf75</a>)</li>\n<li>add token hook integration (<a href=\"https://github.com/canonical/hydra-operator/commit/8807ab42313781fe72d5e5e4ab602ed06e209a3c\">8807ab4</a>)</li>\n<li>address CVEs (<a href=\"https://github.com/canonical/hydra-operator/commit/6075941d6581ae42b9251ef44bf1097fc36960b7\">6075941</a>), closes <a href=\"https://github.com/canonical/hydra-operator/issues/297\"><a target=\"_blank\" href=\"https://github.com/canonical/hydra-operator/pull/297\">#297</a></a></li>\n<li>block charm if not integrated with ui (<a href=\"https://github.com/canonical/hydra-operator/commit/f3726e44b4a47cb32bb8c09eb3b0f85d10ebe7d3\">f3726e4</a>)</li>\n<li>block the charm when public ingress is not secured in non-dev mode (<a href=\"https://github.com/canonical/hydra-operator/commit/d2df5c1ec0dd358caa05238d0fb948c1f975a0ba\">d2df5c1</a>)</li>\n<li>do not always set maintenance status (<a href=\"https://github.com/canonical/hydra-operator/commit/de9678c84b7c796340eb1be39ab96a79f030e061\">de9678c</a>)</li>\n<li>do not remove client on relation_broken (<a href=\"https://github.com/canonical/hydra-operator/commit/4f16be0e45e61adcae5268b93a3473360aee468f\">4f16be0</a>), closes <a href=\"https://github.com/canonical/hydra-operator/issues/268\"><a target=\"_blank\" href=\"https://github.com/canonical/hydra-operator/pull/268\">#268</a></a></li>\n<li>don&rsquo;t restart service if config didn&rsquo;t change (<a href=\"https://github.com/canonical/hydra-operator/commit/3d7f6b3de94a1473523e3f62ac4a110b1668dda1\">3d7f6b3</a>)</li>\n<li>drop public and admin ingresses, rewrite internal ingress to internal route (<a href=\"https://github.com/canonical/hydra-operator/commit/d2b56d52e0508b17100445797ec93e1a0268aa29\">d2b56d5</a>)</li>\n<li>fix constraint (<a href=\"https://github.com/canonical/hydra-operator/commit/6a74fed3fb49e791d0270d762502d8f9c31267f6\">6a74fed</a>)</li>\n<li>fix tests (<a href=\"https://github.com/canonical/hydra-operator/commit/db5c0ff0ca6db95789890f9a7dd51479fd8fb8a3\">db5c0ff</a>)</li>\n<li>fix tests (<a href=\"https://github.com/canonical/hydra-operator/commit/0d6456f27a60eb36cdeb8c5d5674042917d0a6de\">0d6456f</a>)</li>\n<li>fix the internal ingress configuration (<a href=\"https://github.com/canonical/hydra-operator/commit/a90baaba04001b76a63b060985199b84224ab54a\">a90baab</a>)</li>\n<li>fix the issue that disregards the dev mode when dev config is set to true (<a href=\"https://github.com/canonical/hydra-operator/commit/4a0ee32026212bc229539dcc49e64455f59ce2d1\">4a0ee32</a>)</li>\n<li>fix the lint (<a href=\"https://github.com/canonical/hydra-operator/commit/e0e34a964565d1ee6441e50e457eed5d613c0b1b\">e0e34a9</a>)</li>\n<li>fix the lint ci and traefik charm in integration test (<a href=\"https://github.com/canonical/hydra-operator/commit/7f21c54e1c08e629ad438bec6a685f345c8b8c0b\">7f21c54</a>)</li>\n<li>go to WaitingStatus if ingress not ready (<a href=\"https://github.com/canonical/hydra-operator/commit/2ef7bbc6de10ede855418d2e6204c9e78f64aedf\">2ef7bbc</a>), closes <a href=\"https://github.com/canonical/hydra-operator/issues/145\"><a target=\"_blank\" href=\"https://github.com/canonical/hydra-operator/pull/145\">#145</a></a></li>\n<li>handle event being emitted multiple times (<a href=\"https://github.com/canonical/hydra-operator/commit/e5b9bcf8ff538cf7a0d62eab76036121811f41f0\">e5b9bcf</a>)</li>\n<li>improve route integration handling logic (<a href=\"https://github.com/canonical/hydra-operator/commit/28392b5778bf380f911eadc66ffbdc7452489ef1\">28392b5</a>)</li>\n<li>mark ui relation as mandatory (<a href=\"https://github.com/canonical/hydra-operator/commit/b3b82bd0d9c3bbca87294b60b864a06b2e1b81a8\">b3b82bd</a>)</li>\n<li>move to loki v1 for log forwarder (<a href=\"https://github.com/canonical/hydra-operator/commit/64ebad48b75498ef06c6bf4bf5def62fab4b3b3c\">64ebad4</a>)</li>\n<li>move to use log forwarder across the board (<a href=\"https://github.com/canonical/hydra-operator/commit/b2d7d2574c4cbc5e03a15468207735c12ab577fb\">b2d7d25</a>)</li>\n<li>provide optional flag in charmcraft.yaml (<a href=\"https://github.com/canonical/hydra-operator/commit/358e91f7cab8f8a033e217662d1abe0408854e08\">358e91f</a>)</li>\n<li>remove the storedstate to fix the missing config file issue when pod gets recreated (<a href=\"https://github.com/canonical/hydra-operator/commit/2c492ceb9020ab9642037f411988602d2b549496\">2c492ce</a>)</li>\n<li>remove the storedstate to fix the missing config file issue when the pod gets recreated (<a href=\"https://github.com/canonical/hydra-operator/commit/ba710b85751466055eb6012a7bde276dfc977364\">ba710b8</a>)</li>\n<li>stop service when database is gone (<a href=\"https://github.com/canonical/hydra-operator/commit/8d3f400238857d79e6eb7d3221cf9c845a7a1738\">8d3f400</a>)</li>\n<li>switch to use -route relations in the tf module (<a href=\"https://github.com/canonical/hydra-operator/commit/5856b846f28df58a4a8d7153940629ab872ab1dc\">5856b84</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/81df22f80796e26fa7cc292b78fe47fbaee6792a\">81df22f</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/dd8d12f6a647ad7faf6e9f7565e4f7b99b90f9e3\">dd8d12f</a>)</li>\n<li>update charm libs (<a href=\"https://github.com/canonical/hydra-operator/commit/85f17a0a93a1b80679e6afbfa23fe983999916b9\">85f17a0</a>)</li>\n<li>update to juju 0.20 and switch to use endpoints (<a href=\"https://github.com/canonical/hydra-operator/commit/7bf6da837b46486ebec50b25457ae69b1a253a23\">7bf6da8</a>)</li>\n<li>update to use juju 0.20 (<a href=\"https://github.com/canonical/hydra-operator/commit/107cb5bed828617b88d7783c9637eaf6e31c1764\">107cb5b</a>)</li>\n<li>upgrade tf module to use 1.0.0 syntax (<a href=\"https://github.com/canonical/hydra-operator/commit/9e1acf26770d3f29fb865f702c0dc06c5da7c9f9\">9e1acf2</a>)</li>\n<li>use <code>oidc_error_url</code> (<a href=\"https://github.com/canonical/hydra-operator/commit/90efa62e02db63bc23fecf7cdcf8ba900e6fb4d2\">90efa62</a>)</li>\n<li>use oidc_error_url in config (<a href=\"https://github.com/canonical/hydra-operator/commit/fafa239d26ce0da057340e0aeae717d1e60f6499\">fafa239</a>)</li>\n<li>use owner and name for model ds (<a href=\"https://github.com/canonical/hydra-operator/commit/7c3a4036cbfa552242576ccd00a022aa84c24764\">7c3a403</a>)</li>\n<li>use proper charm name (<a href=\"https://github.com/canonical/hydra-operator/commit/7044ff3dd6e23a4034fab806b11691c5b098d7b3\">7044ff3</a>)</li>\n<li>use proper intergration name for internal route (<a href=\"https://github.com/canonical/hydra-operator/commit/68168de505c97fe9049b6a8bba3b2d7dda7cc78f\">68168de</a>)</li>\n<li>use storedstate to check if config changed (<a href=\"https://github.com/canonical/hydra-operator/commit/1e8d58e779be990025d1034b7247e6f5f8ddab13\">1e8d58e</a>)</li>\n<li>use terraform module in deployment (<a href=\"https://github.com/canonical/hydra-operator/commit/31ed04a0059b5c4862f3ce233daa2b999456e502\">31ed04a</a>)</li>\n<li>wait for login ui integration to be ready (<a href=\"https://github.com/canonical/hydra-operator/commit/763c8254875d722731bb0d99e091d67b5ce3ac5b\">763c825</a>)</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/hydra-operator/releases/tag/track/0.5-v1.0.0",
+                  "compareUrl": "https://github.com/canonical/hydra-operator/compare/track/0.5-v1.0.0...main"
+               },
+               {
+                  "id": 263010602,
+                  "version": "v2.0.0",
+                  "timestamp": 1763393732,
+                  "title": "v2.0.0",
+                  "body": "<h2><a href=\"https://github.com/canonical/hydra-operator/compare/v1.2.0...v2.0.0\">2.0.0</a> (2025-11-17)</h2>\n\n<h3>⚠ BREAKING CHANGES</h3>\n\n<ul>\n<li>drop public and admin ingresses, rewrite internal ingress to internal route</li>\n</ul>\n\n<h3>Features</h3>\n\n<ul>\n<li>introduce public-route relation (<a href=\"https://github.com/canonical/hydra-operator/commit/1c1f1bc8b06857b2ba12bc5ce0baa63cfc6cf060\">1c1f1bc</a>)</li>\n<li>List all details except secrets in <code>list-oauth-clients</code> output (<a href=\"https://github.com/canonical/hydra-operator/commit/e5fbd2a5127a844038657b6a53d04757709d0d28\">e5fbd2a</a>)</li>\n<li>List all details except secrets in <code>list-oauth-clients</code> output (<a href=\"https://github.com/canonical/hydra-operator/commit/3b105392f0338c044a34ac547c64eb75575e15c9\">3b10539</a>)</li>\n<li>update juju_application resource name (<a href=\"https://github.com/canonical/hydra-operator/commit/70a330f6b877830bf1b993c80862e98dfb243f5b\">70a330f</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add collect_status handler (<a href=\"https://github.com/canonical/hydra-operator/commit/e76ba94956625ff15d8a6168d75b6cd87dfdbe9a\">e76ba94</a>)</li>\n<li>add config to prepopulate the hydra keys (<a href=\"https://github.com/canonical/hydra-operator/commit/3a9a45976e2a8f15c712292a0a4814f881e265f8\">3a9a459</a>)</li>\n<li>add health check handlers (<a href=\"https://github.com/canonical/hydra-operator/commit/ce8c7454d38821e4c456573c9c2df7188099f3c6\">ce8c745</a>)</li>\n<li>add secret management actions (<a href=\"https://github.com/canonical/hydra-operator/commit/0449395efd3b7f44a3e630f0c44e8c68fb800ad5\">0449395</a>)</li>\n<li>drop public and admin ingresses, rewrite internal ingress to internal route (<a href=\"https://github.com/canonical/hydra-operator/commit/d2b56d52e0508b17100445797ec93e1a0268aa29\">d2b56d5</a>)</li>\n<li>improve route integration handling logic (<a href=\"https://github.com/canonical/hydra-operator/commit/28392b5778bf380f911eadc66ffbdc7452489ef1\">28392b5</a>)</li>\n<li>remove the storedstate to fix the missing config file issue when pod gets recreated (<a href=\"https://github.com/canonical/hydra-operator/commit/2c492ceb9020ab9642037f411988602d2b549496\">2c492ce</a>)</li>\n<li>remove the storedstate to fix the missing config file issue when the pod gets recreated (<a href=\"https://github.com/canonical/hydra-operator/commit/ba710b85751466055eb6012a7bde276dfc977364\">ba710b8</a>)</li>\n<li>stop service when database is gone (<a href=\"https://github.com/canonical/hydra-operator/commit/8d3f400238857d79e6eb7d3221cf9c845a7a1738\">8d3f400</a>)</li>\n<li>switch to use -route relations in the tf module (<a href=\"https://github.com/canonical/hydra-operator/commit/5856b846f28df58a4a8d7153940629ab872ab1dc\">5856b84</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/81df22f80796e26fa7cc292b78fe47fbaee6792a\">81df22f</a>)</li>\n<li>upgrade tf module to use 1.0.0 syntax (<a href=\"https://github.com/canonical/hydra-operator/commit/9e1acf26770d3f29fb865f702c0dc06c5da7c9f9\">9e1acf2</a>)</li>\n<li>use owner and name for model ds (<a href=\"https://github.com/canonical/hydra-operator/commit/7c3a4036cbfa552242576ccd00a022aa84c24764\">7c3a403</a>)</li>\n<li>use proper intergration name for internal route (<a href=\"https://github.com/canonical/hydra-operator/commit/68168de505c97fe9049b6a8bba3b2d7dda7cc78f\">68168de</a>)</li>\n<li>use terraform module in deployment (<a href=\"https://github.com/canonical/hydra-operator/commit/31ed04a0059b5c4862f3ce233daa2b999456e502\">31ed04a</a>)</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/hydra-operator/releases/tag/v2.0.0",
+                  "compareUrl": "https://github.com/canonical/hydra-operator/compare/v2.0.0...main"
+               },
+               {
+                  "id": 245504252,
+                  "version": "track/0.3-v1.2.0",
+                  "timestamp": 1757333456,
+                  "title": "track/0.3: v1.2.0",
+                  "body": "<h2><a href=\"https://github.com/canonical/hydra-operator/compare/track/0.3-v1.1.0...track/0.3-v1.2.0\">1.2.0</a> (2025-09-08)</h2>\n\n<h3>Features</h3>\n\n<ul>\n<li>add name to the create and update actions (<a href=\"https://github.com/canonical/hydra-operator/commit/10a19240d61d6b73b8b71600f1467031451d67fc\">10a1924</a>)</li>\n<li>expose client-uri via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/2ee708689bf17a7de84b0ec1dd97e892b59da31b\">2ee7086</a>)</li>\n<li>expose contacts via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/a76ce78e886485e28bee3f12e2c88d06953ebb43\">a76ce78</a>)</li>\n<li>update juju_application resource name (<a href=\"https://github.com/canonical/hydra-operator/commit/c42460640405757b7a78e4eb818ad525f231248f\">c424606</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add pod constraints (<a href=\"https://github.com/canonical/hydra-operator/commit/7a49308b6682b50e1af58555e3769705f84fb20c\">7a49308</a>)</li>\n<li>add serializer for metadata (<a href=\"https://github.com/canonical/hydra-operator/commit/6273a30abbdedd297faff3d2d998ecd8d4608a67\">6273a30</a>)</li>\n<li>add token hook integration (<a href=\"https://github.com/canonical/hydra-operator/commit/ca9f1569160e325a943ec94b7e34ce354410606f\">ca9f156</a>)</li>\n<li>block charm if not integrated with ui (<a href=\"https://github.com/canonical/hydra-operator/commit/ed46b76f867d37ed906b5a40516f7fae0c23ce0a\">ed46b76</a>)</li>\n<li>block the charm when public ingress is not secured in non-dev mode (<a href=\"https://github.com/canonical/hydra-operator/commit/526e5b51ea1c7d99c8c8212c90543305a1c9654d\">526e5b5</a>)</li>\n<li>do not always set maintenance status (<a href=\"https://github.com/canonical/hydra-operator/commit/b0acbd686fdb7ffda3a3697199fff3295442fbe6\">b0acbd6</a>)</li>\n<li>don&rsquo;t restart service if config didn&rsquo;t change (<a href=\"https://github.com/canonical/hydra-operator/commit/76bed8ab1d5a9691c0a8d5d14321299d2fffdd4d\">76bed8a</a>)</li>\n<li>fix constraint (<a href=\"https://github.com/canonical/hydra-operator/commit/da1248b697846deb445f686a1e1c81fdb5c58ea1\">da1248b</a>)</li>\n<li>fix tests (<a href=\"https://github.com/canonical/hydra-operator/commit/b915a48c534020272904460958f491fa179fa5ae\">b915a48</a>)</li>\n<li>fix tests (<a href=\"https://github.com/canonical/hydra-operator/commit/627b58fb7d7ed4e25c216fdeae974ea80a6ba4d3\">627b58f</a>)</li>\n<li>fix the issue that disregards the dev mode when dev config is set to true (<a href=\"https://github.com/canonical/hydra-operator/commit/e859590d49f6eb88e1c84a758512dfa60bd5ee8e\">e859590</a>)</li>\n<li>mark ui relation as mandatory (<a href=\"https://github.com/canonical/hydra-operator/commit/a6ed9c27b5c4fac15884dc05199a0e840d6f7c22\">a6ed9c2</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/9e487b134daae5f81f802e54e0254214d83100ac\">9e487b1</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/3ca2e5e3fd3d981f4f4fc3264d52643c4b8076a7\">3ca2e5e</a>)</li>\n<li>update charm libs (<a href=\"https://github.com/canonical/hydra-operator/commit/8070840d0a7b6a589ba37fc9341c92365530d10e\">8070840</a>)</li>\n<li>update to use juju 0.20 (<a href=\"https://github.com/canonical/hydra-operator/commit/5a20fbb67aa8e5c0a017904c4dd20debf0182234\">5a20fbb</a>)</li>\n<li>use proper charm name (<a href=\"https://github.com/canonical/hydra-operator/commit/512e7e444e85cb6c1b94ff037504b116bb77082b\">512e7e4</a>)</li>\n<li>use storedstate to check if config changed (<a href=\"https://github.com/canonical/hydra-operator/commit/ab26d3f92ab9744919ebcc71704d9f3248678987\">ab26d3f</a>)</li>\n<li>use terraform module in deployment (<a href=\"https://github.com/canonical/hydra-operator/commit/071391201efea257381def6306d51f89b5dab2df\">0713912</a>)</li>\n<li>wait for login ui integration to be ready (<a href=\"https://github.com/canonical/hydra-operator/commit/6ad4ff596fce0427ec1d3002bd05ac645cf5923c\">6ad4ff5</a>)</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/hydra-operator/releases/tag/track/0.3-v1.2.0",
+                  "compareUrl": "https://github.com/canonical/hydra-operator/compare/track/0.3-v1.2.0...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/hydra-operator/actions/workflows/on_push.yaml"
+            ],
+            "charm": {
+               "name": "hydra",
+               "url": "https://charmhub.io/hydra",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "stable",
+                     "revision": 362,
+                     "timestamp": 1737412043,
+                     "base": ""
+                  },
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 395,
+                     "timestamp": 1763396141,
+                     "base": ""
+                  },
+                  {
+                     "track": "istio",
+                     "channel": "edge",
+                     "revision": 329,
+                     "timestamp": 1732893160,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.5",
+                     "channel": "edge",
+                     "revision": 395,
+                     "timestamp": 1763465204,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.3",
+                     "channel": "edge",
+                     "revision": 394,
+                     "timestamp": 1757358264,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "stable",
+                     "revision": 285,
+                     "timestamp": 1719402018,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.2",
+                     "channel": "edge",
+                     "revision": 285,
+                     "timestamp": 1715244270,
+                     "base": ""
+                  },
+                  {
+                     "track": "0.1",
+                     "channel": "edge",
+                     "revision": 270,
+                     "timestamp": 1700823180,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "edge"
+               ],
+               "tracks": [
+                  "latest",
+                  "istio",
+                  "0.5",
+                  "0.3",
+                  "0.2",
+                  "0.1"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "self-signed-certificates-operator",
             "newCommits": 194,
             "url": "https://github.com/canonical/self-signed-certificates-operator",
@@ -8864,120 +8978,6 @@
             "snap": null
          },
          {
-            "name": "hydra-operator",
-            "newCommits": 10,
-            "url": "https://github.com/canonical/hydra-operator",
-            "releases": [
-               {
-                  "id": 263010602,
-                  "version": "v2.0.0",
-                  "timestamp": 1763393732,
-                  "title": "v2.0.0",
-                  "body": "<h2><a href=\"https://github.com/canonical/hydra-operator/compare/v1.2.0...v2.0.0\">2.0.0</a> (2025-11-17)</h2>\n\n<h3>⚠ BREAKING CHANGES</h3>\n\n<ul>\n<li>drop public and admin ingresses, rewrite internal ingress to internal route</li>\n</ul>\n\n<h3>Features</h3>\n\n<ul>\n<li>introduce public-route relation (<a href=\"https://github.com/canonical/hydra-operator/commit/1c1f1bc8b06857b2ba12bc5ce0baa63cfc6cf060\">1c1f1bc</a>)</li>\n<li>List all details except secrets in <code>list-oauth-clients</code> output (<a href=\"https://github.com/canonical/hydra-operator/commit/e5fbd2a5127a844038657b6a53d04757709d0d28\">e5fbd2a</a>)</li>\n<li>List all details except secrets in <code>list-oauth-clients</code> output (<a href=\"https://github.com/canonical/hydra-operator/commit/3b105392f0338c044a34ac547c64eb75575e15c9\">3b10539</a>)</li>\n<li>update juju_application resource name (<a href=\"https://github.com/canonical/hydra-operator/commit/70a330f6b877830bf1b993c80862e98dfb243f5b\">70a330f</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add collect_status handler (<a href=\"https://github.com/canonical/hydra-operator/commit/e76ba94956625ff15d8a6168d75b6cd87dfdbe9a\">e76ba94</a>)</li>\n<li>add config to prepopulate the hydra keys (<a href=\"https://github.com/canonical/hydra-operator/commit/3a9a45976e2a8f15c712292a0a4814f881e265f8\">3a9a459</a>)</li>\n<li>add health check handlers (<a href=\"https://github.com/canonical/hydra-operator/commit/ce8c7454d38821e4c456573c9c2df7188099f3c6\">ce8c745</a>)</li>\n<li>add secret management actions (<a href=\"https://github.com/canonical/hydra-operator/commit/0449395efd3b7f44a3e630f0c44e8c68fb800ad5\">0449395</a>)</li>\n<li>drop public and admin ingresses, rewrite internal ingress to internal route (<a href=\"https://github.com/canonical/hydra-operator/commit/d2b56d52e0508b17100445797ec93e1a0268aa29\">d2b56d5</a>)</li>\n<li>improve route integration handling logic (<a href=\"https://github.com/canonical/hydra-operator/commit/28392b5778bf380f911eadc66ffbdc7452489ef1\">28392b5</a>)</li>\n<li>remove the storedstate to fix the missing config file issue when pod gets recreated (<a href=\"https://github.com/canonical/hydra-operator/commit/2c492ceb9020ab9642037f411988602d2b549496\">2c492ce</a>)</li>\n<li>remove the storedstate to fix the missing config file issue when the pod gets recreated (<a href=\"https://github.com/canonical/hydra-operator/commit/ba710b85751466055eb6012a7bde276dfc977364\">ba710b8</a>)</li>\n<li>stop service when database is gone (<a href=\"https://github.com/canonical/hydra-operator/commit/8d3f400238857d79e6eb7d3221cf9c845a7a1738\">8d3f400</a>)</li>\n<li>switch to use -route relations in the tf module (<a href=\"https://github.com/canonical/hydra-operator/commit/5856b846f28df58a4a8d7153940629ab872ab1dc\">5856b84</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/81df22f80796e26fa7cc292b78fe47fbaee6792a\">81df22f</a>)</li>\n<li>upgrade tf module to use 1.0.0 syntax (<a href=\"https://github.com/canonical/hydra-operator/commit/9e1acf26770d3f29fb865f702c0dc06c5da7c9f9\">9e1acf2</a>)</li>\n<li>use owner and name for model ds (<a href=\"https://github.com/canonical/hydra-operator/commit/7c3a4036cbfa552242576ccd00a022aa84c24764\">7c3a403</a>)</li>\n<li>use proper intergration name for internal route (<a href=\"https://github.com/canonical/hydra-operator/commit/68168de505c97fe9049b6a8bba3b2d7dda7cc78f\">68168de</a>)</li>\n<li>use terraform module in deployment (<a href=\"https://github.com/canonical/hydra-operator/commit/31ed04a0059b5c4862f3ce233daa2b999456e502\">31ed04a</a>)</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/hydra-operator/releases/tag/v2.0.0",
-                  "compareUrl": "https://github.com/canonical/hydra-operator/compare/v2.0.0...main"
-               },
-               {
-                  "id": 245504252,
-                  "version": "track/0.3-v1.2.0",
-                  "timestamp": 1757333456,
-                  "title": "track/0.3: v1.2.0",
-                  "body": "<h2><a href=\"https://github.com/canonical/hydra-operator/compare/track/0.3-v1.1.0...track/0.3-v1.2.0\">1.2.0</a> (2025-09-08)</h2>\n\n<h3>Features</h3>\n\n<ul>\n<li>add name to the create and update actions (<a href=\"https://github.com/canonical/hydra-operator/commit/10a19240d61d6b73b8b71600f1467031451d67fc\">10a1924</a>)</li>\n<li>expose client-uri via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/2ee708689bf17a7de84b0ec1dd97e892b59da31b\">2ee7086</a>)</li>\n<li>expose contacts via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/a76ce78e886485e28bee3f12e2c88d06953ebb43\">a76ce78</a>)</li>\n<li>update juju_application resource name (<a href=\"https://github.com/canonical/hydra-operator/commit/c42460640405757b7a78e4eb818ad525f231248f\">c424606</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add pod constraints (<a href=\"https://github.com/canonical/hydra-operator/commit/7a49308b6682b50e1af58555e3769705f84fb20c\">7a49308</a>)</li>\n<li>add serializer for metadata (<a href=\"https://github.com/canonical/hydra-operator/commit/6273a30abbdedd297faff3d2d998ecd8d4608a67\">6273a30</a>)</li>\n<li>add token hook integration (<a href=\"https://github.com/canonical/hydra-operator/commit/ca9f1569160e325a943ec94b7e34ce354410606f\">ca9f156</a>)</li>\n<li>block charm if not integrated with ui (<a href=\"https://github.com/canonical/hydra-operator/commit/ed46b76f867d37ed906b5a40516f7fae0c23ce0a\">ed46b76</a>)</li>\n<li>block the charm when public ingress is not secured in non-dev mode (<a href=\"https://github.com/canonical/hydra-operator/commit/526e5b51ea1c7d99c8c8212c90543305a1c9654d\">526e5b5</a>)</li>\n<li>do not always set maintenance status (<a href=\"https://github.com/canonical/hydra-operator/commit/b0acbd686fdb7ffda3a3697199fff3295442fbe6\">b0acbd6</a>)</li>\n<li>don&rsquo;t restart service if config didn&rsquo;t change (<a href=\"https://github.com/canonical/hydra-operator/commit/76bed8ab1d5a9691c0a8d5d14321299d2fffdd4d\">76bed8a</a>)</li>\n<li>fix constraint (<a href=\"https://github.com/canonical/hydra-operator/commit/da1248b697846deb445f686a1e1c81fdb5c58ea1\">da1248b</a>)</li>\n<li>fix tests (<a href=\"https://github.com/canonical/hydra-operator/commit/b915a48c534020272904460958f491fa179fa5ae\">b915a48</a>)</li>\n<li>fix tests (<a href=\"https://github.com/canonical/hydra-operator/commit/627b58fb7d7ed4e25c216fdeae974ea80a6ba4d3\">627b58f</a>)</li>\n<li>fix the issue that disregards the dev mode when dev config is set to true (<a href=\"https://github.com/canonical/hydra-operator/commit/e859590d49f6eb88e1c84a758512dfa60bd5ee8e\">e859590</a>)</li>\n<li>mark ui relation as mandatory (<a href=\"https://github.com/canonical/hydra-operator/commit/a6ed9c27b5c4fac15884dc05199a0e840d6f7c22\">a6ed9c2</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/9e487b134daae5f81f802e54e0254214d83100ac\">9e487b1</a>)</li>\n<li>update charm dependent libs (<a href=\"https://github.com/canonical/hydra-operator/commit/3ca2e5e3fd3d981f4f4fc3264d52643c4b8076a7\">3ca2e5e</a>)</li>\n<li>update charm libs (<a href=\"https://github.com/canonical/hydra-operator/commit/8070840d0a7b6a589ba37fc9341c92365530d10e\">8070840</a>)</li>\n<li>update to use juju 0.20 (<a href=\"https://github.com/canonical/hydra-operator/commit/5a20fbb67aa8e5c0a017904c4dd20debf0182234\">5a20fbb</a>)</li>\n<li>use proper charm name (<a href=\"https://github.com/canonical/hydra-operator/commit/512e7e444e85cb6c1b94ff037504b116bb77082b\">512e7e4</a>)</li>\n<li>use storedstate to check if config changed (<a href=\"https://github.com/canonical/hydra-operator/commit/ab26d3f92ab9744919ebcc71704d9f3248678987\">ab26d3f</a>)</li>\n<li>use terraform module in deployment (<a href=\"https://github.com/canonical/hydra-operator/commit/071391201efea257381def6306d51f89b5dab2df\">0713912</a>)</li>\n<li>wait for login ui integration to be ready (<a href=\"https://github.com/canonical/hydra-operator/commit/6ad4ff596fce0427ec1d3002bd05ac645cf5923c\">6ad4ff5</a>)</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/hydra-operator/releases/tag/track/0.3-v1.2.0",
-                  "compareUrl": "https://github.com/canonical/hydra-operator/compare/track/0.3-v1.2.0...main"
-               },
-               {
-                  "id": 231122035,
-                  "version": "v1.2.0",
-                  "timestamp": 1752060019,
-                  "title": "v1.2.0",
-                  "body": "<h2><a href=\"https://github.com/canonical/hydra-operator/compare/v1.1.8...v1.2.0\">1.2.0</a> (2025-07-09)</h2>\n\n<h3>Features</h3>\n\n<ul>\n<li>add name to the create and update actions (<a href=\"https://github.com/canonical/hydra-operator/commit/38f3b333b4f90a6209342308220e7451078ec636\">38f3b33</a>)</li>\n<li>expose client-uri via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/09e92b1e3ce5c4bd54c68fde06a421ec215f7475\">09e92b1</a>)</li>\n<li>expose contacts via cli (<a href=\"https://github.com/canonical/hydra-operator/commit/8f007cc78d1a616590eeb28dd35798270ebdd504\">8f007cc</a>)</li>\n</ul>\n\n<h3>Bug Fixes</h3>\n\n<ul>\n<li>add serializer for metadata (<a href=\"https://github.com/canonical/hydra-operator/commit/f10cf758b62ab5914cfb82e51349f5bb58c730d1\">f10cf75</a>)</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/hydra-operator/releases/tag/v1.2.0",
-                  "compareUrl": "https://github.com/canonical/hydra-operator/compare/v1.2.0...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/hydra-operator/actions/workflows/on_push.yaml"
-            ],
-            "charm": {
-               "name": "hydra",
-               "url": "https://charmhub.io/hydra",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "stable",
-                     "revision": 362,
-                     "timestamp": 1737412043,
-                     "base": ""
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 395,
-                     "timestamp": 1763396141,
-                     "base": ""
-                  },
-                  {
-                     "track": "istio",
-                     "channel": "edge",
-                     "revision": 329,
-                     "timestamp": 1732893160,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.5",
-                     "channel": "edge",
-                     "revision": 395,
-                     "timestamp": 1763465204,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.3",
-                     "channel": "edge",
-                     "revision": 394,
-                     "timestamp": 1757358264,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "stable",
-                     "revision": 285,
-                     "timestamp": 1719402018,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.2",
-                     "channel": "edge",
-                     "revision": 285,
-                     "timestamp": 1715244270,
-                     "base": ""
-                  },
-                  {
-                     "track": "0.1",
-                     "channel": "edge",
-                     "revision": 270,
-                     "timestamp": 1700823180,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest",
-                  "istio",
-                  "0.5",
-                  "0.3",
-                  "0.2",
-                  "0.1"
-               ]
-            },
-            "snap": null
-         },
-         {
             "name": "identity-platform-login-ui-operator",
             "newCommits": 13,
             "url": "https://github.com/canonical/identity-platform-login-ui-operator",
@@ -9109,7 +9109,7 @@
          },
          {
             "name": "kratos-operator",
-            "newCommits": 10,
+            "newCommits": 14,
             "url": "https://github.com/canonical/kratos-operator",
             "releases": [
                {
@@ -9272,7 +9272,7 @@
          },
          {
             "name": "user-verification-service-operator",
-            "newCommits": 13,
+            "newCommits": 15,
             "url": "https://github.com/canonical/user-verification-service-operator",
             "releases": [
                {
@@ -9390,7 +9390,7 @@
          },
          {
             "name": "openfga-operator",
-            "newCommits": 16,
+            "newCommits": 18,
             "url": "https://github.com/canonical/openfga-operator",
             "releases": [
                {
@@ -10354,7 +10354,7 @@
          },
          {
             "name": "ldap-integrator",
-            "newCommits": 132,
+            "newCommits": 134,
             "url": "https://github.com/canonical/ldap-integrator",
             "releases": [
                {
@@ -10472,7 +10472,7 @@
          },
          {
             "name": "oathkeeper-operator",
-            "newCommits": 142,
+            "newCommits": 144,
             "url": "https://github.com/canonical/oathkeeper-operator",
             "releases": [
                {
