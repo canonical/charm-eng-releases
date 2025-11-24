@@ -2457,25 +2457,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "662b4dc41925f6d3d5a5a3f158888bea18bba4c0",
+                  "author": "Bikalpa Dhakal",
+                  "timestamp": 1764013794,
+                  "message": "<p>Add S3 v1 interface and update S3 v0 interface (<a target=\"_blank\" href=\"https://github.com/canonical/charm-relation-interfaces/pull/306\">#306</a>)</p>\n\n<p>This PR aims to introduce a newer version of <code>s3</code> interface (v1), which is going to be implemented by the <code>s3-integrator</code> on <code>2/</code> track going further. The new <code>s3-integrator</code> charm is added with features of automatic bucket creation and verification, as per the spec <a href=\"https://docs.google.com/document/d/1eTPJ58MpDdToF9SicGr8XgXRdurio6XM3tvga0uXp4M/edit?usp=sharing\">DA171</a>.</p>\n\n<p>The major changes in the interface is that now the sensitive information like <code>access-key</code> and <code>secret-key</code> are to be passed by encapsulating them in a Juju secret &ndash; while other things being similar. The interface now also adds for support for both provider and requirer writing the version of the S3 lib they&rsquo;re using &ndash; to enable us to have more flexibility in the future should we have the necessity to have conditional logic based on some specific version of charm lib.</p>\n\n<p>This PR also aims to update some old and obsolete information on the <code>s3</code> v0 interface.</p>\n",
+                  "url": "https://github.com/canonical/charm-relation-interfaces/commit/662b4dc41925f6d3d5a5a3f158888bea18bba4c0"
+               },
+               {
+                  "sha": "f221c8291dbe9007f9e43c57079e58f36bb68420",
+                  "author": "Dragomir Penev",
+                  "timestamp": 1764013751,
+                  "message": "<p>[DPE-7302] Add prefix-databases field (<a target=\"_blank\" href=\"https://github.com/canonical/charm-relation-interfaces/pull/307\">#307</a>)</p>\n\n<p>Adds <code>prefix-databases</code> , reporting databases matching a requested prefix</p>\n\n<p>Implementation PR: <a target=\"_blank\" href=\"https://github.com/canonical/data-platform-libs/pull/245\"><a target=\"_blank\" href=\"https://github.com/canonical/charm-relation-interfaces/pull/245\">#245</a></a>\nSpecification: DA190</p>\n",
+                  "url": "https://github.com/canonical/charm-relation-interfaces/commit/f221c8291dbe9007f9e43c57079e58f36bb68420"
+               },
+               {
                   "sha": "c382a49e3d25941fe923d2d4b2852e8fa56c8402",
                   "author": "James Garner",
                   "timestamp": 1763944084,
                   "message": "<p>docs: add archival notice (<a target=\"_blank\" href=\"https://github.com/canonical/charm-relation-interfaces/pull/308\">#308</a>)</p>\n\n<p>This PR adds a prominent note to the readme for when this repository is archived, with links to the charmlibs docs and monorepo. I&rsquo;ve just linked to the root in both cases, for stability.</p>\n",
                   "url": "https://github.com/canonical/charm-relation-interfaces/commit/c382a49e3d25941fe923d2d4b2852e8fa56c8402"
-               },
-               {
-                  "sha": "f50104e17a5bca38559d564a41465e2caa698f26",
-                  "author": "René Radoi",
-                  "timestamp": 1761596379,
-                  "message": "<p>feat: Add <code>jwt</code> interface (<a target=\"_blank\" href=\"https://github.com/canonical/charm-relation-interfaces/pull/305\">#305</a>)</p>\n\n<ul>\n<li><p>add <code>jwt</code> interface</p></li>\n\n<li><p>update json schemas</p></li>\n</ul>\n\n<p>Signed-off-by: reneradoi <a href=\"mailto:rene.radoi@canonical.com\">rene.radoi@canonical.com</a></p>\n\n<ul>\n<li><p>improve example</p></li>\n\n<li><p>PR review comments</p></li>\n</ul>\n\n<hr>\n\n<p>Signed-off-by: reneradoi <a href=\"mailto:rene.radoi@canonical.com\">rene.radoi@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/charm-relation-interfaces/commit/f50104e17a5bca38559d564a41465e2caa698f26"
-               },
-               {
-                  "sha": "340d414c18e7b3e954321dcf9d497f4e25cb21a7",
-                  "author": "arturo-seijas",
-                  "timestamp": 1760340597,
-                  "message": "<p>feat: add milter relation (<a target=\"_blank\" href=\"https://github.com/canonical/charm-relation-interfaces/pull/302\">#302</a>)</p>\n\n<ul>\n<li><p>Add milter relation</p></li>\n\n<li><p>fix name</p></li>\n\n<li><p>Update interfaces/milter/v0/README.md</p></li>\n</ul>\n\n<p>Co-authored-by: James Garner <a href=\"mailto:james.garner@canonical.com\">james.garner@canonical.com</a>\nSigned-off-by: arturo-seijas <a href=\"mailto:102022572+arturo-seijas@users.noreply.github.com\">102022572+arturo-seijas@users.noreply.github.com</a></p>\n\n<ul>\n<li>Update interfaces/milter/v0/README.md</li>\n</ul>\n\n<p>Co-authored-by: James Garner <a href=\"mailto:james.garner@canonical.com\">james.garner@canonical.com</a>\nSigned-off-by: arturo-seijas <a href=\"mailto:102022572+arturo-seijas@users.noreply.github.com\">102022572+arturo-seijas@users.noreply.github.com</a></p>\n\n<ul>\n<li>Update interfaces/milter/v0/README.md</li>\n</ul>\n\n<p>Co-authored-by: James Garner <a href=\"mailto:james.garner@canonical.com\">james.garner@canonical.com</a>\nSigned-off-by: arturo-seijas <a href=\"mailto:102022572+arturo-seijas@users.noreply.github.com\">102022572+arturo-seijas@users.noreply.github.com</a></p>\n\n<ul>\n<li>Update interfaces/milter/v0/README.md</li>\n</ul>\n\n<p>Co-authored-by: James Garner <a href=\"mailto:james.garner@canonical.com\">james.garner@canonical.com</a>\nSigned-off-by: arturo-seijas <a href=\"mailto:102022572+arturo-seijas@users.noreply.github.com\">102022572+arturo-seijas@users.noreply.github.com</a></p>\n\n<ul>\n<li>Update interfaces/milter/v0/schema.py</li>\n</ul>\n\n<p>Co-authored-by: James Garner <a href=\"mailto:james.garner@canonical.com\">james.garner@canonical.com</a>\nSigned-off-by: arturo-seijas <a href=\"mailto:102022572+arturo-seijas@users.noreply.github.com\">102022572+arturo-seijas@users.noreply.github.com</a></p>\n\n<hr>\n\n<p>Signed-off-by: arturo-seijas <a href=\"mailto:102022572+arturo-seijas@users.noreply.github.com\">102022572+arturo-seijas@users.noreply.github.com</a>\nCo-authored-by: James Garner <a href=\"mailto:james.garner@canonical.com\">james.garner@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/charm-relation-interfaces/commit/340d414c18e7b3e954321dcf9d497f4e25cb21a7"
                }
             ],
             "ciActions": [],
@@ -5290,7 +5290,7 @@
          },
          {
             "name": "mimir-coordinator-k8s-operator",
-            "newCommits": 10,
+            "newCommits": 11,
             "url": "https://github.com/canonical/mimir-coordinator-k8s-operator",
             "releases": [
                {
@@ -8647,7 +8647,7 @@
          },
          {
             "name": "self-signed-certificates-operator",
-            "newCommits": 195,
+            "newCommits": 196,
             "url": "https://github.com/canonical/self-signed-certificates-operator",
             "releases": [
                {
