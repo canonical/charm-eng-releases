@@ -9820,7 +9820,7 @@
          },
          {
             "name": "oauth2-proxy-k8s-operator",
-            "newCommits": 63,
+            "newCommits": 65,
             "url": "https://github.com/canonical/oauth2-proxy-k8s-operator",
             "releases": [
                {
@@ -14196,25 +14196,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "7a50263c43ba20d017286dab77cc34a0af51a1c6",
+                  "author": "Ethan D'Costa",
+                  "timestamp": 1764182364,
+                  "message": "<p>fix: bump sqlite to 3.50.2 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2018\">#2018</a>)</p>\n\n<ul>\n<li><p>bump sqlite to 3.5.2</p></li>\n\n<li><p>update dqlite tag</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/7a50263c43ba20d017286dab77cc34a0af51a1c6"
+               },
+               {
+                  "sha": "cb8fc44c0baeecd33c5bbc645a4d69ea2c595fbc",
+                  "author": "Ethan D'Costa",
+                  "timestamp": 1764182320,
+                  "message": "<p>fix: remove spinner (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2070\">#2070</a>)</p>\n\n<ul>\n<li>Revert &ldquo;fix: Spinner CLI only triggers on k8s status if &ndash;wait-ready is enabled (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1940\">#1940</a>)&rdquo;</li>\n</ul>\n\n<p>This reverts commit 114fbd2be60bac9104b654ae41545d3abee73dab.</p>\n\n<ul>\n<li>Revert &ldquo;feat: Make CLI Look More Responsive (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/1918\">#1918</a>)&rdquo;</li>\n</ul>\n\n<p>This reverts commit 8482ece2bcf0465c6529cf55eb45b5e8808062ae.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/cb8fc44c0baeecd33c5bbc645a4d69ea2c595fbc"
+               },
+               {
                   "sha": "c91d4c1b9a066f41c63a2b0ec08144183c1e81e3",
                   "author": "Ethan D'Costa",
                   "timestamp": 1764177156,
                   "message": "<p>fix: e2e test runs out of resources (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2079\">#2079</a>)</p>\n\n<ul>\n<li><p>add resource check</p></li>\n\n<li><p>upped cpu to 8, mem to 16</p></li>\n\n<li><p>premature model constraint set</p></li>\n\n<li><p>use compatible juju</p></li>\n\n<li><p>downgrade juju, cross-checked with other workflow</p></li>\n\n<li><p>try 3/stable like k8s-operator</p></li>\n\n<li><p>parallelize tests, cleanup some typos</p></li>\n\n<li><p>add timeout</p></li>\n\n<li><p>fix astral uv version</p></li>\n\n<li><p>use k filtering</p></li>\n\n<li><p>even more power</p></li>\n\n<li><p>only use smoke tests</p></li>\n\n<li><p>no need for extra resources</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/c91d4c1b9a066f41c63a2b0ec08144183c1e81e3"
-               },
-               {
-                  "sha": "5f460042a9c9f381a4e60a887e68b3b2938fc9b4",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1763982068,
-                  "message": "<p>docs: Fix etcd recovery steps</p>\n\n<p>The recovery command should not require a <code>k8s-dqlite</code> path if etcd is\nused. Also, make it more clear that this only backs up k8sd and that\netcd is updated separately.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/5f460042a9c9f381a4e60a887e68b3b2938fc9b4"
-               },
-               {
-                  "sha": "b33eaffcee4f693de15465416f20ded105811a7a",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1763982277,
-                  "message": "<p>fix(cluster-recovery): Do not expect path flag if skipped</p>\n\n<p>Modify CLI to only require the\n<code>--k8s-dqlite-state-dir</code><code>/</code>&ndash;state-dir<code>if the corresponding\n</code>&ndash;skip-<k8sd/k8s-dqlite>` flag is not set.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/b33eaffcee4f693de15465416f20ded105811a7a"
                }
             ],
             "ciActions": [
