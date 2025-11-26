@@ -1616,7 +1616,7 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 25,
+            "newCommits": 27,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
                {
@@ -14196,25 +14196,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "5f460042a9c9f381a4e60a887e68b3b2938fc9b4",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1763982068,
+                  "message": "<p>docs: Fix etcd recovery steps</p>\n\n<p>The recovery command should not require a <code>k8s-dqlite</code> path if etcd is\nused. Also, make it more clear that this only backs up k8sd and that\netcd is updated separately.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/5f460042a9c9f381a4e60a887e68b3b2938fc9b4"
+               },
+               {
+                  "sha": "b33eaffcee4f693de15465416f20ded105811a7a",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1763982277,
+                  "message": "<p>fix(cluster-recovery): Do not expect path flag if skipped</p>\n\n<p>Modify CLI to only require the\n<code>--k8s-dqlite-state-dir</code><code>/</code>&ndash;state-dir<code>if the corresponding\n</code>&ndash;skip-<k8sd/k8s-dqlite>` flag is not set.</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/b33eaffcee4f693de15465416f20ded105811a7a"
+               },
+               {
                   "sha": "e228e5e42793b65e9f3411928cede8cf901c53aa",
                   "author": "Niamh Hennigan",
                   "timestamp": 1764144528,
                   "message": "<p>Update tabs (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2085\">#2085</a>)</p>\n\n<p>The tabs were glitching slightly on this page. When you selected certain tabs, the page would jump up and then scroll down to the selected tab, even if the tab was already on the screen. Changing to the sphinx native tabs rather than sphinx tabs extension seems to fix this issue.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/e228e5e42793b65e9f3411928cede8cf901c53aa"
-               },
-               {
-                  "sha": "52d30d8ca7030001e089b015d29357cf0e4676f6",
-                  "author": "Niamh Hennigan",
-                  "timestamp": 1764088829,
-                  "message": "<p>Release notes snap patch notices November 25 (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2069\">#2069</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/52d30d8ca7030001e089b015d29357cf0e4676f6"
-               },
-               {
-                  "sha": "76c0114dfcfafa0b636e5c9f9978101d539636dd",
-                  "author": "Copilot",
-                  "timestamp": 1763991466,
-                  "message": "<p>ci: conditionally run charm e2e tests based on release availability (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2049\">#2049</a>)</p>\n\n<hr>\n\n<p>Co-authored-by: copilot-swe-agent[bot] <a href=\"mailto:198982749+Copilot@users.noreply.github.com\">198982749+Copilot@users.noreply.github.com</a>\nCo-authored-by: Benjamin Schimke <a href=\"mailto:benjamin.schimke@canonical.com\">benjamin.schimke@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/76c0114dfcfafa0b636e5c9f9978101d539636dd"
                }
             ],
             "ciActions": [
@@ -19348,6 +19348,15 @@
             "url": "https://github.com/canonical/content-cache-k8s-operator",
             "releases": [
                {
+                  "id": 265420041,
+                  "version": "rev85",
+                  "timestamp": 1764156029,
+                  "title": "Revision 85",
+                  "body": "<p>resources:\n    -  content-cache-image: undefined\n       resource-revision: 87</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:22 UTC on 26 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/setup-python action to v6.1.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/145\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/145\">#145</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev84...rev85\">https://github.com/canonical/content-cache-k8s-operator/compare/rev84&hellip;rev85</a></p>\n",
+                  "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev85",
+                  "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev85...main"
+               },
+               {
                   "id": 265367147,
                   "version": "rev84",
                   "timestamp": 1764144614,
@@ -19364,15 +19373,6 @@
                   "body": "<p>resources:\n    -  content-cache-image: undefined\n       resource-revision: 85</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:46 UTC on 24 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout action to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/142\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/142\">#142</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev82...rev83\">https://github.com/canonical/content-cache-k8s-operator/compare/rev82&hellip;rev83</a></p>\n",
                   "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev83",
                   "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev83...main"
-               },
-               {
-                  "id": 264717582,
-                  "version": "rev82",
-                  "timestamp": 1763974559,
-                  "title": "Revision 82",
-                  "body": "<p>resources:\n    -  content-cache-image: undefined\n       resource-revision: 84</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:57 UTC on 24 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency cosl to v1.3.2 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/143\"><a target=\"_blank\" href=\"https://github.com/canonical/content-cache-k8s-operator/pull/143\">#143</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/content-cache-k8s-operator/compare/rev81...rev82\">https://github.com/canonical/content-cache-k8s-operator/compare/rev81&hellip;rev82</a></p>\n",
-                  "url": "https://github.com/canonical/content-cache-k8s-operator/releases/tag/rev82",
-                  "compareUrl": "https://github.com/canonical/content-cache-k8s-operator/compare/rev82...main"
                }
             ],
             "tags": null,
@@ -19402,8 +19402,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 84,
-                     "timestamp": 1764144709,
+                     "revision": 85,
+                     "timestamp": 1764156151,
                      "base": ""
                   }
                ],
@@ -20123,6 +20123,15 @@
             "url": "https://github.com/canonical/github-runner-webhook-router",
             "releases": [
                {
+                  "id": 265424213,
+                  "version": "rev88",
+                  "timestamp": 1764156776,
+                  "title": "Revision 88",
+                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 82</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:35 UTC on 26 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update all non-major dependencies by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/107\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/107\">#107</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev87...rev88\">https://github.com/canonical/github-runner-webhook-router/compare/rev87&hellip;rev88</a></p>\n",
+                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev88",
+                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev88...main"
+               },
+               {
                   "id": 265399916,
                   "version": "rev87",
                   "timestamp": 1764151686,
@@ -20139,15 +20148,6 @@
                   "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 80</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:39 UTC on 24 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Run Allure workflow only on schedule by <a target=\"_blank\" href=\"https://github.com/swetha1654\">@swetha1654</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/106\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/106\">#106</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev85...rev86\">https://github.com/canonical/github-runner-webhook-router/compare/rev85&hellip;rev86</a></p>\n",
                   "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev86",
                   "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev86...main"
-               },
-               {
-                  "id": 257797408,
-                  "version": "rev85",
-                  "timestamp": 1761652552,
-                  "title": "Revision 85",
-                  "body": "<p>resources:\n    -  flask-app-image: undefined\n       resource-revision: 79</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:57 UTC on 28 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Enable Allure for integration tests by <a target=\"_blank\" href=\"https://github.com/swetha1654\">@swetha1654</a> in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/105\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/105\">#105</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/swetha1654\">@swetha1654</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/105\"><a target=\"_blank\" href=\"https://github.com/canonical/github-runner-webhook-router/pull/105\">#105</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/github-runner-webhook-router/compare/rev84...rev85\">https://github.com/canonical/github-runner-webhook-router/compare/rev84&hellip;rev85</a></p>\n",
-                  "url": "https://github.com/canonical/github-runner-webhook-router/releases/tag/rev85",
-                  "compareUrl": "https://github.com/canonical/github-runner-webhook-router/compare/rev85...main"
                }
             ],
             "tags": null,
@@ -20176,8 +20176,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 87,
-                     "timestamp": 1764151832,
+                     "revision": 88,
+                     "timestamp": 1764156926,
                      "base": ""
                   }
                ],
@@ -20194,9 +20194,27 @@
          },
          {
             "name": "haproxy-operator",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/haproxy-operator",
             "releases": [
+               {
+                  "id": 265424331,
+                  "version": "rev263",
+                  "timestamp": 1764156881,
+                  "title": "Revision 263",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 11:35 UTC on 26 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency jubilant to v1.5.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/239\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/239\">#239</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev262...rev263\">https://github.com/canonical/haproxy-operator/compare/rev262&hellip;rev263</a></p>\n",
+                  "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev263",
+                  "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev263...main"
+               },
+               {
+                  "id": 265418759,
+                  "version": "rev262",
+                  "timestamp": 1764155796,
+                  "title": "Revision 262",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 11:18 UTC on 26 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(docs): Update Terraform documentation by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/251\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/251\">#251</a></a></li>\n<li>Fix documentation for constraints in terraform by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/256\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/256\">#256</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev261...rev262\">https://github.com/canonical/haproxy-operator/compare/rev261&hellip;rev262</a></p>\n",
+                  "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev262",
+                  "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev262...main"
+               },
                {
                   "id": 265040063,
                   "version": "rev261",
@@ -20205,24 +20223,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 08:41 UTC on 25 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency juju to v3.6.1.3 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/237\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/237\">#237</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev260...rev261\">https://github.com/canonical/haproxy-operator/compare/rev260&hellip;rev261</a></p>\n",
                   "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev261",
                   "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev261...main"
-               },
-               {
-                  "id": 264817183,
-                  "version": "rev260",
-                  "timestamp": 1763994651,
-                  "title": "Revision 260",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 14:32 UTC on 24 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency protobuf to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/240\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/240\">#240</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev259...rev260\">https://github.com/canonical/haproxy-operator/compare/rev259&hellip;rev260</a></p>\n",
-                  "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev260",
-                  "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev260...main"
-               },
-               {
-                  "id": 264809492,
-                  "version": "rev259",
-                  "timestamp": 1763993327,
-                  "title": "Revision 259",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;2.8/edge&rsquo; at 14:10 UTC on 24 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Allow enabling http for haproxy route backend by <a target=\"_blank\" href=\"https://github.com/Thanhphan1147\">@Thanhphan1147</a> in <a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/230\"><a target=\"_blank\" href=\"https://github.com/canonical/haproxy-operator/pull/230\">#230</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/haproxy-operator/compare/rev258...rev259\">https://github.com/canonical/haproxy-operator/compare/rev258&hellip;rev259</a></p>\n",
-                  "url": "https://github.com/canonical/haproxy-operator/releases/tag/rev259",
-                  "compareUrl": "https://github.com/canonical/haproxy-operator/compare/rev259...main"
                }
             ],
             "tags": null,
@@ -21746,6 +21746,24 @@
             "url": "https://github.com/canonical/smtp-integrator-operator",
             "releases": [
                {
+                  "id": 265429280,
+                  "version": "rev105",
+                  "timestamp": 1764157929,
+                  "title": "Revision 105",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:53 UTC on 26 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout action to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/143\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/143\">#143</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev104...rev105\">https://github.com/canonical/smtp-integrator-operator/compare/rev104&hellip;rev105</a></p>\n",
+                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev105",
+                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev105...main"
+               },
+               {
+                  "id": 265421362,
+                  "version": "rev104",
+                  "timestamp": 1764156428,
+                  "title": "Revision 104",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:28 UTC on 26 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update actions/checkout action to v5.0.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/142\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/142\">#142</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev103...rev104\">https://github.com/canonical/smtp-integrator-operator/compare/rev103&hellip;rev104</a></p>\n",
+                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev104",
+                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev104...main"
+               },
+               {
                   "id": 265344337,
                   "version": "rev103",
                   "timestamp": 1764136395,
@@ -21753,24 +21771,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 05:54 UTC on 26 Nov 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency pydantic to v2.12.4 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/140\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/140\">#140</a></a></li>\n<li>Add how to upgrade documentation by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/141\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/141\">#141</a></a></li>\n<li>Run Allure workflow only on schedule by <a target=\"_blank\" href=\"https://github.com/swetha1654\">@swetha1654</a> in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/144\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/144\">#144</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev102...rev103\">https://github.com/canonical/smtp-integrator-operator/compare/rev102&hellip;rev103</a></p>\n",
                   "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev103",
                   "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev103...main"
-               },
-               {
-                  "id": 258719636,
-                  "version": "rev102",
-                  "timestamp": 1761898312,
-                  "title": "Revision 102",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:13 UTC on 31 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(docs): Update Terraform documentation by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/137\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/137\">#137</a></a></li>\n<li>chore(deps): update terraform-linters/setup-tflint action to v6.2.1 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/139\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/139\">#139</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev101...rev102\">https://github.com/canonical/smtp-integrator-operator/compare/rev101&hellip;rev102</a></p>\n",
-                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev102",
-                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev102...main"
-               },
-               {
-                  "id": 256974049,
-                  "version": "rev101",
-                  "timestamp": 1761305514,
-                  "title": "Revision 101",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:33 UTC on 24 Oct 2025</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update terraform-linters/setup-tflint action to v6 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/138\"><a target=\"_blank\" href=\"https://github.com/canonical/smtp-integrator-operator/pull/138\">#138</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/smtp-integrator-operator/compare/rev100...rev101\">https://github.com/canonical/smtp-integrator-operator/compare/rev100&hellip;rev101</a></p>\n",
-                  "url": "https://github.com/canonical/smtp-integrator-operator/releases/tag/rev101",
-                  "compareUrl": "https://github.com/canonical/smtp-integrator-operator/compare/rev101...main"
                }
             ],
             "tags": null,
@@ -21793,8 +21793,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 103,
-                     "timestamp": 1764136488,
+                     "revision": 105,
+                     "timestamp": 1764157999,
                      "base": ""
                   }
                ],
@@ -22378,7 +22378,7 @@
          },
          {
             "name": "hockeypuck-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/hockeypuck-k8s-operator",
             "releases": [
                {
@@ -23082,7 +23082,7 @@
          },
          {
             "name": "opendkim-operator",
-            "newCommits": 5,
+            "newCommits": 6,
             "url": "https://github.com/canonical/opendkim-operator",
             "releases": [
                {
@@ -23999,7 +23999,7 @@
          },
          {
             "name": "tailscale-snap",
-            "newCommits": 9,
+            "newCommits": 10,
             "url": "https://github.com/canonical/tailscale-snap",
             "releases": [
                {
