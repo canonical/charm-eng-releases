@@ -1,4 +1,4 @@
-// Get the latest release time for a give project in the table
+// Get the latest release time for a given project in the table
 const compareLastReleaseTime = (rowA, rowB, col) => {
   const parse = row => row.cells[col].children[0].getAttribute("aria-release-date")
   return parse(rowA) > parse(rowB)
@@ -23,14 +23,13 @@ const sortTable = (header, table) => {
   // Set the new header sort.
   header.setAttribute("aria-sort", newOrder)
 
-  // Get the direction of the sort and assume only one tbody.
-  // For this example only assume one tbody.
+  // Get the direction of the sort. For this example, we assume only one tbody.
   let direction = SORTABLE_STATES[newOrder]
   let body = table.tBodies[0]
   // Convert the HTML element list to an array.
   let newRows = [...body.rows]
 
-  // Sort based on a cell contents
+  // Sort based on the cell contents
   newRows.sort((rowA, rowB) => {
     const colClasses = [...rowA.cells[col].classList]
     // Custom logic for sorting the "latest releases" column of the team table
