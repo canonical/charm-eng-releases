@@ -2380,7 +2380,7 @@
          },
          {
             "name": "catalogue-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/catalogue-k8s-operator",
             "releases": [
                {
@@ -2532,7 +2532,7 @@
          },
          {
             "name": "charmlibs",
-            "newCommits": 169,
+            "newCommits": 170,
             "url": "https://github.com/canonical/charmlibs",
             "releases": [
                {
@@ -4363,7 +4363,7 @@
          },
          {
             "name": "istio-beacon-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/istio-beacon-k8s-operator",
             "releases": [
                {
@@ -4434,8 +4434,8 @@
                   {
                      "track": "2",
                      "channel": "candidate",
-                     "revision": 42,
-                     "timestamp": 1759914042,
+                     "revision": 45,
+                     "timestamp": 1770306019,
                      "base": ""
                   },
                   {
@@ -4461,7 +4461,7 @@
          },
          {
             "name": "istio-ingress-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/istio-ingress-k8s-operator",
             "releases": [
                {
@@ -4531,9 +4531,16 @@
                   },
                   {
                      "track": "2",
+                     "channel": "stable",
+                     "revision": 61,
+                     "timestamp": 1770306895,
+                     "base": ""
+                  },
+                  {
+                     "track": "2",
                      "channel": "candidate",
-                     "revision": 50,
-                     "timestamp": 1759914039,
+                     "revision": 61,
+                     "timestamp": 1770306878,
                      "base": ""
                   },
                   {
@@ -4630,8 +4637,8 @@
                   {
                      "track": "2",
                      "channel": "candidate",
-                     "revision": 42,
-                     "timestamp": 1759914042,
+                     "revision": 45,
+                     "timestamp": 1770306019,
                      "base": ""
                   },
                   {
@@ -5452,7 +5459,7 @@
          },
          {
             "name": "loki-worker-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/loki-worker-k8s-operator",
             "releases": [
                {
@@ -5495,8 +5502,8 @@
                   {
                      "track": "dev",
                      "channel": "edge",
-                     "revision": 55,
-                     "timestamp": 1769717938,
+                     "revision": 56,
+                     "timestamp": 1770308971,
                      "base": ""
                   },
                   {
@@ -5565,7 +5572,7 @@
          },
          {
             "name": "mimir-coordinator-k8s-operator",
-            "newCommits": 9,
+            "newCommits": 10,
             "url": "https://github.com/canonical/mimir-coordinator-k8s-operator",
             "releases": [
                {
@@ -7452,7 +7459,7 @@
          },
          {
             "name": "pyroscope-operators",
-            "newCommits": 14,
+            "newCommits": 15,
             "url": "https://github.com/canonical/pyroscope-operators",
             "releases": [
                {
@@ -8826,7 +8833,7 @@
          },
          {
             "name": "self-signed-certificates-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/self-signed-certificates-operator",
             "releases": [
                {
@@ -10821,7 +10828,7 @@
          },
          {
             "name": "charmlibs",
-            "newCommits": 169,
+            "newCommits": 170,
             "url": "https://github.com/canonical/charmlibs",
             "releases": [
                {
@@ -14994,8 +15001,8 @@
                   {
                      "track": "1.33-classic",
                      "channel": "edge",
-                     "revision": 4770,
-                     "timestamp": 1768937951,
+                     "revision": 4839,
+                     "timestamp": 1770308955,
                      "base": "core20"
                   },
                   {
@@ -15135,6 +15142,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "d49f150f3bc8edf50380fbf9d9634ca005e20090",
+                  "author": "Ethan D'Costa",
+                  "timestamp": 1770306414,
+                  "message": "<p>fix: add check for node name duplication (<a target=\"_blank\" href=\"https://github.com/canonical/k8sd/pull/4\">#4</a>)</p>\n\n<p>added a check in the get-join-token command to verify that there are no other nodes (CP or worker) that share the same name before providing the token. This way, microcluster and kubernetes have internally consistent stores of node data.</p>\n",
+                  "url": "https://github.com/canonical/k8sd/commit/d49f150f3bc8edf50380fbf9d9634ca005e20090"
+               },
+               {
                   "sha": "a0bb6479f086ef8a73ce08ae69099b0c40910dfb",
                   "author": "Benjamin Schimke",
                   "timestamp": 1769779656,
@@ -15147,13 +15161,6 @@
                   "timestamp": 1769770911,
                   "message": "<p>chore: Remove tools directory (<a target=\"_blank\" href=\"https://github.com/canonical/k8sd/pull/10\">#10</a>)</p>\n\n<p>The tools directory contains the reg* utils. The idea of shipping it as\npart of the k8sd code was to track this dependency. However, we never\nreally used that tool apart e.g. from airgapped instructions.\nWe decided to remove this tools and instead update the documentation.</p>\n",
                   "url": "https://github.com/canonical/k8sd/commit/2c535e0c02dac795dfa72af12982277b55a76771"
-               },
-               {
-                  "sha": "24d02f59776f619fd12aec9e3ada1d6827ce1ca6",
-                  "author": "Louise K. Schmidtgen",
-                  "timestamp": 1769666632,
-                  "message": "<p>feat: add node join reverter (<a target=\"_blank\" href=\"https://github.com/canonical/k8sd/pull/6\">#6</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8sd/commit/24d02f59776f619fd12aec9e3ada1d6827ce1ca6"
                }
             ],
             "ciActions": [],
@@ -19959,7 +19966,7 @@
          },
          {
             "name": "create-pull-request",
-            "newCommits": 102,
+            "newCommits": 103,
             "url": "https://github.com/canonical/create-pull-request",
             "releases": null,
             "tags": [
@@ -20194,6 +20201,15 @@
             "url": "https://github.com/canonical/falco-operators",
             "releases": [
                {
+                  "id": 283427659,
+                  "version": "rev40",
+                  "timestamp": 1770308465,
+                  "title": "Revision 40",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;0.42/edge&rsquo; at 16:26 UTC on 5 Feb 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update Copilot collections to v0.6.0 by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/42\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/42\">#42</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/falco-operators/compare/rev39...rev40\">https://github.com/canonical/falco-operators/compare/rev39&hellip;rev40</a></p>\n",
+                  "url": "https://github.com/canonical/falco-operators/releases/tag/rev40",
+                  "compareUrl": "https://github.com/canonical/falco-operators/compare/rev40...main"
+               },
+               {
                   "id": 283296877,
                   "version": "rev39",
                   "timestamp": 1770287405,
@@ -20210,15 +20226,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;0.42/edge&rsquo; at 08:49 UTC on 5 Feb 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update pfe-interfaces-falcosidekick-http-endpoint digest to 60a59e7 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/59\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/59\">#59</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/falco-operators/compare/rev37...rev38\">https://github.com/canonical/falco-operators/compare/rev37&hellip;rev38</a></p>\n",
                   "url": "https://github.com/canonical/falco-operators/releases/tag/rev38",
                   "compareUrl": "https://github.com/canonical/falco-operators/compare/rev38...main"
-               },
-               {
-                  "id": 282901802,
-                  "version": "rev37",
-                  "timestamp": 1770200052,
-                  "title": "Revision 37",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;0.42/edge&rsquo; at 10:15 UTC on 4 Feb 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update charm libraries by <a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/47\">#47</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/github-actions\">@github-actions</a>[bot] made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/47\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/47\">#47</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/falco-operators/compare/rev36...rev37\">https://github.com/canonical/falco-operators/compare/rev36&hellip;rev37</a></p>\n",
-                  "url": "https://github.com/canonical/falco-operators/releases/tag/rev37",
-                  "compareUrl": "https://github.com/canonical/falco-operators/compare/rev37...main"
                }
             ],
             "tags": null,
@@ -23224,7 +23231,7 @@
          },
          {
             "name": "copilot-collections",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/copilot-collections",
             "releases": [
                {
@@ -23611,7 +23618,7 @@
          },
          {
             "name": "opendkim-operator",
-            "newCommits": 17,
+            "newCommits": 19,
             "url": "https://github.com/canonical/opendkim-operator",
             "releases": [
                {
