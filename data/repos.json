@@ -14904,8 +14904,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 4876,
-                     "timestamp": 1770652215,
+                     "revision": 4889,
+                     "timestamp": 1770717793,
                      "base": "core22"
                   },
                   {
@@ -18170,6 +18170,39 @@
                }
             ],
             "commits": null,
+            "ciActions": [],
+            "charm": null,
+            "snap": null
+         },
+         {
+            "name": "sriov-dpdk-rocks",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/sriov-dpdk-rocks",
+            "releases": null,
+            "tags": null,
+            "commits": [
+               {
+                  "sha": "67daed4994fd122764e9e0f0444d12069dae2add",
+                  "author": "Konstantinos Tsakalozos",
+                  "timestamp": 1753288434,
+                  "message": "<p>feat: pin k8s-test-harness (<a target=\"_blank\" href=\"https://github.com/canonical/sriov-dpdk-rocks/pull/13\">#13</a>)</p>\n",
+                  "url": "https://github.com/canonical/sriov-dpdk-rocks/commit/67daed4994fd122764e9e0f0444d12069dae2add"
+               },
+               {
+                  "sha": "0edc9e5191c083ef97b88cf912b8603de97c8ba7",
+                  "author": "renovate[bot]",
+                  "timestamp": 1739875431,
+                  "message": "<p>chore(deps): update canonical/has-signed-canonical-cla action to v2 (<a target=\"_blank\" href=\"https://github.com/canonical/sriov-dpdk-rocks/pull/12\">#12</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/sriov-dpdk-rocks/commit/0edc9e5191c083ef97b88cf912b8603de97c8ba7"
+               },
+               {
+                  "sha": "f46042359a4ddd4300d072ffea2a4acea82f7c00",
+                  "author": "Claudiu Belu",
+                  "timestamp": 1730806352,
+                  "message": "<p>Changes rock base to bare (<a target=\"_blank\" href=\"https://github.com/canonical/sriov-dpdk-rocks/pull/11\">#11</a>)</p>\n\n<p>Switching to a bare-based image will reduce the overall image size\nand reduces attack surface area.</p>\n\n<p>The image is supposed to run a script, thus we need a few packages\ninstalled.</p>\n\n<p>ddptool is not statically built, so it still depends on /lib and /lib64,\nwhich is why we&rsquo;re adding base-files.</p>\n\n<p>Switch the container user to root. It is supposed to have access to\ncertain host folders through hostPath mounts, and thus, it should be\nable to modify them (e.g.: create /var/log/sriovdp folder).</p>\n\n<p>We can no longer use ensure_image_contains_paths to check if files exist\nin the rock images, since they are now bare-based. Instead, we can use\nensure_image_contains_paths_bare, which checks the image layers instead.\nBecause of this, we need sufficient permissions to check the\n/var/lib/docker folder.</p>\n",
+                  "url": "https://github.com/canonical/sriov-dpdk-rocks/commit/f46042359a4ddd4300d072ffea2a4acea82f7c00"
+               }
+            ],
             "ciActions": [],
             "charm": null,
             "snap": null
