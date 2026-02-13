@@ -14795,6 +14795,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "43b06ad424d5d494976756c584b18c7b442197df",
+                  "author": "Niamh Hennigan",
+                  "timestamp": 1771021028,
+                  "message": "<p>ci: Move linkcheck logic out for weekly tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2276\">#2276</a>)</p>\n\n<ul>\n<li>Begin moving linkcheck logic out for weekly tests</li>\n</ul>\n\n<p>Linkchecker on PR 2202 is changing the linkchecker to only run on git diff. We want to move the logic out of docs checks so we can call this from our weekly tests on the entire docs set</p>\n\n<ul>\n<li><p>Add branch testing matrix</p></li>\n\n<li><p>Move linkcheck logic</p></li>\n</ul>\n\n<p>Remove duplication of linkcheck logic by making it modular so it can be called by the weekly test suite as well as the pr level testing</p>\n\n<ul>\n<li>Debug linkcheck not passed git diff</li>\n</ul>\n\n<p>The CI is running linkcheck on . rather than git diff so trying to fix that here</p>\n\n<ul>\n<li>Update changed files formatting</li>\n</ul>\n\n<p>We now generate git diff in a separate step so we need to change the way we format the output of changed_files to reflect this</p>\n\n<ul>\n<li><p>Added line to debug</p></li>\n\n<li><p>Debug &lsquo;</p></li>\n\n<li><p>Fix typo in spacing</p></li>\n\n<li><p>Add logic to allow forks contributions</p></li>\n\n<li><p>Add repo to outputs and fix indentation error</p></li>\n\n<li><p>Fix typo with missing }</p></li>\n\n<li><p>Fix error with default value</p></li>\n</ul>\n\n<p>Default value should be blank rather than . to run on all files in the repo</p>\n\n<ul>\n<li>Add check to add FILES var</li>\n</ul>\n\n<p>Only pass the FILES variable if there are files provided. Otherwise run check on all docs i.e pass no FILES var</p>\n\n<ul>\n<li><p>Copilot review comments</p></li>\n\n<li><p>Fix error with ref</p></li>\n</ul>\n\n<p>ref was named as branch in the outputs so it was not being passed to the checkout function. It was therefore running all tests on main, not the release branches</p>\n\n<ul>\n<li><p>Review comments</p></li>\n\n<li><p>Remove weekly test and update links</p></li>\n</ul>\n\n<p>For the purposes of backporting these changes to other branches and properly testing the linkchecker weekly test, I am removing the docs check from this PR and will follow up with a PR soley with that change only targeting main. I also updated some out of date links and added a link to the ignore list</p>\n\n<ul>\n<li><p>Fix broken link in charm page</p></li>\n\n<li><p>Attempt to fix &ldquo; issue</p></li>\n</ul>\n\n<p>The test is picking up when there are no docs files and running the entire docs set but it is reading the files wrong and not running the linkcheck on any files</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/43b06ad424d5d494976756c584b18c7b442197df"
+               },
+               {
                   "sha": "ffe66acc27bcc3dc43088ae342632c830eb89aad",
                   "author": "Niamh Hennigan",
                   "timestamp": 1771008036,
@@ -14807,13 +14814,6 @@
                   "timestamp": 1770929842,
                   "message": "<p>[main] Update component versions (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2390\">#2390</a>)</p>\n\n<p>Co-authored-by: K8s builder bot <a href=\"mailto:k8s-bot@canonical.com\">k8s-bot@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/6a38970133d15e1a8b689431776478fb9b38db8e"
-               },
-               {
-                  "sha": "bed058611c3fb339b5493b36d3764301a8f2cea8",
-                  "author": "Ethan D'Costa",
-                  "timestamp": 1770819404,
-                  "message": "<p>fix: Added check to prevent CP from joining with same name as worker node. (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2263\">#2263</a>)</p>\n\n<p>adds integration testing for a check in k8sd that verifies that no other nodes have the same name as a node joining the cluster.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/bed058611c3fb339b5493b36d3764301a8f2cea8"
                }
             ],
             "ciActions": [
