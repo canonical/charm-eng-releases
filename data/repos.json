@@ -14795,6 +14795,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "da06f64a76598fdca027719ecb280014eb0b938f",
+                  "author": "Berkay Tekin Öz",
+                  "timestamp": 1771176631,
+                  "message": "<p>test: add service health, restart and panic checks (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2385\">#2385</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/da06f64a76598fdca027719ecb280014eb0b938f"
+               },
+               {
                   "sha": "c9e9c9c771d0184d42d3b9d23fc700eb1692ef13",
                   "author": "Niamh Hennigan",
                   "timestamp": 1771027381,
@@ -14807,13 +14814,6 @@
                   "timestamp": 1771021028,
                   "message": "<p>ci: Move linkcheck logic out for weekly tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2276\">#2276</a>)</p>\n\n<ul>\n<li>Begin moving linkcheck logic out for weekly tests</li>\n</ul>\n\n<p>Linkchecker on PR 2202 is changing the linkchecker to only run on git diff. We want to move the logic out of docs checks so we can call this from our weekly tests on the entire docs set</p>\n\n<ul>\n<li><p>Add branch testing matrix</p></li>\n\n<li><p>Move linkcheck logic</p></li>\n</ul>\n\n<p>Remove duplication of linkcheck logic by making it modular so it can be called by the weekly test suite as well as the pr level testing</p>\n\n<ul>\n<li>Debug linkcheck not passed git diff</li>\n</ul>\n\n<p>The CI is running linkcheck on . rather than git diff so trying to fix that here</p>\n\n<ul>\n<li>Update changed files formatting</li>\n</ul>\n\n<p>We now generate git diff in a separate step so we need to change the way we format the output of changed_files to reflect this</p>\n\n<ul>\n<li><p>Added line to debug</p></li>\n\n<li><p>Debug &lsquo;</p></li>\n\n<li><p>Fix typo in spacing</p></li>\n\n<li><p>Add logic to allow forks contributions</p></li>\n\n<li><p>Add repo to outputs and fix indentation error</p></li>\n\n<li><p>Fix typo with missing }</p></li>\n\n<li><p>Fix error with default value</p></li>\n</ul>\n\n<p>Default value should be blank rather than . to run on all files in the repo</p>\n\n<ul>\n<li>Add check to add FILES var</li>\n</ul>\n\n<p>Only pass the FILES variable if there are files provided. Otherwise run check on all docs i.e pass no FILES var</p>\n\n<ul>\n<li><p>Copilot review comments</p></li>\n\n<li><p>Fix error with ref</p></li>\n</ul>\n\n<p>ref was named as branch in the outputs so it was not being passed to the checkout function. It was therefore running all tests on main, not the release branches</p>\n\n<ul>\n<li><p>Review comments</p></li>\n\n<li><p>Remove weekly test and update links</p></li>\n</ul>\n\n<p>For the purposes of backporting these changes to other branches and properly testing the linkchecker weekly test, I am removing the docs check from this PR and will follow up with a PR soley with that change only targeting main. I also updated some out of date links and added a link to the ignore list</p>\n\n<ul>\n<li><p>Fix broken link in charm page</p></li>\n\n<li><p>Attempt to fix &ldquo; issue</p></li>\n</ul>\n\n<p>The test is picking up when there are no docs files and running the entire docs set but it is reading the files wrong and not running the linkcheck on any files</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/43b06ad424d5d494976756c584b18c7b442197df"
-               },
-               {
-                  "sha": "ffe66acc27bcc3dc43088ae342632c830eb89aad",
-                  "author": "Niamh Hennigan",
-                  "timestamp": 1771008036,
-                  "message": "<p>docs: Update page title and headings (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2386\">#2386</a>)</p>\n\n<ul>\n<li>Update headings</li>\n</ul>\n\n<p>This is the output from a review of our page titles and heading. Headings have been changed to conform with our style guide. Key words have been added in a few cases to make the page purpose more apparent and also improve SEO</p>\n\n<ul>\n<li>Address review comments from Louise and copilot</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/ffe66acc27bcc3dc43088ae342632c830eb89aad"
                }
             ],
             "ciActions": [
@@ -19283,6 +19283,15 @@
             "url": "https://github.com/canonical/superset-k8s-operator",
             "releases": [
                {
+                  "id": 286568359,
+                  "version": "rev52",
+                  "timestamp": 1771178937,
+                  "title": "Revision 52",
+                  "body": "<p>resources:\n    -  superset-image: undefined\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 18:13 UTC on 15 Feb 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[CSS-20889] - Fix cache backend for global async queries by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/90\"><a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/90\">#90</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/superset-k8s-operator/compare/rev51...rev52\">https://github.com/canonical/superset-k8s-operator/compare/rev51&hellip;rev52</a></p>\n",
+                  "url": "https://github.com/canonical/superset-k8s-operator/releases/tag/rev52",
+                  "compareUrl": "https://github.com/canonical/superset-k8s-operator/compare/rev52...main"
+               },
+               {
                   "id": 276501861,
                   "version": "rev51",
                   "timestamp": 1768333860,
@@ -19299,15 +19308,6 @@
                   "body": "<p>resources:\n    -  superset-image: undefined\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 19:02 UTC on 13 Jan 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Remove charm state by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/87\"><a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/87\">#87</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/superset-k8s-operator/compare/rev49...rev50\">https://github.com/canonical/superset-k8s-operator/compare/rev49&hellip;rev50</a></p>\n",
                   "url": "https://github.com/canonical/superset-k8s-operator/releases/tag/rev50",
                   "compareUrl": "https://github.com/canonical/superset-k8s-operator/compare/rev50...main"
-               },
-               {
-                  "id": 274825916,
-                  "version": "rev49",
-                  "timestamp": 1767792924,
-                  "title": "Revision 49",
-                  "body": "<p>resources:\n    -  superset-image: undefined\n       resource-revision: 30</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 13:44 UTC on 7 Jan 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[CSS-20219] - Upgrade Superset to v6 by <a target=\"_blank\" href=\"https://github.com/kelkawi-a\">@kelkawi-a</a> in <a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/84\"><a target=\"_blank\" href=\"https://github.com/canonical/superset-k8s-operator/pull/84\">#84</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/superset-k8s-operator/compare/rev46...rev49\">https://github.com/canonical/superset-k8s-operator/compare/rev46&hellip;rev49</a></p>\n",
-                  "url": "https://github.com/canonical/superset-k8s-operator/releases/tag/rev49",
-                  "compareUrl": "https://github.com/canonical/superset-k8s-operator/compare/rev49...main"
                }
             ],
             "tags": null,
@@ -19329,8 +19329,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 51,
-                     "timestamp": 1768334179,
+                     "revision": 52,
+                     "timestamp": 1771179217,
                      "base": ""
                   },
                   {
