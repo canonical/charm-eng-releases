@@ -14795,6 +14795,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "14bce7f93864b2738d9bdd94aaf95efb4e40b8ec",
+                  "author": "Mateo Florido",
+                  "timestamp": 1771348058,
+                  "message": "<p>docs: review the use of LXD containers (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2406\">#2406</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/14bce7f93864b2738d9bdd94aaf95efb4e40b8ec"
+               },
+               {
                   "sha": "da06f64a76598fdca027719ecb280014eb0b938f",
                   "author": "Berkay Tekin Öz",
                   "timestamp": 1771176631,
@@ -14807,13 +14814,6 @@
                   "timestamp": 1771027381,
                   "message": "<p>docs: Combine networking pages  (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2352\">#2352</a>)</p>\n\n<ul>\n<li>Move networking explanation pages into one page</li>\n</ul>\n\n<p>We are trying to reduce the size and complexity of our navigation so I am moving the networking explanation pages into one networking page</p>\n\n<ul>\n<li><p>Address CI failures and Copilot review comments</p></li>\n\n<li><p>Address review comments</p></li>\n</ul>\n\n<p>Louise made a good point about this explanation page going from very high level networking concepts to quite in depth, more expert level detail which makes this page confusing to new users and partly redundant for more advanced users. I decided to remove the generic networking section and instead shift the focus onto what Canonical Kubernetes does with networking</p>\n\n<ul>\n<li><p>Minor review comments changes</p></li>\n\n<li><p>Linting</p></li>\n\n<li><p>Add links to ignore list</p></li>\n</ul>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/c9e9c9c771d0184d42d3b9d23fc700eb1692ef13"
-               },
-               {
-                  "sha": "43b06ad424d5d494976756c584b18c7b442197df",
-                  "author": "Niamh Hennigan",
-                  "timestamp": 1771021028,
-                  "message": "<p>ci: Move linkcheck logic out for weekly tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2276\">#2276</a>)</p>\n\n<ul>\n<li>Begin moving linkcheck logic out for weekly tests</li>\n</ul>\n\n<p>Linkchecker on PR 2202 is changing the linkchecker to only run on git diff. We want to move the logic out of docs checks so we can call this from our weekly tests on the entire docs set</p>\n\n<ul>\n<li><p>Add branch testing matrix</p></li>\n\n<li><p>Move linkcheck logic</p></li>\n</ul>\n\n<p>Remove duplication of linkcheck logic by making it modular so it can be called by the weekly test suite as well as the pr level testing</p>\n\n<ul>\n<li>Debug linkcheck not passed git diff</li>\n</ul>\n\n<p>The CI is running linkcheck on . rather than git diff so trying to fix that here</p>\n\n<ul>\n<li>Update changed files formatting</li>\n</ul>\n\n<p>We now generate git diff in a separate step so we need to change the way we format the output of changed_files to reflect this</p>\n\n<ul>\n<li><p>Added line to debug</p></li>\n\n<li><p>Debug &lsquo;</p></li>\n\n<li><p>Fix typo in spacing</p></li>\n\n<li><p>Add logic to allow forks contributions</p></li>\n\n<li><p>Add repo to outputs and fix indentation error</p></li>\n\n<li><p>Fix typo with missing }</p></li>\n\n<li><p>Fix error with default value</p></li>\n</ul>\n\n<p>Default value should be blank rather than . to run on all files in the repo</p>\n\n<ul>\n<li>Add check to add FILES var</li>\n</ul>\n\n<p>Only pass the FILES variable if there are files provided. Otherwise run check on all docs i.e pass no FILES var</p>\n\n<ul>\n<li><p>Copilot review comments</p></li>\n\n<li><p>Fix error with ref</p></li>\n</ul>\n\n<p>ref was named as branch in the outputs so it was not being passed to the checkout function. It was therefore running all tests on main, not the release branches</p>\n\n<ul>\n<li><p>Review comments</p></li>\n\n<li><p>Remove weekly test and update links</p></li>\n</ul>\n\n<p>For the purposes of backporting these changes to other branches and properly testing the linkchecker weekly test, I am removing the docs check from this PR and will follow up with a PR soley with that change only targeting main. I also updated some out of date links and added a link to the ignore list</p>\n\n<ul>\n<li><p>Fix broken link in charm page</p></li>\n\n<li><p>Attempt to fix &ldquo; issue</p></li>\n</ul>\n\n<p>The test is picking up when there are no docs files and running the entire docs set but it is reading the files wrong and not running the linkcheck on any files</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/43b06ad424d5d494976756c584b18c7b442197df"
                }
             ],
             "ciActions": [
