@@ -19755,6 +19755,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "bda82e73586a62bf621881aab872a527c8a46e2d",
+                  "author": "Christopher Bartz",
+                  "timestamp": 1772437429,
+                  "message": "<p>fix: prevent redundant post step run during connectivity check (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/23\">#23</a>)</p>\n\n<p>When connectivity-check is true, the main step returned before setting\nthe isPost state. This caused the post step to re-run the entire main\nlogic (apt-get install, tmate session creation, connectivity check)\nredundantly.</p>\n\n<p>Move core.saveState(&lsquo;isPost&rsquo;, &lsquo;true&rsquo;) to the top of run() so the post\nstep always detects itself and returns immediately.</p>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n",
+                  "url": "https://github.com/canonical/action-tmate/commit/bda82e73586a62bf621881aab872a527c8a46e2d"
+               },
+               {
                   "sha": "7a1a6f6a05e0900309e6f1978e81ddec4863a8d4",
                   "author": "Christopher Bartz",
                   "timestamp": 1770272114,
@@ -19767,13 +19774,6 @@
                   "timestamp": 1768199883,
                   "message": "<p>Limit SSH cryptographic algorithms to FIPS-approved options (remove ed25519) (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/21\">#21</a>)</p>\n",
                   "url": "https://github.com/canonical/action-tmate/commit/099c9f4365ccfe0c6557d6b5b73a042883e77a7b"
-               },
-               {
-                  "sha": "507faae70fe7d2dfcdba625ec16d8e75ee6d83e0",
-                  "author": "Sébastien Georget",
-                  "timestamp": 1767694873,
-                  "message": "<p>Add Jira product (<a target=\"_blank\" href=\"https://github.com/canonical/action-tmate/pull/20\">#20</a>)</p>\n",
-                  "url": "https://github.com/canonical/action-tmate/commit/507faae70fe7d2dfcdba625ec16d8e75ee6d83e0"
                }
             ],
             "ciActions": [],
