@@ -1278,7 +1278,7 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 108,
+            "newCommits": 125,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
                {
@@ -7783,7 +7783,7 @@
          },
          {
             "name": "observability-stack",
-            "newCommits": 50,
+            "newCommits": 51,
             "url": "https://github.com/canonical/observability-stack",
             "releases": [
                {
@@ -15987,6 +15987,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "55d019bbfc29cfaf5b813d46d59907299ed87a5f",
+                  "author": "Copilot",
+                  "timestamp": 1774027113,
+                  "message": "<p>Fix unit tests to match refactored source API (tests only) (<a target=\"_blank\" href=\"https://github.com/canonical/kube-galaxy-test/pull/50\">#50</a>)</p>\n\n<ul>\n<li><p>Initial plan</p></li>\n\n<li><p>Add units package, manifest provider/nodes/placement, update components to use unit.run()</p></li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Fix code review comments: shlex comment, remove blank lines in tests</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Change default provider type from local to lxd per design spec</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Wire provider_factory into setup_cluster / teardown_cluster; add locate() to UnitProvider</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>ensure_temp_dir: create directory on unit as well as locally</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>wip: partial local-staging refactor (squash/replace in next commit)</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Use cwd()/tmp as consistent orchestrator staging root; never write /opt/kube-galaxy locally</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>ensure_temp_dir: only create local staging dir, never contact unit during DOWNLOAD hook</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Add wait_until_ready() to Unit ABC and call it after provisioning</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Changes before error encountered</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Unify mkdir calls with ensure_dir + staged artifact distribution model</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li><p>Local adjustments</p></li>\n\n<li><p>More local adjustments &ndash; single node cluster works</p></li>\n\n<li><p>Fix unit tests to match existing source API (no src changes)</p></li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li>Fix test_delete_hook_handles_missing_manifest_gracefully to use MockUnit</li>\n</ul>\n\n<p>Co-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a></p>\n\n<ul>\n<li><p>Remove need for sudo from various unit tests</p></li>\n\n<li><p>Complete Single-Node in lxd vm</p></li>\n\n<li><p>Adjust language</p></li>\n\n<li><p>Streamline providers</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: copilot-swe-agent[bot] <a href=\"mailto:198982749+Copilot@users.noreply.github.com\">198982749+Copilot@users.noreply.github.com</a>\nCo-authored-by: addyess <a href=\"mailto:10090033+addyess@users.noreply.github.com\">10090033+addyess@users.noreply.github.com</a>\nCo-authored-by: Adam Dyess <a href=\"mailto:adam.dyess@canonical.com\">adam.dyess@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/kube-galaxy-test/commit/55d019bbfc29cfaf5b813d46d59907299ed87a5f"
+               },
+               {
                   "sha": "fb497b5ef64cad79f6ce7f4048d4f2a51c4add3c",
                   "author": "Adam Dyess",
                   "timestamp": 1773856195,
@@ -15999,13 +16006,6 @@
                   "timestamp": 1773855731,
                   "message": "<p>Update various github actions (<a target=\"_blank\" href=\"https://github.com/canonical/kube-galaxy-test/pull/46\">#46</a>)</p>\n",
                   "url": "https://github.com/canonical/kube-galaxy-test/commit/d5ccee76c35d2494ed0dc13903970bf338ca49e1"
-               },
-               {
-                  "sha": "c131e4248225e62cc5b02f234e3382279e7eef67",
-                  "author": "Adam Dyess",
-                  "timestamp": 1773855232,
-                  "message": "<p>Support fetching components from local, url, or named gh-action-artifact (<a target=\"_blank\" href=\"https://github.com/canonical/kube-galaxy-test/pull/44\">#44</a>)</p>\n\n<ul>\n<li><p>Support fetching components from local, url, or named gh-action-artifact</p></li>\n\n<li><p>docs: updated usage docs for gh-artifacts</p></li>\n\n<li><p>Unify the download hook to require the dest path to prohibit directories</p></li>\n\n<li><p>Adjust local and gh-artifact urls to become full schemas</p></li>\n\n<li><p>simplify stratgies with file downloads</p></li>\n\n<li><p>Shrink unnecessary comment</p></li>\n\n<li><p>Potential fix for pull request finding</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>Potential fix for pull request finding</li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>Potential fix for pull request finding</li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>Potential fix for pull request finding</li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>Potential fix for pull request finding</li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>Potential fix for pull request finding</li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>Potential fix for pull request finding</li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li><p>Improve clean-up of installed alternatives</p></li>\n\n<li><p>Apply suggestions from code review</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li><p>Incorporate review comments</p></li>\n\n<li><p>More review comments</p></li>\n\n<li><p>use GITHUB_TOKEN for ghcr.io authentication</p></li>\n\n<li><p>Support pulling from api.github.com</p></li>\n\n<li><p>Refactor gh.py</p></li>\n\n<li><p>replace github api logic with pygithub</p></li>\n\n<li><p>Review comments</p></li>\n\n<li><p>Review</p></li>\n\n<li><p>Adjust containerd authorization</p></li>\n\n<li><p>Include template files for containerd config</p></li>\n\n<li><p>Pull private images with crictl</p></li>\n\n<li><p>Use github action for registry auth</p></li>\n\n<li><p>Migrate everything to /etcd/containerd/hosts.d</p></li>\n\n<li><p>Centralize http headers and authentication</p></li>\n\n<li><p>Move authorization listing out of containerd.py</p></li>\n\n<li><p>Allow containerd to prefer basic-auth Authorization</p></li>\n\n<li><p>Remove warnings from crictl</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Copilot Autofix powered by AI <a href=\"mailto:175728472+Copilot@users.noreply.github.com\">175728472+Copilot@users.noreply.github.com</a></p>\n",
-                  "url": "https://github.com/canonical/kube-galaxy-test/commit/c131e4248225e62cc5b02f234e3382279e7eef67"
                }
             ],
             "ciActions": [],
@@ -31617,6 +31617,24 @@
             "url": "https://github.com/canonical/wireguard-gateway-operator",
             "releases": [
                {
+                  "id": 299511001,
+                  "version": "rev8",
+                  "timestamp": 1774025586,
+                  "title": "Revision 8",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:54 UTC on 20 Mar 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add WireGuard gateway charm documentation by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/12\">#12</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wireguard-gateway-operator/compare/rev6...rev8\">https://github.com/canonical/wireguard-gateway-operator/compare/rev6&hellip;rev8</a></p>\n",
+                  "url": "https://github.com/canonical/wireguard-gateway-operator/releases/tag/rev8",
+                  "compareUrl": "https://github.com/canonical/wireguard-gateway-operator/compare/rev8...main"
+               },
+               {
+                  "id": 299510962,
+                  "version": "rev7",
+                  "timestamp": 1774025586,
+                  "title": "Revision 7",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 16:54 UTC on 20 Mar 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add WireGuard gateway charm documentation by <a target=\"_blank\" href=\"https://github.com/weiiwang01\">@weiiwang01</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/12\"><a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/12\">#12</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wireguard-gateway-operator/compare/rev6...rev7\">https://github.com/canonical/wireguard-gateway-operator/compare/rev6&hellip;rev7</a></p>\n",
+                  "url": "https://github.com/canonical/wireguard-gateway-operator/releases/tag/rev7",
+                  "compareUrl": "https://github.com/canonical/wireguard-gateway-operator/compare/rev7...main"
+               },
+               {
                   "id": 290800034,
                   "version": "rev6",
                   "timestamp": 1772096123,
@@ -31624,30 +31642,33 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 08:56 UTC on 26 Feb 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): update dependency ops to v3.6.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/22\"><a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/22\">#22</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wireguard-gateway-operator/compare/rev5...rev6\">https://github.com/canonical/wireguard-gateway-operator/compare/rev5&hellip;rev6</a></p>\n",
                   "url": "https://github.com/canonical/wireguard-gateway-operator/releases/tag/rev6",
                   "compareUrl": "https://github.com/canonical/wireguard-gateway-operator/compare/rev6...main"
-               },
-               {
-                  "id": 288040017,
-                  "version": "rev5",
-                  "timestamp": 1771485967,
-                  "title": "Revision 5",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:27 UTC on 19 Feb 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: migrate to operator-workflows for Terraform testing by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/21\"><a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/21\">#21</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wireguard-gateway-operator/compare/rev4...rev5\">https://github.com/canonical/wireguard-gateway-operator/compare/rev4&hellip;rev5</a></p>\n",
-                  "url": "https://github.com/canonical/wireguard-gateway-operator/releases/tag/rev5",
-                  "compareUrl": "https://github.com/canonical/wireguard-gateway-operator/compare/rev5...main"
-               },
-               {
-                  "id": 287595392,
-                  "version": "rev4",
-                  "timestamp": 1771406831,
-                  "title": "Revision 4",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 09:28 UTC on 18 Feb 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Update actions/stale action to v10.2.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/20\"><a target=\"_blank\" href=\"https://github.com/canonical/wireguard-gateway-operator/pull/20\">#20</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/wireguard-gateway-operator/compare/rev3...rev4\">https://github.com/canonical/wireguard-gateway-operator/compare/rev3&hellip;rev4</a></p>\n",
-                  "url": "https://github.com/canonical/wireguard-gateway-operator/releases/tag/rev4",
-                  "compareUrl": "https://github.com/canonical/wireguard-gateway-operator/compare/rev4...main"
                }
             ],
             "tags": null,
             "commits": null,
-            "ciActions": [],
-            "charm": null,
+            "ciActions": [
+               "https://github.com/canonical/wireguard-gateway-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/wireguard-gateway-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "wireguard-gateway",
+               "url": "https://charmhub.io/wireguard-gateway",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 8,
+                     "timestamp": 1774025677,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
