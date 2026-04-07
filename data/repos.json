@@ -15023,29 +15023,29 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "9379a681c9343a4715aadc9f09caa6987a13113c",
+                  "sha": "6b1d4304aa6913a2261b2b8f7fcabe31de4bcb38",
                   "author": "Benjamin Schimke",
-                  "timestamp": 1775546854,
-                  "message": "<p>fix(deps): bump vulnerable Python dependencies in test/CI files (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2485\">#2485</a>)</p>\n\n<p>Bump test and CI Python dependencies to resolve security vulnerabilities:</p>\n\n<ul>\n<li>CVE-2026-32274 (HIGH): black 24.3.0 -&gt; 26.3.1</li>\n<li>CVE-2026-26007 (HIGH): cryptography 44.0.1 -&gt; 46.0.6</li>\n<li>CVE-2026-25645 (MEDIUM): requests 2.32.<sup>3</sup>&frasl;<sub>2</sub>.32.5 -&gt; 2.33.1</li>\n<li>CVE-2024-47081 (MEDIUM): requests (covered by same bump)</li>\n<li>CVE-2026-34073 (LOW): cryptography (covered by same bump)</li>\n<li>CVE-2025-15504 (LOW): lief 0.16.6 -&gt; 0.17.6</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/9379a681c9343a4715aadc9f09caa6987a13113c"
+                  "timestamp": 1775558818,
+                  "message": "<p>docs: fix broken privileged container link in LXD install guide (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2487\">#2487</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/6b1d4304aa6913a2261b2b8f7fcabe31de4bcb38"
                },
                {
-                  "sha": "cb88b666bb72ba33e2f02d66d619645e11f563cc",
+                  "sha": "0e69e4ea799d3ff480cdf3b7c6c0b6ae75d389b4",
                   "author": "Benjamin Schimke",
-                  "timestamp": 1775155220,
-                  "message": "<p>fix: add retry logic for snap install/refresh in integration tests (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2474\">#2474</a>)</p>\n\n<p>Snap store operations (install, refresh) can fail transiently due to\nnetwork timeouts, snapd being busy, or store availability issues. These\ntransient failures cause nightly CI flakes.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/cb88b666bb72ba33e2f02d66d619645e11f563cc"
+                  "timestamp": 1775558505,
+                  "message": "<p>test: increase pod readiness timeout for downgrade rollback test (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2480\">#2480</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/0e69e4ea799d3ff480cdf3b7c6c0b6ae75d389b4"
                },
                {
-                  "sha": "8c4c152652f43ab34bc86570241d35db53339555",
+                  "sha": "10b5f6c6a74aee5a1dbc92c4a1ae680f224b4551",
                   "author": "Benjamin Schimke",
-                  "timestamp": 1775155186,
-                  "message": "<p>fix: attribute Trivy SARIF results to the scanned branch (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2475\">#2475</a>)</p>\n\n<p>The scheduled Trivy scan in trivy.yaml scans multiple branches (main\nand release-*), but the upload-sarif step did not specify ref or sha.\nThis caused all SARIF results to be attributed to the workflow trigger\nref (refs/heads/main for cron jobs), even when a release branch was\nactually scanned.</p>\n\n<p>Since src/k8s/go.mod was removed from main (moved to the k8sd repo),\nvulnerabilities found in that file on release branches created alerts\non main that could never be resolved.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/8c4c152652f43ab34bc86570241d35db53339555"
+                  "timestamp": 1775558421,
+                  "message": "<p>fix(ci): prevent shell injection in GitHub Actions workflows (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2486\">#2486</a>)</p>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/10b5f6c6a74aee5a1dbc92c4a1ae680f224b4551"
                }
             ],
             "ciActions": [
-               "https://github.com/canonical/k8s-snap/actions/workflows/integration.yaml"
+               "https://github.com/canonical/k8s-snap/actions/workflows/lint_and_integration.yaml"
             ],
             "charm": null,
             "snap": {
@@ -19957,7 +19957,7 @@
          },
          {
             "name": "pgbouncer-k8s-operator",
-            "newCommits": 26,
+            "newCommits": 29,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -20848,7 +20848,7 @@
          },
          {
             "name": "postgresql-ldap-sync",
-            "newCommits": 20,
+            "newCommits": 21,
             "url": "https://github.com/canonical/postgresql-ldap-sync",
             "releases": [
                {
@@ -21006,7 +21006,7 @@
          },
          {
             "name": "charmed-postgresql-rock",
-            "newCommits": 100,
+            "newCommits": 102,
             "url": "https://github.com/canonical/charmed-postgresql-rock",
             "releases": [
                {
@@ -22781,7 +22781,7 @@
          },
          {
             "name": "sysbench-operator",
-            "newCommits": 108,
+            "newCommits": 109,
             "url": "https://github.com/canonical/sysbench-operator",
             "releases": [
                {
@@ -25028,25 +25028,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "e31c3e25e11690e619de7dd051d0a0687fef805e",
+                  "author": "renovate[bot]",
+                  "timestamp": 1775559313,
+                  "message": "<p>Update dependency ruff to ^0.15.9 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/569\">#569</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/e31c3e25e11690e619de7dd051d0a0687fef805e"
+               },
+               {
+                  "sha": "e317f012cb96eadb3d7260f71910cdd38ec87018",
+                  "author": "renovate[bot]",
+                  "timestamp": 1775559286,
+                  "message": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/572\">#572</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/e317f012cb96eadb3d7260f71910cdd38ec87018"
+               },
+               {
                   "sha": "39f790c61ad1fa567972d1812c1b4f9dac7b1f6e",
                   "author": "Canonical Data Platform Bot",
                   "timestamp": 1775029723,
                   "message": "<p>Update bundle (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/560\">#560</a>)</p>\n\n<p>Co-authored-by: GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com></p>\n",
                   "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/39f790c61ad1fa567972d1812c1b4f9dac7b1f6e"
-               },
-               {
-                  "sha": "ed8e3aa31d01c33a3f6ebecb983edaf603fd8a72",
-                  "author": "renovate[bot]",
-                  "timestamp": 1774974741,
-                  "message": "<p>Update dependency ruff to ^0.15.8 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/562\">#562</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/ed8e3aa31d01c33a3f6ebecb983edaf603fd8a72"
-               },
-               {
-                  "sha": "ee4f1ad70497bd2f9dc2ee44d2c7c34772d7779c",
-                  "author": "renovate[bot]",
-                  "timestamp": 1774967462,
-                  "message": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-k8s-bundle/pull/563\">#563</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "url": "https://github.com/canonical/postgresql-k8s-bundle/commit/ee4f1ad70497bd2f9dc2ee44d2c7c34772d7779c"
                }
             ],
             "ciActions": [
@@ -25355,7 +25355,7 @@
          },
          {
             "name": "postgresql-test-app",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/postgresql-test-app",
             "releases": null,
             "tags": [
@@ -26873,31 +26873,31 @@
             "url": "https://github.com/canonical/oci-factory",
             "releases": [
                {
-                  "id": 305912519,
-                  "version": "python_3.12-24.04_stable",
-                  "timestamp": 1775535441,
-                  "title": "python_3.12-24.04_stable",
+                  "id": 305916566,
+                  "version": "rabbitmq_3.12-24.04_stable",
+                  "timestamp": 1775536921,
+                  "title": "rabbitmq_3.12-24.04_stable",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-a0d9076ad219484468dd",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/python_3.12-24.04_stable...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-617c836f5893c3cc01ab",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/rabbitmq_3.12-24.04_stable...main"
                },
                {
-                  "id": 305912511,
-                  "version": "python_3.12-24.04_edge",
-                  "timestamp": 1775535439,
-                  "title": "python_3.12-24.04_edge",
+                  "id": 305916533,
+                  "version": "rabbitmq_3.12-24.04_edge",
+                  "timestamp": 1775536913,
+                  "title": "rabbitmq_3.12-24.04_edge",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-c492b20a4b323e724564",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/python_3.12-24.04_edge...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-73584561386af3c6cea3",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/rabbitmq_3.12-24.04_edge...main"
                },
                {
-                  "id": 305912504,
-                  "version": "python_3.12-24.04_beta",
-                  "timestamp": 1775535438,
-                  "title": "python_3.12-24.04_beta",
+                  "id": 305916548,
+                  "version": "rabbitmq_3.12-24.04_candidate",
+                  "timestamp": 1775536917,
+                  "title": "rabbitmq_3.12-24.04_candidate",
                   "body": "",
-                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-180540b06d8cd1acd090",
-                  "compareUrl": "https://github.com/canonical/oci-factory/compare/python_3.12-24.04_beta...main"
+                  "url": "https://github.com/canonical/oci-factory/releases/tag/untagged-2395d0eb98d98a36d7ea",
+                  "compareUrl": "https://github.com/canonical/oci-factory/compare/rabbitmq_3.12-24.04_candidate...main"
                }
             ],
             "tags": null,
