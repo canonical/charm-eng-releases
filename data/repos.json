@@ -8546,7 +8546,7 @@
       "repos": [
          {
             "name": "manual-tls-certificates-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/manual-tls-certificates-operator",
             "releases": [
                {
@@ -15023,6 +15023,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "9379a681c9343a4715aadc9f09caa6987a13113c",
+                  "author": "Benjamin Schimke",
+                  "timestamp": 1775546854,
+                  "message": "<p>fix(deps): bump vulnerable Python dependencies in test/CI files (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2485\">#2485</a>)</p>\n\n<p>Bump test and CI Python dependencies to resolve security vulnerabilities:</p>\n\n<ul>\n<li>CVE-2026-32274 (HIGH): black 24.3.0 -&gt; 26.3.1</li>\n<li>CVE-2026-26007 (HIGH): cryptography 44.0.1 -&gt; 46.0.6</li>\n<li>CVE-2026-25645 (MEDIUM): requests 2.32.<sup>3</sup>&frasl;<sub>2</sub>.32.5 -&gt; 2.33.1</li>\n<li>CVE-2024-47081 (MEDIUM): requests (covered by same bump)</li>\n<li>CVE-2026-34073 (LOW): cryptography (covered by same bump)</li>\n<li>CVE-2025-15504 (LOW): lief 0.16.6 -&gt; 0.17.6</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/9379a681c9343a4715aadc9f09caa6987a13113c"
+               },
+               {
                   "sha": "cb88b666bb72ba33e2f02d66d619645e11f563cc",
                   "author": "Benjamin Schimke",
                   "timestamp": 1775155220,
@@ -15035,319 +15042,13 @@
                   "timestamp": 1775155186,
                   "message": "<p>fix: attribute Trivy SARIF results to the scanned branch (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2475\">#2475</a>)</p>\n\n<p>The scheduled Trivy scan in trivy.yaml scans multiple branches (main\nand release-*), but the upload-sarif step did not specify ref or sha.\nThis caused all SARIF results to be attributed to the workflow trigger\nref (refs/heads/main for cron jobs), even when a release branch was\nactually scanned.</p>\n\n<p>Since src/k8s/go.mod was removed from main (moved to the k8sd repo),\nvulnerabilities found in that file on release branches created alerts\non main that could never be resolved.</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/8c4c152652f43ab34bc86570241d35db53339555"
-               },
-               {
-                  "sha": "404623842446e8c470bd12badd0d65d03e26cca8",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1775148851,
-                  "message": "<p>fix: add TEST_ prefix to LXD_DUAL_NIC env vars for consistency (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2477\">#2477</a>)</p>\n\n<p>All other LXD-related environment variables in the test config use the\nTEST_ prefix (e.g. TEST_LXD_PROFILE_NAME, TEST_LXD_FAN_PROFILE_NAME),\nbut LXD_DUAL_NIC_PROFILE_NAME and LXD_DUAL_NIC_PROFILE were missing it.\nRename for consistency.</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/404623842446e8c470bd12badd0d65d03e26cca8"
                }
             ],
             "ciActions": [
                "https://github.com/canonical/k8s-snap/actions/workflows/integration.yaml"
             ],
             "charm": null,
-            "snap": {
-               "name": "k8s",
-               "url": "https://snapcraft.io/k8s",
-               "releases": [
-                  {
-                     "track": "1.32-classic",
-                     "channel": "stable",
-                     "revision": 5092,
-                     "timestamp": 1774054022,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.32-classic",
-                     "channel": "stable",
-                     "revision": 5047,
-                     "timestamp": 1773276506,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.32-classic",
-                     "channel": "candidate",
-                     "revision": 5176,
-                     "timestamp": 1775524157,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.32-classic",
-                     "channel": "candidate",
-                     "revision": 5047,
-                     "timestamp": 1773104288,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.32-classic",
-                     "channel": "beta",
-                     "revision": 5176,
-                     "timestamp": 1775354349,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.32-classic",
-                     "channel": "beta",
-                     "revision": 5047,
-                     "timestamp": 1772848365,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.32-classic",
-                     "channel": "edge",
-                     "revision": 5176,
-                     "timestamp": 1775076061,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.32-classic",
-                     "channel": "edge",
-                     "revision": 5186,
-                     "timestamp": 1775088023,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 5190,
-                     "timestamp": 1775153014,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 5193,
-                     "timestamp": 1775173581,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 5195,
-                     "timestamp": 1775174176,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 5194,
-                     "timestamp": 1775174056,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.36-classic",
-                     "channel": "beta",
-                     "revision": 5203,
-                     "timestamp": 1775541086,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.36-classic",
-                     "channel": "beta",
-                     "revision": 5202,
-                     "timestamp": 1775541031,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.36-classic",
-                     "channel": "edge",
-                     "revision": 5132,
-                     "timestamp": 1773974567,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.36-classic",
-                     "channel": "edge",
-                     "revision": 5133,
-                     "timestamp": 1773975437,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "stable",
-                     "revision": 5106,
-                     "timestamp": 1774055436,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "stable",
-                     "revision": 5049,
-                     "timestamp": 1773278083,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "candidate",
-                     "revision": 5106,
-                     "timestamp": 1773882512,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "candidate",
-                     "revision": 5049,
-                     "timestamp": 1773104730,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "beta",
-                     "revision": 5106,
-                     "timestamp": 1773626520,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "beta",
-                     "revision": 5182,
-                     "timestamp": 1775441706,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "edge",
-                     "revision": 5175,
-                     "timestamp": 1775075892,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.35-classic",
-                     "channel": "edge",
-                     "revision": 5182,
-                     "timestamp": 1775087487,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "stable",
-                     "revision": 5048,
-                     "timestamp": 1773106306,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "stable",
-                     "revision": 4993,
-                     "timestamp": 1771982838,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "candidate",
-                     "revision": 5048,
-                     "timestamp": 1772932440,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "candidate",
-                     "revision": 4993,
-                     "timestamp": 1771809211,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "beta",
-                     "revision": 5048,
-                     "timestamp": 1772763854,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "beta",
-                     "revision": 4993,
-                     "timestamp": 1771639547,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "edge",
-                     "revision": 5178,
-                     "timestamp": 1775076212,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.34-classic",
-                     "channel": "edge",
-                     "revision": 5183,
-                     "timestamp": 1775087678,
-                     "base": "core22"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "stable",
-                     "revision": 5093,
-                     "timestamp": 1773883395,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "stable",
-                     "revision": 4756,
-                     "timestamp": 1771550347,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "candidate",
-                     "revision": 5093,
-                     "timestamp": 1773709508,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "candidate",
-                     "revision": 4756,
-                     "timestamp": 1770942921,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "beta",
-                     "revision": 5093,
-                     "timestamp": 1773540763,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "beta",
-                     "revision": 4756,
-                     "timestamp": 1768940394,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "edge",
-                     "revision": 5177,
-                     "timestamp": 1775076118,
-                     "base": "core20"
-                  },
-                  {
-                     "track": "1.33-classic",
-                     "channel": "edge",
-                     "revision": 5185,
-                     "timestamp": 1775087943,
-                     "base": "core20"
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "1.32-classic",
-                  "latest",
-                  "1.36-classic",
-                  "1.35-classic",
-                  "1.34-classic",
-                  "1.33-classic"
-               ]
-            }
+            "snap": null
          },
          {
             "name": "k8s-snap-api",
@@ -19769,7 +19470,7 @@
          },
          {
             "name": "postgresql-single-kernel-library",
-            "newCommits": 15,
+            "newCommits": 16,
             "url": "https://github.com/canonical/postgresql-single-kernel-library",
             "releases": [
                {
@@ -21223,7 +20924,7 @@
          },
          {
             "name": "charmed-etcd-operator",
-            "newCommits": 144,
+            "newCommits": 145,
             "url": "https://github.com/canonical/charmed-etcd-operator",
             "releases": [
                {
@@ -25928,7 +25629,7 @@
          },
          {
             "name": "valkey-operator",
-            "newCommits": 2,
+            "newCommits": 3,
             "url": "https://github.com/canonical/valkey-operator",
             "releases": null,
             "tags": [
@@ -28516,9 +28217,18 @@
          },
          {
             "name": "falco-operators",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/falco-operators",
             "releases": [
+               {
+                  "id": 305950537,
+                  "version": "rev85",
+                  "timestamp": 1775544523,
+                  "title": "Revision 85",
+                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;0.42/edge&rsquo; at 06:52 UTC on 7 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Leverage local dependencies by <a target=\"_blank\" href=\"https://github.com/arturo-seijas\">@arturo-seijas</a> in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/114\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/114\">#114</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/falco-operators/compare/rev84...rev85\">https://github.com/canonical/falco-operators/compare/rev84&hellip;rev85</a></p>\n",
+                  "url": "https://github.com/canonical/falco-operators/releases/tag/rev85",
+                  "compareUrl": "https://github.com/canonical/falco-operators/compare/rev85...main"
+               },
                {
                   "id": 305002268,
                   "version": "rev84",
@@ -28536,15 +28246,6 @@
                   "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;0.42/edge&rsquo; at 08:43 UTC on 27 Mar 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency requests to v2.33.0 [security] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/129\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/129\">#129</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/falco-operators/compare/rev72...rev83\">https://github.com/canonical/falco-operators/compare/rev72&hellip;rev83</a></p>\n",
                   "url": "https://github.com/canonical/falco-operators/releases/tag/rev83",
                   "compareUrl": "https://github.com/canonical/falco-operators/compare/rev83...main"
-               },
-               {
-                  "id": 301244071,
-                  "version": "rev82",
-                  "timestamp": 1774448652,
-                  "title": "Revision 82",
-                  "body": "<p>resources:</p>\n\n<p>Static resources:\n Released to &lsquo;0.42/edge&rsquo; at 14:25 UTC on 25 Mar 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: run renovate on weekends by <a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/125\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/125\">#125</a></a></li>\n</ul>\n\n<h2>New Contributors</h2>\n\n<ul>\n<li><a target=\"_blank\" href=\"https://github.com/javierdelapuente\">@javierdelapuente</a> made their first contribution in <a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/125\"><a target=\"_blank\" href=\"https://github.com/canonical/falco-operators/pull/125\">#125</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/falco-operators/compare/rev81...rev82\">https://github.com/canonical/falco-operators/compare/rev81&hellip;rev82</a></p>\n",
-                  "url": "https://github.com/canonical/falco-operators/releases/tag/rev82",
-                  "compareUrl": "https://github.com/canonical/falco-operators/compare/rev82...main"
                }
             ],
             "tags": null,
