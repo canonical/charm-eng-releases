@@ -15588,6 +15588,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c877fcacd6cf70a754d262f3de7889e7cdd11091",
+                  "author": "Niamh Hennigan",
+                  "timestamp": 1775682073,
+                  "message": "<p>docs: Add redirects from read the docs (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2461\">#2461</a>)</p>\n\n<ul>\n<li>Update redirects</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/k8s-snap/commit/c877fcacd6cf70a754d262f3de7889e7cdd11091"
+               },
+               {
                   "sha": "08f9429d8d9a8d18203c48ab5ec94cf350b791a7",
                   "author": "Benjamin Schimke",
                   "timestamp": 1775654250,
@@ -15600,13 +15607,6 @@
                   "timestamp": 1775654066,
                   "message": "<p>test: increase gateway IP wait timeout and use stubbornly pattern (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2479\">#2479</a>)</p>\n",
                   "url": "https://github.com/canonical/k8s-snap/commit/0057c0385df6f69f7124f41aec65870071f85a0e"
-               },
-               {
-                  "sha": "6b1d4304aa6913a2261b2b8f7fcabe31de4bcb38",
-                  "author": "Benjamin Schimke",
-                  "timestamp": 1775558818,
-                  "message": "<p>docs: fix broken privileged container link in LXD install guide (<a target=\"_blank\" href=\"https://github.com/canonical/k8s-snap/pull/2487\">#2487</a>)</p>\n",
-                  "url": "https://github.com/canonical/k8s-snap/commit/6b1d4304aa6913a2261b2b8f7fcabe31de4bcb38"
                }
             ],
             "ciActions": [
@@ -24852,6 +24852,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "851a6b459b8a8cf22b0cef1de814a68ff85e3eeb",
+                  "author": "Smail KOURTA",
+                  "timestamp": 1775680500,
+                  "message": "<p>patch: Add license header and rely on build dp workflow in release (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-valkey-rock/pull/27\">#27</a>)</p>\n\n<p>This pull request updates the GitHub Actions workflow for releasing to\nGHCR, focusing on improving maintainability and workflow management. The\nmain changes include switching to a reusable workflow from an external\nrepository, adding concurrency controls, and updating workflow metadata.</p>\n\n<p><strong>Workflow improvements:</strong></p>\n\n<ul>\n<li>The workflow now uses the reusable <code>build_rock.yaml</code> from the\n<code>canonical/data-platform-workflows</code> repository instead of a local\n<code>build.yaml</code>, ensuring consistency and easier maintenance.</li>\n<li>Concurrency controls have been added to prevent overlapping workflow\nruns, using a group based on the workflow name and git reference.</li>\n<li>The workflow can now be triggered manually with <code>workflow_dispatch</code>,\nin addition to pushes to the <code>9-26.04</code> branch.</li>\n</ul>\n\n<p><strong>Metadata and naming updates:</strong></p>\n\n<ul>\n<li>The workflow name has been changed to &ldquo;Release to GHCR&rdquo;, and\ncopyright/license headers were added for clarity and compliance.</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/charmed-valkey-rock/commit/851a6b459b8a8cf22b0cef1de814a68ff85e3eeb"
+               },
+               {
                   "sha": "043161481a0a37d9704b92e1f50d7ea30dbb7a7c",
                   "author": "Smail KOURTA",
                   "timestamp": 1775662997,
@@ -24864,13 +24871,6 @@
                   "timestamp": 1774015191,
                   "message": "<p>chore: pin trivy action to 0.35.0 (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-valkey-rock/pull/24\">#24</a>)</p>\n\n<p><a href=\"https://www.stepsecurity.io/blog/trivy-compromised-a-second-time---malicious-v0-69-4-release\">https://www.stepsecurity.io/blog/trivy-compromised-a-second-time&mdash;malicious-v0-69-4-release</a></p>\n",
                   "url": "https://github.com/canonical/charmed-valkey-rock/commit/66cf6e9aff024772a1501f4e2b01015a8a9817f2"
-               },
-               {
-                  "sha": "7b78aa936861a2821151ec7d5e16d0bfea5a008a",
-                  "author": "Smail KOURTA",
-                  "timestamp": 1770871269,
-                  "message": "<p>chore([DPE-9397]): update rock user to default user (<a target=\"_blank\" href=\"https://github.com/canonical/charmed-valkey-rock/pull/23\">#23</a>)</p>\n\n<p>This pull request updates the <code>rockcraft.yaml</code> configuration switch to a\nsystem-wide <code>_daemon_</code> user for running services and updating file\nownership to match this user.</p>\n\n<p><strong>User and Permissions Management:</strong></p>\n\n<ul>\n<li>Set <code>run-user</code> to <code>_daemon_</code> at the top level, removing the need to\nspecify a user for each service and ensuring all services run under a\nstandard system user.</li>\n<li>Removed the creation of a custom <code>valkey</code> user and group in the\noverlay script, simplifying the build process.</li>\n<li>Updated file ownership in the <code>override-prime</code> step to use UID/GID\n<code>584792</code>, which matches the <code>_daemon_</code> user, ensuring correct\npermissions for the Valkey data directory.</li>\n</ul>\n\n<p><strong>Other Minor Changes:</strong></p>\n\n<ul>\n<li>Changed the version string format in the <code>version</code> field from single\nto double quotes for consistency.</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/charmed-valkey-rock/commit/7b78aa936861a2821151ec7d5e16d0bfea5a008a"
                }
             ],
             "ciActions": [
@@ -27938,7 +27938,7 @@
          },
          {
             "name": "superset-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/superset-k8s-operator",
             "releases": [
                {
@@ -28068,9 +28068,27 @@
          },
          {
             "name": "trino-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/trino-k8s-operator",
             "releases": [
+               {
+                  "id": 306799176,
+                  "version": "rev61",
+                  "timestamp": 1775682963,
+                  "title": "Revision 61",
+                  "body": "<p>resources:\n    -  trino-image: undefined\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:18 UTC on 8 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: ranger plugin config post v479 upgrade by <a target=\"_blank\" href=\"https://github.com/gjerkokristi\">@gjerkokristi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/110\"><a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/110\">#110</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev60...rev61\">https://github.com/canonical/trino-k8s-operator/compare/rev60&hellip;rev61</a></p>\n",
+                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev61",
+                  "compareUrl": "https://github.com/canonical/trino-k8s-operator/compare/rev61...main"
+               },
+               {
+                  "id": 306784071,
+                  "version": "rev60",
+                  "timestamp": 1775680288,
+                  "title": "Revision 60",
+                  "body": "<p>resources:\n    -  trino-image: undefined\n       resource-revision: 34</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:34 UTC on 8 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: add secret creation and pg catalogs to trino-catalog relation by <a target=\"_blank\" href=\"https://github.com/gjerkokristi\">@gjerkokristi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/108\"><a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/108\">#108</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev59...rev60\">https://github.com/canonical/trino-k8s-operator/compare/rev59&hellip;rev60</a></p>\n",
+                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev60",
+                  "compareUrl": "https://github.com/canonical/trino-k8s-operator/compare/rev60...main"
+               },
                {
                   "id": 306442609,
                   "version": "rev59",
@@ -28079,24 +28097,6 @@
                   "body": "<p>resources:\n    -  trino-image: undefined\n       resource-revision: 33</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 07:45 UTC on 8 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix: error &ldquo;ranger.service.name: must not be empty&rdquo; on Trino start by <a target=\"_blank\" href=\"https://github.com/gjerkokristi\">@gjerkokristi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/109\"><a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/109\">#109</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev58...rev59\">https://github.com/canonical/trino-k8s-operator/compare/rev58&hellip;rev59</a></p>\n",
                   "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev59",
                   "compareUrl": "https://github.com/canonical/trino-k8s-operator/compare/rev59...main"
-               },
-               {
-                  "id": 302323643,
-                  "version": "rev58",
-                  "timestamp": 1774611337,
-                  "title": "Revision 58",
-                  "body": "<p>resources:\n    -  trino-image: undefined\n       resource-revision: 32</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:39 UTC on 27 Mar 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[CSS-20969] PostgreSQL-Trino relation by <a target=\"_blank\" href=\"https://github.com/gjerkokristi\">@gjerkokristi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/105\"><a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/105\">#105</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev57...rev58\">https://github.com/canonical/trino-k8s-operator/compare/rev57&hellip;rev58</a></p>\n",
-                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev58",
-                  "compareUrl": "https://github.com/canonical/trino-k8s-operator/compare/rev58...main"
-               },
-               {
-                  "id": 302089419,
-                  "version": "rev57",
-                  "timestamp": 1774557396,
-                  "title": "Revision 57",
-                  "body": "<p>resources:\n    -  trino-image: undefined\n       resource-revision: 31</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:40 UTC on 26 Mar 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>Add resource group management logic to Trino by <a target=\"_blank\" href=\"https://github.com/onurmus\">@onurmus</a> in <a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/101\"><a target=\"_blank\" href=\"https://github.com/canonical/trino-k8s-operator/pull/101\">#101</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/trino-k8s-operator/compare/rev56...rev57\">https://github.com/canonical/trino-k8s-operator/compare/rev56&hellip;rev57</a></p>\n",
-                  "url": "https://github.com/canonical/trino-k8s-operator/releases/tag/rev57",
-                  "compareUrl": "https://github.com/canonical/trino-k8s-operator/compare/rev57...main"
                }
             ],
             "tags": null,
