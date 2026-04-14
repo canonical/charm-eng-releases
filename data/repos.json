@@ -8522,6 +8522,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "af42a8a06eb30d92f69e76fc62b6d8da57da476f",
+                  "author": "Luca Bello",
+                  "timestamp": 1776177862,
+                  "message": "<p>feat: add 1.7.1 and migrate tests to spread (<a target=\"_blank\" href=\"https://github.com/canonical/xk6-rock/pull/7\">#7</a>)</p>\n\n<ul>\n<li><p>feat: add 1.7.1</p></li>\n\n<li><p>migrate tets</p></li>\n\n<li><p>fix: use pebble exec to run k6 in loki-load-test</p></li>\n</ul>\n\n<p>The rock uses Pebble as its entrypoint, so &lsquo;docker run &hellip; run /test.js&rsquo;\nwas interpreted as &lsquo;pebble enter run&rsquo;, which is not a valid subcommand.</p>\n\n<p>Use &lsquo;exec &ndash; k6 run /test.js&rsquo; so Pebble&rsquo;s exec subcommand invokes k6.</p>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<hr>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n",
+                  "url": "https://github.com/canonical/xk6-rock/commit/af42a8a06eb30d92f69e76fc62b6d8da57da476f"
+               },
+               {
                   "sha": "b383777d117aba91bc5912c4364e7291ed0db6c7",
                   "author": "Luca Bello",
                   "timestamp": 1776167160,
@@ -8534,13 +8541,6 @@
                   "timestamp": 1763025814,
                   "message": "<p>feat: change ownership to Tracing team (<a target=\"_blank\" href=\"https://github.com/canonical/xk6-rock/pull/5\">#5</a>)</p>\n\n<p>According to the maintenance rebalancing process, the ownership of this repository is being changed from <strong>Shared</strong> to <strong>Tracing</strong>.</p>\n",
                   "url": "https://github.com/canonical/xk6-rock/commit/53f9e01d5c4e22916cbf2d3f39061ab19dc3e1ea"
-               },
-               {
-                  "sha": "f37323e8c8a767769e4859a0a74969fa8d74291a",
-                  "author": "Luca Bello",
-                  "timestamp": 1741177200,
-                  "message": "<p>fix: update badges in readme</p>\n",
-                  "url": "https://github.com/canonical/xk6-rock/commit/f37323e8c8a767769e4859a0a74969fa8d74291a"
                }
             ],
             "ciActions": [
@@ -30900,7 +30900,7 @@
          },
          {
             "name": "cloudflare-configurator-operator",
-            "newCommits": 0,
+            "newCommits": 24,
             "url": "https://github.com/canonical/cloudflare-configurator-operator",
             "releases": [
                {
@@ -30933,8 +30933,29 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": null,
-            "charm": null,
+            "ciActions": [
+               "https://github.com/canonical/cloudflare-configurator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/cloudflare-configurator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "cloudflare-configurator",
+               "url": "https://charmhub.io/cloudflare-configurator",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 3,
+                     "timestamp": 1734689438,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
             "snap": null
          },
          {
