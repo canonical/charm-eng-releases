@@ -807,29 +807,29 @@
                   {
                      "track": "4.1",
                      "channel": "edge",
-                     "revision": 34653,
-                     "timestamp": 1776469198,
+                     "revision": 34677,
+                     "timestamp": 1776720008,
                      "base": "core24"
                   },
                   {
                      "track": "4.1",
                      "channel": "edge",
-                     "revision": 34654,
-                     "timestamp": 1776469255,
+                     "revision": 34678,
+                     "timestamp": 1776720080,
                      "base": "core24"
                   },
                   {
                      "track": "4.1",
                      "channel": "edge",
-                     "revision": 34655,
-                     "timestamp": 1776469316,
+                     "revision": 34679,
+                     "timestamp": 1776720152,
                      "base": "core24"
                   },
                   {
                      "track": "4.1",
                      "channel": "edge",
-                     "revision": 34660,
-                     "timestamp": 1776475126,
+                     "revision": 34680,
+                     "timestamp": 1776720224,
                      "base": "core24"
                   },
                   {
@@ -3687,6 +3687,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "599c7022ce0a917e8c0a3dbf2126cee782ab3b59",
+                  "author": "Sina P",
+                  "timestamp": 1776718535,
+                  "message": "<p>chore: add no longer maintained notice (<a target=\"_blank\" href=\"https://github.com/canonical/karma-rock/pull/12\">#12</a>)</p>\n",
+                  "url": "https://github.com/canonical/karma-rock/commit/599c7022ce0a917e8c0a3dbf2126cee782ab3b59"
+               },
+               {
                   "sha": "3d9a81416be8e542819cb707f23e14adf44de648",
                   "author": "Luca Bello",
                   "timestamp": 1754990664,
@@ -3699,13 +3706,6 @@
                   "timestamp": 1754509117,
                   "message": "<p>Pass missing secret to reusable workflow (<a target=\"_blank\" href=\"https://github.com/canonical/karma-rock/pull/8\">#8</a>)</p>\n\n<p>Signed-off-by: Leon <a href=\"mailto:82407168+sed-i@users.noreply.github.com\">82407168+sed-i@users.noreply.github.com</a></p>\n",
                   "url": "https://github.com/canonical/karma-rock/commit/69feac96ec8a83673f30aaacdd74d50b0698897e"
-               },
-               {
-                  "sha": "ba85dc8f5c7f66a5958a7d3b89d9657a9bb7c6c0",
-                  "author": "Simon Aronsson",
-                  "timestamp": 1744859434,
-                  "message": "<p>Add SECURITY.md file (<a target=\"_blank\" href=\"https://github.com/canonical/karma-rock/pull/7\">#7</a>)</p>\n",
-                  "url": "https://github.com/canonical/karma-rock/commit/ba85dc8f5c7f66a5958a7d3b89d9657a9bb7c6c0"
                }
             ],
             "ciActions": [
@@ -7141,7 +7141,7 @@
          },
          {
             "name": "karma-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/karma-k8s-operator",
             "releases": [
                {
@@ -7512,7 +7512,7 @@
          },
          {
             "name": "observability-stack",
-            "newCommits": 85,
+            "newCommits": 87,
             "url": "https://github.com/canonical/observability-stack",
             "releases": [
                {
@@ -8005,7 +8005,7 @@
          },
          {
             "name": "karma-alertmanager-proxy-k8s-operator",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/karma-alertmanager-proxy-k8s-operator",
             "releases": [
                {
@@ -15154,8 +15154,8 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 5250,
-                     "timestamp": 1776500351,
+                     "revision": 5254,
+                     "timestamp": 1776717271,
                      "base": "core22"
                   },
                   {
@@ -26091,10 +26091,18 @@
          },
          {
             "name": "valkey-operator",
-            "newCommits": 13,
+            "newCommits": 0,
             "url": "https://github.com/canonical/valkey-operator",
             "releases": null,
             "tags": [
+               {
+                  "name": "rev14",
+                  "sha": "62fc430ee56e06d2e3ae4ea4c22d94dae4631e1e",
+                  "body": "<p>fix: CA rotation integration test (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/44\">#44</a>)</p>\n\n<p>This PR includes a few minor fixes and improvements for the CA rotation\nintegration test, that recently always fails on K8s, presumably because\nit just takes longer. When K8s tests are executed locally, they always\npass.</p>\n\n<p>The changes are:\n- catch <code>ValkeyCannotGetPrimaryIPError</code> that might be raised by\n<code>sentinel_manager.get_primary_ip()</code> (missed after the error handling was\nchanged on the method), see <a href=\"https://github.com/canonical/valkey-operator/actions/runs/24444439636/job/71433499795#step:12:13271\">this CI\nrun</a>\n- no longer deploy with TLS from the start, to avoid TLS certs to become\ninvalid while startup still in progress, see <a href=\"https://github.com/canonical/valkey-operator/actions/runs/24444439636/job/71455753256#step:11:15\">this CI\nrun</a>\n- simplify the test by removing the disabling and re-enabling of TLS in\nbetween; there is actually no need to do that, we can just change the\nconfiguration of the TLS provider\n- adjust validity time of the certificates in the test to allow for\nreloading before the certificate actually expires</p>\n\n<p>Unrelated change:\n- update <code>core26</code> snap to <code>beta</code> channel on VM</p>\n",
+                  "timestamp": 1776701162,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev14",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev14"
+               },
                {
                   "name": "rev13",
                   "sha": "74a68cee9e37240ff9a00c9d169920c02e0412f4",
@@ -26110,14 +26118,6 @@
                   "timestamp": 1773821678,
                   "url": "https://github.com/canonical/valkey-operator/releases/tag/rev12",
                   "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev12"
-               },
-               {
-                  "name": "rev11",
-                  "sha": "0ddbcb413ddf30fa74e1346de0880e02903d482e",
-                  "body": "<p>Bugfix: Use dedicated TLS port for Sentinel (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/17\">#17</a>)</p>\n\n<p>Currently, sentinel cannot communicate with other sentinels when the TLS\nrelation is not established:</p>\n\n<pre><code class=\"language-json\">[\n  {\n    &quot;name&quot;: &quot;806702609387275df560cf8948545df364162177&quot;,\n    &quot;ip&quot;: &quot;10.1.153.187&quot;,\n    &quot;port&quot;: &quot;26379&quot;,\n    &quot;runid&quot;: &quot;806702609387275df560cf8948545df364162177&quot;,\n    &quot;flags&quot;: &quot;s_down,sentinel&quot;,\n    &quot;link-pending-commands&quot;: &quot;41&quot;,\n    &quot;link-refcount&quot;: &quot;1&quot;,\n    &quot;last-ping-sent&quot;: &quot;319719&quot;,\n    &quot;last-ok-ping-reply&quot;: &quot;319719&quot;,\n    &quot;last-ping-reply&quot;: &quot;319719&quot;,\n    &quot;s-down-time&quot;: &quot;289658&quot;,\n    &quot;down-after-milliseconds&quot;: &quot;30000&quot;,\n    &quot;last-hello-message&quot;: &quot;1722&quot;,\n    &quot;voted-leader&quot;: &quot;?&quot;,\n    &quot;voted-leader-epoch&quot;: &quot;0&quot;\n  }\n]\n</code></pre>\n\n<p>This pull request proposes to use different ports for TLS and non-TLS\ntraffic in Sentinel:\n- port <code>26379</code> for non-TLS traffic\n- port <code>26380</code> for TLS traffic</p>\n\n<p>By setting <code>tls-replication=yes</code>, communication between Sentinels is\nalways TLS encrypted.</p>\n\n<p>This setup is in line with the TLS configuration of Valkey itself:\n- Clients can connect to Sentinel and Valkey without TLS when client TLS\nis not enabled\n- When client TLS is enabled, the default ports <code>6379</code> and <code>26379</code> will\nbe closed and clients can only connect to Valkey and Sentinel on the TLS\nports <code>6380</code> and <code>26380</code></p>\n\n<hr>\n\n<p>Co-authored-by: reneradoi <a href=\"mailto:rene.radoi@canonical.com\">rene.radoi@canonical.com</a></p>\n",
-                  "timestamp": 1773057346,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev11",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev11"
                }
             ],
             "commits": null,
@@ -26129,8 +26129,8 @@
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 13,
-                     "timestamp": 1774023089,
+                     "revision": 14,
+                     "timestamp": 1776719436,
                      "base": ""
                   }
                ],
@@ -27762,6 +27762,66 @@
       "team": "IS",
       "repos": [
          {
+            "name": "penpot-operator",
+            "newCommits": 0,
+            "url": "https://github.com/canonical/penpot-operator",
+            "releases": [
+               {
+                  "id": 311424680,
+                  "version": "rev65",
+                  "timestamp": 1776719604,
+                  "title": "Revision 65",
+                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 21:15 UTC on 20 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore(deps): update dependency jubilant to v1.8.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/95\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/95\">#95</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev64...rev65\">https://github.com/canonical/penpot-operator/compare/rev64&hellip;rev65</a></p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev65",
+                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev65...main"
+               },
+               {
+                  "id": 311397273,
+                  "version": "rev64",
+                  "timestamp": 1776715249,
+                  "title": "Revision 64",
+                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:03 UTC on 20 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): update dependency ops to v3.7.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/96\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/96\">#96</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev63...rev64\">https://github.com/canonical/penpot-operator/compare/rev63&hellip;rev64</a></p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev64",
+                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev64...main"
+               },
+               {
+                  "id": 311237524,
+                  "version": "rev63",
+                  "timestamp": 1776696212,
+                  "title": "Revision 63",
+                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:48 UTC on 20 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): update dependency requests to v2.33.0 [security] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/93\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/93\">#93</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev62...rev63\">https://github.com/canonical/penpot-operator/compare/rev62&hellip;rev63</a></p>\n",
+                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev63",
+                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev63...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/penpot-operator/actions/workflows/publish_charm.yaml",
+               "https://github.com/canonical/penpot-operator/actions/workflows/promote_charm.yaml"
+            ],
+            "charm": {
+               "name": "penpot",
+               "url": "https://charmhub.io/penpot",
+               "releases": [
+                  {
+                     "track": "latest",
+                     "channel": "edge",
+                     "revision": 65,
+                     "timestamp": 1776719754,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "edge"
+               ],
+               "tracks": [
+                  "latest"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "chrony-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/chrony-operator",
@@ -27895,66 +27955,6 @@
                ],
                "channels": [
                   "stable",
-                  "edge"
-               ],
-               "tracks": [
-                  "latest"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "penpot-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/penpot-operator",
-            "releases": [
-               {
-                  "id": 311397273,
-                  "version": "rev64",
-                  "timestamp": 1776715249,
-                  "title": "Revision 64",
-                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 20:03 UTC on 20 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): update dependency ops to v3.7.0 by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/96\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/96\">#96</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev63...rev64\">https://github.com/canonical/penpot-operator/compare/rev63&hellip;rev64</a></p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev64",
-                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev64...main"
-               },
-               {
-                  "id": 311237524,
-                  "version": "rev63",
-                  "timestamp": 1776696212,
-                  "title": "Revision 63",
-                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 62</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 14:48 UTC on 20 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>fix(deps): update dependency requests to v2.33.0 [security] by <a target=\"_blank\" href=\"https://github.com/renovate\">@renovate</a>[bot] in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/93\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/93\">#93</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev62...rev63\">https://github.com/canonical/penpot-operator/compare/rev62&hellip;rev63</a></p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev63",
-                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev63...main"
-               },
-               {
-                  "id": 311144573,
-                  "version": "rev62",
-                  "timestamp": 1776685083,
-                  "title": "Revision 62",
-                  "body": "<p>resources:\n    -  penpot-image: undefined\n       resource-revision: 61</p>\n\n<p>Static resources:\n Released to &lsquo;latest/edge&rsquo; at 11:42 UTC on 20 Apr 2026</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>[skip ci] chore(multi-repo): remove unused issues workflow by <a target=\"_blank\" href=\"https://github.com/seb4stien\">@seb4stien</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/94\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/94\">#94</a></a></li>\n<li>pin charm revisions in integrations tests by <a target=\"_blank\" href=\"https://github.com/f-atwi\">@f-atwi</a> in <a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/99\"><a target=\"_blank\" href=\"https://github.com/canonical/penpot-operator/pull/99\">#99</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/penpot-operator/compare/rev61...rev62\">https://github.com/canonical/penpot-operator/compare/rev61&hellip;rev62</a></p>\n",
-                  "url": "https://github.com/canonical/penpot-operator/releases/tag/rev62",
-                  "compareUrl": "https://github.com/canonical/penpot-operator/compare/rev62...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/penpot-operator/actions/workflows/publish_charm.yaml",
-               "https://github.com/canonical/penpot-operator/actions/workflows/promote_charm.yaml"
-            ],
-            "charm": {
-               "name": "penpot",
-               "url": "https://charmhub.io/penpot",
-               "releases": [
-                  {
-                     "track": "latest",
-                     "channel": "edge",
-                     "revision": 64,
-                     "timestamp": 1776715414,
-                     "base": ""
-                  }
-               ],
-               "channels": [
                   "edge"
                ],
                "tracks": [
