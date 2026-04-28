@@ -26077,10 +26077,26 @@
          },
          {
             "name": "valkey-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/valkey-operator",
             "releases": null,
             "tags": [
+               {
+                  "name": "rev26",
+                  "sha": "58147672cd85d61c61706f1fefebbe98b282ee75",
+                  "body": "<p>[DPE-9752] Add topology observer (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/50\">#50</a>)</p>\n\n<p>The PR adds a topology observer to the charm, inspired by the existing\nsolution in\n<a href=\"https://github.com/canonical/postgresql-operator/blob/main/scripts/cluster_topology_observer.py\">Postgres</a>.\nThe observer checks if the Primary of Valkey has changed and dispatches\na Juju event to the charm if so. The event is used for updating pod\nlabels (in K8s) and client relation data (updated endpoints and\nread-only-endpoints).</p>\n\n<p><strong>Design:</strong>\n- the topology observer runs as a background process and checks\ncontinuously if the primary has changed\n- the check happens by querying the <code>sentinel master</code> with <code>valkey-py</code>,\nbecause <code>valkey-glide</code> does not support Sentinel connections and both\nclients do not support pubsub connections with Sentinel\n- after startup, the leader unit starts the observer\n- on config changes, secret changes, peer relations changes (for TLS\nupdates) or departure events, the observer gets restarted\n- the observer writes a log file to <code>/var/log/topology_observer.log</code> and\nstores the CA certificate for client TLS in the default truststore of\nthe host in <code>/etc/ssl/certs/</code>\n- on unit removal, the observer gets stopped\n- when a primary change is detected, the observer process dispatches a\ncustom event <code>topology_changed</code>\n- this event is used to update pod labels and client relation data in\n<code>ExternalClientEvents</code></p>\n\n<p><strong>Side quest:</strong>\nBug fix for updating passwords of Sentinel admin users. These updates\nwhere not configured to the Sentinel ACL files and Sentinel was not\nrestarted to pick up the changes. This bug was found while testing the\nPR manually.</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
+                  "timestamp": 1777380489,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev26",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev26"
+               },
+               {
+                  "name": "rev25",
+                  "sha": "58147672cd85d61c61706f1fefebbe98b282ee75",
+                  "body": "<p>[DPE-9752] Add topology observer (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/50\">#50</a>)</p>\n\n<p>The PR adds a topology observer to the charm, inspired by the existing\nsolution in\n<a href=\"https://github.com/canonical/postgresql-operator/blob/main/scripts/cluster_topology_observer.py\">Postgres</a>.\nThe observer checks if the Primary of Valkey has changed and dispatches\na Juju event to the charm if so. The event is used for updating pod\nlabels (in K8s) and client relation data (updated endpoints and\nread-only-endpoints).</p>\n\n<p><strong>Design:</strong>\n- the topology observer runs as a background process and checks\ncontinuously if the primary has changed\n- the check happens by querying the <code>sentinel master</code> with <code>valkey-py</code>,\nbecause <code>valkey-glide</code> does not support Sentinel connections and both\nclients do not support pubsub connections with Sentinel\n- after startup, the leader unit starts the observer\n- on config changes, secret changes, peer relations changes (for TLS\nupdates) or departure events, the observer gets restarted\n- the observer writes a log file to <code>/var/log/topology_observer.log</code> and\nstores the CA certificate for client TLS in the default truststore of\nthe host in <code>/etc/ssl/certs/</code>\n- on unit removal, the observer gets stopped\n- when a primary change is detected, the observer process dispatches a\ncustom event <code>topology_changed</code>\n- this event is used to update pod labels and client relation data in\n<code>ExternalClientEvents</code></p>\n\n<p><strong>Side quest:</strong>\nBug fix for updating passwords of Sentinel admin users. These updates\nwhere not configured to the Sentinel ACL files and Sentinel was not\nrestarted to pick up the changes. This bug was found while testing the\nPR manually.</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
+                  "timestamp": 1777380489,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev25",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev25"
+               },
                {
                   "name": "rev22",
                   "sha": "bfc3a4d5473c0782b04fed9f1772428179d86572",
@@ -26088,22 +26104,6 @@
                   "timestamp": 1776960674,
                   "url": "https://github.com/canonical/valkey-operator/releases/tag/rev22",
                   "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev22"
-               },
-               {
-                  "name": "rev21",
-                  "sha": "bfc3a4d5473c0782b04fed9f1772428179d86572",
-                  "body": "<p>[DPE-9751] add K8s services for primary and replica endpoints (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/46\">#46</a>)</p>\n\n<p>This PR adds Kubernetes services for primary and replica endpoints,\nwhich can be used by clients to connect to Valkey.</p>\n\n<p><strong>Design:</strong>\n- add new class <code>K8sClient</code>, that provides methods for creating/updating\nK8s services and for adding labels to pods\n- add new method <code>reconcile_k8s_services()</code> to the Sentinel manager\nclass that calls the K8s client methods, based on the current deployment\nand primary/replica setup\n- the services are owned by the stateful set of the application, meaning\nthey will be removed on application removal\n- trigger the <code>reconcile_k8s_services()</code> on the leader unit on any peer\nrelation change, to update the ports if required\n- publish the K8s services instead of unit endpoints to client relation\ndata on K8s</p>\n\n<p><strong>Other changes:</strong>\n- add the services to DNS SANs for the TLS certificate requests\n- update rust to <code>1.94.0</code> to allow building <code>lightkube</code></p>\n\n<p>Integration testing is covered by the existing tests for client\nrelations. The requirer-charms will now connect via the services in the\ntests on K8s.</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
-                  "timestamp": 1776960674,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev21",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev21"
-               },
-               {
-                  "name": "rev20",
-                  "sha": "efa1952f4fc3862c12c03c42240bdb9a819a0b85",
-                  "body": "<p>patch: move Glide to the requirer charm (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/39\">#39</a>)</p>\n\n<p>This pull request introduces significant enhancements to the integration\ntest client charm for Valkey, focusing on improved testing capabilities,\nespecially around continuous writes and flexible client configuration.\nIt also includes some internal refactoring and minor fixes. The most\nimportant changes are grouped below.</p>\n\n<p><strong>Integration test charm enhancements:</strong></p>\n\n<ul>\n<li>Added a new <code>continuous_writes.py</code> daemon script to support robust,\nbackground continuous-write testing, including state tracking, atomic\nstate updates, config hot-reload, and graceful shutdown. This enables\nadvanced data consistency and disruption testing for Valkey deployments.</li>\n<li>Extended the <code>charmcraft.yaml</code> for the integration test requirer charm\nwith several new actions: <code>execute</code>, <code>start-continuous-writes</code>,\n<code>get-continuous-writes-state</code>, <code>assert-continuous-writes-increasing</code>,\n<code>clear-continuous-writes</code>, <code>stop-continuous-writes</code>, and <code>seed-data</code>.\nThese actions facilitate advanced integration and consistency testing\nscenarios.</li>\n<li>Added support for a new <code>glide-config</code> config option, allowing the\ncharm to connect directly to Valkey using arbitrary endpoints and\ncredentials, independent of relations.</li>\n</ul>\n\n<p><strong>Valkey client improvements:</strong></p>\n\n<ul>\n<li>Refactored the <code>ValkeyClient</code> class to support multiple endpoints,\noptional password, and improved TLS configuration. Added new methods for\nseeding data (<code>seed_data</code>) and executing arbitrary commands\n(<code>execute_command</code>), with robust result handling for different Valkey\nresponse types.\n<a href=\"diffhunk://#diff-78405b5305e4767a2c53df3eab15f7c007389f8a97915c4c008c7963e7b30523L26-R34\">[1]</a>\n<a href=\"diffhunk://#diff-78405b5305e4767a2c53df3eab15f7c007389f8a97915c4c008c7963e7b30523L77-R130\">[2]</a></li>\n</ul>\n\n<p><strong>Charm core/status logic fixes:</strong></p>\n\n<ul>\n<li>Changed how statuses are set and retrieved in the core charm code,\nremoving use of the <code>StartStatuses</code> enum for running status and updating\nstatus management to use the new <code>unit_server.update</code> method and\nimproved status list retrieval.\n<a href=\"diffhunk://#diff-977a7d8c04cab4f9aaa5659892eadd9b991f51cd8f5814ecb51e3162bf23e31eL200-R201\">[1]</a>\n<a href=\"diffhunk://#diff-20b77aa4083c3162fac7cd352e1b8ceef186a967a37f906277cb77346967c113L131-R135\">[2]</a>\n<a href=\"diffhunk://#diff-074beea58df119261178a25e474cd0c240fa20f1c6fb6990867d357676e96cefL66\">[3]</a></li>\n<li>Fixed the order of TLS status checks in the TLS manager to ensure\ncorrect status reporting.</li>\n</ul>\n\n<p><strong>Miscellaneous:</strong></p>\n\n<ul>\n<li>Minor formatting and consistency fixes in <code>charmcraft.yaml</code> and import\nstatements.\n<a href=\"diffhunk://#diff-c3a960460030f011afb5d67251faf1b2341e7d0246ec8c76cb17077abcf6a1b3L4\">[1]</a>\n<a href=\"diffhunk://#diff-c3a960460030f011afb5d67251faf1b2341e7d0246ec8c76cb17077abcf6a1b3L48-R47\">[2]</a>\n<a href=\"diffhunk://#diff-977a7d8c04cab4f9aaa5659892eadd9b991f51cd8f5814ecb51e3162bf23e31eL36-R36\">[3]</a>\n<a href=\"diffhunk://#diff-78405b5305e4767a2c53df3eab15f7c007389f8a97915c4c008c7963e7b30523R6-R8\">[4]</a></li>\n</ul>\n\n<p>These changes collectively provide much more powerful tools for\nintegration and disruption testing of Valkey, as well as cleaner and\nmore robust status management in the charm.</p>\n",
-                  "timestamp": 1776853469,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev20",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev20"
                }
             ],
             "commits": null,
@@ -26115,15 +26115,15 @@
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 21,
-                     "timestamp": 1777020970,
+                     "revision": 25,
+                     "timestamp": 1777400087,
                      "base": ""
                   },
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 22,
-                     "timestamp": 1777021295,
+                     "revision": 26,
+                     "timestamp": 1777400104,
                      "base": ""
                   }
                ],
