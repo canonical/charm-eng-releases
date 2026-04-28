@@ -2948,15 +2948,15 @@
                   {
                      "track": "2",
                      "channel": "candidate",
-                     "revision": 12,
-                     "timestamp": 1774960645,
+                     "revision": 13,
+                     "timestamp": 1777376296,
                      "base": ""
                   },
                   {
                      "track": "2",
                      "channel": "beta",
-                     "revision": 12,
-                     "timestamp": 1774960611,
+                     "revision": 13,
+                     "timestamp": 1777376293,
                      "base": ""
                   },
                   {
@@ -3384,7 +3384,7 @@
          },
          {
             "name": "cos-coordinated-workers",
-            "newCommits": 11,
+            "newCommits": 15,
             "url": "https://github.com/canonical/cos-coordinated-workers",
             "releases": [
                {
@@ -9451,7 +9451,7 @@
          },
          {
             "name": "identity-saml-provider",
-            "newCommits": 22,
+            "newCommits": 24,
             "url": "https://github.com/canonical/identity-saml-provider",
             "releases": [
                {
@@ -10980,7 +10980,7 @@
          },
          {
             "name": "hydra-rock",
-            "newCommits": 196,
+            "newCommits": 199,
             "url": "https://github.com/canonical/hydra-rock",
             "releases": [
                {
@@ -11168,25 +11168,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "f0de74038c976d775ee0348f978ccc8135d4df52",
+                  "sha": "1f0806d55f7c83f32be53476b7fde010e1d85d4f",
                   "author": "Alessandro Cabbia",
-                  "timestamp": 1777319386,
-                  "message": "<p>fix: address CVEs in openfga:1.11.2 rock dependencies (<a target=\"_blank\" href=\"https://github.com/canonical/openfga-rock/pull/58\">#58</a>)</p>\n\n<p>Several HIGH severity CVEs were found in the compiled binaries of\n<code>openfga:1.11.2-22.04_56</code>. Address them via <code>go mod edit -replace</code>\ndirectives in the build.</p>\n\n<h2>Changes</h2>\n\n<ul>\n<li><strong>CVE-2026-39883</strong> (<code>go.opentelemetry.io/otel/sdk</code>, <code>/bin/openfga</code>):\nbump replace from <code>v1.40.0</code> → <code>v1.43.0</code>, which limits OTLP HTTP exporter\nresponse body to 4 MiB, preventing memory exhaustion</li>\n<li><strong>CVE-2026-34986</strong> (<code>github.com/go-jose/go-jose/v4</code>,\n<code>/bin/grpc_health_probe</code>): add replace directive pinning to <code>v4.1.4</code></li>\n<li><strong>CVE-2026-32280 / CVE-2026-32282</strong> (<code>stdlib</code>, both binaries):\nresolved by rebuilding with <code>go/1.25/stable</code> snap, which now tracks Go\n1.25.9 (released 2026-04-07)</li>\n</ul>\n\n<h2>Not addressed</h2>\n\n<p><strong>CVE-2026-34040</strong> (<code>github.com/docker/docker</code>, <code>/bin/openfga</code>): the fix\nexists only in <code>github.com/moby/moby/v2</code> (released as <code>docker-v29.3.1</code>),\nwhich uses a different module path and is incompatible with a <code>replace</code>\ndirective. No <code>v29.x</code> tag exists in the <code>github.com/docker/docker</code>\nmodule; resolving this requires openfga to migrate its imports upstream.</p>\n\n<blockquote>\n<p>[!WARNING]</p>\n\n<p><details>\n<summary>Firewall rules blocked me from connecting to one or more\naddresses (expand for details)</summary></p>\n\n<h4>I tried to connect to the following addresses, but was blocked by</h4>\n\n<p>firewall rules:</p>\n\n<ul>\n<li><code>https://api.github.com/repos/moby/moby/tags</code>\n\n<ul>\n<li>Triggering command: <code>/usr/bin/curl curl -s REDACTED</code> (http block)</li>\n</ul></li>\n<li><code>nvd.nist.gov</code></li>\n<li>Triggering command:\n<code>/home/REDACTED/work/_temp/ghcca-node/node/bin/node\n/home/REDACTED/work/_temp/ghcca-node/node/bin/node --enable-source-maps\n/home/REDACTED/work/_temp/copilot-developer-action-main/dist/index.js</code>\n(dns block)</li>\n</ul>\n\n<p>If you need me to access, download, or install something from one of\nthese locations, you can either:</p>\n\n<ul>\n<li>Configure <a href=\"https://gh.io/copilot/actions-setup-steps\">Actions setup\nsteps</a> to set up my\nenvironment, which run before the firewall is enabled</li>\n<li>Add the appropriate URLs or hosts to the custom allowlist in this\nrepository&rsquo;s <a href=\"https://github.com/canonical/openfga-rock/settings/copilot/coding_agent\">Copilot coding agent\nsettings</a>\n(admins only)</li>\n</ul>\n\n<p></details></p>\n</blockquote>\n",
-                  "url": "https://github.com/canonical/openfga-rock/commit/f0de74038c976d775ee0348f978ccc8135d4df52"
+                  "timestamp": 1777373616,
+                  "message": "<p>CVEs update (<a target=\"_blank\" href=\"https://github.com/canonical/openfga-rock/pull/60\">#60</a>)</p>\n\n<ul>\n<li><strong>ci(AI): add cve skill</strong></li>\n<li><strong>fix: address CVEs</strong></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/openfga-rock/commit/1f0806d55f7c83f32be53476b7fde010e1d85d4f"
                },
                {
-                  "sha": "dc607ae464bd53307867a3edccc845f79aeb9e39",
-                  "author": "copilot-swe-agent[bot]",
-                  "timestamp": 1777293276,
-                  "message": "<p>fix: address CVEs</p>\n\n<ul>\n<li>CVE-2026-34986 github.com/go-jose/go-jose/v4</li>\n<li>CVE-2026-32280 stdlib</li>\n<li>CVE-2026-32282 stdlib</li>\n<li>CVE-2026-39883 go.opentelemetry.io/otel/sdk</li>\n</ul>\n\n<p>Agent-Logs-Url: <a href=\"https://github.com/canonical/openfga-rock/sessions/2f6d1c0a-e375-48fe-afeb-d6af5d2c2e4b\">https://github.com/canonical/openfga-rock/sessions/2f6d1c0a-e375-48fe-afeb-d6af5d2c2e4b</a></p>\n\n<p>Co-authored-by: shipperizer <a href=\"mailto:3263345+shipperizer@users.noreply.github.com\">3263345+shipperizer@users.noreply.github.com</a></p>\n",
-                  "url": "https://github.com/canonical/openfga-rock/commit/dc607ae464bd53307867a3edccc845f79aeb9e39"
+                  "sha": "a67a71aa59667b26877ff79a48a53c069991b5fa",
+                  "author": "shipperizer",
+                  "timestamp": 1777369849,
+                  "message": "<p>fix: address CVEs</p>\n\n<ul>\n<li>CVE-2026-32280, CVE-2026-32281, CVE-2026-32283: stdlib patched via Go 1.26 update</li>\n<li>CVE-2026-33816: github.com/jackc/pgx/v5 patched via OpenFGA 1.14.2 update</li>\n<li>CVE-2026-39883: go.opentelemetry.io/otel/sdk patched via OpenFGA 1.14.2 update</li>\n<li>CVE-2026-34986: github.com/go-jose/go-jose/v4 patched via OpenFGA 1.14.2 update</li>\n<li>CVE-2026-34040: github.com/docker/docker patched via OpenFGA 1.14.2 update</li>\n</ul>\n",
+                  "url": "https://github.com/canonical/openfga-rock/commit/a67a71aa59667b26877ff79a48a53c069991b5fa"
                },
                {
-                  "sha": "7842971a14e88b6212573cd538d3d00c3c907e4b",
-                  "author": "canonical-iam",
-                  "timestamp": 1776906316,
-                  "message": "<p>chore(deps): update canonical/identity-team action to v1.11.1 (<a target=\"_blank\" href=\"https://github.com/canonical/openfga-rock/pull/57\">#57</a>)</p>\n\n<p>This PR contains the following updates:</p>\n\n<table>\n<thead>\n<tr>\n<th>Package</th>\n<th>Type</th>\n<th>Update</th>\n<th>Change</th>\n</tr>\n</thead>\n\n<tbody>\n</tbody>\n\n<tfoot></tfoot>\n</table>\n<p><a href=\"https://redirect.github.com/canonical/identity-team\">canonical/identity-team</a>\n| action | patch | <code>v1.11.0</code> → <code>v1.11.1</code> |</p>\n\n<hr>\n\n<h3>Release Notes</h3>\n\n<details>\n<summary>canonical/identity-team (canonical/identity-team)</summary>\n\n###\n[`v1.11.1`](https://redirect.github.com/canonical/identity-team/releases/tag/v1.11.1)\n\n[Compare\nSource](https://redirect.github.com/canonical/identity-team/compare/v1.11.0...v1.11.1)\n\n##### Bug Fixes\n\n- support ignored restrictions in rockcraft build\n([3d6fcfb](https://redirect.github.com/canonical/identity-team/commit/3d6fcfb3dd33a1b480dd20d8eaf0c2e361b72f03))\n\n</details>\n\n<hr>\n\n<h3>Configuration</h3>\n\n<p>📅 <strong>Schedule</strong>: (UTC)</p>\n\n<ul>\n<li>Branch creation\n\n<ul>\n<li>At any time (no schedule defined)</li>\n</ul></li>\n<li>Automerge\n\n<ul>\n<li>At any time (no schedule defined)</li>\n</ul></li>\n</ul>\n\n<p>🚦 <strong>Automerge</strong>: Enabled.</p>\n\n<p>♻ <strong>Rebasing</strong>: Whenever PR is behind base branch, or you tick the\nrebase/retry checkbox.</p>\n\n<p>🔕 <strong>Ignore</strong>: Close this PR and you won&rsquo;t be reminded about this update\nagain.</p>\n\n<hr>\n\n<ul>\n<li>[ ] <!-- rebase-check -->If you want to rebase/retry this PR, check\nthis box</li>\n</ul>\n\n<hr>\n\n<p>This PR was generated by <a href=\"https://mend.io/renovate/\">Mend Renovate</a>.\nView the <a href=\"https://developer.mend.io/github/canonical/openfga-rock\">repository job\nlog</a>.</p>\n\n<p><!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiI0My4xMzkuNCIsInVwZGF0ZWRJblZlciI6IjQzLjEzOS40IiwidGFyZ2V0QnJhbmNoIjoibWFpbiIsImxhYmVscyI6W119--></p>\n",
-                  "url": "https://github.com/canonical/openfga-rock/commit/7842971a14e88b6212573cd538d3d00c3c907e4b"
+                  "sha": "bd512e29a9c43a36984ae67cfb9d49dde09b17c1",
+                  "author": "shipperizer",
+                  "timestamp": 1777369806,
+                  "message": "<p>ci(AI): add cve skill</p>\n",
+                  "url": "https://github.com/canonical/openfga-rock/commit/bd512e29a9c43a36984ae67cfb9d49dde09b17c1"
                }
             ],
             "ciActions": [
@@ -11350,25 +11350,25 @@
             "tags": null,
             "commits": [
                {
-                  "sha": "f70dde928887200f1e276df353a9e81360e744a8",
+                  "sha": "7b4daa56531cf9d229397c1cafa1b732999a5847",
                   "author": "Alessandro Cabbia",
-                  "timestamp": 1777304918,
-                  "message": "<p>fix: address CVEs in kratos 25.4.0 (<a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/236\">#236</a>)</p>\n\n<p>Five HIGH severity CVEs were reported against <code>kratos:25.4.0-22.04_87</code>\nacross <code>go-jose</code>, <code>otel/sdk</code>, and stdlib.</p>\n\n<h2>Changes</h2>\n\n<ul>\n<li><strong>Go toolchain</strong>: <code>go/1.25/stable</code> → <code>go/1.26/stable</code> — picks up\ncompiler memory-safety fixes (CVE-2026-32280, CVE-2026-32282)</li>\n<li><strong><code>go.opentelemetry.io/otel/sdk</code></strong>: bumped replace directive <code>v1.40.0</code>\n→ <code>v1.43.0</code> (CVE-2026-39883)</li>\n<li><strong><code>github.com/go-jose/go-jose/v3</code></strong>: added replace directive pinning\nto <code>v3.0.5</code> (CVE-2026-34986)</li>\n<li><strong><code>github.com/go-jose/go-jose/v4</code></strong>: added replace directive pinning\nto <code>v4.1.4</code> (CVE-2026-34986)</li>\n</ul>\n\n<p>Both <code>go-jose</code> packages are indirect dependencies of kratos <code>v25.4.0</code>\n(at <code>v3.0.4</code> and <code>v4.0.5</code> respectively) and require explicit <code>go mod\nedit -replace</code> overrides since upstream hasn&rsquo;t bumped them.</p>\n\n<blockquote>\n<p>[!WARNING]</p>\n\n<details>\n<summary>Firewall rules blocked me from connecting to one or more\naddresses (expand for details)</summary>\n\n#### I tried to connect to the following addresses, but was blocked by\nfirewall rules:\n\n- `groups.google.com`\n- Triggering command:\n`/home/REDACTED/work/_temp/ghcca-node/node/bin/node\n/home/REDACTED/work/_temp/ghcca-node/node/bin/node --enable-source-maps\n/home/REDACTED/work/_temp/copilot-developer-action-main/dist/index.js`\n(dns block)\n- `nvd.nist.gov`\n- Triggering command:\n`/home/REDACTED/work/_temp/ghcca-node/node/bin/node\n/home/REDACTED/work/_temp/ghcca-node/node/bin/node --enable-source-maps\n/home/REDACTED/work/_temp/copilot-developer-action-main/dist/index.js`\n(dns block)\n- `tip.golang.org`\n- Triggering command:\n`/home/REDACTED/work/_temp/ghcca-node/node/bin/node\n/home/REDACTED/work/_temp/ghcca-node/node/bin/node --enable-source-maps\n/home/REDACTED/work/_temp/copilot-developer-action-main/dist/index.js`\n(dns block)\n\nIf you need me to access, download, or install something from one of\nthese locations, you can either:\n\n- Configure [Actions setup\nsteps](https://gh.io/copilot/actions-setup-steps) to set up my\nenvironment, which run before the firewall is enabled\n- Add the appropriate URLs or hosts to the custom allowlist in this\nrepository's [Copilot coding agent\nsettings](https://github.com/canonical/kratos-rock/settings/copilot/coding_agent)\n(admins only)\n\n</details>\n</blockquote>\n\n<p>closes <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/229\">#229</a> <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/232\">#232</a> <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/233\">#233</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/f70dde928887200f1e276df353a9e81360e744a8"
+                  "timestamp": 1777374657,
+                  "message": "<p>CVEs update (<a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/239\">#239</a>)</p>\n\n<ul>\n<li><strong>Address CVEs (fixes <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/237\">#237</a>)</strong></li>\n<li><strong>ci(AI): add cve skill</strong></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/7b4daa56531cf9d229397c1cafa1b732999a5847"
                },
                {
-                  "sha": "817f84ed2fe333da0e56def6516b018f5cea24c0",
-                  "author": "copilot-swe-agent[bot]",
-                  "timestamp": 1777292312,
-                  "message": "<p>fix: address CVEs</p>\n\n<ul>\n<li>CVE-2026-34986 github.com/go-jose/go-jose/v3</li>\n<li>CVE-2026-34986 github.com/go-jose/go-jose/v4</li>\n<li>CVE-2026-39883 go.opentelemetry.io/otel/sdk</li>\n<li>CVE-2026-32280 stdlib</li>\n<li>CVE-2026-32282 stdlib</li>\n</ul>\n\n<p>Co-authored-by: shipperizer <a href=\"mailto:3263345+shipperizer@users.noreply.github.com\">3263345+shipperizer@users.noreply.github.com</a></p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/817f84ed2fe333da0e56def6516b018f5cea24c0"
+                  "sha": "8a9b0960ea1cf27a973e87834767997f16cbc197",
+                  "author": "shipperizer",
+                  "timestamp": 1777373343,
+                  "message": "<p>ci(AI): add cve skill</p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/8a9b0960ea1cf27a973e87834767997f16cbc197"
                },
                {
-                  "sha": "c8b184b8ae2e96989882d87b5ef4eacbe5d3ca5b",
-                  "author": "canonical-iam",
-                  "timestamp": 1776906284,
-                  "message": "<p>chore(deps): update canonical/identity-team action to v1.11.1 (<a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/235\">#235</a>)</p>\n\n<p>This PR contains the following updates:</p>\n\n<table>\n<thead>\n<tr>\n<th>Package</th>\n<th>Type</th>\n<th>Update</th>\n<th>Change</th>\n</tr>\n</thead>\n\n<tbody>\n</tbody>\n\n<tfoot></tfoot>\n</table>\n<p><a href=\"https://redirect.github.com/canonical/identity-team\">canonical/identity-team</a>\n| action | patch | <code>v1.11.0</code> → <code>v1.11.1</code> |</p>\n\n<hr>\n\n<h3>Release Notes</h3>\n\n<details>\n<summary>canonical/identity-team (canonical/identity-team)</summary>\n\n###\n[`v1.11.1`](https://redirect.github.com/canonical/identity-team/releases/tag/v1.11.1)\n\n[Compare\nSource](https://redirect.github.com/canonical/identity-team/compare/v1.11.0...v1.11.1)\n\n##### Bug Fixes\n\n- support ignored restrictions in rockcraft build\n([3d6fcfb](https://redirect.github.com/canonical/identity-team/commit/3d6fcfb3dd33a1b480dd20d8eaf0c2e361b72f03))\n\n</details>\n\n<hr>\n\n<h3>Configuration</h3>\n\n<p>📅 <strong>Schedule</strong>: (UTC)</p>\n\n<ul>\n<li>Branch creation\n\n<ul>\n<li>At any time (no schedule defined)</li>\n</ul></li>\n<li>Automerge\n\n<ul>\n<li>At any time (no schedule defined)</li>\n</ul></li>\n</ul>\n\n<p>🚦 <strong>Automerge</strong>: Enabled.</p>\n\n<p>♻ <strong>Rebasing</strong>: Whenever PR is behind base branch, or you tick the\nrebase/retry checkbox.</p>\n\n<p>🔕 <strong>Ignore</strong>: Close this PR and you won&rsquo;t be reminded about this update\nagain.</p>\n\n<hr>\n\n<ul>\n<li>[ ] <!-- rebase-check -->If you want to rebase/retry this PR, check\nthis box</li>\n</ul>\n\n<hr>\n\n<p>This PR was generated by <a href=\"https://mend.io/renovate/\">Mend Renovate</a>.\nView the <a href=\"https://developer.mend.io/github/canonical/kratos-rock\">repository job\nlog</a>.</p>\n\n<p><!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiI0My4xMzkuNCIsInVwZGF0ZWRJblZlciI6IjQzLjEzOS40IiwidGFyZ2V0QnJhbmNoIjoibWFpbiIsImxhYmVscyI6W119--></p>\n",
-                  "url": "https://github.com/canonical/kratos-rock/commit/c8b184b8ae2e96989882d87b5ef4eacbe5d3ca5b"
+                  "sha": "656aae8b6ab4f29e2a0d2f55f7d17ef007691b1b",
+                  "author": "shipperizer",
+                  "timestamp": 1777373240,
+                  "message": "<p>fix: address CVEs</p>\n\n<ul>\n<li>CVE-2026-34986: github.com/go-jose/go-jose/v3 patched to v3.0.5</li>\n<li>CVE-2026-34986: github.com/go-jose/go-jose/v4 patched to v4.1.4</li>\n<li>CVE-2026-33816: github.com/jackc/pgx/v5 patched to v5.9.2</li>\n<li>CVE-2026-39883: go.opentelemetry.io/otel/sdk patched to v1.43.0</li>\n<li>CVE-2026-34040, CVE-2026-33997, CVE-2025-15558: github.com/docker/cli patched to v29.4.1</li>\n<li>CVE-2026-32280, CVE-2026-32281, CVE-2026-32283: stdlib patched by using go/1.26/stable</li>\n</ul>\n\n<p>Fixes <a target=\"_blank\" href=\"https://github.com/canonical/kratos-rock/pull/237\">#237</a></p>\n",
+                  "url": "https://github.com/canonical/kratos-rock/commit/656aae8b6ab4f29e2a0d2f55f7d17ef007691b1b"
                }
             ],
             "ciActions": [
@@ -13048,25 +13048,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "c2f514750f93f33e6ae2dda3de4bf47d8adf1c11",
+                  "author": "Natalia Nowakowska",
+                  "timestamp": 1777375732,
+                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/identity-saml-provider-operator/pull/16\">#16</a> from canonical/IAM-1749-add-security-file</p>\n\n<p>chore: add SECURITY.md</p>\n",
+                  "url": "https://github.com/canonical/identity-saml-provider-operator/commit/c2f514750f93f33e6ae2dda3de4bf47d8adf1c11"
+               },
+               {
+                  "sha": "88e1e2da907f71401b00804489fe02afcebcc334",
+                  "author": "natalia",
+                  "timestamp": 1777375002,
+                  "message": "<p>chore: add SECURITY.md</p>\n",
+                  "url": "https://github.com/canonical/identity-saml-provider-operator/commit/88e1e2da907f71401b00804489fe02afcebcc334"
+               },
+               {
                   "sha": "04652fdc12c1670816bfbc3343fc98757179e757",
                   "author": "Shu",
                   "timestamp": 1777326027,
                   "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/identity-saml-provider-operator/pull/13\">#13</a> from canonical/configure-renovate</p>\n\n<p>chore: configure renovate</p>\n",
                   "url": "https://github.com/canonical/identity-saml-provider-operator/commit/04652fdc12c1670816bfbc3343fc98757179e757"
-               },
-               {
-                  "sha": "9573a7c7a7577ebb6cfa89922ccb0a986b84693e",
-                  "author": "shudu",
-                  "timestamp": 1777325895,
-                  "message": "<p>chore: configure renovate</p>\n",
-                  "url": "https://github.com/canonical/identity-saml-provider-operator/commit/9573a7c7a7577ebb6cfa89922ccb0a986b84693e"
-               },
-               {
-                  "sha": "bdebd09c5dda5d113c74865c4fa7cd58b814fe25",
-                  "author": "Shu",
-                  "timestamp": 1777055392,
-                  "message": "<p>Merge pull request <a target=\"_blank\" href=\"https://github.com/canonical/identity-saml-provider-operator/pull/12\">#12</a> from canonical/IAM-2094</p>\n\n<p>Add database migration logic</p>\n",
-                  "url": "https://github.com/canonical/identity-saml-provider-operator/commit/bdebd09c5dda5d113c74865c4fa7cd58b814fe25"
                }
             ],
             "ciActions": [],
@@ -18948,7 +18948,7 @@
          },
          {
             "name": "mongo-single-kernel-library",
-            "newCommits": 1,
+            "newCommits": 2,
             "url": "https://github.com/canonical/mongo-single-kernel-library",
             "releases": [
                {
@@ -19028,18 +19028,9 @@
          },
          {
             "name": "postgresql-operator",
-            "newCommits": 236,
+            "newCommits": 16,
             "url": "https://github.com/canonical/postgresql-operator",
             "releases": [
-               {
-                  "id": 307815904,
-                  "version": "v16/1.242.0",
-                  "timestamp": 1775860294,
-                  "title": "Revisions 1088, 1089",
-                  "body": "<!-- Release notes generated using configuration in .github/release.yaml at v16/1.242.0 -->\n\n<p>A new revision of Charmed PostgreSQL VM has been published in the 16/stable channel on <a href=\"https://charmhub.io/postgresql?channel=16/stable\">Charmhub</a>.</p>\n\n<p><a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/16/reference/system-requirements/\">System requirements</a> | <a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/16/how-to/upgrade/\">How to upgrade</a></p>\n\n<h2>Compatibility</h2>\n\n<table>\n<thead>\n<tr>\n<th>Architecture</th>\n<th>Charm revision</th>\n<th>Snap version</th>\n<th>PostgreSQL version</th>\n<th>Recommended Juju version</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td><code>amd64</code></td>\n<td>1089</td>\n<td>283</td>\n<td>16.13</td>\n<td><a href=\"https://documentation.ubuntu.com/juju/3.6/releasenotes/juju_3.6.x/#juju-3-6-21\">3.6.21</a></td>\n</tr>\n\n<tr>\n<td><code>arm64</code></td>\n<td>1088</td>\n<td>282</td>\n<td>16.13</td>\n<td><a href=\"https://documentation.ubuntu.com/juju/3.6/releasenotes/juju_3.6.x/#juju-3-6-21\">3.6.21</a></td>\n</tr>\n</tbody>\n</table>\n\n<h2>Features</h2>\n\n<ul>\n<li>[DPE-9455] <strong>Bump PostgreSQL to 16.13</strong> by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1509\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1509\">#1509</a></a></li>\n<li><strong>Bump snap to the latest security fixes</strong> by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\">#1611</a></a></li>\n<li>[DPE-8932] <strong>Expose config parameters for <code>pg_stat_statements</code></strong> by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1420\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1420\">#1420</a></a></li>\n<li>[DPE-9443] Switch to Ops tracing by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1466\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1466\">#1466</a></a></li>\n<li>[DPE-9451] Use socket for database observer and track members of relation access by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1519\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1519\">#1519</a></a></li>\n</ul>\n\n<h2>Bug fixes</h2>\n\n<ul>\n<li>Bump snap to the latest security fixes by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\">#1611</a></a></li>\n<li>Async replication upgrade fix and test tweaks by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1511\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1511\">#1511</a></a></li>\n<li>[DPE-9578] Check unit&rsquo;s host for restart need  by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1538\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1538\">#1538</a></a></li>\n</ul>\n\n<h3>COS (Otelcol / Grafana-agent)</h3>\n\n<p>Charmed PostgreSQL 16 is <a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/16/how-to/monitoring-cos/enable-monitoring/\">fully compatible</a> and well tested with <a href=\"https://charmhub.io/grafana-agent\">grafana-agent</a> charm.\nThe new COS <a href=\"https://charmhub.io/opentelemetry-collector\">Otelcol (opentelemetry-collector)</a> subordinate charm (rev256+) is <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/opentelemetry-collector-k8s-operator/pull/238&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/postgresql-operator/pull/238&quot;&gt;#238&lt;/a&gt;&lt;/a&gt;/changes\">compatible</a> and open for testing/feedback.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-operator/compare/v16/1.206.0...v16/1.242.0\">https://github.com/canonical/postgresql-operator/compare/v16/1.206.0&hellip;v16/1.242.0</a></p>\n",
-                  "url": "https://github.com/canonical/postgresql-operator/releases/tag/untagged-6f3aa790068d070aa938",
-                  "compareUrl": "https://github.com/canonical/postgresql-operator/compare/v16/1.242.0...main"
-               },
                {
                   "id": 308084507,
                   "version": "rev1090",
@@ -19048,6 +19039,15 @@
                   "body": "<!-- Release notes generated using configuration in .github/release.yaml at rev1090 -->\n\n<p>A new revision of Charmed PostgreSQL VM has been published in the 14/stable channel on <a href=\"https://charmhub.io/postgresql?channel=14/stable\">Charmhub</a>.</p>\n\n<p><a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/14/reference/system-requirements/\">System requirements</a> | <a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/14/how-to/upgrade/\">How to upgrade</a></p>\n\n<h2>Compatibility</h2>\n\n<table>\n<thead>\n<tr>\n<th>Architecture</th>\n<th>Charm revision</th>\n<th>Snap version</th>\n<th>PostgreSQL version</th>\n<th>Recommended Juju version</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td><code>amd64</code></td>\n<td>1090</td>\n<td>281</td>\n<td>14.22</td>\n<td><a href=\"https://documentation.ubuntu.com/juju/3.6/releasenotes/juju_3.6.x/#juju-3-6-21\">3.6.21</a></td>\n</tr>\n\n<tr>\n<td><code>arm64</code></td>\n<td>1091</td>\n<td>280</td>\n<td>14.22</td>\n<td><a href=\"https://documentation.ubuntu.com/juju/3.6/releasenotes/juju_3.6.x/#juju-3-6-21\">3.6.21</a></td>\n</tr>\n</tbody>\n</table>\n\n<h2>Features</h2>\n\n<ul>\n<li>[DPE-9455] <strong>Bump PostgreSQL to 14.22</strong> by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1508\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1508\">#1508</a></a></li>\n<li><strong>Bump snap to the latest security fixes</strong> by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1610\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1610\">#1610</a></a></li>\n<li>[DPE-8932] <strong>Expose config parameters for <code>pg_stat_statements</code></strong> by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1520\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1520\">#1520</a></a></li>\n<li>[DPE-9443] Switch to Ops tracing by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1470\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1470\">#1470</a></a></li>\n</ul>\n\n<h2>Bug fixes</h2>\n\n<ul>\n<li>[DPE-8900] fix: harden <code>pg_hba</code> replication rules and ensure dynamic IP updates by <a target=\"_blank\" href=\"https://github.com/marceloneppel\">@marceloneppel</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1506\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1506\">#1506</a></a></li>\n<li>[DPE-9578] Check unit&rsquo;s host for restart need by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1537\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1537\">#1537</a></a></li>\n<li>[DPE-9706] Filter out users with no database by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1555\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1555\">#1555</a></a></li>\n<li>Bump snap to the latest security fixes by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1610\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1610\">#1610</a></a></li>\n<li>[DPE-9443] Otel distribution cleanup by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1532\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1532\">#1532</a></a></li>\n</ul>\n\n<h3>COS (Otelcol / Grafana-agent)</h3>\n\n<p><strong>Charmed PostgreSQL 14</strong> is <a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/14/how-to/monitoring-cos/enable-monitoring/\">fully compatible</a> and well tested with <a href=\"https://charmhub.io/grafana-agent\">grafana-agent</a> charm.\nThe new COS <a href=\"https://charmhub.io/opentelemetry-collector\">Otelcol (opentelemetry-collector)</a> subordinate charm (rev256+) is  <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/opentelemetry-collector-k8s-operator/pull/238&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/postgresql-operator/pull/238&quot;&gt;#238&lt;/a&gt;&lt;/a&gt;/changes\">compatible</a> and open for testing/feedback.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-operator/compare/rev1044...rev1090\">https://github.com/canonical/postgresql-operator/compare/rev1044&hellip;rev1090</a></p>\n",
                   "url": "https://github.com/canonical/postgresql-operator/releases/tag/rev1090",
                   "compareUrl": "https://github.com/canonical/postgresql-operator/compare/rev1090...main"
+               },
+               {
+                  "id": 307815904,
+                  "version": "v16/1.242.0",
+                  "timestamp": 1775860294,
+                  "title": "Revisions 1088, 1089",
+                  "body": "<!-- Release notes generated using configuration in .github/release.yaml at v16/1.242.0 -->\n\n<p>A new revision of Charmed PostgreSQL VM has been published in the 16/stable channel on <a href=\"https://charmhub.io/postgresql?channel=16/stable\">Charmhub</a>.</p>\n\n<p><a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/16/reference/system-requirements/\">System requirements</a> | <a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/16/how-to/upgrade/\">How to upgrade</a></p>\n\n<h2>Compatibility</h2>\n\n<table>\n<thead>\n<tr>\n<th>Architecture</th>\n<th>Charm revision</th>\n<th>Snap version</th>\n<th>PostgreSQL version</th>\n<th>Recommended Juju version</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td><code>amd64</code></td>\n<td>1089</td>\n<td>283</td>\n<td>16.13</td>\n<td><a href=\"https://documentation.ubuntu.com/juju/3.6/releasenotes/juju_3.6.x/#juju-3-6-21\">3.6.21</a></td>\n</tr>\n\n<tr>\n<td><code>arm64</code></td>\n<td>1088</td>\n<td>282</td>\n<td>16.13</td>\n<td><a href=\"https://documentation.ubuntu.com/juju/3.6/releasenotes/juju_3.6.x/#juju-3-6-21\">3.6.21</a></td>\n</tr>\n</tbody>\n</table>\n\n<h2>Features</h2>\n\n<ul>\n<li>[DPE-9455] <strong>Bump PostgreSQL to 16.13</strong> by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1509\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1509\">#1509</a></a></li>\n<li><strong>Bump snap to the latest security fixes</strong> by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\">#1611</a></a></li>\n<li>[DPE-8932] <strong>Expose config parameters for <code>pg_stat_statements</code></strong> by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1420\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1420\">#1420</a></a></li>\n<li>[DPE-9443] Switch to Ops tracing by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1466\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1466\">#1466</a></a></li>\n<li>[DPE-9451] Use socket for database observer and track members of relation access by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1519\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1519\">#1519</a></a></li>\n</ul>\n\n<h2>Bug fixes</h2>\n\n<ul>\n<li>Bump snap to the latest security fixes by <a target=\"_blank\" href=\"https://github.com/taurus-forever\">@taurus-forever</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1611\">#1611</a></a></li>\n<li>Async replication upgrade fix and test tweaks by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1511\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1511\">#1511</a></a></li>\n<li>[DPE-9578] Check unit&rsquo;s host for restart need  by <a target=\"_blank\" href=\"https://github.com/dragomirp\">@dragomirp</a> in <a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1538\"><a target=\"_blank\" href=\"https://github.com/canonical/postgresql-operator/pull/1538\">#1538</a></a></li>\n</ul>\n\n<h3>COS (Otelcol / Grafana-agent)</h3>\n\n<p>Charmed PostgreSQL 16 is <a href=\"https://canonical-charmed-postgresql.readthedocs-hosted.com/16/how-to/monitoring-cos/enable-monitoring/\">fully compatible</a> and well tested with <a href=\"https://charmhub.io/grafana-agent\">grafana-agent</a> charm.\nThe new COS <a href=\"https://charmhub.io/opentelemetry-collector\">Otelcol (opentelemetry-collector)</a> subordinate charm (rev256+) is <a href=\"a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/opentelemetry-collector-k8s-operator/pull/238&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://github.com/canonical/postgresql-operator/pull/238&quot;&gt;#238&lt;/a&gt;&lt;/a&gt;/changes\">compatible</a> and open for testing/feedback.</p>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/postgresql-operator/compare/v16/1.206.0...v16/1.242.0\">https://github.com/canonical/postgresql-operator/compare/v16/1.206.0&hellip;v16/1.242.0</a></p>\n",
+                  "url": "https://github.com/canonical/postgresql-operator/releases/tag/v16/1.242.0",
+                  "compareUrl": "https://github.com/canonical/postgresql-operator/compare/v16/1.242.0...main"
                },
                {
                   "id": 290842944,
@@ -19184,15 +19184,15 @@
                   {
                      "track": "16",
                      "channel": "stable",
-                     "revision": 1047,
-                     "timestamp": 1772455162,
+                     "revision": 1089,
+                     "timestamp": 1777375254,
                      "base": ""
                   },
                   {
                      "track": "16",
                      "channel": "stable",
-                     "revision": 1046,
-                     "timestamp": 1772455162,
+                     "revision": 1088,
+                     "timestamp": 1777375254,
                      "base": ""
                   },
                   {
@@ -23416,7 +23416,7 @@
          },
          {
             "name": "kafka-test-app",
-            "newCommits": 5,
+            "newCommits": 6,
             "url": "https://github.com/canonical/kafka-test-app",
             "releases": [
                {
@@ -27383,6 +27383,13 @@
             "releases": null,
             "tags": null,
             "commits": [
+               {
+                  "sha": "7c89bdaae1e42f9edf49bc2db097eab095bc5abb",
+                  "author": "Alejandro Santisteban",
+                  "timestamp": 1777375442,
+                  "message": "<p>feat: squid 7.2-26.04 rock implementation (<a target=\"_blank\" href=\"https://github.com/canonical/squid-rock/pull/2\">#2</a>)</p>\n\n<ul>\n<li><p>feat: squid 7.2-26.04 rock implementation</p></li>\n\n<li><p>test: cat the log file to prevent race condition</p></li>\n\n<li><p>chore: add squid rock coowner ( + newline nits) (<a target=\"_blank\" href=\"https://github.com/canonical/squid-rock/pull/3\">#3</a>)</p></li>\n\n<li><p>chore: update codeowners</p></li>\n\n<li><p>nit: newline</p></li>\n\n<li><p>nit: newline</p></li>\n\n<li><p>nit: newline</p></li>\n\n<li><p>nit: newline</p></li>\n\n<li><p>Update CODEOWNERS</p></li>\n</ul>\n\n<p>Signed-off-by: Alejandro Santisteban <a href=\"mailto:alex.santisteban@canonical.com\">alex.santisteban@canonical.com</a></p>\n\n<hr>\n\n<p>Signed-off-by: Alejandro Santisteban <a href=\"mailto:alex.santisteban@canonical.com\">alex.santisteban@canonical.com</a>\nCo-authored-by: Alejandro Santisteban <a href=\"mailto:alex.santisteban@canonical.com\">alex.santisteban@canonical.com</a></p>\n\n<ul>\n<li><p>test: add timeout function when waiting for setup to go up</p></li>\n\n<li><p>test: update assertion</p></li>\n</ul>\n\n<p>Co-authored by <a target=\"_blank\" href=\"https://github.com/lczyk\">@lczyk</a></p>\n\n<ul>\n<li><p>test: add clarification comment</p></li>\n\n<li><p>fix: follow logs by name and add &ndash;retry argument</p></li>\n\n<li><p>fix: run the entrypoint with exec</p></li>\n\n<li><p>refactor: add TODO comment</p></li>\n</ul>\n\n<hr>\n\n<p>Signed-off-by: Alejandro Santisteban <a href=\"mailto:alex.santisteban@canonical.com\">alex.santisteban@canonical.com</a>\nCo-authored-by: Marcin Konowalczyk <a href=\"mailto:marcin.konowalczyk@canonical.com\">marcin.konowalczyk@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/squid-rock/commit/7c89bdaae1e42f9edf49bc2db097eab095bc5abb"
+               },
                {
                   "sha": "367bc1b7a27c3ed9f02a778371fb74c58a65f077",
                   "author": "Alejandro Santisteban",
