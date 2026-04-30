@@ -1087,8 +1087,8 @@
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 34831,
-                     "timestamp": 1777353523,
+                     "revision": 34895,
+                     "timestamp": 1777540356,
                      "base": "core20"
                   },
                   {
@@ -1101,15 +1101,15 @@
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 34833,
-                     "timestamp": 1777353726,
+                     "revision": 34896,
+                     "timestamp": 1777540565,
                      "base": "core20"
                   },
                   {
                      "track": "2.9",
                      "channel": "edge",
-                     "revision": 34834,
-                     "timestamp": 1777353821,
+                     "revision": 34897,
+                     "timestamp": 1777540915,
                      "base": "core20"
                   }
                ],
@@ -4131,7 +4131,7 @@
          },
          {
             "name": "grafana-k8s-operator",
-            "newCommits": 4,
+            "newCommits": 5,
             "url": "https://github.com/canonical/grafana-k8s-operator",
             "releases": [
                {
@@ -4399,7 +4399,7 @@
          },
          {
             "name": "prometheus-k8s-operator",
-            "newCommits": 4,
+            "newCommits": 5,
             "url": "https://github.com/canonical/prometheus-k8s-operator",
             "releases": [
                {
@@ -21964,7 +21964,7 @@
          },
          {
             "name": "mongo-single-kernel-library",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/mongo-single-kernel-library",
             "releases": [
                {
@@ -30301,6 +30301,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "f9d7c1b1491ca6f614616a68f0d03c62a308f7b1",
+                  "author": "Ali UĞUR",
+                  "timestamp": 1777542990,
+                  "message": "<p>chore: Rename charm to dovecot from dovecot-charm (<a target=\"_blank\" href=\"https://github.com/canonical/mailserver-operators/pull/20\">#20</a>)</p>\n\n<ul>\n<li><p>chore: Rename charm to dovecot from dovecot-charm</p></li>\n\n<li><p>chore: remove test_ha.py from integration tests</p></li>\n\n<li><p>fix: fmt</p></li>\n\n<li><p>chore: streamline package installation and enhance clear-queue action tests</p></li>\n\n<li><p>chore: enhance juju fixture and improve dual unit deployment logic</p></li>\n</ul>\n",
+                  "url": "https://github.com/canonical/mailserver-operators/commit/f9d7c1b1491ca6f614616a68f0d03c62a308f7b1"
+               },
+               {
                   "sha": "4c6a03593ca5ef239389d955d6889520e7b218d7",
                   "author": "Christopher Bartz",
                   "timestamp": 1777475102,
@@ -30313,13 +30320,6 @@
                   "timestamp": 1777467571,
                   "message": "<p>refactor(publish_charm): use matrix strategy for channel and directory configuration (<a target=\"_blank\" href=\"https://github.com/canonical/mailserver-operators/pull/19\">#19</a>)</p>\n",
                   "url": "https://github.com/canonical/mailserver-operators/commit/070266eba51d8cf474d035a37d510415425b9aea"
-               },
-               {
-                  "sha": "11cda33191a63bb5c65119d022e569eb554a0be6",
-                  "author": "Ali UĞUR",
-                  "timestamp": 1777450621,
-                  "message": "<p>feat(dovecot-charm): add mail sync between primary and secondary units (<a target=\"_blank\" href=\"https://github.com/canonical/mailserver-operators/pull/15\">#15</a>)</p>\n\n<ul>\n<li><p>feat(dovecot-charm): add TLS certificate integration via certificates relation</p></li>\n\n<li><p>docs: add release notes for pr/3-tls</p></li>\n\n<li><p>Refactor TLS certificate tests and update dependencies</p></li>\n\n<li><p>Updated unit tests for DovecotCharm to use new setup methods for Dovecot and Procmail.</p></li>\n\n<li><p>Replaced calls to _systemctl with _setup_dovecot and _setup_procmail in certificate tests.</p></li>\n\n<li><p>Ensured service reload is properly mocked and verified in tests.</p></li>\n\n<li><p>Added new dependency on charmlibs-interfaces-tls-certificates version 1.8.1 in uv.lock.</p></li>\n\n<li><p>fix: vale</p></li>\n\n<li><p>fix: vale</p></li>\n\n<li><p>fix(tls): make ssl=required conditional on cert file presence</p></li>\n</ul>\n\n<p>When no certificates relation is active the TLS cert files do not exist\nyet. Unconditionally setting ssl=required in the dovecot config caused\ndovecot to fail to start, putting the unit in error on every upgrade-charm\nor install event before a cert is provisioned.</p>\n\n<p>Template now checks tls_enabled (passed from charm, true iff the .pem\nfile exists in /etc/dovecot/private/) and falls back to ssl=yes when no\ncert is present. ssl=required is restored automatically on the next\n_reconcile after certificate_available writes the cert to disk.</p>\n\n<p>Also register &ndash;use-existing pytest option in tests/conftest.py so it\ncan be passed on the command line without an &lsquo;unrecognised arguments&rsquo;\nerror.</p>\n\n<ul>\n<li><p>fix(tests): ensure mountpoint check executes correctly in data persistence test</p></li>\n\n<li><p>fix(tests): update LUKS secret generation in dovecot charm tests</p></li>\n\n<li><p>fix(test): mock ensure_storage_ready in TLS tests to prevent PermissionError</p></li>\n\n<li><p>refactor(tls): make TLS mandatory via _setup_tls in _reconcile</p></li>\n\n<li><p>Replace _on_certificate_available with _setup_tls called from _reconcile</p></li>\n\n<li><p>Wire certificate_available event to _reconcile (not separate handler)</p></li>\n\n<li><p>Always ssl=required in dovecot.conf (no conditional)</p></li>\n\n<li><p>Add TLS_CERT_DIR constant, use get_assigned_certificate() API</p></li>\n\n<li><p>Charm blocks with distinct messages for missing relation vs missing cert</p></li>\n\n<li><p>New tests/unit/test_tls.py with 6 tests following SKILL.md principles</p></li>\n\n<li><p>Fix integration tests: copyright, sleeps, stat quoting, ssl assertion</p></li>\n\n<li><p>Update state diagrams for TLS states and events</p></li>\n\n<li><p>delete(docs): remove Dovecot charm state diagrams documentation</p></li>\n\n<li><p>refactor(tls): streamline TLS integration in tests and remove redundant deployment logic</p></li>\n\n<li><p>test(tls): add TLS tests and remove unused deploy_with_tls parameter</p></li>\n\n<li><p>feat(dovecot-charm): add HA support with SSH key exchange and force-sync action</p></li>\n\n<li><p>docs: add release notes for pr/4-ha</p></li>\n\n<li><p>refactor(tests): clean up TLS test cases by removing unused test and redundant imports</p></li>\n\n<li><p>refactor(ha): holistic reconcile, fix security and test issues</p></li>\n\n<li><p>Move all HA setup (SSH keys, authorized_keys, sync script, cronjob)\ninto _reconcile so they&rsquo;re re-evaluated on every event, not just install</p></li>\n\n<li><p>Replace os.system calls with subprocess.run and systemd.service_reload</p></li>\n\n<li><p>Replace sed-based sshd_config mutation with pure Python</p></li>\n\n<li><p>Guard _sync_authorized_keys against missing peer relation</p></li>\n\n<li><p>Skip sync script/cronjob when secondary hostname is not yet known</p></li>\n\n<li><p>Remove dead code (sync_smtp_aliases_target)</p></li>\n\n<li><p>Remove _on_replicas_changed handler — folded into _reconcile</p></li>\n\n<li><p>Fix _setup_ssh_keys to handle keygen failure gracefully</p></li>\n\n<li><p>Rewrite unit tests per SKILL.md principles: assert on observable\nstate (unit_status, opened_ports), comment every patch</p></li>\n\n<li><p>Add HA patches to storage and TLS tests broken by holistic reconcile</p></li>\n\n<li><p>Fix integration test copyright year and force-sync empty-maildir bug</p></li>\n\n<li><p>chore: fmt</p></li>\n\n<li><p>fix(tls): correct charm name in TLS relation integration</p></li>\n\n<li><p>refactor(tls): replace inline status check with jubilant.all_active for clarity</p></li>\n\n<li><p>fix(tls): close plaintext ports 143 and 110 since TLS is mandatory</p></li>\n\n<li><p>feat(dovecot-charm): add HA support with SSH key exchange and force-sync action</p></li>\n\n<li><p>docs: add release notes for pr/4-ha</p></li>\n\n<li><p>refactor(ha): holistic reconcile, fix security and test issues</p></li>\n\n<li><p>Move all HA setup (SSH keys, authorized_keys, sync script, cronjob)\ninto _reconcile so they&rsquo;re re-evaluated on every event, not just install</p></li>\n\n<li><p>Replace os.system calls with subprocess.run and systemd.service_reload</p></li>\n\n<li><p>Replace sed-based sshd_config mutation with pure Python</p></li>\n\n<li><p>Guard _sync_authorized_keys against missing peer relation</p></li>\n\n<li><p>Skip sync script/cronjob when secondary hostname is not yet known</p></li>\n\n<li><p>Remove dead code (sync_smtp_aliases_target)</p></li>\n\n<li><p>Remove _on_replicas_changed handler — folded into _reconcile</p></li>\n\n<li><p>Fix _setup_ssh_keys to handle keygen failure gracefully</p></li>\n\n<li><p>Rewrite unit tests per SKILL.md principles: assert on observable\nstate (unit_status, opened_ports), comment every patch</p></li>\n\n<li><p>Add HA patches to storage and TLS tests broken by holistic reconcile</p></li>\n\n<li><p>Fix integration test copyright year and force-sync empty-maildir bug</p></li>\n\n<li><p>feat(tests): add integration tests for high availability support</p></li>\n\n<li><p>feat(ha): add known_hosts synchronization for SSH key exchange</p></li>\n\n<li><p>feat(ha): ensure system user exists for doveadm user lookup in sync script</p></li>\n\n<li><p>refactor(tests): streamline TLS setup tests by removing unnecessary patches</p></li>\n\n<li><p>refactor: remove redundant TLS setup method from DovecotCharm</p></li>\n\n<li><p>feat(ha): implement high availability functions and refactor SSH key management</p></li>\n\n<li><p>refactor(tests): increase timeout for unit activation in HA and storage tests</p></li>\n\n<li><p>refactor(ha): enhance SSH key generation error handling and update cron template logging</p></li>\n\n<li><p>chore: fmt</p></li>\n\n<li><p>refactor(ha): enhance dual unit support in HA tests and improve sync logging</p></li>\n\n<li><p>feat(ha): add SSH drop-in configuration for PermitRootLogin and validate cron schedule</p></li>\n\n<li><p>feat(ha): enhance cron schedule validation and add unit tests for disallowed characters</p></li>\n\n<li><p>feat(ha): add sync_schedule field to DovecotConfig and validate cron schedule format</p></li>\n\n<li><p>feat(ha): ensure privsep directory exists for SSHD config checks</p></li>\n\n<li><p>feat(ha): enhance sync_schedule validation to disallow question mark and update related tests</p></li>\n\n<li><p>feat(ha): implement unit limit check and enhance error messages for secondary unit sync</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n\n<ul>\n<li><p>refactor(tests): streamline state_in assignment in primary unit tests</p></li>\n\n<li><p>Refactor unit tests for Dovecot charm with improved test doubles</p></li>\n\n<li><p>Introduced specialized test doubles for Dovecot charm, including NoOp and Fake managers for storage, Dovecot setup, and HA.</p></li>\n\n<li><p>Updated unit tests to utilize new test doubles, enhancing isolation and clarity.</p></li>\n\n<li><p>Modified context fixtures to load charm metadata from <code>charmcraft.yaml</code>.</p></li>\n\n<li><p>Improved test structure by consolidating repetitive patches and utilizing context managers.</p></li>\n\n<li><p>Enhanced error handling in tests to ensure proper status transitions on setup failures.</p></li>\n\n<li><p>Added tests for TLS setup to validate certificate handling and error scenarios.</p></li>\n\n<li><p>feat(ha): migrate mail sync from cronjob to systemd timer with updated validation</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n\n<ul>\n<li>refactor(ha): optimize SSHD drop-in file check for existence and content</li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n",
-                  "url": "https://github.com/canonical/mailserver-operators/commit/11cda33191a63bb5c65119d022e569eb554a0be6"
                }
             ],
             "ciActions": [],
