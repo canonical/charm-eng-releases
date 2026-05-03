@@ -8555,7 +8555,7 @@
          },
          {
             "name": "tenant-service",
-            "newCommits": 0,
+            "newCommits": 2,
             "url": "https://github.com/canonical/tenant-service",
             "releases": [
                {
@@ -8570,7 +8570,7 @@
             ],
             "tags": null,
             "commits": null,
-            "ciActions": null,
+            "ciActions": [],
             "charm": null,
             "snap": null
          },
@@ -19818,10 +19818,26 @@
          },
          {
             "name": "valkey-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/valkey-operator",
             "releases": null,
             "tags": [
+               {
+                  "name": "rev28",
+                  "sha": "ba73c11a404debd21dd2ded085b45f61112d8e0a",
+                  "body": "<p>[DPE-9753] Sentinel rolling restart (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/51\">#51</a>)</p>\n\n<p>The changes introduced with this PR address\n<a href=\"https://github.com/canonical/valkey-operator/issues/25\">https://github.com/canonical/valkey-operator/issues/25</a> and add rolling\nrestarts for Sentinel.</p>\n\n<p>Implementation changes:\n- move custom events to separate file\n- move <code>restart_workload</code> handler to <code>charm.py</code> to be able to call it\nfrom multiple event handlers\n- replace immediate Sentinel restarts with <code>restart_workload.emit</code> to\nrequest a restart lock and restart Sentinel asynchronously\n- add parameter <code>primary_endpoint</code> to the <code>RestartWorkloadEvent</code>, which\nis required to be able to set the Sentinel configuration just ahead of\nthe Sentinel restart to avoid race conditions because of Sentinel&rsquo;s own\nconfig-rewrite</p>\n\n<p>Safeguards/adjustments:\n- return early in non-TLS related <code>peer_relation_changed</code> event handlers\nif a TLS switchover is in progress (for performance improvements)\n- ignore <code>reconfigure_quorum</code> during TLS switchover to avoid failures if\na Sentinel has not been restarted yet\n- on integration tests: as the rolling restarts add a performance\npenalty, the waiting times and timeouts in some integration tests need\nto be adjusted</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
+                  "timestamp": 1777624404,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev28",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev28"
+               },
+               {
+                  "name": "rev27",
+                  "sha": "ba73c11a404debd21dd2ded085b45f61112d8e0a",
+                  "body": "<p>[DPE-9753] Sentinel rolling restart (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/51\">#51</a>)</p>\n\n<p>The changes introduced with this PR address\n<a href=\"https://github.com/canonical/valkey-operator/issues/25\">https://github.com/canonical/valkey-operator/issues/25</a> and add rolling\nrestarts for Sentinel.</p>\n\n<p>Implementation changes:\n- move custom events to separate file\n- move <code>restart_workload</code> handler to <code>charm.py</code> to be able to call it\nfrom multiple event handlers\n- replace immediate Sentinel restarts with <code>restart_workload.emit</code> to\nrequest a restart lock and restart Sentinel asynchronously\n- add parameter <code>primary_endpoint</code> to the <code>RestartWorkloadEvent</code>, which\nis required to be able to set the Sentinel configuration just ahead of\nthe Sentinel restart to avoid race conditions because of Sentinel&rsquo;s own\nconfig-rewrite</p>\n\n<p>Safeguards/adjustments:\n- return early in non-TLS related <code>peer_relation_changed</code> event handlers\nif a TLS switchover is in progress (for performance improvements)\n- ignore <code>reconfigure_quorum</code> during TLS switchover to avoid failures if\na Sentinel has not been restarted yet\n- on integration tests: as the rolling restarts add a performance\npenalty, the waiting times and timeouts in some integration tests need\nto be adjusted</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
+                  "timestamp": 1777624404,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev27",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev27"
+               },
                {
                   "name": "rev26",
                   "sha": "58147672cd85d61c61706f1fefebbe98b282ee75",
@@ -19829,22 +19845,6 @@
                   "timestamp": 1777380489,
                   "url": "https://github.com/canonical/valkey-operator/releases/tag/rev26",
                   "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev26"
-               },
-               {
-                  "name": "rev25",
-                  "sha": "58147672cd85d61c61706f1fefebbe98b282ee75",
-                  "body": "<p>[DPE-9752] Add topology observer (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/50\">#50</a>)</p>\n\n<p>The PR adds a topology observer to the charm, inspired by the existing\nsolution in\n<a href=\"https://github.com/canonical/postgresql-operator/blob/main/scripts/cluster_topology_observer.py\">Postgres</a>.\nThe observer checks if the Primary of Valkey has changed and dispatches\na Juju event to the charm if so. The event is used for updating pod\nlabels (in K8s) and client relation data (updated endpoints and\nread-only-endpoints).</p>\n\n<p><strong>Design:</strong>\n- the topology observer runs as a background process and checks\ncontinuously if the primary has changed\n- the check happens by querying the <code>sentinel master</code> with <code>valkey-py</code>,\nbecause <code>valkey-glide</code> does not support Sentinel connections and both\nclients do not support pubsub connections with Sentinel\n- after startup, the leader unit starts the observer\n- on config changes, secret changes, peer relations changes (for TLS\nupdates) or departure events, the observer gets restarted\n- the observer writes a log file to <code>/var/log/topology_observer.log</code> and\nstores the CA certificate for client TLS in the default truststore of\nthe host in <code>/etc/ssl/certs/</code>\n- on unit removal, the observer gets stopped\n- when a primary change is detected, the observer process dispatches a\ncustom event <code>topology_changed</code>\n- this event is used to update pod labels and client relation data in\n<code>ExternalClientEvents</code></p>\n\n<p><strong>Side quest:</strong>\nBug fix for updating passwords of Sentinel admin users. These updates\nwhere not configured to the Sentinel ACL files and Sentinel was not\nrestarted to pick up the changes. This bug was found while testing the\nPR manually.</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
-                  "timestamp": 1777380489,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev25",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev25"
-               },
-               {
-                  "name": "rev22",
-                  "sha": "bfc3a4d5473c0782b04fed9f1772428179d86572",
-                  "body": "<p>[DPE-9751] add K8s services for primary and replica endpoints (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/46\">#46</a>)</p>\n\n<p>This PR adds Kubernetes services for primary and replica endpoints,\nwhich can be used by clients to connect to Valkey.</p>\n\n<p><strong>Design:</strong>\n- add new class <code>K8sClient</code>, that provides methods for creating/updating\nK8s services and for adding labels to pods\n- add new method <code>reconcile_k8s_services()</code> to the Sentinel manager\nclass that calls the K8s client methods, based on the current deployment\nand primary/replica setup\n- the services are owned by the stateful set of the application, meaning\nthey will be removed on application removal\n- trigger the <code>reconcile_k8s_services()</code> on the leader unit on any peer\nrelation change, to update the ports if required\n- publish the K8s services instead of unit endpoints to client relation\ndata on K8s</p>\n\n<p><strong>Other changes:</strong>\n- add the services to DNS SANs for the TLS certificate requests\n- update rust to <code>1.94.0</code> to allow building <code>lightkube</code></p>\n\n<p>Integration testing is covered by the existing tests for client\nrelations. The requirer-charms will now connect via the services in the\ntests on K8s.</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
-                  "timestamp": 1776960674,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev22",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev22"
                }
             ],
             "commits": null,
@@ -19856,15 +19856,15 @@
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 25,
-                     "timestamp": 1777400087,
+                     "revision": 27,
+                     "timestamp": 1777823804,
                      "base": ""
                   },
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 26,
-                     "timestamp": 1777400104,
+                     "revision": 28,
+                     "timestamp": 1777823823,
                      "base": ""
                   }
                ],
