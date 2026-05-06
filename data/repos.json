@@ -1391,9 +1391,18 @@
          },
          {
             "name": "terraform-provider-juju",
-            "newCommits": 88,
+            "newCommits": 0,
             "url": "https://github.com/juju/terraform-provider-juju",
             "releases": [
+               {
+                  "id": 318375255,
+                  "version": "v2.0.0-rc1",
+                  "timestamp": 1778069862,
+                  "title": "v2.0.0-rc1",
+                  "body": "<h2>Notes</h2>\n\n<ul>\n<li>This release requires Juju controller version 3 or higher. This version drops the support for 2.9**</li>\n<li>If using JAAS, this release requires Juju controller version 3.6.5 or higher.**</li>\n<li>This release uses Juju client api code from the tip of the Juju 4.0 branch.</li>\n</ul>\n\n<h2>Enhancements</h2>\n\n<ul>\n<li>Enable the Terraform provider to run against Juju 3 &amp; 4 controllers.</li>\n<li>If you are running against a Juju 3 controller, upgrading from the latest v1 of the Terraform Provider to v2 should require no changes. See the <a href=\"https://documentation.ubuntu.com/terraform-provider-juju/latest/howto/manage-provider/upgrade-provider-to-v2/\">upgrade to v2 guide</a> for more information.</li>\n</ul>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>merge(main): merge main in feature branch by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1044\">https://github.com/juju/terraform-provider-juju/pull/1044</a></li>\n<li>Use juju 4.x dependency by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1039\">https://github.com/juju/terraform-provider-juju/pull/1039</a></li>\n<li>chore(test): enable tests against a 4 controller by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1048\">https://github.com/juju/terraform-provider-juju/pull/1048</a></li>\n<li>chore: merge main to feature/juju-4.0 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1065\">https://github.com/juju/terraform-provider-juju/pull/1065</a></li>\n<li>feat: address upgrade provider tests by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1066\">https://github.com/juju/terraform-provider-juju/pull/1066</a></li>\n<li>fix: change ssh key payload comparison by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1068\">https://github.com/juju/terraform-provider-juju/pull/1068</a></li>\n<li>chore: use 4/edge for tests by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1059\">https://github.com/juju/terraform-provider-juju/pull/1059</a></li>\n<li>feat: add context to client.go by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1100\">https://github.com/juju/terraform-provider-juju/pull/1100</a></li>\n<li>fix(charm-revision): use right revision to deploy charm on amd64 by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1104\">https://github.com/juju/terraform-provider-juju/pull/1104</a></li>\n<li>Merge main 2 by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1110\">https://github.com/juju/terraform-provider-juju/pull/1110</a></li>\n<li>fix: only grant offer access when needed by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1101\">https://github.com/juju/terraform-provider-juju/pull/1101</a></li>\n<li>test(application-k8s): in juju 4 the juju-external-hostname implicit config for charms doesn&rsquo;t exist by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1116\">https://github.com/juju/terraform-provider-juju/pull/1116</a></li>\n<li>chore: merge main feature juju 4 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1122\">https://github.com/juju/terraform-provider-juju/pull/1122</a></li>\n<li>test: fix check for testing against Juju 4 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1129\">https://github.com/juju/terraform-provider-juju/pull/1129</a></li>\n<li>fix: resource application test by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1133\">https://github.com/juju/terraform-provider-juju/pull/1133</a></li>\n<li>fix(qualifier): review usage of qualifier by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1143\">https://github.com/juju/terraform-provider-juju/pull/1143</a></li>\n<li>fix(endpointbindings tests): fix EndpointBindings by not using patterns in the client by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1144\">https://github.com/juju/terraform-provider-juju/pull/1144</a></li>\n<li>Merge main feature 4.0 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1151\">https://github.com/juju/terraform-provider-juju/pull/1151</a></li>\n<li>chore(use-4-edge): use 4-edge to get latest updates from juju by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1146\">https://github.com/juju/terraform-provider-juju/pull/1146</a></li>\n<li>Merge main -&gt; feature 4.0 by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1159\">https://github.com/juju/terraform-provider-juju/pull/1159</a></li>\n<li>ci(e2e): miscellanea fix by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1167\">https://github.com/juju/terraform-provider-juju/pull/1167</a></li>\n<li>ci: skip TestAcc_ResourceOffer by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1173\">https://github.com/juju/terraform-provider-juju/pull/1173</a></li>\n<li>test: skip charmupdatebase application test by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1176\">https://github.com/juju/terraform-provider-juju/pull/1176</a></li>\n<li>fix(e2e): miscellanea fixes by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1190\">https://github.com/juju/terraform-provider-juju/pull/1190</a></li>\n<li>ci(re-enable jaas tests): reenable jaas integration tests by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1196\">https://github.com/juju/terraform-provider-juju/pull/1196</a></li>\n<li>merge main into <code>feature/juju-4</code> by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1203\">https://github.com/juju/terraform-provider-juju/pull/1203</a></li>\n<li>Merge <code>feature/juju-4.0</code> into <code>main</code> by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1206\">https://github.com/juju/terraform-provider-juju/pull/1206</a></li>\n<li>chore: update changelog for 2.0.0 rc release by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1208\">https://github.com/juju/terraform-provider-juju/pull/1208</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v1.5.1...v2.0.0-rc1\">https://github.com/juju/terraform-provider-juju/compare/v1.5.1&hellip;v2.0.0-rc1</a></p>\n",
+                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v2.0.0-rc1",
+                  "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v2.0.0-rc1...main"
+               },
                {
                   "id": 317668345,
                   "version": "v1.5.1",
@@ -1411,15 +1420,6 @@
                   "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: security overview by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1140\">https://github.com/juju/terraform-provider-juju/pull/1140</a></li>\n<li>docs: upgrade starter pack to 1.6 by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1141\">https://github.com/juju/terraform-provider-juju/pull/1141</a></li>\n<li>docs(godocs): adds godocs for all exported types, methods, etc by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1083\">https://github.com/juju/terraform-provider-juju/pull/1083</a></li>\n<li>refactor(cloudspec): replaces the cloudspec call by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1158\">https://github.com/juju/terraform-provider-juju/pull/1158</a></li>\n<li>Merge 1.4 branch to main by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1162\">https://github.com/juju/terraform-provider-juju/pull/1162</a></li>\n<li>feat: fix defaults being sent down from juju when nothing is specifie… by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1157\">https://github.com/juju/terraform-provider-juju/pull/1157</a></li>\n<li>test: disable OS updates in tests by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1170\">https://github.com/juju/terraform-provider-juju/pull/1170</a></li>\n<li>build(deps): updates the juju and terraform plugin framework dependencies by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1174\">https://github.com/juju/terraform-provider-juju/pull/1174</a></li>\n<li>docs: update landing pages by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1165\">https://github.com/juju/terraform-provider-juju/pull/1165</a></li>\n<li>docs: add sphinx-llm extension for AI-friendly documentation by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1177\">https://github.com/juju/terraform-provider-juju/pull/1177</a></li>\n<li>chore(changelog): changelog for the 1.5.0 release by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1187\">https://github.com/juju/terraform-provider-juju/pull/1187</a></li>\n<li>fix: allow last key to be deleted by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1188\">https://github.com/juju/terraform-provider-juju/pull/1188</a></li>\n<li>fix: key deletion for 2.9 by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1200\">https://github.com/juju/terraform-provider-juju/pull/1200</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v1.4.3...v1.5.0\">https://github.com/juju/terraform-provider-juju/compare/v1.4.3&hellip;v1.5.0</a></p>\n",
                   "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v1.5.0",
                   "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v1.5.0...main"
-               },
-               {
-                  "id": 312054790,
-                  "version": "v1.5.0-rc1",
-                  "timestamp": 1776793326,
-                  "title": "v1.5.0-rc1",
-                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: security overview by <a target=\"_blank\" href=\"https://github.com/SimoneDutto\">@SimoneDutto</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1140\">https://github.com/juju/terraform-provider-juju/pull/1140</a></li>\n<li>docs: upgrade starter pack to 1.6 by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1141\">https://github.com/juju/terraform-provider-juju/pull/1141</a></li>\n<li>docs(godocs): adds godocs for all exported types, methods, etc by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1083\">https://github.com/juju/terraform-provider-juju/pull/1083</a></li>\n<li>refactor(cloudspec): replaces the cloudspec call by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1158\">https://github.com/juju/terraform-provider-juju/pull/1158</a></li>\n<li>Merge 1.4 branch to main by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1162\">https://github.com/juju/terraform-provider-juju/pull/1162</a></li>\n<li>feat: fix defaults being sent down from juju when nothing is specifie… by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1157\">https://github.com/juju/terraform-provider-juju/pull/1157</a></li>\n<li>test: disable OS updates in tests by <a target=\"_blank\" href=\"https://github.com/kian99\">@kian99</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1170\">https://github.com/juju/terraform-provider-juju/pull/1170</a></li>\n<li>build(deps): updates the juju and terraform plugin framework dependencies by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1174\">https://github.com/juju/terraform-provider-juju/pull/1174</a></li>\n<li>docs: update landing pages by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1165\">https://github.com/juju/terraform-provider-juju/pull/1165</a></li>\n<li>docs: add sphinx-llm extension for AI-friendly documentation by <a target=\"_blank\" href=\"https://github.com/tmihoc\">@tmihoc</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1177\">https://github.com/juju/terraform-provider-juju/pull/1177</a></li>\n<li>chore(changelog): changelog for the 1.5.0 release by <a target=\"_blank\" href=\"https://github.com/alesstimec\">@alesstimec</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1187\">https://github.com/juju/terraform-provider-juju/pull/1187</a></li>\n<li>fix: allow last key to be deleted by <a target=\"_blank\" href=\"https://github.com/ale8k\">@ale8k</a> in <a href=\"https://github.com/juju/terraform-provider-juju/pull/1188\">https://github.com/juju/terraform-provider-juju/pull/1188</a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/juju/terraform-provider-juju/compare/v1.4.3...v1.5.0-rc1\">https://github.com/juju/terraform-provider-juju/compare/v1.4.3&hellip;v1.5.0-rc1</a></p>\n",
-                  "url": "https://github.com/juju/terraform-provider-juju/releases/tag/v1.5.0-rc1",
-                  "compareUrl": "https://github.com/juju/terraform-provider-juju/compare/v1.5.0-rc1...main"
                }
             ],
             "tags": null,
@@ -2047,6 +2047,126 @@
       "team": "Observability",
       "repos": [
          {
+            "name": "alertmanager-k8s-operator",
+            "newCommits": 1,
+            "url": "https://github.com/canonical/alertmanager-k8s-operator",
+            "releases": [
+               {
+                  "id": 318366793,
+                  "version": "rev203",
+                  "timestamp": 1778068974,
+                  "title": "Revision 203",
+                  "body": "<pre><code class=\"language-json\">{\n  &quot;name&quot;: &quot;alertmanager-k8s&quot;,\n  &quot;revision&quot;: 203,\n  &quot;resources&quot;: [\n    {\n      &quot;name&quot;: &quot;alertmanager-image&quot;,\n      &quot;revision&quot;: 102,\n      &quot;upstream_source&quot;: &quot;ubuntu/alertmanager@sha256:822dd355903bd3ce7412502b7e4450c829a0b15e70ffa68381fc12630a6ed765&quot;\n    }\n  ]\n}\n</code></pre>\n\n<p>This revision is for <em>ubuntu@24.04 (amd64)</em>\nReleased to <em>dev/edge</em> on May  6, 2026 at 12:02 UTC</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: improve charmcraft.yaml description field by <a target=\"_blank\" href=\"https://github.com/Abuelodelanada\">@Abuelodelanada</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/401\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/401\">#401</a></a></li>\n<li>fix: Split TF endpoints output to requires/provides by <a target=\"_blank\" href=\"https://github.com/MichaelThamm\">@MichaelThamm</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/396\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/396\">#396</a></a></li>\n<li>feat(terraform): add channel validation by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/403\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/403\">#403</a></a></li>\n<li>chore(ci): bump reusable workflows to v2 by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/406\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/406\">#406</a></a></li>\n<li>feat: migrate charm-tracing to ops[tracing] by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/408\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/408\">#408</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/alertmanager-k8s-operator/compare/rev201...rev203\">https://github.com/canonical/alertmanager-k8s-operator/compare/rev201&hellip;rev203</a></p>\n",
+                  "url": "https://github.com/canonical/alertmanager-k8s-operator/releases/tag/rev203",
+                  "compareUrl": "https://github.com/canonical/alertmanager-k8s-operator/compare/rev203...main"
+               },
+               {
+                  "id": 318236621,
+                  "version": "rev202",
+                  "timestamp": 1778050800,
+                  "title": "Revision 202",
+                  "body": "<pre><code class=\"language-json\">{\n  &quot;name&quot;: &quot;alertmanager-k8s&quot;,\n  &quot;revision&quot;: 202,\n  &quot;resources&quot;: [\n    {\n      &quot;name&quot;: &quot;alertmanager-image&quot;,\n      &quot;revision&quot;: 102,\n      &quot;upstream_source&quot;: &quot;ubuntu/alertmanager@sha256:822dd355903bd3ce7412502b7e4450c829a0b15e70ffa68381fc12630a6ed765&quot;\n    }\n  ]\n}\n</code></pre>\n\n<p>This revision is for <em>ubuntu@24.04 (amd64)</em>\nReleased to <em>dev/edge</em> on May  6, 2026 at 07:00 UTC</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: improve charmcraft.yaml description field by <a target=\"_blank\" href=\"https://github.com/Abuelodelanada\">@Abuelodelanada</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/401\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/401\">#401</a></a></li>\n<li>fix: Split TF endpoints output to requires/provides by <a target=\"_blank\" href=\"https://github.com/MichaelThamm\">@MichaelThamm</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/396\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/396\">#396</a></a></li>\n<li>feat(terraform): add channel validation by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/403\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/403\">#403</a></a></li>\n<li>chore(ci): bump reusable workflows to v2 by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/406\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/406\">#406</a></a></li>\n<li>feat: migrate charm-tracing to ops[tracing] by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/408\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/408\">#408</a></a></li>\n<li>feat: add send-logs integration via LogForwarder by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/407\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/407\">#407</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/alertmanager-k8s-operator/compare/rev201...rev202\">https://github.com/canonical/alertmanager-k8s-operator/compare/rev201&hellip;rev202</a></p>\n",
+                  "url": "https://github.com/canonical/alertmanager-k8s-operator/releases/tag/rev202",
+                  "compareUrl": "https://github.com/canonical/alertmanager-k8s-operator/compare/rev202...main"
+               },
+               {
+                  "id": 309162149,
+                  "version": "rev201",
+                  "timestamp": 1776230320,
+                  "title": "Revision 201",
+                  "body": "<pre><code class=\"language-json\">{\n  &quot;name&quot;: &quot;alertmanager-k8s&quot;,\n  &quot;revision&quot;: 201,\n  &quot;resources&quot;: [\n    {\n      &quot;name&quot;: &quot;alertmanager-image&quot;,\n      &quot;revision&quot;: 102,\n      &quot;upstream_source&quot;: &quot;ubuntu/alertmanager@sha256:822dd355903bd3ce7412502b7e4450c829a0b15e70ffa68381fc12630a6ed765&quot;\n    }\n  ]\n}\n</code></pre>\n\n<p>This revision is for <em>ubuntu@24.04 (amd64)</em>\nReleased to <em>dev/edge</em> on April 15, 2026 at 05:18 UTC</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update charm libraries by <a target=\"_blank\" href=\"https://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/400\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/400\">#400</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/alertmanager-k8s-operator/compare/rev200...rev201\">https://github.com/canonical/alertmanager-k8s-operator/compare/rev200&hellip;rev201</a></p>\n",
+                  "url": "https://github.com/canonical/alertmanager-k8s-operator/releases/tag/rev201",
+                  "compareUrl": "https://github.com/canonical/alertmanager-k8s-operator/compare/rev201...main"
+               }
+            ],
+            "tags": null,
+            "commits": null,
+            "ciActions": [
+               "https://github.com/canonical/alertmanager-k8s-operator/actions/workflows/release.yaml"
+            ],
+            "charm": {
+               "name": "alertmanager-k8s",
+               "url": "https://charmhub.io/alertmanager-k8s",
+               "releases": [
+                  {
+                     "track": "2",
+                     "channel": "stable",
+                     "revision": 191,
+                     "timestamp": 1762859730,
+                     "base": ""
+                  },
+                  {
+                     "track": "2",
+                     "channel": "candidate",
+                     "revision": 192,
+                     "timestamp": 1771327443,
+                     "base": ""
+                  },
+                  {
+                     "track": "2",
+                     "channel": "beta",
+                     "revision": 192,
+                     "timestamp": 1770660687,
+                     "base": ""
+                  },
+                  {
+                     "track": "2",
+                     "channel": "edge",
+                     "revision": 192,
+                     "timestamp": 1762937786,
+                     "base": ""
+                  },
+                  {
+                     "track": "dev",
+                     "channel": "edge",
+                     "revision": 203,
+                     "timestamp": 1778068973,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "stable",
+                     "revision": 180,
+                     "timestamp": 1758189615,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "candidate",
+                     "revision": 180,
+                     "timestamp": 1757414291,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "beta",
+                     "revision": 180,
+                     "timestamp": 1756821835,
+                     "base": ""
+                  },
+                  {
+                     "track": "1",
+                     "channel": "edge",
+                     "revision": 180,
+                     "timestamp": 1756731518,
+                     "base": ""
+                  }
+               ],
+               "channels": [
+                  "stable",
+                  "candidate",
+                  "beta",
+                  "edge"
+               ],
+               "tracks": [
+                  "2",
+                  "dev",
+                  "1"
+               ]
+            },
+            "snap": null
+         },
+         {
             "name": "istio-ingress-k8s-operator",
             "newCommits": 0,
             "url": "https://github.com/canonical/istio-ingress-k8s-operator",
@@ -2269,126 +2389,6 @@
                      "channel": "edge",
                      "revision": 247,
                      "timestamp": 1747212542,
-                     "base": ""
-                  }
-               ],
-               "channels": [
-                  "stable",
-                  "candidate",
-                  "beta",
-                  "edge"
-               ],
-               "tracks": [
-                  "2",
-                  "dev",
-                  "1"
-               ]
-            },
-            "snap": null
-         },
-         {
-            "name": "alertmanager-k8s-operator",
-            "newCommits": 0,
-            "url": "https://github.com/canonical/alertmanager-k8s-operator",
-            "releases": [
-               {
-                  "id": 318236621,
-                  "version": "rev202",
-                  "timestamp": 1778050800,
-                  "title": "Revision 202",
-                  "body": "<pre><code class=\"language-json\">{\n  &quot;name&quot;: &quot;alertmanager-k8s&quot;,\n  &quot;revision&quot;: 202,\n  &quot;resources&quot;: [\n    {\n      &quot;name&quot;: &quot;alertmanager-image&quot;,\n      &quot;revision&quot;: 102,\n      &quot;upstream_source&quot;: &quot;ubuntu/alertmanager@sha256:822dd355903bd3ce7412502b7e4450c829a0b15e70ffa68381fc12630a6ed765&quot;\n    }\n  ]\n}\n</code></pre>\n\n<p>This revision is for <em>ubuntu@24.04 (amd64)</em>\nReleased to <em>dev/edge</em> on May  6, 2026 at 07:00 UTC</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>docs: improve charmcraft.yaml description field by <a target=\"_blank\" href=\"https://github.com/Abuelodelanada\">@Abuelodelanada</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/401\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/401\">#401</a></a></li>\n<li>fix: Split TF endpoints output to requires/provides by <a target=\"_blank\" href=\"https://github.com/MichaelThamm\">@MichaelThamm</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/396\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/396\">#396</a></a></li>\n<li>feat(terraform): add channel validation by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/403\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/403\">#403</a></a></li>\n<li>chore(ci): bump reusable workflows to v2 by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/406\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/406\">#406</a></a></li>\n<li>feat: migrate charm-tracing to ops[tracing] by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/408\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/408\">#408</a></a></li>\n<li>feat: add send-logs integration via LogForwarder by <a target=\"_blank\" href=\"https://github.com/lucabello\">@lucabello</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/407\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/407\">#407</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/alertmanager-k8s-operator/compare/rev201...rev202\">https://github.com/canonical/alertmanager-k8s-operator/compare/rev201&hellip;rev202</a></p>\n",
-                  "url": "https://github.com/canonical/alertmanager-k8s-operator/releases/tag/rev202",
-                  "compareUrl": "https://github.com/canonical/alertmanager-k8s-operator/compare/rev202...main"
-               },
-               {
-                  "id": 309162149,
-                  "version": "rev201",
-                  "timestamp": 1776230320,
-                  "title": "Revision 201",
-                  "body": "<pre><code class=\"language-json\">{\n  &quot;name&quot;: &quot;alertmanager-k8s&quot;,\n  &quot;revision&quot;: 201,\n  &quot;resources&quot;: [\n    {\n      &quot;name&quot;: &quot;alertmanager-image&quot;,\n      &quot;revision&quot;: 102,\n      &quot;upstream_source&quot;: &quot;ubuntu/alertmanager@sha256:822dd355903bd3ce7412502b7e4450c829a0b15e70ffa68381fc12630a6ed765&quot;\n    }\n  ]\n}\n</code></pre>\n\n<p>This revision is for <em>ubuntu@24.04 (amd64)</em>\nReleased to <em>dev/edge</em> on April 15, 2026 at 05:18 UTC</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update charm libraries by <a target=\"_blank\" href=\"https://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/400\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/400\">#400</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/alertmanager-k8s-operator/compare/rev200...rev201\">https://github.com/canonical/alertmanager-k8s-operator/compare/rev200&hellip;rev201</a></p>\n",
-                  "url": "https://github.com/canonical/alertmanager-k8s-operator/releases/tag/rev201",
-                  "compareUrl": "https://github.com/canonical/alertmanager-k8s-operator/compare/rev201...main"
-               },
-               {
-                  "id": 308461672,
-                  "version": "rev200",
-                  "timestamp": 1776099888,
-                  "title": "Revision 200",
-                  "body": "<pre><code class=\"language-json\">{\n  &quot;name&quot;: &quot;alertmanager-k8s&quot;,\n  &quot;revision&quot;: 200,\n  &quot;resources&quot;: [\n    {\n      &quot;name&quot;: &quot;alertmanager-image&quot;,\n      &quot;revision&quot;: 102,\n      &quot;upstream_source&quot;: &quot;ubuntu/alertmanager@sha256:822dd355903bd3ce7412502b7e4450c829a0b15e70ffa68381fc12630a6ed765&quot;\n    }\n  ]\n}\n</code></pre>\n\n<p>This revision is for <em>ubuntu@24.04 (amd64)</em>\nReleased to <em>dev/edge</em> on April 13, 2026 at 17:04 UTC</p>\n\n<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>chore: update charm libraries by <a target=\"_blank\" href=\"https://github.com/observability-noctua-bot\">@observability-noctua-bot</a> in <a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/398\"><a target=\"_blank\" href=\"https://github.com/canonical/alertmanager-k8s-operator/pull/398\">#398</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/alertmanager-k8s-operator/compare/rev199...rev200\">https://github.com/canonical/alertmanager-k8s-operator/compare/rev199&hellip;rev200</a></p>\n",
-                  "url": "https://github.com/canonical/alertmanager-k8s-operator/releases/tag/rev200",
-                  "compareUrl": "https://github.com/canonical/alertmanager-k8s-operator/compare/rev200...main"
-               }
-            ],
-            "tags": null,
-            "commits": null,
-            "ciActions": [
-               "https://github.com/canonical/alertmanager-k8s-operator/actions/workflows/release.yaml"
-            ],
-            "charm": {
-               "name": "alertmanager-k8s",
-               "url": "https://charmhub.io/alertmanager-k8s",
-               "releases": [
-                  {
-                     "track": "2",
-                     "channel": "stable",
-                     "revision": 191,
-                     "timestamp": 1762859730,
-                     "base": ""
-                  },
-                  {
-                     "track": "2",
-                     "channel": "candidate",
-                     "revision": 192,
-                     "timestamp": 1771327443,
-                     "base": ""
-                  },
-                  {
-                     "track": "2",
-                     "channel": "beta",
-                     "revision": 192,
-                     "timestamp": 1770660687,
-                     "base": ""
-                  },
-                  {
-                     "track": "2",
-                     "channel": "edge",
-                     "revision": 192,
-                     "timestamp": 1762937786,
-                     "base": ""
-                  },
-                  {
-                     "track": "dev",
-                     "channel": "edge",
-                     "revision": 202,
-                     "timestamp": 1778050799,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "stable",
-                     "revision": 180,
-                     "timestamp": 1758189615,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "candidate",
-                     "revision": 180,
-                     "timestamp": 1757414291,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "beta",
-                     "revision": 180,
-                     "timestamp": 1756821835,
-                     "base": ""
-                  },
-                  {
-                     "track": "1",
-                     "channel": "edge",
-                     "revision": 180,
-                     "timestamp": 1756731518,
                      "base": ""
                   }
                ],
@@ -2804,7 +2804,7 @@
          },
          {
             "name": "cos-proxy-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/cos-proxy-operator",
             "releases": [
                {
@@ -3290,7 +3290,7 @@
          },
          {
             "name": "catalogue-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/catalogue-k8s-operator",
             "releases": [
                {
@@ -5065,7 +5065,7 @@
          },
          {
             "name": "grafana-agent-operator",
-            "newCommits": 24,
+            "newCommits": 25,
             "url": "https://github.com/canonical/grafana-agent-operator",
             "releases": [
                {
@@ -8866,7 +8866,7 @@
          },
          {
             "name": "kratos-operator",
-            "newCommits": 2,
+            "newCommits": 4,
             "url": "https://github.com/canonical/kratos-operator",
             "releases": [
                {
@@ -9469,7 +9469,7 @@
          },
          {
             "name": "vault-k8s-operator",
-            "newCommits": 0,
+            "newCommits": 1,
             "url": "https://github.com/canonical/vault-k8s-operator",
             "releases": [
                {
@@ -9900,7 +9900,7 @@
          },
          {
             "name": "hook-service-operator",
-            "newCommits": 39,
+            "newCommits": 41,
             "url": "https://github.com/canonical/hook-service-operator",
             "releases": [
                {
@@ -10081,7 +10081,7 @@
          },
          {
             "name": "openfga-operator",
-            "newCommits": 47,
+            "newCommits": 49,
             "url": "https://github.com/canonical/openfga-operator",
             "releases": [
                {
@@ -10186,7 +10186,7 @@
          },
          {
             "name": "glauth-k8s-operator",
-            "newCommits": 63,
+            "newCommits": 65,
             "url": "https://github.com/canonical/glauth-k8s-operator",
             "releases": [
                {
@@ -11104,25 +11104,25 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "b3d8f22cf34c21a8bc7d2333168f8053fb30e371",
+                  "author": "canonical-iam",
+                  "timestamp": 1778068041,
+                  "message": "<p>chore(deps): update canonical/identity-team action to v1.11.2 (<a target=\"_blank\" href=\"https://github.com/canonical/openfga-rock/pull/61\">#61</a>)</p>\n\n<p>This PR contains the following updates:</p>\n\n<table>\n<thead>\n<tr>\n<th>Package</th>\n<th>Type</th>\n<th>Update</th>\n<th>Change</th>\n</tr>\n</thead>\n\n<tbody>\n</tbody>\n\n<tfoot></tfoot>\n</table>\n<p><a href=\"https://redirect.github.com/canonical/identity-team\">canonical/identity-team</a>\n| action | patch | <code>v1.11.1</code> → <code>v1.11.2</code> |</p>\n\n<hr>\n\n<h3>Release Notes</h3>\n\n<details>\n<summary>canonical/identity-team (canonical/identity-team)</summary>\n\n###\n[`v1.11.2`](https://redirect.github.com/canonical/identity-team/releases/tag/v1.11.2)\n\n[Compare\nSource](https://redirect.github.com/canonical/identity-team/compare/v1.11.1...v1.11.2)\n\n##### Bug Fixes\n\n- secscan workflow\n([1f85bf1](https://redirect.github.com/canonical/identity-team/commit/1f85bf1f5b48187aa79b3e95c3c68521ec820af3))\n- secscan workflow\n([#&<a target=\"_blank\" href=\"https://github.com/canonical/openfga-rock/pull/8203\">#8203</a>;103](https://redirect.github.com/canonical/identity-team/issues/103))\n([f385d01](https://redirect.github.com/canonical/identity-team/commit/f385d01921f4858a662821b68d3910ff78513a54))\n\n</details>\n\n<hr>\n\n<h3>Configuration</h3>\n\n<p>📅 <strong>Schedule</strong>: (UTC)</p>\n\n<ul>\n<li>Branch creation\n\n<ul>\n<li>At any time (no schedule defined)</li>\n</ul></li>\n<li>Automerge\n\n<ul>\n<li>At any time (no schedule defined)</li>\n</ul></li>\n</ul>\n\n<p>🚦 <strong>Automerge</strong>: Enabled.</p>\n\n<p>♻ <strong>Rebasing</strong>: Whenever PR is behind base branch, or you tick the\nrebase/retry checkbox.</p>\n\n<p>🔕 <strong>Ignore</strong>: Close this PR and you won&rsquo;t be reminded about this update\nagain.</p>\n\n<hr>\n\n<ul>\n<li>[ ] <!-- rebase-check -->If you want to rebase/retry this PR, check\nthis box</li>\n</ul>\n\n<hr>\n\n<p>This PR was generated by <a href=\"https://mend.io/renovate/\">Mend Renovate</a>.\nView the <a href=\"https://developer.mend.io/github/canonical/openfga-rock\">repository job\nlog</a>.</p>\n\n<p><!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiI0My4xNTkuMiIsInVwZGF0ZWRJblZlciI6IjQzLjE1OS4yIiwidGFyZ2V0QnJhbmNoIjoibWFpbiIsImxhYmVscyI6W119--></p>\n",
+                  "url": "https://github.com/canonical/openfga-rock/commit/b3d8f22cf34c21a8bc7d2333168f8053fb30e371"
+               },
+               {
+                  "sha": "e5172115672658fa2727a123ee5fe164b548ac6b",
+                  "author": "renovate[bot]",
+                  "timestamp": 1778067721,
+                  "message": "<p>chore(deps): update canonical/identity-team action to v1.11.2</p>\n",
+                  "url": "https://github.com/canonical/openfga-rock/commit/e5172115672658fa2727a123ee5fe164b548ac6b"
+               },
+               {
                   "sha": "1f0806d55f7c83f32be53476b7fde010e1d85d4f",
                   "author": "Alessandro Cabbia",
                   "timestamp": 1777373616,
                   "message": "<p>CVEs update (<a target=\"_blank\" href=\"https://github.com/canonical/openfga-rock/pull/60\">#60</a>)</p>\n\n<ul>\n<li><strong>ci(AI): add cve skill</strong></li>\n<li><strong>fix: address CVEs</strong></li>\n</ul>\n",
                   "url": "https://github.com/canonical/openfga-rock/commit/1f0806d55f7c83f32be53476b7fde010e1d85d4f"
-               },
-               {
-                  "sha": "a67a71aa59667b26877ff79a48a53c069991b5fa",
-                  "author": "shipperizer",
-                  "timestamp": 1777369849,
-                  "message": "<p>fix: address CVEs</p>\n\n<ul>\n<li>CVE-2026-32280, CVE-2026-32281, CVE-2026-32283: stdlib patched via Go 1.26 update</li>\n<li>CVE-2026-33816: github.com/jackc/pgx/v5 patched via OpenFGA 1.14.2 update</li>\n<li>CVE-2026-39883: go.opentelemetry.io/otel/sdk patched via OpenFGA 1.14.2 update</li>\n<li>CVE-2026-34986: github.com/go-jose/go-jose/v4 patched via OpenFGA 1.14.2 update</li>\n<li>CVE-2026-34040: github.com/docker/docker patched via OpenFGA 1.14.2 update</li>\n</ul>\n",
-                  "url": "https://github.com/canonical/openfga-rock/commit/a67a71aa59667b26877ff79a48a53c069991b5fa"
-               },
-               {
-                  "sha": "bd512e29a9c43a36984ae67cfb9d49dde09b17c1",
-                  "author": "shipperizer",
-                  "timestamp": 1777369806,
-                  "message": "<p>ci(AI): add cve skill</p>\n",
-                  "url": "https://github.com/canonical/openfga-rock/commit/bd512e29a9c43a36984ae67cfb9d49dde09b17c1"
                }
             ],
             "ciActions": [
@@ -21857,9 +21857,9 @@
             "tags": [
                {
                   "name": "v16/1.0.0",
-                  "sha": "7ed7296f4fdd64c66554f107c6a766c0842ef157",
-                  "body": "<p>CICD</p>\n",
-                  "timestamp": 1777970537,
+                  "sha": "3f9719f9d7dfde70bea279a2aff37f87f20d8845",
+                  "body": "<p>Initial commit</p>\n",
+                  "timestamp": 1777937777,
                   "url": "https://github.com/canonical/postgresql-watcher-operator/releases/tag/v16%2F1.0.0",
                   "compareUrl": "https://github.com/canonical/postgresql-watcher-operator/compare/main...v16%2F1.0.0"
                }
@@ -23973,35 +23973,20 @@
          },
          {
             "name": "opensearch-single-kernel-library",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/opensearch-single-kernel-library",
-            "releases": null,
-            "tags": [
+            "releases": [
                {
-                  "name": "v0.0.4",
-                  "sha": "576885b3e253e4be0ec42c85609453f7197b05e0",
-                  "body": "<p>Merge branch &lsquo;2/edge&rsquo; into feature/add-bump-dependent_charm</p>\n",
-                  "timestamp": 1778018000,
-                  "url": "https://github.com/canonical/opensearch-single-kernel-library/releases/tag/v0.0.4",
-                  "compareUrl": "https://github.com/canonical/opensearch-single-kernel-library/compare/2/edge...v0.0.4"
-               },
-               {
-                  "name": "v0.0.3",
-                  "sha": "645a71642d3850150c90e2900c6352bfac1a927f",
-                  "body": "<p>patch: [DPE-9762] Fix package naming &amp; enable dynamic versioning. (<a target=\"_blank\" href=\"https://github.com/canonical/opensearch-single-kernel-library/pull/67\">#67</a>)</p>\n",
-                  "timestamp": 1777899733,
-                  "url": "https://github.com/canonical/opensearch-single-kernel-library/releases/tag/v0.0.3",
-                  "compareUrl": "https://github.com/canonical/opensearch-single-kernel-library/compare/2/edge...v0.0.3"
-               },
-               {
-                  "name": "v0.0.2",
-                  "sha": "b47a012ba2690da075639603413073ed7cec94b5",
-                  "body": "<p>patch: Dpe9181 open search vm single kernel large deployment base flow (<a target=\"_blank\" href=\"https://github.com/canonical/opensearch-single-kernel-library/pull/35\">#35</a>)</p>\n\n<ul>\n<li><p>patch: squash all commits</p></li>\n\n<li><p>patch: Fixing issue with orchestrators</p></li>\n\n<li><p>patch: Fixing issue with secrets and issue with peer_cluster relation departed</p></li>\n\n<li><p>patch: Fix call refresh relation only on leader</p></li>\n\n<li><p>patch: Fix issues with snapshots and peer_cluster relation changed</p></li>\n\n<li><p>patch: Update state setting and reading for field &lsquo;main_orchestrator_registered&rsquo;</p></li>\n\n<li><p>patch: Fix issue with credentials management for object storage integrators</p></li>\n\n<li><p>patch: Update state setting and reading for field &lsquo;main_orchestrator_registered&rsquo;</p></li>\n\n<li><p>patch: Fix property being called as a function</p></li>\n\n<li><p>patch: Fix issue with storage detached</p></li>\n\n<li><p>patch: Fix issue with storage detached</p></li>\n\n<li><p>patch: Addressing PR review comments</p></li>\n\n<li><p>patch: Update all copyright year</p></li>\n\n<li><p>patch: Address PR review comments</p></li>\n\n<li><p>patch: Use object storage credentials to save credentials in snapshots</p></li>\n\n<li><p>patch: Fix some issues while fixing PR review comments</p></li>\n\n<li><p>patch: Fix some issues while fixing PR review comments</p></li>\n\n<li><p>patch: Fix issue with lock</p></li>\n\n<li><p>patch: Fixing issue with reading/updating servers peer-cluster relation data</p></li>\n\n<li><p>patch: Fixing issue with roles management and peer-cluster relation changed</p></li>\n\n<li><p>patch: Fixing issue with snapshots using microceph</p></li>\n\n<li><p>patch: Fix status setting and fix jwt configuration not being deleted</p></li>\n\n<li><p>patch: Fixing issue with admin_tls on validation</p></li>\n\n<li><p>patch: Fixing issue with storage detaching</p></li>\n\n<li><p>patch: Fixing issue with CA rotation in large deployment</p></li>\n\n<li><p>patch: Fixing issue with profiles</p></li>\n\n<li><p>patch: Fixing issue with main_orchestrator_registered field</p></li>\n\n<li><p>patch: Fixing unit tests and adding more time for integration tests</p></li>\n\n<li><p>patch: Increase timeout for waiting for LD clusters to fight falkiness of runners</p></li>\n\n<li><p>patch: Clean cluster state and move refresh_relation_data to peer_cluster_orchestrator_manager</p></li>\n\n<li><p>patch: Leverage advanced status in status setting</p></li>\n\n<li><p>patch: Fix name in managers</p></li>\n\n<li><p>patch: Fixing name parameter in snapshots manager</p></li>\n\n<li><p>patch: Remove &lsquo;is_provider&rsquo; parameter from &lsquo;all_peer_cluster_servers&rsquo;</p></li>\n\n<li><p>patch: Update status setting for peer_cluster error data</p></li>\n\n<li><p>patch: Update checking status on integration tests using advanced status objects</p></li>\n\n<li><p>patch: Fix integration tests</p></li>\n\n<li><p>patch: Fix issues with snapshots functions and move them to state</p></li>\n\n<li><p>patch: Fix issues with restarting in peer_relation_changed</p></li>\n\n<li><p>patch: Fix issues with status setting in snapshots when we have peer cluster credentials</p></li>\n\n<li><p>patch: Fix reference to old function to get peer_cluster by relation id</p></li>\n\n<li><p>patch: Fix issues with undefined function</p></li>\n\n<li><p>patch: Fix issues with event relation id in tls available event</p></li>\n\n<li><p>patch: Fix reference to wrong profile status</p></li>\n\n<li><p>patch: Fix integration test of wrong_space by remove the wait for active status</p></li>\n\n<li><p>patch: Adding statuses that were missing when integrating with large deployment</p></li>\n\n<li><p>patch: Fixing profile status set even when there is no requirements</p></li>\n\n<li><p>patch: Fixing status setting and an error when reading the status</p></li>\n\n<li><p>patch: Fix issue with orchestrators status setting</p></li>\n\n<li><p>patch: Set status of main orchestrator removed as running status</p></li>\n\n<li><p>patch: Fixing status setting when we have requirer or providers errors</p></li>\n\n<li><p>patch: Clean errors from providers when relation gone, only check tls if peer relation established and orchestrators computed</p></li>\n\n<li><p>patch: Addressing review comments</p></li>\n\n<li><p>patch: Compute status of peer cluster error from tls using databag instead of recomputing the peer-cluster data</p></li>\n\n<li><p>patch: Addressing review comments</p></li>\n\n<li><p>patch: Set blocking directives as a running status, set tls peer relation only when orchestrators_dict is computed</p></li>\n\n<li><p>patch: Fixing issue with status setting when there is blocking directives</p></li>\n\n<li><p>patch: Fixing issue with tls relation not existing</p></li>\n\n<li><p>patch: Addressing PR review comments</p></li>\n\n<li><p>patch: Only show tls relation missing on main orchestrator since other applications will wait for the CM</p></li>\n\n<li><p>patch: Fix issue of calculating tls statuses when there is no tls relation</p></li>\n\n<li><p>patch: Set TLS relation missing on both app and unit and update test_charm</p></li>\n\n<li><p>patch: Fix test_tls.py and test_large_deployments_relations.py</p></li>\n\n<li><p>patch: Fix wait until function to accomodate for multiple statuses</p></li>\n\n<li><p>patch: Fix issue with fialover to be set in the orchestrators</p></li>\n\n<li><p>patch: Fix unit tests, unblock Profiles tests and be more specific in tls manual integration test</p></li>\n\n<li><p>patch: unblock Profiles tests and be more specific in tls manual integration test</p></li>\n\n<li><p>patch: fix issue with statuses list in the profiles integration tests</p></li>\n\n<li><p>patch: fix issue with statuses list in the profiles integration tests</p></li>\n\n<li><p>patch: Fix issue with consumers of peer-cluster showing errors from other providers</p></li>\n\n<li><p>patch: Remove debug logging</p></li>\n\n<li><p>patch: Adding missing spread integration tests</p></li>\n\n<li><p>patch: Fix issue when calling is_failover_and_sole_data_app</p></li>\n\n<li><p>patch: Add return type hint and one check on peer-cluster-orchestrator to align with opensearch-operator</p></li>\n\n<li><p>patch: Adding PR review comments</p></li>\n\n<li><p>patch: Address PR review comments</p></li>\n\n<li><p>patch: Fix on_peer_cluster_orchestrator_relation_changed</p></li>\n</ul>\n",
-                  "timestamp": 1777877436,
-                  "url": "https://github.com/canonical/opensearch-single-kernel-library/releases/tag/v0.0.2",
-                  "compareUrl": "https://github.com/canonical/opensearch-single-kernel-library/compare/2/edge...v0.0.2"
+                  "id": 318370933,
+                  "version": "v0.0.5",
+                  "timestamp": 1778069504,
+                  "title": "v0.0.5",
+                  "body": "<h2>What&rsquo;s Changed</h2>\n\n<ul>\n<li>patch: Adding bump dependent charm workflow by <a target=\"_blank\" href=\"https://github.com/akram09\">@akram09</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opensearch-single-kernel-library/pull/71\"><a target=\"_blank\" href=\"https://github.com/canonical/opensearch-single-kernel-library/pull/71\">#71</a></a></li>\n<li>patch: add readme by <a target=\"_blank\" href=\"https://github.com/skourta\">@skourta</a> in <a target=\"_blank\" href=\"https://github.com/canonical/opensearch-single-kernel-library/pull/73\"><a target=\"_blank\" href=\"https://github.com/canonical/opensearch-single-kernel-library/pull/73\">#73</a></a></li>\n</ul>\n\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/canonical/opensearch-single-kernel-library/compare/v0.0.4...v0.0.5\">https://github.com/canonical/opensearch-single-kernel-library/compare/v0.0.4&hellip;v0.0.5</a></p>\n",
+                  "url": "https://github.com/canonical/opensearch-single-kernel-library/releases/tag/v0.0.5",
+                  "compareUrl": "https://github.com/canonical/opensearch-single-kernel-library/compare/v0.0.5...2/edge"
                }
             ],
+            "tags": null,
             "commits": null,
             "ciActions": [],
             "charm": null,
@@ -27318,6 +27303,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "ab396cf8e42b3bb22487851999c3bfc8fd17dac6",
+                  "author": "Alejandro Santisteban",
+                  "timestamp": 1778070865,
+                  "message": "<p>chore: update rock (<a target=\"_blank\" href=\"https://github.com/canonical/php-rock/pull/5\">#5</a>)</p>\n\n<ul>\n<li><p>feat: add php 8.5-26.04</p></li>\n\n<li><p>feat: add php 8.4-25.10</p></li>\n\n<li><p>chore: update template</p></li>\n\n<li><p>fix: update paths</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n\n<ul>\n<li><p>chore: adopt rock (<a target=\"_blank\" href=\"https://github.com/canonical/php-rock/pull/6\">#6</a>)</p></li>\n\n<li><p>refactor: add suffix to docker image name in tests</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n\n<ul>\n<li>refactor: newline at task EOF</li>\n</ul>\n\n<p>co-authored by <a target=\"_blank\" href=\"https://github.com/lzcyk\">@lzcyk</a></p>\n\n<ul>\n<li>fix: update .extension files</li>\n</ul>\n\n<p>co-authored by <a target=\"_blank\" href=\"https://github.com/lczyk\">@lczyk</a></p>\n\n<ul>\n<li><p>test: update tests</p></li>\n\n<li><p>fix: image tags</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n\n<hr>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a>\nCo-authored-by: Marcin Konowalczyk <a href=\"mailto:marcin.konowalczyk@canonical.com\">marcin.konowalczyk@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/php-rock/commit/ab396cf8e42b3bb22487851999c3bfc8fd17dac6"
+               },
+               {
                   "sha": "c88fad02db7c16f2a44311dd37c6905466ca0545",
                   "author": "Alejandro Santisteban",
                   "timestamp": 1764322190,
@@ -27330,13 +27322,6 @@
                   "timestamp": 1757425072,
                   "message": "<p>Update CODEOWNERS</p>\n\n<p>Signed-off-by: Alejandro Santisteban <a href=\"mailto:alex.santisteban@canonical.com\">alex.santisteban@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/php-rock/commit/2ed32dd4cf81ace8c2f8ea59c10247408eff615e"
-               },
-               {
-                  "sha": "efe4c1838786efc2883db894977f66b9259dd5d9",
-                  "author": "Alejandro Santisteban",
-                  "timestamp": 1757423137,
-                  "message": "<p>feat: implement php 8.x rocks for 24.04 and 25.04 (<a target=\"_blank\" href=\"https://github.com/canonical/php-rock/pull/2\">#2</a>)</p>\n\n<ul>\n<li><p>feat: add php rock</p></li>\n\n<li><p>docs: update security policy</p></li>\n\n<li><p>ci: remove internal action</p></li>\n\n<li><p>test: update tests</p></li>\n\n<li><p>docs: update README.md</p></li>\n\n<li><p>docs: fix broken links in README.md</p></li>\n\n<li><p>chore: update spread.yaml with latest template changes</p></li>\n\n<li><p>ci: allow running on PRs</p></li>\n\n<li><p>fix: wait for server to start on tests</p></li>\n\n<li><p>feat: use rock-security-manifest from canonical</p></li>\n\n<li><p>refactor: remove base-files_base slice</p></li>\n\n<li><p>test: remove unused system</p></li>\n\n<li><p>test: avoid potential race condition</p></li>\n\n<li><p>test: rollback runner to 24.04</p></li>\n\n<li><p>chore: update template</p></li>\n</ul>\n",
-                  "url": "https://github.com/canonical/php-rock/commit/efe4c1838786efc2883db894977f66b9259dd5d9"
                }
             ],
             "ciActions": [],
@@ -27351,6 +27336,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "4aac7806bd31ef9eb4f0e778a1257eff2aee57ae",
+                  "author": "Alejandro Santisteban",
+                  "timestamp": 1778070856,
+                  "message": "<p>feat: add python 3.14-26.04 (<a target=\"_blank\" href=\"https://github.com/canonical/python-rock/pull/41\">#41</a>)</p>\n\n<ul>\n<li>feat: python 3.14-26.04</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n\n<ul>\n<li><p>chore: update template</p></li>\n\n<li><p>chore: use /usr/bin/python3 shebang</p></li>\n</ul>\n\n<hr>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:copilot@github.com\">copilot@github.com</a></p>\n",
+                  "url": "https://github.com/canonical/python-rock/commit/4aac7806bd31ef9eb4f0e778a1257eff2aee57ae"
+               },
+               {
                   "sha": "a1918c7d8d9bb7c6503cb866f11077d54f1f04cf",
                   "author": "Alejandro Santisteban",
                   "timestamp": 1771590458,
@@ -27363,13 +27355,6 @@
                   "timestamp": 1770984053,
                   "message": "<p>feat: build 3.13 on 25.10 (<a target=\"_blank\" href=\"https://github.com/canonical/python-rock/pull/39\">#39</a>)</p>\n\n<hr>\n\n<p>Signed-off-by: Cristovao Cordeiro <a href=\"mailto:cristovao.cordeiro@canonical.com\">cristovao.cordeiro@canonical.com</a>\nCo-authored-by: Alejandro Santisteban <a href=\"mailto:alex.santisteban@canonical.com\">alex.santisteban@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/python-rock/commit/98ef12e107338fc710edb43e78cddff58d4d299e"
-               },
-               {
-                  "sha": "0785ed54a29abdbcea8abd3bc6528fe0f1b58406",
-                  "author": "Alejandro Santisteban",
-                  "timestamp": 1770909144,
-                  "message": "<p>fix: build active releases only (<a target=\"_blank\" href=\"https://github.com/canonical/python-rock/pull/40\">#40</a>)</p>\n\n<hr>\n\n<p>Signed-off-by: Alejandro Santisteban <a href=\"mailto:alex.santisteban@canonical.com\">alex.santisteban@canonical.com</a>\nCo-authored-by: Cristovao Cordeiro <a href=\"mailto:cristovao.cordeiro@canonical.com\">cristovao.cordeiro@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/python-rock/commit/0785ed54a29abdbcea8abd3bc6528fe0f1b58406"
                }
             ],
             "ciActions": [],
