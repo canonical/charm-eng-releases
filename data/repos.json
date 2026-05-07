@@ -26283,7 +26283,7 @@
          },
          {
             "name": "charmed-etcd-snap",
-            "newCommits": 14,
+            "newCommits": 15,
             "url": "https://github.com/canonical/charmed-etcd-snap",
             "releases": [
                {
@@ -31361,6 +31361,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "dd7fc820164a4ac1c1c85be8c705c7c2f51b1219",
+                  "author": "Yanks Yoon",
+                  "timestamp": 1778135554,
+                  "message": "<p>increase time from a week to a month (<a target=\"_blank\" href=\"https://github.com/canonical/self-hosted-runner-performance-benchmark/pull/44\">#44</a>)</p>\n",
+                  "url": "https://github.com/canonical/self-hosted-runner-performance-benchmark/commit/dd7fc820164a4ac1c1c85be8c705c7c2f51b1219"
+               },
+               {
                   "sha": "f1a969868f491b13a979c6abcc66b96ca3c3f1f4",
                   "author": "Yanks Yoon",
                   "timestamp": 1777963611,
@@ -31373,13 +31380,6 @@
                   "timestamp": 1777447560,
                   "message": "<p>feat: add Docker registry mirror results to the UI (<a target=\"_blank\" href=\"https://github.com/canonical/self-hosted-runner-performance-benchmark/pull/41\">#41</a>)</p>\n\n<ul>\n<li><p>feat: add Docker registry mirror results to the UI</p></li>\n\n<li><p>Add index.md to main branch (previously only on gh-pages)</p></li>\n\n<li><p>Add Docker Registry Mirror Pull Speed section with charts and CSV\nlinks for all 4 runner flavours (PS6 ARM64, PS7 AMD64, PS7 ARM64\nReactive, GitHub Hosted)</p></li>\n\n<li><p>Update benchmarks.yaml and benchmarks-docker-mirror.yaml publish\njobs to sparse-checkout index.md from main so it is included in\nevery gh-pages deployment</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li><p>fix: address PR review comments on index.md</p></li>\n\n<li><p>Update intro to not hard-code the number of tests and mention the\nDocker mirror pull benchmark section</p></li>\n\n<li><p>Fix units: ping/jitter are in seconds (not milliseconds), upload/\ndownload are in bit/s (not MBit/s), matching the CSV column headers</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: jitter unit is milliseconds not seconds</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: rename jitter column from (s) to (ms) in pipeline</li>\n</ul>\n\n<p>The jitter values from librespeed-cli are in milliseconds. Update the\nCSV header and chart code accordingly. Add a rename() on load to\nhandle existing CSVs that still carry the old &lsquo;jitter (s)&rsquo; header.</p>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<hr>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n",
                   "url": "https://github.com/canonical/self-hosted-runner-performance-benchmark/commit/25b068690e8ce6c4bd3b15ac690afcc6a3180af0"
-               },
-               {
-                  "sha": "10faa451814e5f13fdc9abb801f74b8f06dab4b0",
-                  "author": "Yanks Yoon",
-                  "timestamp": 1777383534,
-                  "message": "<p>feat: benchmark Docker registry mirror pull speed (<a target=\"_blank\" href=\"https://github.com/canonical/self-hosted-runner-performance-benchmark/pull/40\">#40</a>)</p>\n\n<ul>\n<li>feat: add Docker mirror pull benchmark reusable workflow</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: add pytz to pip install and guarantee cold docker pulls</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>feat: add Docker mirror pull benchmark orchestrator workflow</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: publish partial results even when some benchmark runners are offline</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: guard write-results on pull success and silence ls when no artifacts</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: replace pytz with stdlib datetime.timezone.utc</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: replace pytz with stdlib datetime.timezone.utc in benchmark.yaml</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li>fix: replace pytz with stdlib datetime.timezone.utc in benchmarks.yaml comparison job</li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<ul>\n<li><p>fix: address review comments on docker mirror benchmark workflow</p></li>\n\n<li><p>Use docker image prune -a and docker builder prune -a for full cache\neviction between cold-pull iterations, not just dangling image removal</p></li>\n\n<li><p>Consolidate mean/min/max stats into a single python3 invocation</p></li>\n</ul>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n\n<hr>\n\n<p>Co-authored-by: Copilot <a href=\"mailto:223556219+Copilot@users.noreply.github.com\">223556219+Copilot@users.noreply.github.com</a></p>\n",
-                  "url": "https://github.com/canonical/self-hosted-runner-performance-benchmark/commit/10faa451814e5f13fdc9abb801f74b8f06dab4b0"
                }
             ],
             "ciActions": null,
