@@ -19368,10 +19368,26 @@
          },
          {
             "name": "valkey-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/valkey-operator",
             "releases": null,
             "tags": [
+               {
+                  "name": "rev34",
+                  "sha": "48883aa7864422b5f22e7891236f5f6950b7d27b",
+                  "body": "<p>Fix docs link in metadata.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/53\">#53</a>)</p>\n\n<p>The previous link (with <code>/en/</code>) leads to a &ldquo;Page not found&rdquo; page because\nthe URL schema is configured without languages on Read The Docs.</p>\n\n<ul>\n<li>[x] Have you updated relevant documentation?</li>\n</ul>\n\n<p>Signed-off-by: Andreia <a href=\"mailto:andreia.velasco@canonical.com\">andreia.velasco@canonical.com</a></p>\n",
+                  "timestamp": 1778683695,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev34",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev34"
+               },
+               {
+                  "name": "rev33",
+                  "sha": "48883aa7864422b5f22e7891236f5f6950b7d27b",
+                  "body": "<p>Fix docs link in metadata.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/53\">#53</a>)</p>\n\n<p>The previous link (with <code>/en/</code>) leads to a &ldquo;Page not found&rdquo; page because\nthe URL schema is configured without languages on Read The Docs.</p>\n\n<ul>\n<li>[x] Have you updated relevant documentation?</li>\n</ul>\n\n<p>Signed-off-by: Andreia <a href=\"mailto:andreia.velasco@canonical.com\">andreia.velasco@canonical.com</a></p>\n",
+                  "timestamp": 1778683695,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev33",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev33"
+               },
                {
                   "name": "rev32",
                   "sha": "140703487c8010db1a489a68fba90cf6ca43aed5",
@@ -19379,22 +19395,6 @@
                   "timestamp": 1778664905,
                   "url": "https://github.com/canonical/valkey-operator/releases/tag/rev32",
                   "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev32"
-               },
-               {
-                  "name": "rev31",
-                  "sha": "140703487c8010db1a489a68fba90cf6ca43aed5",
-                  "body": "<p>open sentinel ports (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/55\">#55</a>)</p>\n\n<p>Currently the charm does not open the Sentinel port(s). In order to be\nable to access Sentinel through the Kubernetes service automatically\nprovisioned by Juju, the charm needs to explicitly open the Sentinel\nports:</p>\n\n<pre><code>$ kubectl get svc valkey -n valkey -o wide\nNAME     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                                 AGE     SELECTOR\nvalkey   ClusterIP   10.152.183.172   &lt;none&gt;        6379/TCP,6380/TCP,26379/TCP,26380/TCP   3m54s   app.kubernetes.io/name=valkey\n\n$ juju ssh valkey/0\n# python3\nPython 3.12.3 (main, Nov  6 2024, 18:32:19) [GCC 13.2.0] on linux\nType &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.\n&gt;&gt;&gt; from valkey.sentinel import Sentinel\n&gt;&gt;&gt; sentinel = Sentinel([(&quot;valkey.valkey.svc.cluster.local&quot;, 26379)], socket_timeout=0.1, sentinel_kwargs={&quot;username&quot;: &quot;charmed-sentinel-operator&quot;, &quot;password&quot;: &quot;XXX&quot;})\n&gt;&gt;&gt; sentinel.discover_master(&quot;primary&quot;)\n('valkey-2.valkey-endpoints', 6380)\n</code></pre>\n",
-                  "timestamp": 1778664905,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev31",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev31"
-               },
-               {
-                  "name": "rev30",
-                  "sha": "fd47ede018b4398e040d2d18cd7c9e8f442615b4",
-                  "body": "<p>[DPE-9327] Enable storage reuse (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/52\">#52</a>)</p>\n\n<p>This PR adds the storage reuse feature.</p>\n\n<p><strong>Functional changes:</strong>\n- handle the <code>storage_attached</code> event to fix permissions for already\nexisting volumes (to allow snap installation in case of VM deployments)\n- on <code>storage_detaching</code>, the operator instead explicitly saves the\ndatabase to disk in a blocking fashion, to avoid units going away\nwithout storing their most recent data</p>\n\n<p><strong>Test coverage:</strong>\n- adds an integration test for removing a unit and adding a new one with\nprevious storage\n- adds an integration test for scaling down to zero units, while keeping\nthe application and storage, and then scaling up again with previous\nstorage\n- adds an integration test for removing the application entirely\n(VM-only) and deploying a new application with previous storage\n- all integration tests use continuous writes and check that the writes\nare consistent over all units after reusing storage</p>\n\n<hr>\n\n<p>Co-authored-by: Mehdi Bendriss <a href=\"mailto:45567724+Mehdi-Bendriss@users.noreply.github.com\">45567724+Mehdi-Bendriss@users.noreply.github.com</a></p>\n",
-                  "timestamp": 1777974041,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev30",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev30"
                }
             ],
             "commits": null,
@@ -19406,15 +19406,15 @@
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 31,
-                     "timestamp": 1778678994,
+                     "revision": 33,
+                     "timestamp": 1778740345,
                      "base": ""
                   },
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 32,
-                     "timestamp": 1778679022,
+                     "revision": 34,
+                     "timestamp": 1778740366,
                      "base": ""
                   }
                ],
