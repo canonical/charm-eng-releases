@@ -15526,6 +15526,13 @@
             "tags": null,
             "commits": [
                {
+                  "sha": "660184ba79c000a0e7a7dfc00dd593924efd1b70",
+                  "author": "Homayoon Alimohammadi",
+                  "timestamp": 1779182512,
+                  "message": "<p>feat: bump metallb rock to v0.15.3-ck2 (<a target=\"_blank\" href=\"https://github.com/canonical/k8sd/pull/42\">#42</a>)</p>\n\n<p>Signed-off-by: Homayoon (Hue) Alimohammadi <a href=\"mailto:homayoon.alimohammadi@canonical.com\">homayoon.alimohammadi@canonical.com</a></p>\n",
+                  "url": "https://github.com/canonical/k8sd/commit/660184ba79c000a0e7a7dfc00dd593924efd1b70"
+               },
+               {
                   "sha": "01362dbca8a06a24c78e0db3668a028e130fa758",
                   "author": "Homayoon (Hue) Alimohammadi",
                   "timestamp": 1777289385,
@@ -15538,13 +15545,6 @@
                   "timestamp": 1777289363,
                   "message": "<p>fix: update log context in NodeLabelController to reflect correct controller name</p>\n\n<p>Signed-off-by: Homayoon (Hue) Alimohammadi <a href=\"mailto:homayoon.alimohammadi@canonical.com\">homayoon.alimohammadi@canonical.com</a></p>\n",
                   "url": "https://github.com/canonical/k8sd/commit/d6675ba1d5606a262af84a3db0978bbf86f1a2ff"
-               },
-               {
-                  "sha": "b798a09b183d82a84945218de247d5ba88230610",
-                  "author": "Homayoon (Hue) Alimohammadi",
-                  "timestamp": 1777289305,
-                  "message": "<p>feat: enhance getClusterStatus to check CoreDNS service cluster IP for readiness</p>\n\n<p>Signed-off-by: Homayoon (Hue) Alimohammadi <a href=\"mailto:homayoon.alimohammadi@canonical.com\">homayoon.alimohammadi@canonical.com</a></p>\n",
-                  "url": "https://github.com/canonical/k8sd/commit/b798a09b183d82a84945218de247d5ba88230610"
                }
             ],
             "ciActions": [],
@@ -16190,7 +16190,7 @@
          },
          {
             "name": "microk8s",
-            "newCommits": 31,
+            "newCommits": 33,
             "url": "https://github.com/canonical/microk8s",
             "releases": [
                {
@@ -19377,10 +19377,26 @@
          },
          {
             "name": "valkey-operator",
-            "newCommits": 1,
+            "newCommits": 0,
             "url": "https://github.com/canonical/valkey-operator",
             "releases": null,
             "tags": [
+               {
+                  "name": "rev36",
+                  "sha": "c0b967ca8da289058723071728e30f15bfdf6fd1",
+                  "body": "<p>build(deps-dev): bump urllib3 from 2.6.3 to 2.7.0 (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/54\">#54</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/urllib3/urllib3\">urllib3</a> from 2.6.3 to 2.7.0.\n<details>\n<summary>Release notes</summary>\n<p><em>Sourced from <a\nhref=\"https://github.com/urllib3/urllib3/releases\">urllib3&rsquo;s\nreleases</a>.</em></p>\n<blockquote>\n<h2>2.7.0</h2>\n<h2>🚀 urllib3 is fundraising for HTTP/2 support</h2>\n<p><a\nhref=\"https://sethmlarson.dev/urllib3-is-fundraising-for-http2-support\">urllib3\nis raising ~$40,000 USD</a> to release HTTP/2 support and ensure\nlong-term sustainable maintenance of the project after a sharp decline\nin financial support. If your company or organization uses Python and\nwould benefit from HTTP/2 support in Requests, pip, cloud SDKs, and\nthousands of other projects <a\nhref=\"https://opencollective.com/urllib3\">please consider contributing\nfinancially</a> to ensure HTTP/2 support is developed sustainably and\nmaintained for the long-haul.</p>\n<p>Thank you for your support.</p>\n<h2>Security</h2>\n<p>Addressed high-severity security issues. Impact was limited to\nspecific use cases detailed in the accompanying advisories; overall user\nexposure was estimated to be marginal.</p>\n<ul>\n<li>\n<p>Decompression-bomb safeguards of the streaming API were bypassed:</p>\n<ol>\n<li>When <code>HTTPResponse.drain_conn()</code> was called after the\nresponse had been read and decompressed partially. (Reported by <a\nhref=\"https://github.com/Cycloctane\"><code>@​Cycloctane</code></a>)</li>\n<li>During the second <code>HTTPResponse.read(amt=N)</code> or\n<code>HTTPResponse.stream(amt=N)</code> call when the response was\ndecompressed using the official <a\nhref=\"https://pypi.org/project/brotli/\">Brotli</a> library. (Reported by\n<a\nhref=\"https://github.com/kimkou2024\"><code>@​kimkou2024</code></a>)</li>\n</ol>\n<p>See GHSA-mf9v-mfxr-j63j for details.</p>\n</li>\n<li>\n<p>HTTP pools created using\n<code>ProxyManager.connection_from_url</code> did not strip sensitive\nheaders specified in <code>Retry.remove_headers_on_redirect</code> when\nredirecting to a different host. (GHSA-qccp-gfcp-xxvc reported by <a\nhref=\"https://github.com/christos-spearbit\"><code>@​christos-spearbit</code></a>)</p>\n</li>\n</ul>\n<h2>Deprecations and Removals</h2>\n<ul>\n<li>Used <code>FutureWarning</code> instead of\n<code>DeprecationWarning</code> for better visibility of existing\ndeprecation notices. Rescheduled the removal of deprecated features to\nversion 3.0. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3763\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3763\">#3763</a></a>)</li>\n<li>Removed support for end-of-life Python 3.9. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3720\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3720\">#3720</a></a>)</li>\n<li>Removed support for end-of-life PyPy3.10. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4979\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4979\">#4979</a></a>)</li>\n<li>Bumped the minimum supported pyOpenSSL version to 19.0.0. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3777\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3777\">#3777</a></a>)</li>\n</ul>\n<h2>Bugfixes</h2>\n<ul>\n<li>Fixed a bug where <code>HTTPResponse.read(amt=None)</code> was\nignoring decompressed data buffered from previous partial reads. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3636\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3636\">#3636</a></a>)</li>\n<li>Fixed a bug where <code>HTTPResponse.read()</code> could cache only\npart of the response after a partial read when\n<code>cache_content=True</code>. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4967\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4967\">#4967</a></a>)</li>\n<li>Fixed <code>HTTPResponse.stream()</code> and\n<code>HTTPResponse.read_chunked()</code> to handle <code>amt=0</code>.\n(<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3793\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3793\">#3793</a></a>)</li>\n<li>Updated <code>_TYPE_BODY</code> type alias to include missing\n<code>Iterable[str]</code>, matching the documented and runtime behavior\nof chunked request bodies. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3798\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3798\">#3798</a></a>)</li>\n<li>Fixed <code>LocationParseError</code> when paths resembling\nschemeless URIs were passed to\n<code>HTTPConnectionPool.urlopen()</code>. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3352\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3352\">#3352</a></a>)</li>\n<li>Fixed <code>BaseHTTPResponse.readinto()</code> type annotation to\naccept <code>memoryview</code> in addition to <code>bytearray</code>,\nmatching the <code>io.RawIOBase.readinto</code> contract and enabling\nuse with <code>io.BufferedReader</code> without type errors. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3764\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3764\">#3764</a></a>)</li>\n</ul>\n</blockquote>\n</details>\n<details>\n<summary>Changelog</summary>\n<p><em>Sourced from <a\nhref=\"https://github.com/urllib3/urllib3/blob/main/CHANGES.rst\">urllib3&rsquo;s\nchangelog</a>.</em></p>\n<blockquote>\n<h1>2.7.0 (2026-05-07)</h1>\n<h2>Security</h2>\n<p>Addressed high-severity security issues.\nImpact was limited to specific use cases detailed in the accompanying\nadvisories; overall user exposure was estimated to be marginal.</p>\n<ul>\n<li>\n<p>Decompression-bomb safeguards of the streaming API were bypassed:</p>\n<ol>\n<li>When <code>HTTPResponse.drain_conn()</code> was called after the\nresponse had been\nread and decompressed partially.</li>\n<li>During the second <code>HTTPResponse.read(amt=N)</code> or\n<code>HTTPResponse.stream(amt=N)</code> call when the response was\ndecompressed\nusing the official <code>Brotli\n&amp;lt;<a href=\"https://pypi.org/project/brotli/&gt;\">https://pypi.org/project/brotli/&amp;gt;</a></code>__ library.</li>\n</ol>\n<p>See <code>GHSA-mf9v-mfxr-j63j\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/security/advisories/GHSA-mf9v-mfxr-j63j&gt;\">https://github.com/urllib3/urllib3/security/advisories/GHSA-mf9v-mfxr-j63j&amp;gt;</a></code>__\nfor details.</p>\n</li>\n<li>\n<p>HTTP pools created using\n<code>ProxyManager.connection_from_url</code> did not strip\nsensitive headers specified in\n<code>Retry.remove_headers_on_redirect</code> when\nredirecting to a different host.\n(<code>GHSA-qccp-gfcp-xxvc\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc&gt;\">https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc&amp;gt;</a></code>__)</p>\n</li>\n</ul>\n<h2>Deprecations and Removals</h2>\n<ul>\n<li>Used <code>FutureWarning</code> instead of\n<code>DeprecationWarning</code> for better\nvisibility of existing deprecation notices. Rescheduled the removal of\ndeprecated features to version 3.0.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3763\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3763\">#3763</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3763&gt;\">https://github.com/urllib3/urllib3/issues/3763&amp;gt;</a></code>__)</li>\n<li>Removed support for end-of-life Python 3.9.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3720\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3720\">#3720</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3720&gt;\">https://github.com/urllib3/urllib3/issues/3720&amp;gt;</a></code>__)</li>\n<li>Removed support for end-of-life PyPy3.10.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/4979\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4979\">#4979</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/4979&gt;\">https://github.com/urllib3/urllib3/issues/4979&amp;gt;</a></code>__)</li>\n<li>Bumped the minimum supported pyOpenSSL version to 19.0.0.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3777\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3777\">#3777</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3777&gt;\">https://github.com/urllib3/urllib3/issues/3777&amp;gt;</a></code>__)</li>\n</ul>\n<h2>Bugfixes</h2>\n<ul>\n<li>Fixed a bug where <code>HTTPResponse.read(amt=None)</code> was\nignoring decompressed\ndata buffered from previous partial reads.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3636\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3636\">#3636</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3636&gt;\">https://github.com/urllib3/urllib3/issues/3636&amp;gt;</a></code>__)</li>\n<li>Fixed a bug where <code>HTTPResponse.read()</code> could cache only\npart of the\nresponse after a partial read when <code>cache_content=True</code>.</li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>&hellip; (truncated)</p>\n</details>\n<details>\n<summary>Commits</summary>\n<ul>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/9a950b92d999f906b6020bb2d1076ee56cddd5d2\"><code>9a950b9</code></a>\nRelease 2.7.0</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/5ec0de499b9166ca71c65ab04f2a7e4eb0d66fcc\"><code>5ec0de4</code></a>\nMerge commit from fork</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/2bdcc44d1e163fb5cc48a8662425e35e15adfe6a\"><code>2bdcc44</code></a>\nMerge commit from fork</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/f45b0df09d8620ac6ed0491eb9362c8c87b7bc2c\"><code>f45b0df</code></a>\nFix a misleading example for <code>ProxyManager</code> (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4970\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4970\">#4970</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/577193ca029872384f82c133449e0935f6d8a64b\"><code>577193c</code></a>\nSwitch to nightly PyPy3.11 in CI for now (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4984\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4984\">#4984</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/e90af45bb006c3a452a3a21644a2681523f5c7fc\"><code>e90af45</code></a>\nAvoid infinite loop in <code>HTTPResponse.read_chunked</code> when\n<code>amt=0</code> (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4974\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4974\">#4974</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/67ed74fdaec6659a6534621ec8e3aaaa6f976210\"><code>67ed74f</code></a>\nBump dev dependencies (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4972\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4972\">#4972</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/3abd481097b54d87b574ac7ea593c3f40938a84d\"><code>3abd481</code></a>\nUpgrade mypy to version 1.20.2 (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4978\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4978\">#4978</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/2b8725dfcac4f21d4d93cc0cc3a64a33af08f890\"><code>2b8725d</code></a>\nDrop support for EOL PyPy3.10 (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4979\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4979\">#4979</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/2944b2a0a6c573f5548a39cfd17196f98ee21b33\"><code>2944b2a</code></a>\nUpgrade <code>setup-chrome</code> and <code>setup-firefox</code> to fix\nwarnings (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4973\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4973\">#4973</a></a>)</li>\n<li>Additional commits viewable in <a\nhref=\"https://github.com/urllib3/urllib3/compare/2.6.3...2.7.0\">compare\nview</a></li>\n</ul>\n</details>\n<br /></p>\n\n<p><a href=\"https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores\"><img src=\"https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=urllib3&amp;package-manager=pip&amp;previous-version=2.6.3&amp;new-version=2.7.0\" alt=\"Dependabot compatibility\nscore\" /></a></p>\n\n<p>Dependabot will resolve any conflicts with this PR as long as you don&rsquo;t\nalter it yourself. You can also trigger a rebase manually by commenting\n<code>@dependabot rebase</code>.</p>\n\n<hr>\n\n<details>\n<summary>Dependabot commands and options</summary>\n<br />\n\nYou can trigger Dependabot actions by commenting on this PR:\n- `@dependabot rebase` will rebase this PR\n- `@dependabot recreate` will recreate this PR, overwriting any edits\nthat have been made to it\n- `@dependabot show <dependency name> ignore conditions` will show all\nof the ignore conditions of the specified dependency\n- `@dependabot ignore this major version` will close this PR and stop\nDependabot creating any more for this major version (unless you reopen\nthe PR or upgrade to it yourself)\n- `@dependabot ignore this minor version` will close this PR and stop\nDependabot creating any more for this minor version (unless you reopen\nthe PR or upgrade to it yourself)\n- `@dependabot ignore this dependency` will close this PR and stop\nDependabot creating any more for this dependency (unless you reopen the\nPR or upgrade to it yourself)\nYou can disable automated security fix PRs for this repo from the\n[Security Alerts\npage](https://github.com/canonical/valkey-operator/network/alerts).\n\n</details>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: René Radoi <a href=\"mailto:rene.radoi@canonical.com\">rene.radoi@canonical.com</a></p>\n",
+                  "timestamp": 1779173333,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev36",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev36"
+               },
+               {
+                  "name": "rev35",
+                  "sha": "c0b967ca8da289058723071728e30f15bfdf6fd1",
+                  "body": "<p>build(deps-dev): bump urllib3 from 2.6.3 to 2.7.0 (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/54\">#54</a>)</p>\n\n<p>Bumps <a href=\"https://github.com/urllib3/urllib3\">urllib3</a> from 2.6.3 to 2.7.0.\n<details>\n<summary>Release notes</summary>\n<p><em>Sourced from <a\nhref=\"https://github.com/urllib3/urllib3/releases\">urllib3&rsquo;s\nreleases</a>.</em></p>\n<blockquote>\n<h2>2.7.0</h2>\n<h2>🚀 urllib3 is fundraising for HTTP/2 support</h2>\n<p><a\nhref=\"https://sethmlarson.dev/urllib3-is-fundraising-for-http2-support\">urllib3\nis raising ~$40,000 USD</a> to release HTTP/2 support and ensure\nlong-term sustainable maintenance of the project after a sharp decline\nin financial support. If your company or organization uses Python and\nwould benefit from HTTP/2 support in Requests, pip, cloud SDKs, and\nthousands of other projects <a\nhref=\"https://opencollective.com/urllib3\">please consider contributing\nfinancially</a> to ensure HTTP/2 support is developed sustainably and\nmaintained for the long-haul.</p>\n<p>Thank you for your support.</p>\n<h2>Security</h2>\n<p>Addressed high-severity security issues. Impact was limited to\nspecific use cases detailed in the accompanying advisories; overall user\nexposure was estimated to be marginal.</p>\n<ul>\n<li>\n<p>Decompression-bomb safeguards of the streaming API were bypassed:</p>\n<ol>\n<li>When <code>HTTPResponse.drain_conn()</code> was called after the\nresponse had been read and decompressed partially. (Reported by <a\nhref=\"https://github.com/Cycloctane\"><code>@​Cycloctane</code></a>)</li>\n<li>During the second <code>HTTPResponse.read(amt=N)</code> or\n<code>HTTPResponse.stream(amt=N)</code> call when the response was\ndecompressed using the official <a\nhref=\"https://pypi.org/project/brotli/\">Brotli</a> library. (Reported by\n<a\nhref=\"https://github.com/kimkou2024\"><code>@​kimkou2024</code></a>)</li>\n</ol>\n<p>See GHSA-mf9v-mfxr-j63j for details.</p>\n</li>\n<li>\n<p>HTTP pools created using\n<code>ProxyManager.connection_from_url</code> did not strip sensitive\nheaders specified in <code>Retry.remove_headers_on_redirect</code> when\nredirecting to a different host. (GHSA-qccp-gfcp-xxvc reported by <a\nhref=\"https://github.com/christos-spearbit\"><code>@​christos-spearbit</code></a>)</p>\n</li>\n</ul>\n<h2>Deprecations and Removals</h2>\n<ul>\n<li>Used <code>FutureWarning</code> instead of\n<code>DeprecationWarning</code> for better visibility of existing\ndeprecation notices. Rescheduled the removal of deprecated features to\nversion 3.0. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3763\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3763\">#3763</a></a>)</li>\n<li>Removed support for end-of-life Python 3.9. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3720\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3720\">#3720</a></a>)</li>\n<li>Removed support for end-of-life PyPy3.10. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4979\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4979\">#4979</a></a>)</li>\n<li>Bumped the minimum supported pyOpenSSL version to 19.0.0. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3777\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3777\">#3777</a></a>)</li>\n</ul>\n<h2>Bugfixes</h2>\n<ul>\n<li>Fixed a bug where <code>HTTPResponse.read(amt=None)</code> was\nignoring decompressed data buffered from previous partial reads. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3636\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3636\">#3636</a></a>)</li>\n<li>Fixed a bug where <code>HTTPResponse.read()</code> could cache only\npart of the response after a partial read when\n<code>cache_content=True</code>. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4967\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4967\">#4967</a></a>)</li>\n<li>Fixed <code>HTTPResponse.stream()</code> and\n<code>HTTPResponse.read_chunked()</code> to handle <code>amt=0</code>.\n(<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3793\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3793\">#3793</a></a>)</li>\n<li>Updated <code>_TYPE_BODY</code> type alias to include missing\n<code>Iterable[str]</code>, matching the documented and runtime behavior\nof chunked request bodies. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3798\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3798\">#3798</a></a>)</li>\n<li>Fixed <code>LocationParseError</code> when paths resembling\nschemeless URIs were passed to\n<code>HTTPConnectionPool.urlopen()</code>. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3352\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3352\">#3352</a></a>)</li>\n<li>Fixed <code>BaseHTTPResponse.readinto()</code> type annotation to\naccept <code>memoryview</code> in addition to <code>bytearray</code>,\nmatching the <code>io.RawIOBase.readinto</code> contract and enabling\nuse with <code>io.BufferedReader</code> without type errors. (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/3764\">urllib3/urllib3<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3764\">#3764</a></a>)</li>\n</ul>\n</blockquote>\n</details>\n<details>\n<summary>Changelog</summary>\n<p><em>Sourced from <a\nhref=\"https://github.com/urllib3/urllib3/blob/main/CHANGES.rst\">urllib3&rsquo;s\nchangelog</a>.</em></p>\n<blockquote>\n<h1>2.7.0 (2026-05-07)</h1>\n<h2>Security</h2>\n<p>Addressed high-severity security issues.\nImpact was limited to specific use cases detailed in the accompanying\nadvisories; overall user exposure was estimated to be marginal.</p>\n<ul>\n<li>\n<p>Decompression-bomb safeguards of the streaming API were bypassed:</p>\n<ol>\n<li>When <code>HTTPResponse.drain_conn()</code> was called after the\nresponse had been\nread and decompressed partially.</li>\n<li>During the second <code>HTTPResponse.read(amt=N)</code> or\n<code>HTTPResponse.stream(amt=N)</code> call when the response was\ndecompressed\nusing the official <code>Brotli\n&amp;lt;<a href=\"https://pypi.org/project/brotli/&gt;\">https://pypi.org/project/brotli/&amp;gt;</a></code>__ library.</li>\n</ol>\n<p>See <code>GHSA-mf9v-mfxr-j63j\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/security/advisories/GHSA-mf9v-mfxr-j63j&gt;\">https://github.com/urllib3/urllib3/security/advisories/GHSA-mf9v-mfxr-j63j&amp;gt;</a></code>__\nfor details.</p>\n</li>\n<li>\n<p>HTTP pools created using\n<code>ProxyManager.connection_from_url</code> did not strip\nsensitive headers specified in\n<code>Retry.remove_headers_on_redirect</code> when\nredirecting to a different host.\n(<code>GHSA-qccp-gfcp-xxvc\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc&gt;\">https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc&amp;gt;</a></code>__)</p>\n</li>\n</ul>\n<h2>Deprecations and Removals</h2>\n<ul>\n<li>Used <code>FutureWarning</code> instead of\n<code>DeprecationWarning</code> for better\nvisibility of existing deprecation notices. Rescheduled the removal of\ndeprecated features to version 3.0.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3763\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3763\">#3763</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3763&gt;\">https://github.com/urllib3/urllib3/issues/3763&amp;gt;</a></code>__)</li>\n<li>Removed support for end-of-life Python 3.9.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3720\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3720\">#3720</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3720&gt;\">https://github.com/urllib3/urllib3/issues/3720&amp;gt;</a></code>__)</li>\n<li>Removed support for end-of-life PyPy3.10.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/4979\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4979\">#4979</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/4979&gt;\">https://github.com/urllib3/urllib3/issues/4979&amp;gt;</a></code>__)</li>\n<li>Bumped the minimum supported pyOpenSSL version to 19.0.0.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3777\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3777\">#3777</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3777&gt;\">https://github.com/urllib3/urllib3/issues/3777&amp;gt;</a></code>__)</li>\n</ul>\n<h2>Bugfixes</h2>\n<ul>\n<li>Fixed a bug where <code>HTTPResponse.read(amt=None)</code> was\nignoring decompressed\ndata buffered from previous partial reads.\n(<code><a href=\"https://github.com/urllib3/urllib3/issues/3636\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/3636\">#3636</a></a>\n&amp;lt;<a href=\"https://github.com/urllib3/urllib3/issues/3636&gt;\">https://github.com/urllib3/urllib3/issues/3636&amp;gt;</a></code>__)</li>\n<li>Fixed a bug where <code>HTTPResponse.read()</code> could cache only\npart of the\nresponse after a partial read when <code>cache_content=True</code>.</li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>&hellip; (truncated)</p>\n</details>\n<details>\n<summary>Commits</summary>\n<ul>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/9a950b92d999f906b6020bb2d1076ee56cddd5d2\"><code>9a950b9</code></a>\nRelease 2.7.0</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/5ec0de499b9166ca71c65ab04f2a7e4eb0d66fcc\"><code>5ec0de4</code></a>\nMerge commit from fork</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/2bdcc44d1e163fb5cc48a8662425e35e15adfe6a\"><code>2bdcc44</code></a>\nMerge commit from fork</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/f45b0df09d8620ac6ed0491eb9362c8c87b7bc2c\"><code>f45b0df</code></a>\nFix a misleading example for <code>ProxyManager</code> (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4970\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4970\">#4970</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/577193ca029872384f82c133449e0935f6d8a64b\"><code>577193c</code></a>\nSwitch to nightly PyPy3.11 in CI for now (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4984\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4984\">#4984</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/e90af45bb006c3a452a3a21644a2681523f5c7fc\"><code>e90af45</code></a>\nAvoid infinite loop in <code>HTTPResponse.read_chunked</code> when\n<code>amt=0</code> (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4974\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4974\">#4974</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/67ed74fdaec6659a6534621ec8e3aaaa6f976210\"><code>67ed74f</code></a>\nBump dev dependencies (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4972\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4972\">#4972</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/3abd481097b54d87b574ac7ea593c3f40938a84d\"><code>3abd481</code></a>\nUpgrade mypy to version 1.20.2 (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4978\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4978\">#4978</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/2b8725dfcac4f21d4d93cc0cc3a64a33af08f890\"><code>2b8725d</code></a>\nDrop support for EOL PyPy3.10 (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4979\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4979\">#4979</a></a>)</li>\n<li><a\nhref=\"https://github.com/urllib3/urllib3/commit/2944b2a0a6c573f5548a39cfd17196f98ee21b33\"><code>2944b2a</code></a>\nUpgrade <code>setup-chrome</code> and <code>setup-firefox</code> to fix\nwarnings (<a\nhref=\"https://redirect.github.com/urllib3/urllib3/issues/4973\"><a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/4973\">#4973</a></a>)</li>\n<li>Additional commits viewable in <a\nhref=\"https://github.com/urllib3/urllib3/compare/2.6.3...2.7.0\">compare\nview</a></li>\n</ul>\n</details>\n<br /></p>\n\n<p><a href=\"https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores\"><img src=\"https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=urllib3&amp;package-manager=pip&amp;previous-version=2.6.3&amp;new-version=2.7.0\" alt=\"Dependabot compatibility\nscore\" /></a></p>\n\n<p>Dependabot will resolve any conflicts with this PR as long as you don&rsquo;t\nalter it yourself. You can also trigger a rebase manually by commenting\n<code>@dependabot rebase</code>.</p>\n\n<hr>\n\n<details>\n<summary>Dependabot commands and options</summary>\n<br />\n\nYou can trigger Dependabot actions by commenting on this PR:\n- `@dependabot rebase` will rebase this PR\n- `@dependabot recreate` will recreate this PR, overwriting any edits\nthat have been made to it\n- `@dependabot show <dependency name> ignore conditions` will show all\nof the ignore conditions of the specified dependency\n- `@dependabot ignore this major version` will close this PR and stop\nDependabot creating any more for this major version (unless you reopen\nthe PR or upgrade to it yourself)\n- `@dependabot ignore this minor version` will close this PR and stop\nDependabot creating any more for this minor version (unless you reopen\nthe PR or upgrade to it yourself)\n- `@dependabot ignore this dependency` will close this PR and stop\nDependabot creating any more for this dependency (unless you reopen the\nPR or upgrade to it yourself)\nYou can disable automated security fix PRs for this repo from the\n[Security Alerts\npage](https://github.com/canonical/valkey-operator/network/alerts).\n\n</details>\n\n<p>Signed-off-by: dependabot[bot] <a href=\"mailto:support@github.com\">support@github.com</a>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: René Radoi <a href=\"mailto:rene.radoi@canonical.com\">rene.radoi@canonical.com</a></p>\n",
+                  "timestamp": 1779173333,
+                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev35",
+                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev35"
+               },
                {
                   "name": "rev34",
                   "sha": "48883aa7864422b5f22e7891236f5f6950b7d27b",
@@ -19388,22 +19404,6 @@
                   "timestamp": 1778683695,
                   "url": "https://github.com/canonical/valkey-operator/releases/tag/rev34",
                   "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev34"
-               },
-               {
-                  "name": "rev33",
-                  "sha": "48883aa7864422b5f22e7891236f5f6950b7d27b",
-                  "body": "<p>Fix docs link in metadata.yaml (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/53\">#53</a>)</p>\n\n<p>The previous link (with <code>/en/</code>) leads to a &ldquo;Page not found&rdquo; page because\nthe URL schema is configured without languages on Read The Docs.</p>\n\n<ul>\n<li>[x] Have you updated relevant documentation?</li>\n</ul>\n\n<p>Signed-off-by: Andreia <a href=\"mailto:andreia.velasco@canonical.com\">andreia.velasco@canonical.com</a></p>\n",
-                  "timestamp": 1778683695,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev33",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev33"
-               },
-               {
-                  "name": "rev32",
-                  "sha": "140703487c8010db1a489a68fba90cf6ca43aed5",
-                  "body": "<p>open sentinel ports (<a target=\"_blank\" href=\"https://github.com/canonical/valkey-operator/pull/55\">#55</a>)</p>\n\n<p>Currently the charm does not open the Sentinel port(s). In order to be\nable to access Sentinel through the Kubernetes service automatically\nprovisioned by Juju, the charm needs to explicitly open the Sentinel\nports:</p>\n\n<pre><code>$ kubectl get svc valkey -n valkey -o wide\nNAME     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                                 AGE     SELECTOR\nvalkey   ClusterIP   10.152.183.172   &lt;none&gt;        6379/TCP,6380/TCP,26379/TCP,26380/TCP   3m54s   app.kubernetes.io/name=valkey\n\n$ juju ssh valkey/0\n# python3\nPython 3.12.3 (main, Nov  6 2024, 18:32:19) [GCC 13.2.0] on linux\nType &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.\n&gt;&gt;&gt; from valkey.sentinel import Sentinel\n&gt;&gt;&gt; sentinel = Sentinel([(&quot;valkey.valkey.svc.cluster.local&quot;, 26379)], socket_timeout=0.1, sentinel_kwargs={&quot;username&quot;: &quot;charmed-sentinel-operator&quot;, &quot;password&quot;: &quot;XXX&quot;})\n&gt;&gt;&gt; sentinel.discover_master(&quot;primary&quot;)\n('valkey-2.valkey-endpoints', 6380)\n</code></pre>\n",
-                  "timestamp": 1778664905,
-                  "url": "https://github.com/canonical/valkey-operator/releases/tag/rev32",
-                  "compareUrl": "https://github.com/canonical/valkey-operator/compare/9/edge...rev32"
                }
             ],
             "commits": null,
@@ -19415,15 +19415,15 @@
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 33,
-                     "timestamp": 1778740345,
+                     "revision": 36,
+                     "timestamp": 1779180806,
                      "base": ""
                   },
                   {
                      "track": "9",
                      "channel": "edge",
-                     "revision": 34,
-                     "timestamp": 1778740366,
+                     "revision": 35,
+                     "timestamp": 1779180767,
                      "base": ""
                   }
                ],
@@ -20103,7 +20103,7 @@
          },
          {
             "name": "charmed-postgresql-rock",
-            "newCommits": 113,
+            "newCommits": 114,
             "url": "https://github.com/canonical/charmed-postgresql-rock",
             "releases": [
                {
@@ -20940,7 +20940,7 @@
          },
          {
             "name": "s3-integrator",
-            "newCommits": 37,
+            "newCommits": 38,
             "url": "https://github.com/canonical/s3-integrator",
             "releases": [
                {
@@ -21026,22 +21026,22 @@
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 538,
-                     "timestamp": 1776800573,
+                     "revision": 553,
+                     "timestamp": 1779182827,
                      "base": ""
                   },
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 537,
-                     "timestamp": 1776800564,
+                     "revision": 552,
+                     "timestamp": 1779182817,
                      "base": ""
                   },
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 539,
-                     "timestamp": 1776800581,
+                     "revision": 554,
+                     "timestamp": 1779182836,
                      "base": ""
                   },
                   {
@@ -21988,10 +21988,18 @@
          },
          {
             "name": "postgresql-watcher-operator",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/postgresql-watcher-operator",
             "releases": null,
             "tags": [
+               {
+                  "name": "v16/1.10.0",
+                  "sha": "638df116a9968e17a35ce3e1a2318cfee0c46621",
+                  "body": "<p>Update dependency uv to v0.11.15 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-watcher-operator/pull/15\">#15</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "timestamp": 1779179986,
+                  "url": "https://github.com/canonical/postgresql-watcher-operator/releases/tag/v16%2F1.10.0",
+                  "compareUrl": "https://github.com/canonical/postgresql-watcher-operator/compare/16/edge...v16%2F1.10.0"
+               },
                {
                   "name": "v16/1.9.0",
                   "sha": "1c671cd1ad1cb94a71dca54c70c3928a842282e5",
@@ -22007,14 +22015,6 @@
                   "timestamp": 1778592330,
                   "url": "https://github.com/canonical/postgresql-watcher-operator/releases/tag/v16%2F1.8.0",
                   "compareUrl": "https://github.com/canonical/postgresql-watcher-operator/compare/16/edge...v16%2F1.8.0"
-               },
-               {
-                  "name": "v16/1.7.0",
-                  "sha": "183726faf0416f9770b46f166c3a43d6fce279a1",
-                  "body": "<p>[DPE-8773] Unify VM and watcher tests (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-watcher-operator/pull/10\">#10</a>)</p>\n\n<ul>\n<li><p>Unify tests</p></li>\n\n<li><p>Pysyncobj in integration deps</p></li>\n</ul>\n",
-                  "timestamp": 1778573575,
-                  "url": "https://github.com/canonical/postgresql-watcher-operator/releases/tag/v16%2F1.7.0",
-                  "compareUrl": "https://github.com/canonical/postgresql-watcher-operator/compare/16/edge...v16%2F1.7.0"
                }
             ],
             "commits": null,
@@ -22129,33 +22129,33 @@
          },
          {
             "name": "postgresql-test-app",
-            "newCommits": 2,
+            "newCommits": 0,
             "url": "https://github.com/canonical/postgresql-test-app",
             "releases": null,
             "tags": [
                {
-                  "name": "rev524",
-                  "sha": "50e9c5487dc76f05b5d58264ed22876eb060da83",
-                  "body": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/491\">#491</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "timestamp": 1778508605,
-                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev524",
-                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/main...rev524"
+                  "name": "rev528",
+                  "sha": "3668469bce0c767f2340a0828a9ee138e0d69573",
+                  "body": "<p>Update dependency uv to v0.11.15 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/495\">#495</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "timestamp": 1779180161,
+                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev528",
+                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/main...rev528"
                },
                {
-                  "name": "rev523",
-                  "sha": "50e9c5487dc76f05b5d58264ed22876eb060da83",
-                  "body": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/491\">#491</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "timestamp": 1778508605,
-                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev523",
-                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/main...rev523"
+                  "name": "rev527",
+                  "sha": "3668469bce0c767f2340a0828a9ee138e0d69573",
+                  "body": "<p>Update dependency uv to v0.11.15 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/495\">#495</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "timestamp": 1779180161,
+                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev527",
+                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/main...rev527"
                },
                {
-                  "name": "rev522",
-                  "sha": "50e9c5487dc76f05b5d58264ed22876eb060da83",
-                  "body": "<p>Lock file maintenance (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/491\">#491</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
-                  "timestamp": 1778508605,
-                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev522",
-                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/main...rev522"
+                  "name": "rev526",
+                  "sha": "3668469bce0c767f2340a0828a9ee138e0d69573",
+                  "body": "<p>Update dependency uv to v0.11.15 (<a target=\"_blank\" href=\"https://github.com/canonical/postgresql-test-app/pull/495\">#495</a>)</p>\n\n<p>Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com></p>\n",
+                  "timestamp": 1779180161,
+                  "url": "https://github.com/canonical/postgresql-test-app/releases/tag/rev526",
+                  "compareUrl": "https://github.com/canonical/postgresql-test-app/compare/main...rev526"
                }
             ],
             "commits": null,
@@ -22254,29 +22254,29 @@
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 523,
-                     "timestamp": 1778511413,
+                     "revision": 528,
+                     "timestamp": 1779182117,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 524,
-                     "timestamp": 1778511423,
+                     "revision": 527,
+                     "timestamp": 1779182109,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 521,
-                     "timestamp": 1778511392,
+                     "revision": 526,
+                     "timestamp": 1779182097,
                      "base": ""
                   },
                   {
                      "track": "latest",
                      "channel": "edge",
-                     "revision": 522,
-                     "timestamp": 1778511403,
+                     "revision": 525,
+                     "timestamp": 1779182088,
                      "base": ""
                   }
                ],
@@ -22332,7 +22332,7 @@
          },
          {
             "name": "postgresql-single-kernel-library",
-            "newCommits": 12,
+            "newCommits": 14,
             "url": "https://github.com/canonical/postgresql-single-kernel-library",
             "releases": [
                {
@@ -23373,22 +23373,22 @@
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 538,
-                     "timestamp": 1776800573,
+                     "revision": 553,
+                     "timestamp": 1779182827,
                      "base": ""
                   },
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 537,
-                     "timestamp": 1776800564,
+                     "revision": 552,
+                     "timestamp": 1779182817,
                      "base": ""
                   },
                   {
                      "track": "1",
                      "channel": "edge",
-                     "revision": 539,
-                     "timestamp": 1776800581,
+                     "revision": 554,
+                     "timestamp": 1779182836,
                      "base": ""
                   },
                   {
@@ -24224,7 +24224,7 @@
          },
          {
             "name": "pgbouncer-k8s-operator",
-            "newCommits": 52,
+            "newCommits": 53,
             "url": "https://github.com/canonical/pgbouncer-k8s-operator",
             "releases": [
                {
@@ -25102,15 +25102,15 @@
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 168,
-                     "timestamp": 1778753260,
+                     "revision": 170,
+                     "timestamp": 1779181726,
                      "base": ""
                   },
                   {
                      "track": "3.6",
                      "channel": "edge",
-                     "revision": 167,
-                     "timestamp": 1778753243,
+                     "revision": 169,
+                     "timestamp": 1779181703,
                      "base": ""
                   }
                ],
@@ -25836,7 +25836,7 @@
          },
          {
             "name": "charm-rolling-ops",
-            "newCommits": 221,
+            "newCommits": 225,
             "url": "https://github.com/canonical/charm-rolling-ops",
             "releases": [
                {
@@ -26210,7 +26210,7 @@
          },
          {
             "name": "data-integrator",
-            "newCommits": 141,
+            "newCommits": 142,
             "url": "https://github.com/canonical/data-integrator",
             "releases": [
                {
